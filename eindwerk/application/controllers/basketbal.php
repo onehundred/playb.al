@@ -1,15 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Basketbal extends CI_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
+			
 	}
 
 	function index()
 	{
-		$this->load->view('welcome_message');
+		echo "Dit is de basketbal Controller";
+		echo $this->session->userdata('session_id');
 	}
 }
 

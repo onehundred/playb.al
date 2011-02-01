@@ -1,22 +1,32 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 class Main extends CI_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
 		
+		
 	}
 
 	function index()
 	{
-				
-		$data['main_content'] = 'main_login';
-		$this->load->view('includes/template', $data);
+	
+		$is_logged_in = $this->session->userdata('is_logged_in');
 		
+		if(isset($is_logged_in) && $is_logged_in == true)
+		{
+			redirect('sportkeuze/sport');
+			 
+		}else{
+				
+		 $data['main_content'] = 'main_login';
+		 $this->load->view('includes/template', $data);
+		}
 	}
 	
 	
+	
+	//functie na het klikken op de login button
 	function login()
 	{
 		$this->load->model('main_model');
@@ -31,7 +41,7 @@ class Main extends CI_Controller {
 			);
 			
 			$this->session->set_userdata($data);
-			$this->login_succes();
+			redirect('sportkeuze/sport');
 		
 		}
 		else{
@@ -40,29 +50,53 @@ class Main extends CI_Controller {
 	
 	}
 	
-	
-	
-	function login_succes()
-	{
-			$data['main_content']= 'main_sportkeuze';
-	
-			$this->load->view('includes/template', $data);
-	}
-	
-	
-	
+		
+	//functie die het registratieformulier laad
 	function signup()
 	{
-					$data['main_content']= 'main_signup';
+			$data['main_content']= 'main_signup';
 	
 			$this->load->view('includes/template', $data);
 	}
 	
+	
+	//functie die de user gaat aanmaken in de db
 	function create_user()
 	{
-		echo "hello";
+		$this->load->library('form_validation');
+		//field name, error message, validation rules
+		
+			$this->form_validation->set_rules('voornaam', 'Name', 'trim|required');
+			$this->form_validation->set_rules('achternaam', 'Last Name', 'trim|required');
+			$this->form_validation->set_rules('land', 'Country', 'trim|required');
+			$this->form_validation->set_rules('gemeente', 'State', 'trim|required');
+			$this->form_validation->set_rules('adres', 'address', 'trim|required');
+			$this->form_validation->set_rules('email', 'E-maill', 'trim|required|valid_email');
+			
+			
+			
+			$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]');
+			$this->form_validation->set_rules('paswoord', 'Password', 'trim|required|min_length[4]');
+			$this->form_validation->set_rules('paswoord2', 'Password confirmation', 'trim|required|matches[paswoord]');
+			
+			if($this->form_validation->run() == FALSE)
+			{
+				$this->signup();
+			}
+			else{
+				$this->load->model('main_model');
+				if($suery = $this->main_model->create_user())
+				{
+					$data['main_content'] = 'signup_succesful';
+					$this->load->view('includes/template', $data);
+				}
+				else{
+					$this->signup();
+				}
+			}
+		
 	}
+	
+	
+	
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

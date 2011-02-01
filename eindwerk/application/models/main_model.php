@@ -22,6 +22,28 @@
     	}
     
     }
+    
+    
+    function create_user()
+    {
+    	$new_user_insert_data = array(
+    		'voornaam' => $this->input->post('voornaam'),
+    		'achternaam' => $this->input->post('achternaam'),
+    		'email' => $this->input->post('email'),
+    		'land' => $this->input->post('land'),
+    		'gemeente' => $this->input->post('gemeente'),
+    		'adres' => $this->input->post('adres'),
+    		'gebruikersnaam' => $this->input->post('username'),
+    		
+    		'paswoord' => md5($this->input->post('paswoord')),
+    		'datum_creatie' => 'now()'
+    	
+    	);
+    	
+    	$insert = $this->db->insert('users', $new_user_insert_data);
+    	return $insert;
+    
+    }
 			
 			
     

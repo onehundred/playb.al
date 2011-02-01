@@ -18,3 +18,16 @@ text-decoration: none;
 
 }
 
+
+#logged_in{
+border: none;
+padding: 6px;
+font-family: "Apple Chancery";
+background-color: silver;
+width: 200px;
+	
+}
+
+
+
+

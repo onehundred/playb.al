@@ -6,12 +6,15 @@ class Sportkeuze extends CI_Controller {
 		parent::__construct();
 		$this->is_logged_in();
 		
+		
+		
 	}
 
 	function sport()
 	{
-				
+
 		$data['main_content'] = 'main_sportkeuze';
+		
 		$this->load->view('includes/template', $data);
 		
 	}
@@ -23,11 +26,12 @@ class Sportkeuze extends CI_Controller {
 		
 		if(!isset($is_logged_in) || $is_logged_in != true)
 		{
-			echo 'you must be logged in';
-			echo '<a href="../main">Login</a>';
-			die();
+		 $data['main_content'] = 'session_fail';
+		 $this->load->view('includes/template', $data);
+			
 			 
 		}
+		
 	
 	}
 	

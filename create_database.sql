@@ -1,7 +1,3 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
-
 CREATE SCHEMA IF NOT EXISTS `eindwerk` DEFAULT CHARACTER SET latin1 ;
 USE `eindwerk` ;
 
@@ -33,13 +29,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`korf_teams` (
   `naam` VARCHAR(45) NULL DEFAULT NULL ,
   `startdatum` DATE NULL DEFAULT NULL ,
   `FK_user_id` VARCHAR(45) NULL DEFAULT NULL ,
-  PRIMARY KEY (`team_id`) ,
-  INDEX `FK_user_id` () ,
-  CONSTRAINT `FK_user_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`users` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`team_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -51,13 +41,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`korf_divisies` (
   `divisie_id` INT(11) NOT NULL AUTO_INCREMENT ,
   `naam` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_team_id` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`divisie_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`korf_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`divisie_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -71,13 +55,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`korf_financiën` (
   `wedstrijdinkomsten` INT(11) NULL DEFAULT NULL ,
   `varia` INT(11) NULL DEFAULT NULL ,
   `FK_team_id` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`financien_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`korf_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`financien_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -92,13 +70,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`korf_spelers` (
   `leeftijd` INT(11) NULL DEFAULT NULL ,
   `ervaring` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_team_id` VARCHAR(45) NULL DEFAULT NULL ,
-  PRIMARY KEY (`speler_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`korf_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`speler_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -111,13 +83,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`korf_stadion` (
   `naam` VARCHAR(45) NULL DEFAULT NULL ,
   `aantal_plaatsen` INT(11) NULL DEFAULT NULL ,
   `FK_team_id` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`stadion_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`korf_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`stadion_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -145,19 +111,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`korf_trophies` (
   `datum` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_user_id` INT(11) NULL DEFAULT NULL ,
   `FK_team_id` INT NULL ,
-  PRIMARY KEY (`trophy_id`) ,
-  INDEX `FK_team_id` () ,
-  INDEX `FK_user_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`korf_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `FK_user_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`users` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`trophy_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -184,13 +138,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`vol_teams` (
   `naam` VARCHAR(45) NULL DEFAULT NULL ,
   `startdatum` DATE NULL DEFAULT NULL ,
   `FK_user_id` VARCHAR(45) NULL DEFAULT NULL ,
-  PRIMARY KEY (`team_id`) ,
-  INDEX `FK_user_id` () ,
-  CONSTRAINT `FK_user_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`users` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`team_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -205,13 +153,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`vol_spelers` (
   `leeftijd` INT(11) NULL DEFAULT NULL ,
   `ervaring` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_team_id` VARCHAR(45) NULL DEFAULT NULL ,
-  PRIMARY KEY (`speler_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`vol_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`speler_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -224,13 +166,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`vol_stadion` (
   `naam` VARCHAR(45) NULL DEFAULT NULL ,
   `aantal_plaatsen` INT(11) NULL DEFAULT NULL ,
   `FK_team_id` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`stadion_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`vol_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`stadion_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -244,13 +180,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`vol_financiën` (
   `wedstrijdinkomsten` INT(11) NULL DEFAULT NULL ,
   `varia` INT(11) NULL DEFAULT NULL ,
   `FK_team_id` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`financien_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`vol_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`financien_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -262,13 +192,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`vol_divisies` (
   `divisie_id` INT(11) NOT NULL AUTO_INCREMENT ,
   `naam` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_team_id` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`divisie_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`vol_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`divisie_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -282,19 +206,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`vol_trophies` (
   `datum` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_user_id` INT(11) NULL DEFAULT NULL ,
   `FK_team_id` INT NULL ,
-  PRIMARY KEY (`trophy_id`) ,
-  INDEX `FK_user_id` () ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_user_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`users` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`vol_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`trophy_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -335,13 +247,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`bas_teams` (
   `naam` VARCHAR(45) NULL DEFAULT NULL ,
   `startdatum` DATE NULL DEFAULT NULL ,
   `FK_user_id` VARCHAR(45) NULL DEFAULT NULL ,
-  PRIMARY KEY (`team_id`) ,
-  INDEX `FK_user_id` () ,
-  CONSTRAINT `FK_user_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`users` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`team_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -356,13 +262,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`bas_spelers` (
   `leeftijd` INT(11) NULL DEFAULT NULL ,
   `ervaring` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_team_id` VARCHAR(45) NULL DEFAULT NULL ,
-  PRIMARY KEY (`speler_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`bas_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`speler_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -375,13 +275,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`bas_stadion` (
   `naam` VARCHAR(45) NULL DEFAULT NULL ,
   `aantal_plaatsen` INT(11) NULL DEFAULT NULL ,
   `FK_team_id` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`stadion_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`bas_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`stadion_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -395,19 +289,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`bas_trophies` (
   `datum` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_user_id` INT(11) NULL DEFAULT NULL ,
   `FK_team_id` INT NULL ,
-  PRIMARY KEY (`trophy_id`) ,
-  INDEX `FK_user_id` () ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_user_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`users` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`bas_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`trophy_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -419,13 +301,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`bas_divisies` (
   `divisie_id` INT(11) NOT NULL AUTO_INCREMENT ,
   `naam` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_team_id` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`divisie_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`bas_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`divisie_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
@@ -439,13 +315,7 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`bas_financiën` (
   `wedstrijdinkomsten` INT(11) NULL DEFAULT NULL ,
   `varia` INT(11) NULL DEFAULT NULL ,
   `FK_team_id` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`financien_id`) ,
-  INDEX `FK_team_id` () ,
-  CONSTRAINT `FK_team_id`
-    FOREIGN KEY ()
-    REFERENCES `eindwerk`.`bas_teams` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`financien_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 

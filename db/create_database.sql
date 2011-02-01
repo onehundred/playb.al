@@ -47,9 +47,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `eindwerk`.`korf_financiën`
+-- Table `eindwerk`.`korf_financien`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `eindwerk`.`korf_financiën` (
+CREATE  TABLE IF NOT EXISTS `eindwerk`.`korf_financien` (
   `financien_id` INT(11) NOT NULL AUTO_INCREMENT ,
   `sponsors` INT(11) NULL DEFAULT NULL ,
   `wedstrijdinkomsten` INT(11) NULL DEFAULT NULL ,
@@ -70,6 +70,8 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`korf_spelers` (
   `leeftijd` INT(11) NULL DEFAULT NULL ,
   `ervaring` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_team_id` VARCHAR(45) NULL DEFAULT NULL ,
+  `prijs` INT NULL ,
+  `uithouding` INT NULL ,
   PRIMARY KEY (`speler_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
@@ -153,6 +155,8 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`vol_spelers` (
   `leeftijd` INT(11) NULL DEFAULT NULL ,
   `ervaring` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_team_id` VARCHAR(45) NULL DEFAULT NULL ,
+  `prijs` INT NULL ,
+  `uithouding` INT NULL ,
   PRIMARY KEY (`speler_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
@@ -172,9 +176,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `eindwerk`.`vol_financiën`
+-- Table `eindwerk`.`vol_financien`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `eindwerk`.`vol_financiën` (
+CREATE  TABLE IF NOT EXISTS `eindwerk`.`vol_financien` (
   `financien_id` INT(11) NOT NULL AUTO_INCREMENT ,
   `sponsors` INT(11) NULL DEFAULT NULL ,
   `wedstrijdinkomsten` INT(11) NULL DEFAULT NULL ,
@@ -262,6 +266,8 @@ CREATE  TABLE IF NOT EXISTS `eindwerk`.`bas_spelers` (
   `leeftijd` INT(11) NULL DEFAULT NULL ,
   `ervaring` VARCHAR(45) NULL DEFAULT NULL ,
   `FK_team_id` VARCHAR(45) NULL DEFAULT NULL ,
+  `prijs` INT NULL ,
+  `uithouding` INT NULL ,
   PRIMARY KEY (`speler_id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
@@ -307,9 +313,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `eindwerk`.`bas_financiën`
+-- Table `eindwerk`.`bas_financien`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `eindwerk`.`bas_financiën` (
+CREATE  TABLE IF NOT EXISTS `eindwerk`.`bas_financien` (
   `financien_id` INT(11) NOT NULL AUTO_INCREMENT ,
   `sponsors` INT(11) NULL DEFAULT NULL ,
   `wedstrijdinkomsten` INT(11) NULL DEFAULT NULL ,
@@ -351,4 +357,4 @@ DEFAULT CHARACTER SET = latin1;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CH
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

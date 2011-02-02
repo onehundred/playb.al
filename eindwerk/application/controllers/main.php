@@ -34,8 +34,24 @@ class Main extends CI_Controller {
 		
 		if($query) //als de inloggegevens juist zijn
 		{
+			$username= $this->input->post('username');
+		
+			$queryid = $this->db->query("SELECT user_id FROM users WHERE gebruikersnaam = '$username';");
+    	
+    	
+    		if ($queryid->num_rows() > 0)
+				{
+  			 foreach ($queryid->result() as $row)
+  				 {
+      				 $id= $row->user_id;
+      				
+  				 }
+  				
+				}
+				
 			$data = array(
 				'username' => $this->input->post('username'),
+				'user_id' => $id,
 				'is_logged_in' => true
 			
 			);

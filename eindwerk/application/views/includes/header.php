@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8" />
 <title>playball</title>
-<link rel="stylesheet" href="http://localhost:8888/eindwerk.git/eindwerk/css/main_login.css" />
-
+<link rel="stylesheet" href="<?php echo base_url();?>css/main_login.css" />
 </head>
 <body>

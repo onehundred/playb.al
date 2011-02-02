@@ -1,5 +1,5 @@
-<div id="korfbal_signup">
-<form id="SignupForm" method="post" action="create_korfbalteam">
+<div id="basketbal_signup">
+<form id="SignupForm" action="sportkeuze/basketbal_signup">
 <fieldset>
 <legend>Team name</legend>
 

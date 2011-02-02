@@ -107,7 +107,8 @@ class Sportkeuze extends CI_Controller {
 	//registreren voor een korfbalteam
 	function korfbal_signup()
 	{
-		
+			
+	
 		
 		$data['main_content'] = 'korfbal/korfbal_signup';
 		$this->load->view('includes/template', $data);
@@ -118,7 +119,8 @@ class Sportkeuze extends CI_Controller {
 	//registreren voor een volleybalteam
 	function volleybal_signup()
 	{
-	
+		$data['main_content'] = 'volleybal/volleybal_signup';
+		$this->load->view('includes/template', $data);
 	
 	
 	}
@@ -127,9 +129,39 @@ class Sportkeuze extends CI_Controller {
 	//registreren voor een basketbalteam
 	function basketbal_signup()
 	{
+		$data['main_content'] = 'basketbal/basketbal_signup';
+		$this->load->view('includes/template', $data);
 	
 	
 	
+	}
+	
+	function create_korfbalteam()
+	{
+		$this->load->library('form_validation');
+		//field name, error message, validation rules
+		
+			$this->form_validation->set_rules('teamnaam', 'Team Name', 'trim|required');
+			$this->form_validation->set_rules('stadionnaam', 'Arena Name', 'trim|required');
+			
+			
+			if($this->form_validation->run() == FALSE)
+			{
+				$this->korfbal_signup();
+			}
+			else{
+				$this->load->model('sportkeuze_model');
+				if($query = $this->sportkeuze_model->create_korfbalteam())
+				{
+					$data['main_content'] = 'korfbalsignup_succesful';
+					$this->load->view('includes/template', $data);
+				}
+				else{
+					$this->korfbal_signup();
+				}
+			}
+		
+
 	
 	}
 	

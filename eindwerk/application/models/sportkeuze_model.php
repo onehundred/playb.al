@@ -56,4 +56,29 @@
     
     }
     
+    
+    
+    
+    function create_korfbalteam()
+    {
+    	
+    	$voornamen = array(
+    					'dimitri', 
+    					'jos',
+    					'flupke',
+    					'quick',
+    					'jozef'
+    				);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+    
     }

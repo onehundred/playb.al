@@ -104,14 +104,18 @@ class Sportkeuze extends CI_Controller {
 	
 	}
 	
-	
+	//registreren voor een korfbalteam
 	function korfbal_signup()
 	{
-	
+		
+		
+		$data['main_content'] = 'korfbal/korfbal_signup';
+		$this->load->view('includes/template', $data);
 	
 	
 	}
 	
+	//registreren voor een volleybalteam
 	function volleybal_signup()
 	{
 	
@@ -119,6 +123,8 @@ class Sportkeuze extends CI_Controller {
 	
 	}
 	
+	
+	//registreren voor een basketbalteam
 	function basketbal_signup()
 	{
 	

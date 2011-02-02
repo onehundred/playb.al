@@ -153,7 +153,14 @@ class Sportkeuze extends CI_Controller {
 				$this->load->model('sportkeuze_model');
 				if($query = $this->sportkeuze_model->create_korfbalteam())
 				{
-					$data['main_content'] = 'korfbalsignup_succesful';
+					for($i=0;$i<12;$i++)
+    	    			{
+    	    		$this->sportkeuze_model->create_korfbalplayer_man();
+    	    	
+    	    			}
+    	    		$this->sportkeuze_model->create_korfbalstadion();
+    	    			
+					$data['main_content'] = 'korfbal/korfbal_signup_succesful';
 					$this->load->view('includes/template', $data);
 				}
 				else{

@@ -1,7 +1,37 @@
 <div id="main_sportkeuze">
-<h2>Sport1</h2>
-<h2>Sport2</h2>
-<h2>Sport3</h2>
+<h2>Korfbal</h2>
+<p><?php if(isset($korfNaam)){
+		echo $korfNaam;
+		echo $korfId;
+
+}else{
+	
+	echo anchor('sportkeuze/korfbal_signup','Create korfball team');
+
+
+} ?></p>
+<h2>Volleybal</h2>
+<p><?php if(isset($volNaam)){
+		echo $volNaam;
+		echo $volId;
+
+}else{
+	echo anchor('sportkeuze/volleybal_signup','Create volleyball team');
+	
+
+
+} ?></p>
+<h2>Basketbal</h2>
+<p><?php if(isset($basNaam)){
+	
+		echo $basNaam;
+		echo $basId;
+
+}else{
+	echo anchor('sportkeuze/basketbal_signup','Create basketball team');
+	
+
+} ?></p>
 
 
 </div>

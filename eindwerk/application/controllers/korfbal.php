@@ -78,6 +78,33 @@ class Korfbal extends CI_Controller {
 		
 	
 	}
+	
+	function korfbal_teamorders()
+	{
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;
+		$this->load->model('korfbal_model');
+		
+		$data['spelers'] = $this->korfbal_model->get_spelers($team_id);
+		
+		
+		$data['main_content'] = 'korfbal/korfbal_opstelling';
+		$this->load->view('korfbal/includes/template', $data);
+		
+		
+	}
+	
+	function korfbal_reorder()
+	{
+		$spelersnaam = $_POST['spelername'];
+		
+		$insert = array(
+			'spelernaam' => $spelersnaam
+		
+		);
+		
+		$this->db->insert('korf_opstelling', $insert);
+	}
 }
 
 /* End of file welcome.php */

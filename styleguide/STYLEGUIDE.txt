@@ -1,0 +1,10 @@
+styleguide
+----------
+
+background color:	#f2f2f2 (hex)
+
+korfbal yellow:		#ebbb25 (hex)
+basketbal orange:	#e55714 (hex)
+volleyball blue:	#295666 (hex)
+
+

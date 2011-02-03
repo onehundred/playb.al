@@ -1,7 +1,7 @@
 <div id="main_sportkeuze">
 <h2>Korfbal</h2>
 <p><?php if(isset($korfNaam)){
-	echo anchor("korfbal/start/$korfId", $korfNaam);
+	echo anchor("korfbal/korfbal_start/$korfId", $korfNaam);
 }else{
 	
 	echo anchor('sportchoice/korfbal_signup','Create korfball team');

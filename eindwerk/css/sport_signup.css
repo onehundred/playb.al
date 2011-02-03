@@ -11,7 +11,10 @@
 #korfbal_signup #steps li span {font-size:11px; display:block;}
 #korfbal_signup #steps li.current { color:#000;}
        
-       
+
+h2 {
+	font-family: 'SFCollegiateSolidRegular';
+}
 
 
 

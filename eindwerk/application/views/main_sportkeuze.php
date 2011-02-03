@@ -1,8 +1,8 @@
 <div id="main_sportkeuze">
 <h2>Korfbal</h2>
 <p><?php if(isset($korfNaam)){
-		echo $korfNaam;
-		echo $korfId;
+
+		echo anchor("korfbal/index/$korfId", $korfNaam);
 
 }else{
 	

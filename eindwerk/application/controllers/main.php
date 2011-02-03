@@ -15,7 +15,7 @@ class Main extends CI_Controller {
 		
 		if(isset($is_logged_in) && $is_logged_in == true)
 		{
-			redirect('sportkeuze/sport');
+			redirect('sportchoice/sport');
 			 
 		}else{
 				
@@ -57,7 +57,7 @@ class Main extends CI_Controller {
 			);
 			
 			$this->session->set_userdata($data);
-			redirect('sportkeuze/sport');
+			redirect('sportchoice/sport');
 		
 		}
 		else{

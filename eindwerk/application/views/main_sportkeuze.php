@@ -4,7 +4,7 @@
 	echo anchor("korfbal/start/$korfId", $korfNaam);
 }else{
 	
-	echo anchor('sportkeuze/korfbal_signup','Create korfball team');
+	echo anchor('sportchoice/korfbal_signup','Create korfball team');
 
 
 } ?></p>
@@ -14,7 +14,7 @@
 		echo $volId;
 
 }else{
-	echo anchor('sportkeuze/volleybal_signup','Create volleyball team');
+	echo anchor('sportchoice/volleybal_signup','Create volleyball team');
 	
 
 
@@ -26,7 +26,7 @@
 		echo $basId;
 
 }else{
-	echo anchor('sportkeuze/basketbal_signup','Create basketball team');
+	echo anchor('sportchoice/basketbal_signup','Create basketball team');
 	
 
 } ?></p>

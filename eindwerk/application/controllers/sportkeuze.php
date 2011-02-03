@@ -189,7 +189,7 @@ class Sportkeuze extends CI_Controller {
 			}
 			else{
 				$this->load->model('sportkeuze_model');
-				if($query = $this->sportkeuze_model->create_volleybalteam())
+				if($query = $this->sportkeuze_model->create_volleybalteam())	
 				{
 					for($i=0;$i<12;$i++)
     	    			{
@@ -207,6 +207,47 @@ class Sportkeuze extends CI_Controller {
 				}
 			}
 
+	
+	}
+	
+	
+	function create_basketbalteam()
+	{
+	
+		$this->load->library('form_validation');
+		//field name, error message, validation rules
+		
+			$this->form_validation->set_rules('teamnaam', 'Team Name', 'trim|required');
+			$this->form_validation->set_rules('stadionnaam', 'Arena Name', 'trim|required');
+			
+			
+			if($this->form_validation->run() == FALSE)
+			{	
+				$this->basketbal_signup();
+			}
+			else{
+				$this->load->model('sportkeuze_model');
+				if($query = $this->sportkeuze_model->create_basketbalteam())	
+				{
+					for($i=0;$i<12;$i++)
+    	    			{
+    	    		$this->sportkeuze_model->create_basketbalplayer();
+    	    	
+    	    			}
+    	    		$this->sportkeuze_model->create_basketbalstadion();
+    	    			
+					$data['main_content'] = 'basketbal/basketbal_signup_succesful';
+					$this->load->view('includes/template', $data);
+				}
+				else{
+					
+					$this->basketbal_signup();
+				}
+			}
+
+	
+	
+	
 	
 	}
 	

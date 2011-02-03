@@ -7,7 +7,7 @@ class Korfbal extends CI_Controller {
 		parent::__construct();
 	}
 
-	function index()
+	function start()
 	{
 		echo "Dit is de korfbal Controller";
 	}

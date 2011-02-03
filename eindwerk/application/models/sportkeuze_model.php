@@ -83,7 +83,7 @@
     	return $insert;			
     }
     
-    //maakt het stadion aan
+    //maakt het korfbalstadion aan
     function create_korfbalstadion()
     {
     
@@ -170,6 +170,7 @@
     		'voornaam' => $voornaam,
     		'achternaam' => $achternaam,
     		'leeftijd' => $leeftijd,
+    		'geslacht' => 'man',
     		'FK_team_id' => $team_id
     		
     	
@@ -180,5 +181,199 @@
 		$this->db->where('FK_team_id', $team_id);
     	$insert = $this->db->insert('korf_spelers', $new_player_insert_data);
     	}
+    	
+    	//functie om een speler(vrouw) aan te maken
+    function create_korfbalplayer_vrouw(){
+    	$user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('korf_teams');
+    	
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+    	
+    	$voornamen = array(
+    					'josefien', 
+    					'nele',
+    					'anke',
+    					'mieke',
+    					'maria'
+    				);
+    				
+    	$achternamen = array(
+    					'vandevelde',
+        				'pony',
+       				    'deboi',
+                        'deschelde',
+                        'de moeder'
+    	
+    	
+    	);
+    	
+    	
+    	$leeftijden = array(
+    					'16',
+    					'17',
+    					'18',
+    					'19',
+    					'20',
+    					'21',
+    					'22',
+    					'23'
+    					
+    	
+    	);			
+    		
+    		
+    				
+    	$voornaam = $voornamen[array_rand($voornamen)];
+    	$achternaam = $achternamen[array_rand($achternamen)];
+    	$leeftijd = $leeftijden[array_rand($leeftijden)];
+    	
+    	$new_player_insert_data = array(
+    		'voornaam' => $voornaam,
+    		'achternaam' => $achternaam,
+    		'leeftijd' => $leeftijd,
+    		'geslacht' => 'vrouw',
+    		'FK_team_id' => $team_id
+    		
+    	
+    	);
+		
+		
+		
+		$this->db->where('FK_team_id', $team_id);
+    	$insert = $this->db->insert('korf_spelers', $new_player_insert_data);
+    	}
+    	
+    	
+    	//maakt volleybalteam aan
+    	function create_volleybalteam()
+    	{
+    
+    	$user_id = $this->session->userdata('user_id');    	
+    	    	
+    	    	
+    	    	
+    	$new_team_insert_data = array(
+    		'naam' => $this->input->post('teamnaam'),
+    		'FK_user_id' => $user_id,
+    		'startdatum' => 'now()'
+    	
+    	);
+    	
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$insert = $this->db->insert('vol_teams', $new_team_insert_data);
+    	return $insert;			
+    	}
+
+    	
+    	
+    	//maakt volleybalspeler aan
+    	function create_volleybalplayer()
+    	{
+    		$user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('vol_teams');
+    	
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+    	
+    	$voornamen = array(
+    					'josefien', 
+    					'nele',
+    					'anke',
+    					'mieke',
+    					'maria'
+    				);
+    				
+    	$achternamen = array(
+    					'vandevelde',
+        				'pony',
+       				    'deboi',
+                        'deschelde',
+                        'de moeder'
+    	
+    	
+    	);
+    	
+    	
+    	$leeftijden = array(
+    					'16',
+    					'17',
+    					'18',
+    					'19',
+    					'20',
+    					'21',
+    					'22',
+    					'23'
+    					
+    	
+    	);			
+    		
+    		
+    				
+    	$voornaam = $voornamen[array_rand($voornamen)];
+    	$achternaam = $achternamen[array_rand($achternamen)];
+    	$leeftijd = $leeftijden[array_rand($leeftijden)];
+    	
+    	$new_player_insert_data = array(
+    		'voornaam' => $voornaam,
+    		'achternaam' => $achternaam,
+    		'leeftijd' => $leeftijd,
+    		'FK_team_id' => $team_id
+    		
+    	
+    	);
+		
+		
+		
+		$this->db->where('FK_team_id', $team_id);
+    	$insert = $this->db->insert('vol_spelers', $new_player_insert_data);
+    	
+    	}
+    	
+    	//maakt volleybalstadion aan
+    	function create_volleybalstadion()
+    {
+    
+    $user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('vol_teams');
+    	
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+    	
+    	$new_stadion_insert_data = array(
+    		'naam' => $this->input->post('stadionnaam'),
+    		'FK_team_id' => $team_id
+    		
+    	
+    	);
+    	
+    	$this->db->where('FK_team_id', $team_id);
+    	$insert = $this->db->insert('vol_stadion', $new_stadion_insert_data);
+    	
+    }
+
+
     
     }

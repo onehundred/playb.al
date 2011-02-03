@@ -153,9 +153,10 @@ class Sportkeuze extends CI_Controller {
 				$this->load->model('sportkeuze_model');
 				if($query = $this->sportkeuze_model->create_korfbalteam())
 				{
-					for($i=0;$i<12;$i++)
+					for($i=0;$i<6;$i++)
     	    			{
     	    		$this->sportkeuze_model->create_korfbalplayer_man();
+    	    		$this->sportkeuze_model->create_korfbalplayer_vrouw();
     	    	
     	    			}
     	    		$this->sportkeuze_model->create_korfbalstadion();
@@ -168,6 +169,43 @@ class Sportkeuze extends CI_Controller {
 				}
 			}
 		
+
+	
+	}
+	
+	
+	function create_volleybalteam()
+	{
+		$this->load->library('form_validation');
+		//field name, error message, validation rules
+		
+			$this->form_validation->set_rules('teamnaam', 'Team Name', 'trim|required');
+			$this->form_validation->set_rules('stadionnaam', 'Arena Name', 'trim|required');
+			
+			
+			if($this->form_validation->run() == FALSE)
+			{	
+				$this->volleybal_signup();
+			}
+			else{
+				$this->load->model('sportkeuze_model');
+				if($query = $this->sportkeuze_model->create_volleybalteam())
+				{
+					for($i=0;$i<12;$i++)
+    	    			{
+    	    		$this->sportkeuze_model->create_volleybalplayer();
+    	    	
+    	    			}
+    	    		$this->sportkeuze_model->create_volleybalstadion();
+    	    			
+					$data['main_content'] = 'volleybal/volleybal_signup_succesful';
+					$this->load->view('includes/template', $data);
+				}
+				else{
+					
+					$this->volleybal_signup();
+				}
+			}
 
 	
 	}

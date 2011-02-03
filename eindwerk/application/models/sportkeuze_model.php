@@ -373,6 +373,131 @@
     	$insert = $this->db->insert('vol_stadion', $new_stadion_insert_data);
     	
     }
+    
+    
+   		 //maakt basketbalteam aan
+    	function create_basketbalteam()
+    	{
+    
+    	$user_id = $this->session->userdata('user_id');    	
+    	    	
+    	    	
+    	    	
+    	$new_team_insert_data = array(
+    		'naam' => $this->input->post('teamnaam'),
+    		'FK_user_id' => $user_id,
+    		'startdatum' => 'now()'
+    	
+    	);
+    	
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$insert = $this->db->insert('bas_teams', $new_team_insert_data);
+    	return $insert;			
+    	}
+    	
+    	
+    	
+    	//maakt basketbalspeler aan
+    	function create_basketbalplayer()
+    	{
+    		$user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('bas_teams');
+    	
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+    	
+    	$voornamen = array(
+    					'josefien', 
+    					'nele',
+    					'anke',
+    					'mieke',
+    					'maria'
+    				);
+    				
+    	$achternamen = array(
+    					'vandevelde',
+        				'pony',
+       				    'deboi',
+                        'deschelde',
+                        'de moeder'
+    	
+    	
+    	);
+    	
+    	
+    	$leeftijden = array(
+    					'16',
+    					'17',
+    					'18',
+    					'19',
+    					'20',
+    					'21',
+    					'22',
+    					'23'
+    					
+    	
+    	);			
+    		
+    		
+    				
+    	$voornaam = $voornamen[array_rand($voornamen)];
+    	$achternaam = $achternamen[array_rand($achternamen)];
+    	$leeftijd = $leeftijden[array_rand($leeftijden)];
+    	
+    	$new_player_insert_data = array(
+    		'voornaam' => $voornaam,
+    		'achternaam' => $achternaam,
+    		'leeftijd' => $leeftijd,
+    		'FK_team_id' => $team_id
+    		
+    	
+    	);
+		
+		
+		
+		$this->db->where('FK_team_id', $team_id);
+    	$insert = $this->db->insert('bas_spelers', $new_player_insert_data);
+    	
+    	}
+
+
+	//maakt volleybalstadion aan
+    	function create_basketbalstadion()
+    {
+    
+    $user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('bas_teams');
+    	
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+    	
+    	$new_stadion_insert_data = array(
+    		'naam' => $this->input->post('stadionnaam'),
+    		'FK_team_id' => $team_id
+    		
+    	
+    	);
+    	
+    	$this->db->where('FK_team_id', $team_id);
+    	$insert = $this->db->insert('bas_stadion', $new_stadion_insert_data);
+    	
+    }
+
 
 
     

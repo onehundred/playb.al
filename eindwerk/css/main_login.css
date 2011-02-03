@@ -1,33 +1,21 @@
-#main_login input[type="text"], input[type="password"]{
-display:block;
-margin: 0 0 1em 0;
-width: 280px;
-border: 5px;
-padding: 1em;
-
-
+#main_login input[type="text"], input[type="password"] {
+	display:block;
+	margin: 0 0 1em 0;
+	width: 280px;
+	border: 5px;
+	padding: 1em;
 }
-
-#main_login input[type="submit"]{
-border: none;
-padding: 6px;
-text-decoration: none;
--moz-border-radius: 4px;
--webkit-border-radius: 4px;
-
-
+#main_login input[type="submit"] {
+	border: none;
+	padding: 6px;
+	text-decoration: none;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
 }
-
-
-#logged_in{
-border: none;
-padding: 6px;
-font-family: "Apple Chancery";
-background-color: silver;
-width: 200px;
-	
+#logged_in {
+	border: none;
+	padding: 6px;
+	font-family: "Apple Chancery";
+	background-color: silver;
+	width: 200px;
 }
-
-
-
-

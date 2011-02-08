@@ -159,6 +159,16 @@ class Sportchoice extends CI_Controller {
     	    		$this->sportkeuze_model->create_korfbalplayer_vrouw();
     	    	
     	    			}
+    	    		//Na het aanmaken van de speler worden skills aan ieder van hen toegekend
+    	    		
+    	    			$playeridquery = $this->sportkeuze_model->get_player();
+    				   foreach($playeridquery->result() as $row)
+						{
+			
+						$playerid = $row->speler_id;
+						$this->sportkeuze_model->assign_skills($playerid);
+			
+						}
     	    		$this->sportkeuze_model->create_korfbalstadion();
     	    			
 					$data['main_content'] = 'korfbal/korfbal_signup_succesful';
@@ -173,6 +183,8 @@ class Sportchoice extends CI_Controller {
 	
 	}
 	
+	
+	//vollaybalteamcreatie
 	
 	function create_volleybalteam()
 	{

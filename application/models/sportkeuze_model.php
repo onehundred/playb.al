@@ -180,7 +180,59 @@
 		
 		$this->db->where('FK_team_id', $team_id);
     	$insert = $this->db->insert('korf_spelers', $new_player_insert_data);
+    	
+    	
     	}
+    	
+    	
+    	function get_player()
+    	{
+    	$user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('korf_teams');
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+
+    	
+    	
+    	$playeridquery = $this->db->query("select speler_id from korf_spelers where FK_team_id ='$team_id';");
+    	return $playeridquery;
+
+    	
+    	
+    	}
+    	
+    	
+    	//functie die elke speler skills toekent bij het maken van een team
+    	function assign_skills($playerid)
+		{
+			//randomwoorde(1-20) teowijzen aan de skills van elke speler
+		
+		$new_skills_insert_data = array(
+			'rebound' => rand(1,12),
+			'passing' => rand(1,12),
+			'stamina' => rand(1,20),
+			'shotpower' => rand(1,12),
+			'shotprecision' => rand(1,12),
+			'playmaking' => rand(1,12),
+			'intercepting' => rand(1,12),
+			'leadership'  => rand(1, 20),
+			'FK_player_id' => $playerid
+		);
+		
+		$this->db->where('FK_player_id', $playerid);
+		$insert = $this->db->insert('korf_skills', $new_skills_insert_data);
+		
+		}
+		
+		
+		
     	
     	//functie om een speler(vrouw) aan te maken
     function create_korfbalplayer_vrouw(){

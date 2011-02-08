@@ -181,12 +181,12 @@
     	
     	}
     	
-    	$voornamen = array(
-    					'dimitri', 
-    					'jos',
-    					'flupke',
-    					'quick',
-    					'jozef'
+    	
+    	    	$voornamen = array(
+    					
+    					'Aamos', 'Aapo', 'Aarne', 'Aatos', 'Ahti', 'Aki', 'Aki-Petteri','Akseli', 'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Ari-Pekka', 'Armas' ,'Arsi', 'Arto', 'Arttu', 'Arvi', 'Arvid Atso', 'Atte August', 'Aulis','Christian', 'Eemeli', 'Eemil', 'Eerik', 'Eero', 'Eetu', 'Eino', 'Einojuhani', 'Elias', 'Emppu', 'Ensio', 'Erkki', 'Erno', 'Esa', 'Esa-Pekka Esko'
+
+
     				);
     				
     	$achternamen = array(

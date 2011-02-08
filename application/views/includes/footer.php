@@ -5,7 +5,13 @@
         $(document).ready(function(){
             $("#SignupForm").formToWizard({ submitButton: 'submit' })
         });
+        
+        
+        
+        
+        
 </script>
-<footer></footer>
-</body>
+
+		<footer><div id="example"></div></footer>
+	</body>
 </html>

@@ -113,6 +113,58 @@
     	
     }
     
+    //functie om het team toe te wijzen aan een divisie
+    function assign_korfbaldivisie()
+    {
+    	$user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('korf_teams');
+    	
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+    	
+    	
+    	
+    	//gaat elke divisie af, waar het getal onder de 8 is daar voegt hij het team aan toe
+    	$divisies = $this->db->get('korf_divisies');
+    	$divRows = $divisies->num_rows();
+    	
+    	for($i=1;$i<=$divRows;$i++){
+    	
+    			$this->db->where('FK_division_id', $i);
+    			$teams = $this->db->get('korf_teams');
+    			
+    			$teamRows = $teams->num_rows();
+               
+            if($teamRows < 8){
+            
+            	$data = array(
+            		'FK_division_id' => $i
+            	
+            	
+            	);
+            
+               	$this->db->where('FK_user_id', $user_id);
+               	$this->db->update('korf_teams', $data);
+                break;
+
+            }
+
+
+
+          }
+    	
+
+    	
+    
+    }
+    
     
     //functie om een speler(man) aan te maken
     function create_korfbalplayer_man(){
@@ -187,7 +239,7 @@
     	
     	
     	//query voor het halen van de spelersgegevens
-    	function get_player()
+    	function get_korfbalplayer()
     	{
     	$user_id = $this->session->userdata('user_id');
     	
@@ -212,7 +264,7 @@
     	
     	
     	//functie die elke speler skills toekent bij het maken van een team
-    	function assign_skills($playerid)
+    	function assign_korfbalskills($playerid)
 		{
 			//randomwoorde(1-20) teowijzen aan de skills van elke speler
 		

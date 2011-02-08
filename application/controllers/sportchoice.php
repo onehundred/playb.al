@@ -162,15 +162,19 @@ class Sportchoice extends CI_Controller {
     	    			}
     	    		//Na het aanmaken van de speler worden skills aan ieder van hen toegekend
     	    		
-    	    		   $playeridquery = $this->sportkeuze_model->get_player();
+    	    		   $playeridquery = $this->sportkeuze_model->get_korfbalplayer();
     				   foreach($playeridquery->result() as $row)
 						{
 						//skills worden toegewezen per spelers
 						$playerid = $row->speler_id;
-						$this->sportkeuze_model->assign_skills($playerid);
+						$this->sportkeuze_model->assign_korfbalskills($playerid);
 			
 						}
 						
+						
+						//toewijzing divisie
+						
+						$this->sportkeuze_model->assign_korfbaldivisie();
 						//creatie stadion
     	    		$this->sportkeuze_model->create_korfbalstadion();
     	    			

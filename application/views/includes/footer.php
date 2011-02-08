@@ -4,14 +4,11 @@
 <script>
         $(document).ready(function(){
             $("#SignupForm").formToWizard({ submitButton: 'submit' })
-        });
-        
-        
-        
-        
-        
+        });    
 </script>
-
-		<footer><div id="example"></div></footer>
-	</body>
+</div> <!-- end cont -->
+<footer>
+    </footer>
+    </div> <!-- end wrap -->
+</body>
 </html>

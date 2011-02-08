@@ -8,7 +8,7 @@ h2 {
 </style>
 <div id="columns">
 	<div id="main_login">
-    <h1>Login</h1>
+    <h1>login</h1>
     <?php
 		echo form_open('main/login');
 		echo form_input('username', 'Username');

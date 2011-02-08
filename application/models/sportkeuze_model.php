@@ -223,7 +223,7 @@
     		'voornaam' => $voornaam,
     		'achternaam' => $achternaam,
     		'leeftijd' => $leeftijd,
-    		'geslacht' => 'man',
+    		'geslacht' => 'male',
     		'FK_team_id' => $team_id
     		
     	
@@ -345,7 +345,7 @@
     		'voornaam' => $voornaam,
     		'achternaam' => $achternaam,
     		'leeftijd' => $leeftijd,
-    		'geslacht' => 'vrouw',
+    		'geslacht' => 'female',
     		'FK_team_id' => $team_id
     		
     	

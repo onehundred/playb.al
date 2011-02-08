@@ -6,6 +6,7 @@ class Korfbal extends CI_Controller {
 	{
 		parent::__construct();
 		$this->is_logged_in();
+		
 
 		
 		
@@ -75,7 +76,15 @@ class Korfbal extends CI_Controller {
 	
 	function korfbal_stadium()
 	{
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;
+		$this->load->model('korfbal_model');
 		
+		$data['stadion'] = $this->korfbal_model->get_stadion($team_id);
+		
+		
+		$data['main_content'] = 'korfbal/korfbal_stadion';
+		$this->load->view('korfbal/includes/template', $data);
 	
 	}
 	
@@ -104,6 +113,51 @@ class Korfbal extends CI_Controller {
 		);
 		
 		$this->db->insert('korf_opstelling', $insert);
+	}
+	
+	function korfbal_division()
+	{
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;
+		$this->load->model('korfbal_model');
+		
+		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);
+		
+		
+		$data['main_content'] = 'korfbal/korfbal_divisie';
+		$this->load->view('korfbal/includes/template', $data);
+	
+	}
+	
+	
+	function korfbal_manager()
+	{
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;
+		$this->load->model('korfbal_model');
+		
+		$data['manager'] = $this->korfbal_model->get_manager();
+		
+		$data['main_content'] = 'korfbal/korfbal_manager';
+		$this->load->view('korfbal/includes/template', $data);
+	
+	}
+	
+	
+	function korfbal_finances()
+	{
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;	
+		$this->load->model('korfbal_model');
+		
+		$data['financien'] = $this->korfbal_model->get_finances($team_id);
+		
+		
+		$data['main_content'] = 'korfbal/korfbal_financien';
+		$this->load->view('korfbal/includes/template', $data);
+
+		
+	
 	}
 }
 

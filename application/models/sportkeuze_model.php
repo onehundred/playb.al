@@ -102,6 +102,7 @@
     	
     	$new_stadion_insert_data = array(
     		'naam' => $this->input->post('stadionnaam'),
+    		'aantal_plaatsen' => rand(500,2000), 
     		'FK_team_id' => $team_id
     		
     	
@@ -110,6 +111,58 @@
     	$this->db->where('FK_team_id', $team_id);
     	$insert = $this->db->insert('korf_stadion', $new_stadion_insert_data);
     	
+    }
+    
+    //functie om het team toe te wijzen aan een divisie
+    function assign_korfbaldivisie()
+    {
+    	$user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('korf_teams');
+    	
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+    	
+    	
+    	
+    	//gaat elke divisie af, waar het getal onder de 8 is daar voegt hij het team aan toe
+    	$divisies = $this->db->get('korf_divisies');
+    	$divRows = $divisies->num_rows();
+    	
+    	for($i=1;$i<=$divRows;$i++){
+    	
+    			$this->db->where('FK_division_id', $i);
+    			$teams = $this->db->get('korf_teams');
+    			
+    			$teamRows = $teams->num_rows();
+               
+            if($teamRows < 8){
+            
+            	$data = array(
+            		'FK_division_id' => $i
+            	
+            	
+            	);
+            
+               	$this->db->where('FK_user_id', $user_id);
+               	$this->db->update('korf_teams', $data);
+                break;
+
+            }
+
+
+
+          }
+    	
+
+    	
+    
     }
     
     
@@ -128,12 +181,12 @@
     	
     	}
     	
-    	$voornamen = array(
-    					'dimitri', 
-    					'jos',
-    					'flupke',
-    					'quick',
-    					'jozef'
+    	
+    	    	$voornamen = array(
+    					
+    					'Aamos', 'Aapo', 'Aarne', 'Aatos', 'Ahti', 'Aki', 'Aki-Petteri','Akseli', 'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Ari-Pekka', 'Armas' ,'Arsi', 'Arto', 'Arttu', 'Arvi', 'Arvid Atso', 'Atte August', 'Aulis','Christian', 'Eemeli', 'Eemil', 'Eerik', 'Eero', 'Eetu', 'Eino', 'Einojuhani', 'Elias', 'Emppu', 'Ensio', 'Erkki', 'Erno', 'Esa', 'Esa-Pekka Esko'
+
+
     				);
     				
     	$achternamen = array(
@@ -180,7 +233,60 @@
 		
 		$this->db->where('FK_team_id', $team_id);
     	$insert = $this->db->insert('korf_spelers', $new_player_insert_data);
+    	
+    	
     	}
+    	
+    	
+    	//query voor het halen van de spelersgegevens
+    	function get_korfbalplayer()
+    	{
+    	$user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('korf_teams');
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+
+    	
+    	
+    	$playeridquery = $this->db->query("select speler_id from korf_spelers where FK_team_id ='$team_id';");
+    	return $playeridquery;
+
+    	
+    	
+    	}
+    	
+    	
+    	//functie die elke speler skills toekent bij het maken van een team
+    	function assign_korfbalskills($playerid)
+		{
+			//randomwoorde(1-20) teowijzen aan de skills van elke speler
+		
+		$new_skills_insert_data = array(
+			'rebound' => rand(1,12),
+			'passing' => rand(1,12),
+			'stamina' => rand(1,20),
+			'shotpower' => rand(1,12),
+			'shotprecision' => rand(1,12),
+			'playmaking' => rand(1,12),
+			'intercepting' => rand(1,12),
+			'leadership'  => rand(1, 20),
+			'FK_player_id' => $playerid
+		);
+		
+		$this->db->where('FK_player_id', $playerid);
+		$insert = $this->db->insert('korf_skills', $new_skills_insert_data);
+		
+		}
+		
+		
+		
     	
     	//functie om een speler(vrouw) aan te maken
     function create_korfbalplayer_vrouw(){

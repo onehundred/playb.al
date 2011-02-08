@@ -102,6 +102,7 @@
     	
     	$new_stadion_insert_data = array(
     		'naam' => $this->input->post('stadionnaam'),
+    		'aantal_plaatsen' => rand(500,2000), 
     		'FK_team_id' => $team_id
     		
     	
@@ -185,6 +186,7 @@
     	}
     	
     	
+    	//query voor het halen van de spelersgegevens
     	function get_player()
     	{
     	$user_id = $this->session->userdata('user_id');

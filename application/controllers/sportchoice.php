@@ -140,7 +140,7 @@ class Sportchoice extends CI_Controller {
 	{
 		$this->load->library('form_validation');
 		//field name, error message, validation rules
-		
+			
 			$this->form_validation->set_rules('teamnaam', 'Team Name', 'trim|required');
 			$this->form_validation->set_rules('stadionnaam', 'Arena Name', 'trim|required');
 			
@@ -155,20 +155,23 @@ class Sportchoice extends CI_Controller {
 				{
 					for($i=0;$i<6;$i++)
     	    			{
+    	    			//6 spelers per sexe worden aangemaakt
     	    		$this->sportkeuze_model->create_korfbalplayer_man();
     	    		$this->sportkeuze_model->create_korfbalplayer_vrouw();
     	    	
     	    			}
     	    		//Na het aanmaken van de speler worden skills aan ieder van hen toegekend
     	    		
-    	    			$playeridquery = $this->sportkeuze_model->get_player();
+    	    		   $playeridquery = $this->sportkeuze_model->get_player();
     				   foreach($playeridquery->result() as $row)
 						{
-			
+						//skills worden toegewezen per spelers
 						$playerid = $row->speler_id;
 						$this->sportkeuze_model->assign_skills($playerid);
 			
 						}
+						
+						//creatie stadion
     	    		$this->sportkeuze_model->create_korfbalstadion();
     	    			
 					$data['main_content'] = 'korfbal/korfbal_signup_succesful';

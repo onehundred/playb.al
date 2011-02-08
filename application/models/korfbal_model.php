@@ -30,12 +30,19 @@
     
     function get_spelers($team_id)
     {
+    	$this->db->select('*');
+    	$this->db->from('korf_spelers');
+    	$this->db->join('korf_skills','FK_player_id = speler_id');
     	$this->db->where('FK_team_id', $team_id);
-    	$query = $this->db->get('korf_spelers');
+    	$query = $this->db->get();
+    	
     	return $query;
     	
     
     }
+    
+    
+   
     
     
 }

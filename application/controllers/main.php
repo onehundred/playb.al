@@ -19,7 +19,7 @@ class Main extends CI_Controller {
 			 
 		}else{
 				
-		 $data['main_content'] = 'main_login';
+		 $data['main_content'] = 'main_index';
 		 $this->load->view('includes/template', $data);
 		}
 	}

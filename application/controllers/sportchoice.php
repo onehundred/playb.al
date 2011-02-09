@@ -95,8 +95,8 @@ class Sportchoice extends CI_Controller {
 		
 		if(!isset($is_logged_in) || $is_logged_in != true)
 		{
-		 $data['main_content'] = 'session_fail';
-		 $this->load->view('includes/template', $data);
+		  redirect('main/index');
+
 			
 			 
 		}

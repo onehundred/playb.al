@@ -19,13 +19,13 @@ class Korfbal extends CI_Controller {
 		
 		if(!isset($is_logged_in) || $is_logged_in != true)
 		{
-		 $data['main_content'] = 'session_fail';
-		 $this->load->view('includes/template', $data);
+
+		 redirect('main/index');
 			
 		}
 	}
 
-	//de mainfunctie van korfbal -> laad de hoofdpage
+	//de mainfunctie van korfbal -> laadt de hoofdpage
 	function korfbal_start()
 	{
 		$team_id = $this->uri->segment('3');

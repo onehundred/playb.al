@@ -1,6 +1,6 @@
 <?php $this->load->view('includes/head');?>
 <?php $this->load->view('includes/header');?>
-<?php $this->load->view('includes/session_succes');?>
+
 
 <?php $this->load->view($main_content);?>
 

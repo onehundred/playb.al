@@ -67,20 +67,33 @@
     {
     
     	$user_id = $this->session->userdata('user_id');    	
+    	$mdate =  date('Y-m-d h:i:s');
+    	
+    	$this->db->select('team_id');
+    	$this->db->where('bot', '0');
+    	$this->db->order_by('team_id','desc');
+    	$query = $this->db->get('korf_teams');
+    	
+    	
+    	 foreach($query->result() as $row)
+    	 {
+    	 	$teamid = $row->team_id;
+    	 
+    	 }   	
     	    	
     	    	
-    	    	
-    	$new_team_insert_data = array(
+    	$new_team_update_data = array(
     		'naam' => $this->input->post('teamnaam'),
     		'FK_user_id' => $user_id,
-    		'startdatum' => 'now()'
+    		'startdatum' => $mdate, 
+    		'bot' => '1'
     	
     	);
     	
     	
-    	$this->db->where('FK_user_id', $user_id);
-    	$insert = $this->db->insert('korf_teams', $new_team_insert_data);
-    	return $insert;			
+    	$this->db->where('team_id', $teamid);
+    	$update = $this->db->update('korf_teams', $new_team_update_data);
+    	return $update;			
     }
     
     //maakt het korfbalstadion aan
@@ -114,7 +127,8 @@
     }
     
     //functie om het team toe te wijzen aan een divisie
-    function assign_korfbaldivisie()
+    // word automatisch gedaan in de cron/bot functie
+    /*function assign_korfbaldivisie()
     {
     	$user_id = $this->session->userdata('user_id');
     	
@@ -132,12 +146,14 @@
     	
     	
     	//gaat elke divisie af, waar het getal onder de 8 is daar voegt hij het team aan toe
+    	
     	$divisies = $this->db->get('korf_divisies');
     	$divRows = $divisies->num_rows();
     	
     	for($i=1;$i<=$divRows;$i++){
     	
     			$this->db->where('FK_division_id', $i);
+    			$this->db->where('bot', 0);
     			$teams = $this->db->get('korf_teams');
     			
     			$teamRows = $teams->num_rows();
@@ -163,7 +179,7 @@
 
     	
     
-    }
+    }*/
     
     
     //functie om een speler(man) aan te maken
@@ -184,7 +200,7 @@
     	
     	    	$voornamen = array(
     					
-    					'Aamos', 'Aapo', 'Aarne', 'Aatos', 'Ahti', 'Aki', 'Aki-Petteri','Akseli', 'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Ari-Pekka', 'Armas' ,'Arsi', 'Arto', 'Arttu', 'Arvi', 'Arvid Atso', 'Atte August', 'Aulis','Christian', 'Eemeli', 'Eemil', 'Eerik', 'Eero', 'Eetu', 'Eino', 'Einojuhani', 'Elias', 'Emppu', 'Ensio', 'Erkki', 'Erno', 'Esa', 'Esa-Pekka Esko'
+    					'Aamos', 'Aapo', 'Aarne', 'Aatos', 'Ahti', 'Aki', 'Aki-Petteri','Akseli', 'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Ari-Pekka', 'Armas' ,'Arsi', 'Arto', 'Arttu', 'Arvi', 'Arvid Atso', 'Atte August', 'Aulis','Christian', 'Eemeli', 'Eemil', 'Eerik', 'Eero', 'Eetu', 'Eino', 'Einojuhani', 'Elias', 'Emppu', 'Ensio', 'Erkki', 'Erno', 'Esa', 'Esa-Pekka','Esko'
 
 
     				);

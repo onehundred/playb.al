@@ -20,7 +20,8 @@ h2 {
 		echo form_open('main/login');
 		echo form_input('username', 'Username');
 		echo form_password('password', 'Password');
-		echo form_submit('submit', 'Login');	
+		echo form_submit('submit', 'Login');
+		echo form_close();	
 		echo anchor('main/signup','Create account');
 		} 
 	?>

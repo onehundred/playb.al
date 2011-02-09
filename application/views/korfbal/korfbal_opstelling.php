@@ -35,7 +35,7 @@
   				//alert (dataString);return false;
   				$.ajax({
     			type: "POST",
-    			url: "http://localhost:8888/eindwerk/eindwerk/index.php/korfbal/korfbal_reorder",
+    			url: "http://playb.al/index.php/korfbal/korfbal_reorder",
     			data: dataString,
     			success: function() {
     			alert("Player has been assigned");

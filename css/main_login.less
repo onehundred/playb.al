@@ -3,6 +3,7 @@
 /* GLOBALS start */
 
 @selectionColor: rgba(232, 34, 55, 1);
+@headerHeight: 50px;
 @footerHeight: 150px;
 
 /* GLOBALS end */
@@ -18,7 +19,6 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 }
 html, body {
 	height:100%;
-
 }
 #wrap {
 	min-height:100%;
@@ -36,9 +36,11 @@ a img {
 figure {
 	position: relative;
 }
+/*
 figure img {
 	width: 100%;
 }
+*/
 /* RESETS end */
 
 /* TYPE PRESETS begin */
@@ -85,6 +87,8 @@ figure img {
 body {
 	background: #f2f2f2;
 	padding: 0 60px 0;
+	margin-left:auto;
+	margin-right:auto;
 	width: 648px;
  -webkit-tap-highlight-color: @selectionColor;
 }
@@ -100,6 +104,17 @@ img::selection {
 img::-moz-selection {
  background: transparent;
 }
+header {
+	background-color: #FFF;
+	height: @headerHeight;
+	}
+ #logo {
+ padding: 7px;
+	 width: : 123px;
+	 height: 47px;
+	 float:left;	 
+	 }
+
 footer {
 	position:absolute;
 	bottom:0;
@@ -141,6 +156,14 @@ body {
 	height: 300px;
 	background: rgb(250,97,158);
 }
+	 #logo {
+	 width: : 130px;
+	 height: 50px;	 
+	 }
+header {
+	background-color: #C6C;
+	height: @headerHeight;}
+	
 footer {
 	position:absolute;
 	bottom:0;
@@ -175,6 +198,13 @@ body {
 #main_login {
 	background-color:#00F;
 }
+header {
+	background-color: #C6C;
+	height: @headerHeight;}
+	 #logo {
+	 width: : 200px;
+	 height: 77px;	 
+	 }
 footer {
 	position:absolute;
 	bottom:0;
@@ -209,6 +239,13 @@ body {
 #main_login {
 	background-color:#FF0;
 }
+header {
+	background-color: #C6C;
+	height: @headerHeight;}
+ #logo {
+	 width: : 200px;
+	 height: 77px;	 
+	 }
 footer {
 	position:absolute;
 	bottom:0;
@@ -217,11 +254,7 @@ footer {
 	background:#FF0;
 }
 }
-/*	Overrides for iPhone 4 
-
-	and other high device-pixel-ratio devices
-
-	-----------------------------------------	*/
+/*	Overrides for iPhone 4 and other high device-pixel-ratio devices */
 
 
 
@@ -256,6 +289,7 @@ footer {
 	font-weight: normal;
 	font-style: normal;
 }
+/*
 #main_login input[type="text"], input[type="password"] {
 	display:block;
 	margin: 0 0 1em 0;
@@ -277,6 +311,7 @@ footer {
 	background-color: silver;
 	width: 200px;
 }
+*/
 
 
 h2 {
@@ -328,16 +363,3 @@ h2 {
 #volleybal_signup #steps li span {font-size:11px; display:block;}
 #volleybal_signup #steps li.current { color:#000;}      
 */ 
-
-
-
-
-
-
-
-
-
-
-
-
-

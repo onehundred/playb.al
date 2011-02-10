@@ -91,6 +91,43 @@
     }
     
     
+    function insert_opstelling($field,$spelernaam,$teamid)
+    {
+    
+    
+    $this->db->select('FK_team_id');
+    $this->db->where('FK_team_id', $teamid);
+    $query = $this->db->get('korf_opstelling');
+    
+    if($query->num_rows == 0)
+    {
+    	$insert = array(
+    		$field => $spelernaam,
+    		'FK_team_id' => $teamid,
+    		
+    	
+    	
+    	);
+    	
+    	
+    	$this->db->insert('korf_opstelling', $insert);
+    
+    }
+    else{
+    	$update = array(
+			$field => $spelernaam,
+			
+		
+		);
+		
+		
+		$this->db->where('FK_team_id', $teamid);
+		$this->db->update('korf_opstelling', $update);
+    	}
+    
+    }
+    
+    
    
     
     

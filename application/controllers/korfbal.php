@@ -106,13 +106,61 @@ class Korfbal extends CI_Controller {
 	function korfbal_reorder()
 	{
 		$spelersnaam = $_POST['spelername'];
+		$positie = $_POST['positie'];
+		$teamid = $_POST['teamid'];
 		
-		$insert = array(
-			'spelernaam' => $spelersnaam
+		if($positie=="rebound1")
+		{
+			$field = "rebound1_speler";
+		}
 		
-		);
+		if($positie=="playmaking1")
+		{
+			$field = "playmaking1_speler";
+		}
 		
-		$this->db->insert('korf_opstelling', $insert);
+		if($positie=="attack1")
+		{
+			$field = "attack1_speler";
+		}
+		
+		if($positie=="attack2")
+		{
+			$field = "attack2_speler";
+		}
+		
+		if($positie=="playmaking2")
+		{
+			$field = "playmaking2_speler";
+		}
+		
+		if($positie=="rebound2")
+		{
+			$field = "rebound2_speler";
+		}
+		
+		if($positie=="attack3")
+		{
+			$field = "attack3_speler";
+		}
+		
+		if($positie=="attack4")
+		{
+			$field = "attack4_speler";
+		}
+		
+		if($positie=="captain")
+		{
+			$field = "captain_speler";
+		}
+		
+		if($positie=="setpieces")
+		{
+			$field = "setpieces_speler";
+		}
+		
+		$this->load->model(korfbal_model);
+		$this->korfbal_model->insert_opstelling($field,$spelersnaam,$teamid);
 	}
 	
 	function korfbal_division()

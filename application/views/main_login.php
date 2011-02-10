@@ -1,5 +1,5 @@
 <div id="log"><a href="#">login</a></div>
-<div id="login" style="display:none;">
+<div id="login">
    <!--  <h1>login</h1> -->
     <?php
     $user_id = $this->session->userdata('user_id'); 

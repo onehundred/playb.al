@@ -1,115 +1,231 @@
 <style>
 	h1 { padding: .2em; margin: 0; }
-	#products { float:left; width: 500px; margin-right: 2em; }
-	#catalog li {width: 100px;}
-	#defense1, #defense2, #defense3, #defense4 { width: 200px; float: left; margin-left: 10px; }
+	#players { float:left; width: 500px; margin-right: 2em; }
+	#catalog li {width: 100px; margin-top: 15px; background-color: gray; list-style: none;}
+	#rebound1, #playmaking1, #attack1, #attack2 { width: 100px; height: 100px; float: left; margin-left: 10px; }
 	/* style the list to maximize the droppable hitarea */
-	#defense1 ul, #defense2 ul, #defense3 ul, #defense4 ul { margin: 0; padding: 1em 0 1em 3em; list-style: none; }
-	</style>
-	<script>
-	$(function() {
-		
-		$( "#catalog li" ).draggable({ 
-			cursor: 'cursor',
-			helper: 'original',
-			revert: true,
-			appendTo: "body"
-			
-		});
-		
-		
-		$( "#defense1 ul, #defense2 ul, #defense3 ul, #defense4 ul" ).droppable({
-			activeClass: "ui-state-default",
-			hoverClass: "ui-state-hover",
-			accept: ":not(.ui-sortable-helper)",
-			drop: function( event, ui ) {
-				$( this ).find( ".placeholder" ).remove();
-				$(this).empty();
-				$( "<li></li>" ).text( ui.draggable.text() ).appendTo( this );
-				
-				var spelername = $(this).text(ui.droppable);
-				
-				alert(spelername);
-				//alert(defensename);	
-				var dataString = 'spelername='+ spelername;
-  				//alert (dataString);return false;
-  				$.ajax({
-    			type: "POST",
-    			url: "http://playb.al/index.php/korfbal/korfbal_reorder",
-    			data: dataString,
-    			success: function() {
-    			alert("Player has been assigned");
-      
-                }
-  				});
-  				return false;
-  		
-			
-			
-
-				
-			}
-		})
-	});
-	</script>
-
-
-
-<div class="demo">
+	#rebound1 ul, #attack1 ul, #attack2 ul, #playmaking1 ul { margin: 0; height: 40px; padding-left: 4px; list-style: none; }
 	
-<div id="products">
-	<h1 class="ui-widget-header">Korfbal</h1>	
+	
+		#rebound2, #playmaking2, #attack3, #attack4 { width: 100px; height: 100px; float: left; margin-left: 10px; }
+	/* style the list to maximize the droppable hitarea */
+	#rebound2 ul, #attack4 ul, #attack3 ul, #playmaking2 ul { margin: 0; height: 40px; padding-left: 4px; list-style: none; }
+	
+	#captain, #setpieces{ width: 100px; height: 100px; float: left; margin-left: 10px; }
+	/* style the list to maximize the droppable hitarea */
+	#captain ul, #setpieces ul { margin: 0; height: 40px; padding-left: 4px; list-style: none; }
+	#vak2 {width: 500px; float:right; margin-right: 300px; margin-top: 25px;}
+	#vak1 {width: 500px; float:right; margin-right: 300px; margin-top: 25px;}
+	#general {width: 500px; float:right; margin-right: 300px; margin-top: 25px; margin-bottom: 25px;}
+	.tooltip {
+	display:none;
+	font-size:12px;
+	height:70px;
+	width:160px;
+	padding:25px;
+	color:#fff;	
+}
+	</style>
+	<style>
+	
+	 /* Bubble pop-up */
+	   .bubbleInfo {
+            position: relative;
+            
+        }
+
+        .popup {
+                position: absolute;
+                display: none;
+                margin-left: 150px;
+                z-index: 50;
+                margin-top:-50px;
+                border: 1px solid;
+               }
+
+       
+    </style>
+    
+<div>
+	
+<div id="players">
+	<h1>Korfbal</h1>	
 	<div id="catalog">
 		<h3><a href="#">Players</a></h3>
 		<div>
 			<ul>
-				<?php foreach($spelers->result() as $row){  ?>
-				<li><?php echo $row->voornaam.' '.$row->achternaam; ?></li>
-				
-				
-				<?php } ?>
+			  <?php foreach($spelers->result() as $row){  ?>
+    <div class="bubbleInfo">
+        <div>
+         
+          <li class="trigger"><?php echo $row->voornaam.' '.$row->achternaam; ?></li>
+            
+            
+        </div>
+        <div id="dpop" class="popup">
+        	<p>Rebound:<?php echo $row->rebound; ?>/20</p>
+        	<p>Stamina:<?php echo $row->stamina; ?>/20</p>
+			<p>Passing:<?php echo $row->passing; ?>/20</p>
+			<p>Shotpower:<?php echo $row->shotpower; ?>/20</p>
+			<p>Shotprecision:<?php echo $row->shotprecision; ?>/20</p>
+			<p>Playmaking:<?php echo $row->playmaking; ?>/20</p>
+			<p>Intercepting:<?php echo $row->intercepting; ?>/20</p>
+			<p>Leadership:<?php echo $row->leadership; ?>/20</p>
+        </div>
+ 
+    </div>
+    <?php } ?>
+
 			</ul>
 		</div>
 			</div>
 </div>
 
-<div id="defense1">
-	<h1 class="ui-widget-header">Defense 1</h1>
+
+<?php foreach($opstelling->result() as $row)
+{
+	$rebound1 = $row->rebound1_speler;
+	$playmaking1 = $row->playmaking1_speler;
+	$attack1 = $row->attack1_speler;
+	$attack2 = $row->attack2_speler;
+	$rebound2 = $row->rebound2_speler;
+	$playmaking2 = $row->playmaking2_speler;
+	$attack3 = $row->attack3_speler;
+	$attack4 = $row->attack4_speler;
+	$captain = $row->captain_speler;
+	$setpieces = $row->setpieces_speler;
+}?>
+<div id="vak1">
+<h2>Vak1</h2>
+<div id="rebound1">
+	<h3>Rebound</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($rebound1)){
+			echo $rebound1;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
 
-<div id="defense2">
-	<h1 class="ui-widget-header">Defense 2</h1>
+<div id="playmaking1">
+	<h3>Playmaking</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($playmaking1)){
+			echo $playmaking1;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
 
-<div id="defense3">
-	<h1 class="ui-widget-header">Defense 3</h1>
+<div id="attack1">
+	<h3>Attack 1</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($attack1)){
+			echo $attack1;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
 
-<div id="defense4">
-	<h1 class="ui-widget-header">Defense 4</h1>
+<div id="attack2">
+	<h3>Attack2</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($attack2)){
+			echo $attack2;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
+</div>
+
+
+<div id="vak2">
+<h2>Vak2</h2>
+<div id="rebound2">
+	<h3>Rebound</h3>
+	<div class="ui-widget-content">
+		<ul>
+			<li class="placeholder"><?php if(isset($rebound2)){
+			echo $rebound2;
+			}else{ ?> Add player <?php } ?></li>
+		</ul>
+	</div>
+</div>
+
+<div id="playmaking2">
+	<h3>Playmaking</h3>
+	<div class="ui-widget-content">
+		<ul>
+			<li class="placeholder"><?php if(isset($playmaking2)){
+			echo $playmaking2;
+			}else{ ?> Add player <?php } ?></li>
+		</ul>
+	</div>
+</div>
+
+<div id="attack3">
+	<h3>Attack 1</h3>
+	<div class="ui-widget-content">
+		<ul>
+			<li class="placeholder"><?php if(isset($attack3)){
+			echo $attack3;
+			}else{ ?> Add player <?php } ?></li>
+		</ul>
+	</div>
+</div>
+
+<div id="attack4">
+	<h3>Attack2</h3>
+	<div class="ui-widget-content">
+		<ul>
+			<li class="placeholder"><?php if(isset($attack4)){
+			echo $attack4;
+			}else{ ?> Add player <?php } ?></li>
+		</ul>
+	</div>
+</div>
+</div>
+
+<div id="general">
+<h2>General</h2>
+<div id="captain">
+	<h3>Captain</h3>
+	<div class="ui-widget-content">
+		<ul>
+			<li class="placeholder"><?php if(isset($captain)){
+			echo $captain;
+			}else{ ?> Add player <?php } ?></li>
+		</ul>
+	</div>
+</div>
+
+<div id="setpieces">
+	<h3>Set pieces</h3>
+	<div class="ui-widget-content">
+		<ul>
+			<li class="placeholder"><?php if(isset($setpieces)){
+			echo $setpieces;
+			}else{ ?> Add player <?php } ?></li>
+		</ul>
+	</div>
+</div>
+
+</div>
+</div>
+
+<input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>" />
+
+
+
+
 
 </div><!-- End demo -->
+<script src="<?php echo base_url();?>/js/korfbal_opstelling.js"></script>
+<script src="<?php echo base_url();?>/js/toastmessage/jquery.toastmessage.js"></script>
 
 
 

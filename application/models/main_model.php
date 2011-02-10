@@ -35,8 +35,6 @@
     		'achternaam' => $this->input->post('achternaam'),
     		'email' => $this->input->post('email'),
     		'land' => $this->input->post('land'),
-    		'gemeente' => $this->input->post('gemeente'),
-    		'adres' => $this->input->post('adres'),
     		'gebruikersnaam' => $this->input->post('username'),
     		
     		'paswoord' => md5($this->input->post('paswoord')),

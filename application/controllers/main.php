@@ -93,8 +93,6 @@ class Main extends CI_Controller {
 			$this->form_validation->set_rules('voornaam', 'Name', 'trim|required');
 			$this->form_validation->set_rules('achternaam', 'Last Name', 'trim|required');
 			$this->form_validation->set_rules('land', 'Country', 'trim|required');
-			$this->form_validation->set_rules('gemeente', 'State', 'trim|required');
-			$this->form_validation->set_rules('adres', 'address', 'trim|required');
 			$this->form_validation->set_rules('email', 'E-maill', 'trim|required|valid_email');
 			
 			

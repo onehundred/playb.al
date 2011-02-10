@@ -6,10 +6,18 @@
             $("#SignupForm").formToWizard({ submitButton: 'submit' })
         });    
 </script>
+<script>
+$("#showLogin").hover(function() { 
+			$('#showLogin').hide();
+			$('#login').slideDown(200);
+			
+			});
+
+</script>
 </div> <!-- end main -->
 </div> <!-- end wrap -->
 <footer>
-   test 
+    
 </footer>
 </body>
 </html>

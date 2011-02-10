@@ -3,22 +3,41 @@
 /* GLOBALS start */
 
 @korfbalColor: #ebbb25;
+@korfbalBorderColor: #d1a521;
 @basketbalColor: #e55714;
+@basketbalBorderColor: #cc4d12;
 @volleybalColor: #295666;
+@volleybalBorderColor: #1f404d;
 @grey: #f2f2f2;
 @selectionColor: rgba(232, 34, 55, 1);
 @headerHeight: 75px;
-@footerHeight: 250px;
+@footerHeight: 150px;
+.borders {
 
-.borderRadius{ -moz-border-radius: 3px; border-radius: 3px;}
-
-.innerShadow {-webkit-box-shadow: inset 0px 0px 10px #bdbdbd;
--moz-box-shadow: inset 0px 0px 10px #bdbdbd;
-box-shadow: inset 0px 0px 10px #bdbdbd;}
-
-.textShadow {text-shadow: 0px 0px 7px #474747;}
-
-
+ border: 1px solid
+}
+.borderRadius {
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.transitionOn{-webkit-transition-duration: 0.15s;
+-webkit-transition-timing-function: ease-in-out;
+}
+.transitionOff{-webkit-transition-duration: 1s;}
+.lessOpacity {
+opacity: 0.9;
+}
+.moreOpacity {
+opacity: 1;
+}
+.innerShadow {
+	-webkit-box-shadow: inset 0px 0px 10px #bdbdbd;
+	-moz-box-shadow: inset 0px 0px 10px #bdbdbd;
+	box-shadow: inset 0px 0px 10px #bdbdbd;
+}
+.textShadow {
+	text-shadow: 0px 0px 7px #474747;
+}
 /* GLOBALS end */
 
 /*	Less Framework 3 by Joni Korpi http://lessframework.com	*/
@@ -33,23 +52,24 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 html, body {
 	height:100%;
 }
-#topbar {background-color: #d9d9d9;
-height: 7px;
+#topbar {
+	background-color: #d9d9d9;
+	height: 7px;
 }
 #wrap {
 	min-height: 100%;
-	
 }
 #main {
 	overflow:auto;
-	padding-bottom: @footerHeight;
+ padding-bottom: @footerHeight;
 }  /* must be same height as the footer */
 footer {
 	position: relative;
-	margin-top: -150px; /* negative value of footer height */
-	height: @footerHeight;
+	margin-top: -@footerHeight; /* negative value of footer height */
+ height: @footerHeight;
 	clear:both;
 	background-color: #000;
+	overflow: hidden;
 }
 /*Opera Fix*/
 body:before {/* thanks to Maleika (Kohoutec)*/
@@ -118,7 +138,7 @@ figure img {
 
 body {
 	background: #f2f2f2;
-		padding: 0 60px 0;
+	padding: 0 60px 0;
 	margin-left:auto;
 	margin-right:auto;
 	width: 648px;
@@ -145,11 +165,10 @@ header {
 	height: 47px;
 	float:left;
 }
-
-#login {
+#login, #showLogin {
 	background-color:#3F0;
 	padding: 10px;
-	 float:right;
+	float:right;
 }
 /*	13-column layout
 
@@ -171,28 +190,24 @@ header {
  width: : 104px;
 	height: 40px;
 }
-#login {
- background-color:#e5e5e5;
- float:right;
+#login, #showLogin {
+	background-color:#e5e5e5;
+	float:right;
 }
-#login a {background-color: #000;}
+#login a {
+	background-color: #000;
+}
 /*#columns {
 	padding-left: 168px;
 }*/
 #create {
-float: right;
-clear: left;
-
+	float: right;
+	clear: left;
 }
 body {
 	padding: 0 72px 0;
 	width: 1068px;
 }
-
-
-
-
-
 #layouts section {
 	float: left;
 	width: 100%;
@@ -233,21 +248,82 @@ body {
 	padding: 3px 0;
 }
 #korfbal {
-	background-color: @korfbalColor;
+ background-color: @korfbalColor;
+	height: 250px;
+ .borderRadius;
+  border: 1px solid @korfbalBorderColor;
+  .lessOpacity;
+    .transitionOff;
+    top: 100px;
+    
+  
+}
+#korfbal:hover {
+ background-color: @korfbalColor;
 	height: 500px;
-	.borderRadius;
+ .borderRadius;
+  border: 1px solid @korfbalBorderColor;
+  .moreOpacity;
+   .transitionOn;
+   top: 0px;
+
 }
 #basketbal {
-	background-color: @basketbalColor;
+ background-color: @basketbalColor;
 	margin-left: 150px;
-	height: 500px;
-		.borderRadius;
+	height: 250px;
+ .borderRadius;
+   border: 1px solid @basketbalBorderColor;
+   .lessOpacity;
+    .transitionOff;
+    top: 100px;
 }
-#volleybal {
-	background-color: @volleybalColor;
+#basketbal:hover {
+ background-color: @basketbalColor;
 	margin-left: 150px;
 	height: 500px;
-		.borderRadius;
+ .borderRadius;
+   border: 1px solid @basketbalBorderColor;
+   .moreOpacity;
+    .transitionOn;
+    top: 0px;
+}
+
+#volleybal {
+ background-color: @volleybalColor;
+	margin-left: 125px;
+	height: 250px;
+ .borderRadius;
+   border: 1px solid @volleybalBorderColor;
+   .lessOpacity;
+    .transitionOff;
+    top: 100px;
+
+}
+#volleybal:hover {
+ background-color: @volleybalColor;
+	margin-left: 125px;
+	height: 500px;
+ .borderRadius;
+   border: 1px solid @volleybalBorderColor;
+   .moreOpacity;
+    .transitionOn;
+    top: 0px;
+    
+
+}
+#bal {
+position: absolute;
+bottom: -20px;
+right: -20px;
+z-index: 9;
+}
+#create {
+position: absolute;
+bottom: 0px;
+font-size: 70px;
+z-index: 10;
+background-color: green;
 }
 }
 
@@ -383,12 +459,10 @@ header {
 h1 {
 	font-family: 'LeagueGothicRegular';
 	text-transform: uppercase;
-	color: @grey;
-	padding: 7px;
-	.textShadow;
+ color: @grey;
+	padding-left: 15px;
+ .textShadow;
 	font-size: 48px;
-
-	
 }
 h2 {
 	font-family: 'SFCollegiateSolidRegular';

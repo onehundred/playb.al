@@ -1,6 +1,6 @@
 <section id="layouts">
     <figure id="korfbal">
-        <h2>Korfbal</h2>
+        <h1>Korfbal</h1>
         <p>
             <?php if(isset($korfNaam)){
 	echo anchor("korfbal/korfbal_start/$korfId", $korfNaam);
@@ -13,7 +13,7 @@
         </p>
     </figure>
     <figure id="basketbal">
-     <h2>Basketbal</h2>
+     <h1>Basketbal</h1>
         <p>
             <?php if(isset($basNaam)){
 	
@@ -29,7 +29,7 @@
 
             </figure>
     <figure id="volleybal">
-    <h2>Volleybal</h2>
+    <h1>Volleybal</h1>
         <p>
             <?php if(isset($volNaam)){
 		echo $volNaam;

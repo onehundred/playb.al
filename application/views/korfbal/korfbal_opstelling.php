@@ -17,9 +17,36 @@
 	#vak2 {width: 500px; float:right; margin-right: 300px; margin-top: 25px;}
 	#vak1 {width: 500px; float:right; margin-right: 300px; margin-top: 25px;}
 	#general {width: 500px; float:right; margin-right: 300px; margin-top: 25px; margin-bottom: 25px;}
+	.tooltip {
+	display:none;
+	font-size:12px;
+	height:70px;
+	width:160px;
+	padding:25px;
+	color:#fff;	
+}
 	</style>
+	<style>
+	
+	 /* Bubble pop-up */
+	   .bubbleInfo {
+            position: relative;
+            
+        }
 
-<div class="demo">
+        .popup {
+                position: absolute;
+                display: none;
+                margin-left: 150px;
+                z-index: 50;
+                margin-top:-50px;
+                border: 1px solid;
+               }
+
+       
+    </style>
+    
+<div>
 	
 <div id="players">
 	<h1>Korfbal</h1>	
@@ -27,26 +54,56 @@
 		<h3><a href="#">Players</a></h3>
 		<div>
 			<ul>
-				<?php foreach($spelers->result() as $row){  ?>
-				<li><?php echo $row->voornaam.' '.$row->achternaam; ?></li>
-				
-				
-				
-				<?php } ?>
+			  <?php foreach($spelers->result() as $row){  ?>
+    <div class="bubbleInfo">
+        <div>
+         
+          <li class="trigger"><?php echo $row->voornaam.' '.$row->achternaam; ?></li>
+            
+            
+        </div>
+        <div id="dpop" class="popup">
+        	<p>Rebound:<?php echo $row->rebound; ?>/20</p>
+        	<p>Stamina:<?php echo $row->stamina; ?>/20</p>
+			<p>Passing:<?php echo $row->passing; ?>/20</p>
+			<p>Shotpower:<?php echo $row->shotpower; ?>/20</p>
+			<p>Shotprecision:<?php echo $row->shotprecision; ?>/20</p>
+			<p>Playmaking:<?php echo $row->playmaking; ?>/20</p>
+			<p>Intercepting:<?php echo $row->intercepting; ?>/20</p>
+			<p>Leadership:<?php echo $row->leadership; ?>/20</p>
+        </div>
+ 
+    </div>
+    <?php } ?>
+
 			</ul>
 		</div>
 			</div>
 </div>
 
 
-
+<?php foreach($opstelling->result() as $row)
+{
+	$rebound1 = $row->rebound1_speler;
+	$playmaking1 = $row->playmaking1_speler;
+	$attack1 = $row->attack1_speler;
+	$attack2 = $row->attack2_speler;
+	$rebound2 = $row->rebound2_speler;
+	$playmaking2 = $row->playmaking2_speler;
+	$attack3 = $row->attack3_speler;
+	$attack4 = $row->attack4_speler;
+	$captain = $row->captain_speler;
+	$setpieces = $row->setpieces_speler;
+}?>
 <div id="vak1">
 <h2>Vak1</h2>
 <div id="rebound1">
 	<h3>Rebound</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($rebound1)){
+			echo $rebound1;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
@@ -55,7 +112,9 @@
 	<h3>Playmaking</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($playmaking1)){
+			echo $playmaking1;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
@@ -64,7 +123,9 @@
 	<h3>Attack 1</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($attack1)){
+			echo $attack1;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
@@ -73,7 +134,9 @@
 	<h3>Attack2</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($attack2)){
+			echo $attack2;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
@@ -86,7 +149,9 @@
 	<h3>Rebound</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($rebound2)){
+			echo $rebound2;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
@@ -95,7 +160,9 @@
 	<h3>Playmaking</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($playmaking2)){
+			echo $playmaking2;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
@@ -104,7 +171,9 @@
 	<h3>Attack 1</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($attack3)){
+			echo $attack3;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
@@ -113,7 +182,9 @@
 	<h3>Attack2</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($attack4)){
+			echo $attack4;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
@@ -125,7 +196,9 @@
 	<h3>Captain</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($captain)){
+			echo $captain;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>
@@ -134,7 +207,9 @@
 	<h3>Set pieces</h3>
 	<div class="ui-widget-content">
 		<ul>
-			<li class="placeholder">Add player</li>
+			<li class="placeholder"><?php if(isset($setpieces)){
+			echo $setpieces;
+			}else{ ?> Add player <?php } ?></li>
 		</ul>
 	</div>
 </div>

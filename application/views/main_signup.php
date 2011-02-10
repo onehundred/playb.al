@@ -8,8 +8,6 @@
 		echo form_input('achternaam', set_value('achternaam', 'Last Name'));
 		echo form_input('email', set_value('email', 'E-Mail'));
 		echo form_input('land', set_value('land', 'Country'));
-		echo form_input('gemeente', set_value('gemeente', 'State'));
-		echo form_input('adres', set_value('adres', 'address'));
 	?>
 </fieldset>	
 <fieldset>

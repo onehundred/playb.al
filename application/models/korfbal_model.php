@@ -41,6 +41,16 @@
     
     }
     
+    
+    function get_opstelling($team_id)
+    {
+    	$this->db->select('*');
+    	$this->db->where('FK_team_id', $team_id);
+    	$query = $this->db->get('korf_opstelling');
+    	return $query;
+    
+    }
+    
     function get_manager()
     {
     

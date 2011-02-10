@@ -103,6 +103,8 @@ class Korfbal extends CI_Controller {
 		
 	}
 	
+	
+	//nakijken welke positie word ingevuld en dan inserten of updaten indien team bestaat of niet
 	function korfbal_reorder()
 	{
 		$spelersnaam = $_POST['spelername'];

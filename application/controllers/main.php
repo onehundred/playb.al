@@ -76,6 +76,14 @@ class Main extends CI_Controller {
 	}
 	
 	
+	function logout()
+	{
+		$this->session->sess_destroy();
+		$this->index();
+	
+	}
+	
+	
 	//functie die de user gaat aanmaken in de db
 	function create_user()
 	{

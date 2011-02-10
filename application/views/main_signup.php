@@ -18,7 +18,8 @@
 		echo form_input('username', set_value('username', 'Username'));
 		echo form_input('paswoord', set_value('paswoord', 'Password'));
 		echo form_input('paswoord2', set_value('paswoord2', 'Password confirm'));
-		echo form_submit('submit', 'Create account');
+		echo form_submit('submitsignup', 'Create account');
+		echo form_close();
 	?>
 <?php echo validation_errors('<p class="errors">');?>
 </fieldset>	 

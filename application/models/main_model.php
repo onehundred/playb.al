@@ -26,6 +26,10 @@
     
     function create_user()
     {
+    	
+
+		$mdate =  date('Y-m-d h:i:s');
+		
     	$new_user_insert_data = array(
     		'voornaam' => $this->input->post('voornaam'),
     		'achternaam' => $this->input->post('achternaam'),
@@ -36,7 +40,7 @@
     		'gebruikersnaam' => $this->input->post('username'),
     		
     		'paswoord' => md5($this->input->post('paswoord')),
-    		'datum_creatie' => 'now()'
+    		'datum_creatie' => $mdate
     	
     	);
     	

@@ -6,9 +6,10 @@
             $("#SignupForm").formToWizard({ submitButton: 'submit' })
         });    
 </script>
-</div> <!-- end cont -->
+</div> <!-- end main -->
+</div> <!-- end wrap -->
 <footer>
-    </footer>
-    </div> <!-- end wrap -->
+   test 
+</footer>
 </body>
 </html>

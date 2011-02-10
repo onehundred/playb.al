@@ -1,13 +1,5 @@
-<style type="text/css">
-h1 {
-	font-family: 'LeagueGothicRegular';
-}
-h2 {
-	font-family: 'SFCollegiateSolidRegular';
-}
-</style>
 <div id="columns">
-	<div id="main_login" style="float:right;">
+	<div id="login" style="float:right;">
    <!--  <h1>login</h1> -->
     <?php
     $user_id = $this->session->userdata('user_id'); 
@@ -21,7 +13,7 @@ h2 {
 		echo form_input('username', 'Username');
 		echo form_password('password', 'Password');
 		echo form_submit('submit', 'Login');
-		echo form_close();	
+/* 		todo: create account lostrekken */	
 		echo anchor('main/signup','Create account');
 		} 
 	?>

@@ -10,9 +10,7 @@
 $("#showLogin").hover(function() { 
 			$('#showLogin').hide();
 			$('#login').slideDown(200);
-			
 			});
-
 </script>
 </div> <!-- end main -->
 </div> <!-- end wrap -->

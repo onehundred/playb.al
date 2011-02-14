@@ -1,6 +1,6 @@
 <div>
-<?php foreach($matches->result() as $row){ ?>
-		<p><?php echo $row->thuisteam;?>-<?php echo $row->bezoekersteam;?>&nbsp;<?php $uitslag = $row->uitslag;
+<?php for($i=1;$i<15;$i++){ ?>
+		<p><?php echo $matches[$i]['thuis'];?>-<?php echo $matches[$i]['uit'];?>&nbsp;<?php $uitslag = $matches[$i]['uitslag'];
 		if(isset($uitslag)){
 			echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$uitslag;
 		

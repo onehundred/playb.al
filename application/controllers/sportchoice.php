@@ -171,10 +171,9 @@ class Sportchoice extends CI_Controller {
 			
 						}
 						
-						
-						//toewijzing divisie
-						
-						//$this->sportkeuze_model->assign_korfbaldivisie();
+					//toewijzing financien
+					
+					$this->sportkeuze_model->create_korfbalfinancien();	
 						//creatie stadion
     	    		$this->sportkeuze_model->create_korfbalstadion();
     	    			

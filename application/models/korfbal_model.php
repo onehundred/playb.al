@@ -94,6 +94,7 @@
     	$this->db->from('korf_divisies');
     	$this->db->join('korf_teams', 'FK_division_id = divisie_id');
     	$this->db->where('divisie_id', $division_id);
+    	$this->db->order_by('divisiepunten','desc');
     	$query = $this->db->get();
     	return $query;
     	
@@ -103,23 +104,52 @@
     
     function get_matches($team_id)
     {
-    
-    
-    $this->db->where('team_id',$team_id);
-    $quer = $this->db->get('korf_teams');
-    
-    
-    foreach($quer->result() as $row)
-    {
-    	$team = $row->naam;
-    
-    }
-    
-    $this->db->where('thuisteam', $team);
-    $this->db->or_where('bezoekersteam', $team);
+  	
+    $this->db->where('thuisteam', $team_id);
+    $this->db->or_where('bezoekersteam', $team_id);
     $query = $this->db->get('korf_wedstrijden');
-    return $query;
     
+    $wedstrijdarray = array();
+    $i =1;
+    
+    foreach($query->result() as $row)
+    {
+    	
+    	$thuisteam = $row->thuisteam;
+    	$this->db->select('naam');
+    	$this->db->from('korf_teams');
+    	$this->db->where('team_id',$thuisteam);
+    	$thuisnaam = $this->db->get();
+    	
+    	foreach($thuisnaam->result() as $rij)
+    	{
+    		$wedstrijdarray[$i]['thuis'] =  $rij->naam;
+    		
+    		 
+    		
+    	}
+    	
+    	$uitteam = $row->bezoekersteam;
+    	$this->db->select('naam');
+    	$this->db->from('korf_teams');
+    	$this->db->where('team_id',$uitteam);
+    	$uitnaam = $this->db->get();
+    	
+    		foreach($uitnaam->result() as $rij)
+    	{
+    		$wedstrijdarray[$i]['uit'] = $rij->naam;
+    			 
+    		
+    		 
+    		
+    	}
+    	
+    	$wedstrijdarray[$i]['uitslag'] = $row->uitslag;
+    	
+    	$i++;
+    	
+    }
+    return $wedstrijdarray;
     
     }
     

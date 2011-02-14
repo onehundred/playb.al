@@ -172,7 +172,7 @@ class Korfbal extends CI_Controller {
 		$data['team_id'] = $team_id;
 		$this->load->model('korfbal_model');
 		
-		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);
+		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);	
 		
 		
 		$data['main_content'] = 'korfbal/korfbal_divisie';
@@ -218,6 +218,7 @@ class Korfbal extends CI_Controller {
 		$this->load->model('korfbal_model');
 		
 		$data['matches'] = $this->korfbal_model->get_matches($team_id);
+		
 		
 		
 		$data['main_content'] = 'korfbal/korfbal_matches';

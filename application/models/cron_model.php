@@ -27,6 +27,13 @@
             		'FK_division_id' => $i,
             		'naam' => 'playbal',
             		'bot' =>  0,
+            		'gespeeld' => 0,
+            		'gewonnen' => 0,
+            		'verloren' => 0,
+            		'gelijk' => 0,
+            		'doelpunten_voor' => 0,
+            		'doelpunten_tegen' => 0,
+            		'divisiepunten' => 0,
             		'startdatum' => $mdate
             	
             	
@@ -88,7 +95,7 @@
     	
     	foreach($query->result() as $row)
     	{
-    		$naamarray[$j] = $row->naam; 
+    		$naamarray[$j] = $row->team_id; 
     		$j++;
     		
     	}

@@ -1,5 +1,6 @@
 <!--todo microsoft cdn veranderen naar google cdn (url niet live op moment van productie)-->
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js"></script>
+
 <script src="<?php echo base_url();?>js/formToWizard.js"></script>
 <script>
         $(document).ready(function(){
@@ -12,15 +13,16 @@ $('#showLogin').hover(function() {
 			$('#showLogin').hide();
 			$('#login').slideDown(200);
 			});
-			$(function(){
-			
-		
-						
-			
-});
+	
 		
 </script>
-
+<!--
+	<script>  $(document).ready(function(){			
+		
+			$('#wrap').fadeIn(2000);				
+			
+});</script>
+-->
 <script>
 	/*
 		

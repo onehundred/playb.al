@@ -37,10 +37,15 @@
 <section id="bottom">
 
 	
-	<div style="float:right;" class="">
+	<div class="bottomButtons">
 						
 						<div class="light"><a href="#">hoe werkt het</a></div>	
-						<div class="light"><a href="#">bekijk demo</a></div>	
+						<div class="question"><a href="#">bekijk demo</a></div>	
+<!--
+						<div class="question"><a href="#">bekijk demo</a></div>	
+						<div class="question"><a href="#">bekijk demo</a></div>	
+						<div class="question"><a href="#">bekijk demo</a></div>	
+-->
 
 
 	</div>

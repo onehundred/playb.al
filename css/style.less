@@ -21,8 +21,10 @@ based on: less framework 3 by Joni Korpi http://lessframework.com
 	border: 1px solid
 }
 .borderRadius {
-	-moz-border-radius: 3px;
 	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
 }
 .transitionOn {
 	-webkit-transition-duration: 0.1s;
@@ -188,12 +190,9 @@ transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 #login, #showLogin {
 	background-color:#3F0;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-bottom: 10px;
-	padding-top: 10px;
+
 	float:right;
-	moz-border-radius-topleft: px;
+	-moz-border-radius-topleft: px;
 -moz-border-radius-topright: px;
 -moz-border-radius-bottomright: 3px;
 -moz-border-radius-bottomleft: 3px;
@@ -204,6 +203,9 @@ border-bottom-left-radius: 3px;
 color: #444;
 	
 }
+.bottomButtons {
+float: right;
+display: inline;}
 /* FONTS start 		-------------------------------------------------------------------------------------------------------------*/
 .korfbal h1, .basketbal h1, .volleybal h1 {
 	font-family: 'LeagueGothicRegular';
@@ -334,6 +336,7 @@ h2 {
 }
 #bottom{
 clear: both;
+
 }
 #footer {
 	float: left;
@@ -367,11 +370,8 @@ header {
 #login, #showLogin {
 	background-color:#e5e5e5;
 	float:right;
+}
 
-}
-#login a {
-	background-color: #000;
-}
 /*#columns {
 	padding-left: 168px;
 }*/
@@ -379,11 +379,222 @@ header {
 	float: right;
 	clear: left;
 }
+
 body {
 	padding: 0 72px 0;
 	width: 1068px;
 	
 }
+
+#menu {
+padding-top: 7px;
+	list-style:none;
+	
+		height:30px;
+	
+		
+	
+	/* Rounded Corners */
+	
+	
+
+
+	
+
+	position: relative;
+	/* Borders */
+
+z-index: 1;
+	}
+
+#menu li {
+	float:left;
+	display:block;
+	text-align:center;
+	position:relative;
+	
+		
+	border:none;
+	padding-right: 10px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+}
+
+#menu li:hover {
+	/* border: 1px solid #777777; */
+		
+	/* Background color and gradients */
+	
+		
+	/* Rounded corners */
+	
+
+}
+
+#menu li a {
+padding: 0px;
+margin: 0px;
+	}
+
+#menu li:hover a {
+	color:#161616;
+	text-shadow: 1px 1px 1px #ffffff;
+}
+#menu li .drop {
+	
+	
+}
+
+
+.dropdown_3columns
+{
+		float:left;
+	position:absolute;
+	left:-999em; /* Hides the drop down */
+	text-align:left;
+	padding:10px 5px 10px 5px;
+	
+	border-top:none;
+	
+	/* Gradient background */
+	background:#CCC;
+-moz-border-radius-topleft: px;
+-moz-border-radius-topright: px;
+-moz-border-radius-bottomright: 3px;
+-moz-border-radius-bottomleft: 3px;
+border-top-left-radius: px;
+border-top-right-radius: px;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 3px;
+
+	/* Rounded Corners */
+	
+}
+
+.dropdown_3columns {width: 420px;}
+
+
+#menu li:hover .dropdown_3columns {
+	left:-1px;
+	top:auto;
+}
+
+.col_1,
+.col_2,
+.col_3,
+.col_4,
+.col_5 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.col_1 {width:130px;}
+.col_2 {width:270px;}
+.col_3 {width:410px;}
+.col_4 {width:550px;}
+.col_5 {width:690px;}
+
+#menu .menu_right {
+	float:right;
+	margin-right:0px;
+}
+#menu li .align_right {
+	}
+
+#menu li:hover .align_right {
+	left:auto;
+	right:0px;
+	top:auto;
+}
+
+#menu p, #menu h2, #menu h3, #menu ul li {
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:21px;
+	font-size:12px;
+	text-align:left;
+	text-shadow: 1px 1px 1px #FFFFFF;
+}
+#menu h2 {
+	font-size:21px;
+	font-weight:400;
+	letter-spacing:-1px;
+	margin:7px 0 14px 0;
+	padding-bottom:14px;
+	border-bottom:1px solid #666666;
+}
+#menu h3 {
+	font-size:14px;
+	margin:7px 0 14px 0;
+	padding-bottom:7px;
+	border-bottom:1px solid #888888;
+}
+#menu p {
+	line-height:18px;
+	margin:0 0 10px 0;
+}
+
+#menu li:hover div a {
+	font-size:12px;
+	color:#015b86;
+	
+}
+#menu li:hover div a:hover {
+	color:#029feb;
+}
+
+
+
+
+
+#menu li ul {
+	list-style:none;
+	padding:0;
+	margin:0 0 12px 0;
+}
+#menu li ul li {
+	font-size:12px;
+	line-height:24px;
+	position:relative;
+	text-shadow: 1px 1px 1px #ffffff;
+	padding:0;
+	margin:0;
+	float:none;
+	text-align:left;
+	width:130px;
+}
+#menu li ul li:hover {
+	background:none;
+	border:none;
+	padding:0;
+	margin:0;
+}
+
+#menu li .greybox li {
+	background:#F4F4F4;
+	border:1px solid #bbbbbb;
+	margin:0px 0px 4px 0px;
+	padding:4px 6px 4px 6px;
+	width:116px;
+
+	/* Rounded Corners */
+
+}
+#menu li .greybox li:hover {
+	background:#ffffff;
+		padding:4px 6px 4px 6px;
+	margin:0px 0px 4px 0px;
+}
+
+
+
+
+
+
+
+
+
 /* FONTS start -------------------------------------------------------------------------------------------------------------*/
 .korfbal h1, .basketbal h1, .volleybal h1 {
 	font-family: 'LeagueGothicRegular';
@@ -474,7 +685,7 @@ margin-left: 105px;
 }
 .volleybal {
  background-color: @volleybalColor;
-	margin-left: 150px;
+	margin-left: 157px;
 	height: 250px;
  .borderRadius;
  border: 1px solid @volleybalBorderColor;
@@ -725,6 +936,7 @@ h2 {
 	text-align: center;
 	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
 	width: 110px;
+	
 }
 .okay:hover {
 	background: #33B201; /* old browsers */
@@ -761,8 +973,11 @@ padding: 10px;
 	padding: 12px 0 14px 0;
 	text-align: center;
 	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
-	width: 150px;
+	display: inline;
+	width: 160px;
 	margin-left: 10px;
+	margin-bottom: 10px;
+	
 }
 .light:hover {
 	background: #9E9E9E; /* old browsers */
@@ -777,6 +992,9 @@ padding: 10px;
 	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+.light a {
+padding: 10px;
 }
 /* question
 *******************************************************************************/
@@ -795,8 +1013,10 @@ padding: 10px;
 	padding: 12px 0 14px 0;
 	text-align: center;
 	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
-	width: 150px;
-	margin-right: 20px;
+	display: inline;
+	width: 170px;
+	margin-left: 10px;
+
 }
 .question:hover {
 	background: #0195B2; /* old browsers */
@@ -811,6 +1031,9 @@ padding: 10px;
 	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+.question a {
+padding: 10px;
 }
 /* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
 

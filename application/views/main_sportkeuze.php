@@ -1,5 +1,5 @@
 <section id="layouts">
-    <figure id="korfbal">
+    <figure class="korfbal">
         <h1>Korfbal</h1>
         <p>
             <?php if(isset($korfNaam)){
@@ -12,7 +12,7 @@
 } ?>
         </p>
     </figure>
-    <figure id="basketbal">
+    <figure class="basketbal">
      <h1>Basketbal</h1>
         <p>
             <?php if(isset($basNaam)){
@@ -28,7 +28,7 @@
         </p>
 
             </figure>
-    <figure id="volleybal">
+    <figure class="volleybal">
     <h1>Volleybal</h1>
         <p>
             <?php if(isset($volNaam)){

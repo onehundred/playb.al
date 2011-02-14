@@ -1,19 +1,20 @@
+<!-- todo div hieronder toewijzen aan login (gemodificeerd) -->
 
-   <!--  <h1>login</h1> -->
-    <?php
+<div id="alslogin"> <?php
     $user_id = $this->session->userdata('user_id'); 
      if (isset($user_id)){
-      $this->load->view('includes/session_succes');
+     $this->load->view('includes/session_succes');
     } 
    
     if(!$user_id){?>
-    
-    <div id="logins">
-<a href="#" id="showLogin">aanmelden</a>
 </div>
-<div id="login" style="display:none;">
 
-<?php
+  <!--   <h1>login</h1> -->
+        <div id="logins">
+		<a href="#" id="showLogin">aanmelden</a>
+		</div>
+		<div id="login" style="display:none;">
+	<?php
 		echo form_open('main/login');
 		    echo("username");
 		echo form_input('username', 'Username');
@@ -24,7 +25,7 @@
 
 		echo form_close();
 		} 
-	?>
-</div>
+	?><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p><p>test</p>
+		</div>
 	 
 

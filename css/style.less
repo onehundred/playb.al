@@ -13,22 +13,24 @@
 @headerHeight: 75px;
 @footerHeight: 150px;
 .borders {
-
- border: 1px solid
+	border: 1px solid
 }
 .borderRadius {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
-.transitionOn{-webkit-transition-duration: 0.15s;
--webkit-transition-timing-function: ease-in-out;
+.transitionOn {
+	-webkit-transition-duration: 0.1s;
+	-webkit-transition-timing-function: ease-in-out;
 }
-.transitionOff{-webkit-transition-duration: 1s;}
+.transitionOff {
+	-webkit-transition-duration: 1s;
+}
 .lessOpacity {
-opacity: 0.9;
+	opacity: 0.8;
 }
 .moreOpacity {
-opacity: 1;
+	opacity: 1;
 }
 .innerShadow {
 	-webkit-box-shadow: inset 0px 0px 10px #bdbdbd;
@@ -51,6 +53,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 }
 html, body {
 	height:100%;
+	
 }
 #topbar {
 	background-color: #d9d9d9;
@@ -61,15 +64,16 @@ html, body {
 }
 #main {
 	overflow:auto;
- padding-bottom: @footerHeight;
-}  /* must be same height as the footer */
+ 	padding-bottom: @footerHeight; /* same as footer */
+}  
 footer {
 	position: relative;
-	margin-top: -@footerHeight; /* negative value of footer height */
+ margin-top: -@footerHeight; /* negative of footer */
  height: @footerHeight;
-	clear:both;
-	background-color: #000;
-	overflow: hidden;
+
+	background-image: url("../img/footer.png");
+	background-repeat: no-repeat;
+	
 }
 /*Opera Fix*/
 body:before {/* thanks to Maleika (Kohoutec)*/
@@ -82,6 +86,9 @@ body:before {/* thanks to Maleika (Kohoutec)*/
 article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video {
 	display: block;
 }
+a {
+text-decoration: none;
+color: #FFF;}
 a img {
 	border: 0;
 }
@@ -160,16 +167,178 @@ header {
  height: @headerHeight;
 }
 #logo {
-	padding: 7px;
- width: : 123px;
-	height: 47px;
+padding-top: 7px;
+	padding-right: 7px;
+	padding-bottom: 7px;
+	padding-left: 0px;
+ width: : 104px;
+	height: 40px;
 	float:left;
+}
+#logo:active {
+-moz-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+-webkit-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+-o-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+-ms-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 #login, #showLogin {
 	background-color:#3F0;
-	padding: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 	float:right;
+	moz-border-radius-topleft: px;
+-moz-border-radius-topright: px;
+-moz-border-radius-bottomright: 3px;
+-moz-border-radius-bottomleft: 3px;
+border-top-left-radius: px;
+border-top-right-radius: px;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 3px;
+color: #444;
+	
 }
+/* FONTS start -------------------------------------------------------------------------------------------------------------*/
+.korfbal h1, .basketbal h1, .volleybal h1 {
+	font-family: 'LeagueGothicRegular';
+	text-transform: uppercase;
+	color: @grey;
+	padding-left: 15px;
+	.textShadow;
+	font-size: 42px;
+}
+#tagline {
+	font-family: 'AllerItalic';
+	text-align: right;
+	color: #808080;
+	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
+	font-size: 42px;
+}
+h2 {
+	font-family: 'SFCollegiateSolidRegular';
+}
+/* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
+
+#layouts figure {
+	float: left;
+}
+#layouts {
+	float: left;
+	width: 100%;
+	height: 475px;
+}
+#layouts p, #layouts figure {
+	margin-top: 5px;
+	width: 200px;
+}
+#layouts figure {
+	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.854, transparent), to(rgba(255,255,255, 0.2)));
+}
+
+.korfbal {
+ 	background-color: @korfbalColor;
+	height: 250px;
+	border: 1px solid @korfbalBorderColor;
+	top: 50px;
+	margin-left: 15px;
+	.borderRadius;
+	.lessOpacity;
+	.transitionOff;	
+}
+.korfbal:hover {
+ 	background-color: @korfbalColor;
+	height: 300px;
+	border: 1px solid @korfbalBorderColor;
+	top: 25px;
+ 	.moreOpacity;
+ 	.transitionOn;
+ 	.borderRadius;
+}
+.basketbal {
+ 	background-color: @basketbalColor;
+	height: 250px;
+ 	.borderRadius;
+ 	border: 1px solid @basketbalBorderColor;
+ 	.lessOpacity;
+ 	.transitionOff;
+	top: 50px;
+	margin-left: 6px;
+}
+.basketbal:hover {
+ 	background-color: @basketbalColor;
+	height: 300px;
+ 	.borderRadius;
+ 	border: 1px solid @basketbalBorderColor;
+ 	.moreOpacity;
+ 	.transitionOn;
+	top: 25px;
+}
+.volleybal {
+ background-color: @volleybalColor;
+	margin-left: 10px;
+	height: 250px;
+ .borderRadius;
+ border: 1px solid @volleybalBorderColor;
+ .lessOpacity;
+ .transitionOff;
+	top: 50px;
+}
+.volleybal:hover {
+ background-color: @volleybalColor;
+	height: 300px;
+ .borderRadius;
+ border: 1px solid @volleybalBorderColor;
+ .moreOpacity;
+ .transitionOn;
+	top: 25px;
+}
+#korfbal, #basketbal, #volleybal {
+	position: absolute;
+	bottom: -20px;
+	left: 5px;
+	z-index: 9;
+	-moz-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+#korfbal:hover, #basketbal:hover, #volleybal:hover {
+	position: absolute;
+	bottom: -20px;
+	left: 5px;
+	z-index: 9;
+	-webkit-transition: all 10s;
+	-moz-transition: all 10s;
+	-o-transition: all 10s;
+	transition: all 10s;
+	-moz-transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+#create {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	font-size: 30px;
+	z-index: 10;
+	margin: 15px;
+}
+#bottom{
+clear: both;
+}
+#footer {
+	float: left;
+	width: 100%;
+}
+#footer div {
+	float: left;
+}
+
 /*	13-column layout
 
 	60 px columns, 24 px gutters, 72 px margins, 1212 px total (extra space for scrollbars)
@@ -190,9 +359,11 @@ header {
  width: : 104px;
 	height: 40px;
 }
+
 #login, #showLogin {
 	background-color:#e5e5e5;
 	float:right;
+
 }
 #login a {
 	background-color: #000;
@@ -207,123 +378,150 @@ header {
 body {
 	padding: 0 72px 0;
 	width: 1068px;
+	
 }
-#layouts section {
-	float: left;
-	width: 100%;
-	padding: 23px 0 23px;
-	margin: 0;
-	position: relative;
+/* FONTS start -------------------------------------------------------------------------------------------------------------*/
+.korfbal h1, .basketbal h1, .volleybal h1 {
+	font-family: 'LeagueGothicRegular';
+	text-transform: uppercase;
+	color: @grey;
+	padding-left: 15px;
+	.textShadow;
+	font-size: 48px;
 }
-#layouts h2, #layouts figure {
-	float: left;
+#tagline {
+	font-family: 'AllerItalic';
+	text-align: right;
+	color: #808080;
+	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
+	font-size: 48px;
 }
-#layouts p {
-	width: 312px;
-	font-size: 16px;
-	line-height: 24px;
-	position: absolute;
-	right: 84px;
-	bottom: 23px;
+h2 {
+	font-family: 'SFCollegiateSolidRegular';
 }
-#layouts h2 {
-	margin: 0;
-	clear: both;
-}
+/* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
+
+/* LAYOUTS start 	-------------------------------------------------------------------------------------------------------------*/
 #layouts {
 	float: left;
 	width: 100%;
-}
-#layouts h1 {
-	padding-bottom: 24px;
+	height: 475px;
 }
 #layouts p, #layouts figure {
-	margin-top: 44px;
+	margin-top: 5px;
 	width: 250px;
 }
 #layouts figure {
 	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.854, transparent), to(rgba(255,255,255, 0.2)));
 }
-#layouts p {
-	padding: 3px 0;
+/* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
+#footerLeft, #footerCenter, #footerRight {
+padding: 15px;
+width: 250px;
+margin-top: 25px;
+margin-bottom: 25px;
 }
-#korfbal {
- background-color: @korfbalColor;
+#footerLeft {
+margin-left: 15px;
+}
+#footerCenter {
+margin-left: 100px;
+}
+#footerRight {
+margin-left: 105px;
+}
+.korfbal {
+ 	background-color: @korfbalColor;
 	height: 250px;
- .borderRadius;
-  border: 1px solid @korfbalBorderColor;
-  .lessOpacity;
-    .transitionOff;
-    top: 100px;
-    
-  
+	border: 1px solid @korfbalBorderColor;
+	top: 50px;
+	margin-left: 15px;
+	.borderRadius;
+	.lessOpacity;
+	.transitionOff;	
 }
-#korfbal:hover {
- background-color: @korfbalColor;
-	height: 500px;
- .borderRadius;
-  border: 1px solid @korfbalBorderColor;
-  .moreOpacity;
-   .transitionOn;
-   top: 0px;
-
+.korfbal:hover {
+ 	background-color: @korfbalColor;
+	height: 300px;
+	border: 1px solid @korfbalBorderColor;
+	top: 25px;
+ 	.moreOpacity;
+ 	.transitionOn;
+ 	.borderRadius;
 }
-#basketbal {
- background-color: @basketbalColor;
+.basketbal {
+ 	background-color: @basketbalColor;
+	margin-left: 140px;
+	height: 250px;
+ 	.borderRadius;
+ 	border: 1px solid @basketbalBorderColor;
+ 	.lessOpacity;
+ 	.transitionOff;
+	top: 50px;
+}
+.basketbal:hover {
+ 	background-color: @basketbalColor;
+	height: 300px;
+ 	.borderRadius;
+ 	border: 1px solid @basketbalBorderColor;
+ 	.moreOpacity;
+ 	.transitionOn;
+	top: 25px;
+}
+.volleybal {
+ background-color: @volleybalColor;
 	margin-left: 150px;
 	height: 250px;
  .borderRadius;
-   border: 1px solid @basketbalBorderColor;
-   .lessOpacity;
-    .transitionOff;
-    top: 100px;
+ border: 1px solid @volleybalBorderColor;
+ .lessOpacity;
+ .transitionOff;
+	top: 50px;
 }
-#basketbal:hover {
- background-color: @basketbalColor;
-	margin-left: 150px;
-	height: 500px;
- .borderRadius;
-   border: 1px solid @basketbalBorderColor;
-   .moreOpacity;
-    .transitionOn;
-    top: 0px;
-}
-
-#volleybal {
+.volleybal:hover {
  background-color: @volleybalColor;
-	margin-left: 125px;
-	height: 250px;
+	height: 300px;
  .borderRadius;
-   border: 1px solid @volleybalBorderColor;
-   .lessOpacity;
-    .transitionOff;
-    top: 100px;
-
+ border: 1px solid @volleybalBorderColor;
+ .moreOpacity;
+ .transitionOn;
+	top: 25px;
 }
-#volleybal:hover {
- background-color: @volleybalColor;
-	margin-left: 125px;
-	height: 500px;
- .borderRadius;
-   border: 1px solid @volleybalBorderColor;
-   .moreOpacity;
-    .transitionOn;
-    top: 0px;
-    
-
+#korfbal, #basketbal, #volleybal {
+	position: absolute;
+	bottom: -20px;
+	left: 5px;
+	z-index: 9;
+	-moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 }
-#bal {
-position: absolute;
-bottom: -20px;
-right: -20px;
-z-index: 9;
+#korfbal:hover, #basketbal:hover, #volleybal:hover {
+	position: absolute;
+	bottom: -20px;
+	left: 5px;
+	z-index: 9;
+	-webkit-transition: all 10s;
+	-moz-transition: all 10s;
+	-o-transition: all 10s;
+	transition: all 10s;
+	-moz-transform: scale(1) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(1) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(1) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(1) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(1) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 #create {
-position: absolute;
-bottom: 0px;
-font-size: 70px;
-z-index: 10;
-background-color: green;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	font-size: 30px;
+	z-index: 10;
+	margin: 15px;
+}
+#playnow {
 }
 }
 
@@ -431,6 +629,12 @@ header {
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'AllerItalic';
+	src: url('aller_it-webfont.eot?') format('eot'),  url('aller_it-webfont.woff') format('woff'),  url('aller_it-webfont.ttf') format('truetype'),  url('aller_it-webfont.svg#webfont7oSuZnvY') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 /*
 #main_login input[type="text"], input[type="password"] {
 	display:block;
@@ -456,17 +660,125 @@ header {
 */
 
 
-h1 {
-	font-family: 'LeagueGothicRegular';
-	text-transform: uppercase;
- color: @grey;
-	padding-left: 15px;
- .textShadow;
-	font-size: 48px;
+/* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
+
+/* okay 
+*******************************************************************************/
+button.okay {
+	background: #000;
+	background: -moz-linear-gradient(top, #3BCD02 0%, #33B201 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3BCD02), color-stop(100%,#33B201)); /* webkit */
+	border: 1px solid #2c9902;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	width: 110px;
 }
-h2 {
-	font-family: 'SFCollegiateSolidRegular';
+button.okay:hover {
+	background: #33B201; /* old browsers */
+	background: -moz-linear-gradient(top, #33B201 0%, #2B9601 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#33B201), color-stop(100%,#2B9601)); /* webkit */
+	cursor: pointer;
 }
+button.okay:active {
+	background: #2B9601; /* old browsers */
+	background: -moz-linear-gradient(top, #2B9601 0%, #237A01 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2B9601), color-stop(100%,#237A01)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+}
+/* light
+*******************************************************************************/
+button.light {
+	background: #BABABA; /* old browsers */
+	background: -moz-linear-gradient(top, #BABABA 0%, #A0A0A0 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BABABA), color-stop(100%,#A0A0A0)); /* webkit */
+	border: 1px solid #666;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	width: 150px;
+	margin-left: 10px;
+}
+button.light:hover {
+	background: #9E9E9E; /* old browsers */
+	background: -moz-linear-gradient(top, #9E9E9E 0%, #848484 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9E9E9E), color-stop(100%,#848484)); /* webkit */
+	cursor: pointer;
+}
+button.light:active {
+	background: #878787; /* old browsers */
+	background: -moz-linear-gradient(top, #878787 0%, #6D6D6D 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#878787), color-stop(100%,#6D6D6D)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+/* light
+*******************************************************************************/
+button.question {
+	background: #02A9CD; /* old browsers */
+background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A9CD), color-stop(100%,#0195B2)); /* webkit */	border: 1px solid #666;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	width: 150px;
+	margin-right: 20px;
+	
+}
+button.question:hover {
+	background: #0195B2; /* old browsers */
+background: -moz-linear-gradient(top, #0195B2 0%, #018299 100%); /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0195B2), color-stop(100%,#018299)); /* webkit */
+
+	cursor: pointer;
+}
+button.question:active {
+	background: #018096; /* old browsers */
+background: -moz-linear-gradient(top, #018096 0%, #016C7F 100%); /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#018096), color-stop(100%,#016C7F)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+
+
+
+
+/* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
+
+
+
+
 
 
 

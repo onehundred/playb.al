@@ -210,6 +210,20 @@ class Korfbal extends CI_Controller {
 		
 	
 	}
+	
+	function korfbal_matches()
+	{
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;	
+		$this->load->model('korfbal_model');
+		
+		$data['matches'] = $this->korfbal_model->get_matches($team_id);
+		
+		
+		$data['main_content'] = 'korfbal/korfbal_matches';
+		$this->load->view('korfbal/includes/template', $data);
+	
+	}
 }
 
 /* End of file welcome.php */

@@ -22,12 +22,22 @@ class Cron extends CI_Controller {
 	
 	function cron_test()
 	{
+	$mdate = date('Y-m-d h:i:s');
+	
 		$data = array(
-			'minimum_bod' => '1'
+			'deadline' => $mdate
 		
 		
 		);
 		$this->db->insert('korf_transfers',$data);
+	
+	}
+	
+	
+	function arrange_games()
+	{
+		$this->load->model('cron_model');
+		$this->cron_model->arrange_matches();
 	
 	}
 	

@@ -101,6 +101,29 @@
     }
     
     
+    function get_matches($team_id)
+    {
+    
+    
+    $this->db->where('team_id',$team_id);
+    $quer = $this->db->get('korf_teams');
+    
+    
+    foreach($quer->result() as $row)
+    {
+    	$team = $row->naam;
+    
+    }
+    
+    $this->db->where('thuisteam', $team);
+    $this->db->or_where('bezoekersteam', $team);
+    $query = $this->db->get('korf_wedstrijden');
+    return $query;
+    
+    
+    }
+    
+    
     function insert_opstelling($field,$spelernaam,$teamid)
     {
     

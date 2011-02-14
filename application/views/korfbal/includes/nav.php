@@ -1,9 +1,10 @@
 
-<p><?php echo anchor('korfbal/korfbal_start/'.$team_id.'','Overview') ?></p>
-<p><?php echo anchor('korfbal/korfbal_players/'.$team_id.'','Players') ?>	</p>
-<p><?php echo anchor('korfbal/korfbal_stadium/'.$team_id.'','Stadium') ?>	</p>	
-<p><?php echo anchor('korfbal/korfbal_finances/'.$team_id.'','Finances') ?>	</p>
+<p><?php echo anchor('korfbal/korfbal_start/'.$team_id.'','Overzicht') ?></p>
+<p><?php echo anchor('korfbal/korfbal_players/'.$team_id.'','Spelers') ?>	</p>
+<p><?php echo anchor('korfbal/korfbal_matches/'.$team_id.'','Wedstrijden') ?>	</p>
+<p><?php echo anchor('korfbal/korfbal_stadium/'.$team_id.'','Stadion') ?>	</p>	
+<p><?php echo anchor('korfbal/korfbal_finances/'.$team_id.'','Financien') ?>	</p>
 <p><?php echo anchor('korfbal/korfbal_manager/'.$team_id.'','Manager') ?>	</p>
-<p><?php echo anchor('korfbal/korfbal_division/'.$team_id.'','Division') ?>	</p>
-<p>	</p>
-<p>	</p>
+<p><?php echo anchor('korfbal/korfbal_division/'.$team_id.'','Divisie') ?>	</p>
+<p><?php echo anchor('korfbal/korfbal_training/'.$team_id.'','Training') ?>	</p>
+<p><?php echo anchor('korfbal/korfbal_transfers/'.$team_id.'','Transfers') ?>	</p>

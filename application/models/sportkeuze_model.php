@@ -126,6 +126,37 @@
     	
     }
     
+    
+    function create_korfbalfinancien()
+    {
+    
+    $user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('korf_teams');
+    	
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+		
+		
+    	$new_financien_insert_data = array(
+    		'totaal' => 500000,
+    		'FK_team_id' => $team_id
+    		
+    	
+    	);
+    	
+    	$this->db->where('FK_team_id', $team_id);
+    	$insert = $this->db->insert('korf_financien', $new_financien_insert_data);
+    
+    
+    }
+    
     //functie om het team toe te wijzen aan een divisie
     // word automatisch gedaan in de cron/bot functie
     /*function assign_korfbaldivisie()

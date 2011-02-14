@@ -68,15 +68,12 @@ html, body {
 	min-height: 100%;
 }
 #main {
-	
  	padding-bottom: @footerHeight; /* same as footer */
 }  
 footer {
 	position: relative;
- margin-top: -@footerHeight; /* negative of footer */
- height: @footerHeight;
-
-	background-image: url("../img/footer.png");
+	margin-top: -@footerHeight; /* negative of footer */
+	height: @footerHeight;
 	background-repeat: no-repeat;
 	
 }
@@ -156,6 +153,9 @@ body {
 	width: 648px;
  -webkit-tap-highlight-color: @selectionColor;
   text-rendering: optimizeLegibility;
+}
+footer {
+	background-image: url("../img/footer1.png");
 }
 ::selection {
  background: @selectionColor;
@@ -385,7 +385,9 @@ body {
 	width: 1068px;
 	
 }
-
+footer {
+	background-image: url("../img/footer.png");
+}
 #menu {
 padding-top: 7px;
 	list-style:none;
@@ -457,7 +459,7 @@ margin: 0px;
 	border-top:none;
 	
 	/* Gradient background */
-	background:#CCC;
+	background:#e5e5e5;
 -moz-border-radius-topleft: px;
 -moz-border-radius-topright: px;
 -moz-border-radius-bottomright: 3px;
@@ -506,7 +508,7 @@ border-bottom-left-radius: 3px;
 #menu li:hover .align_right {
 	left:auto;
 	right:0px;
-	top:auto;
+	top: 32px;
 }
 
 #menu p, #menu h2, #menu h3, #menu ul li {
@@ -572,7 +574,7 @@ border-bottom-left-radius: 3px;
 }
 
 #menu li .greybox li {
-	background:#F4F4F4;
+	background:#e5e5e5;
 	border:1px solid #bbbbbb;
 	margin:0px 0px 4px 0px;
 	padding:4px 6px 4px 6px;
@@ -793,6 +795,8 @@ h2 {
 	font-family: 'SFCollegiateSolidRegular';
 }
 /* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
+footer{
+	background-image: url("../img/footer2.png");}
 }
 
 
@@ -848,6 +852,8 @@ h2 {
 	font-family: 'SFCollegiateSolidRegular';
 }
 /* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
+footer {
+	background-image: url("../img/footer3.png");}
 }
 /*	Overrides for iPhone 4 and other high device-pixel-ratio devices */
 

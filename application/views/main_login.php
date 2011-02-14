@@ -9,7 +9,7 @@
                 </div>
                 <div class="col_1">
                     <ul class="greybox">
-                        <li><a href="#">FreelanceSwitch</a></li>
+                      <!--   <li><a href="#">FreelanceSwitch</a></li> -->
                     </ul>
                 </div>
                 <div class="col_1">
@@ -25,38 +25,40 @@
                 </div>
                 <div class="col_1">
                     <ul class="greybox">
-                        <li><a href="#">Illustration</a></li>
+                      <!--
+  <li><a href="#">Illustration</a></li>
                         <li><a href="#">More...</a></li>
+-->
                         <!-- todo div hieronder toewijzen aan login (gemodificeerd) -->
                         
                         <div id="alslogin">
-                            <?php
-    $user_id = $this->session->userdata('user_id'); 
-     if (isset($user_id)){
-     $this->load->view('includes/session_succes');
-    } 
+                		<?php
+                		$user_id = $this->session->userdata('user_id'); 
+				     		if (isset($user_id)){
+	     					$this->load->view('includes/session_succes');
+    						} 
    
-    if(!$user_id){?>
+    					if(!$user_id){
+    					?>
                         </div>
                         
                         <!--   <h1>login</h1> -->
-                        
+                  
                         <?php
-		echo form_open('main/login');
-		    echo("username");
-		echo form_input('username', 'Username');
-		 echo("password");
-		echo form_password('password', 'Password');
-		    echo("<p ></p>");
-		echo form_submit('submit', 'Login');
+						echo form_open('main/login');
+		    			echo("e-mail");
+						echo form_input('username', 'Username');
+		 				echo("password");
+						echo form_password('password', 'Password');
+		    			echo("<p ></p>");
+						echo form_submit('submit', 'Login');
 
-		echo form_close();
-		} 
-	?>
+						echo form_close();
+						} 
+						?>
                     </ul>
                 </div>
                 <div class="col_3"> 
-                    <!-- <h2>Here are some image examples</h2> --> 
                 </div>
                 <div class="col_3"> </div>
             </div>
@@ -64,6 +66,5 @@
             
         </li>
         <!-- End 3 columns Item -->
-        
-    </ul>
+        </ul>
 </div>

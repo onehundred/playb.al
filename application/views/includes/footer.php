@@ -4,6 +4,7 @@
 <script>
         $(document).ready(function(){
             $("#SignupForm").formToWizard({ submitButton: 'submit' })
+            
         });    
 </script>
 <script>
@@ -11,9 +12,15 @@ $('#showLogin').hover(function() {
 			$('#showLogin').hide();
 			$('#login').slideDown(200);
 			});
+			$(function(){
 			
 		
+						
+			
+});
+		
 </script>
+
 <script>
 	/*
 		

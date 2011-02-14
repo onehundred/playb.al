@@ -11,8 +11,8 @@
 <meta name="viewport" content="width=device-width; initial-scale=1"/>
 <!-- Add "maximum-scale=1" to fix the Mobile Safari auto-zoom bug on orientation changes, 
 but keep in mind that it will disable user-zooming completely. Bad for accessibility. -->
-<link rel="stylesheet/less" href="<?php echo base_url();?>css/style.less" />
-<link rel="stylesheet/less" href="<?php echo base_url();?>css/menu.less" />
+<link href="<?php echo base_url();?>css/style.less" rel="stylesheet/less" />
+<link href="<?php echo base_url();?>css/menu.less" rel="stylesheet/less"  />
 
 <script src="<?php echo base_url();?>js/less-1.0.41.min.js"></script> 
 </head>

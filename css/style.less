@@ -1,4 +1,9 @@
-/* playb.al */
+/* 
+playb.al 
+author: lenny - onehundred.be
+css programing: less css
+based on: less framework 3 by Joni Korpi http://lessframework.com 
+*/
 
 /* GLOBALS start */
 
@@ -42,8 +47,6 @@
 }
 /* GLOBALS end */
 
-/*	Less Framework 3 by Joni Korpi http://lessframework.com	*/
-
 /* RESETS start */
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video {
@@ -63,7 +66,7 @@ html, body {
 	min-height: 100%;
 }
 #main {
-	overflow:auto;
+	
  	padding-bottom: @footerHeight; /* same as footer */
 }  
 footer {
@@ -171,7 +174,7 @@ padding-top: 7px;
 	padding-right: 7px;
 	padding-bottom: 7px;
 	padding-left: 0px;
- width: : 104px;
+ 	width: : 104px;
 	height: 40px;
 	float:left;
 }
@@ -200,7 +203,7 @@ border-bottom-left-radius: 3px;
 color: #444;
 	
 }
-/* FONTS start -------------------------------------------------------------------------------------------------------------*/
+/* FONTS start 		-------------------------------------------------------------------------------------------------------------*/
 .korfbal h1, .basketbal h1, .volleybal h1 {
 	font-family: 'LeagueGothicRegular';
 	text-transform: uppercase;
@@ -555,9 +558,29 @@ header {
  height: @headerHeight;
 }
 #logo {
- width: : 200px;
-	height: 77px;
+ width: : 104px;
+	height: 40px;
 }
+/* FONTS start 		-------------------------------------------------------------------------------------------------------------*/
+.korfbal h1, .basketbal h1, .volleybal h1 {
+	font-family: 'LeagueGothicRegular';
+	text-transform: uppercase;
+	color: @grey;
+	padding-left: 15px;
+	.textShadow;
+	font-size: 32px;
+}
+#tagline {
+	font-family: 'AllerItalic';
+	text-align: right;
+	color: #808080;
+	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
+	font-size: 32px;
+}
+h2 {
+	font-family: 'SFCollegiateSolidRegular';
+}
+/* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
 }
 
 
@@ -590,9 +613,29 @@ header {
  height: @headerHeight;
 }
 #logo {
- width: : 200px;
-	height: 77px;
+ width: : 104px;
+	height: 40px;
 }
+/* FONTS start 		-------------------------------------------------------------------------------------------------------------*/
+.korfbal h1, .basketbal h1, .volleybal h1 {
+	font-family: 'LeagueGothicRegular';
+	text-transform: uppercase;
+	color: @grey;
+	padding-left: 15px;
+	.textShadow;
+	font-size: 42px;
+}
+#tagline {
+	font-family: 'AllerItalic';
+	text-align: right;
+	color: #808080;
+	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
+	font-size: 18px;
+}
+h2 {
+	font-family: 'SFCollegiateSolidRegular';
+}
+/* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
 }
 /*	Overrides for iPhone 4 and other high device-pixel-ratio devices */
 
@@ -665,7 +708,7 @@ header {
 /* okay 
 *******************************************************************************/
 button.okay {
-	background: #000;
+	background: #3BCD02;
 	background: -moz-linear-gradient(top, #3BCD02 0%, #33B201 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3BCD02), color-stop(100%,#33B201)); /* webkit */
 	border: 1px solid #2c9902;
@@ -731,13 +774,12 @@ button.light:active {
 	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 }
-/* light
+/* question
 *******************************************************************************/
 button.question {
 	background: #02A9CD; /* old browsers */
-background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A9CD), color-stop(100%,#0195B2)); /* webkit */	border: 1px solid #666;
+	background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A9CD), color-stop(100%,#0195B2)); /* webkit */	border: 1px solid #666;
 	.borderRadius;
 	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
 	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
@@ -751,29 +793,21 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A9C
 	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
 	width: 150px;
 	margin-right: 20px;
-	
 }
 button.question:hover {
 	background: #0195B2; /* old browsers */
-background: -moz-linear-gradient(top, #0195B2 0%, #018299 100%); /* firefox */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0195B2), color-stop(100%,#018299)); /* webkit */
-
+	background: -moz-linear-gradient(top, #0195B2 0%, #018299 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0195B2), color-stop(100%,#018299)); /* webkit */
 	cursor: pointer;
 }
 button.question:active {
 	background: #018096; /* old browsers */
-background: -moz-linear-gradient(top, #018096 0%, #016C7F 100%); /* firefox */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#018096), color-stop(100%,#016C7F)); /* webkit */
+	background: -moz-linear-gradient(top, #018096 0%, #016C7F 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#018096), color-stop(100%,#016C7F)); /* webkit */
 	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 }
-
-
-
-
 /* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
 
 

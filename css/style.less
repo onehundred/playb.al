@@ -153,6 +153,7 @@ body {
 	margin-right:auto;
 	width: 648px;
  -webkit-tap-highlight-color: @selectionColor;
+  text-rendering: optimizeLegibility;
 }
 ::selection {
  background: @selectionColor;
@@ -707,7 +708,7 @@ h2 {
 
 /* okay 
 *******************************************************************************/
-button.okay {
+.okay {
 	background: #3BCD02;
 	background: -moz-linear-gradient(top, #3BCD02 0%, #33B201 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3BCD02), color-stop(100%,#33B201)); /* webkit */
@@ -725,13 +726,13 @@ button.okay {
 	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
 	width: 110px;
 }
-button.okay:hover {
+.okay:hover {
 	background: #33B201; /* old browsers */
 	background: -moz-linear-gradient(top, #33B201 0%, #2B9601 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#33B201), color-stop(100%,#2B9601)); /* webkit */
 	cursor: pointer;
 }
-button.okay:active {
+.okay:active {
 	background: #2B9601; /* old browsers */
 	background: -moz-linear-gradient(top, #2B9601 0%, #237A01 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2B9601), color-stop(100%,#237A01)); /* webkit */
@@ -741,7 +742,7 @@ button.okay:active {
 }
 /* light
 *******************************************************************************/
-button.light {
+.light {
 	background: #BABABA; /* old browsers */
 	background: -moz-linear-gradient(top, #BABABA 0%, #A0A0A0 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BABABA), color-stop(100%,#A0A0A0)); /* webkit */
@@ -760,13 +761,13 @@ button.light {
 	width: 150px;
 	margin-left: 10px;
 }
-button.light:hover {
+.light:hover {
 	background: #9E9E9E; /* old browsers */
 	background: -moz-linear-gradient(top, #9E9E9E 0%, #848484 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9E9E9E), color-stop(100%,#848484)); /* webkit */
 	cursor: pointer;
 }
-button.light:active {
+.light:active {
 	background: #878787; /* old browsers */
 	background: -moz-linear-gradient(top, #878787 0%, #6D6D6D 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#878787), color-stop(100%,#6D6D6D)); /* webkit */
@@ -776,7 +777,7 @@ button.light:active {
 }
 /* question
 *******************************************************************************/
-button.question {
+.question {
 	background: #02A9CD; /* old browsers */
 	background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A9CD), color-stop(100%,#0195B2)); /* webkit */	border: 1px solid #666;
@@ -794,13 +795,13 @@ button.question {
 	width: 150px;
 	margin-right: 20px;
 }
-button.question:hover {
+.question:hover {
 	background: #0195B2; /* old browsers */
 	background: -moz-linear-gradient(top, #0195B2 0%, #018299 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0195B2), color-stop(100%,#018299)); /* webkit */
 	cursor: pointer;
 }
-button.question:active {
+.question:active {
 	background: #018096; /* old browsers */
 	background: -moz-linear-gradient(top, #018096 0%, #016C7F 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#018096), color-stop(100%,#016C7F)); /* webkit */

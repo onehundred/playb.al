@@ -22,14 +22,8 @@ class Cron extends CI_Controller {
 	
 	function cron_test()
 	{
-	$mdate = date('Y-m-d h:i:s');
-	
-		$data = array(
-			'deadline' => $mdate
-		
-		
-		);
-		$this->db->insert('korf_transfers',$data);
+	$deadline = date('Y-m-d h:i:s', strtotime("+3 days"));
+	echo $deadline;
 	
 	}
 	

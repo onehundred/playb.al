@@ -6,10 +6,6 @@ class Korfbal extends CI_Controller {
 	{
 		parent::__construct();
 		$this->is_logged_in();
-		
-
-		
-		
 	}
 	
 	//kijken of men ingelogd is
@@ -243,15 +239,62 @@ class Korfbal extends CI_Controller {
 	
 	}
 	
+	
+	function korfbal_transfers()
+	{
+		
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;	
+		$this->load->model('korfbal_model');
+		
+		$data['transfers'] = $this->korfbal_model->get_transfers();
+		
+		
+		
+		$data['main_content'] = 'korfbal/korfbal_transfers';
+		$this->load->view('korfbal/includes/template', $data);
+	
+	}
+	
+	//voegt een transfer toe van een speler
 	function korfbal_addTransfer()
 	{
 		 $bedrag = $_POST['bedrag'];
 		 $speler_id = $_POST['spelerid'];
+		 $team_id = $_POST['teamid'];
 		 
 		 
 		 $this->load->model('korfbal_model');
-		 $this->korfbal_model->addTransfer(); 
+		 $check = $this->korfbal_model->addTransfer($bedrag, $speler_id, $team_id);
+		 
+		 //array omzetten naar jason, gaat naar de succes function van de ajaxcall
+		 $arr = array('check' => $check);
+		 $json = json_encode($arr); // returnt: { "item 2":"value 2", "item 3":"value 3", "item 3":"value 3"  } 
+		 echo $json;	
+ 
 	
+	}
+	
+	
+	//update de bieder op een speler
+	function korfbal_updateTransfer()
+	{
+		$bedrag = $_POST['bedrag'];
+		$spelerid = $_POST['spelerid'];
+		$teamid = $_POST['teamid'];
+		
+		
+		$this->load->model('korfbal_model');
+		$check = $this->korfbal_model->check_bodwaarden($bedrag, $spelerid, $teamid);
+		
+		//array omzetten naar jason, gaat naar de succes function van de ajaxcall
+		$arr = array('check' => $check);
+		$json = json_encode($arr); // returnt: { "item 2":"value 2", "item 3":"value 3", "item 3":"value 3"  } 
+		echo $json;	
+
+	
+
+		
 	}
 }
 

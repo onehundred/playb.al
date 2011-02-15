@@ -42,6 +42,19 @@
     }
     
     
+    function get_speler($speler_id)
+    {
+    	$this->db->select('*');
+    	$this->db->from('korf_spelers');
+    	$this->db->join('korf_skills','FK_player_id = speler_id');
+    	$this->db->where('speler_id', $speler_id);
+    	$query = $this->db->get();
+    	
+    	return $query;
+    
+    }
+    
+    
     function get_opstelling($team_id)
     {
     	$this->db->select('*');
@@ -190,6 +203,13 @@
     
     }
     
+    
+    function addTransfer()
+    {
+    	$insert = array();
+    
+    
+    }
     
    
     

@@ -74,6 +74,23 @@ class Korfbal extends CI_Controller {
 	}
 	
 	
+	//functie die de details van een speler laat zien
+	function korfbal_player()
+	{
+	
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;
+		$speler_id = $this->uri->segment('4');
+		$data['speler_id'] = $speler_id;
+		
+		$this->load->model('korfbal_model');
+		$data['speler'] = $this->korfbal_model->get_speler($speler_id);
+		
+		$data['main_content'] = 'korfbal/korfbal_speler';
+		$this->load->view('korfbal/includes/template', $data);
+	}
+	
+	
 	function korfbal_stadium()
 	{
 		$team_id = $this->uri->segment('3');
@@ -223,6 +240,17 @@ class Korfbal extends CI_Controller {
 		
 		$data['main_content'] = 'korfbal/korfbal_matches';
 		$this->load->view('korfbal/includes/template', $data);
+	
+	}
+	
+	function korfbal_addTransfer()
+	{
+		 $bedrag = $_POST['bedrag'];
+		 $speler_id = $_POST['spelerid'];
+		 
+		 
+		 $this->load->model('korfbal_model');
+		 $this->korfbal_model->addTransfer(); 
 	
 	}
 }

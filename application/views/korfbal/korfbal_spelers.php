@@ -4,8 +4,7 @@
 <?php 
 foreach($spelers->result() as $row)
 		{?>
-		 <p>First name: <?php echo $row->voornaam;?></p>
-		 <p>Last name: <?php echo $row->achternaam; ?></p>
+		 <p>Name: <a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?>&nbsp;<?php echo $row->achternaam; ?></a></p>
 		 <p>Age:<?php echo $row->leeftijd; ?></p>
 		 <p>Sex: <?php echo $row->geslacht; ?></p>
 		 <p>Rebound: <?php echo $row->rebound; ?>/20</p>
@@ -15,11 +14,12 @@ foreach($spelers->result() as $row)
 		 <p>Shotprecision: <?php echo $row->shotprecision; ?>/20</p>
 		 <p>Playmaking: <?php echo $row->playmaking; ?>/20</p>
 		 <p>Intercepting: <?php echo $row->intercepting; ?>/20</p>
-		  <p>Leadership: <?php echo $row->leadership; ?>/20</p>
-		
+		 <p>Leadership: <?php echo $row->leadership; ?>/20</p><br/>
+		 		</div>
 		<hr/>
 		<?php }
 ?>
 
 
 </div>
+

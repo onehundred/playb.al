@@ -6,6 +6,9 @@
     }
     
     
+    
+    //elk nieuw seizoen ŽŽn keer runnen
+    //create scriptje aanmaken voor extra divisies bij te voegen
     function bots()
     {
     
@@ -34,6 +37,8 @@
             		'doelpunten_voor' => 0,
             		'doelpunten_tegen' => 0,
             		'divisiepunten' => 0,
+            		'energie' => 100,
+            		'moraal' => 100,
             		'startdatum' => $mdate
             	
             	
@@ -54,6 +59,35 @@
           }
     	
 
+    
+    
+    }
+    
+    
+    function energy_point()
+    {
+    	$this->db->select('energie,team_id');
+    	$query = $this->db->get('korf_teams');
+    	
+    	foreach($query->result() as $row)
+    	{
+    		$teamid = $row->team_id;
+    		$energie = $row->energie;
+    		if($energie < 100){
+    		$updateenergie = $energie + 1;
+    		
+    		$update = array(
+    			'energie' => $updateenergie
+    		);
+    		
+    		$this->db->where('team_id', $teamid);
+    		$this->db->update('korf_teams', $update);
+    		}
+    			
+    		
+    	
+    	}
+    
     
     
     }

@@ -41,5 +41,12 @@ class Cron extends CI_Controller {
 	
 	}
 	
+	function energy_point()
+	{
+		$this->load->model('cron_model');
+		$this->cron_model->energy_point();
+	
+	}
+	
 	
 }	

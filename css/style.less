@@ -237,7 +237,7 @@ h2 {
 }
 #layouts p, #layouts figure {
 	margin-top: 5px;
-	width: 200px;
+	width: 190px;
 }
 #layouts figure {
 	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.854, transparent), to(rgba(255,255,255, 0.2)));
@@ -248,10 +248,10 @@ h2 {
 	height: 250px;
 	border: 1px solid @korfbalBorderColor;
 	top: 50px;
-	margin-left: 15px;
 	.borderRadius;
 	.lessOpacity;
 	.transitionOff;	
+	margin-left: 0px;
 }
 .korfbal:hover {
  	background-color: @korfbalColor;
@@ -270,7 +270,7 @@ h2 {
  	.lessOpacity;
  	.transitionOff;
 	top: 50px;
-	margin-left: 6px;
+	margin-left: 36px;
 }
 .basketbal:hover {
  	background-color: @basketbalColor;
@@ -283,13 +283,14 @@ h2 {
 }
 .volleybal {
  background-color: @volleybalColor;
-	margin-left: 10px;
+	
 	height: 250px;
  .borderRadius;
  border: 1px solid @volleybalBorderColor;
  .lessOpacity;
  .transitionOff;
 	top: 50px;
+	margin-left: 36px;
 }
 .volleybal:hover {
  background-color: @volleybalColor;
@@ -303,28 +304,28 @@ h2 {
 #korfbal, #basketbal, #volleybal {
 	position: absolute;
 	bottom: -20px;
-	left: 5px;
+	left: 0px;
 	z-index: 9;
-	-moz-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-webkit-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-o-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-ms-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-}
+	-moz-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	}
 #korfbal:hover, #basketbal:hover, #volleybal:hover {
 	position: absolute;
 	bottom: -20px;
-	left: 5px;
+	left: 0px;
 	z-index: 9;
 	-webkit-transition: all 10s;
 	-moz-transition: all 10s;
 	-o-transition: all 10s;
 	transition: all 10s;
-	-moz-transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
-	-webkit-transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
-	-o-transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
-	-ms-transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
-	transform: scale(0.75) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-moz-transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 #create {
 	position: absolute;
@@ -344,49 +345,6 @@ clear: both;
 }
 #footer div {
 	float: left;
-}
-
-/*	13-column layout
-
-	60 px columns, 24 px gutters, 72 px margins, 1212 px total (extra space for scrollbars)
-
-	---------------------------------------------------------------------------------------
-
-	1     2      3      4      5      6      7      8      9      10     11     12     13
-
-	60px  144px  228px  312px  396px  480px  564px  648px  732px  816px  900px  984px  1068px	*/
-
-
-
-@media only screen and (min-width: 1212px) {
-header {
- height: @headerHeight;
-}
-#logo {
- width: : 104px;
-	height: 40px;
-}
-
-#login, #showLogin {
-	background-color:#e5e5e5;
-	float:right;
-}
-
-/*#columns {
-	padding-left: 168px;
-}*/
-#create {
-	float: right;
-	clear: left;
-}
-
-body {
-	padding: 0 72px 0;
-	width: 1068px;
-	
-}
-footer {
-	background-image: url("../img/footer.png");
 }
 #menu {
 padding-top: 7px;
@@ -590,6 +548,171 @@ border-bottom-left-radius: 3px;
 }
 
 
+/* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
+
+/* okay 
+*******************************************************************************/
+.okay {
+	background: #3BCD02;
+	background: -moz-linear-gradient(top, #3BCD02 0%, #33B201 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3BCD02), color-stop(100%,#33B201)); /* webkit */
+	border: 1px solid #2c9902;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	width: 90px;
+	
+}
+.okay:hover {
+	background: #33B201; /* old browsers */
+	background: -moz-linear-gradient(top, #33B201 0%, #2B9601 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#33B201), color-stop(100%,#2B9601)); /* webkit */
+	cursor: pointer;
+}
+.okay:active {
+	background: #2B9601; /* old browsers */
+	background: -moz-linear-gradient(top, #2B9601 0%, #237A01 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2B9601), color-stop(100%,#237A01)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+}
+.okay a {
+padding: 10px;
+}
+/* light
+*******************************************************************************/
+.light {
+	background: #BABABA; /* old browsers */
+	background: -moz-linear-gradient(top, #BABABA 0%, #A0A0A0 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BABABA), color-stop(100%,#A0A0A0)); /* webkit */
+	border: 1px solid #666;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	display: inline;
+	width: 160px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	
+}
+.light:hover {
+	background: #9E9E9E; /* old browsers */
+	background: -moz-linear-gradient(top, #9E9E9E 0%, #848484 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9E9E9E), color-stop(100%,#848484)); /* webkit */
+	cursor: pointer;
+}
+.light:active {
+	background: #878787; /* old browsers */
+	background: -moz-linear-gradient(top, #878787 0%, #6D6D6D 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#878787), color-stop(100%,#6D6D6D)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+.light a {
+padding: 10px;
+}
+/* question
+*******************************************************************************/
+.question {
+	background: #02A9CD; /* old browsers */
+	background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A9CD), color-stop(100%,#0195B2)); /* webkit */	border: 1px solid #666;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	display: inline;
+	width: 170px;
+	margin-left: 10px;
+
+}
+.question:hover {
+	background: #0195B2; /* old browsers */
+	background: -moz-linear-gradient(top, #0195B2 0%, #018299 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0195B2), color-stop(100%,#018299)); /* webkit */
+	cursor: pointer;
+}
+.question:active {
+	background: #018096; /* old browsers */
+	background: -moz-linear-gradient(top, #018096 0%, #016C7F 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#018096), color-stop(100%,#016C7F)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+.question a {
+padding: 10px;
+}
+/* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
+
+/*	13-column layout
+
+	60 px columns, 24 px gutters, 72 px margins, 1212 px total (extra space for scrollbars)
+
+	---------------------------------------------------------------------------------------
+
+	1     2      3      4      5      6      7      8      9      10     11     12     13
+
+	60px  144px  228px  312px  396px  480px  564px  648px  732px  816px  900px  984px  1068px	*/
+
+
+
+@media only screen and (min-width: 1212px) {
+header {
+ height: @headerHeight;
+}
+#logo {
+ width: : 104px;
+	height: 40px;
+}
+
+#login, #showLogin {
+	background-color:#e5e5e5;
+	float:right;
+}
+
+/*#columns {
+	padding-left: 168px;
+}*/
+#create {
+	float: right;
+	clear: left;
+}
+
+body {
+	padding: 0 72px 0;
+	width: 1068px;
+	
+}
+footer {
+	background-image: url("../img/footer.png");
+}
+
 
 
 
@@ -740,185 +863,7 @@ margin-left: 105px;
 }
 #playnow {
 }
-}
 
-
-
-
-
-/*	5-column layout
-
-	60 px columns, 24 px gutters, 42 px margins, 480 px total
-
-	---------------------------------------------------------
-
-	1     2      3      4      5
-
-	60px  144px  228px  312px  396px	*/
-
-
-
-@media only screen and (max-width: 767px) and (min-width: 480px) {
-body {
-	padding: 0 42px 0;
-	width: 396px;
-	-webkit-text-size-adjust: 100%;
-}
-#login {
-	background-color:#00F;
-}
-header {
-	background-color: #C6C;
- height: @headerHeight;
-}
-#logo {
- width: : 104px;
-	height: 40px;
-}
-/* FONTS start 		-------------------------------------------------------------------------------------------------------------*/
-.korfbal h1, .basketbal h1, .volleybal h1 {
-	font-family: 'LeagueGothicRegular';
-	text-transform: uppercase;
-	color: @grey;
-	padding-left: 15px;
-	.textShadow;
-	font-size: 32px;
-}
-#tagline {
-	font-family: 'AllerItalic';
-	text-align: right;
-	color: #808080;
-	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
-	font-size: 32px;
-}
-h2 {
-	font-family: 'SFCollegiateSolidRegular';
-}
-/* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
-footer{
-	background-image: url("../img/footer2.png");}
-}
-
-
-
-
-
-/*	3-column layout
-
-	60 px columns, 24 px gutters, 46 px margins, 320 px total
-
-	---------------------------------------------------------
-
-	1     2      3
-
-	60px  144px  228px	*/
-
-
-
-@media only screen and (max-width: 479px) {
-body {
-	padding: 0 46px 0;
-	width: 228px;
-	-webkit-text-size-adjust: 100%;
-}
-#login {
-	background-color:#FF0;
-}
-header {
-	background-color: #C6C;
- height: @headerHeight;
-}
-#logo {
- width: : 104px;
-	height: 40px;
-}
-/* FONTS start 		-------------------------------------------------------------------------------------------------------------*/
-.korfbal h1, .basketbal h1, .volleybal h1 {
-	font-family: 'LeagueGothicRegular';
-	text-transform: uppercase;
-	color: @grey;
-	padding-left: 15px;
-	.textShadow;
-	font-size: 42px;
-}
-#tagline {
-	font-family: 'AllerItalic';
-	text-align: right;
-	color: #808080;
-	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
-	font-size: 18px;
-}
-h2 {
-	font-family: 'SFCollegiateSolidRegular';
-}
-/* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
-footer {
-	background-image: url("../img/footer3.png");}
-}
-/*	Overrides for iPhone 4 and other high device-pixel-ratio devices */
-
-
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
- #example {
- background: rgb(255,158,97);
-}
-}
-/* Generated by Font Squirrel (http://www.fontsquirrel.com) on February 3, 2011 */
-
-@font-face {
-	/* This declaration targets Internet Explorer */
-	font-family: 'SFCollegiateSolidRegular';
-	src: url('sf_collegiate_solid-webfont.eot');
-}
-@font-face {
-	/* This declaration targets everything else */
-	font-family: 'SFCollegiateSolidRegular';
-	src: url(//:) format('no404'), url('sf_collegiate_solid-webfont.woff') format('woff'), url('sf_collegiate_solid-webfont.ttf') format('truetype'), url('sf_collegiate_solid-webfont.svg#webfontvViDQrFS') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	/* This declaration targets Internet Explorer */
-	font-family: 'LeagueGothicRegular';
-	src: url('league_gothic-webfont.eot');
-}
-@font-face {
-	/* This declaration targets everything else */
-	font-family: 'LeagueGothicRegular';
-	src: url(//:) format('no404'), url('league_gothic-webfont.woff') format('woff'), url('league_gothic-webfont.ttf') format('truetype'), url('league_gothic-webfont.svg#webfont60yFay8f') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'AllerItalic';
-	src: url('aller_it-webfont.eot?') format('eot'),  url('aller_it-webfont.woff') format('woff'),  url('aller_it-webfont.ttf') format('truetype'),  url('aller_it-webfont.svg#webfont7oSuZnvY') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-/*
-#main_login input[type="text"], input[type="password"] {
-	display:block;
-	margin: 0 0 1em 0;
-	width: 100px;
-	border: 5px;
-	padding: 1em;
-}
-#main_login input[type="submit"] {
-	border: none;
-	padding: 6px;
-	text-decoration: none;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-}
-#logged_in {
-	border: none;
-	padding: 6px;
-	font-family: "Apple Chancery";
-	background-color: silver;
-	width: 200px;
-}
-*/
 
 
 /* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
@@ -1042,6 +987,685 @@ padding: 10px;
 padding: 10px;
 }
 /* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
+
+}
+
+
+
+
+
+/*	5-column layout
+
+	60 px columns, 24 px gutters, 42 px margins, 480 px total
+
+	---------------------------------------------------------
+
+	1     2      3      4      5
+
+	60px  144px  228px  312px  396px	*/
+
+
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+body {
+	padding: 0 42px 0;
+	width: 396px;
+	-webkit-text-size-adjust: 100%;
+}
+#login {
+	background-color:#00F;
+}
+header {
+
+ height: @headerHeight;
+}
+#logo {
+ width: : 104px;
+	height: 40px;
+}
+/* FONTS start 		-------------------------------------------------------------------------------------------------------------*/
+.korfbal h1, .basketbal h1, .volleybal h1 {
+	font-family: 'LeagueGothicRegular';
+	text-transform: uppercase;
+	color: @grey;
+	padding-left: 12px;
+	.textShadow;
+	font-size: 38px;
+}
+#tagline {
+	font-family: 'AllerItalic';
+	text-align: right;
+	color: #808080;
+	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
+	font-size: 28px;
+}
+h2 {
+	font-family: 'SFCollegiateSolidRegular';
+}
+/* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
+footer{
+	background-image: url("../img/footer2.png");
+	}
+	
+	
+/* LAYOUTS start 	-------------------------------------------------------------------------------------------------------------*/
+#layouts {
+	float: left;
+	width: 100%;
+	height: 375px;
+}
+#layouts p, #layouts figure {
+	margin-top: 5px;
+	width: 396px;
+}
+#layouts figure {
+	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.854, transparent), to(rgba(255,255,255, 0.2)));
+}
+/* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
+#footerLeft, #footerCenter, #footerRight {
+padding: 15px;
+width: 250px;
+margin-top: 25px;
+margin-bottom: 25px;
+}
+#footerLeft {
+margin-left: 15px;
+}
+#footerCenter {
+margin-left: 100px;
+}
+#footerRight {
+margin-left: 105px;
+}
+.korfbal {
+ 	background-color: @korfbalColor;
+	height: 70px;
+	border: 1px solid @korfbalBorderColor;
+	top: 10px;
+	margin-left: 0px;
+	.borderRadius;
+	.lessOpacity;
+	.transitionOff;	
+}
+.korfbal:hover {
+ 	background-color: @korfbalColor;
+	height: 70px;
+	border: 1px solid @korfbalBorderColor;
+	top: 10px;
+ 	.moreOpacity;
+ 	.transitionOn;
+ 	.borderRadius;
+}
+.basketbal {
+ 	background-color: @basketbalColor;
+	margin-left: 0px;
+	height: 70px;
+ 	.borderRadius;
+ 	border: 1px solid @basketbalBorderColor;
+ 	.lessOpacity;
+ 	.transitionOff;
+	top: 15px;
+}
+.basketbal:hover {
+ 	background-color: @basketbalColor;
+	height: 70px;
+ 	.borderRadius;
+ 	border: 1px solid @basketbalBorderColor;
+ 	.moreOpacity;
+ 	.transitionOn;
+	top: 15px;
+}
+.volleybal {
+ background-color: @volleybalColor;
+	margin-left: 0px;
+	height: 70px;
+ .borderRadius;
+ border: 1px solid @volleybalBorderColor;
+ .lessOpacity;
+ .transitionOff;
+	top: 20px;
+}
+.volleybal:hover {
+ background-color: @volleybalColor;
+	height: 70px;
+ .borderRadius;
+ border: 1px solid @volleybalBorderColor;
+ .moreOpacity;
+ .transitionOn;
+	top: 20px;
+}
+#korfbal, #basketbal, #volleybal {
+	position: absolute;
+	bottom: -32px;
+	left: 220px;
+	z-index: 9;
+	-moz-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+#korfbal:hover, #basketbal:hover, #volleybal:hover {
+	position: absolute;
+	bottom: -32px;
+	left: 220px;
+	z-index: 9;
+	-webkit-transition: all 10s;
+	-moz-transition: all 10s;
+	-o-transition: all 10s;
+	transition: all 10s;
+	-moz-transform: scale(0.5) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.5) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.5) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.5) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.5) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+#create {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	font-size: 30px;
+	z-index: 10;
+	margin: 12px;
+}
+#playnow {
+}
+
+/* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
+
+/* okay 
+*******************************************************************************/
+.okay {
+	background: #3BCD02;
+	background: -moz-linear-gradient(top, #3BCD02 0%, #33B201 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3BCD02), color-stop(100%,#33B201)); /* webkit */
+	border: 1px solid #2c9902;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 10px 0 12px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	width: 70px;
+	
+}
+.okay:hover {
+	background: #33B201; /* old browsers */
+	background: -moz-linear-gradient(top, #33B201 0%, #2B9601 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#33B201), color-stop(100%,#2B9601)); /* webkit */
+	cursor: pointer;
+}
+.okay:active {
+	background: #2B9601; /* old browsers */
+	background: -moz-linear-gradient(top, #2B9601 0%, #237A01 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2B9601), color-stop(100%,#237A01)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+}
+.okay a {
+padding: 10px;
+}
+/* light
+*******************************************************************************/
+.light {
+	background: #BABABA; /* old browsers */
+	background: -moz-linear-gradient(top, #BABABA 0%, #A0A0A0 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BABABA), color-stop(100%,#A0A0A0)); /* webkit */
+	border: 1px solid #666;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	display: inline;
+	width: 160px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	
+}
+.light:hover {
+	background: #9E9E9E; /* old browsers */
+	background: -moz-linear-gradient(top, #9E9E9E 0%, #848484 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9E9E9E), color-stop(100%,#848484)); /* webkit */
+	cursor: pointer;
+}
+.light:active {
+	background: #878787; /* old browsers */
+	background: -moz-linear-gradient(top, #878787 0%, #6D6D6D 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#878787), color-stop(100%,#6D6D6D)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+.light a {
+padding: 10px;
+}
+/* question
+*******************************************************************************/
+.question {
+	background: #02A9CD; /* old browsers */
+	background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A9CD), color-stop(100%,#0195B2)); /* webkit */	border: 1px solid #666;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	display: inline;
+	width: 170px;
+	margin-left: 10px;
+
+}
+.question:hover {
+	background: #0195B2; /* old browsers */
+	background: -moz-linear-gradient(top, #0195B2 0%, #018299 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0195B2), color-stop(100%,#018299)); /* webkit */
+	cursor: pointer;
+}
+.question:active {
+	background: #018096; /* old browsers */
+	background: -moz-linear-gradient(top, #018096 0%, #016C7F 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#018096), color-stop(100%,#016C7F)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+.question a {
+padding: 10px;
+}
+/* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
+
+}
+
+
+
+
+
+/*	3-column layout
+
+	60 px columns, 24 px gutters, 46 px margins, 320 px total
+
+	---------------------------------------------------------
+
+	1     2      3
+
+	60px  144px  228px	*/
+
+
+
+@media only screen and (max-width: 479px) {
+body {
+	padding: 0 46px 0;
+	width: 228px;
+	-webkit-text-size-adjust: 100%;
+}
+#login {
+	background-color:#FF0;
+}
+header {
+
+ height: 50px;
+}
+#logo {
+ width: : 104px;
+	height: 40px;
+}
+/* FONTS start 		-------------------------------------------------------------------------------------------------------------*/
+.korfbal h1, .basketbal h1, .volleybal h1 {
+	font-family: 'LeagueGothicRegular';
+	text-transform: uppercase;
+	color: @grey;
+	padding-left: 15px;
+	.textShadow;
+	font-size: 28px;
+}
+#tagline {
+	font-family: 'AllerItalic';
+	text-align: right;
+	color: #808080;
+	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
+	font-size: 18px;
+}
+h2 {
+	font-family: 'SFCollegiateSolidRegular';
+}
+/* FONTS end 		-------------------------------------------------------------------------------------------------------------*/
+
+/* LAYOUTS start 	-------------------------------------------------------------------------------------------------------------*/
+#layouts {
+	float: left;
+	width: 100%;
+	height: 375px;
+}
+#layouts p, #layouts figure {
+	margin-top: 5px;
+	width: 228px;
+}
+#layouts figure {
+	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.854, transparent), to(rgba(255,255,255, 0.2)));
+}
+/* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
+#footerLeft, #footerCenter, #footerRight {
+padding: 15px;
+width: 208px;
+margin-top: 25px;
+margin-bottom: 25px;
+}
+#footerLeft {
+
+}
+#footerCenter {
+
+}
+#footerRight {
+
+}
+.korfbal {
+ 	background-color: @korfbalColor;
+	height: 70px;
+	border: 1px solid @korfbalBorderColor;
+	top: 10px;
+	margin-left: 0px;
+	.borderRadius;
+	.lessOpacity;
+	.transitionOff;	
+}
+.korfbal:hover {
+ 	background-color: @korfbalColor;
+	height: 70px;
+	border: 1px solid @korfbalBorderColor;
+	top: 10px;
+ 	.moreOpacity;
+ 	.transitionOn;
+ 	.borderRadius;
+}
+.basketbal {
+ 	background-color: @basketbalColor;
+	margin-left: 0px;
+	height: 70px;
+ 	.borderRadius;
+ 	border: 1px solid @basketbalBorderColor;
+ 	.lessOpacity;
+ 	.transitionOff;
+	top: 15px;
+}
+.basketbal:hover {
+ 	background-color: @basketbalColor;
+	height: 70px;
+ 	.borderRadius;
+ 	border: 1px solid @basketbalBorderColor;
+ 	.moreOpacity;
+ 	.transitionOn;
+	top: 15px;
+}
+.volleybal {
+ background-color: @volleybalColor;
+	margin-left: 0px;
+	height: 70px;
+ .borderRadius;
+ border: 1px solid @volleybalBorderColor;
+ .lessOpacity;
+ .transitionOff;
+	top: 20px;
+}
+.volleybal:hover {
+ background-color: @volleybalColor;
+	height: 70px;
+ .borderRadius;
+ border: 1px solid @volleybalBorderColor;
+ .moreOpacity;
+ .transitionOn;
+	top: 20px;
+}
+#korfbal, #basketbal, #volleybal {
+	position: absolute;
+	bottom: -32px;
+	left: 150px;
+	z-index: 9;
+	-moz-transform: scale(0.4) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.4) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.4) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.4) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.4) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+#korfbal:hover, #basketbal:hover, #volleybal:hover {
+	position: absolute;
+	bottom: -32px;
+	left: 150px;
+	z-index: 9;
+	-webkit-transition: all 10s;
+	-moz-transition: all 10s;
+	-o-transition: all 10s;
+	transition: all 10s;
+	-moz-transform: scale(0.4) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.4) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.4) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.4) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.4) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+#create {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	font-size: 30px;
+	z-index: 10;
+	margin: 12px;
+}
+#playnow {
+}
+
+
+
+footer {
+	background-image: url("../img/footer3.png");
+	}
+	/* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
+
+/* okay 
+*******************************************************************************/
+.okay {
+	background: #3BCD02;
+	background: -moz-linear-gradient(top, #3BCD02 0%, #33B201 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3BCD02), color-stop(100%,#33B201)); /* webkit */
+	border: 1px solid #2c9902;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 10px 0 12px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	width: 70px;
+	
+}
+.okay:hover {
+	background: #33B201; /* old browsers */
+	background: -moz-linear-gradient(top, #33B201 0%, #2B9601 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#33B201), color-stop(100%,#2B9601)); /* webkit */
+	cursor: pointer;
+}
+.okay:active {
+	background: #2B9601; /* old browsers */
+	background: -moz-linear-gradient(top, #2B9601 0%, #237A01 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2B9601), color-stop(100%,#237A01)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(74, 255, 3, 0.4);
+}
+.okay a {
+padding: 10px;
+}
+/* light
+*******************************************************************************/
+.light {
+	background: #BABABA; /* old browsers */
+	background: -moz-linear-gradient(top, #BABABA 0%, #A0A0A0 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BABABA), color-stop(100%,#A0A0A0)); /* webkit */
+	border: 1px solid #666;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	width: 120px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	display: block;
+	
+}
+.light:hover {
+	background: #9E9E9E; /* old browsers */
+	background: -moz-linear-gradient(top, #9E9E9E 0%, #848484 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9E9E9E), color-stop(100%,#848484)); /* webkit */
+	cursor: pointer;
+}
+.light:active {
+	background: #878787; /* old browsers */
+	background: -moz-linear-gradient(top, #878787 0%, #6D6D6D 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#878787), color-stop(100%,#6D6D6D)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+.light a {
+padding: 10px;
+}
+/* question
+*******************************************************************************/
+.question {
+	background: #02A9CD; /* old browsers */
+	background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A9CD), color-stop(100%,#0195B2)); /* webkit */	border: 1px solid #666;
+	.borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	width: 120px;
+	margin-left: 10px;
+	display: block;
+
+}
+.question:hover {
+	background: #0195B2; /* old browsers */
+	background: -moz-linear-gradient(top, #0195B2 0%, #018299 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0195B2), color-stop(100%,#018299)); /* webkit */
+	cursor: pointer;
+}
+.question:active {
+	background: #018096; /* old browsers */
+	background: -moz-linear-gradient(top, #018096 0%, #016C7F 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#018096), color-stop(100%,#016C7F)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+.question a {
+padding: 10px;
+}
+/* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
+}
+/*	Overrides for iPhone 4 and other high device-pixel-ratio devices */
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+ #example {
+ background: rgb(255,158,97);
+}
+}
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on February 3, 2011 */
+
+@font-face {
+	/* This declaration targets Internet Explorer */
+	font-family: 'SFCollegiateSolidRegular';
+	src: url('sf_collegiate_solid-webfont.eot');
+}
+@font-face {
+	/* This declaration targets everything else */
+	font-family: 'SFCollegiateSolidRegular';
+	src: url(//:) format('no404'), url('sf_collegiate_solid-webfont.woff') format('woff'), url('sf_collegiate_solid-webfont.ttf') format('truetype'), url('sf_collegiate_solid-webfont.svg#webfontvViDQrFS') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	/* This declaration targets Internet Explorer */
+	font-family: 'LeagueGothicRegular';
+	src: url('league_gothic-webfont.eot');
+}
+@font-face {
+	/* This declaration targets everything else */
+	font-family: 'LeagueGothicRegular';
+	src: url(//:) format('no404'), url('league_gothic-webfont.woff') format('woff'), url('league_gothic-webfont.ttf') format('truetype'), url('league_gothic-webfont.svg#webfont60yFay8f') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'AllerItalic';
+	src: url('aller_it-webfont.eot?') format('eot'),  url('aller_it-webfont.woff') format('woff'),  url('aller_it-webfont.ttf') format('truetype'),  url('aller_it-webfont.svg#webfont7oSuZnvY') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/*
+#main_login input[type="text"], input[type="password"] {
+	display:block;
+	margin: 0 0 1em 0;
+	width: 100px;
+	border: 5px;
+	padding: 1em;
+}
+#main_login input[type="submit"] {
+	border: none;
+	padding: 6px;
+	text-decoration: none;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+#logged_in {
+	border: none;
+	padding: 6px;
+	font-family: "Apple Chancery";
+	background-color: silver;
+	width: 200px;
+}
+*/
+
+
+
 
 
 

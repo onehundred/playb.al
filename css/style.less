@@ -5,7 +5,7 @@ css programing: less css
 based on: less framework 3 by Joni Korpi http://lessframework.com 
 */
 
-/* GLOBALS start */
+/* LESS GLOBALS start */
 
 @korfbalColor: #ebbb25;
 @korfbalBorderColor: #d1a521;
@@ -47,7 +47,7 @@ based on: less framework 3 by Joni Korpi http://lessframework.com
 .textShadow {
 	text-shadow: 0px 0px 7px #474747;
 }
-/* GLOBALS end */
+/* LESS GLOBALS end */
 
 /* RESETS start */
 
@@ -58,7 +58,6 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 }
 html, body {
 	height:100%;
-	
 }
 #topbar {
 	background-color: #d9d9d9;
@@ -242,6 +241,28 @@ h2 {
 #layouts figure {
 	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.854, transparent), to(rgba(255,255,255, 0.2)));
 }
+#footerLeft, #footerCenter, #footerRight {
+padding: 25px;
+width: 150px;
+margin-top: 25px;
+margin-bottom: 25px;
+font-size: 14px;
+}
+#footerLeft {
+margin-left: 15px;
+}
+#footerCenter {
+margin-left:15px;
+border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: dotted;
+	border-left-style: dotted;
+	border-right-color: #D9D9D9;
+	border-left-color: #D9D9D9;
+}
+#footerRight {
+margin-left: 15px;
+}
 
 .korfbal {
  	background-color: @korfbalColor;
@@ -352,14 +373,7 @@ padding-top: 7px;
 	
 		height:30px;
 	
-		
-	
-	/* Rounded Corners */
-	
-	
-
-
-	
+		/* Rounded Corners */
 
 	position: relative;
 	/* Borders */
@@ -372,8 +386,6 @@ z-index: 1;
 	display:block;
 	text-align:center;
 	position:relative;
-	
-		
 	border:none;
 	padding-right: 10px;
 	padding-left: 15px;
@@ -470,7 +482,7 @@ border-bottom-left-radius: 3px;
 }
 
 #menu p, #menu h2, #menu h3, #menu ul li {
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:Helvetica, Arial, sans-serif;
 	line-height:21px;
 	font-size:12px;
 	text-align:left;
@@ -494,7 +506,6 @@ border-bottom-left-radius: 3px;
 	line-height:18px;
 	margin:0 0 10px 0;
 }
-
 #menu li:hover div a {
 	font-size:12px;
 	color:#015b86;
@@ -503,11 +514,6 @@ border-bottom-left-radius: 3px;
 #menu li:hover div a:hover {
 	color:#029feb;
 }
-
-
-
-
-
 #menu li ul {
 	list-style:none;
 	padding:0;
@@ -530,20 +536,16 @@ border-bottom-left-radius: 3px;
 	padding:0;
 	margin:0;
 }
-
 #menu li .greybox li {
 	background:#e5e5e5;
 	border:1px solid #bbbbbb;
 	margin:0px 0px 4px 0px;
 	padding:4px 6px 4px 6px;
 	width:116px;
-
-	/* Rounded Corners */
-
 }
 #menu li .greybox li:hover {
 	background:#ffffff;
-		padding:4px 6px 4px 6px;
+	padding:4px 6px 4px 6px;
 	margin:0px 0px 4px 0px;
 }
 
@@ -756,19 +758,26 @@ h2 {
 }
 /* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
 #footerLeft, #footerCenter, #footerRight {
-padding: 15px;
+padding: 35px;
 width: 250px;
 margin-top: 25px;
 margin-bottom: 25px;
+font-size: 16px;
 }
 #footerLeft {
 margin-left: 15px;
 }
 #footerCenter {
-margin-left: 100px;
+margin-left: 45px;
+border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: dotted;
+	border-left-style: dotted;
+	border-right-color: #D9D9D9;
+	border-left-color: #D9D9D9;
 }
 #footerRight {
-margin-left: 105px;
+margin-left: 45px;
 }
 .korfbal {
  	background-color: @korfbalColor;
@@ -1064,18 +1073,27 @@ footer{
 /* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
 #footerLeft, #footerCenter, #footerRight {
 padding: 15px;
-width: 250px;
-margin-top: 25px;
-margin-bottom: 25px;
+width: 360px;
+margin-top: 5px;
+margin-bottom: 5px;
 }
 #footerLeft {
 margin-left: 15px;
 }
 #footerCenter {
-margin-left: 100px;
+margin-left: 15px;
+border-top-width: 1px;
+border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: dotted;
+	border-bottom-style: dotted;
+	border-top-color: #D9D9D9;
+	border-bottom-color: #D9D9D9;
+
 }
 #footerRight {
-margin-left: 105px;
+margin-left: 15px;
 }
 .korfbal {
  	background-color: @korfbalColor;
@@ -1364,10 +1382,11 @@ h2 {
 }
 /* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
 #footerLeft, #footerCenter, #footerRight {
-padding: 15px;
-width: 208px;
+padding: 5px;
+width: 170px;
 margin-top: 25px;
 margin-bottom: 25px;
+font-size: 12px;
 }
 #footerLeft {
 
@@ -1666,7 +1685,32 @@ padding: 10px;
 
 
 
+input, textarea, select {
+	   border: 1px solid #555;
+	   padding: 0.5em;
+	   font-size: 14px;
+     line-height: 1.2em;
+     width: 80%;
+     background: #FFFFFF; /* old browsers */
+background: -moz-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%); /* firefox */
 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#F2F2F2)); /* webkit */
+
+     -webkit-appearance: none;
+ 	   -webkit-box-shadow: 1px 1px 1px #fff;
+ 	   -webkit-border-radius: 3px;
+	 }
+	 
+	 input:focus, textarea:focus, select:focus {
+	   outline: none;
+	   border: 2px solid #058cf5;
+	   margin: -1px;
+	 }
+	 
+	 textarea {
+     height: 55px;
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aaa), color-stop(0.05, #fff));
+   }
 
 
 

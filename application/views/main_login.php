@@ -14,13 +14,6 @@
                 </div>
                 <div class="col_1">
                     <ul class="greybox">
-                        <!--
-          <li><a href="#">ThemeForest</a></li>
-                    <li><a href="#">GraphicRiver</a></li>
-                    <li><a href="#">ActiveDen</a></li>
-                    <li><a href="#">VideoHive</a></li>
-                    <li><a href="#">3DOcean</a></li>
--->
                     </ul>
                 </div>
                 <div class="col_1">

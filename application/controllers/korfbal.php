@@ -124,59 +124,74 @@ class Korfbal extends CI_Controller {
 		$spelersnaam = $_POST['spelername'];
 		$positie = $_POST['positie'];
 		$teamid = $_POST['teamid'];
+		$geslacht = $_POST['geslacht'];
+		
+		
 		
 		if($positie=="rebound1")
 		{
-			$field = "rebound1_speler";
+			$field = "rebound1";
+			$vak = 1;
 		}
 		
 		if($positie=="playmaking1")
 		{
-			$field = "playmaking1_speler";
+			$field = "playmaking1";
+			$vak = 1;
 		}
 		
 		if($positie=="attack1")
 		{
-			$field = "attack1_speler";
+			$field = "attack1";
+			$vak = 1;
 		}
 		
 		if($positie=="attack2")
 		{
-			$field = "attack2_speler";
+			$field = "attack2";
+			$vak = 1;
 		}
 		
 		if($positie=="playmaking2")
 		{
-			$field = "playmaking2_speler";
+			$field = "playmaking2";
+			$vak = 2;
 		}
 		
 		if($positie=="rebound2")
 		{
-			$field = "rebound2_speler";
+			$field = "rebound2";
+			$vak = 2;
 		}
 		
 		if($positie=="attack3")
 		{
-			$field = "attack3_speler";
+			$field = "attack3";
+			$vak = 2;
 		}
 		
 		if($positie=="attack4")
 		{
-			$field = "attack4_speler";
+			$field = "attack4";
+			$vak = 2;
 		}
 		
 		if($positie=="captain")
 		{
-			$field = "captain_speler";
+			$field = "captain";
 		}
 		
 		if($positie=="setpieces")
 		{
-			$field = "setpieces_speler";
+			$field = "setpieces";
 		}
 		
-		$this->load->model(korfbal_model);
-		$this->korfbal_model->insert_opstelling($field,$spelersnaam,$teamid);
+		$this->load->model('korfbal_model');
+		$vakcheck = $this->korfbal_model->insert_opstelling($field,$spelersnaam,$teamid,$geslacht,$vak);
+		
+		$arr = array('check' => $vakcheck);
+		$json = json_encode($arr); // returnt: { "item 2":"value 2", "item 3":"value 3", "item 3":"value 3"  } 
+		echo $json;
 	}
 	
 	function korfbal_division()
@@ -267,7 +282,7 @@ class Korfbal extends CI_Controller {
 		 $this->load->model('korfbal_model');
 		 $check = $this->korfbal_model->addTransfer($bedrag, $speler_id, $team_id);
 		 
-		 //array omzetten naar jason, gaat naar de succes function van de ajaxcall
+		 //array omzetten naar json, gaat naar de succes function van de ajaxcall
 		 $arr = array('check' => $check);
 		 $json = json_encode($arr); // returnt: { "item 2":"value 2", "item 3":"value 3", "item 3":"value 3"  } 
 		 echo $json;	

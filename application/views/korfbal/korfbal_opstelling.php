@@ -58,19 +58,20 @@
     <div class="bubbleInfo">
         <div>
          
-          <li class="trigger"><?php echo $row->voornaam.' '.$row->achternaam; ?></li>
+          <li class="trigger"><?php echo $row->voornaam.' '.$row->achternaam; ?> id:<?php echo $row->speler_id;?></li>
             
             
         </div>
-        <div id="dpop" class="popup">
-        	<p>Rebound:<?php echo $row->rebound; ?>/20</p>
-        	<p>Stamina:<?php echo $row->stamina; ?>/20</p>
-			<p>Passing:<?php echo $row->passing; ?>/20</p>
-			<p>Shotpower:<?php echo $row->shotpower; ?>/20</p>
-			<p>Shotprecision:<?php echo $row->shotprecision; ?>/20</p>
-			<p>Playmaking:<?php echo $row->playmaking; ?>/20</p>
-			<p>Intercepting:<?php echo $row->intercepting; ?>/20</p>
-			<p>Leadership:<?php echo $row->leadership; ?>/20</p>
+        <div id="dpop<?php echo $row->speler_id;?>" class="popup">
+        	<p id="geslacht">Geslacht: <?php echo $row->geslacht;?></p>
+        	<p id="rebound">Rebound:<?php echo $row->rebound; ?>/20</p>
+        	<p id="stamina">Stamina:<?php echo $row->stamina; ?>/20</p>
+			<p id="passing">Passing:<?php echo $row->passing; ?>/20</p>
+			<p id="shotpower">Shotpower:<?php echo $row->shotpower; ?>/20</p>
+			<p id="shotprecision">Shotprecision:<?php echo $row->shotprecision; ?>/20</p>
+			<p id="playmaking">Playmaking:<?php echo $row->playmaking; ?>/20</p>
+			<p id="intercepting">Intercepting:<?php echo $row->intercepting; ?>/20</p>
+			<p id="leadership">Leadership:<?php echo $row->leadership; ?>/20</p>
         </div>
  
     </div>

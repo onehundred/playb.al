@@ -271,6 +271,20 @@ class Korfbal extends CI_Controller {
 	
 	}
 	
+	
+	function korfbal_training()
+	{
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;	
+		$this->load->model('korfbal_model');
+		
+		$data['training'] = $this->korfbal_model->get_training($team_id);
+		$data['energie'] =$this->korfbal_model->get_energie($team_id);
+		
+		$data['main_content'] = 'korfbal/korfbal_training';
+		$this->load->view('korfbal/includes/template', $data);
+	}
+	
 	//voegt een transfer toe van een speler
 	function korfbal_addTransfer()
 	{

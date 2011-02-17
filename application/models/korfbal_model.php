@@ -115,7 +115,8 @@
 	}
 
 
-	function get_transfers(){
+	function get_transfers()
+	{
 
 		$this->db->select('*');
 		$this->db->from('korf_transfers');
@@ -129,6 +130,27 @@
 
 
 
+	}
+	
+	function get_training($team_id)
+	{
+		$this->db->select('*');
+		$this->db->from('korf_spelers');
+		$this->db->join('korf_skills', 'FK_player_id = speler_id');
+		$this->db->join('korf_training', 'FK_skill_id = skill_id');
+		$this->db->where('FK_team_id', $team_id);
+		$query = $this->db->get();
+		return $query;
+	
+	}
+	
+	function get_energie($team_id)
+	{
+		$this->db->select('*');
+		$this->db->where('team_id', $team_id);
+		$query = $this->db->get('korf_teams');
+		return $query;
+		
 	}
 
 

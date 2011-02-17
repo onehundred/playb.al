@@ -6,7 +6,7 @@
 		echo form_open('main/create_user');
 		echo form_input('voornaam', set_value('voornaam', 'First Name'));
 		echo form_input('achternaam', set_value('achternaam', 'Last Name'));
-		echo form_input('email', set_value('email', 'E-Mail'));
+		echo form_email('email', set_value('email', 'E-Mail'));
 		echo form_input('land', set_value('land', 'Country'));
 	?>
 </fieldset>	

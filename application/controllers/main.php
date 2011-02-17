@@ -4,6 +4,7 @@ class Main extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('MY_form_helper');
 		
 		
 	}

@@ -1,3 +1,4 @@
+
 <script>
 
 $(function() {
@@ -39,13 +40,22 @@ $(function() {
 	        		
 		        		for(i =1;i<20;i++){
 		        			
-		        			$('#myModal').append('<p>'+spelers[i].naam + spelers[i].skill+'</p>');
+		    				var value = spelers[i].skill.split(' ');
+		    				//alert(value[10]);
+		    				var progress = value[10]/10;
+		    				//alert(progress);
+		        			
+		        			$('#myModal').append('<p>'+spelers[i].naam +' '+ spelers[i].skill+'</p>');
+		        			$('#myModal').append('<div id=progressbar'+i+'></div>');
+		        			
+		        			$( "#progressbar"+i ).progressbar({
+								value: progress
+							});
+		        			
 		        			
 		        			
 		        			//alert(spelers[i].naam + spelers[i].skill);
-		        		
-		        		
-		        			$('#myModal').reveal({
+		   					$('#myModal').reveal({
 		        			
 		        			 animation: 'fade',                   //fade, fadeAndPop, none
 	    					 animationspeed: 300,                       //how fast animtions are

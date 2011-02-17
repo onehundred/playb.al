@@ -9,6 +9,7 @@
     function validate()
     {
     	$this->db->where('gebruikersnaam', $this->input->post('username'));
+    	$this->db->or_where('email', $this->input->post('username'));
     	
     	
     	$this->db->where('paswoord', md5($this->input->post('password')));

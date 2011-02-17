@@ -37,7 +37,7 @@ class Main extends CI_Controller {
 		{
 			$username= $this->input->post('username');
 		
-			$queryid = $this->db->query("SELECT user_id FROM users WHERE gebruikersnaam = '$username';");
+			$queryid = $this->db->query("SELECT user_id, gebruikersnaam FROM users WHERE gebruikersnaam = '$username' OR email = '$username';");
     	
     	
     		if ($queryid->num_rows() > 0)
@@ -45,13 +45,14 @@ class Main extends CI_Controller {
   			 foreach ($queryid->result() as $row)
   				 {
       				 $id= $row->user_id;
+      				 $username = $row->gebruikersnaam;
       				
   				 }
   				
 				}
 				
 			$data = array(
-				'username' => $this->input->post('username'),
+				'username' => $username,
 				'user_id' => $id,
 				'is_logged_in' => true
 			

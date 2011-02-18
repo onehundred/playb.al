@@ -109,7 +109,7 @@
     			$this->db->where('training_id', $trainingid);
     			$this->db->update('korf_training',$update2);
     		
-    			$trainingsarray[$i]['skill'] = 'Speler is gestegen naar niveau '.$updatepassing;
+    			$trainingsarray[$i]['niveau'] = $updatepassing;
     		}else{
     			
     			$update = array(
@@ -120,7 +120,8 @@
     			$this->db->where('training_id', $trainingid);
     			$this->db->update('korf_training',$update);
     			
-    			$trainingsarray[$i]['skill'] = 'Speler is '.$rand.' punten gestegen en heeft een totaal van '.$updatepassing_tr;
+    			$trainingsarray[$i]['gestegen'] = $rand;
+    			$trainingsarray[$i]['totaal'] = $updatepassing_tr;
     		
     		}
     		$i++;

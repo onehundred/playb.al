@@ -33,5 +33,26 @@ class Training extends CI_Controller {
 	}
 	
 	
+	function train_stamina()
+	{
+		$teamid = $_POST['teamid'];
+		
+		$this->load->model('training_model');
+		$energiecheck = $this->training_model->check_energie($teamid);
+		
+		
+		if($energiecheck == true){
+		
+		
+		}else{
+			$arr = array('energiecheck' => $energiecheck);
+		 	$json = json_encode($arr); 
+		 	echo $json;
+		
+		}
+	
+	}
+	
+	
 }	
 	

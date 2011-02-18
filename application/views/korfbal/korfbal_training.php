@@ -1,13 +1,13 @@
-
 <script>
 
 $(function() {
-
+	
 
 	$('#training').click(function(){
 	
 	var teamid = $('#teamid').val();
 	$('#myModal p').remove();
+	$('#myModal div').remove();
 	//alert(teamid);
 	
 	
@@ -17,7 +17,27 @@ $(function() {
                 
                 //stamina
                 if(option === 'stamina'){
-                alert('stamina');
+                //alert('stamina');
+                 $.ajax({
+	    			type: "POST",
+	    			url: "http://playb.al/index.php/training/train_stamina",
+	    			data: { teamid: teamid
+	            			},
+	        		dataType: "json",
+	        		success: function(data){
+	        		
+	        		if(data.energiecheck === false){
+	        			$().toastmessage('showErrorToast', "U heeft te weinig energiepunten.");
+	        		//alert('U hebt te weinig energiepunten');
+	        		}
+	        		
+	        		
+	        		
+	        		
+	        		}
+	        		
+	        		
+	        		});
                 }
                 //passing
                 if(option === 'passing'){
@@ -25,9 +45,7 @@ $(function() {
 	    			type: "POST",
 	    			url: "http://playb.al/index.php/training/train_passing",
 	    			data: { teamid: teamid
-	            			
-	            			
-	        				},
+	            			},
 	        		dataType: "json",
 	        		success: function(data){
 	        		
@@ -40,19 +58,29 @@ $(function() {
 	        		
 		        		for(i =1;i<20;i++){
 		        			
-		    				var value = spelers[i].skill.split(' ');
-		    				//alert(value[10]);
-		    				var progress = value[10]/10;
+		    				var progress = spelers[i].totaal / 10;
 		    				//alert(progress);
-		        			
-		        			$('#myModal').append('<p>'+spelers[i].naam +' '+ spelers[i].skill+'</p>');
-		        			$('#myModal').append('<div id=progressbar'+i+'></div>');
+		    				
+		    				
+		    				if(spelers[i].niveau){
+		    					$('#myModal').append('<p>'+spelers[i].naam +' is gestegen naar niveau '+spelers[i].niveau+'</p>');
+		        			$('#myModal').append('<div style=height:10px; id=progressbar'+i+'></div>');
 		        			
 		        			$( "#progressbar"+i ).progressbar({
 								value: progress
 							});
+
+		    				
+		    				}else{
+		    				
+		    				
 		        			
+		        			$('#myModal').append('<p>'+spelers[i].naam +' is '+spelers[i].gestegen+' punten gestegen. En heeft een totaal van '+ spelers[i].totaal+'</p>');
+		        			$('#myModal').append('<div style=height:10px; id=progressbar'+i+'></div>');
 		        			
+		        			$( "#progressbar"+i ).progressbar({
+								value: progress
+							});
 		        			
 		        			//alert(spelers[i].naam + spelers[i].skill);
 		   					$('#myModal').reveal({
@@ -62,6 +90,7 @@ $(function() {
 	    					 closeonbackgroundclick: true,              //if you click background will modal close?
 	    					 dismissmodalclass: 'close-reveal-modal'    //the class of a button or element that will close an open modal
 	    					 });
+	    					 }
 		        		}
 	    			}
 	    			}

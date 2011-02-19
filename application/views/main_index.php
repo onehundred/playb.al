@@ -1,6 +1,5 @@
 <section id="layouts">
 	<h1 id="tagline">manage jouw team</h1>
-	
 	<figure class="korfbal">
 		<h1>korfbal</h1> 
 		<div id="create"> <div class="okay">
@@ -10,7 +9,6 @@
 		</div>
 		</div>
 		<img src="<?php echo base_url();?>img/korfbal.png" id="korfbal" />
-	
 	</figure>
 	<figure class="basketbal">
 		<h1>basketbal</h1> 
@@ -32,7 +30,6 @@
 		<img src="<?php echo base_url();?>img/volleybal.png" id="volleybal" />
 		<!-- <h3>watsgoodwatsgo  watsgood watsgood watsgood watsgood watsgood watsgood watsgood watsgood watsgood watsgood watsgood watsgood watsgood</h3> -->
 	</figure>
-
 </section>
 <section id="bottom">
 

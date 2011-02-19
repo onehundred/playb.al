@@ -1,4 +1,3 @@
-
 <p><?php echo anchor('korfbal/korfbal_start/'.$team_id.'','Overzicht') ?></p>
 <p><?php echo anchor('korfbal/korfbal_players/'.$team_id.'','Spelers') ?>	</p>
 <p><?php echo anchor('korfbal/korfbal_matches/'.$team_id.'','Wedstrijden') ?>	</p>

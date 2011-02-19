@@ -12,8 +12,8 @@
 	height: auto;
 	background: #333;
     opacity: 0.9;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	color: #eee;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -33,7 +33,7 @@
 }
 
 .toast-item-close {
-    background:url(images/close.gif);
+    background:url(../../img/close.gif);
     width:22px;
     height:22px;
     position: absolute;
@@ -51,19 +51,19 @@
 }
 
 .toast-item-image-notice {
-    background:url(images/notice.png);
+    background:url(../../img/notice.png);
 }
 
 .toast-item-image-success {
-    background:url(images/success.png);
+    background:url(../../img/success.png);
 }
 
 .toast-item-image-warning {
-    background:url(images/warning.png);
+    background:url(../../img/warning.png);
 }
 
 .toast-item-image-error {
-    background:url(images/error.png);
+    background:url(../../img/error.png);
 }
 
 

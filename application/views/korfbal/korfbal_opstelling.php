@@ -226,7 +226,7 @@
 
 </div><!-- End demo -->
 <script src="<?php echo base_url();?>/js/korfbal_opstelling.js"></script>
-<script src="<?php echo base_url();?>/js/toastmessage/jquery.toastmessage.js"></script>
+<!-- <script src="<?php echo base_url();?>/js/toastmessage/jquery.toastmessage.js"></script> -->
 
 
 

@@ -24,7 +24,7 @@
 -->
                         <!-- todo div hieronder toewijzen aan login (gemodificeerd) -->
                         
-                        <div id="alslogin">
+                        <div id="main_signup">
                 		<?php
                 		$user_id = $this->session->userdata('user_id'); 
 				     		if (isset($user_id)){
@@ -37,18 +37,22 @@
                         
                         <!--   <h1>login</h1> -->
                   
+                        <div id="main_signup">
+
                         <?php
 						echo form_open('main/login');
-		    			echo("e-mail");
-						echo form_input('username', 'Username');
-		 				echo("password");
-						echo form_password('password', 'Password');
+		    			echo("gebruikersnaam of e-mail adres");
+						echo form_input('username', '');
+		 				echo("paswoord");
+						echo form_password('password', '');
 		    			echo("<p ></p>");
 						echo form_submit('submit', 'Login');
 
 						echo form_close();
 						} 
 						?>
+                        <div id="main_signup">
+
                     </ul>
                 </div>
                 <div class="col_3"> 

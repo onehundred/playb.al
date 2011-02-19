@@ -1,4 +1,5 @@
 <section id="layouts">
+	<h1 id="tagline">manage jouw team</h1>
     <figure class="korfbal">
         <h1>Korfbal</h1>
         <p>

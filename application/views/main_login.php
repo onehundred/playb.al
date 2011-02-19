@@ -1,6 +1,6 @@
 <div id="login" style="">
     <ul id="menu">
-        <li class="menu_right"><a href="#" class="drop">aanmelden</a><!-- Begin 3 columns Item -->
+        <li class="menu_right"><a href="#" class="drop"><?php $username = $this->session->userdata('username'); if(isset($username)){ echo $username;} ?> <?php if(!$username){?>aanmelden<?php } ?> </a><!-- Begin 3 columns Item -->
             
             <div class="dropdown_3columns align_right"><!-- Begin 3 columns container -->
                 

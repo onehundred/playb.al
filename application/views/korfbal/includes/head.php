@@ -19,8 +19,11 @@ but keep in mind that it will disable user-zooming completely. Bad for accessibi
 
 <script src="<?php echo base_url();?>js/less-1.0.41.min.js"></script> 
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script src="<?php echo base_url();?>/js/toastmessage/jquery.toastmessage.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/reveal/jquery.reveal.js"></script>
 <link rel="stylesheet" href="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css" />
 <link rel="stylesheet" href="<?php echo base_url()?>js/toastmessage/jquery.toastmessage.css"/>
+<link rel="stylesheet" href="<?php echo base_url()?>js/reveal/reveal.css"/>
 
 </head>
 <body>

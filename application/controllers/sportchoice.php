@@ -171,6 +171,10 @@ class Sportchoice extends CI_Controller {
 			
 						}
 						
+					//toewijzing trainingspunten
+					
+					$this->sportkeuze_model->assign_trainingspunten();	
+						
 					//toewijzing financien
 					
 					$this->sportkeuze_model->create_korfbalfinancien();	

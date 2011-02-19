@@ -310,6 +310,52 @@
     	}
     	
     	
+    	function assign_trainingspunten()
+    	{
+    		$user_id = $this->session->userdata('user_id');
+    	
+    	$this->db->where('FK_user_id', $user_id);
+    	$this->db->select('team_id');
+    	$teamidquery = $this->db->get('korf_teams');
+    	
+    	foreach($teamidquery->result() as $row)
+    	{
+    		$team_id = $row->team_id;
+    	
+    	}
+
+    	
+    	
+    	$playeridquery = $this->db->query("select speler_id from korf_spelers where FK_team_id ='$team_id';");
+    	
+    	
+    	foreach($playeridquery->result() as $row)
+    	{
+    		$spelerid = $row->speler_id;
+    		
+    		$this->db->select('skill_id');
+    		$this->db->from('korf_skills');
+    		$this->db->where('FK_player_id', $spelerid);
+    		$skillidquery = $this->db->get();
+    		
+    		
+    		foreach($skillidquery->result() as $row)
+    		{
+    			$skillid = $row->skill_id;
+    			
+    			$insert = array(
+    			'FK_skill_id' => $skillid
+    			
+    			);
+    			
+    			$this->db->insert('korf_training', $insert);
+    		
+    		}	
+    	}
+    	
+    	}
+    	
+    	
     	//functie die elke speler skills toekent bij het maken van een team
     	function assign_korfbalskills($playerid)
 		{

@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="<?php echo base_url()?>js/toastmessage/jquery.toastmessage.css"/>
 <link rel="stylesheet" href="<?php echo base_url()?>js/reveal/reveal.css"/>
 
-<script src="<?php echo base_url();?>js/modernizr-1.6.min.js"></script>
+<script src="<?php echo base_url();?>js/modernizr-1.6.min.js"></script> 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -25,8 +25,6 @@
 <script src="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
 <script src="<?php echo base_url();?>js/reveal/jquery.reveal.js"></script>
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
-
-
 
 
 </head>

@@ -1,5 +1,5 @@
 <div>
-<h1>Players</h1>
+<!-- <h1>Players</h1> -->
 
 <?php 
 foreach($spelers->result() as $row)

@@ -3,5 +3,5 @@
 if($username != ""){
 ?>
 
-<p><?php echo anchor('main/logout','Logout') ?></p>
+<ul id="menu"><?php echo anchor('main/logout','Logout') ?></ul>
 <?php }?>

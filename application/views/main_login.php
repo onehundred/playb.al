@@ -24,7 +24,7 @@
 -->
                         <!-- todo div hieronder toewijzen aan login (gemodificeerd) -->
                         
-                        <div id="main_signup">
+                        <div id="login">
                 		<?php
                 		$user_id = $this->session->userdata('user_id'); 
 				     		if (isset($user_id)){
@@ -51,7 +51,7 @@
 						echo form_close();
 						} 
 						?>
-                        <div id="main_signup">
+                        </div>
 
                     </ul>
                 </div>

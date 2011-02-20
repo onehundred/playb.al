@@ -1,3 +1,4 @@
+<script src="<?php echo base_url();?>js/clearlink.js"></script>
 <script src="<?php echo base_url();?>js/formToWizard.js"></script>
 <script>
         $(document).ready(function(){
@@ -6,18 +7,22 @@
         });    
 </script>
 <script>
-$('#showLogin').hover(function() { 
-			$('#showLogin').hide();
+/*
+$('#test').click(function() { 
+	 $(this).css("font-size","90px");
 			$('#login').slideDown(200);
 			});
 	
+*/
 		
 </script>
+<!--
 	<script>  $(document).ready(function(){			
 		
 			$('#wrap').fadeIn(2000);				
 			
 });</script>
+-->
 <script>
 	/*
 		

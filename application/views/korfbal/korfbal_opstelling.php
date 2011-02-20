@@ -3,6 +3,7 @@
 #players {
 	float:left;
 	width: 250px;
+	
 	margin-right: 1em;
 }
 #catalog li {
@@ -93,11 +94,11 @@
 }
 </style>
 
-<div>
+<div style="height: 400px;">
     <div id="players"> 
         <!-- <h1>Korfbal</h1> -->
         <div id="catalog">
-            <h3><a href="#">Players</a></h3>
+<!--             <h3><a href="#">Players</a></h3> -->
             <div>
                 <ul>
                     <?php foreach($spelers->result() as $row){  ?>
@@ -135,6 +136,7 @@
 	$captain = $row->captain_speler;
 	$setpieces = $row->setpieces_speler;
 }?>
+<div id="korfbalField" style="background-color: yellow; height: 400px; float:right;">
     <div id="vak1">
         <h2>Vak1</h2>
         <div id="rebound1">
@@ -283,6 +285,7 @@
                 </ul>
             </div>
         </div>
+        </div> <!-- end korfbalField -->
     </div>
 </div>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>" />

@@ -9,18 +9,26 @@
     function validate()
     {
     	$this->db->where('gebruikersnaam', $this->input->post('username'));
-    	$this->db->or_where('email', $this->input->post('username'));
-    	
-    	
     	$this->db->where('paswoord', md5($this->input->post('password')));
     	
-    	$query = $this->db->get('users');
+    	$query1 = $this->db->get('users');
     	
     	
-    	if($query->num_rows==1)
+    	if($query1->num_rows==1)
     	{
     			return true;
     	}
+    	
+    	$this->db->where('email', $this->input->post('username'));
+    	$this->db->where('paswoord', md5($this->input->post('password')));
+    	
+    	$query2 = $this->db->get('users');
+    	
+    	if($query2->num_rows==1)
+    	{
+    			return true;
+    	}
+
     
     }
     

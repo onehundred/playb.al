@@ -15,6 +15,8 @@
 
 
 <script src="<?php echo base_url();?>js/less-1.0.41.min.js"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="<?php echo base_url();?>js/jquery.transform.js"></script> 
 <!-- <script src="<?php echo base_url();?>js/modernizr-1.6.min.js"></script>-->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

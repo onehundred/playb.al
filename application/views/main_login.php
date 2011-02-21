@@ -1,21 +1,32 @@
-<div id="login" style="">
+<div id="login">
     <ul id="menu">
-        <li class="menu_right"><a href="#" class="drop"><?php $username = $this->session->userdata('username'); if(isset($username)){ echo $username;} ?> <?php if(!$username){?>aanmelden<?php } ?> </a><!-- Begin 3 columns Item -->
+        <li class="menu_right">
+	        <a href="#" class="drop">
+	         <img src="<?php echo base_url();?>img/home.png" />
+
+	    	    <?php $username = $this->session->userdata('username'); if(isset($username)){ echo $username;} ?> 
+	    	                   		        <?php if(!$username){?>aanmelden<?php } ?> 
+			</a>
+		
+		<!-- Begin 3 columns Item -->
             
             <div class="dropdown_3columns align_right"><!-- Begin 3 columns container -->
+
                 
-                <div class="col_3"> 
-                    <!-- <h2>Lists in Boxes</h2> --> 
-                </div>
-                <div class="col_1">
+                <!--
+<div class="col_1">
                     <ul class="greybox">
-                      <!--   <li><a href="#">FreelanceSwitch</a></li> -->
+                        <li><a href="#">FreelanceSwitch</a></li>
                     </ul>
                 </div>
-                <div class="col_1">
+-->
+                <!--
+<div class="col_1">
                     <ul class="greybox">
+                             <li><a href="#">FreelanceSwitch</a></li>
                     </ul>
                 </div>
+-->
                 <div class="col_1">
                     <ul class="greybox">
                       <!--
@@ -24,7 +35,8 @@
 -->
                         <!-- todo div hieronder toewijzen aan login (gemodificeerd) -->
                         
-                        <div id="login">
+                        <div>
+                        
                 		<?php
                 		$user_id = $this->session->userdata('user_id'); 
 				     		if (isset($user_id)){
@@ -37,17 +49,21 @@
                         
                         <!--   <h1>login</h1> -->
                   
-                        <div id="main_signup">
+                        <div>
 
                         <?php
+                        
 						echo form_open('main/login');
-		    			echo("gebruikersnaam of e-mail adres");
+		    			echo("<p>gebruikersnaam of e-mail adres</p>");
 						echo form_input('username', '');
-		 				echo("paswoord");
+		 				echo("<p>paswoord</p>");
 						echo form_password('password', '');
 		    			echo("<p ></p>");
-						echo form_submit('submit', 'Login');
-
+/* 		    	todo paswoord vergeten functionaliteit */
+		    			echo("<p >paswoord vergeten?</p>");
+		    			
+						echo form_submit('submit', 'login');
+						
 						echo form_close();
 						} 
 						?>
@@ -55,10 +71,7 @@
 
                     </ul>
                 </div>
-                <div class="col_3"> 
-                </div>
-                <div class="col_3"> </div>
-            </div>
+                           </div>
             <!-- End 3 columns container --> 
             
         </li>

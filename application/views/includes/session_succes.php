@@ -3,5 +3,16 @@
 if($username != ""){
 ?>
 
-<ul id="menu"><?php echo anchor('main/logout','Logout') ?></ul>
+<img src="<?php echo base_url();?>img/default_profile.png" />
+
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>	
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<?php echo anchor('main/logout','afmelden') ?>
+
+	
+
 <?php }?>

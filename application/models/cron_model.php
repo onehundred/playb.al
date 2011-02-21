@@ -5,7 +5,35 @@
         parent::__construct();
     }
     
+    function get_croninfo(){
+    	$query = $this->db->get('korf_cron');
+    	return $query;
+    }
     
+    //om de 2 dagen
+    function update_week($week)
+    {
+    	$update = array(
+    		'week' => $week +1
+    	
+    	);
+    	
+    	$this->db->update('korf_cron', $update);
+    	
+    }
+    
+    //om de maand ongeveer
+    
+    function update_seizoen($seizoen)
+    {
+    	$update = array(
+    		'seizoen' => $seizoen +1
+    	
+    	);
+    	
+    	$this->db->update('korf_cron', $update);
+
+    }
     
     //elk nieuw seizoen ŽŽn keer runnen
     //create scriptje aanmaken voor extra divisies bij te voegen
@@ -99,20 +127,17 @@
     	
     	$naamarray = array();
     	
-    	$this->db->order_by('wedstrijd_id');
-    	$seizoenquery = $this->db->get('korf_wedstrijden',1);
+    	
+    	$seizoenquery = $this->db->get('korf_cron');
     	
     	foreach($seizoenquery->result() as $rij){
-    		$seizoen = $rij->seizoen;
+    		$season = $rij->seizoen;
     	
     	}
-    	if($seizoen == ''){
-    		$season = 1;
-    	}else{
     	
-    		$season = $seizoen + 1;
     	
-    	}
+    		
+    	
     	$divisies = $this->db->get('korf_divisies');
     	$divRows = $divisies->num_rows() + 1;
     	

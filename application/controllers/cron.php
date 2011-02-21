@@ -72,5 +72,13 @@ class Cron extends CI_Controller {
 
 	}
 	
+	//elke minuut nakijken
+	function check_transfers()
+	{
+		$this->load->model('cron_model');
+		$this->cron_model->check_transfers();
+	
+	}
+	
 	
 }	

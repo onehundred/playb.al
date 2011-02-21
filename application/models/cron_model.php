@@ -35,6 +35,58 @@
 
     }
     
+    //elke minuut om na te kijken
+    function check_transfers()
+    {	
+    	$query = $this->db->get('korf_transfers');
+    	
+    	foreach($query->result() as $row)
+    	{
+    		$deadline = $row->deadline;
+    		$spelerid = $row->FK_speler_id;
+    		$hoogste_bieder = $row->FK_hoogste_bieder;
+    		$huidigbod = $row->huidig_bod;
+    		$transferid = $row->transfer_id;
+    		
+    		
+    		$mdate =  date('Y-m-d h:i:s');
+    	
+    		if($deadline <= $mdate)
+    		{
+    			if($huidigbod == null)
+    			{
+    				$update = array(
+    				'transfer' => 0
+    				
+    				);
+    				
+    				$this->db->where('speler_id', $spelerid);
+    				$this->db->update('korf_spelers', $update);
+    			}else{
+    				$update = array(
+    					'transfer' => 0,
+    					'FK_team_id'=> $hoogste_bieder    				
+    				
+    				
+    				);
+    				
+    				$this->db->where('speler_id', $spelerid);
+    				$this->db->update('korf_spelers', $update);
+    			
+    			}
+    			
+    			$this->db->where('transfer_id', $transferid);
+    			$this->db->delete('korf_transfers');
+    	
+    		}
+    	
+    	}
+    	
+    	
+    
+    
+    }
+    
     //elk nieuw seizoen ŽŽn keer runnen
     //create scriptje aanmaken voor extra divisies bij te voegen
     function bots()

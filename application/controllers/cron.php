@@ -9,6 +9,12 @@ class Cron extends CI_Controller {
 	
 	}
 	
+	function create_divisions()
+	{
+		$this->load->model('cron_model');
+		$this->cron_model->create_divisions();	
+	}
+	
 	
 	
 	function fill_division()
@@ -22,6 +28,14 @@ class Cron extends CI_Controller {
 	
 	function cron_test()
 	{
+	
+	$divisies = $this->db->get('divisies_test');
+    	$mdate =  date('Y-m-d h:i:s');
+    	
+    	foreach($divisies->result() as $row){
+    		$divisieid = $row->divisie_id;
+    		echo $divisieid;
+    		}
 	}
 	
 	//op het begin van elk nieuw seizoen

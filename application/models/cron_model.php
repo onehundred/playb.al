@@ -87,6 +87,128 @@
     
     }
     
+    
+    function create_divisions()
+    {
+    		//divisie 1
+		
+		$divisie1 = array(
+			'divisie' => 1,
+			'sub_divisie' => 1
+		);
+		
+		$this->db->insert('korf_divisies', $divisie1);
+		
+		
+		//divisie 2 
+		
+		for($i=1;$i<3;$i++)
+		{
+			$divisie2 = array(
+			'divisie' => 2,
+			'sub_divisie' => $i
+		);
+		
+		$this->db->insert('korf_divisies',$divisie2);
+		
+		}
+		
+		
+		//divisie3
+		
+		for($i=1;$i<5;$i++)
+		{
+			$divisie3 = array(
+			'divisie' => 3,
+			'sub_divisie' => $i
+		);
+		
+		$this->db->insert('korf_divisies',$divisie3);
+		
+		}
+		
+		//divisie4
+		for($i=1;$i<9;$i++)
+		{
+			$divisie4 = array(
+			'divisie' => 4,
+			'sub_divisie' => $i
+		);
+		
+		$this->db->insert('korf_divisies',$divisie4);
+		
+		}
+		
+		
+		//divisie5
+		
+		for($i=1;$i<17;$i++)
+		{
+			$divisie5 = array(
+			'divisie' => 5,
+			'sub_divisie' => $i
+		);
+		
+		$this->db->insert('korf_divisies',$divisie5);
+		
+		}
+		
+		//divisie6
+		
+		for($i=1;$i<33;$i++)
+		{
+			$divisie6 = array(
+			'divisie' => 6,
+			'sub_divisie' => $i
+		);
+		
+		$this->db->insert('korf_divisies',$divisie6);
+		
+		}
+		
+		
+		//divisie7
+		
+		for($i=1;$i<65;$i++)
+		{
+			$divisie7 = array(
+			'divisie' => 7,
+			'sub_divisie' => $i
+		);
+		
+		$this->db->insert('korf_divisies',$divisie7);
+		
+		}
+		
+		//divisie8
+		
+		for($i=1;$i<129;$i++)
+		{
+			$divisie8 = array(
+			'divisie' => 8,
+			'sub_divisie' => $i
+		);
+		
+		$this->db->insert('korf_divisies',$divisie8);
+		
+		}
+		
+		//divisie9
+		
+		for($i=1;$i<257;$i++)
+		{
+			$divisie9 = array(
+			'divisie' => 9,
+			'sub_divisie' => $i
+		);
+		
+		$this->db->insert('korf_divisies',$divisie9);
+		
+		}
+
+    
+    }
+    
     //elk nieuw seizoen ŽŽn keer runnen
     //create scriptje aanmaken voor extra divisies bij te voegen
     function bots()
@@ -94,12 +216,13 @@
     
     	//gaat elke divisie af, waar het getal onder de 8 is daar voegt hij een bot toe
     	$divisies = $this->db->get('korf_divisies');
-    	$divRows = $divisies->num_rows();
+    	//$divRows = $divisies->num_rows();
     	$mdate =  date('Y-m-d h:i:s');
     	
-    	for($i=1;$i<=$divRows;$i++){
+    	foreach($divisies->result() as $row){
+    			$divisieid = $row->divisie_id;
     	
-    			$this->db->where('FK_division_id', $i);
+    			$this->db->where('FK_division_id', $divisieid );
     			$teams = $this->db->get('korf_teams');
     			
     			$teamRows = $teams->num_rows();
@@ -107,7 +230,7 @@
             if($teamRows < 8){
             
             	$data = array(
-            		'FK_division_id' => $i,
+            		'FK_division_id' => $divisieid,
             		'naam' => 'playbal',
             		'bot' =>  0,
             		'gespeeld' => 0,
@@ -188,17 +311,14 @@
     	}
     	
     	
-    		
-    	
     	$divisies = $this->db->get('korf_divisies');
-    	$divRows = $divisies->num_rows() + 1;
+    	$mdate =  date('Y-m-d h:i:s');
     	
+    	foreach($divisies->result() as $row){
+    		$divisieid = $row->divisie_id;
     	
-    	
-    	
-		for($i=1;$i<$divRows;$i++){
 		
-		$this->db->where('FK_division_id', $i);
+		$this->db->where('FK_division_id', $divisieid);
     	$query = $this->db->get('korf_teams');
     	
     	
@@ -215,7 +335,7 @@
     	$match1 = array(
     		'thuisteam' => $naamarray[1],
     		'bezoekersteam' => $naamarray[2],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 1
     	
@@ -226,7 +346,7 @@
     	$match2 = array(
     		'thuisteam' => $naamarray[3],
     		'bezoekersteam' => $naamarray[4],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 1
     	
@@ -237,7 +357,7 @@
     	$match3 = array(
     		'thuisteam' => $naamarray[5],
     		'bezoekersteam' => $naamarray[6],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 1
     	
@@ -248,7 +368,7 @@
     	$match4 = array(
     		'thuisteam' => $naamarray[7],
     		'bezoekersteam' => $naamarray[8],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 1
     	
@@ -262,7 +382,7 @@
     	$match5 = array(
     		'thuisteam' => $naamarray[4],
     		'bezoekersteam' => $naamarray[1],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 2
     	
@@ -273,7 +393,7 @@
     	$match6 = array(
     		'thuisteam' => $naamarray[2],
     		'bezoekersteam' => $naamarray[3],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 2
     	
@@ -284,7 +404,7 @@
     	$match7 = array(
     		'thuisteam' => $naamarray[8],
     		'bezoekersteam' => $naamarray[5],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 2
     	
@@ -295,7 +415,7 @@
     	$match8 = array(
     		'thuisteam' => $naamarray[6],
     		'bezoekersteam' => $naamarray[7],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 2
     	
@@ -309,7 +429,7 @@
     	$match9 = array(
     		'thuisteam' => $naamarray[1],
     		'bezoekersteam' => $naamarray[6],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 3
     	
@@ -321,7 +441,7 @@
     	$match10 = array(
     		'thuisteam' => $naamarray[5],
     		'bezoekersteam' => $naamarray[2],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 3
     	
@@ -332,7 +452,7 @@
     	$match11 = array(
     		'thuisteam' => $naamarray[3],
     		'bezoekersteam' => $naamarray[8],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 3
     		
@@ -344,7 +464,7 @@
     	$match12 = array(
     		'thuisteam' => $naamarray[4],
     		'bezoekersteam' => $naamarray[7],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 3
     	
@@ -357,7 +477,7 @@
     	$match13 = array(
     		'thuisteam' => $naamarray[8],
     		'bezoekersteam' => $naamarray[1],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 4
     	
@@ -369,7 +489,7 @@
     	$match14 = array(
     		'thuisteam' => $naamarray[2],
     		'bezoekersteam' => $naamarray[7],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 4
     	
@@ -380,7 +500,7 @@
     	$match15 = array(
     		'thuisteam' => $naamarray[6],
     		'bezoekersteam' => $naamarray[3],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 4
     	
@@ -391,7 +511,7 @@
     	$match16 = array(
     		'thuisteam' => $naamarray[5],
     		'bezoekersteam' => $naamarray[4],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 4
     	
@@ -404,7 +524,7 @@
     	$match17 = array(
     		'thuisteam' => $naamarray[1],
     		'bezoekersteam' => $naamarray[3],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 5
     	
@@ -416,7 +536,7 @@
     	$match18 = array(
     		'thuisteam' => $naamarray[5],
     		'bezoekersteam' => $naamarray[7],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 5
     	
@@ -427,7 +547,7 @@
     	$match19 = array(
     		'thuisteam' => $naamarray[2],
     		'bezoekersteam' => $naamarray[4],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 5
     	
@@ -438,7 +558,7 @@
     	$match20 = array(
     		'thuisteam' => $naamarray[6],
     		'bezoekersteam' => $naamarray[8],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 5
     	
@@ -452,7 +572,7 @@
     	$match21 = array(
     		'thuisteam' => $naamarray[5],
     		'bezoekersteam' => $naamarray[1],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 6
     	
@@ -464,7 +584,7 @@
     	$match22 = array(
     		'thuisteam' => $naamarray[7],
     		'bezoekersteam' => $naamarray[3],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 6
     	
@@ -475,7 +595,7 @@
     	$match23 = array(
     		'thuisteam' => $naamarray[6],
     		'bezoekersteam' => $naamarray[2],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 6
     	
@@ -486,7 +606,7 @@
     	$match24 = array(
     		'thuisteam' => $naamarray[8],
     		'bezoekersteam' => $naamarray[4],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 6
     	
@@ -500,7 +620,7 @@
     	$match25 = array(
     		'thuisteam' => $naamarray[1],
     		'bezoekersteam' => $naamarray[7],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 7
     	
@@ -512,7 +632,7 @@
     	$match26 = array(
     		'thuisteam' => $naamarray[3],
     		'bezoekersteam' => $naamarray[5],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 7
     	
@@ -523,7 +643,7 @@
     	$match27 = array(
     		'thuisteam' => $naamarray[2],
     		'bezoekersteam' => $naamarray[8],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 7
     	
@@ -534,7 +654,7 @@
     	$match28 = array(
     		'thuisteam' => $naamarray[4],
     		'bezoekersteam' => $naamarray[6],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 7
     	
@@ -550,7 +670,7 @@
     	$match29 = array(
     		'thuisteam' => $naamarray[2],
     		'bezoekersteam' => $naamarray[1],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 8
     	
@@ -561,7 +681,7 @@
     	$match30 = array(
     		'thuisteam' => $naamarray[4],
     		'bezoekersteam' => $naamarray[3],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 8
     	
@@ -572,7 +692,7 @@
     	$match31 = array(
     		'thuisteam' => $naamarray[6],
     		'bezoekersteam' => $naamarray[5],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 8
     	
@@ -583,7 +703,7 @@
     	$match32 = array(
     		'thuisteam' => $naamarray[8],
     		'bezoekersteam' => $naamarray[7],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 8
     	
@@ -597,7 +717,7 @@
     	$match33 = array(
     		'thuisteam' => $naamarray[1],
     		'bezoekersteam' => $naamarray[4],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 9
     	
@@ -608,7 +728,7 @@
     	$match34 = array(
     		'thuisteam' => $naamarray[3],
     		'bezoekersteam' => $naamarray[2],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 9
     	
@@ -619,7 +739,7 @@
     	$match35 = array(
     		'thuisteam' => $naamarray[5],
     		'bezoekersteam' => $naamarray[8],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 9
     	
@@ -630,7 +750,7 @@
     	$match36 = array(
     		'thuisteam' => $naamarray[7],
     		'bezoekersteam' => $naamarray[6],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 9
     	
@@ -644,7 +764,7 @@
     	$match37 = array(
     		'thuisteam' => $naamarray[6],
     		'bezoekersteam' => $naamarray[1],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 10
     	
@@ -656,7 +776,7 @@
     	$match38 = array(
     		'thuisteam' => $naamarray[2],
     		'bezoekersteam' => $naamarray[5],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 10
     	
@@ -667,7 +787,7 @@
     	$match39 = array(
     		'thuisteam' => $naamarray[8],
     		'bezoekersteam' => $naamarray[3],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 10
     	
@@ -678,7 +798,7 @@
     	$match40 = array(
     		'thuisteam' => $naamarray[7],
     		'bezoekersteam' => $naamarray[4],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 10
     	
@@ -691,7 +811,7 @@
     	$match41 = array(
     		'thuisteam' => $naamarray[1],
     		'bezoekersteam' => $naamarray[8],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 11
     	
@@ -703,7 +823,7 @@
     	$match42 = array(
     		'thuisteam' => $naamarray[7],
     		'bezoekersteam' => $naamarray[2],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 11
     	
@@ -714,7 +834,7 @@
     	$match43 = array(
     		'thuisteam' => $naamarray[3],
     		'bezoekersteam' => $naamarray[6],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 11
     	
@@ -725,7 +845,7 @@
     	$match44 = array(
     		'thuisteam' => $naamarray[4],
     		'bezoekersteam' => $naamarray[5],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 11
     	
@@ -738,7 +858,7 @@
     	$match45 = array(
     		'thuisteam' => $naamarray[3],
     		'bezoekersteam' => $naamarray[1],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 12
     	
@@ -750,7 +870,7 @@
     	$match46 = array(
     		'thuisteam' => $naamarray[7],
     		'bezoekersteam' => $naamarray[5],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 12
     	
@@ -761,7 +881,7 @@
     	$match47 = array(
     		'thuisteam' => $naamarray[4],
     		'bezoekersteam' => $naamarray[2],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 12
     	
@@ -772,7 +892,7 @@
     	$match48 = array(
     		'thuisteam' => $naamarray[8],
     		'bezoekersteam' => $naamarray[6],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 12
     	
@@ -786,7 +906,7 @@
     	$match49 = array(
     		'thuisteam' => $naamarray[1],
     		'bezoekersteam' => $naamarray[5],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 13
     	
@@ -798,7 +918,7 @@
     	$match50 = array(
     		'thuisteam' => $naamarray[3],
     		'bezoekersteam' => $naamarray[7],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 13
     	
@@ -809,7 +929,7 @@
     	$match51 = array(
     		'thuisteam' => $naamarray[2],
     		'bezoekersteam' => $naamarray[6],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 13
     	
@@ -820,7 +940,7 @@
     	$match52 = array(
     		'thuisteam' => $naamarray[4],
     		'bezoekersteam' => $naamarray[8],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 13
     	
@@ -834,7 +954,7 @@
     	$match53 = array(
     		'thuisteam' => $naamarray[7],
     		'bezoekersteam' => $naamarray[1],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 14
     	
@@ -846,7 +966,7 @@
     	$match54 = array(
     		'thuisteam' => $naamarray[5],
     		'bezoekersteam' => $naamarray[3],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 14
     	
@@ -857,7 +977,7 @@
     	$match55 = array(
     		'thuisteam' => $naamarray[8],
     		'bezoekersteam' => $naamarray[2],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 14
     	
@@ -868,7 +988,7 @@
     	$match56 = array(
     		'thuisteam' => $naamarray[6],
     		'bezoekersteam' => $naamarray[4],
-    		'FK_divisie_id' => $i,
+    		'FK_divisie_id' => $divisieid,
     		'seizoen' => $season,
     		'week' => 14
     	

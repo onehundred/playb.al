@@ -17,39 +17,53 @@ $(function() {
                 
                 //stamina
                 if(option === 'stamina'){
-                //alert('stamina');
-                 $.ajax({
-	    			type: "POST",
-	    			url: "http://playb.al/index.php/training/train_stamina",
-	    			data: { teamid: teamid
-	            			},
-	        		dataType: "json",
-	        		success: function(data){
-	        		
-	        		if(data.energiecheck === false){
-	        			$().toastmessage('showErrorToast', "U heeft te weinig energiepunten.");
-	        		//alert('U hebt te weinig energiepunten');
-	        		}
-	        		
-	        		
-	        		
-	        		
-	        		}
-	        		
-	        		
-	        		});
+                	var url = "http://playb.al/index.php/training/train_stamina";
+                	//alert('stamina');
                 }
                 //passing
                 if(option === 'passing'){
-	                $.ajax({
+                	var url = "http://playb.al/index.php/training/train_passing";
+                }
+                //shotpower
+                if(option === 'shotpower'){
+                	var url = "http://playb.al/index.php/training/train_shotpower";
+                }
+                //shotprecision
+                if(option === 'shotprecision'){
+                	var url = "http://playb.al/index.php/training/train_shotprecision";
+                //alert('shotprecision');
+                
+                }
+                //intercepting
+                if(option === 'intercepting'){
+                	var url = "http://playb.al/index.php/training/train_intercepting";
+                //alert('intercepting');
+                
+                }
+                //rebound
+                if(option === 'rebound'){
+                var url = "http://playb.al/index.php/training/train_rebound";
+                //alert('rebound');
+                
+                }
+                //playmaking
+                if(option === 'playmaking'){
+                var url = "http://playb.al/index.php/training/train_playmaking";
+                //alert('playmaking');
+                
+                }
+                
+                
+                 $.ajax({
 	    			type: "POST",
-	    			url: "http://playb.al/index.php/training/train_passing",
+	    			url: url,
 	    			data: { teamid: teamid
 	            			},
 	        		dataType: "json",
 	        		success: function(data){
 	        		
 	        		var spelers = data;
+	        		
 	        		if(data.energiecheck === false){
 	        		$().toastmessage('showErrorToast', "U heeft te weinig energiepunten.");
 	        		//alert('U hebt te weinig energiepunten');
@@ -64,7 +78,7 @@ $(function() {
 		    				
 		    				if(spelers[i].niveau){
 		    					$('#myModal').append('<p>'+spelers[i].naam +' is gestegen naar niveau '+spelers[i].niveau+'</p>');
-		        			$('#myModal').append('<div style=height:10px; id=progressbar'+i+'></div>');
+		        			$('#myModal').append('<div background-color=red; style=height:10px; id=progressbar'+i+'></div>');
 		        			
 		        			$( "#progressbar"+i ).progressbar({
 								value: progress
@@ -96,32 +110,7 @@ $(function() {
 	    			}
 	  				});
                 
-                }
-                //shotpower
-                if(option === 'shotpower'){
-                alert('shotpower');
-                
-                }
-                //shotprecision
-                if(option === 'shotprecision'){
-                alert('shotprecision');
-                
-                }
-                //intercepting
-                if(option === 'intercepting'){
-                alert('intercepting');
-                
-                }
-                //rebound
-                if(option === 'rebound'){
-                alert('rebound');
-                
-                }
-                //playmaking
-                if(option === 'playmaking'){
-                alert('playmaking');
-                
-                }
+
               });
 	
 		

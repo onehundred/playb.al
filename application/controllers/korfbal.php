@@ -6,6 +6,7 @@ class Korfbal extends CI_Controller {
 	{
 		parent::__construct();
 		$this->is_logged_in();
+	
 	}
 	
 	//kijken of men ingelogd is
@@ -62,6 +63,12 @@ class Korfbal extends CI_Controller {
 		
 		$data['spelers'] = $this->korfbal_model->get_spelers($team_id);
 		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
+		
 		
 		$data['main_content'] = 'korfbal/korfbal_spelers';
 		$this->load->view('korfbal/includes/template', $data);
@@ -82,6 +89,12 @@ class Korfbal extends CI_Controller {
 		$this->load->model('korfbal_model');
 		$data['speler'] = $this->korfbal_model->get_speler($speler_id);
 		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
+		
 		$data['main_content'] = 'korfbal/korfbal_speler';
 		$this->load->view('korfbal/includes/template', $data);
 	}
@@ -94,6 +107,12 @@ class Korfbal extends CI_Controller {
 		$this->load->model('korfbal_model');
 		
 		$data['stadion'] = $this->korfbal_model->get_stadion($team_id);
+		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
 		
 		
 		$data['main_content'] = 'korfbal/korfbal_stadion';
@@ -109,6 +128,12 @@ class Korfbal extends CI_Controller {
 		
 		$data['spelers'] = $this->korfbal_model->get_spelers($team_id);
 		$data['opstelling'] = $this->korfbal_model->get_opstelling($team_id);
+		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
 		
 		
 		$data['main_content'] = 'korfbal/korfbal_opstelling';
@@ -203,6 +228,13 @@ class Korfbal extends CI_Controller {
 		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);	
 		
 		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
+		
+		
 		$data['main_content'] = 'korfbal/korfbal_divisie';
 		$this->load->view('korfbal/includes/template', $data);
 	
@@ -216,6 +248,12 @@ class Korfbal extends CI_Controller {
 		$this->load->model('korfbal_model');
 		
 		$data['manager'] = $this->korfbal_model->get_manager();
+		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
 		
 		$data['main_content'] = 'korfbal/korfbal_manager';
 		$this->load->view('korfbal/includes/template', $data);
@@ -232,6 +270,13 @@ class Korfbal extends CI_Controller {
 		$data['financien'] = $this->korfbal_model->get_finances($team_id);
 		
 		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
+		
+		
 		$data['main_content'] = 'korfbal/korfbal_financien';
 		$this->load->view('korfbal/includes/template', $data);
 
@@ -246,6 +291,13 @@ class Korfbal extends CI_Controller {
 		$this->load->model('korfbal_model');
 		
 		$data['matches'] = $this->korfbal_model->get_matches($team_id);
+		
+		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
 		
 		
 		
@@ -265,6 +317,13 @@ class Korfbal extends CI_Controller {
 		$data['transfers'] = $this->korfbal_model->get_transfers();
 		
 		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
+		
+		
 		
 		$data['main_content'] = 'korfbal/korfbal_transfers';
 		$this->load->view('korfbal/includes/template', $data);
@@ -280,6 +339,13 @@ class Korfbal extends CI_Controller {
 		
 		$data['training'] = $this->korfbal_model->get_training($team_id);
 		$data['energie'] =$this->korfbal_model->get_energie($team_id);
+		
+
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
 		
 		$data['main_content'] = 'korfbal/korfbal_training';
 		$this->load->view('korfbal/includes/template', $data);

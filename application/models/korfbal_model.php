@@ -15,7 +15,7 @@
 		return $query;
 
 	}
-
+	
 
 	function get_stadion($team_id)
 	{

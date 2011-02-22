@@ -136,7 +136,7 @@
 	$captain = $row->captain_speler;
 	$setpieces = $row->setpieces_speler;
 }?>
-<div id="korfbalField" style="background-color: yellow; height: 400px; float:right;">
+<div id="korfbalField" style="background-color: yellow; height: 00px; float:right;">
     <div id="vak1">
         <h2>Vak1</h2>
         <div id="rebound1">

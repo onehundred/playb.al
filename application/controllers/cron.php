@@ -9,6 +9,12 @@ class Cron extends CI_Controller {
 	
 	}
 	
+	function create_divisions()
+	{
+		$this->load->model('cron_model');
+		$this->cron_model->create_divisions();	
+	}
+	
 	
 	
 	function fill_division()
@@ -22,84 +28,17 @@ class Cron extends CI_Controller {
 	
 	function cron_test()
 	{
-		$teamid = 41;
-		
-		$this->db->select('shotprecision_tr, shotprecision, skill_id, training_id, voornaam, achternaam');
-    	$this->db->from('korf_training');
-    	$this->db->join('korf_skills', 'FK_skill_id = skill_id');
-    	$this->db->join('korf_spelers', 'FK_player_id = speler_id');
-    	$this->db->join('korf_teams', 'FK_team_id = team_id');
-    	$this->db->where('team_id', $teamid);
-    	$query = $this->db->get();
+	
+	$divisies = $this->db->get('divisies_test');
+    	$mdate =  date('Y-m-d h:i:s');
     	
-    	
-    	$trainingsarray = array();
-    	$i =1;
-    	foreach($query->result() as $row){
-    		$voornaam = $row->voornaam;
-    		$achternaam = $row->achternaam;
-    		$trainingid = $row->training_id;
-    		//echo $trainingid;
-    		$skillid = $row->skill_id;
-    		//echo "id=".$skillid;
-    		$shotprecision_tr =  $row->shotprecision_tr;
-    		$rand = rand(20, 50);
-    		$updateshotprecision_tr = $shotprecision_tr + $rand;
-    		
-    		$shotprecision = $row->shotprecision; 
-    		$updateshotprecision = $shotprecision + 1;
-    		//echo "passing=".$updatepassing; 
-    		 
-    		 
-    		$trainingsarray[$i]['naam'] = $voornaam." ".$achternaam;
-    		  		
-    		if($updateshotprecision_tr >= 1000){
-    			$updateshotprecision = $shotprecision+ 1;
-    			$update = array(
-    				'shotprecision' => $updateshotprecision
-    			
-    			);
-    			
-    			$this->db->where('skill_id', $skillid);
-    			$this->db->update('korf_skills',$update);
-    			
-    			
-    			$update2 = array(
-    				'shotprecision_tr' => 0
-    			
-    			);
-    			
-    			$this->db->where('training_id', $trainingid);
-    			$this->db->update('korf_training',$update2);
-    		
-    			$trainingsarray[$i]['niveau'] = $updateshotprecision;
-    		}else{
-    			
-    			$update = array(
-    				'shotprecision_tr' => $updateshotprecision_tr
-    			
-    			);
-    			
-    			$this->db->where('training_id', $trainingid);
-    			$this->db->update('korf_training',$update);
-    			
-    			$trainingsarray[$i]['gestegen'] = $rand;
-    			$trainingsarray[$i]['totaal'] = $updateshotprecision_tr;
-    		
+    	foreach($divisies->result() as $row){
+    		$divisieid = $row->divisie_id;
+    		echo $divisieid;
     		}
-    		$i++;
-    	
-    
-    	}
-    	
-    	return $trainingsarray;
-    	
-
-
-
 	}
 	
-	
+	//op het begin van elk nieuw seizoen
 	function arrange_games()
 	{
 		$this->load->model('cron_model');
@@ -111,6 +50,47 @@ class Cron extends CI_Controller {
 	{
 		$this->load->model('cron_model');
 		$this->cron_model->energy_point();
+	
+	}
+	
+	//om de 2 dagen na het spelen van de matchen
+	function update_week()
+	{
+		$this->load->model('cron_model');
+		$query = $this->cron_model->get_croninfo();
+		
+		foreach($query->result() as $row)
+		{
+			$week = $row->week;
+		}
+		
+		$this->cron_model->update_week($week);
+		
+	
+	}
+	
+	
+	//om de maand ongeveer, als alle wedstrijden van het vorige seizoen zijn gespeeld
+	function update_season()
+	{
+		
+		$this->load->model('cron_model');
+		$query = $this->cron_model->get_croninfo();
+		
+		foreach($query->result() as $row)
+		{
+			$seizoen = $row->seizoen;
+		}
+		
+		$this->cron_model->update_seizoen($seizoen);
+
+	}
+	
+	//elke minuut nakijken
+	function check_transfers()
+	{
+		$this->load->model('cron_model');
+		$this->cron_model->check_transfers();
 	
 	}
 	

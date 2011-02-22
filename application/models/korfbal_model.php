@@ -156,10 +156,15 @@
 
 	function get_matches($team_id)
 	{
-
-		$this->db->where('thuisteam', $team_id);
-		$this->db->or_where('bezoekersteam', $team_id);
-		$query = $this->db->get('korf_wedstrijden');
+		$this->load->model('cron_model');
+		$cron = $this->cron_model->get_croninfo();
+		
+		foreach($cron->result() as $crow)
+		{
+			$seizoen = $crow->seizoen;
+		}
+		
+		$query = $this->db->query('SELECT * FROM korf_wedstrijden WHERE (thuisteam = '.$team_id.' OR bezoekersteam = '.$team_id.') AND  seizoen = '.$seizoen.'');
 
 		$wedstrijdarray = array();
 		$i =1;

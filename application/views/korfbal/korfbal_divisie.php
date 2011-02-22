@@ -3,9 +3,10 @@
  foreach($divisie->result() as $row)
 			{
 				 $divisienaam = $row->divisie; 
+				 $subdivisie = $row->sub_divisie;
 	} ?>
 
-<h1><?php echo $divisienaam;?></h1>
+<h1><?php echo $divisienaam;?>.<?php echo $subdivisie;?></h1>
 	<table>
 					<tr>
 						<td>Team</td>

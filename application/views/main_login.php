@@ -1,17 +1,16 @@
 <div id="login">
     <ul id="menu">
-        <li class="menu_right">
-	        <a href="#" class="drop">
-	         <img src="<?php echo base_url();?>img/home.png" />
-
-	    	    <?php $username = $this->session->userdata('username'); if(isset($username)){ echo $username;} ?> 
-	    	                   		        <?php if(!$username){?>aanmelden<?php } ?> 
-			</a>
-		
-		<!-- Begin 3 columns Item -->
+        <li class="menu_right"> <a href="#" class="drop">
+            <img src="<?php echo base_url();?>img/home.png" />
+            <?php $username = $this->session->userdata('username'); if(isset($username)){ echo $username;} ?>
+            <?php if(!$username){?>
+            aanmelden
+            <?php } ?>
+            </a> 
             
-            <div class="dropdown_3columns align_right"><!-- Begin 3 columns container -->
-
+            <!-- Begin 3 columns Item -->
+            
+            <div class="dropdown_3columns align_right"><!-- Begin 3 columns container --> 
                 
                 <!--
 <div class="col_1">
@@ -19,7 +18,7 @@
                         <li><a href="#">FreelanceSwitch</a></li>
                     </ul>
                 </div>
--->
+--> 
                 <!--
 <div class="col_1">
                     <ul class="greybox">
@@ -29,15 +28,14 @@
 -->
                 <div class="col_1">
                     <ul class="greybox">
-                      <!--
+                        <!--
   <li><a href="#">Illustration</a></li>
                         <li><a href="#">More...</a></li>
--->
+--> 
                         <!-- todo div hieronder toewijzen aan login (gemodificeerd) -->
                         
                         <div>
-                        
-                		<?php
+                            <?php
                 		$user_id = $this->session->userdata('user_id'); 
 				     		if (isset($user_id)){
 	     					$this->load->view('includes/session_succes');
@@ -48,10 +46,9 @@
                         </div>
                         
                         <!--   <h1>login</h1> -->
-                  
+                        
                         <div>
-
-                        <?php
+                            <?php
                         
 						echo form_open('main/login');
 		    			echo("<p>gebruikersnaam of e-mail adres</p>");
@@ -68,13 +65,37 @@
 						} 
 						?>
                         </div>
-
                     </ul>
                 </div>
-                           </div>
+            </div>
             <!-- End 3 columns container --> 
             
         </li>
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+     <!--   <li><?php echo form_input('','zoekfunctie') ?></li> -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <!-- End 3 columns Item -->
-        </ul>
+    </ul>
+    
 </div>

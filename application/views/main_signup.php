@@ -1,10 +1,10 @@
 <div id="main_signup">
-	<h2>account aanmaken</h2>
-	<section id="layouts">
-	<figure class="stripe1"></figure>
-	<figure class="stripe2"></figure>
-	<figure class="stripe3"></figure>
-
+	<h1 id="tagline">manage jouw team</h1>
+		<h2>account aanmaken</h2>
+		<section id="layouts">
+		<figure class="stripe1"></figure>
+		<figure class="stripe2"></figure>
+		<figure class="stripe3"></figure>
 <fieldset>
 <legend>Personal Information</legend>	
 	<?php

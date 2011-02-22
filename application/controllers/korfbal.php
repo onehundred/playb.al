@@ -21,7 +21,7 @@ class Korfbal extends CI_Controller {
 			
 		}
 	}
-
+	
 	//de mainfunctie van korfbal -> laadt de hoofdpage
 	function korfbal_start()
 	{
@@ -76,7 +76,23 @@ class Korfbal extends CI_Controller {
 		
 	}
 	
+	function korfbal_review()
+	{
 	
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;
+		
+		$this->load->model('korfbal_model');
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
+		
+		$data['main_content'] = 'korfbal/korfbal_verslag';
+		$this->load->view('korfbal/includes/template', $data);
+	
+	}
 	//functie die de details van een speler laat zien
 	function korfbal_player()
 	{

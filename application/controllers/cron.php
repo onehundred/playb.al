@@ -29,13 +29,13 @@ class Cron extends CI_Controller {
 	function cron_test()
 	{
 	
-	$divisies = $this->db->get('divisies_test');
-    	$mdate =  date('Y-m-d h:i:s');
+	$seizoenquery = $this->db->get('korf_cron');
     	
-    	foreach($divisies->result() as $row){
-    		$divisieid = $row->divisie_id;
-    		echo $divisieid;
-    		}
+    	foreach($seizoenquery->result() as $rij){
+    		echo $rij->seizoen;
+    	
+    	}
+    	echo $season;
 	}
 	
 	//op het begin van elk nieuw seizoen

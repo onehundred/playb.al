@@ -94,5 +94,11 @@ class Cron extends CI_Controller {
 	
 	}
 	
+	function play_games()
+	{
+		$this->load->model('cron_model');
+		$this->cron_model->play_games();
+	}
+	
 	
 }	

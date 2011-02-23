@@ -166,6 +166,7 @@ class Korfbal extends CI_Controller {
 		$positie = $_POST['positie'];
 		$teamid = $_POST['teamid'];
 		$geslacht = $_POST['geslacht'];
+		$spelerid = $_POST['spelerid'];
 		
 		
 		
@@ -228,7 +229,7 @@ class Korfbal extends CI_Controller {
 		}
 		
 		$this->load->model('korfbal_model');
-		$vakcheck = $this->korfbal_model->insert_opstelling($field,$spelersnaam,$teamid,$geslacht,$vak);
+		$vakcheck = $this->korfbal_model->insert_opstelling($field,$spelersnaam,$teamid,$geslacht,$vak,$spelerid);
 		
 		$arr = array('check' => $vakcheck);
 		$json = json_encode($arr); // returnt: { "item 2":"value 2", "item 3":"value 3", "item 3":"value 3"  } 

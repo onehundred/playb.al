@@ -1,43 +1,3 @@
-<style>
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-/*     -o-transition-duration: 0.8s;*/
-          transition-duration: 0.8s;
-
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-/*     -o-transition-property: height, width;*/
-          transition-property: height, width;
-}
-
-/* disable CSS transitions for containers with infinite scrolling*/
-.isotope.infinite-scrolling {
-  -webkit-transition: none;
-     -moz-transition: none;
-       -o-transition: none;
-          transition: none;
-}
-
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-/*     -o-transition-property:      -o-transform, opacity;*/
-          transition-property:         transform, opacity;
-}
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item {
-  -webkit-transition-duration: 0s;
-     -moz-transition-duration: 0s;
-/*     -o-transition-duration: 0s;*/
-          transition-duration: 0s;
-}
-</style>
 <script>
 		$(function() {
 		
@@ -87,122 +47,8 @@
 		
 			});
 	</script>
-
-
-
-
-
-
-
-
-  
-
 <!--
  <div id="container">
-    
-      
-      
-        
-      
-      
-    <div class="element">
-      <p class="number">48</p>
-      <h3 class="symbol">Cd</h3>
-      <h2 class="name">Cadmium</h2>
-      <p class="weight">112.411</p>
-    </div>
-    
-      
-      
-    <div class="element">
-      <p class="number">20</p>
-      <h3 class="symbol">Ca</h3>
-      <h2 class="name">Calcium</h2>
-      <p class="weight">40.078</p>
-    </div>
-    
-      
-      
-    <div class="element">
-      <p class="number">75</p>
-      <h3 class="symbol">Re</h3>
-      <h2 class="name">Rhenium</h2>
-      <p class="weight">186.207</p>
-    </div>
-    
-      
-      
-    <div class="element">
-      <p class="number">81</p>
-      <h3 class="symbol">Tl</h3>
-      <h2 class="name">Thallium</h2>
-      <p class="weight">204.3833</p>
-    </div>
-    
-      
-      
-    <div class="element">
-      <p class="number">51</p>
-      <h3 class="symbol">Sb</h3>
-      <h2 class="name">Antimony</h2>
-      <p class="weight">121.76</p>
-    </div>
-    
-      
-      
-    <div class="element">
-      <p class="number">27</p>
-      <h3 class="symbol">Co</h3>
-      <h2 class="name">Cobalt</h2>
-      <p class="weight">58.933195</p>
-    </div>
-    
-      
-      
-    <div class="element">
-      <p class="number">71</p>
-      <h3 class="symbol">Lu</h3>
-      <h2 class="name">Lutetium</h2>
-      <p class="weight">174.9668</p>
-    </div>
-    
-      
-      
-    <div class="element">
-      <p class="number">18</p>
-      <h3 class="symbol">Ar</h3>
-      <h2 class="name">Argon</h2>
-      <p class="weight">39.948</p>
-    </div>
-    
-      
-      
-    <div class="element">
-      <p class="number">37</p>
-      <h3 class="symbol">Rb</h3>
-      <h2 class="name">Rubidium</h2>
-      <p class="weight">85.4678</p>
-    </div>
-    
-      
-      
-    <div class="element">
-      <p class="number">7</p>
-      <h3 class="symbol">N</h3>
-      <h2 class="name">Nitrogen</h2>
-      <p class="weight">14.0067</p>
-    </div>
-    
-      
-      
-    <div class="element" >
-      <p class="number">93</p>
-      <h3 class="symbol">Np</h3>
-      <h2 class="name">Neptunium</h2>
-      <p class="weight">(237)</p>
-    </div>
-    
-      
       
     <div class="element">
       <p class="number">89</p>
@@ -212,89 +58,108 @@
     </div>
     
   </div>
---> <!-- #container -->
-  <div id="container">
-<!-- <div class="players">  -->
-<div class="players"> 
-    <!-- <h1>Players</h1> -->
-    
-    <?php 
+--><!-- #container -->
+
+<div id="container"> 
+    <!-- <div class="players">  -->
+    <div class="players"> 
+        <!-- <h1>Players</h1> -->
+        
+        <?php 
     
 foreach($spelers->result() as $row)
 		{?>
-    <div class="player">
-        <p class="number">57</p>
-        <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></p>
-        <p class="lastname"><?php echo $row->achternaam; ?></a></p>
-        <!-- <p class="gender">s<?php echo $row->geslacht; ?></p> -->
-        <p class="gender">
-            <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" />
-        </p>
-        <!-- <p id="gender"><img src="<?php echo base_url();?>img/male.png" /></p> --> 
-        <br />
-        <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
-        <p class="price">$10 000</p>
-        <br />
-        <br />
-        <div id="rightProgress">
-            <p class="rebound">Rebound: <?php echo $row->rebound; ?>/20</p>
-            <div class="rebound<?php echo $row->speler_id;?>" id="reboundProgress"></div>
-            <p>Stamina: <?php echo $row->stamina; ?>/20</p>
-            <div class="stamina<?php echo $row->speler_id;?>" id="staminaProgress"></div>
-            <p>Shotprecision: <?php echo $row->shotprecision; ?>/20</p>
-            <div class="shotprecision<?php echo $row->speler_id;?>" id="shotprecisionProgress"></div>
-            <p>Playmaking: <?php echo $row->playmaking; ?>/20</p>
-            <div class="playmaking<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
+        <div class="player">
+            <p class="number">57</p>
+            <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></p>
+            <p class="lastname"><?php echo $row->achternaam; ?></a></p>
+            <!-- <p class="gender">s<?php echo $row->geslacht; ?></p> -->
+            <p class="gender">
+                <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" />
+            </p>
+            <!-- <p id="gender"><img src="<?php echo base_url();?>img/male.png" /></p> --> 
+            <br />
+            <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
+            <p class="price">$10 000</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound"><?php echo $row->rebound; ?></p>
+                <p class="rebound">/20</p>
+                <div class="rebound<?php echo $row->speler_id;?>" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina"><?php echo $row->stamina; ?></p>
+                <p class="rebound">/20</p>
+                <div class="stamina<?php echo $row->speler_id;?>" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision"><?php echo $row->shotprecision; ?></p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision<?php echo $row->speler_id;?>" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking"><?php echo $row->playmaking; ?></p>
+                <p class="rebound">/20</p>
+                <div class="playmaking<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing"><?php echo $row->passing; ?></p>
+                <p class="rebound">/20</p>
+                <div class="passing<?php echo $row->speler_id;?>" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower"><?php echo $row->shotpower; ?></p>
+                <p class="rebound">/20</p>
+                <div class="shotpower<?php echo $row->speler_id;?>" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting"><?php echo $row->intercepting; ?></p>
+                <p class="rebound">/20</p>
+                <div class="intercepting<?php echo $row->speler_id;?>" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership"><?php echo $row->leadership; ?></p>
+                <p class="rebound">/20</p>
+                <div class="leadership<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
+            </div>
         </div>
-        <div id="leftProgress">
-            <p id="passing">Passing: <?php echo $row->passing; ?>/20</p>
-            <div class="passing<?php echo $row->speler_id;?>" id="passingProgress"></div>
-            <p>Shotpower: <?php echo $row->shotpower; ?>/20</p>
-            <div class="shotpower<?php echo $row->speler_id;?>" id="shotpowerProgress"></div>
-            <p>Intercepting: <?php echo $row->intercepting; ?>/20</p>
-            <div class="intercepting<?php echo $row->speler_id;?>" id="interceptingProgress"></div>
-            <p>Leadership: <?php echo $row->leadership; ?>/20</p>
-            <div class="leadership<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
-        </div>
+        <!-- <hr/> -->
+        <?php } ?>
     </div>
-    <!-- <hr/> -->
-    <?php } ?>
-</div><div class="playersOverview">
-    <h2>spelersoverzicht</h2>
-     
+    <div class="playersOverview">
+        <h2>spelersoverzicht</h2>
         <ul id="sort" class="sort option-set">
-      <li>
-        <ul class="sort asc option-set floated clearfix">
-          <li><a href="#original-order" class="">original-order (asc)</a></li>
-          <li><a href="#firstname" class="">first name (asc)</a></li>
-          <li><a href="#lastname" class="">last name (asc)</a></li>
-          <li><a href="#symbol" class="">symbol (asc)</a></li>
-          <li><a href="#number" class="selected">number (asc)</a></li>
-          <li><a href="#weight" class="">weight (asc)</a></li>
-          <li><a href="#category">category (asc)</a></li>
+            <li>
+                <ul class="sort asc option-set floated clearfix">
+                    <li><a href="#original-order" class="">original-order (asc)</a></li>
+                    <li><a href="#firstname" class="">first name (asc)</a></li>
+                    <li><a href="#lastname" class="">last name (asc)</a></li>
+                    <li><a href="#rebound" class="selected">rebound (asc)</a></li>
+                    <li><a href="#stamina" class="selected">stamina (asc)</a></li>
+                    <li><a href="#shotprecision" class="selected">shotprecsion (asc)</a></li>
+                    <li><a href="#playmaking" class="selected">playmaking (asc)</a></li>
+                    <li><a href="#passing" class="selected">passing (asc)</a></li>
+                    <li><a href="#shotpower" class="selected">shotpower (asc)</a></li>
+                    <li><a href="#intercepting" class="selected">intercepting (asc)</a></li>
+                    <li><a href="#leadership" class="selected">leadership (asc)</a></li>
+                </ul>
+            </li>
+            <li>
+            <li><a href="#original-order">original-order (desc)</a></li>
+            <li><a href="#firstname">first name (desc)</a></li>
+            <li><a href="#lastname">last name (desc)</a></li>
+            <li><a href="#rebound" class="">rebound (desc)</a></li>
+            <li><a href="#stamina" class="">stamina (desc)</a></li>
+            <li><a href="#shotprecision" class="">shotprecision (desc)</a></li>
+            <li><a href="#playmaking" class="">playmaking (desc)</a></li>
+            <li><a href="#passing" class="">passing (desc)</a></li>
+            <li><a href="#shotpower" class="">shotpower (desc)</a></li>
+            <li><a href="#intercepting" class="">intercepting (desc)</a></li>
+            <li><a href="#leadership" class="">leadership (desc)</a></li>
+            </li>
         </ul>
-      </li>
-      <li>
-        <ul class="sort desc option-set floated clearfix">
-          <li><a href="#original-order">original-order (desc)</a></li>
-          <li><a href="#firstname">first name (desc)</a></li>
-          <li><a href="#lastname">last name (desc)</a></li>
-          <li><a href="#symbol">symbol (desc)</a></li>
-          <li><a href="#number" class="">number (desc)</a></li>
-          <li><a href="#weight" class="">weight (desc)</a></li>
-          <li><a href="#category" class="">category (desc)</a></li>
-        </ul>
-      </li>
-    </ul>    
-    
+    </div>
+    <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
 </div>
-<input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
-</div> <!-- end container -->
-
-  
-
-
-  <script>
+<!-- end container --> 
+<script>
 
     var $container = $('#container');
     
@@ -337,8 +202,29 @@ foreach($spelers->result() as $row)
           category : function( $elem ) {
             return $elem.attr('data-category');
           },
-          number : function( $elem ) {
-            return parseInt( $elem.find('.number').text(), 10 );
+          rebound : function( $elem ) {
+            return parseInt( $elem.find('.rebound').text(), 10 );
+          },
+          stamina : function( $elem ) {
+            return parseInt( $elem.find('.stamina').text(), 10 );
+          },
+           shotprecision : function( $elem ) {
+            return parseInt( $elem.find('.shotprecision').text(), 10 );
+          },
+          playmaking : function( $elem ) {
+            return parseInt( $elem.find('.playmaking').text(), 10 );
+          },
+           passing : function( $elem ) {
+            return parseInt( $elem.find('.passing').text(), 10 );
+          },
+          shotpower : function( $elem ) {
+            return parseInt( $elem.find('.shotpower').text(), 10 );
+          },
+          intercepting : function( $elem ) {
+            return parseInt( $elem.find('.intercepting').text(), 10 );
+          },
+          leadership : function( $elem ) {
+            return parseInt( $elem.find('.leadership').text(), 10 );
           },
           weight : function( $elem ) {
             return parseFloat( $elem.find('.weight').text().replace( /[\(\)]/g, '') );

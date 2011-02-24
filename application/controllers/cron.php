@@ -94,7 +94,8 @@ class Cron extends CI_Controller {
 		$wedstrijd = $this->cron_model->get_wedstrijden();
 		$thuisstats = $this->cron_model->get_statsthuisteam($wedstrijd);
 		$uitstats = $this->cron_model->get_statsuitteam($wedstrijd);
-		$this->cron_model->play_games($thuisstats, $uitstats);
+		$thuis = $this->cron_model->play_games($thuisstats, $uitstats, $wedstrijd);
+		print_r ($thuis);
 		
 	}
 	

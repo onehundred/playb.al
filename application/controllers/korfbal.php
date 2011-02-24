@@ -408,6 +408,16 @@ class Korfbal extends CI_Controller {
 
 		
 	}
+	
+	
+	function korfbal_jsonPlayers()
+	{
+		$teamid = 4091;
+		
+		$this->load->model('korfbal_model');
+		$json = $this->korfbal_model->getJson($teamid);
+		echo json_encode($json);
+	}
 }
 
 /* End of file welcome.php */

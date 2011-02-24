@@ -491,6 +491,38 @@
 		}
 
 	}
+	
+	function getJson($teamid)
+	{
+		$this->db->select('*');
+		$this->db->from('korf_skills');
+		$this->db->join('korf_spelers', 'FK_player_id  = speler_id');
+		$this->db->where('FK_team_id', $teamid);
+		$query = $this->db->get();
+		
+		$spelers = array();
+		$i=1;
+		foreach($query->result() as $row)
+		{
+			$spelers[$i]['spelerid'] = $row->speler_id;
+			$spelers[$i]['rebound'] = $row->rebound;
+			$spelers[$i]['stamina'] = $row->stamina;
+			$spelers[$i]['shotpower'] = $row->shotpower;
+			$spelers[$i]['shotprecision'] = $row->shotprecision;
+			$spelers[$i]['passing'] = $row->passing;
+			$spelers[$i]['intercepting'] = $row->intercepting;
+			$spelers[$i]['playmaking'] = $row->playmaking;
+			$spelers[$i]['leadership'] = $row->leadership;
+			
+			$i++;
+		
+		}
+		
+		return $spelers ;
+		
+		
+	
+	}
 
 
 

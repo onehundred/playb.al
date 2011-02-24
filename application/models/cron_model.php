@@ -1784,7 +1784,7 @@
 			
 		}
 		
-		//thuisteam wint
+		//thuisteam wint////////////////////////////
 		if($uitslag['thuis'] > $uitslag['uit']){
 		//insert verslag
 			$insert = array(

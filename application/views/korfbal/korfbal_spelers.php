@@ -1,32 +1,53 @@
 <!-- todo de values hieronder dynamisch invullen -->
-<!-- todo p id gender de afbeelding moet dynamisch opgehaald worden: if sex=male -> male.png  - else female.png -->
+<!-- todo p id gender de afbeelding moet dynamisch opgehaald worden: if sex=male -> male.png  - else female.png //done -->
 <script>
 		$(function() {
-		$( "#reboundProgress" ).progressbar({
-			value: 5
-		});
-		$( "#passingProgress" ).progressbar({
-			value: 10
-		});
-		$( "#staminaProgress" ).progressbar({
-			value: 90
-		});
-		$( "#shotpowerProgress" ).progressbar({
-			value: 60
-		});
-		$( "#shotprecisionProgress" ).progressbar({
-			value: 40
-		});
-		$( "#playmakingProgress" ).progressbar({
-			value: 15
-		});
-		$( "#interceptingProgress" ).progressbar({
-			value: 30
-		});
-		$( "#leadershipProgress" ).progressbar({
-			value: 5
-		});
-	});
+		
+				var teamid = $('#teamid').val();
+				//alert(teamid);
+				$.ajax({
+    			type: "POST",
+    			url: "http://playb.al/index.php/korfbal/korfbal_jsonPlayers",
+    			data:  { teamid: teamid,
+            			
+            			
+        				},
+    			dataType: "json",
+        		success: function(data){
+        		var spelers = data;
+        		//alert(spelers[1].rebound);
+        		
+        		for(var i=1;i<30;i++){
+	        		$( ".rebound"+spelers[i].spelerid).progressbar({
+					value: spelers[i].rebound * 5
+					});
+					$( ".passing"+spelers[i].spelerid ).progressbar({
+						value: spelers[i].passing * 5
+					});
+					$( ".intercepting"+spelers[i].spelerid ).progressbar({
+						value: spelers[i].intercepting * 5
+					});
+					$( ".shotpower"+spelers[i].spelerid).progressbar({
+						value: spelers[i].shotpower * 5
+					});
+					$( ".shotprecision"+spelers[i].spelerid).progressbar({
+						value: spelers[i].shotprecision * 5
+					});
+					$( ".leadership"+spelers[i].spelerid ).progressbar({
+						value: spelers[i].leadership * 5
+					});
+					$( ".playmaking"+spelers[i].spelerid ).progressbar({
+						value: spelers[i].playmaking * 5
+					});
+					$( ".stamina"+spelers[i].spelerid ).progressbar({
+						value: spelers[i].stamina * 5
+					});
+				}
+        		
+        		}
+  				});
+		
+			});
 	</script>
 
 
@@ -169,7 +190,7 @@ foreach($spelers->result() as $row)
         <p class="lastname"><?php echo $row->achternaam; ?></a></p>
         <!-- <p class="gender">s<?php echo $row->geslacht; ?></p> -->
         <p class="gender">
-            <img src="<?php echo base_url();?>img/female.png" />
+            <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" />
         </p>
         <!-- <p id="gender"><img src="<?php echo base_url();?>img/male.png" /></p> --> 
         <br />
@@ -179,23 +200,23 @@ foreach($spelers->result() as $row)
         <br />
         <div id="rightProgress">
             <p class="rebound">Rebound: <?php echo $row->rebound; ?>/20</p>
-            <div id="reboundProgress"></div>
+            <div class="rebound<?php echo $row->speler_id;?>" id="reboundProgress"></div>
             <p>Stamina: <?php echo $row->stamina; ?>/20</p>
-            <div id="staminaProgress"></div>
+            <div class="stamina<?php echo $row->speler_id;?>" id="staminaProgress"></div>
             <p>Shotprecision: <?php echo $row->shotprecision; ?>/20</p>
-            <div id="shotprecisionProgress"></div>
+            <div class="shotprecision<?php echo $row->speler_id;?>" id="shotprecisionProgress"></div>
             <p>Playmaking: <?php echo $row->playmaking; ?>/20</p>
-            <div id="playmakingProgress"></div>
+            <div class="playmaking<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
         </div>
         <div id="leftProgress">
             <p id="passing">Passing: <?php echo $row->passing; ?>/20</p>
-            <div id="passingProgress"></div>
+            <div class="passing<?php echo $row->speler_id;?>" id="passingProgress"></div>
             <p>Shotpower: <?php echo $row->shotpower; ?>/20</p>
-            <div id="shotpowerProgress"></div>
+            <div class="shotpower<?php echo $row->speler_id;?>" id="shotpowerProgress"></div>
             <p>Intercepting: <?php echo $row->intercepting; ?>/20</p>
-            <div id="interceptingProgress"></div>
+            <div class="intercepting<?php echo $row->speler_id;?>" id="interceptingProgress"></div>
             <p>Leadership: <?php echo $row->leadership; ?>/20</p>
-            <div id="leadershipProgress"></div>
+            <div class="leadership<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
         </div>
     </div>
     <!-- <hr/> -->
@@ -229,7 +250,7 @@ foreach($spelers->result() as $row)
     </ul>    
     
 </div>
-
+<input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
 </div> <!-- end container -->
 
   

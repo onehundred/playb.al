@@ -1,5 +1,43 @@
-<!-- todo de values hieronder dynamisch invullen -->
-<!-- todo p id gender de afbeelding moet dynamisch opgehaald worden: if sex=male -> male.png  - else female.png //done -->
+<style>
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+/*     -o-transition-duration: 0.8s;*/
+          transition-duration: 0.8s;
+
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+/*     -o-transition-property: height, width;*/
+          transition-property: height, width;
+}
+
+/* disable CSS transitions for containers with infinite scrolling*/
+.isotope.infinite-scrolling {
+  -webkit-transition: none;
+     -moz-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+/*     -o-transition-property:      -o-transform, opacity;*/
+          transition-property:         transform, opacity;
+}
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+/*     -o-transition-duration: 0s;*/
+          transition-duration: 0s;
+}
+</style>
 <script>
 		$(function() {
 		
@@ -308,7 +346,7 @@ foreach($spelers->result() as $row)
           firstname : function ( $elem ) {
             return $elem.find('.firstname').text();
           },
-             lastname : function ( $elem ) {
+          lastname : function ( $elem ) {
             return $elem.find('.lastname').text();
           }
           

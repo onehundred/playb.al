@@ -1935,10 +1935,10 @@
 		$einduitslag = array(
 			'uitslag' => $uitslag['thuis'].'-'.$uitslag['uit']
 		
-		)		
+		);		
 		
 		$this->db->where('wedstrijd_id', $wedstrijdid);
-		$this->db->update('korf_wedstrijden', $einduitslag)
+		$this->db->update('korf_wedstrijden', $einduitslag);
 		
     	}
     	   //return $uitslag; 

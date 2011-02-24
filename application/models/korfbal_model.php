@@ -60,7 +60,41 @@
 		$this->db->select('*');
 		$this->db->where('FK_team_id', $team_id);
 		$query = $this->db->get('korf_opstelling');
-		return $query;
+		
+		$spelers = array();
+		
+		foreach($query->result() as $row)
+		{
+			$spelers[0] = $row->rebound1_speler;
+			$spelers[1] = $row->playmaking1_speler;
+			$spelers[2] = $row->attack1_speler;
+			$spelers[3] = $row->attack2_speler;
+			$spelers[4] = $row->rebound2_speler;
+			$spelers[5] = $row->playmaking2_speler;
+			$spelers[6] = $row->attack3_speler;
+			$spelers[7] = $row->attack4_speler;
+			$spelers[8] = $row->captain_speler;
+			$spelers[9] = $row->setpieces_speler;
+		}
+		
+		$opstelling = array();
+		
+		if($query->num_rows > 0){
+		for($i=0;$i<9;$i++){
+			$this->db->where('speler_id', $spelers[$i]);
+			$speler = $this->db->get('korf_spelers');
+			
+			foreach($speler->result() as $rij){
+				$opstelling[$i]['voornaam']= $rij->voornaam;
+				$opstelling[$i]['achternaam']= $rij->achternaam;
+				
+			
+			}
+			
+		}
+		}
+		
+		return $opstelling;
 
 	}
 
@@ -216,7 +250,7 @@
 	}
 
 
-	function insert_opstelling($field,$spelernaam,$teamid,$geslacht,$vak)
+	function insert_opstelling($field,$spelernaam,$teamid,$geslacht,$vak, $spelerid)
 	{
 
 
@@ -230,7 +264,7 @@
 		{
 
 			$insert = array(
-				$field."_speler" => $spelernaam,
+				$field."_speler" => $spelerid,
 				$field."_geslacht" => $geslacht,
 				'FK_team_id' => $teamid
 			);
@@ -331,7 +365,7 @@
 			if($geslacht =="female"){
 				if($vrouwen < 2){
 					$update = array(
-						$field."_speler" => $spelernaam,
+						$field."_speler" => $spelerid,
 						$field."_geslacht" => $geslacht
 					);
 
@@ -351,7 +385,7 @@
 			if($geslacht =="male"){
 				if($mannen < 2){
 					$update = array(
-						$field."_speler" => $spelernaam,
+						$field."_speler" => $spelerid,
 						$field."_geslacht" => $geslacht
 					);
 

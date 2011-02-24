@@ -65,7 +65,8 @@ $(function() {
     			data: { spelername: spelername,
             			positie: positie,
             			teamid: teamid,
-            			geslacht: geslacht
+            			geslacht: geslacht, 
+            			spelerid : spelerid
             			
         				},
         		dataType: "json",
@@ -119,7 +120,8 @@ $(function() {
     			data:  { spelername: spelername,
             			positie: positie,
             			teamid: teamid,
-            			geslacht: geslacht
+            			geslacht: geslacht,
+            			spelerid : spelerid
             			},
     			dataType: "json",
         		success: function(data){
@@ -170,7 +172,8 @@ $(function() {
     			data:  { spelername: spelername,
             			positie: positie,
             			teamid: teamid,
-            			geslacht: geslacht
+            			geslacht: geslacht,
+            			spelerid : spelerid
             			
         				},
     			dataType: "json",
@@ -224,7 +227,8 @@ $(function() {
     			data:  { spelername: spelername,
             			positie: positie,
             			teamid: teamid,
-            			geslacht: geslacht
+            			geslacht: geslacht,
+            			spelerid : spelerid
             			
         				},
     			dataType: "json",
@@ -278,7 +282,8 @@ $(function() {
     			data:  { spelername: spelername,
             			positie: positie,
             			teamid: teamid,
-            			geslacht: geslacht
+            			geslacht: geslacht,
+            			spelerid : spelerid
             			
         				},
     			dataType: "json",
@@ -333,7 +338,8 @@ $(function() {
     			data:  { spelername: spelername,
             			positie: positie,
             			teamid: teamid,
-            			geslacht: geslacht
+            			geslacht: geslacht,
+            			spelerid : spelerid
             			
         				},
     			dataType: "json",
@@ -387,7 +393,8 @@ $(function() {
     			data:  { spelername: spelername,
             			positie: positie,
             			teamid: teamid,
-            			geslacht: geslacht
+            			geslacht: geslacht,
+            			spelerid : spelerid
             			
         				},
     			dataType: "json",
@@ -441,7 +448,8 @@ $(function() {
     			data:  { spelername: spelername,
             			positie: positie,
             			teamid: teamid,
-            			geslacht: geslacht
+            			geslacht: geslacht,
+            			spelerid : spelerid
             			
         				},
     			dataType: "json",
@@ -487,7 +495,8 @@ $(function() {
     			url: "http://playb.al/index.php/korfbal/korfbal_reorder",
     			data:  { spelername: spelername,
             			positie: positie,
-            			teamid: teamid
+            			teamid: teamid,
+            			spelerid : spelerid
             			
         				},
     			success: function() {
@@ -517,7 +526,8 @@ $(function() {
     			url: "http://playb.al/index.php/korfbal/korfbal_reorder",
     			data:  { spelername: spelername,
             			positie: positie,
-            			teamid: teamid
+            			teamid: teamid,
+            			spelerid : spelerid
             			
         				},
     			dataType: "json",

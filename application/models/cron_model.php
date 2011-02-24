@@ -1001,7 +1001,66 @@
     
     	//print_r($naamarray);
     	
-    	}	
+    	}
+    		
+    }
+    
+    //speel wedstrijden
+    function play_games()
+    {
+    	$seizoenquery = $this->db->get('korf_cron');
+    	
+    	foreach($seizoenquery->result() as $rij){
+    		$season = $rij->seizoen;
+    		$week = $rij->week;
+    	
+    	}
+    	
+    	
+    	$this->db->where('week', $week);
+    	$this->db->where('seizoen', $season);
+    	$wedstrijdenquery = $this->db->get('korf_wedstrijden');
+    	
+    	//elke wedstrijd
+    	foreach($wedstrijdenquery->result() as $row)
+    	{	
+    		$wedstrijdid = $row->wedstrijd_id;
+    		$thuisteamid = $row->thuisteam;
+    		$uitteamid = $row->bezoekersteam;
+    		
+    		
+    		//thuisteamstats
+    			$this->db->select('*');
+    			$this->db->from('korf_opstelling');
+    			$this->db->where('FK_team_id', $thuisteamid);
+    			$thuisteamquery = $this->db->get();
+    			
+    			foreach($thuisteamquery->result() as $thuisrow)
+    			{
+    				$rebound1 = $thuisrow->rebound1_speler;
+					$play1 = $thuisrow->playmaking1_speler;
+					$att1 = $thuisrow->attack1_speler;
+					$att2 = $thuisrow->attack2_speler;
+					$rebound2 = $thuisrow->rebound2_speler;
+					$play2 = $thuisrow->playmaking2_speler;
+					$att3 = $thuisrow->attack3_speler;
+					$att4 = $thuisrow->attack4_speler;
+					$capt = $thuisrow->captain_speler;
+					$sp = $thuisrow->setpieces_speler;
+    			
+    			}
+    			
+    			
+    			
+    			
+    			
+    		
+    		
+    		//uitteamstats
+    	
+    	}
+    
+    
     }
     
  }  

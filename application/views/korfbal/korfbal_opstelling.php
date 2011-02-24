@@ -123,20 +123,7 @@
             </div>
         </div>
     </div>
-    <?php foreach($opstelling->result() as $row)
-{
-	$rebound1 = $row->rebound1_speler;
-	$playmaking1 = $row->playmaking1_speler;
-	$attack1 = $row->attack1_speler;
-	$attack2 = $row->attack2_speler;
-	$rebound2 = $row->rebound2_speler;
-	$playmaking2 = $row->playmaking2_speler;
-	$attack3 = $row->attack3_speler;
-	$attack4 = $row->attack4_speler;
-	$captain = $row->captain_speler;
-	$setpieces = $row->setpieces_speler;
-}?>
-<div id="korfbalField" style="background-color: yellow; height: 00px; float:right;">
+    <div id="korfbalField" style="background-color: yellow; height: 00px; float:right;">
     <div id="vak1">
         <h2>Vak1</h2>
         <div id="rebound1">
@@ -144,8 +131,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($rebound1)){
-			echo $rebound1;
+                        <?php if(isset($opstelling[0]['voornaam'])){
+			echo $opstelling[0]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>
@@ -158,8 +145,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($playmaking1)){
-			echo $playmaking1;
+                        <?php if(isset($opstelling[1]['voornaam'])){
+			echo $opstelling[1]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>
@@ -172,8 +159,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($attack1)){
-			echo $attack1;
+                        <?php if(isset($opstelling[2]['voornaam'])){
+			echo $opstelling[2]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>
@@ -186,8 +173,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($attack2)){
-			echo $attack2;
+                        <?php if(isset($opstelling[3]['voornaam'])){
+			echo $opstelling[3]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>
@@ -203,8 +190,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($rebound2)){
-			echo $rebound2;
+                        <?php if(isset($opstelling[4]['voornaam'])){
+			echo $opstelling[4]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>
@@ -217,8 +204,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($playmaking2)){
-			echo $playmaking2;
+                        <?php if(isset($opstelling[5]['voornaam'])){
+			echo $opstelling[5]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>
@@ -231,8 +218,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($attack3)){
-			echo $attack3;
+                        <?php if(isset($opstelling[6]['voornaam'])){
+			echo $opstelling[6]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>
@@ -245,8 +232,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($attack4)){
-			echo $attack4;
+                        <?php if(isset($opstelling[7]['voornaam'])){
+			echo $opstelling[7]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>
@@ -262,8 +249,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($captain)){
-			echo $captain;
+                        <?php if(isset($opstelling[8]['voornaam'])){
+			echo $opstelling[8]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>
@@ -276,8 +263,8 @@
             <div class="ui-widget-content">
                 <ul>
                     <li class="placeholder">
-                        <?php if(isset($setpieces)){
-			echo $setpieces;
+                        <?php if(isset($opstelling[9]['voornaam'])){
+			echo $opstelling[9]['voornaam'];
 			}else{ ?>
                         Add player
                         <?php } ?>

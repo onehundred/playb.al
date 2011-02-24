@@ -1005,8 +1005,7 @@
     		
     }
     
-    //speel wedstrijden
-    function play_games()
+    function get_wedstrijden()
     {
     	$seizoenquery = $this->db->get('korf_cron');
     	
@@ -1022,45 +1021,856 @@
     	$wedstrijdenquery = $this->db->get('korf_wedstrijden');
     	
     	//elke wedstrijd
+    	$i=1;
+    	$wedstrijd = array();
     	foreach($wedstrijdenquery->result() as $row)
     	{	
-    		$wedstrijdid = $row->wedstrijd_id;
-    		$thuisteamid = $row->thuisteam;
-    		$uitteamid = $row->bezoekersteam;
-    		
+    		//wedstrijdid
+    		$wedstrijd[$i]['wedstrijdid'] = $row->wedstrijd_id;
+    		$wedstrijd[$i]['thuisteam'] = $row->thuisteam;
+    		//echo $row->thuisteam;
+    		$wedstrijd[$i]['uitteam'] = $row->bezoekersteam;
+    		$i++;
+    	}	
+    	
+    	return $wedstrijd;
+
+    }
+    
+    function get_statsuitteam($wedstrijd)
+    {
+    	//aantal wedstrijden
+    	$lengte =  sizeof($wedstrijd)+1;
+    	
+    	$rebound1id = array();
+    	$play1id = array();
+    	$att1id = array();
+    	$att2id = array();
+    	$rebound2id = array();
+    	$play2id = array();
+    	$att3id = array();
+    	$att4id = array();
+    	
     		
     		//thuisteamstats
+    		for($j=1;$j<$lengte;$j++){
+    			
+    			$empty = "empty";
+    			
     			$this->db->select('*');
     			$this->db->from('korf_opstelling');
-    			$this->db->where('FK_team_id', $thuisteamid);
-    			$thuisteamquery = $this->db->get();
+    			$this->db->where('FK_team_id', $wedstrijd[$j]['uitteam']);
+    			$query = $this->db->get();
     			
-    			foreach($thuisteamquery->result() as $thuisrow)
+    			if($query->num_rows() == 0){
+    				$rebound1id[$j] = "empty";
+    				$play1id[$j] ="empty";
+    				$att1id[$j] ="empty";
+    				$att2id[$j] ="empty";
+    				$rebound2id[$j] ="empty";
+    				$play2id[$j] ="empty";
+    				$att3id[$j] ="empty";
+    				$att4id[$j] ="empty";
+
+    				
+    			}else{
+    			
+    			foreach($query->result() as $uitrow)
     			{
-    				$rebound1 = $thuisrow->rebound1_speler;
-					$play1 = $thuisrow->playmaking1_speler;
-					$att1 = $thuisrow->attack1_speler;
-					$att2 = $thuisrow->attack2_speler;
-					$rebound2 = $thuisrow->rebound2_speler;
-					$play2 = $thuisrow->playmaking2_speler;
-					$att3 = $thuisrow->attack3_speler;
-					$att4 = $thuisrow->attack4_speler;
-					$capt = $thuisrow->captain_speler;
-					$sp = $thuisrow->setpieces_speler;
-    			
+    				$rebound1id[$j] = $uitrow->rebound1_speler;
+    				$play1id[$j] = $uitrow->playmaking1_speler;
+    				$att1id[$j] =$uitrow -> attack1_speler;
+    				$att2id[$j] =$uitrow -> attack2_speler;
+    				$rebound2id[$j] = $uitrow -> rebound2_speler;
+    				$play2id[$j] = $uitrow -> playmaking2_speler;
+    				$att3id[$j] =$uitrow -> attack3_speler;
+					$att4id[$j] = $uitrow -> attack4_speler;
+
     			}
-    			
-    			
-    			
-    			
-    			
+    				}
+    		}
     		
+    		//2044 reboundspelers
+    		$lengterebound1 = sizeof($rebound1id) + 1;
     		
-    		//uitteamstats
-    	
-    	}
+    			
+    			
+    				$thuisstats = array();
+    				
+    				
+    				//rebound1 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('rebound,rebound_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $rebound1id[$k]);
+	    			$reboundquery = $this->db->get();
+    				
+    				if($reboundquery->num_rows() == 0)
+    				{
+    					$uitstats[$k]['rebound'] = 0;
+    				}else{
+    			
+	    				foreach($reboundquery->result() as $row)
+	    				{
+	    					 $rebound = $row->rebound;;
+	    					 $rebound_tr = $row->rebound_tr;
+	    					 $uitstats[$k]['rebound'] = $rebound .'.'. $rebound_tr;
+	    					
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//playmaking1 skill ophalen
+    				
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('playmaking,playmaking_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $play1id[$k]);
+	    			$playmakingquery = $this->db->get();
+    				
+    				if($playmakingquery->num_rows() == 0)
+    				{
+    					$uitstats[$k]['playmaking'] = 0;
+    				
+    				}else{
+    			
+	    				foreach($playmakingquery->result() as $row)
+	    				{
+	    					 $playmaking = $row->playmaking;
+	    					 $playmaking_tr = $row->playmaking_tr;
+	    					 $uitstats[$k]['playmaking'] = $playmaking.'.'.$playmaking_tr;
+	    					 
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//attack1 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $att1id[$k]);
+	    			$attackquery = $this->db->get();
+    				
+    				if($attackquery->num_rows() == 0)
+    				{
+    					$uitstats[$k]['attack'] = 0;
+    				}else{
+    			
+	    				foreach($attackquery->result() as $row)
+	    				{
+	    				
+	    						$shotpower = $row->shotpower;
+	    						$shotpower_tr = $row->shotpower_tr;
+	    						$shotprecision = $row->shotprecision;
+	    						$shotprecision_tr = $row->shotprecision_tr;
+	    					 	$uitstats[$k]['attack'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//attack2 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $att2id[$k]);
+	    			$attackquery2 = $this->db->get();
+    				
+    				if($attackquery2->num_rows() == 0)
+    				{
+    					$uitstats[$k]['attack2'] = 0;
+    				}else{
+    			
+	    				foreach($attackquery2->result() as $row)
+	    				{
+	    				
+	    						$shotpower = $row->shotpower;
+	    						$shotpower_tr = $row->shotpower_tr;
+	    						$shotprecision = $row->shotprecision;
+	    						$shotprecision_tr = $row->shotprecision_tr;
+	    					 	$uitstats[$k]['attack2'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//rebound2 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('rebound,rebound_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $rebound2id[$k]);
+	    			$rebound2query = $this->db->get();
+    				
+    				if($rebound2query->num_rows() == 0)
+    				{
+    					$uitstats[$k]['rebound2'] = 0;
+    				}else{
+    			
+	    				foreach($rebound2query->result() as $row)
+	    				{
+	    					 $rebound = $row->rebound;;
+	    					 $rebound_tr = $row->rebound_tr;
+	    					 $uitstats[$k]['rebound2'] = $rebound .'.'. $rebound_tr;
+	    					
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//playmaking2 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('playmaking,playmaking_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $play2id[$k]);
+	    			$playmaking2query = $this->db->get();
+    				
+    				if($playmaking2query->num_rows() == 0)
+    				{
+    					$uitstats[$k]['playmaking2'] = 0;
+    				
+    				}else{
+    			
+	    				foreach($playmaking2query->result() as $row)
+	    				{
+	    					 $playmaking = $row->playmaking;
+	    					 $playmaking_tr = $row->playmaking_tr;
+	    					 $uitstats[$k]['playmaking2'] = $playmaking.'.'.$playmaking_tr;
+	    					 
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+					//attack3 skill ophalen
+					for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $att3id[$k]);
+	    			$attack3query = $this->db->get();
+    				
+    				if($attack3query->num_rows() == 0)
+    				{
+    					$uitstats[$k]['attack3'] = 0;
+    				}else{
+    			
+	    				foreach($attack3query->result() as $row)
+	    				{
+	    				
+	    						$shotpower = $row->shotpower;
+	    						$shotpower_tr = $row->shotpower_tr;
+	    						$shotprecision = $row->shotprecision;
+	    						$shotprecision_tr = $row->shotprecision_tr;
+	    					 	$uitstats[$k]['attack3'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//attack4 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $att4id[$k]);
+	    			$attack4query = $this->db->get();
+    				
+    				if($attack4query->num_rows() == 0)
+    				{
+    					$uitstats[$k]['attack4'] = 0;
+    				}else{
+    			
+	    				foreach($attack4query->result() as $row)
+	    				{
+	    				
+	    						$shotpower = $row->shotpower;
+	    						$shotpower_tr = $row->shotpower_tr;
+	    						$shotprecision = $row->shotprecision;
+	    						$shotprecision_tr = $row->shotprecision_tr;
+	    					 	$uitstats[$k]['attack4'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    			
+	    				}
+	    				}
+    				
+    				}
+			return $uitstats;
+
+    }
     
+    function get_statsthuisteam($wedstrijd)
+    {
+    	//aantal wedstrijden
+    	$lengte =  sizeof($wedstrijd)+1;
+    	
+    	$rebound1id = array();
+    	$play1id = array();
+    	$att1id = array();
+    	$att2id = array();
+    	$rebound2id = array();
+    	$play2id = array();
+    	$att3id = array();
+    	$att4id = array();
+    	
+    		
+    		//thuisteamstats
+    		for($j=1;$j<$lengte;$j++){
+    			
+    			$empty = "empty";
+    			
+    			$this->db->select('*');
+    			$this->db->from('korf_opstelling');
+    			$this->db->where('FK_team_id', $wedstrijd[$j]['thuisteam']);
+    			$query = $this->db->get();
+    			
+    			if($query->num_rows() == 0){
+    				$rebound1id[$j] = "empty";
+    				$play1id[$j] ="empty";
+    				$att1id[$j] ="empty";
+    				$att2id[$j] ="empty";
+    				$rebound2id[$j] ="empty";
+    				$play2id[$j] ="empty";
+    				$att3id[$j] ="empty";
+    				$att4id[$j] ="empty";
+
+    				
+    			}else{
+    			
+    			foreach($query->result() as $thuisrow)
+    			{
+    				$rebound1id[$j] = $thuisrow->rebound1_speler;
+    				$play1id[$j] = $thuisrow->playmaking1_speler;
+    				$att1id[$j] =$thuisrow -> attack1_speler;
+    				$att2id[$j] =$thuisrow -> attack2_speler;
+    				$rebound2id[$j] = $thuisrow -> rebound2_speler;
+    				$play2id[$j] = $thuisrow -> playmaking2_speler;
+    				$att3id[$j] =$thuisrow -> attack3_speler;
+					$att4id[$j] = $thuisrow -> attack4_speler;
+
+    			}
+    				}
+    		}
+    		
+    		//2044 reboundspelers
+    		$lengterebound1 = sizeof($rebound1id) + 1;
+    		
+    			
+    			
+    				$thuistats = array();
+    				$thuisstats_tr =array();
+    				
+    				//rebound1 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('rebound,rebound_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $rebound1id[$k]);
+	    			$reboundquery = $this->db->get();
+    				
+    				if($reboundquery->num_rows() == 0)
+    				{
+    					$thuisstats[$k]['rebound'] = 0;
+    				}else{
+    			
+	    				foreach($reboundquery->result() as $row)
+	    				{
+	    					 $rebound = $row->rebound;;
+	    					 $rebound_tr = $row->rebound_tr;
+	    					 $thuisstats[$k]['rebound'] = $rebound .'.'. $rebound_tr;
+	    					
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//playmaking1 skill ophalen
+    				
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('playmaking,playmaking_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $play1id[$k]);
+	    			$playmakingquery = $this->db->get();
+    				
+    				if($playmakingquery->num_rows() == 0)
+    				{
+    					$thuisstats[$k]['playmaking'] = 0;
+    				
+    				}else{
+    			
+	    				foreach($playmakingquery->result() as $row)
+	    				{
+	    					 $playmaking = $row->playmaking;
+	    					 $playmaking_tr = $row->playmaking_tr;
+	    					 $thuisstats[$k]['playmaking'] = $playmaking.'.'.$playmaking_tr;
+	    					 
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//attack1 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $att1id[$k]);
+	    			$attackquery = $this->db->get();
+    				
+    				if($attackquery->num_rows() == 0)
+    				{
+    					$thuisstats[$k]['attack'] = 0;
+    				}else{
+    			
+	    				foreach($attackquery->result() as $row)
+	    				{
+	    				
+	    						$shotpower = $row->shotpower;
+	    						$shotpower_tr = $row->shotpower_tr;
+	    						$shotprecision = $row->shotprecision;
+	    						$shotprecision_tr = $row->shotprecision_tr;
+	    					 	$thuisstats[$k]['attack'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//attack2 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $att2id[$k]);
+	    			$attackquery2 = $this->db->get();
+    				
+    				if($attackquery2->num_rows() == 0)
+    				{
+    					$thuisstats[$k]['attack2'] = 0;
+    				}else{
+    			
+	    				foreach($attackquery2->result() as $row)
+	    				{
+	    				
+	    						$shotpower = $row->shotpower;
+	    						$shotpower_tr = $row->shotpower_tr;
+	    						$shotprecision = $row->shotprecision;
+	    						$shotprecision_tr = $row->shotprecision_tr;
+	    					 	$thuisstats[$k]['attack2'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//rebound2 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('rebound,rebound_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $rebound2id[$k]);
+	    			$rebound2query = $this->db->get();
+    				
+    				if($rebound2query->num_rows() == 0)
+    				{
+    					$thuisstats[$k]['rebound2'] = 0;
+    				}else{
+    			
+	    				foreach($rebound2query->result() as $row)
+	    				{
+	    					 $rebound = $row->rebound;;
+	    					 $rebound_tr = $row->rebound_tr;
+	    					 $thuisstats[$k]['rebound2'] = $rebound .'.'. $rebound_tr;
+	    					
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//playmaking2 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('playmaking,playmaking_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $play2id[$k]);
+	    			$playmaking2query = $this->db->get();
+    				
+    				if($playmaking2query->num_rows() == 0)
+    				{
+    					$thuisstats[$k]['playmaking2'] = 0;
+    				
+    				}else{
+    			
+	    				foreach($playmaking2query->result() as $row)
+	    				{
+	    					 $playmaking = $row->playmaking;
+	    					 $playmaking_tr = $row->playmaking_tr;
+	    					 $thuisstats[$k]['playmaking2'] = $playmaking.'.'.$playmaking_tr;
+	    					 
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+					//attack3 skill ophalen
+					for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $att3id[$k]);
+	    			$attack3query = $this->db->get();
+    				
+    				if($attack3query->num_rows() == 0)
+    				{
+    					$thuisstats[$k]['attack3'] = 0;
+    				}else{
+    			
+	    				foreach($attack3query->result() as $row)
+	    				{
+	    				
+	    						$shotpower = $row->shotpower;
+	    						$shotpower_tr = $row->shotpower_tr;
+	    						$shotprecision = $row->shotprecision;
+	    						$shotprecision_tr = $row->shotprecision_tr;
+	    					 	$thuisstats[$k]['attack3'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    			
+	    				}
+	    				}
+    				
+    				}
+    				
+    				//attack4 skill ophalen
+    				for($k=1;$k<$lengterebound1;$k++){
+    				
+	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->from('korf_training');
+	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
+	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
+	    			$this->db->where('speler_id', $att4id[$k]);
+	    			$attack4query = $this->db->get();
+    				
+    				if($attack4query->num_rows() == 0)
+    				{
+    					$thuisstats[$k]['attack4'] = 0;
+    				}else{
+    			
+	    				foreach($attack4query->result() as $row)
+	    				{
+	    				
+	    						$shotpower = $row->shotpower;
+	    						$shotpower_tr = $row->shotpower_tr;
+	    						$shotprecision = $row->shotprecision;
+	    						$shotprecision_tr = $row->shotprecision_tr;
+	    					 	$thuisstats[$k]['attack4'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2; //gedeeld door 2 omwille van dubbele skilloptelling
+	    			
+	    				}
+	    				}
+    				
+    				}
+			return $thuisstats;
     
     }
+    //speel wedstrijden
+    function play_games($thuis, $uit, $wedstrijd)
+    {
+    	$lengte = sizeof($thuis);
+    	$uitslag = array();
+    	
+    	for($i=1;$i<$lengte+1;$i++){
+    	
+    		$wedstrijdid = $wedstrijd[$i]['wedstrijdid'];
+    		$thuisteamid = $wedstrijd[$i]['thuisteam'];
+    		$uitteamid = $wedstrijd[$i]['uitteam'];
+    		
+    		
+    		$thuistotaal = $thuis[$i]['rebound'] + $thuis[$i]['playmaking'] + $thuis[$i]['attack'] + $thuis[$i]['attack2'] + $thuis[$i]['rebound2'] +$thuis[$i]['playmaking2'] + $thuis[$i]['attack3'] + $thuis[$i]['attack4'];
+    		
+    		
+    		$uittotaal = $uit[$i]['rebound'] + $uit[$i]['playmaking'] + $uit[$i]['attack'] + $uit[$i]['attack2'] + $uit[$i]['rebound2'] +$uit[$i]['playmaking2'] + $uit[$i]['attack3'] + $uit[$i]['attack4'];
+
+
+		
+		$uitslag['thuis'] = 0;
+		$uitslag['uit'] = 0;
+	
+		
+		
+		//eerste actie
+		$randmin1 = rand(0,3);
+		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+		{
+			$uitslag['thuis'] = $uitslag['thuis'] + 1;
+		
+		}else{
+			$uitslag['uit'] = $uitslag['uit'] + 1;
+		
+		}
+		
+		//2de actie
+		$randmin2 = rand(3,5);
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+		{
+			$uitslag['thuis'] = $uitslag['thuis'] + 1;
+		
+		}else{
+			$uitslag['uit'] = $uitslag['uit'] + 1;
+		
+		}
+		
+		//3de actie
+		$randmin3 = rand(6,7);
+		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+		{
+			$uitslag['thuis'] = $uitslag['thuis'] + 1;
+		
+		}else{
+			$uitslag['uit'] = $uitslag['uit'] + 1;
+		
+		}
+		
+		//4de actie
+		$randmin4 = rand(8,11);
+		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+		{
+			$uitslag['thuis'] = $uitslag['thuis'] + 1;
+		
+		}else{
+			$uitslag['uit'] = $uitslag['uit'] + 1;
+		
+		}
+		
+		//5de actie
+		$randmin5 = rand(12,16);
+		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+		{
+			$uitslag['thuis'] = $uitslag['thuis'] + 1;
+		
+		}else{
+			$uitslag['uit'] = $uitslag['uit'] + 1;
+		
+		}
+		
+		//6de actie
+		$randmin6 = rand(17,30);
+		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+		{
+			$uitslag['thuis'] = $uitslag['thuis'] + 1;
+		
+		}else{
+			$uitslag['uit'] = $uitslag['uit'] + 1;
+		
+		}
+		
+		
+		//minutenstring om te inserten en de databank
+		$minuten = '';
+		$minuten =+ $randmin1.';'.$randmin2.';'.$randmin3.';'.$randmin4.';'.$randmin5.';'.$randmin6;
+		
+		//gelijkstand
+		if($uitslag['thuis'] == $uitslag['uit']){
+			//insert verslag
+			$insert = array(
+				'FK_wedstrijd_id' => $wedstrijdid,
+				'minuten' => $minuten
+			
+			);
+			
+			$this->db->insert('korf_verslagen', $insert);
+			
+			//haal de thuisteamgegevens op
+			$this->db->select('gespeeld, gelijk, doelpunten_voor, doelpunten_tegen, divisiepunten');
+			$this->db->from('korf_teams');
+			$this->db->where('team_id', $thuisteamid);
+			$thuisteamquery = $this->db->get();
+			
+			foreach($thuisteamquery->result() as $row)
+			{
+				$gespeeld = $row->gespeeld;
+				$gelijk = $row->gelijk;
+				$voor = $row->doelpunten_voor;
+				$tegen = $row->doelpunten_tegen;
+				$punten = $row->divisiepunten;
+			
+			}
+			
+			$thuisupdate = array(
+				'gespeeld' => $gespeeld +1,
+				'gelijk' => $gelijk + 1,
+				'doelpunten_voor' => $voor + $uitslag['thuis'],
+				'doelpunten_tegen' => $tegen + $uitslag['uit'], 
+				'divisiepunten' => $punten + 1
+			
+			);
+			
+			$this->db->where('team_id', $thuisteamid);
+			$this->db->update('korf_teams', $thuisupdate);
+			
+			//haal de uitteamgegevens op
+			$this->db->select('gespeeld, gelijk, doelpunten_voor, doelpunten_tegen, divisiepunten');
+			$this->db->from('korf_teams');
+			$this->db->where('team_id', $uitteamid);
+			$uitteamquery = $this->db->get();
+			
+			foreach($uitteamquery->result() as $row)
+			{
+				$gespeeld = $row->gespeeld;
+				$gelijk = $row->gelijk;
+				$voor = $row->doelpunten_voor;
+				$tegen = $row->doelpunten_tegen;
+				$punten = $row->divisiepunten;
+			
+			}
+
+			
+			$uitupdate = array(
+				'gespeeld' => $gespeeld +1,
+				'gelijk' => $gelijk + 1,
+				'doelpunten_voor' => $voor + $uitslag['uit'],
+				'doelpunten_tegen' => $tegen + $uitslag['thuis'], 
+				'divisiepunten' => $punten + 1
+			
+			);
+			
+			$this->db->where('team_id', $uitteamid);
+			$this->db->update('korf_teams', $uitupdate);
+			
+		}
+		
+		//thuisteam wint////////////////////////////
+		if($uitslag['thuis'] > $uitslag['uit']){
+		//insert verslag
+			$insert = array(
+				'FK_wedstrijd_id' => $wedstrijdid,
+				'minuten' => $minuten
+			
+			);
+			
+			$this->db->insert('korf_verslagen', $insert);
+			
+			//haal de thuisteamgegevens op
+			$this->db->select('gespeeld, gelijk, doelpunten_voor, doelpunten_tegen, divisiepunten');
+			$this->db->from('korf_teams');
+			$this->db->where('team_id', $thuisteamid);
+			$thuisteamquery = $this->db->get();
+			
+			foreach($thuisteamquery->result() as $row)
+			{
+				$gespeeld = $row->gespeeld;
+				$gelijk = $row->gelijk;
+				$voor = $row->doelpunten_voor;
+				$tegen = $row->doelpunten_tegen;
+				$punten = $row->divisiepunten;
+			
+			}
+			
+			$thuisupdate = array(
+				'gespeeld' => $gespeeld +1,
+				'gelijk' => $gelijk + 1,
+				'doelpunten_voor' => $voor + $uitslag['thuis'],
+				'doelpunten_tegen' => $tegen + $uitslag['uit'], 
+				'divisiepunten' => $punten + 1
+			
+			);
+			
+			$this->db->where('team_id', $thuisteamid);
+			$this->db->update('korf_teams', $thuisupdate);
+			
+			//haal de uitteamgegevens op
+			$this->db->select('gespeeld, gelijk, doelpunten_voor, doelpunten_tegen, divisiepunten');
+			$this->db->from('korf_teams');
+			$this->db->where('team_id', $uitteamid);
+			$uitteamquery = $this->db->get();
+			
+			foreach($uitteamquery->result() as $row)
+			{
+				$gespeeld = $row->gespeeld;
+				$gelijk = $row->gelijk;
+				$voor = $row->doelpunten_voor;
+				$tegen = $row->doelpunten_tegen;
+				$punten = $row->divisiepunten;
+			
+			}
+
+			
+			$uitupdate = array(
+				'gespeeld' => $gespeeld +1,
+				'gelijk' => $gelijk + 1,
+				'doelpunten_voor' => $voor + $uitslag['uit'],
+				'doelpunten_tegen' => $tegen + $uitslag['thuis'], 
+				'divisiepunten' => $punten + 1
+			
+			);
+			
+			$this->db->where('team_id', $uitteamid);
+			$this->db->update('korf_teams', $uitupdate);
+			
+		
+		
+		
+		}
+		
+		
+    	}
+    	   //return $uitslag; 
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
  }  

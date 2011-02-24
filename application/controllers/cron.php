@@ -29,13 +29,7 @@ class Cron extends CI_Controller {
 	function cron_test()
 	{
 	
-	$seizoenquery = $this->db->get('korf_cron');
-    	
-    	foreach($seizoenquery->result() as $rij){
-    		echo $rij->seizoen;
-    	
-    	}
-    	echo $season;
+	    	    	
 	}
 	
 	//op het begin van elk nieuw seizoen
@@ -97,7 +91,12 @@ class Cron extends CI_Controller {
 	function play_games()
 	{
 		$this->load->model('cron_model');
-		$this->cron_model->play_games();
+		$wedstrijd = $this->cron_model->get_wedstrijden();
+		$thuisstats = $this->cron_model->get_statsthuisteam($wedstrijd);
+		$uitstats = $this->cron_model->get_statsuitteam($wedstrijd);
+		$thuis = $this->cron_model->play_games($thuisstats, $uitstats, $wedstrijd);
+		print_r ($thuis);
+		
 	}
 	
 	

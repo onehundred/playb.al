@@ -67,6 +67,7 @@ $('#test').click(function() {
 <!-- end wrap -->
 <footer>
     <section id="footer">
+    
         <div id="footerLeft">
             <h2>test</h2>
             <li>test</li>

@@ -1858,7 +1858,7 @@
 		}
 		
 		//uitteam wint////////////////////////////
-		if($uitslag['thuis'] > $uitslag['uit']){
+		if($uitslag['thuis'] < $uitslag['uit']){
 		//insert verslag
 			$insert = array(
 				'FK_wedstrijd_id' => $wedstrijdid,
@@ -1932,7 +1932,13 @@
 		
 		}
 
+		$einduitslag = array(
+			'uitslag' => $uitslag['thuis'].'-'.$uitslag['uit']
 		
+		);		
+		
+		$this->db->where('wedstrijd_id', $wedstrijdid);
+		$this->db->update('korf_wedstrijden', $einduitslag);
 		
     	}
     	   //return $uitslag; 

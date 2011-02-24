@@ -13,6 +13,7 @@
 					$this->load->view('main_login');
 					?>
 					</section>
+					<img src="<?php echo base_url();?>img/version.png" id="version" />
 			</header>
 			
 			

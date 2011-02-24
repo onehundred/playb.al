@@ -38,10 +38,13 @@
           transition-duration: 0s;
 }
 </style>
+<script type="text/javascript" src="<?php echo base_url();?>/js/highcharts/highcharts.js"></script>
+
 <script>
 		$(function() {
 		
 				var teamid = $('#teamid').val();
+				var spelersskills = 0;
 				//alert(teamid);
 				$.ajax({
     			type: "POST",
@@ -53,9 +56,9 @@
     			dataType: "json",
         		success: function(data){
         		var spelers = data;
-        		//alert(spelers[1].rebound);
         		
-        		for(var i=1;i<30;i++){
+        		
+        		for(var i in spelers){
 	        		$( ".rebound"+spelers[i].spelerid).progressbar({
 					value: spelers[i].rebound * 5
 					});
@@ -80,22 +83,74 @@
 					$( ".stamina"+spelers[i].spelerid ).progressbar({
 						value: spelers[i].stamina * 5
 					});
-				}
+					
+					spelersskills =+ spelersskills + spelers[i].rebound ;
+					//alert(spelersskills);
+				}   
+				var chart;
+			
+				chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'piechart',
+						plotBackgroundColor: null,
+						plotBorderWidth: null,
+						plotShadow: false
+					},
+					title: {
+						text: 'Gemiddelde spelersvaardigheden'
+					},
+					tooltip: {
+						formatter: function() {
+							return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+						}
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+								enabled: true,
+								color: '#000000',
+								connectorColor: '#000000',
+								formatter: function() {
+									return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+								}
+							}
+						}
+					},
+				    series: [{
+						type: 'pie',
+						name: 'Gemiddelde skills',
+						data: [
+							['Rebound',   45.0],
+							['Stamina',       26.8],
+							{
+								name: 'Intercepting',    
+								y: 12.8,
+								sliced: true,
+								selected: true
+							},
+							['Playmaking',    8.5],
+							['Shotpower',     6.2],
+							['Shotprecision',   0.7],
+							['Passing',     20.2]
+							
+						]
+					}]
+				});
+
+				
         		
         		}
+        		
   				});
 		
+				
+							
 			});
 	</script>
 
-
-
-
-
-
-
-
-  
+		
 
 <!--
  <div id="container">
@@ -290,6 +345,8 @@ foreach($spelers->result() as $row)
 </div>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
 </div> <!-- end container -->
+
+<div id="piechart" style="width: 400px; height: 200px; margin: 0 auto"></div>
 
   
 

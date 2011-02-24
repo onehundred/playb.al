@@ -70,7 +70,7 @@ $(function() {
 	        		}
 	        		else{
 	        		
-		        		for(i =1;i<20;i++){
+		        		for(var i in spelers){
 		        			
 		    				var progress = spelers[i].totaal / 10;
 		    				//alert(progress);

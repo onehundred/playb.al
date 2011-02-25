@@ -258,7 +258,9 @@
     					'23'
     					
     	
-    	);			
+    	);		
+    	
+    	$rugnummer = rand(0, 44);	
     		
     		
     				
@@ -271,6 +273,7 @@
     		'achternaam' => $achternaam,
     		'leeftijd' => $leeftijd,
     		'geslacht' => 'male',
+    		'rugnummer' => $rugnummer,
     		'FK_team_id' => $team_id
     		
     	
@@ -428,7 +431,7 @@
     	
     	);			
     		
-    		
+    	$rugnummer = rand(46, 99);	
     				
     	$voornaam = $voornamen[array_rand($voornamen)];
     	$achternaam = $achternamen[array_rand($achternamen)];
@@ -439,6 +442,7 @@
     		'achternaam' => $achternaam,
     		'leeftijd' => $leeftijd,
     		'geslacht' => 'female',
+    		'rugnummer' => $rugnummer,
     		'FK_team_id' => $team_id
     		
     	

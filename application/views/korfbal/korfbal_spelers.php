@@ -174,7 +174,7 @@
 foreach($spelers->result() as $row)
 		{?>
         <div class="player">
-            <p class="number">57</p>
+            <p class="number"><?php echo $row->rugnummer;?></p>
             <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></p>
             <p class="lastname"><?php echo $row->achternaam; ?></a></p>
             <!-- <p class="gender">s<?php echo $row->geslacht; ?></p> -->

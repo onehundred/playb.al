@@ -9,6 +9,8 @@ class Cron extends CI_Controller {
 	
 	}
 	
+	
+	//maakt alle divisies aan
 	function create_divisions()
 	{
 		$this->load->model('cron_model');
@@ -16,7 +18,7 @@ class Cron extends CI_Controller {
 	}
 	
 	
-	
+	//vult alle divisies op met playbal teams
 	function fill_division()
 	{
 		$this->load->model('cron_model');
@@ -88,6 +90,7 @@ class Cron extends CI_Controller {
 	
 	}
 	
+	//om de 2 dagen
 	function play_games()
 	{
 		$this->load->model('cron_model');

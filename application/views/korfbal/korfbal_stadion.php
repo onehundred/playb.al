@@ -352,7 +352,7 @@ $(function(){
 	<div id="sec_e">Sectie E: </div>
 	<div id="sec_f">Sectie F: </div>
 	<div id="sec_g">Sectie G: </div>
-	<div id="sec_g">Sectie H: </div>
+	<div id="sec_h">Sectie H: </div>
 	
 </div>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3')?>"/>

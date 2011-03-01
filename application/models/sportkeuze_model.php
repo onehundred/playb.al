@@ -115,7 +115,7 @@
     	
     	$new_stadion_insert_data = array(
     		'naam' => $this->input->post('stadionnaam'),
-    		'aantal_plaatsen' => rand(500,2000), 
+    		'plaatsen_a' => rand(500,2000), 
     		'FK_team_id' => $team_id
     		
     	

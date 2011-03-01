@@ -20,7 +20,7 @@
 	function get_stadion($team_id)
 	{
 		$this->db->where('FK_team_id', $team_id);
-		$this->db->select('naam, aantal_plaatsen');
+		$this->db->select('*');
 		$query = $this->db->get('korf_stadion');
 		return $query;
 
@@ -521,6 +521,91 @@
 		return $spelers ;
 		
 		
+	
+	}
+	
+	function getJsonStadion($teamid)
+	{
+		$this->db->select('*');
+		$this->db->from('korf_stadion');
+		$this->db->where('FK_team_id', $teamid);
+		$query = $this->db->get();
+		
+		$stadion = array();
+		
+		foreach($query->result() as $row)
+		{
+			$stadion['a']['sectie'] = $row->sectie_a;
+			$stadion['b']['sectie'] = $row->sectie_b;
+			$stadion['c']['sectie'] = $row->sectie_c;
+			$stadion['d']['sectie'] = $row->sectie_d;
+			$stadion['e']['sectie'] = $row->sectie_e;
+			$stadion['f']['sectie'] = $row->sectie_f;
+			$stadion['g']['sectie'] = $row->sectie_g;
+			$stadion['h']['sectie'] = $row->sectie_h;
+			
+			$stadion['a']['plaatsen'] = $row->plaatsen_a;
+			$stadion['b']['plaatsen'] = $row->plaatsen_b;
+			$stadion['c']['plaatsen'] = $row->plaatsen_c;
+			$stadion['d']['plaatsen'] = $row->plaatsen_d;
+			$stadion['e']['plaatsen'] = $row->plaatsen_e;
+			$stadion['f']['plaatsen'] = $row->plaatsen_f;
+			$stadion['g']['plaatsen'] = $row->plaatsen_g;
+			$stadion['h']['plaatsen'] = $row->plaatsen_h;
+			
+		
+		}
+		
+		return $stadion;
+	
+	}
+	
+	function buySection($sectie, $teamid)
+	{
+		$data = array(
+			$sectie => 1
+		);
+		
+		$this->db->where('FK_team_id', $teamid);
+		$update = $this->db->update('korf_stadion', $data);
+		if($update){
+			return true;
+		}else{
+			return false;
+		}
+	
+	
+	}
+	
+	function buySeats($sectie, $teamid, $aantalplaatsen)
+	{
+		
+		$this->db->select(''.$sectie.'');
+		$this->db->where('FK_team_id', $teamid);
+		$this->db->from('korf_stadion');
+		$query = $this->db->get();
+		
+		foreach($query->result() as $row)
+		{
+			$plaatsen = $row->$sectie;
+		
+		}
+		
+		$totaalplaatsen = $plaatsen + $aantalplaatsen;
+		
+		$data = array(
+			$sectie => $totaalplaatsen
+		
+		);
+		
+		$this->db->where('FK_team_id', $teamid);
+		$update = $this->db->update('korf_stadion', $data);
+		if($update){
+			return true;
+		}else{
+		
+			return false;
+		}
 	
 	}
 

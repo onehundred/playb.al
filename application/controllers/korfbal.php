@@ -409,6 +409,32 @@ class Korfbal extends CI_Controller {
 		
 	}
 	
+	function korfbal_buySection()
+	{
+		$sectie = $_POST['id'];
+		$teamid = $_POST['teamid'];
+		
+		$this->load->model('korfbal_model');
+		$buy['section'] = $this->korfbal_model->buySection($sectie, $teamid);
+		
+		echo json_encode($buy);
+	
+	}
+	
+	function korfbal_buySeats()
+	{
+		$sectie = $_POST['id'];
+		$teamid = $_POST['teamid'];
+		$plaatsen = $_POST['aantalplaatsen'];
+		
+		$this->load->model('korfbal_model');
+		$buy['seats'] = $this->korfbal_model->buySeats($sectie, $teamid, $plaatsen);
+		
+		echo json_encode($buy);
+
+	
+	}
+	
 	
 	function korfbal_jsonPlayers()
 	{
@@ -417,6 +443,16 @@ class Korfbal extends CI_Controller {
 		$this->load->model('korfbal_model');
 		$json = $this->korfbal_model->getJson($teamid);
 		echo json_encode($json);
+	}
+	
+	function korfbal_jsonStadion()
+	{
+		$teamid = $_POST['teamid'];
+		
+		$this->load->model('korfbal_model');
+		$json = $this->korfbal_model->getJsonStadion($teamid);
+		echo json_encode($json);
+	
 	}
 }
 

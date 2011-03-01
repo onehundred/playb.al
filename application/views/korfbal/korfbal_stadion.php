@@ -136,10 +136,15 @@
 	font-size: 9pt;
 }
 </style>
+
 <script>
 $(function(){
-
+	getData();
 	function getData(){
+		var holder = document.getElementById("stadion");
+		while(holder.hasChildNodes()){
+			holder.removeChild(holder.lastChild);
+		}
 		var teamid = $('#teamid').val();
 		
 		$.ajax({
@@ -152,28 +157,29 @@ $(function(){
         	var stadion = data;
         	//alert(stadion['g'].sectie);
         			if(stadion['g'].sectie === '1'){
-				    	$('#stadion').append('<div id="rechts_boven"></div>');	    	
+				    	$('#stadion').append('<div id="rechts_boven"></div>');
+				    	$('#aantalplaatsen_g').text(stadion['g'].plaatsen); 	    	
         			}else{
         				$('#stadion').append('<div id="rechts_boven_kopen">$</div>');
         			}
         			
         			if(stadion['b'].sectie === '1'){
-				    	$('#stadion').append('<div id="midden_boven"></div>');
-				    	$('#aantalplaatsen_b').text('Sectie B: '+ stadion['b'].plaatsen+' plaatsen');
-				    	$('#aantalplaatsen_b').append('<p><input type="text" id="b" value="1"/><span id="plaatsen_b" class="kopen">Koop plaatsen</span></p>');   	
-	    	
+				    	$('#stadion').append('<div id="midden_boven"></div>');	
+				    	$('#aantalplaatsen_b').text(stadion['b'].plaatsen);     	
         			}else{
         				$('#stadion').append('<div id="midden_boven_kopen">$</div>');
         			}
 					
 					if(stadion['f'].sectie === '1'){
-				    	$('#stadion').append('<div id="links_boven"></div>');	    	
+				    	$('#stadion').append('<div id="links_boven"></div>');	
+				    	$('#aantalplaatsen_f').text(stadion['f'].plaatsen);     	
         			}else{
         				$('#stadion').append('<div id="links_boven_kopen">$</div>');
         			}
 					
 					if(stadion['c'].sectie === '1'){
-				    	$('#stadion').append('<div id="rechts_midden"></div>');	    	
+				    	$('#stadion').append('<div id="rechts_midden"></div>');
+				    	$('#aantalplaatsen_c').text(stadion['c'].plaatsen); 	    	
         			}else{
         				$('#stadion').append('<div id="rechts_midden_kopen">$</div>');
         			}
@@ -182,26 +188,28 @@ $(function(){
         			
         			if(stadion['a'].sectie === '1'){
 				    	$('#stadion').append('<div id="links_midden"></div>');	
-				    	$('#aantalplaatsen_a').text('Sectie A: '+ stadion['a'].plaatsen+' plaatsen');
-				    	$('#aantalplaatsen_a').append('<p><input type="text" id="a" value="1"/><span id="plaatsen_a" class="kopen">Koop plaatsen</span></p>');   	
+				    	$('#aantalplaatsen_a').text(stadion['a'].plaatsen);    	
         			}else{
         				$('#stadion').append('<div id="links_midden_kopen">$</div>');
         			}
         			
         			if(stadion['h'].sectie === '1'){
-				    	$('#stadion').append('<div id="rechts_onder"></div>');	    	
+				    	$('#stadion').append('<div id="rechts_onder"></div>');
+				    	$('#aantalplaatsen_h').text(stadion['h'].plaatsen); 	    	
         			}else{
         				$('#stadion').append('<div id="rechts_onder_kopen">$</div>');
         			}
 					
 					if(stadion['d'].sectie === '1'){
-				    	$('#stadion').append('<div id="midden_onder"></div>');	    	
+				    	$('#stadion').append('<div id="midden_onder"></div>');	
+				    	$('#aantalplaatsen_d').text(stadion['d'].plaatsen);     	
         			}else{
         				$('#stadion').append('<div id="midden_onder_kopen">$</div>');
         			}
 					
 					if(stadion['e'].sectie === '1'){
-				    	$('#stadion').append('<div id="links_onder"></div>');	    	
+				    	$('#stadion').append('<div id="links_onder"></div>');
+				    	$('#aantalplaatsen_e').text(stadion['e'].plaatsen); 	    	
         			}else{
         				$('#stadion').append('<div id="links_onder_kopen">$</div>');
         			}
@@ -213,9 +221,14 @@ $(function(){
 	
 	}
 	
-	getData();
-
-
+	$('#midden_midden').live('click', function(){                                                                                                                               
+       alert("ok");                                                                                                                                            
+});
+	
+	
+	
+	
+	
 	$('.kopen').click(function(){
 		
 		var teamid = $('#teamid').val();
@@ -257,7 +270,7 @@ $(function(){
 			if(data.section === true)
 			{
 				$().toastmessage('showSuccessToast', 'Sectie is aangekocht!');
-				
+				getData();
 			
 			}
 			else{
@@ -269,8 +282,8 @@ $(function(){
 			if(data.seats === true)
 				{
 					$().toastmessage('showSuccessToast', 'Plaatsen zijn aangekocht!');
-					$("#plaatsen").fadeOut();
-					$("#plaatsen").fadeIn();
+					getData();
+				
 				
 				}
 				else{
@@ -283,8 +296,7 @@ $(function(){
 			});
 
 	
-	});
-
+	});	
 });
 
 
@@ -341,37 +353,41 @@ $(function(){
 </div>
 
 <div id="plaatsen">
-	<div id="aantalplaatsen_a"></div>
-	<div id="aantalplaatsen_b"></div>
+	<div id="sec_a">Sectie A: <span id="aantalplaatsen_a"></span>&nbsp;plaatsen.<p id="input_a"><input type="text" id="a" value="1"/></p><p id="plaatsen_a" class="kopen">Koop plaatsen</p></div>
+	<div>Sectie B: <?php if($sectie_b == 0){?>
+			<p id="sectie_b" class="kopen">Sectie B nu kopen</p>
+				<?php }else{?>
+			<span id="aantalplaatsen_b"></span>&nbsp;plaatsen.<p><input type="text" id="b" value="1"/><span id="plaatsen_b" class="kopen">Koop plaatsen</span><?php }?></p>	
+	</div>
 	<div>Sectie C: <?php if($sectie_c == 0){?>
 			<p id="sectie_c" class="kopen">Sectie C nu kopen</p>
 				<?php }else{?>
-			<?php echo $plaatsen_c;?>&nbsp;plaatsen.<p><input type="text" id="c" value="1"/><span id="plaatsen_c" class="kopen">Koop plaatsen</span><?php }?></p>	
+			<span id="aantalplaatsen_c"></span>&nbsp;plaatsen.<p><input type="text" id="c" value="1"/><span id="plaatsen_c" class="kopen">Koop plaatsen</span><?php }?></p>	
 	</div>
 	<div>Sectie D: <?php if($sectie_d == 0){?>
 			<p id="sectie_d" class="kopen">Sectie D nu kopen</p>
 				<?php }else{?>
-			<?php echo $plaatsen_d;?>&nbsp;plaatsen.<p><input type="text" id="d" value="1"/><span id="plaatsen_d" class="kopen">Koop plaatsen</span><?php }?></p>	
+			<span id="aantalplaatsen_d"></span>&nbsp;plaatsen.<p><input type="text" id="d" value="1"/><span id="plaatsen_d" class="kopen">Koop plaatsen</span><?php }?></p>	
 	</div>
 	<div>Sectie E: <?php if($sectie_e == 0){?>
 			<p id="sectie_e" class="kopen">Sectie E nu kopen</p>
 				<?php }else{?>
-			<?php echo $plaatsen_e;?>&nbsp;plaatsen.<p><input type="text" id="e" value="1"/><span id="plaatsen_e" class="kopen">Koop plaatsen</span><?php }?></p>	
+			<span id="aantalplaatsen_e"></span>&nbsp;plaatsen.<p><input type="text" id="e" value="1"/><span id="plaatsen_e" class="kopen">Koop plaatsen</span><?php }?></p>	
 	</div>
 	<div>Sectie F: <?php if($sectie_f == 0){?>
 			<p id="sectie_f" class="kopen">Sectie F nu kopen</p>
 				<?php }else{?>
-			<?php echo $plaatsen_f;?>&nbsp;plaatsen.<p><input type="text" id="f" value="1"/><span id="plaatsen_f" class="kopen">Koop plaatsen</span><?php }?></p>	
+			<span id="aantalplaatsen_f"></span>&nbsp;plaatsen.<p><input type="text" id="f" value="1"/><span id="plaatsen_f" class="kopen">Koop plaatsen</span><?php }?></p>	
 	</div>
 	<div>Sectie G: <?php if($sectie_g == 0){?>
 			<p id="sectie_g" class="kopen">Sectie G nu kopen</p>
 				<?php }else{?>
-			<?php echo $plaatsen_g;?>&nbsp;plaatsen.<p><input type="text" id="g" value="1"/><span id="plaatsen_g" class="kopen">Koop plaatsen</span><?php }?></p>	
+			<span id="aantalplaatsen_g"></span>&nbsp;plaatsen.<p><input type="text" id="g" value="1"/><span id="plaatsen_g" class="kopen">Koop plaatsen</span><?php }?></p>	
 	</div>
 	<div>Sectie H: <?php if($sectie_h == 0){?>
 			<p id="sectie_h" class="kopen">Sectie H nu kopen</p>
 				<?php }else{?>
-			<?php echo $plaatsen_h;?>&nbsp;plaatsen.<p><input type="text" id="h" value="1"/><span id="plaatsen_h" class="kopen">Koop plaatsen</span><?php }?></p>	
+			<span id="aantalplaatsen_h"></span>&nbsp;plaatsen.<p><input type="text" id="h" value="1"/><span id="plaatsen_h" class="kopen">Koop plaatsen</span><?php }?></p>	
 	</div>
 	
 </div>

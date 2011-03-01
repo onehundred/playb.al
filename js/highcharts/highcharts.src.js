@@ -744,7 +744,7 @@ defaultOptions = {
 		spacingBottom: 15,
 		spacingLeft: 10,
 		style: {
-			fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
+			fontFamily: 'Helvetica, Arial, sans-serif', // default font
 			fontSize: '12px'
 		},
 		backgroundColor: '#FFFFFF',
@@ -936,23 +936,7 @@ defaultOptions = {
 		}
 	},
 	
-	credits: {
-		enabled: true,
-		text: 'Highcharts.com',
-		href: 'http://www.highcharts.com',
-		position: {
-			align: 'right',
-			x: -10,
-			verticalAlign: 'bottom',
-			y: -5
-		},
-		style: {
-			cursor: 'pointer',
-			color: '#909090',
-			fontSize: '10px'
-		}
-	}
-};
+	};
 
 // Axis defaults
 var defaultXAxisOptions =  {

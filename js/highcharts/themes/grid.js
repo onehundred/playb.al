@@ -38,7 +38,7 @@ Highcharts.theme = {
 		labels: {
 			style: {
 				color: '#000',
-				font: '11px Trebuchet MS, Verdana, sans-serif'
+				font: '21px Trebuchet MS, Verdana, sans-serif'
 			}
 		},
 		title: {

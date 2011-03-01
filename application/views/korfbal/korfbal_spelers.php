@@ -1,47 +1,4 @@
-
-<style>
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-/*     -o-transition-duration: 0.8s;*/
-          transition-duration: 0.8s;
-
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-/*     -o-transition-property: height, width;*/
-          transition-property: height, width;
-}
-
-/* disable CSS transitions for containers with infinite scrolling*/
-.isotope.infinite-scrolling {
-  -webkit-transition: none;
-     -moz-transition: none;
-       -o-transition: none;
-          transition: none;
-}
-
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-/*     -o-transition-property:      -o-transform, opacity;*/
-          transition-property:         transform, opacity;
-}
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item {
-  -webkit-transition-duration: 0s;
-     -moz-transition-duration: 0s;
-/*     -o-transition-duration: 0s;*/
-          transition-duration: 0s;
-}
-</style>
-<script type="text/javascript" src="<?php echo base_url();?>/js/highcharts/highcharts.js"></script>
-
-
+<script src="<?php echo base_url();?>/js/highcharts/highcharts.js"></script>
 <script>
 		$(function() {
 		
@@ -99,7 +56,7 @@
 						plotShadow: false
 					},
 					title: {
-						text: 'Gemiddelde spelersvaardigheden'
+						text: 'spelersvaardigheden'
 					},
 					tooltip: {
 						formatter: function() {
@@ -111,7 +68,7 @@
 							allowPointSelect: true,
 							cursor: 'pointer',
 							dataLabels: {
-								enabled: true,
+								enabled: false,
 								color: '#000000',
 								connectorColor: '#000000',
 								formatter: function() {
@@ -164,11 +121,8 @@
   </div>
 --><!-- #container -->
 
-<div id="container"> 
-    <!-- <div class="players">  -->
-    <div class="players"> 
-        <!-- <h1>Players</h1> -->
-        
+<div id="container">
+    <div class="players">
         <?php 
     
 foreach($spelers->result() as $row)
@@ -227,50 +181,73 @@ foreach($spelers->result() as $row)
         <!-- <hr/> -->
         <?php } ?>
     </div>
-    <div class="playersOverview">
+    <div class="gameRight">
         <h2>spelersoverzicht</h2>
         <ul id="sort" class="sort option-set">
-            <li>
-                <ul class="sort asc option-set floated clearfix">
-                    <li><a href="#original-order" class="">original-order (asc)</a></li>
-                    <li><a href="#firstname" class="">first name (asc)</a></li>
-                    <li><a href="#lastname" class="">last name (asc)</a></li>
-                    <li><a href="#rebound" class="selected">rebound (asc)</a></li>
-                    <li><a href="#stamina" class="selected">stamina (asc)</a></li>
-                    <li><a href="#shotprecision" class="selected">shotprecsion (asc)</a></li>
-                    <li><a href="#playmaking" class="selected">playmaking (asc)</a></li>
-                    <li><a href="#passing" class="selected">passing (asc)</a></li>
-                    <li><a href="#shotpower" class="selected">shotpower (asc)</a></li>
-                    <li><a href="#intercepting" class="selected">intercepting (asc)</a></li>
-                    <li><a href="#leadership" class="selected">leadership (asc)</a></li>
-                </ul>
-            </li>
-            <li>
-            <li><a href="#original-order">original-order (desc)</a></li>
-            <li><a href="#firstname">first name (desc)</a></li>
-            <li><a href="#lastname">last name (desc)</a></li>
-            <li><a href="#rebound" class="">rebound (desc)</a></li>
-            <li><a href="#stamina" class="">stamina (desc)</a></li>
-            <li><a href="#shotprecision" class="">shotprecision (desc)</a></li>
-            <li><a href="#playmaking" class="">playmaking (desc)</a></li>
-            <li><a href="#passing" class="">passing (desc)</a></li>
-            <li><a href="#shotpower" class="">shotpower (desc)</a></li>
-            <li><a href="#intercepting" class="">intercepting (desc)</a></li>
-            <li><a href="#leadership" class="">leadership (desc)</a></li>
-            </li>
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#number" class="selected">rugnummer <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#number" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#age" class="selected">age <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#age" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#price" class="selected">price <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#price" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#passing" class="selected">passing <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#passing" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#shotpower" class="selected">shotpower <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#shotpower" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#intercepting" class="selected">intercepting <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#intercepting" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#leadership" class="selected">leadership <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#leadership" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li><br />
+           
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#rebound" class="">rebound <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+             <li><a href="#rebound" class="selected"><img src="<?php echo base_url();?>img/up.png" /></a></li><br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#stamina" class="selected">stamina <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#stamina" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#shotprecision" class="selected">shotprecsion <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#shotprecision" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#playmaking" class="selected">playmaking <img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#playmaking" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
         </ul>
+        <!-- end ul id sort -->
+        <div id="piechart" style="width: 200px; height: 200px; margin: 0 auto"></div>
     </div>
     <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
 </div>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
-</div> <!-- end container -->
+</div>
+<!-- end container --> 
 
-<div id="piechart" style="width: 400px; height: 200px; margin: 0 auto"></div>
-
-  
-
-
-  <script>
+<script>
 
 
     var $container = $('#container');
@@ -313,6 +290,15 @@ foreach($spelers->result() as $row)
           },
           category : function( $elem ) {
             return $elem.attr('data-category');
+          },
+          number : function( $elem ) {
+            return parseInt( $elem.find('.number').text(), 10 );
+          },
+          age : function( $elem ) {
+            return parseInt( $elem.find('.age').text(), 10 );
+          },
+          price : function( $elem ) {
+            return parseInt( $elem.find('.price').text(), 10 );
           },
           rebound : function( $elem ) {
             return parseInt( $elem.find('.rebound').text(), 10 );

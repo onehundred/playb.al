@@ -1,4 +1,4 @@
-<div>
+<div class="players">
 <?php for($i=1;$i<15;$i++){ ?>
 		<p><?php echo $matches[$i]['thuis'];?>-<?php echo $matches[$i]['uit'];?>&nbsp;<?php $uitslag = $matches[$i]['uitslag'];
 		if(isset($uitslag)){
@@ -16,3 +16,4 @@
 
 
 </div>
+<div class="gameRight">test</div>

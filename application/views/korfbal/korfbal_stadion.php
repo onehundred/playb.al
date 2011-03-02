@@ -235,26 +235,11 @@ $(function(){
 	
 	
 	}
-	
+	$( "#dialog-confirm" ).hide();
 		
 	$('.kopen').live('click', function(){
 	
-		$( "#dialog:ui-dialog" ).dialog( "destroy" );
-	
-		$( "#dialog-confirm" ).dialog({
-			resizable: false,
-			height:140,
-			modal: false,
-			buttons: {
-				"Delete all items": function() {
-					$( this ).dialog( "close" );
-				},
-				Cancel: function() {
-					$( this ).dialog( "close" );
-				}
-			}
-		});
-		
+				
 		var teamid = $('#teamid').val();
 		//alert(teamid);
 		var id = $(this).attr('id');
@@ -276,7 +261,17 @@ $(function(){
 		
 		}
 		
-		$.ajax({
+		
+		$( "#dialog:ui-dialog" ).dialog( "destroy" );
+		
+		
+		$( "#dialog-confirm" ).dialog({
+			resizable: false,
+			height:140,
+			modal: false,
+			buttons: {
+				"Kopen": function() {
+					$.ajax({
 
         type: "POST",
 
@@ -327,6 +322,16 @@ $(function(){
          	
 			});
 
+					$( this ).dialog( "close" );
+				},
+				Cancel: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+
+		
+		
 	
 	});	
 });
@@ -374,6 +379,6 @@ $(function(){
 </div>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3')?>"/>
 </div>
-<div id="dialog-confirm" title="Empty the recycle bin?">
-	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+<div id="dialog-confirm" title="Plaatsen kopen?">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Bent u zeker dat u deze plaatsen wilt aankopen?</p>
 </div>

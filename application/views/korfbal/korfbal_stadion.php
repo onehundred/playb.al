@@ -236,15 +236,24 @@ $(function(){
 	
 	}
 	
-	$('#midden_midden').live('click', function(){                                                                                                                               
-       alert("ok");                                                                                                                                            
-});
-	
-	
-	
-	
-	
+		
 	$('.kopen').live('click', function(){
+	
+		$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+		$( "#dialog-confirm" ).dialog({
+			resizable: false,
+			height:140,
+			modal: false,
+			buttons: {
+				"Delete all items": function() {
+					$( this ).dialog( "close" );
+				},
+				Cancel: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
 		
 		var teamid = $('#teamid').val();
 		//alert(teamid);
@@ -285,7 +294,11 @@ $(function(){
 			if(data.section === true)
 			{
 				$().toastmessage('showSuccessToast', 'Sectie is aangekocht!');
-				getData();
+				$('#stadion').slideUp(500,function(){
+						getData();
+					});
+					
+					$('#stadion').slideDown(2000);
 			
 			}
 			else{
@@ -297,7 +310,11 @@ $(function(){
 			if(data.seats === true)
 				{
 					$().toastmessage('showSuccessToast', 'Plaatsen zijn aangekocht!');
-					getData();
+					$('#plaatsen').slideUp(500,function(){
+						getData();
+					});
+					
+					$('#plaatsen').slideDown(2000);
 				
 				
 				}
@@ -356,4 +373,7 @@ $(function(){
 	
 </div>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3')?>"/>
+</div>
+<div id="dialog-confirm" title="Empty the recycle bin?">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
 </div>

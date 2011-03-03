@@ -1,6 +1,6 @@
 /* LESS GLOBALS start */
 
-@korfbalColor: #ebbb25;
+@korfbalColor: #ffc929;
 @korfbalBorderColor: #d1a521;
 @basketbalColor: #e55714;
 @basketbalBorderColor: #cc4d12;
@@ -47,6 +47,7 @@
 .textShadow {
 	text-shadow: 0px 0px 7px #474747;
 }
+
 /* LESS GLOBALS end */
 
 
@@ -84,9 +85,17 @@ footer {
 	text-transform: uppercase;
  color: @grey;
 	padding-left: 15px;
- .textShadow;
+/*  .textShadow; */
+
 	font-size: 48px;
+	
+
 }
+/*
+.korfbal h1 {
+	color: black;
+}
+*/
 #tagline {
 	font-family: 'AllerItalic';
 	text-align: right;
@@ -143,11 +152,14 @@ color: @korfbalColor;
 .players {
 	font-size: 16px;
 	float: left;
-	width: 800px;
-	margin-top: 15px;
+	width: 745px;
+	/* margin-top: 15px; */
+
+	
+	
 }
 .player {
-	width: 360px;
+	width: 335px;
 	height: 250px;
 	background: #FAFAFA;
 	-moz-border-radius-topleft: 3px;
@@ -198,11 +210,11 @@ color: @korfbalColor;
 	display: inline;
 }
 .players #rightProgress {
-	width: 175px;
+	width: 160px;
 	float: right;
 }
 .players #leftProgress {
-	width: 175px;
+	width: 160px;
 }
 .rebound, .passing, .stamina, .shotprecision, .playmaking, .shotpower, .intercepting, .leadership {
 	display: inline;
@@ -212,10 +224,13 @@ color: @korfbalColor;
 }
 
 .gameRight {
-	float: left;
+	float: right;
 	background-color: #FFF;
-	width: 255px;
+	width: 390px;
  .borderRadius;
+ padding-left: 15px;
+ padding-right: 15px;
+ padding-bottom: 15px;
 	
 }
 .gameRight ul, .gameRight li {
@@ -286,23 +301,28 @@ color: @korfbalColor;
 	margin-left: 15px;
  .borderRadius;
 	width: 250px;
+ 	background-image: url("../img/korfbal_bg_over.png");
+	background-repeat: no-repeat;
 }
 .korfbal:hover {
  background-color: @korfbalColor;
 	height: 300px;
+	
  border: 1px solid @korfbalBorderColor;
 	top: 25px;
  .borderRadius;
+
 }
 .basketbal {
  background-color: @basketbalColor;
-	margin-left: 140px;
+	margin-left: 198px;
 	height: 250px;
  .borderRadius;
  border: 1px solid @basketbalBorderColor;
  .transitionOff;
 	top: 50px;
 	width: 250px;
+	 	background-image: url("../img/basketbal_bg_over.png");
 }
 .basketbal:hover {
  background-color: @basketbalColor;
@@ -314,12 +334,13 @@ color: @korfbalColor;
 }
 .volleybal {
  background-color: @volleybalColor;
-	margin-left: 157px;
+	margin-left: 199px;
 	height: 250px;
  .borderRadius;
  border: 1px solid @volleybalBorderColor;
 	top: 50px;
 	width: 250px;
+	 	background-image: url("../img/volleybal_bg_over.png");
 }
 .volleybal:hover {
  background-color: @volleybalColor;
@@ -356,26 +377,29 @@ color: @korfbalColor;
 	transform: scale(1) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
  .transitionOff2;
 }
+#playerSort img{
+	
+}
 .stripe1 {
  background-color: @korfbalColor;
-	height: 60%;
+	height: 282px;
  border: 1px solid @korfbalBorderColor;
  .borderRadius;
 	margin-left: 0px;
 }
 .stripe2 {
  background-color: @basketbalColor;
-	height: 60%;
+	height: 282px;
  .borderRadius;
  border: 1px solid @basketbalBorderColor;
-	margin-left: 36px;
+	margin-left: 37px;
 }
 .stripe3 {
  background-color: @volleybalColor;
-	height: 60%;
+	height: 282px;
  .borderRadius;
  border: 1px solid @volleybalBorderColor;
-	margin-left: 36px;
+	margin-left: 37px;
 	margin-right: 50px;
 }
 #create {

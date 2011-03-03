@@ -1,4 +1,3 @@
-<script src="<?php echo base_url();?>/js/highcharts/highcharts.js"></script>
 <script>
 		$(function() {
 		
@@ -46,59 +45,7 @@
 					spelersskills =+ spelersskills + spelers[i].rebound ;
 					//alert(spelersskills);
 				}   
-				var chart;
 			
-				chart = new Highcharts.Chart({
-					chart: {
-						renderTo: 'piechart',
-						plotBackgroundColor: null,
-						plotBorderWidth: null,
-						plotShadow: false
-					},
-					title: {
-						text: 'spelersvaardigheden'
-					},
-					tooltip: {
-						formatter: function() {
-							return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
-						}
-					},
-					plotOptions: {
-						pie: {
-							allowPointSelect: true,
-							cursor: 'pointer',
-							dataLabels: {
-								enabled: false,
-								color: '#000000',
-								connectorColor: '#000000',
-								formatter: function() {
-									return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
-								}
-							}
-						}
-					},
-				    series: [{
-						type: 'pie',
-						name: 'Gemiddelde skills',
-						data: [
-							['Rebound',   45.0],
-							['Stamina',       26.8],
-							{
-								name: 'Intercepting',    
-								y: 12.8,
-								sliced: true,
-								selected: true
-							},
-							['Playmaking',    8.5],
-							['Shotpower',     6.2],
-							['Shotprecision',   0.7],
-							['Passing',     20.2]
-							
-						]
-					}]
-				});
-
-				
         		
         		}
         		
@@ -120,9 +67,9 @@
     
   </div>
 --><!-- #container -->
-
-<div id="container">
     <div class="players">
+<div id="container">
+
         <?php 
     
 foreach($spelers->result() as $row)
@@ -180,14 +127,14 @@ foreach($spelers->result() as $row)
         </div>
         <!-- <hr/> -->
         <?php } ?>
-    </div>
+    </div></div>
     <div class="gameRight">
         <h2>spelersoverzicht</h2>
         <ul id="sort" class="sort option-set">
             <ul class="sort asc option-set floated clearfix">
                 <li><a href="#number" class="selected">rugnummer <img src="<?php echo base_url();?>img/down.png" /></a></li>
             </ul>
-            <li><a href="#number" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <li><a href="#number" class="" id="playerSort"><img src="<?php echo base_url();?>img/up.png" /></a></li>
             <br />
             <ul class="sort asc option-set floated clearfix">
                 <li><a href="#age" class="selected">age <img src="<?php echo base_url();?>img/down.png" /></a></li>
@@ -239,10 +186,10 @@ foreach($spelers->result() as $row)
             <li><a href="#playmaking" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
         </ul>
         <!-- end ul id sort -->
-        <div id="piechart" style="width: 200px; height: 200px; margin: 0 auto"></div>
+        
     </div>
     <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
-</div>
+
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
 </div>
 <!-- end container --> 

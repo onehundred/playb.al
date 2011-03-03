@@ -10,6 +10,7 @@
 <link rel="stylesheet" media="all" href=""/>
 <link href="<?php echo base_url();?>css/style.less" rel="stylesheet/less" />
 
+
 <!-- Fallback if browser does not support media queries + javascript (Read: Internet Explorer < 9) -->
 <!--[if lt IE 9]>
 	<link rel="stylesheet" href="8col.css" media="screen" />

@@ -9,6 +9,7 @@ $('.basketbal').animate({rotate: '+=45deg'});
 
 
 		</script>
+		
 <section id="layouts">
     <h1 id="tagline">manage jouw team</h1>
     <figure class="korfbal">

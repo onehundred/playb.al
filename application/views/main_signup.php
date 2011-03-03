@@ -26,5 +26,6 @@
 		echo form_close();
 	?>
 <?php echo validation_errors('<p class="errors">');?>
-</fieldset>	 	</section>
+</fieldset>	 	
+</section>
 </div>

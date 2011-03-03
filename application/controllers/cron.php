@@ -103,4 +103,11 @@ class Cron extends CI_Controller {
 	}
 	
 	
+	function create_korfbaltransfers()
+	{
+	
+	
+	}
+	
+	
 }	

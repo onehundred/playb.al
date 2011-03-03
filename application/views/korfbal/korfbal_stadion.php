@@ -136,10 +136,11 @@
 	font-size: 9pt;
 }
 </style>
-
+<script src="<?php echo base_url();?>/js/jquery.flip.js"></script> 
 <script>
 $(function(){
 	getData();
+	
 	function getData(){
 		var holder = document.getElementById("stadion");
 		while(holder.hasChildNodes()){
@@ -267,7 +268,7 @@ $(function(){
 		
 		$( "#dialog-confirm" ).dialog({
 			resizable: false,
-			height:140,
+			height:300,
 			modal: false,
 			buttons: {
 				"Kopen": function() {
@@ -305,11 +306,25 @@ $(function(){
 			if(data.seats === true)
 				{
 					$().toastmessage('showSuccessToast', 'Plaatsen zijn aangekocht!');
-					$('#plaatsen').slideUp(500,function(){
-						getData();
-					});
 					
-					$('#plaatsen').slideDown(2000);
+						//$( "#sec_"+input[1]).effect( 'explode', 500, getData() );
+						//getData();
+						$("#sec_"+input[1]).flip({
+					direction:'tb',
+					color : '#FFF',
+					onBefore: function(){
+							console.log('before starting the animation');
+					},
+					onAnimation: function(){
+							getData();
+					},
+					onEnd: function(){
+							console.log('when the animation has already ended');
+					}
+				})
+										
+					
+					
 				
 				
 				}

@@ -129,7 +129,7 @@ foreach($spelers->result() as $row)
         <?php } ?>
     </div></div>
     <div class="gameRight">
-        <h2>spelersoverzicht</h2>
+        <h2>spelers rangschikken</h2>
         <ul id="sort" class="sort option-set">
             <ul class="sort asc option-set floated clearfix">
                 <li><a href="#number" class="selected">rugnummer <img src="<?php echo base_url();?>img/down.png" /></a></li>

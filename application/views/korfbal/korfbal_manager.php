@@ -1,4 +1,4 @@
-<?php
+<div class="players"><?php
 //gegevens van users en teams kan hieruit gehaald worden
  foreach($manager->result() as $row)
 		{ ?>
@@ -8,3 +8,4 @@
 		
 		
    <?php }?>
+   </div><div class="gameRight">test</div>

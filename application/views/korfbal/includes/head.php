@@ -39,6 +39,7 @@
 <script src="<?php echo base_url();?>js/jquery.isotope.js"></script>
 <script src="<?php echo base_url();?>js/reveal/jquery.reveal.js"></script>
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
+<script src="<?php echo base_url();?>js/awesomechart.js"></script>
 
 
 </head>

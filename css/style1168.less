@@ -158,7 +158,7 @@ color: @korfbalColor;
 	
 	
 }
-.player {
+.player, .playerDetail {
 	width: 335px;
 	height: 250px;
 	background: #FAFAFA;
@@ -178,6 +178,10 @@ color: @korfbalColor;
 }
 .player:hover {
 	border: 1px solid #CCC;
+	
+}
+.playerDetail {
+	height: 500px;
 }
 .players .number {
 	font-size: 64px;
@@ -231,6 +235,7 @@ color: @korfbalColor;
  padding-left: 15px;
  padding-right: 15px;
  padding-bottom: 15px;
+ border: 1px solid #E5E5E5;
 	
 }
 .gameRight ul, .gameRight li {
@@ -241,7 +246,28 @@ color: @korfbalColor;
 	font-size: 36px;
 
 }
-/* PLAYES end -------------------------------------------------------------------------------------------------------------*/
+/* PLAYERS end -------------------------------------------------------------------------------------------------------------*/
+/* MATCHES start -------------------------------------------------------------------------------------------------------------*/
+#matchTeamName, #versus {
+	font-size: 32px;
+	font-family: 'SFCollegiateSolidRegular';
+	text-transform: uppercase;
+	color: #FFF;
+ 	.textShadow;
+ 	display: inline;
+line-height: 34px;
+width: 100px;
+
+ 	
+}
+#versus {
+color: black;
+/*
+left: 10px;
+position: relative;
+*/
+}
+/* MATCHES end ---------------------------------------------------------------------------------------------------------------*/
 
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footer {

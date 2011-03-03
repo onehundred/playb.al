@@ -94,65 +94,63 @@ $("#transfer").submit(function(){
 
 </script>
 
-<div>
-<?php $teamid = $this->uri->segment('3');?>
-<?php foreach($speler->result() as $row)
+<div class="players">
+    <?php $teamid = $this->uri->segment('3');?>
+    <?php foreach($speler->result() as $row)
 {?>
-	
-	<p><?php echo $row->voornaam;?>&nbsp;<?php echo $row->achternaam;?></p>
-	<p>Age:<?php echo $row->leeftijd; ?></p><br/>
-	<p>Sex: <?php echo $row->geslacht; ?></p><br/>
-	
-				 
-		 <p>Rebound: <?php echo $row->rebound; ?>/20</p>
-		 <p>Passing: <?php echo $row->passing; ?>/20</p>
-		 <p>Stamina: <?php echo $row->stamina; ?>/20</p>
-		 <p>Shotpower: <?php echo $row->shotpower; ?>/20</p>
-		 <p>Shotprecision: <?php echo $row->shotprecision; ?>/20</p>
-		 <p>Playmaking: <?php echo $row->playmaking; ?>/20</p>
-		 <p>Intercepting: <?php echo $row->intercepting; ?>/20</p>
-		 <p>Leadership: <?php echo $row->leadership; ?>/20</p><br/>
-		 
-		 <?php $transfer = $row->transfer;
+    <p><?php echo $row->voornaam;?>&nbsp;<?php echo $row->achternaam;?></p>
+    <p>Age:<?php echo $row->leeftijd; ?></p>
+    <br/>
+    <p>Sex: <?php echo $row->geslacht; ?></p>
+    <br/>
+    <p>Rebound: <?php echo $row->rebound; ?>/20</p>
+    <p>Passing: <?php echo $row->passing; ?>/20</p>
+    <p>Stamina: <?php echo $row->stamina; ?>/20</p>
+    <p>Shotpower: <?php echo $row->shotpower; ?>/20</p>
+    <p>Shotprecision: <?php echo $row->shotprecision; ?>/20</p>
+    <p>Playmaking: <?php echo $row->playmaking; ?>/20</p>
+    <p>Intercepting: <?php echo $row->intercepting; ?>/20</p>
+    <p>Leadership: <?php echo $row->leadership; ?>/20</p>
+    <br/>
+    <?php $transfer = $row->transfer;
 			if($transfer == 0)
 			{?>
-			
-			<!--p tag en geen a href omwille van verspringen van pagina-->
-			<p id="spelertransfer" style="text-decoration:underline; cursor:pointer;">Plaats deze speler op de transfer markt</p>
-			<div id="slide" style=" display:none;">
-			<form id="transfer" onsubmit="return false;">
-				<label>Vraagprijs:</label><input type="text" id="bedrag" name="bedrag"/>
-				<input type="hidden" id="spelerid" value="<?php echo $row->speler_id;?>"/>
-				<input type="hidden" id="teamid" value="<?php echo $teamid;?>"/>
-				<input type="submit" name="transfer"/>
-			
-			</form>
-		
-			</div>
-			<p id="succes" style="display:none;">Speler is op de transferlijst geplaatst.</p>
-			
-				
-			<?php }else
+    
+    <!--p tag en geen a href omwille van verspringen van pagina-->
+    <p id="spelertransfer" style="text-decoration:underline; cursor:pointer;">Plaats deze speler op de transfer markt</p>
+    <div id="slide" style=" display:none;">
+        <form id="transfer" onsubmit="return false;">
+            <label>Vraagprijs:</label>
+            <input type="text" id="bedrag" name="bedrag"/>
+            <input type="hidden" id="spelerid" value="<?php echo $row->speler_id;?>"/>
+            <input type="hidden" id="teamid" value="<?php echo $teamid;?>"/>
+            <input type="submit" name="transfer"/>
+        </form>
+    </div>
+    <p id="succes" style="display:none;">Speler is op de transferlijst geplaatst.</p>
+    <?php }else
 			{?>
-			<div> Plaats een bod op deze speler :
-			<form id="bieden" onsubmit="return false;">
-				<label>Bedrag:</label><input type="text" id="bod" name="bod"/>
-				<input type="hidden" id="speleridbod" value="<?php echo $row->speler_id;?>"/>
-				<input type="hidden" id="teamidbod" value="<?php echo $teamid;?>"/>
-				<input type="submit" name="bod"/>
-			
-			
-			</form>
-													
-													
-													
-													</div>
-			
-			<?php }
+    <div> Plaats een bod op deze speler :
+        <form id="bieden" onsubmit="return false;">
+            <label>Bedrag:</label>
+            <input type="text" id="bod" name="bod"/>
+            <input type="hidden" id="speleridbod" value="<?php echo $row->speler_id;?>"/>
+            <input type="hidden" id="teamidbod" value="<?php echo $teamid;?>"/>
+            <input type="submit" name="bod"/>
+        </form>
+    </div>
+    <?php }
  } 
 
 
 ?>
-
-
+</div>
+<div class="gameRight">
+    <h2>overzicht</h2>
+    <h2>aantal matchen gespeeld</h2>
+    <h2>aantal goals in carriere</h2>
+    <h2>goals dit seizoen</h2>
+    <h2>goals vorige wedstrijd</h2>
+    <h2>beste prestatie</h2>
+    <h2>prestatie vorige wedstrijd</h2>
 </div>

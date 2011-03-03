@@ -31,12 +31,12 @@ class Cron extends CI_Controller {
 	function cron_test()
 	{
 	$getal = 0; 
-    //verdienen degradatie naar 3de
-    for($i=1;$i<3;$i++){
+    //verdienen degradatie naar 4de
+    for($i=1;$i<5;$i++){
     	$this->db->select('team_id, FK_division_id');
     	$this->db->from('korf_teams');
     	$this->db->join('korf_divisies','FK_division_id = divisie_id');
-    	$this->db->where('divisie', 2);
+    	$this->db->where('divisie', 3);
     	$this->db->where('sub_divisie', $i);
     	$this->db->order_by('divisiepunten', 'asc');
     	$this->db->limit(2);
@@ -52,7 +52,7 @@ class Cron extends CI_Controller {
     	
     	}
     	
-    	//verdienen promotie naar 2de
+    	//verdienen promotie naar 3de
     	$l =1 +$getal;
     	for($j=1+$getal;$j<3+$getal;$j++)
     	{
@@ -62,7 +62,7 @@ class Cron extends CI_Controller {
     		$this->db->select('*');
     		$this->db->from('korf_teams');
     		$this->db->join('korf_divisies','FK_division_id = divisie_id');
-    		$this->db->where('divisie', 3);
+    		$this->db->where('divisie', 4);
     		$this->db->where('sub_divisie', $j);
     		$this->db->order_by('divisiepunten', 'desc');
     		$this->db->limit(1);
@@ -150,7 +150,9 @@ class Cron extends CI_Controller {
 			$seizoen = $row->seizoen;
 		}
 		
-		$this->cron_model->update_seizoen($seizoen);
+		//$this->cron_model->update_seizoen($seizoen);
+		
+		$this->cron_model->promotion_division3();
 
 	}
 	

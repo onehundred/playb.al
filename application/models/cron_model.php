@@ -57,7 +57,7 @@
     	$this->db->join('korf_divisies','FK_division_id = divisie_id');
     	$this->db->where('divisie', 1);
     	$this->db->where('sub_divisie', 1);
-    	$this->db->order_by('divisiepunten', 'asc');
+    	$this->db->order_by('divisiepunten asc, doelpunten_tegen desc');
     	$this->db->limit(2);
     	$degradatie1 = $this->db->get();
     	
@@ -77,7 +77,7 @@
     	$this->db->join('korf_divisies','FK_division_id = divisie_id');
     	$this->db->where('divisie', 2);
     	$this->db->where('sub_divisie', $i);
-    	$this->db->order_by('divisiepunten', 'desc');
+    	$this->db->order_by('divisiepunten desc, doelpunten_voor desc');
     	$this->db->limit(1);
     	$promotie2 = $this->db->get();
     	
@@ -87,22 +87,26 @@
     		$promTeamId = $row->team_id;
     		$promDivId = $row->FK_division_id;
     		$update = array(
-    			'FK_division_id' => $degrDivId[$i]
+    			'FK_division_id' => $degrDivId[$i],
+    			'geupdate' => 1
     		);
     		
     		$this->db->where('team_id',$promTeamId );
     		$this->db->update('korf_teams', $update);
     		
     		$update2 =array(
-    			'FK_division_id' => $promDivId
-    		);
+    			'FK_division_id' => $promDivId,
+    			'geupdate' => 1
+    			    		);
     		
     		$this->db->where('team_id', $degrTeamId[$i]);
     		$this->db->update('korf_teams', $update2);
     		
     	}
+    	}
     }
-	function promotion_division2(){
+	function promotion_division2()
+	{
 		$getal = 0; 
     //verdienen degradatie naar 3de
     for($i=1;$i<3;$i++){
@@ -111,7 +115,8 @@
     	$this->db->join('korf_divisies','FK_division_id = divisie_id');
     	$this->db->where('divisie', 2);
     	$this->db->where('sub_divisie', $i);
-    	$this->db->order_by('divisiepunten', 'asc');
+    	$this->db->where('geupdate', 0);
+    	$this->db->order_by('divisiepunten asc, doelpunten_tegen desc');
     	$this->db->limit(2);
     	$degradatie = $this->db->get();
     	
@@ -137,7 +142,8 @@
     		$this->db->join('korf_divisies','FK_division_id = divisie_id');
     		$this->db->where('divisie', 3);
     		$this->db->where('sub_divisie', $j);
-    		$this->db->order_by('divisiepunten', 'desc');
+    		$this->db->where('geupdate', 0);
+    		$this->db->order_by('divisiepunten desc, doelpunten_voor desc');
     		$this->db->limit(1);
     		$promotie2 = $this->db->get();
     		
@@ -156,14 +162,96 @@
     		//echo '<br/>';
     		
     		$update = array(
-    			'FK_division_id' => $degrDivId[$l]
+    			'FK_division_id' => $degrDivId[$l],
+    			'geupdate' => 1
     		);
     		
     		$this->db->where('team_id',$promTeamId );
     		$this->db->update('korf_teams', $update);
     		
     		$update2 =array(
-    			'FK_division_id' => $promDivId
+    			'FK_division_id' => $promDivId,
+    			'geupdate' => 1
+    		);
+    		
+    		$this->db->where('team_id', $degrTeamId[$l]);
+    		$this->db->update('korf_teams', $update2);
+    		
+    		}
+    		$l++;
+    	}
+    	$getal = $getal + 2;	
+    	}
+    
+    }
+    
+    function promotion_division3()
+    {
+    	$getal = 0; 
+    //verdienen degradatie naar 4de
+    for($i=1;$i<5;$i++){
+    	$this->db->select('team_id, FK_division_id');
+    	$this->db->from('korf_teams');
+    	$this->db->join('korf_divisies','FK_division_id = divisie_id');
+    	$this->db->where('divisie', 3);
+    	$this->db->where('sub_divisie', $i);
+    	$this->db->where('geupdate', 0);
+    	$this->db->order_by('divisiepunten asc, doelpunten_tegen desc');
+    	$this->db->limit(2);
+    	$degradatie = $this->db->get();
+    	
+    	$k =1 + $getal;
+    	foreach($degradatie ->result() as $row)
+    	{
+    		
+    		$degrTeamId[$k] = $row->team_id;
+    		$degrDivId[$k] = $row->FK_division_id; 
+    		$k++;  		
+    	
+    	}
+    	
+    	//verdienen promotie naar 3de
+    	$l =1 +$getal;
+    	for($j=1+$getal;$j<3+$getal;$j++)
+    	{
+    		//echo $j;
+    		
+    		
+    		$this->db->select('*');
+    		$this->db->from('korf_teams');
+    		$this->db->join('korf_divisies','FK_division_id = divisie_id');
+    		$this->db->where('divisie', 4);
+    		$this->db->where('sub_divisie', $j);
+    		$this->db->where('geupdate', 0);
+    		$this->db->order_by('divisiepunten desc, doelpunten_voor desc');
+    		$this->db->limit(1);
+    		$promotie2 = $this->db->get();
+    		
+    		
+    		foreach($promotie2->result() as $row)
+    		{
+    			
+    		$promTeamId = $row->team_id;
+    		$promDivId = $row->FK_division_id;
+    		
+    		//echo $l;
+    		//echo $degrDivId[$l];
+    		//echo $degrTeamId[$l];
+    		//echo $promTeamId;
+    		//echo $promDivId;
+    		//echo '<br/>';
+    		
+    		$update = array(
+    			'FK_division_id' => $degrDivId[$l],
+    			'geupdate' => 1
+    		);
+    		
+    		$this->db->where('team_id',$promTeamId );
+    		$this->db->update('korf_teams', $update);
+    		
+    		$update2 =array(
+    			'FK_division_id' => $promDivId,
+    			'geupdate' => 1
     		);
     		
     		$this->db->where('team_id', $degrTeamId[$l]);
@@ -179,8 +267,6 @@
 
 	
 	}
-    
-    }
     
     //elke minuut om na te kijken
     function check_transfers()

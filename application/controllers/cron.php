@@ -30,7 +30,11 @@ class Cron extends CI_Controller {
 	
 	function cron_test()
 	{
-	
+		$acties = '';
+		$acties .= '1;';
+		$acties .= '1;';
+		$acties .= '1;';
+		echo $acties;
 	    	    	
 	}
 	
@@ -98,14 +102,19 @@ class Cron extends CI_Controller {
 		$thuisstats = $this->cron_model->get_statsthuisteam($wedstrijd);
 		$uitstats = $this->cron_model->get_statsuitteam($wedstrijd);
 		$thuis = $this->cron_model->play_games($thuisstats, $uitstats, $wedstrijd);
-		//print_r ($thuis);
+		//print_r ($thuisstats);	
 		
 	}
 	
 	
 	function create_korfbaltransfers()
 	{
-	
+		$this->load->model('cron_model');
+		
+		for($i=0;$i<4;$i++){
+			$this->cron_model->create_transferMan();
+			$this->cron_model->create_transferVrouw();
+		}
 	
 	}
 	

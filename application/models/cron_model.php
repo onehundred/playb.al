@@ -1101,7 +1101,7 @@
     				//rebound1 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('rebound,rebound_tr');
+	    			$this->db->select('voornaam, achternaam, rebound,rebound_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1111,6 +1111,7 @@
     				if($reboundquery->num_rows() == 0)
     				{
     					$uitstats[$k]['rebound'] = 0;
+    					$uitstats[$k]['reboundspeler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($reboundquery->result() as $row)
@@ -1118,6 +1119,8 @@
 	    					 $rebound = $row->rebound;;
 	    					 $rebound_tr = $row->rebound_tr;
 	    					 $uitstats[$k]['rebound'] = $rebound .'.'. $rebound_tr;
+	    					 $uitstats[$k]['reboundspeler'] = $row->voornaam.' '.$row->achternaam;
+	    					 
 	    					
 	    			
 	    				}
@@ -1129,7 +1132,7 @@
     				
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('playmaking,playmaking_tr');
+	    			$this->db->select('voornaam, achternaam, playmaking,playmaking_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1139,6 +1142,7 @@
     				if($playmakingquery->num_rows() == 0)
     				{
     					$uitstats[$k]['playmaking'] = 0;
+    					$uitstats[$k]['playmakingspeler'] = "playbalspeler";
     				
     				}else{
     			
@@ -1147,6 +1151,8 @@
 	    					 $playmaking = $row->playmaking;
 	    					 $playmaking_tr = $row->playmaking_tr;
 	    					 $uitstats[$k]['playmaking'] = $playmaking.'.'.$playmaking_tr;
+	    					 $uitstats[$k]['playmakingspeler'] = $row->voornaam.' '.$row->achternaam;
+
 	    					 
 	    			
 	    				}
@@ -1157,7 +1163,7 @@
     				//attack1 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->select('voornaam, achternaam, shotpower,shotpower_tr, shotprecision, shotprecision_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1167,6 +1173,7 @@
     				if($attackquery->num_rows() == 0)
     				{
     					$uitstats[$k]['attack'] = 0;
+    					$uitstats[$k]['attackspeler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($attackquery->result() as $row)
@@ -1177,6 +1184,8 @@
 	    						$shotprecision = $row->shotprecision;
 	    						$shotprecision_tr = $row->shotprecision_tr;
 	    					 	$uitstats[$k]['attack'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    					 	$uitstats[$k]['attackspeler'] = $row->voornaam.' '.$row->achternaam;
+
 	    			
 	    				}
 	    				}
@@ -1186,7 +1195,7 @@
     				//attack2 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->select('voornaam, achternaam, shotpower,shotpower_tr, shotprecision, shotprecision_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1196,6 +1205,7 @@
     				if($attackquery2->num_rows() == 0)
     				{
     					$uitstats[$k]['attack2'] = 0;
+    					$uitstats[$k]['attack2speler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($attackquery2->result() as $row)
@@ -1206,6 +1216,8 @@
 	    						$shotprecision = $row->shotprecision;
 	    						$shotprecision_tr = $row->shotprecision_tr;
 	    					 	$uitstats[$k]['attack2'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    					 	$uitstats[$k]['attack2speler'] = $row->voornaam.' '.$row->achternaam;
+
 	    			
 	    				}
 	    				}
@@ -1215,7 +1227,7 @@
     				//rebound2 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('rebound,rebound_tr');
+	    			$this->db->select('voornaam, achternaam, rebound,rebound_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1225,6 +1237,7 @@
     				if($rebound2query->num_rows() == 0)
     				{
     					$uitstats[$k]['rebound2'] = 0;
+    					$uitstats[$k]['rebound2speler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($rebound2query->result() as $row)
@@ -1232,6 +1245,8 @@
 	    					 $rebound = $row->rebound;;
 	    					 $rebound_tr = $row->rebound_tr;
 	    					 $uitstats[$k]['rebound2'] = $rebound .'.'. $rebound_tr;
+	    					 $uitstats[$k]['rebound2speler'] = $row->voornaam.' '.$row->achternaam;
+
 	    					
 	    			
 	    				}
@@ -1242,7 +1257,7 @@
     				//playmaking2 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('playmaking,playmaking_tr');
+	    			$this->db->select('voornaam, achternaam, playmaking,playmaking_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1252,6 +1267,7 @@
     				if($playmaking2query->num_rows() == 0)
     				{
     					$uitstats[$k]['playmaking2'] = 0;
+    					$uitstats[$k]['playmaking2speler'] = "playbalspeler";
     				
     				}else{
     			
@@ -1260,6 +1276,8 @@
 	    					 $playmaking = $row->playmaking;
 	    					 $playmaking_tr = $row->playmaking_tr;
 	    					 $uitstats[$k]['playmaking2'] = $playmaking.'.'.$playmaking_tr;
+	    					 $uitstats[$k]['playmaking2speler'] = $row->voornaam.' '.$row->achternaam;
+
 	    					 
 	    			
 	    				}
@@ -1270,7 +1288,7 @@
 					//attack3 skill ophalen
 					for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->select('voornaam, achternaam, shotpower,shotpower_tr, shotprecision, shotprecision_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1280,6 +1298,7 @@
     				if($attack3query->num_rows() == 0)
     				{
     					$uitstats[$k]['attack3'] = 0;
+    					$uitstats[$k]['attack3speler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($attack3query->result() as $row)
@@ -1290,6 +1309,8 @@
 	    						$shotprecision = $row->shotprecision;
 	    						$shotprecision_tr = $row->shotprecision_tr;
 	    					 	$uitstats[$k]['attack3'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    					    $uitstats[$k]['attack3speler'] = $row->voornaam.' '.$row->achternaam;
+
 	    			
 	    				}
 	    				}
@@ -1299,7 +1320,7 @@
     				//attack4 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->select('voornaam, achternaam, shotpower,shotpower_tr, shotprecision, shotprecision_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1309,6 +1330,7 @@
     				if($attack4query->num_rows() == 0)
     				{
     					$uitstats[$k]['attack4'] = 0;
+    					$uitstats[$k]['attack4speler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($attack4query->result() as $row)
@@ -1319,6 +1341,8 @@
 	    						$shotprecision = $row->shotprecision;
 	    						$shotprecision_tr = $row->shotprecision_tr;
 	    					 	$uitstats[$k]['attack4'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    					    $uitstats[$k]['attack4speler'] = $row->voornaam.' '.$row->achternaam;
+
 	    			
 	    				}
 	    				}
@@ -1392,7 +1416,7 @@
     				//rebound1 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('rebound,rebound_tr');
+	    			$this->db->select('voornaam, achternaam, rebound,rebound_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1402,13 +1426,15 @@
     				if($reboundquery->num_rows() == 0)
     				{
     					$thuisstats[$k]['rebound'] = 0;
+    					$thuisstats[$k]['reboundspeler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($reboundquery->result() as $row)
 	    				{
-	    					 $rebound = $row->rebound;;
+	    					 $rebound = $row->rebound;
 	    					 $rebound_tr = $row->rebound_tr;
 	    					 $thuisstats[$k]['rebound'] = $rebound .'.'. $rebound_tr;
+	    					 $thuisstats[$k]['reboundspeler'] = $row->voornaam.' '.$row->achternaam;
 	    					
 	    			
 	    				}
@@ -1420,7 +1446,7 @@
     				
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('playmaking,playmaking_tr');
+	    			$this->db->select('voornaam, achternaam, playmaking,playmaking_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1430,6 +1456,7 @@
     				if($playmakingquery->num_rows() == 0)
     				{
     					$thuisstats[$k]['playmaking'] = 0;
+    					$thuisstats[$k]['playmakingspeler'] = "playbalspeler";
     				
     				}else{
     			
@@ -1438,6 +1465,7 @@
 	    					 $playmaking = $row->playmaking;
 	    					 $playmaking_tr = $row->playmaking_tr;
 	    					 $thuisstats[$k]['playmaking'] = $playmaking.'.'.$playmaking_tr;
+	    					 $thuisstats[$k]['playmakingspeler'] = $row->voornaam.' '.$row->achternaam;
 	    					 
 	    			
 	    				}
@@ -1448,7 +1476,7 @@
     				//attack1 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->select('voornaam, achternaam, shotpower,shotpower_tr, shotprecision, shotprecision_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1458,6 +1486,7 @@
     				if($attackquery->num_rows() == 0)
     				{
     					$thuisstats[$k]['attack'] = 0;
+    					$thuisstats[$k]['attackspeler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($attackquery->result() as $row)
@@ -1468,6 +1497,7 @@
 	    						$shotprecision = $row->shotprecision;
 	    						$shotprecision_tr = $row->shotprecision_tr;
 	    					 	$thuisstats[$k]['attack'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    					 	$thuisstats[$k]['attackspeler'] = $row->voornaam.' '.$row->achternaam;
 	    			
 	    				}
 	    				}
@@ -1477,7 +1507,7 @@
     				//attack2 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->select('voornaam, achternaam, shotpower,shotpower_tr, shotprecision, shotprecision_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1487,6 +1517,7 @@
     				if($attackquery2->num_rows() == 0)
     				{
     					$thuisstats[$k]['attack2'] = 0;
+    					$thuisstats[$k]['attack2speler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($attackquery2->result() as $row)
@@ -1497,6 +1528,7 @@
 	    						$shotprecision = $row->shotprecision;
 	    						$shotprecision_tr = $row->shotprecision_tr;
 	    					 	$thuisstats[$k]['attack2'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    					 	$thuisstats[$k]['attack2speler'] = $row->voornaam.' '.$row->achternaam;
 	    			
 	    				}
 	    				}
@@ -1506,7 +1538,7 @@
     				//rebound2 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('rebound,rebound_tr');
+	    			$this->db->select('voornaam, achternaam, rebound,rebound_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1516,6 +1548,7 @@
     				if($rebound2query->num_rows() == 0)
     				{
     					$thuisstats[$k]['rebound2'] = 0;
+    					$thuisstats[$k]['rebound2speler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($rebound2query->result() as $row)
@@ -1523,7 +1556,7 @@
 	    					 $rebound = $row->rebound;;
 	    					 $rebound_tr = $row->rebound_tr;
 	    					 $thuisstats[$k]['rebound2'] = $rebound .'.'. $rebound_tr;
-	    					
+	    					 $thuisstats[$k]['rebound2speler'] = $row->voornaam.' '.$row->achternaam;
 	    			
 	    				}
 	    				}
@@ -1533,7 +1566,7 @@
     				//playmaking2 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('playmaking,playmaking_tr');
+	    			$this->db->select('voornaam, achternaam, playmaking,playmaking_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1543,6 +1576,7 @@
     				if($playmaking2query->num_rows() == 0)
     				{
     					$thuisstats[$k]['playmaking2'] = 0;
+    					$thuisstats[$k]['playmaking2speler'] = "playbalspeler";
     				
     				}else{
     			
@@ -1551,6 +1585,7 @@
 	    					 $playmaking = $row->playmaking;
 	    					 $playmaking_tr = $row->playmaking_tr;
 	    					 $thuisstats[$k]['playmaking2'] = $playmaking.'.'.$playmaking_tr;
+	    					 $thuisstats[$k]['playmaking2speler'] = $row->voornaam.' '.$row->achternaam;
 	    					 
 	    			
 	    				}
@@ -1561,7 +1596,7 @@
 					//attack3 skill ophalen
 					for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->select('voornaam, achternaam, shotpower,shotpower_tr, shotprecision, shotprecision_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1571,6 +1606,7 @@
     				if($attack3query->num_rows() == 0)
     				{
     					$thuisstats[$k]['attack3'] = 0;
+    					$thuisstats[$k]['attack3speler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($attack3query->result() as $row)
@@ -1581,6 +1617,7 @@
 	    						$shotprecision = $row->shotprecision;
 	    						$shotprecision_tr = $row->shotprecision_tr;
 	    					 	$thuisstats[$k]['attack3'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2;
+	    					 	$thuisstats[$k]['attack3speler'] = $row->voornaam.' '.$row->achternaam;
 	    			
 	    				}
 	    				}
@@ -1590,7 +1627,7 @@
     				//attack4 skill ophalen
     				for($k=1;$k<$lengterebound1;$k++){
     				
-	    			$this->db->select('shotpower,shotpower_tr, shotprecision, shotprecision_tr');
+	    			$this->db->select('voornaam, achternaam, shotpower,shotpower_tr, shotprecision, shotprecision_tr');
 	    			$this->db->from('korf_training');
 	    			$this->db->join('korf_skills', 'FK_skill_id = skill_id');
 	    			$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1600,6 +1637,7 @@
     				if($attack4query->num_rows() == 0)
     				{
     					$thuisstats[$k]['attack4'] = 0;
+    					$thuisstats[$k]['attack4speler'] = "playbalspeler";
     				}else{
     			
 	    				foreach($attack4query->result() as $row)
@@ -1610,6 +1648,7 @@
 	    						$shotprecision = $row->shotprecision;
 	    						$shotprecision_tr = $row->shotprecision_tr;
 	    					 	$thuisstats[$k]['attack4'] = $shotpower + $shotprecision.'.'.($shotprecision_tr + $shotpower_tr)/2; //gedeeld door 2 omwille van dubbele skilloptelling
+	    					 	$thuisstats[$k]['attack4speler'] = $row->voornaam.' '.$row->achternaam;
 	    			
 	    				}
 	    				}
@@ -1640,86 +1679,364 @@
 		
 		$uitslag['thuis'] = 0;
 		$uitslag['uit'] = 0;
-	
+		$acties = '';
+		$spelers = '';
+		$tussenstand = '';
+		$minuten = '';
 		
 		
 		//eerste actie
-		$randmin1 = rand(0,3);
-		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
-		{
-			$uitslag['thuis'] = $uitslag['thuis'] + 1;
-		
-		}else{
-			$uitslag['uit'] = $uitslag['uit'] + 1;
-		
-		}
-		
-		//2de actie
-		$randmin2 = rand(3,5);
+		$randkans1 = rand(0,2);
+		$randmin1 = rand(1,2);
+		if($randkans1 == 1 || $randkans1 == 2){
 			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
-		{
-			$uitslag['thuis'] = $uitslag['thuis'] + 1;
-		
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin1.';';
+				$acties .= '1;';
+				$spelers .= $thuis[$i]['attack2speler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$acties .= '1;';
+				$spelers .= $uit[$i]['attack2speler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+				$minuten .= $randmin1.';';
+
+			
+			}
+		}
+		//2de actie
+		$randkans2 = rand(0,2);
+		$randmin2 = rand(3,4);
+		if($randkans2 == 1 || $randkans2 == 2){
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin2.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
 		}else{
-			$uitslag['uit'] = $uitslag['uit'] + 1;
-		
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin2.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
 		}
 		
 		//3de actie
-		$randmin3 = rand(6,7);
-		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
-		{
-			$uitslag['thuis'] = $uitslag['thuis'] + 1;
-		
-		}else{
-			$uitslag['uit'] = $uitslag['uit'] + 1;
-		
+		$randkans3 = rand(0,2);
+		$randmin3 = rand(5,6);
+		if($randkans3 == 1 || $randkans3 == 2){
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin3.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin3.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}
 		}
-		
 		//4de actie
-		$randmin4 = rand(8,11);
-		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
-		{
-			$uitslag['thuis'] = $uitslag['thuis'] + 1;
-		
-		}else{
-			$uitslag['uit'] = $uitslag['uit'] + 1;
-		
+		$randkans4 = rand(0,2);
+		$randmin4 = rand(7,8);
+		if($randkans4 == 1 || $randkans4 == 2){
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin4.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin4.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
 		}
-		
 		//5de actie
-		$randmin5 = rand(12,16);
-		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
-		{
-			$uitslag['thuis'] = $uitslag['thuis'] + 1;
-		
-		}else{
-			$uitslag['uit'] = $uitslag['uit'] + 1;
-		
+		$randkans5 = rand(0,2);
+		$randmin5 = rand(9,10);
+		if($randkans5 == 1 || $randkans5 == 2){
+	
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin5.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin5.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
 		}
-		
 		//6de actie
-		$randmin6 = rand(17,30);
-		if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
-		{
-			$uitslag['thuis'] = $uitslag['thuis'] + 1;
-		
-		}else{
-			$uitslag['uit'] = $uitslag['uit'] + 1;
-		
+		$randkans6 = rand(0,2);
+		$randmin6 = rand(11,12);
+		if($randkans6 == 1 || $randkans6 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin6.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin6.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
 		}
-		
-		
-		//minutenstring om te inserten en de databank
-		$minuten = '';
-		$minuten =+ $randmin1.';'.$randmin2.';'.$randmin3.';'.$randmin4.';'.$randmin5.';'.$randmin6;
-		
+		//7de actie
+		$randkans7 = rand(0,2);
+		$randmin7 = rand(13,14);
+		if($randkans7 == 1 || $randkans7 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin7.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin7.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//8ste actie
+		$randkans8 = rand(0,2);
+		$randmin8 = rand(15,16);
+		if($randkans8 == 1 || $randkans8 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin8.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin8.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//9de actie
+		$randkans9 = rand(0,2);
+		$randmin9 = rand(17,18);
+		if($randkans9 == 1 || $randkans9 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin9.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin9.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//10de actie
+		$randkans10 = rand(0,2);
+		$randmin10 = rand(19,20);
+		if($randkans10 == 1 || $randkans10 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin10.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin10.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//11de actie
+		$randkans11 = rand(0,2);
+		$randmin11 = rand(21,22);
+		if($randkans11 == 1 || $randkans11 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin11.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin11.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//12de actie
+		$randkans12 = rand(0,2);
+		$randmin12 = rand(23,24);
+		if($randkans12 == 1 || $randkans12 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin12.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin12.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//13de actie
+		$randkans13 = rand(0,2);
+		$randmin13 = rand(25,26);
+		if($randkans13 == 1 || $randkans13 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin13.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin13.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//14de actie
+		$randkans14 = rand(0,2);
+		$randmin14 = rand(27,28);
+		if($randkans14 == 1 || $randkans14 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin14.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin14.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//15de actie
+		$randkans15 = rand(0,2);
+		$randmin15 = rand(29,30);
+		if($randkans15 == 1 || $randkans15 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin15.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin15.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+				
 		//gelijkstand
 		if($uitslag['thuis'] == $uitslag['uit']){
 			//insert verslag
 			$insert = array(
 				'FK_wedstrijd_id' => $wedstrijdid,
-				'minuten' => $minuten
+				'minuten' => $minuten,
+				'acties' => $acties,
+				'spelers' => $spelers,
+				'tussenstand' => $tussenstand
 			
 			);
 			
@@ -1789,7 +2106,11 @@
 		//insert verslag
 			$insert = array(
 				'FK_wedstrijd_id' => $wedstrijdid,
-				'minuten' => $minuten
+				'minuten' => $minuten,
+				'acties' => $acties,
+				'spelers' => $spelers,
+				'tussenstand' => $tussenstand
+
 			
 			);
 			
@@ -1862,7 +2183,11 @@
 		//insert verslag
 			$insert = array(
 				'FK_wedstrijd_id' => $wedstrijdid,
-				'minuten' => $minuten
+				'minuten' => $minuten,
+				'acties' => $acties,
+				'spelers' => $spelers,
+				'tussenstand' => $tussenstand
+
 			
 			);
 			
@@ -1947,9 +2272,176 @@
     
     
     
+    function create_transferMan()
+    {
+    	$voornamen = array(
+    					
+    					'Aamos', 'Aapo', 'Aarne', 'Aatos', 'Ahti', 'Aki', 'Aki-Petteri','Akseli', 'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Ari-Pekka', 'Armas' ,'Arsi', 'Arto', 'Arttu', 'Arvi', 'Arvid Atso', 'Atte August', 'Aulis','Christian', 'Eemeli', 'Eemil', 'Eerik', 'Eero', 'Eetu', 'Eino', 'Einojuhani', 'Elias', 'Emppu', 'Ensio', 'Erkki', 'Erno', 'Esa', 'Esa-Pekka','Esko'
+
+
+    				);
+    				
+    	$achternamen = array(
+    					'Smith',
+        				'Jones',
+       				    'Winkler',
+                        'Cooper',
+                        'Cline'
+    	
+    	
+    	);
+    	
+    	
+    	$leeftijden = array(
+    					'16',
+    					'17',
+    					'18',
+    					'19',
+    					'20',
+    					'21',
+    					'22',
+    					'23'
+    					
+    	
+    	);		
+    	
+    	$rugnummer = rand(0, 99);	
+    		
+    		
+    				
+    	$voornaam = $voornamen[array_rand($voornamen)];
+    	$achternaam = $achternamen[array_rand($achternamen)];
+    	$leeftijd = $leeftijden[array_rand($leeftijden)];
+    	
+    	$new_player_insert_data = array(
+    		'voornaam' => $voornaam,
+    		'achternaam' => $achternaam,
+    		'leeftijd' => $leeftijd,
+    		'geslacht' => 'male',
+    		'rugnummer' => $rugnummer,
+    		'transfer' => 1
+    		
+    	
+    	);
+		
+		
+    	$insert = $this->db->insert('korf_spelers', $new_player_insert_data);
+    	
+    	if($insert){
+		    	$this->db->where('FK_team_id', null);
+		    	$this->db->order_by('speler_id', 'desc');
+		    	$query = $this->db->get('korf_spelers',1);
+		    	
+		    	foreach($query->result() as $row)
+		    	{
+		    		$spelerid = $row->speler_id;
+		    		
+		    		$deadline = date('Y-m-d h:i:s', strtotime("+3 days"));
+		    		$minimum = 3000;
+
+				$data = array(
+				'minimum_bod' => $minimum,
+				'FK_speler_id' => $spelerid,
+				'deadline' => $deadline,
+				'FK_hoogste_bieder' => 0
+				
+
+				);
+
+
+			$this->db->insert('korf_transfers', $data);
+
+		    	
+		    	
+		    	}
+    	
+    	
+    	
+		}
     
+    }
+		
+		
+		function create_transferVrouw()
+		{
+			$voornamen = array(
+    					'josefien', 
+    					'nele',
+    					'anke',
+    					'mieke',
+    					'maria'
+    				);
+    				
+    	$achternamen = array(
+    					'vandevelde',
+        				'pony',
+       				    'deboi',
+                        'deschelde',
+                        'de moeder'
+    	
+    	
+    	);
+    	
+    	
+    	$leeftijden = array(
+    					'16',
+    					'17',
+    					'18',
+    					'19',
+    					'20',
+    					'21',
+    					'22',
+    					'23'
+    					
+    	
+    	);			
+    		
+    	$rugnummer = rand(0, 99);	
+    				
+    	$voornaam = $voornamen[array_rand($voornamen)];
+    	$achternaam = $achternamen[array_rand($achternamen)];
+    	$leeftijd = $leeftijden[array_rand($leeftijden)];
+    	
+    	$new_player_insert_data = array(
+    		'voornaam' => $voornaam,
+    		'achternaam' => $achternaam,
+    		'leeftijd' => $leeftijd,
+    		'geslacht' => 'female',
+    		'rugnummer' => $rugnummer,
+    		'transfer' => 1
+    		
+    	
+    	);
+		
+    	$insert = $this->db->insert('korf_spelers', $new_player_insert_data);
+    	if($insert){
+		    	$this->db->where('FK_team_id', null);
+		    	$this->db->order_by('speler_id', 'desc');
+		    	$query = $this->db->get('korf_spelers',1);
+		    	
+		    	foreach($query->result() as $row)
+		    	{
+		    		$spelerid = $row->speler_id;
+		    		
+		    		$deadline = date('Y-m-d h:i:s', strtotime("+3 days"));
+		    		$minimum = 3000;
+
+				$data = array(
+				'minimum_bod' => $minimum,
+				'FK_speler_id' => $spelerid,
+				'deadline' => $deadline,
+				'FK_hoogste_bieder' => 9999
+				
+	
+				);
+
+
+			$this->db->insert('korf_transfers', $data);
+		
+			}
+		}
     
-    
+    }
     
     
     

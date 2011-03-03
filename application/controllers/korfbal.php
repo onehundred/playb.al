@@ -454,6 +454,17 @@ class Korfbal extends CI_Controller {
 		echo json_encode($json);
 	
 	}
+	
+	function korfbal_jsonReview()
+	{
+		$wedstrijdid = $_POST['wedstrijdid'];
+		
+		$this->load->model('korfbal_model');
+		$json = $this->korfbal_model->getJsonReview($wedstrijdid);
+		echo json_encode($json);
+	
+	
+	}
 }
 
 /* End of file welcome.php */

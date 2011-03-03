@@ -17,8 +17,7 @@
         </canvas>
     </div>
     <div id="links">
-    <p id="1" class="actie" style="text-decoration:underline; cursor:pointer;">actie1</p>
-    <p id="2" class="actie" style="text-decoration:underline; cursor:pointer;">actie2</p>
+    <input type="hidden" id="wedstrijdid" value="<?php echo $this->uri->segment('4');?>"    
     </div>
 
 <script>
@@ -419,7 +418,44 @@ function clear()
 // Use JQuery to wait for document load
 $(document).ready(function()
 {
-	$(".actie").click(function(){
+	var wedstrijdid = $('#wedstrijdid').val();
+	
+			$.ajax({
+    			type: "POST",
+    			url: "http://playb.al/index.php/korfbal/korfbal_jsonReview",
+    			data:  { wedstrijdid: wedstrijdid,
+            			
+            			
+        				},
+    			dataType: "json",
+        		success: function(data){
+        			var verslag = data;
+        			//alert(verslag['acties']);
+        			var minuten = verslag['minuten'].split(';');
+        			var acties = verslag['acties'].split(';');
+        			var spelers = verslag['spelers'].split(';');
+        			var tussenstand = verslag['tussenstand'].split(';');
+        			
+        			for(var i in minuten)
+        			{
+        				if(acties[i] === '1'){
+        					$('#links').append('<p id="1" class="actie" style="text-decoration:underline; cursor:pointer;">In minuut '+minuten[i]+' scoort: '+spelers[i]+' de '+tussenstand[i]+'</p>')
+        				
+        				}
+        				if(acties[i] === '2'){
+        					$('#links').append('<p id="2" class="actie" style="text-decoration:underline; cursor:pointer;">In minuut '+minuten[i]+' scoort: '+spelers[i]+' de '+tussenstand[i]+'</p>')
+        				
+        				}
+        			}
+        		
+        		
+        		}
+        		
+        		});
+
+
+	
+	$(".actie").live('click', function(){
 		$('#links').block({ 
                 message: '<h4>Even wachten tot de animatie is afgelopen</h4>', 
                 css: { border: '1px solid #000' } 

@@ -136,10 +136,11 @@
 	font-size: 9pt;
 }
 </style>
-
+<script src="<?php echo base_url();?>/js/jquery.flip.js"></script> 
 <script>
 $(function(){
 	getData();
+	
 	function getData(){
 		var holder = document.getElementById("stadion");
 		while(holder.hasChildNodes()){
@@ -235,17 +236,11 @@ $(function(){
 	
 	
 	}
-	
-	$('#midden_midden').live('click', function(){                                                                                                                               
-       alert("ok");                                                                                                                                            
-});
-	
-	
-	
-	
-	
-	$('.kopen').live('click', function(){
+	$( "#dialog-confirm" ).hide();
 		
+	$('.kopen').live('click', function(){
+	
+				
 		var teamid = $('#teamid').val();
 		//alert(teamid);
 		var id = $(this).attr('id');
@@ -267,7 +262,17 @@ $(function(){
 		
 		}
 		
-		$.ajax({
+		
+		$( "#dialog:ui-dialog" ).dialog( "destroy" );
+		
+		
+		$( "#dialog-confirm" ).dialog({
+			resizable: false,
+			height:300,
+			modal: false,
+			buttons: {
+				"Kopen": function() {
+					$.ajax({
 
         type: "POST",
 
@@ -285,7 +290,11 @@ $(function(){
 			if(data.section === true)
 			{
 				$().toastmessage('showSuccessToast', 'Sectie is aangekocht!');
-				getData();
+				$('#stadion').slideUp(500,function(){
+						getData();
+					});
+					
+					$('#stadion').slideDown(2000);
 			
 			}
 			else{
@@ -297,7 +306,25 @@ $(function(){
 			if(data.seats === true)
 				{
 					$().toastmessage('showSuccessToast', 'Plaatsen zijn aangekocht!');
-					getData();
+					
+						//$( "#sec_"+input[1]).effect( 'explode', 500, getData() );
+						//getData();
+						$("#sec_"+input[1]).flip({
+					direction:'tb',
+					color : '#FFF',
+					onBefore: function(){
+							console.log('before starting the animation');
+					},
+					onAnimation: function(){
+							getData();
+					},
+					onEnd: function(){
+							console.log('when the animation has already ended');
+					}
+				})
+										
+					
+					
 				
 				
 				}
@@ -310,6 +337,16 @@ $(function(){
          	
 			});
 
+					$( this ).dialog( "close" );
+				},
+				Cancel: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+
+		
+		
 	
 	});	
 });
@@ -356,4 +393,7 @@ $(function(){
 	
 </div>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3')?>"/>
+</div>
+<div id="dialog-confirm" title="Plaatsen kopen?">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Bent u zeker dat u deze plaatsen wilt aankopen?</p>
 </div>

@@ -206,7 +206,7 @@
 		//elke wedstrijdrij afgaan
 		foreach($query->result() as $row)
 		{
-
+			$wedstrijdarray[$i]['wedstrijdid']= $row->wedstrijd_id;
 			//thuisteam van elke rij ophalen
 			$thuisteam = $row->thuisteam;
 			$this->db->select('naam');
@@ -557,6 +557,26 @@
 		}
 		
 		return $stadion;
+	
+	}
+	
+	function getJsonReview($wedstrijdid)
+	{
+		$this->db->where('FK_wedstrijd_id',$wedstrijdid);
+		$query = $this->db->get('korf_verslagen');
+		
+		
+		$verslag = array();
+		
+		foreach($query->result() as $row)
+		{
+			$verslag['acties'] = $row->acties;
+			$verslag['minuten'] =$row->minuten;
+			$verslag['spelers'] = $row->spelers;
+			$verslag['tussenstand'] =$row->tussenstand;		
+		}
+
+		return $verslag;
 	
 	}
 	

@@ -2,7 +2,8 @@
 <?php for($i=1;$i<15;$i++){ ?>
 		<p><?php echo $matches[$i]['thuis'];?>-<?php echo $matches[$i]['uit'];?>&nbsp;<?php $uitslag = $matches[$i]['uitslag'];
 		if(isset($uitslag)){
-			echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$uitslag;
+			echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$uitslag."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+			echo anchor('korfbal/korfbal_review/'.$this->uri->segment('3').'/'.$matches[$i]['wedstrijdid'],'bekijk replay nu');
 		
 		}else{ ?>
 		

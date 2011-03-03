@@ -13,13 +13,22 @@
     //om de 2 dagen
     function update_week($week)
     {
+    	if($week == 14){
+    		$update = array(
+    		'week' => 1
+    	
+    	);
+    	
+    	$this->db->update('korf_cron', $update);
+    	}
+    	else{
     	$update = array(
     		'week' => $week +1
     	
     	);
     	
     	$this->db->update('korf_cron', $update);
-    	
+    	}
     }
     
     //om de maand ongeveer
@@ -32,7 +41,145 @@
     	);
     	
     	$this->db->update('korf_cron', $update);
+    	
+    	
+    	
 
+    }
+    
+    
+    function promotion_division1()
+    {
+    	//verdienen te zakken naar divisie 2
+	
+		$this->db->select('*');
+    	$this->db->from('korf_teams');
+    	$this->db->join('korf_divisies','FK_division_id = divisie_id');
+    	$this->db->where('divisie', 1);
+    	$this->db->where('sub_divisie', 1);
+    	$this->db->order_by('divisiepunten', 'asc');
+    	$this->db->limit(2);
+    	$degradatie1 = $this->db->get();
+    	
+    	$i =1;
+    	foreach($degradatie1->result() as $row)
+    	{
+    		$degrTeamId[$i] = $row->team_id;
+    		$degrDivId[$i] = $row->FK_division_id; 
+    		$i++;  		
+    	
+    	}
+
+	for($i=1;$i<3;$i++){
+		//verdienen promotie naar divisie1
+    	$this->db->select('*');
+    	$this->db->from('korf_teams');
+    	$this->db->join('korf_divisies','FK_division_id = divisie_id');
+    	$this->db->where('divisie', 2);
+    	$this->db->where('sub_divisie', $i);
+    	$this->db->order_by('divisiepunten', 'desc');
+    	$this->db->limit(1);
+    	$promotie2 = $this->db->get();
+    	
+    	foreach($promotie2->result() as $row)
+    	{
+    		
+    		$promTeamId = $row->team_id;
+    		$promDivId = $row->FK_division_id;
+    		$update = array(
+    			'FK_division_id' => $degrDivId[$i]
+    		);
+    		
+    		$this->db->where('team_id',$promTeamId );
+    		$this->db->update('korf_teams', $update);
+    		
+    		$update2 =array(
+    			'FK_division_id' => $promDivId
+    		);
+    		
+    		$this->db->where('team_id', $degrTeamId[$i]);
+    		$this->db->update('korf_teams', $update2);
+    		
+    	}
+    }
+	function promotion_division2(){
+		$getal = 0; 
+    //verdienen degradatie naar 3de
+    for($i=1;$i<3;$i++){
+    	$this->db->select('team_id, FK_division_id');
+    	$this->db->from('korf_teams');
+    	$this->db->join('korf_divisies','FK_division_id = divisie_id');
+    	$this->db->where('divisie', 2);
+    	$this->db->where('sub_divisie', $i);
+    	$this->db->order_by('divisiepunten', 'asc');
+    	$this->db->limit(2);
+    	$degradatie = $this->db->get();
+    	
+    	$k =1 + $getal;
+    	foreach($degradatie ->result() as $row)
+    	{
+    		
+    		$degrTeamId[$k] = $row->team_id;
+    		$degrDivId[$k] = $row->FK_division_id; 
+    		$k++;  		
+    	
+    	}
+    	
+    	//verdienen promotie naar 2de
+    	$l =1 +$getal;
+    	for($j=1+$getal;$j<3+$getal;$j++)
+    	{
+    		//echo $j;
+    		
+    		
+    		$this->db->select('*');
+    		$this->db->from('korf_teams');
+    		$this->db->join('korf_divisies','FK_division_id = divisie_id');
+    		$this->db->where('divisie', 3);
+    		$this->db->where('sub_divisie', $j);
+    		$this->db->order_by('divisiepunten', 'desc');
+    		$this->db->limit(1);
+    		$promotie2 = $this->db->get();
+    		
+    		
+    		foreach($promotie2->result() as $row)
+    		{
+    			
+    		$promTeamId = $row->team_id;
+    		$promDivId = $row->FK_division_id;
+    		
+    		//echo $l;
+    		//echo $degrDivId[$l];
+    		//echo $degrTeamId[$l];
+    		//echo $promTeamId;
+    		//echo $promDivId;
+    		//echo '<br/>';
+    		
+    		$update = array(
+    			'FK_division_id' => $degrDivId[$l]
+    		);
+    		
+    		$this->db->where('team_id',$promTeamId );
+    		$this->db->update('korf_teams', $update);
+    		
+    		$update2 =array(
+    			'FK_division_id' => $promDivId
+    		);
+    		
+    		$this->db->where('team_id', $degrTeamId[$l]);
+    		$this->db->update('korf_teams', $update2);
+    		
+    		}
+    		$l++;
+    	}
+    	$getal = $getal + 2;	
+    	}
+
+    
+
+	
+	}
+    
     }
     
     //elke minuut om na te kijken
@@ -2027,7 +2174,352 @@
 			
 			}
 		}
-				
+		//16de actie
+		$randkans16 = rand(0,2);
+		$randmin16 = rand(31,32);
+		if($randkans16 == 1 || $randkans16 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin16.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin16.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//17de actie
+		$randkans17 = rand(0,2);
+		$randmin17 = rand(33,34);
+		if($randkans17 == 1 || $randkans17 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin17.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin17.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//18de actie
+		$randkans18 = rand(0,2);
+		$randmin18 = rand(35,36);
+		if($randkans18 == 1 || $randkans18 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin18.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin18.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//19de actie
+		$randkans19 = rand(0,2);
+		$randmin19 = rand(37,38);
+		if($randkans19 == 1 || $randkans19 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin19.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin19.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//20ste actie
+		$randkans20 = rand(0,2);
+		$randmin20 = rand(39,40);
+		if($randkans20 == 1 || $randkans20 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin20.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin20.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//21ste actie
+		$randkans21 = rand(0,2);
+		$randmin21 = rand(41,42);
+		if($randkans21 == 1 || $randkans21 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin21.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin21.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//22ste actie
+		$randkans22 = rand(0,2);
+		$randmin22 = rand(43,44);
+		if($randkans22 == 1 || $randkans22 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin22.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin22.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//23ste actie
+		$randkans23 = rand(0,2);
+		$randmin23 = rand(45,46);
+		if($randkans23 == 1 || $randkans23 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin23.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin23.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//24ste actie
+		$randkans24 = rand(0,2);
+		$randmin24 = rand(47,48);
+		if($randkans24 == 1 || $randkans24 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin24.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin24.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//25ste actie
+		$randkans25 = rand(0,2);
+		$randmin25 = rand(49,50);
+		if($randkans25 == 1 || $randkans25 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin25.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin25.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//26 actie
+		$randkans26 = rand(0,2);
+		$randmin26 = rand(51,52);
+		if($randkans26 == 1 || $randkans26 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin26.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin26.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//27ste actie
+		$randkans27 = rand(0,2);
+		$randmin27 = rand(53,54);
+		if($randkans27 == 1 || $randkans27 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin27.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin27.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//28ste actie
+		$randkans28 = rand(0,2);
+		$randmin28 = rand(55,56);
+		if($randkans28 == 1 || $randkans28 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin28.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin28.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//29ste actie
+		$randkans29 = rand(0,2);
+		$randmin29 = rand(57,58);
+		if($randkans29 == 1 || $randkans29 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin29.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin29.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+		//30ste actie
+		$randkans30 = rand(0,2);
+		$randmin30 = rand(59,60);
+		if($randkans30 == 1 || $randkans30 == 2){
+
+			if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+			{
+				$uitslag['thuis'] = $uitslag['thuis'] + 1;
+				$minuten .= $randmin30.';';
+				$acties .= '2;';
+				$spelers .= $thuis[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+			
+			}else{
+				$uitslag['uit'] = $uitslag['uit'] + 1;
+				$minuten .= $randmin30.';';
+				$acties .= '2;';
+				$spelers .= $uit[$i]['attackspeler'].';';
+				$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+
+			
+			}
+		}
+
 		//gelijkstand
 		if($uitslag['thuis'] == $uitslag['uit']){
 			//insert verslag

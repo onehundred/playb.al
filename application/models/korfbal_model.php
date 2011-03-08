@@ -61,6 +61,11 @@
 		$this->db->where('FK_team_id', $team_id);
 		$query = $this->db->get('korf_opstelling');
 		
+		if($query->num_rows() == 0){
+			return false;
+		
+		}else{
+		
 		$spelers = array();
 		
 		foreach($query->result() as $row)
@@ -105,6 +110,7 @@
 		}
 		
 		return $opstelling;
+		}
 
 	}
 	

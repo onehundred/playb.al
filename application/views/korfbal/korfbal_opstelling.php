@@ -77,6 +77,20 @@
         			var spelers = data;
         			//kijken of er een speler op een bepaalde positie staat, zoniet aanvullen met een lege div
         					//rebound1
+        					if(data === false){
+        					
+        						$('#vak1').append('<div class="droppable" id="rebound1">Drop speler hier</div>');
+        						$('#vak1').append('<div class="droppable" id="playmaking1">Drop speler hier</div>');
+        						$('#vak1').append('<div class="droppable" id="attack1">Drop speler hier</div>');
+    		        			$('#vak1').append('<div class="droppable" id="attack2">Drop speler hier</div>');
+    		        			$('#vak2').append('<div class="droppable" id="rebound2">Drop speler hier</div>');
+    		        			$('#vak2').append('<div class="droppable" id="playmaking2">Drop speler hier</div>');
+    		        			$('#vak2').append('<div class="droppable" id="attack3">Drop speler hier</div>');
+    		        			$('#vak2').append('<div class="droppable" id="attack4">Drop speler hier</div>');
+    		        			$('#general').append('<div class="droppable" id="captain">Drop speler hier</div>');
+    		        			$('#general').append('<div class="droppable" id="septpieces">Drop speler hier</div>');
+    		        			}
+        					else{
 		        			if(spelers[0].voornaam === 'null')
 		        			{
 		        				$('#vak1').append('<div class="droppable" id="rebound1">Drop speler hier</div>');
@@ -167,7 +181,7 @@
 		        			{
 		        				$('#korfbalField').append('<div class="droppable" id="setpieces">'+spelers[9].voornaam+'<input type="hidden" id="'+spelers[9].id+'"/></div>');
 		        			}
-		        			
+		        			}
 		        			//de bovenstaande divs draggable maken zodat ze gewisseld kunnen worden
 		        			$( ".droppable" ).draggable({ 
 								cursor: 'move',
@@ -243,7 +257,7 @@
 			
 			
 			});	
-
+						
         				}
 								
 				});					

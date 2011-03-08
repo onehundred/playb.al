@@ -22,27 +22,7 @@ class Korfbal extends CI_Controller {
 		}
 	}
 	
-	function opstelling_test()
-	{
-		$team_id = $this->uri->segment('3');
-		$data['team_id'] = $team_id;
-		$this->load->model('korfbal_model');
-		
-		$data['spelers'] = $this->korfbal_model->get_spelers($team_id);
-		$data['opstelling'] = $this->korfbal_model->get_opstelling($team_id);
-		
-		$team = $this->korfbal_model->get_team($team_id);
-		foreach($team->result() as $row)
-		{
-		$data['teamnaam'] = $row->naam; 
-		}
-		
-		
-		$data['main_content'] = 'korfbal/korfbal_opstelling2';
-		$this->load->view('korfbal/includes/template', $data);
 
-	
-	}
 	//de mainfunctie van korfbal -> laadt de hoofdpage
 	function korfbal_start()
 	{
@@ -59,7 +39,7 @@ class Korfbal extends CI_Controller {
 		}
 		
 		
-		$stadion = $this->korfbal_model->get_stadion($team_id);
+		$stadion = $this->korfbal_model->get_stadion($team_id); 
 		foreach($stadion->result() as $row)
 		{
 		$data['stadionnaam'] = $row->naam;

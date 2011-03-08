@@ -149,10 +149,15 @@ class Cron extends CI_Controller {
 		{
 			$seizoen = $row->seizoen;
 		}
-		
-		//$this->cron_model->update_seizoen($seizoen);
-		
+		$this->cron_model->promotion_division1();
+		$this->cron_model->promotion_division2();
 		$this->cron_model->promotion_division3();
+		$this->cron_model->promotion_division4();
+		$this->cron_model->promotion_division5();
+		$this->cron_model->promotion_division6();
+		$this->cron_model->promotion_division7();
+		$this->cron_model->promotion_division8();
+		$this->cron_model->update_seizoen($seizoen);
 
 	}
 	

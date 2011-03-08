@@ -130,7 +130,8 @@
 					if(options.animation == "none") {
 						modal.css({'visibility' : 'hidden', 'top' : topMeasure});
 						modalBG.css({'display' : 'none'});	
-					}   			
+					}
+					window.location.reload();   			
 				}
 			}
 			

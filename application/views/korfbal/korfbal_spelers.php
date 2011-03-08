@@ -85,7 +85,7 @@ foreach($spelers->result() as $row)
             <!-- <p id="gender"><img src="<?php echo base_url();?>img/male.png" /></p> --> 
             <br />
             <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
-            <p class="price">$10 000</p>
+            <p class="price"><?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?>$</p>
             <br />
             <br />
             <div id="rightProgress">

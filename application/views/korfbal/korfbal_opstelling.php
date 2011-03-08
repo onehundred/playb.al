@@ -12,8 +12,8 @@
 #players {
 	float:left;
 	width: 250px;
-	
 	margin-right: 1em;
+	
 }
 .tooltip {
 	display:none;
@@ -39,6 +39,9 @@
 
 .trigger { 
 	cursor:move;
+	width: 100px;
+	height: 50px;
+	border: 1px solid #000;
 	
 	
 }
@@ -169,7 +172,7 @@
 		        			$( ".droppable" ).draggable({ 
 								cursor: 'move',
 								helper: 'clone',
-								revert: false,
+								revert: true,
 								appendTo: "body"
 												
 							});	

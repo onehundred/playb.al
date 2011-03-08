@@ -127,7 +127,7 @@ $(function() {
 		$(function() {
 		
 				var teamid = $('#teamid').val();
-				var spelersskills = 0;
+			
 				//alert(teamid);
 				$.ajax({
     			type: "POST",

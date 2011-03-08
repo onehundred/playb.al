@@ -140,6 +140,15 @@ $(function() {
         		success: function(data){
         		var spelers = data;
         		
+        		var reboundtotaal = 0;
+        		var passingtotaal = 0;
+        		var interceptingtotaal = 0;
+        		var shotpowertotaal = 0;
+        		var shotprecisiontotaal = 0;
+        		var leadershiptotaal = 0;
+        		var playmakingtotaal = 0;
+        		var staminatotaal = 0;
+        		
         		
         		for(var i in spelers){
 	        		$( ".rebound"+spelers[i].spelerid).progressbar({
@@ -167,9 +176,24 @@ $(function() {
 						value: spelers[i].stamina * 5
 					});
 					
-					spelersskills =+ spelersskills + spelers[i].rebound ;
-					//alert(spelersskills);
-				}   
+					reboundtotaal =+ spelers[i].rebound + reboundtotaal;	
+					passingtotaal =+ spelers[i].passing + passingtotaal;
+					interceptingtotaal =+ spelers[i].intercepting + interceptingtotaal;
+					shotpowertotaal =+ spelers[i].shotpower + shotpowertotaal;
+					shotprecisiontotaal =+ spelers[i].shotprecision + shotprecisiontotaal;
+					leadershiptotaal =+ spelers[i].leadership + leadershiptotaal;
+					playmakingtotaal =+ spelers[i].playmaking + playmakingtotaal;
+					staminatotaal =+ spelers[i].stamina + staminatotaal;				//alert(spelersskills);
+				}
+				
+			 var chart1 = new AwesomeChart('chartCanvas1');
+/*             chart1.title = "Worldwide browser market share: December 2010"; */
+   			 chart1.chartType = "horizontal bars";
+             chart1.data = [reboundtotaal,passingtotaal,interceptingtotaal,shotpowertotaal,shotprecisiontotaal, leadershiptotaal,playmakingtotaal, staminatotaal];
+             chart1.labels = ['rebound','playmaking','shotpower','shotprecision','passing','stamina', 'intercepting', 'leidersvermogen'];
+             chart1.colors = ['#006CFF', '#FF6600', '#34A038', '#945D59', '#93BBF4', '#F493B8'];
+             chart1.randomColors = false;
+             chart1.draw();   
 			
         		
         		}
@@ -289,15 +313,3 @@ foreach($training->result() as $row){
     <h2>datum</h2>
     <p>test</p>
 </div>
-<script>
-         var chart1 = new AwesomeChart('chartCanvas1');
-/*             chart1.title = "Worldwide browser market share: December 2010"; */
-    chart1.chartType = "horizontal bars";
-            chart1.data = [100,80,10.06,36.27,75, 22.22,10, 20];
-            chart1.labels = ['rebound','playmaking','shotpower','shotprecision','passing','stamina', 'intercepting', 'leidersvermogen'];
-            chart1.colors = ['#006CFF', '#FF6600', '#34A038', '#945D59', '#93BBF4', '#F493B8'];
-            chart1.randomColors = false;
-            chart1.draw();
-            
-          
-</script>

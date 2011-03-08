@@ -80,15 +80,25 @@
 		$opstelling = array();
 		
 		if($query->num_rows > 0){
-		for($i=0;$i<9;$i++){
+		for($i=0;$i<10;$i++){
+		
+			if($spelers[$i] == null || $spelers[$i] == "null"){
+				$opstelling[$i]['voornaam']= 'null';
+				$opstelling[$i]['achternaam']= 'null';
+
+			}else{
 			$this->db->where('speler_id', $spelers[$i]);
 			$speler = $this->db->get('korf_spelers');
 			
-			foreach($speler->result() as $rij){
-				$opstelling[$i]['voornaam']= $rij->voornaam;
-				$opstelling[$i]['achternaam']= $rij->achternaam;
+				foreach($speler->result() as $rij){
+				
+				
+					$opstelling[$i]['voornaam']= $rij->voornaam;
+					$opstelling[$i]['achternaam']= $rij->achternaam;
+					$opstelling[$i]['id'] = $rij->speler_id;
 				
 			
+				}
 			}
 			
 		}
@@ -96,6 +106,20 @@
 		
 		return $opstelling;
 
+	}
+	
+	
+	function removePlayer_Opstelling($spelerid, $teamid, $positie)
+	{
+		$data = array(
+			$positie.'_speler' => null,
+			$positie.'_geslacht' => null
+		
+		);
+		
+		$this->db->where('FK_team_id', $teamid);
+		$this->db->update('korf_opstelling', $data);
+		
 	}
 
 	function get_manager()
@@ -251,7 +275,7 @@
 	}
 
 
-	function insert_opstelling($field,$spelernaam,$teamid,$geslacht,$vak, $spelerid)
+	function insert_opstelling($field,$teamid,$geslacht,$vak, $spelerid)
 	{
 
 

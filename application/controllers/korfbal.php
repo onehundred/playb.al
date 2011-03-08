@@ -22,6 +22,27 @@ class Korfbal extends CI_Controller {
 		}
 	}
 	
+	function opstelling_test()
+	{
+		$team_id = $this->uri->segment('3');
+		$data['team_id'] = $team_id;
+		$this->load->model('korfbal_model');
+		
+		$data['spelers'] = $this->korfbal_model->get_spelers($team_id);
+		$data['opstelling'] = $this->korfbal_model->get_opstelling($team_id);
+		
+		$team = $this->korfbal_model->get_team($team_id);
+		foreach($team->result() as $row)
+		{
+		$data['teamnaam'] = $row->naam; 
+		}
+		
+		
+		$data['main_content'] = 'korfbal/korfbal_opstelling2';
+		$this->load->view('korfbal/includes/template', $data);
+
+	
+	}
 	//de mainfunctie van korfbal -> laadt de hoofdpage
 	function korfbal_start()
 	{
@@ -136,6 +157,14 @@ class Korfbal extends CI_Controller {
 	
 	}
 	
+	function get_JsonOpstelling()
+	{
+		$team_id = $_POST['teamid'];
+		$this->load->model('korfbal_model');
+		$opstelling = $this->korfbal_model->get_opstelling($team_id);
+		echo json_encode($opstelling);
+	}
+	
 	function korfbal_teamorders()
 	{
 		$team_id = $this->uri->segment('3');
@@ -143,7 +172,7 @@ class Korfbal extends CI_Controller {
 		$this->load->model('korfbal_model');
 		
 		$data['spelers'] = $this->korfbal_model->get_spelers($team_id);
-		$data['opstelling'] = $this->korfbal_model->get_opstelling($team_id);
+		//$data['opstelling'] = $this->korfbal_model->get_opstelling($team_id);
 		
 		$team = $this->korfbal_model->get_team($team_id);
 		foreach($team->result() as $row)
@@ -158,11 +187,22 @@ class Korfbal extends CI_Controller {
 		
 	}
 	
+	function removePlayer_Opstelling()
+	{
+		$spelerid = $_POST['spelerid'];
+		$teamid = $_POST['teamid'];
+		$positie = $_POST['positie'];
+		
+		$this->load->model('korfbal_model');
+		
+		$query = $this->korfbal_model->removePlayer_Opstelling($spelerid, $teamid, $positie);
+	
+	}
+	
 	
 	//nakijken welke positie word ingevuld en dan inserten of updaten indien team bestaat of niet
 	function korfbal_reorder()
 	{
-		$spelersnaam = $_POST['spelername'];
 		$positie = $_POST['positie'];
 		$teamid = $_POST['teamid'];
 		$geslacht = $_POST['geslacht'];
@@ -229,7 +269,7 @@ class Korfbal extends CI_Controller {
 		}
 		
 		$this->load->model('korfbal_model');
-		$vakcheck = $this->korfbal_model->insert_opstelling($field,$spelersnaam,$teamid,$geslacht,$vak,$spelerid);
+		$vakcheck = $this->korfbal_model->insert_opstelling($field,$teamid,$geslacht,$vak,$spelerid);
 		
 		$arr = array('check' => $vakcheck);
 		$json = json_encode($arr); // returnt: { "item 2":"value 2", "item 3":"value 3", "item 3":"value 3"  } 

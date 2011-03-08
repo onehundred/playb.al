@@ -6,7 +6,7 @@
 #stadion{
 	width: 600px;
 	height: 706px;
-	float: right;
+	float: left;
 	
 }
 #links_boven{
@@ -353,12 +353,24 @@ $(function(){
 
 
 </script>
+<div class="gameRight">
 <?php foreach($stadion->result() as $row)
 		{?>
 			<h2><?php echo $row->naam;?></h2>
 						
 	<?php	}
 ?>
+<div id="plaatsen">
+	<div id="sec_a">Sectie A: </div>
+	<div id="sec_b">Sectie B:</div>
+	<div id="sec_c">Sectie C: </div>
+	<div id="sec_d">Sectie D: </div>
+	<div id="sec_e">Sectie E: </div>
+	<div id="sec_f">Sectie F: </div>
+	<div id="sec_g">Sectie G: </div>
+	<div id="sec_h">Sectie H: </div>
+	
+</div></div><div class="players">
 <div id="stadion_container">
 <div id="stadion">
 <!-- sectie g rechts boven -->
@@ -380,18 +392,8 @@ $(function(){
 <!-- sectie e links onder -->
 
 </div>
-
-<div id="plaatsen">
-	<div id="sec_a">Sectie A: </div>
-	<div id="sec_b">Sectie B:</div>
-	<div id="sec_c">Sectie C: </div>
-	<div id="sec_d">Sectie D: </div>
-	<div id="sec_e">Sectie E: </div>
-	<div id="sec_f">Sectie F: </div>
-	<div id="sec_g">Sectie G: </div>
-	<div id="sec_h">Sectie H: </div>
-	
 </div>
+
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3')?>"/>
 </div>
 <div id="dialog-confirm" title="Plaatsen kopen?">

@@ -17,7 +17,7 @@
 <div class="gameRight">
     <h2>huidig seizoen</h2>
     <div class="chart_container">
-        <canvas id="chartCanvas1" width="400" height="400"> Your web-browser does not support the HTML 5 canvas element. </canvas>
+        <canvas id="chartCanvas1" width="150" height="150"> Your web-browser does not support the HTML 5 canvas element. </canvas>
     </div>
     
 </div>

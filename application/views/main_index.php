@@ -15,6 +15,7 @@ $('.basketbal').animate({rotate: '+=45deg'});
     <figure class="korfbal">
         <h1>korfbal</h1>
         <div id="create">
+        
             <div class="startgame">
                 <img src="<?php echo base_url();?>img/start.png" />
                 <?php 

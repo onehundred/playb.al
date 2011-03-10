@@ -18,7 +18,7 @@ $(function(){
 
         type: "POST",
 
-        url: "http://playb.al/index.php/korfbal/korfbal_updateTransfer",
+        url: "http://playb.al/index.php/Json/korfbal_updateTransfer",
 
         data: { bedrag: bedrag,
             	spelerid: spelerid,
@@ -59,7 +59,7 @@ $("#transfer").submit(function(){
 		//alert (spelerid); 
             $.ajax({
     			type: "POST",
-    			url: "http://playb.al/index.php/korfbal/korfbal_addTransfer",
+    			url: "http://playb.al/index.php/Json/korfbal_addTransfer",
     			data: { bedrag: bedrag,
             			spelerid: spelerid,
             			teamid : teamid
@@ -114,7 +114,8 @@ $("#transfer").submit(function(){
     <br/>
     <?php $transfer = $row->transfer;
 			if($transfer == 0)
-			{?>
+			{
+			if(!isset($alien)){?>
     
     <!--p tag en geen a href omwille van verspringen van pagina-->
     <p id="spelertransfer" style="text-decoration:underline; cursor:pointer;">Plaats deze speler op de transfer markt</p>
@@ -128,7 +129,7 @@ $("#transfer").submit(function(){
         </form>
     </div>
     <p id="succes" style="display:none;">Speler is op de transferlijst geplaatst.</p>
-    <?php }else
+    <?php } }else
 			{?>
     <div> Plaats een bod op deze speler :
         <form id="bieden" onsubmit="return false;">

@@ -4,7 +4,27 @@
 	{
 		parent::__construct();
 	}
+	
+	function is_your_team()
+	{
+		$username = $this->session->userdata('username');
+		
+		$this->db->select('team_id');
+		$this->db->from('korf_teams');
+		$this->db->join('users', 'FK_user_id = user_id');
+		$this->db->where('gebruikersnaam', $username);
+		$query = $this->db->get();
+		
+		foreach($query->result() as $row)
+		{
+			$team_user_id = $row->team_id;
+			
+ 		
+		}
+		return $team_user_id;
 
+	
+	}
 
 
 	function get_team($team_id)

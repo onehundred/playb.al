@@ -422,7 +422,7 @@ $(document).ready(function()
 	
 			$.ajax({
     			type: "POST",
-    			url: "http://playb.al/index.php/korfbal/korfbal_jsonReview",
+    			url: "http://playb.al/index.php/Json/korfbal_jsonReview",
     			data:  { wedstrijdid: wedstrijdid,
             			
             			

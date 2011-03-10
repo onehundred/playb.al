@@ -154,7 +154,7 @@ $(function(){
 		
 		$.ajax({
 		type: "POST",
-		url: "http://playb.al/index.php/korfbal/korfbal_jsonStadion",
+		url: "http://playb.al/index.php/Json/korfbal_jsonStadion",
 		data: { teamid: teamid  },
 		dataType: "json",
         success: function(data) {
@@ -248,13 +248,13 @@ $(function(){
 		
 		if(id === 'sectie_b' || id === 'sectie_c' || id === 'sectie_d' || id === 'sectie_e' || id === 'sectie_f' || id === 'sectie_g' || id === 'sectie_h')
 		{
-			var url = "http://playb.al/index.php/korfbal/korfbal_buySection";
+			var url = "http://playb.al/index.php/Json/korfbal_buySection";
 			
 		}
 		
 		if(id === 'plaatsen_a' || id === 'plaatsen_b' || id === 'plaatsen_c' || id === 'plaatsen_d' || id === 'plaatsen_e' || id === 'plaatsen_f' || id === 'plaatsen_g' || id === 'plaatsen_h')
 		{
-			var url = "http://playb.al/index.php/korfbal/korfbal_buySeats";
+			var url = "http://playb.al/index.php/Json/korfbal_buySeats";
 			var input = id.split('plaatsen_');
 			//alert(input[1]);
 			var aantalplaatsen = $('#'+input[1]+'').val();
@@ -360,6 +360,7 @@ $(function(){
 						
 	<?php	}
 ?>
+<?php if(!isset($alien)){?>
 <div id="plaatsen">
 	<div id="sec_a">Sectie A: </div>
 	<div id="sec_b">Sectie B:</div>
@@ -370,7 +371,9 @@ $(function(){
 	<div id="sec_g">Sectie G: </div>
 	<div id="sec_h">Sectie H: </div>
 	
-</div></div><div class="players">
+</div>
+<?php } ?>
+</div><div class="players">
 <div id="stadion_container">
 <div id="stadion">
 <!-- sectie g rechts boven -->

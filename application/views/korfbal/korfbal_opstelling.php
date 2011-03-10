@@ -68,7 +68,7 @@
 		$(".droppable").remove();	
 		$.ajax({
     			type: "POST",
-    			url: "http://playb.al/index.php/korfbal/get_JsonOpstelling",
+    			url: "http://playb.al/index.php/Json/get_JsonOpstelling",
     			data: {
             			teamid: teamid
             		  },
@@ -224,7 +224,7 @@
 							
 							$.ajax({
 				    			type: "POST",
-				    			url: "http://playb.al/index.php/korfbal/korfbal_reorder",
+				    			url: "http://playb.al/index.php/Json/korfbal_reorder",
 				    			data: { positie: positie,
 				            			teamid: teamid,
 				            			geslacht: geslacht, 
@@ -295,7 +295,7 @@
 								//alert(positie);
 								$.ajax({
 					    			type: "POST",
-					    			url: "http://playb.al/index.php/korfbal/removePlayer_Opstelling",
+					    			url: "http://playb.al/index.php/Json/removePlayer_Opstelling",
 					    			data: { 
 					            			teamid: teamid, 
 					            			spelerid : spelerid,

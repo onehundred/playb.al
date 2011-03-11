@@ -27,7 +27,7 @@
             }else{
 
                 if(!isset($alien)){ ?>
-                	&nbsp;<a href="../korfbal_teamorders/&lt;?php echo $team_id; ?&gt;">Geef nu je opstelling door.</a><br>
+                	&nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door.</a><br>
         <?php }else{ ?>
         			<br>
         <?php }

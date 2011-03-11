@@ -131,7 +131,7 @@ $(function() {
 				//alert(teamid);
 				$.ajax({
     			type: "POST",
-    			url: "http://playb.al/index.php/korfbal_other_team/korfbal_jsonPlayers",
+    			url: "http://playb.al/index.php/Json/korfbal_jsonPlayers",
     			data:  { teamid: teamid,
             			
             			

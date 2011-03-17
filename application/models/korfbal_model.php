@@ -547,6 +547,7 @@
 	{
 		$this->db->select('*');
 		$this->db->from('korf_skills');
+		$this->db->join('korf_training', 'FK_skill_id = skill_id');
 		$this->db->join('korf_spelers', 'FK_player_id  = speler_id');
 		$this->db->where('FK_team_id', $teamid);
 		$query = $this->db->get();
@@ -564,6 +565,15 @@
 			$spelers[$i]['intercepting'] = $row->intercepting;
 			$spelers[$i]['playmaking'] = $row->playmaking;
 			$spelers[$i]['leadership'] = $row->leadership;
+			
+			$spelers[$i]['rebound_tr'] = $row->rebound_tr;
+			$spelers[$i]['stamina_tr'] = $row->stamina_tr;
+			$spelers[$i]['shotpower_tr'] = $row->shotpower_tr;
+			$spelers[$i]['shotprecision_tr'] = $row->shotprecision_tr;
+			$spelers[$i]['passing_tr'] = $row->passing_tr;
+			$spelers[$i]['intercepting_tr'] = $row->intercepting_tr;
+			$spelers[$i]['playmaking_tr'] = $row->playmaking_tr;
+			$spelers[$i]['leadership_tr'] = $row->leadership_tr;
 			
 			$i++;
 		

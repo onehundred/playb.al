@@ -1,133 +1,10 @@
 <script>
 
 $(function() {
-	
-
-	$('#training').click(function(){
-	
-	var teamid = $('#teamid').val();
-	$('#myModal p').remove();
-	$('#myModal div').remove();
-	//alert(teamid);
-	
-	
-	$(".target option:selected").each(function () {
-                var option = $(this).val();
-                //alert(option);
-                
-                //stamina
-                if(option === 'stamina'){
-                	var url = "http://playb.al/index.php/training/train_stamina";
-                	//alert('stamina');
-                }
-                //passing
-                if(option === 'passing'){
-                	var url = "http://playb.al/index.php/training/train_passing";
-                }
-                //shotpower
-                if(option === 'shotpower'){
-                	var url = "http://playb.al/index.php/training/train_shotpower";
-                }
-                //shotprecision
-                if(option === 'shotprecision'){
-                	var url = "http://playb.al/index.php/training/train_shotprecision";
-                //alert('shotprecision');
-                
-                }
-                //intercepting
-                if(option === 'intercepting'){
-                	var url = "http://playb.al/index.php/training/train_intercepting";
-                //alert('intercepting');
-                
-                }
-                //rebound
-                if(option === 'rebound'){
-                var url = "http://playb.al/index.php/training/train_rebound";
-                //alert('rebound');
-                
-                }
-                //playmaking
-                if(option === 'playmaking'){
-                var url = "http://playb.al/index.php/training/train_playmaking";
-                //alert('playmaking');
-                
-                }
-                
-                
-                 $.ajax({
-	    			type: "POST",
-	    			url: url,
-	    			data: { teamid: teamid
-	            			},
-	        		dataType: "json",
-	        		success: function(data){
-	        		
-	        		var spelers = data;
-	        		
-	        		if(data.energiecheck === false){
-	        		$().toastmessage('showErrorToast', "U heeft te weinig energiepunten.");
-	        		//alert('U hebt te weinig energiepunten');
-	        		}
-	        		else{
-	        		
-		        		for(var i in spelers){
-		        			
-		    				var progress = spelers[i].totaal / 10;
-		    				//alert(progress);
-		    				
-		    				
-		    				if(spelers[i].niveau){
-		    					$('#myModal').append('<p>'+spelers[i].naam +' is gestegen naar niveau '+spelers[i].niveau+'</p>');
-		        			$('#myModal').append('<div background-color=red; style=height:10px; id=progressbar'+i+'></div>');
-		        			
-		        			$( "#progressbar"+i ).progressbar({
-								value: progress
-							});
-
-		    				
-		    				}else{
-		    				
-		    				
-		        			
-		        			$('#myModal').append('<p>'+spelers[i].naam +' is '+spelers[i].gestegen+' punten gestegen. En heeft een totaal van '+ spelers[i].totaal+'</p>');
-		        			$('#myModal').append('<div style=height:10px; id=progressbar'+i+'></div>');
-		        			
-		        			$( "#progressbar"+i ).progressbar({
-								value: progress
-							});
-		        			
-		        			//alert(spelers[i].naam + spelers[i].skill);
-		   					$('#myModal').reveal({
-		        			
-		        			 animation: 'fade',                   //fade, fadeAndPop, none
-	    					 animationspeed: 300,                       //how fast animtions are
-	    					 closeonbackgroundclick: true,              //if you click background will modal close?
-	    					 dismissmodalclass: 'close-reveal-modal'    //the class of a button or element that will close an open modal
-	    					 });
-	    					 }
-		        		}
-	    			}
-	    			}
-	  				});
-                
-
-              });
-	
-		
-	
-	
-	
-	
-	});
-	
-	
-});	
-</script>
-<script>
-		$(function() {
-		
+	init();
+	function init(){
 				var teamid = $('#teamid').val();
-			
+				$('#chartCanvas1').empty();
 				//alert(teamid);
 				$.ajax({
     			type: "POST",
@@ -228,10 +105,136 @@ $(function() {
         		
   				});
 		
-				
-							
-			});
-	</script>
+				}
+
+
+	$('#training').click(function(){
+	
+	var teamid = $('#teamid').val();
+	$('#myModal p').remove();
+	$('#myModal div').remove();
+	//alert(teamid);
+	
+	
+	$(".target option:selected").each(function () {
+                var option = $(this).val();
+                //alert(option);
+                
+                //stamina
+                if(option === 'stamina'){
+                	var url = "http://playb.al/index.php/training/train_stamina";
+                	//alert('stamina');
+                }
+                //passing
+                if(option === 'passing'){
+                	var url = "http://playb.al/index.php/training/train_passing";
+                }
+                //shotpower
+                if(option === 'shotpower'){
+                	var url = "http://playb.al/index.php/training/train_shotpower";
+                }
+                //shotprecision
+                if(option === 'shotprecision'){
+                	var url = "http://playb.al/index.php/training/train_shotprecision";
+                //alert('shotprecision');
+                
+                }
+                //intercepting
+                if(option === 'intercepting'){
+                	var url = "http://playb.al/index.php/training/train_intercepting";
+                //alert('intercepting');
+                
+                }
+                //rebound
+                if(option === 'rebound'){
+                var url = "http://playb.al/index.php/training/train_rebound";
+                //alert('rebound');
+                
+                }
+                //playmaking
+                if(option === 'playmaking'){
+                var url = "http://playb.al/index.php/training/train_playmaking";
+                //alert('playmaking');
+                
+                }
+                
+                
+                 $.ajax({
+	    			type: "POST",
+	    			url: url,
+	    			data: { teamid: teamid
+	            			},
+	        		dataType: "json",
+	        		success: function(data){
+	        		
+	        		var spelers = data;
+	        		
+	        		if(data.energiecheck === false){
+	        		$().toastmessage('showErrorToast', "U heeft te weinig energiepunten.");
+	        		//alert('U hebt te weinig energiepunten');
+	        		}
+	        		else{
+	        		
+		        		for(var i in spelers){
+		        			
+		    				var progress = spelers[i].totaal / 10;
+		    				//alert(progress);
+		    				
+		    				
+		    				if(spelers[i].niveau){
+		    					$('#myModal').append('<p>'+spelers[i].naam +' is gestegen naar niveau '+spelers[i].niveau+'</p>');
+		        			$('#myModal').append('<div background-color=red; style=height:10px; id=progressbar'+i+'></div>');
+		        			
+		        			$( "#progressbar"+i ).progressbar({
+								value: progress
+							});
+
+		    				
+		    				}else{
+		    				
+		    				
+		        			
+		        			$('#myModal').append('<p>'+spelers[i].naam +' is '+spelers[i].gestegen+' punten gestegen. En heeft een totaal van '+ spelers[i].totaal+'</p>');
+		        			$('#myModal').append('<div style=height:10px; id=progressbar'+i+'></div>');
+		        			
+		        			$( "#progressbar"+i ).progressbar({
+								value: progress
+							});
+		        			
+		        			
+		        			//alert(spelers[i].naam + spelers[i].skill);
+		   						    					 
+	    					 
+	    					 
+	    					 }
+	    					 
+	    					 $('#myModal').reveal({
+		        			
+		        			 animation: 'fade',                   //fade, fadeAndPop, none
+	    					 animationspeed: 300,                       //how fast animtions are
+	    					 closeonbackgroundclick: true,              //if you click background will modal close?
+	    					 dismissmodalclass: 'close-reveal-modal'    //the class of a button or element that will close an open modal
+	    					 });
+
+		        		}
+	    			}
+	    			}
+	  				});
+                
+
+              });
+	
+		
+	
+	
+	
+	
+	});
+	
+	
+});	
+</script>
+
 
 <div class="players">
     <?php foreach($energie->result() as $row)

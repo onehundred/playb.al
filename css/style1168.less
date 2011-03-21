@@ -57,6 +57,8 @@
 body {
 	padding: 0 22px 0;
 	width: 1168px;
+	background-repeat: no-repeat;
+
 }
 header {
  height: @headerHeight;
@@ -109,7 +111,7 @@ h2 {
 	color: #666;
 }
 .sportnav {
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 .sportnav a {
 	text-transform: uppercase;
@@ -232,11 +234,18 @@ color: @korfbalColor;
 	background-color: #FFF;
 	width: 390px;
  .borderRadius;
- padding-left: 15px;
- padding-right: 15px;
- padding-bottom: 15px;
+padding: 0 15px 15px 15px;
  border: 1px solid #E5E5E5;
-	
+}
+.gameRight1{
+
+}
+.gameRight2{
+	float: left;
+	padding: 0 15px 0 0;
+}
+.gameRight3{
+	float: left;
 }
 .gameRight ul, .gameRight li {
 	list-style-type: none;
@@ -244,10 +253,10 @@ color: @korfbalColor;
 }
 .gameRight h2 {
 	font-size: 36px;
-
 }
+
 /* PLAYERS end -------------------------------------------------------------------------------------------------------------*/
-/* MATCHES start -------------------------------------------------------------------------------------------------------------*/
+/* MATCHES start -----------------------------------------------------------------------------------------------------------*/
 #matchTeamName, #versus {
 	font-size: 32px;
 	font-family: 'SFCollegiateSolidRegular';
@@ -256,9 +265,7 @@ color: @korfbalColor;
  	.textShadow;
  	display: inline;
 line-height: 34px;
-width: 100px;
-
- 	
+width: 100px; 	
 }
 #versus {
 color: black;
@@ -268,7 +275,31 @@ position: relative;
 */
 }
 /* MATCHES end ---------------------------------------------------------------------------------------------------------------*/
+/* DIVISION start ------------------------------------------------------------------------------------------------------------*/
+.division div {
+	float: left;
+	display: inline;
+	padding: 0 15px 0 0;
 
+
+}
+#team  {
+	width: 150px;
+	padding: 5px 15px 5px 0px;
+
+}
+#played, #won, #lost, #draw, #goalsPos, #goalsNeg, #goalsSal, #points {
+padding: 5px 15px 5px 0px;
+width: 50px;
+}
+.division2 div {
+float: left;
+	display: inline;
+	padding: 0 15px 0 0;
+
+}
+
+/* DIVISION end -----------------------------------------------------------------------------------------------------------*/
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footer {
 	background-image: url("../img/footer.png");
@@ -311,6 +342,7 @@ position: relative;
 	width: 100%;
 /* 	background-color: black; */
 /*  	background-image: url("../img/layouts_bg.png"); */
+
 }
 #layouts p, #layouts figure {
 	margin-top: 5px;

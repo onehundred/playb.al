@@ -85,7 +85,7 @@ foreach($spelers->result() as $row)
             <!-- <p id="gender"><img src="<?php echo base_url();?>img/male.png" /></p> --> 
             <br />
             <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
-            <p class="price"><?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?>$</p>
+            <p class="price"><?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?> &euro;</p>
             <br />
             <br />
             <div id="rightProgress">
@@ -130,64 +130,67 @@ foreach($spelers->result() as $row)
     </div></div>
     <div class="gameRight">
         <h2>spelers rangschikken</h2>
+      
         <ul id="sort" class="sort option-set">
             <ul class="sort asc option-set floated clearfix">
-                <li><a href="#number" class="selected">rugnummer <img src="<?php echo base_url();?>img/down.png" /></a></li>
+                <li><a href="#number" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
             </ul>
-            <li><a href="#number" class="" id="playerSort"><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <li><a href="#number" class="" id="playerSort"><img src="<?php echo base_url();?>img/up.png" /> rugnummer</a></li>
             <br />
             <ul class="sort asc option-set floated clearfix">
-                <li><a href="#age" class="selected">age <img src="<?php echo base_url();?>img/down.png" /></a></li>
+                <li><a href="#age" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
             </ul>
-            <li><a href="#age" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <li><a href="#age" class=""><img src="<?php echo base_url();?>img/up.png" /> leeftijd</a></li>
             <br />
             <ul class="sort asc option-set floated clearfix">
-                <li><a href="#price" class="selected">price <img src="<?php echo base_url();?>img/down.png" /></a></li>
+                <li><a href="#price" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
             </ul>
-            <li><a href="#price" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <li><a href="#price" class=""><img src="<?php echo base_url();?>img/up.png" /> prijs</a></li>
+            <br /><hr />
+            <div class="gameRight2">
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#passing" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#passing" class=""><img src="<?php echo base_url();?>img/up.png" /> passing</a></li>
             <br />
             <ul class="sort asc option-set floated clearfix">
-                <li><a href="#passing" class="selected">passing <img src="<?php echo base_url();?>img/down.png" /></a></li>
+                <li><a href="#shotpower" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
             </ul>
-            <li><a href="#passing" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <li><a href="#shotpower" class=""><img src="<?php echo base_url();?>img/up.png" /> shotpower</a></li>
             <br />
             <ul class="sort asc option-set floated clearfix">
-                <li><a href="#shotpower" class="selected">shotpower <img src="<?php echo base_url();?>img/down.png" /></a></li>
+                <li><a href="#intercepting" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
             </ul>
-            <li><a href="#shotpower" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <li><a href="#intercepting" class=""><img src="<?php echo base_url();?>img/up.png" /> intercepting</a></li>
             <br />
             <ul class="sort asc option-set floated clearfix">
-                <li><a href="#intercepting" class="selected">intercepting <img src="<?php echo base_url();?>img/down.png" /></a></li>
+                <li><a href="#leadership" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
             </ul>
-            <li><a href="#intercepting" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <li><a href="#leadership" class=""><img src="<?php echo base_url();?>img/up.png" /> leadership</a></li><br />
+           </div> <!-- end gameRight2 -->
+           <div class="gameRight3">
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#rebound" class=""><img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+             <li><a href="#rebound" class="selected"><img src="<?php echo base_url();?>img/up.png" /> rebound</a></li><br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#stamina" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
+            </ul>
+            <li><a href="#stamina" class=""><img src="<?php echo base_url();?>img/up.png" /> stamina</a></li>
             <br />
             <ul class="sort asc option-set floated clearfix">
-                <li><a href="#leadership" class="selected">leadership <img src="<?php echo base_url();?>img/down.png" /></a></li>
+                <li><a href="#shotprecision" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
             </ul>
-            <li><a href="#leadership" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li><br />
-           
-            <ul class="sort asc option-set floated clearfix">
-                <li><a href="#rebound" class="">rebound <img src="<?php echo base_url();?>img/down.png" /></a></li>
-            </ul>
-             <li><a href="#rebound" class="selected"><img src="<?php echo base_url();?>img/up.png" /></a></li><br />
-            <ul class="sort asc option-set floated clearfix">
-                <li><a href="#stamina" class="selected">stamina <img src="<?php echo base_url();?>img/down.png" /></a></li>
-            </ul>
-            <li><a href="#stamina" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <li><a href="#shotprecision" class=""><img src="<?php echo base_url();?>img/up.png" /> shotprecsion</a></li>
             <br />
             <ul class="sort asc option-set floated clearfix">
-                <li><a href="#shotprecision" class="selected">shotprecsion <img src="<?php echo base_url();?>img/down.png" /></a></li>
+                <li><a href="#playmaking" class="selected"><img src="<?php echo base_url();?>img/down.png" /></a></li>
             </ul>
-            <li><a href="#shotprecision" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
-            <br />
-            <ul class="sort asc option-set floated clearfix">
-                <li><a href="#playmaking" class="selected">playmaking <img src="<?php echo base_url();?>img/down.png" /></a></li>
-            </ul>
-            <li><a href="#playmaking" class=""><img src="<?php echo base_url();?>img/up.png" /></a></li>
+            <li><a href="#playmaking" class=""><img src="<?php echo base_url();?>img/up.png" /> playmaking</a></li>
         </ul>
         <!-- end ul id sort -->
-        
-    </div>
+       </div> <!-- end gameRight3 --> 
+    </div> <!-- end gameRight -->
     <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
 
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>

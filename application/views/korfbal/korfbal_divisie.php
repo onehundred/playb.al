@@ -5,45 +5,74 @@
 				 $divisienaam = $row->divisie; 
 				 $subdivisie = $row->sub_divisie;
 	} ?>
-
+<div class="players">
 <h1><?php echo $divisienaam;?>.<?php echo $subdivisie;?></h1>
-	<table>
-					<tr>
-						<td>Team</td>
-						<td>Gespeeld</td>
-						<td>Gewonnen</td>
-						<td>Verloren</td>
-						<td>Gelijk</td>
-						<td>Doelpunten voor</td>
-						<td>Doelpunten tegen</td>
-						<td>Doelpunten saldo</td>
-						<td>Punten</td>
-					</tr>
+<div class="division">
+<div id="team">
+team
+</div>
+<div id="played">
+MT
+
+</div>
+<div id="won">
+M
+</div>
+<div id="lost">
+M
+</div>
+<div id="draw">
+M
+</div>
+<div id="goalsPos">
+D
+</div>
+<div id="goalsNeg">
+D
+</div>
+<div id="goalsSal">
+DS
+</div>
+<div id="points">
+P
+</div>
+</div>
+<br />
 
 <?php foreach($divisie->result() as $row)
 			{?>
-				
-				
-			<tr>
-				<td><?php echo $row->naam;?></td>
-				<td><?php echo $row->gespeeld;?></td>
-				<td><?php echo $row->gewonnen;?></td>
-				<td><?php echo $row->verloren;?></td>
-				<td><?php echo $row->gelijk;?></td>
-				<td><?php $voor = $row->doelpunten_voor;
-				echo $voor;?></td>
-				<td><?php  $tegen = $row->doelpunten_tegen;
-					echo $tegen;?></td>
-				<td><?php $saldo = $voor - $tegen;
-					echo $saldo;?> </td>
-				<td><?php echo $row->divisiepunten;?></td>
-			</tr>
-				
-				
-
-
+<div class="division">
+<div id="team">
+<?php echo $row->naam;?>
+</div>
+<div id="played"> <!-- matches totaal -->
+<?php echo $row->gespeeld;?>
+</div>
+<div id="won"> <!-- matches gewonnen -->
+<?php echo $row->gewonnen;?>
+</div>
+<div id="lost"> <!-- matches verloren -->
+<?php echo $row->verloren;?>
+</div>
+<div id="draw"> <!-- matches gelijkspel -->
+<?php echo $row->gelijk;?>
+</div>
+<div id="goalsPos"> <!-- goals gemaakt -->
+<?php $voor = $row->doelpunten_voor; echo $voor;?>
+</div>
+<div id="goalsNeg"> <!-- goals tegen -->
+<?php  $tegen = $row->doelpunten_tegen; echo $tegen;?>
+</div>
+<div id="goalsSal"> <!-- goals saldo -->
+<?php $saldo = $voor - $tegen; echo $saldo;?>
+</div>
+<div id="points"> <!-- punten totaal -->
+<?php echo $row->divisiepunten;?>
+</div></div>
 		<?php	}
 		 
 		
 ?>
-</table>
+</div>
+
+<div class="gameRight">test</div>

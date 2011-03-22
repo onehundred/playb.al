@@ -8,4 +8,8 @@
 		
 		
    <?php }?>
-   </div><div class="gameRight">test</div>
+   </div><div class="gameRight">
+   <h2>achievements</h2>
+      <h2>bekers</h2>
+         <h2>banksaldo</h2>
+   </div>

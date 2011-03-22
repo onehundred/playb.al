@@ -1,4 +1,4 @@
-<div>
+<div class="players">
 
 <?php foreach($transfers->result() as $row)
 { ?>
@@ -29,3 +29,4 @@
 
 
 </div>
+<div class="gameRight"><h2>lorem ipsum</h2></div>

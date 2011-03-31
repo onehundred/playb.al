@@ -69,6 +69,14 @@
 ?>
 </div>
 <div class="gameRight">
-    <h2>vorige match</h2><p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.</p>
-    <h2>volgende match</h2><p>Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Curabitur blandit tempus porttitor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+    <h2>vorige matchen</h2>
+    <p><?php echo $vorige_matchen[1]['thuis']. " - " . $vorige_matchen[1]['uit']."   ". $vorige_matchen[1]['uitslag']; ?></p>
+    <p><?php echo $vorige_matchen[2]['thuis']. " - " . $vorige_matchen[2]['uit']."   ". $vorige_matchen[2]['uitslag']; ?></p>
+    <p><?php echo $vorige_matchen[3]['thuis']. " - " . $vorige_matchen[3]['uit']."   ". $vorige_matchen[3]['uitslag']; ?></p>
+    <p><?php echo $vorige_matchen[4]['thuis']. " - " . $vorige_matchen[4]['uit']."   ". $vorige_matchen[4]['uitslag']; ?></p>
+    <h2>volgende matchen</h2>
+     <p><?php echo $volgende_matchen[1]['thuis']. " - " . $volgende_matchen[1]['uit']; ?></p>
+    <p><?php echo $volgende_matchen[2]['thuis']. " - " . $volgende_matchen[2]['uit']; ?></p>
+    <p><?php echo $volgende_matchen[3]['thuis']. " - " . $volgende_matchen[3]['uit']; ?></p>
+    <p><?php echo $volgende_matchen[4]['thuis']. " - " . $volgende_matchen[4]['uit']; ?></p>
 </div>

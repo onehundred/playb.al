@@ -207,7 +207,10 @@
 			$week = $row->week;
 			$seizoen = $row->seizoen;
 		}
+		if($week == 1){
 		
+		}
+		else{
 		
 		$this->db->where('team_id',$team_id);
 		$divisie = $this->db->get('korf_teams');
@@ -236,7 +239,9 @@
 			}
 			$i++;
 		}
+	
 		return $team;
+		}
 	}
 	
 	function get_volgende_matchen($team_id)

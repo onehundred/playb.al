@@ -30,34 +30,12 @@ class Cron extends CI_Controller {
 	
 	function cron_test()
 	{
-		$team_id=1;
-		$cron = $this->db->get('korf_cron');
-		foreach($cron->result() as $row)
-		{
-			$week = $row->week;
-			$seizoen = $row->seizoen;
-		}
+		$teamid = 1;
 		
-		
-		$this->db->where('team_id',$team_id);
-		$divisie = $this->db->get('korf_teams');
-		foreach($divisie->result() as $row){
-			$divisieid = $row->FK_division_id;
-		
-		}
-		
-		$this->db->where('FK_divisie_id',$divisieid);
-		$this->db->where('week', $week-1);
-		$this->db->where('seizoen', $seizoen);
-		$wedstrijd = $this->db->get('korf_wedstrijden');
-		
-		foreach($wedstrijd->result() as $row){
-			$thuisteamid = $row->thuisteam;
-			$uitteamid = $row->bezoekersteam;
-			echo $thuisteamid."nbsp";
-			echo $uitteamid;
-			echo "<br/>";
-		}
+		$this->load->model('korfbal_model');
+		$sponsors = $this->korfbal_model->get_sponsors($teamid);
+		$json = json_encode($sponsors);
+		echo $json;
 	
 	
 	}

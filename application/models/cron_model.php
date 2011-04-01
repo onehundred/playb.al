@@ -2400,6 +2400,7 @@
 		$spelers = '';
 		$tussenstand = '';
 		$minuten = '';
+		//in array steken om random speler te laten scoren
 		$thuisspelerarray = array($thuis[$i]['attack2speler'],$thuis[$i]['attackspeler'],$thuis[$i]['attack3speler'],$thuis[$i]['attack4speler'],$thuis[$i]['reboundspeler'],$thuis[$i]['rebound2speler'],$thuis[$i]['playmakingspeler'],$thuis[$i]['playmaking2speler']);
 		$uitspelerarray = array($uit[$i]['attack2speler'],$uit[$i]['attackspeler'],$uit[$i]['attack3speler'],$uit[$i]['attack4speler'],$uit[$i]['reboundspeler'],$uit[$i]['rebound2speler'],$uit[$i]['playmakingspeler'],$uit[$i]['playmaking2speler']);
 

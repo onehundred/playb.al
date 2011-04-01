@@ -773,7 +773,32 @@
 		}
 	
 	}
-
+	
+	function get_sponsors($teamid)
+	{	
+	$this->db->select('*');
+	$this->db->from('korf_teams');
+	$this->db->join('korf_team_sponsors','team_id = FK_team_id');
+	$this->db->join('korf_sponsors', 'FK_sponsor_id = sponsor_id');
+	$this->db->where('team_id', $teamid);
+	$query = $this->db->get();
+	if($query->num_rows() == 0){
+		$niks = "niks";
+		return $niks;
+		
+	}else{
+		$sponsors = "";
+		$i=1;
+		foreach($query->result() as $row){
+			$sponsors[$i]['naam'] = $row->naam;
+			$sponsors[$i]['bedrag'] = $row->bedrag;
+			$sponsors[$i]['weken'] =$row->aantal_weken;
+			$i++;
+		}
+		return $sponsors;
+	}
+	
+	}
 
 
 

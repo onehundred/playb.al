@@ -1,63 +1,103 @@
-<script type="text/javascript">
-
-
-$('#korfbal').click(function() {
-$('.basketbal').animate({rotate: '+=45deg'});   
-   
-   });		
-
-
-
-		</script>
-		
 <section id="layouts">
-    <h1 id="tagline">manage jouw team</h1>
-    <figure class="korfbal">
-        <h1>korfbal</h1>
-        <div id="create">
-        
-            <div class="startgame">
-                <img src="<?php echo base_url();?>img/start.png" />
-                <?php 
-		echo anchor('main/signup','start');
-		?>
-            </div>
+        <div class="makeAccount" style="display: none;">
+        <div id="main_signup">
+            <h2>account aanmaken</h2>
+            <a href="#" id="makeAccountClose">sluiten</a>
+            <a href="#" id="switchAccountToLogin">heb je al een account?</a>
+            <section id="layouts">
+                <figure class="stripe1"></figure>
+                <figure class="stripe2"></figure>
+                <figure class="stripe3"></figure>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <?php
+		$js= "onClick=this.value=''";
+		echo form_open('main/create_user');
+		echo form_input('voornaam', set_value('voornaam', 'First Name'), $js);
+		echo form_input('achternaam', set_value('achternaam', 'Last Name'), $js);
+		echo form_email('email', set_value('email', 'E-Mail'),$js);
+		echo form_input('land', set_value('land', 'Country'),$js);
+	?>
+                </fieldset>
+                <fieldset>
+                    <legend>Login Info</legend>
+                    <?php	
+		echo form_input('username', set_value('username', 'Username'),$js);
+		echo form_input('paswoord', set_value('paswoord', 'Password'),$js);
+		echo form_input('paswoord2', set_value('paswoord2', 'Password confirm'),$js);
+		echo form_submit('submitsignup', 'Create account');
+		echo form_close();
+	?>
+                    <?php echo validation_errors('<p class="errors">');?>
+                </fieldset>
+            </section>
         </div>
-<!--         <img src="<?php echo base_url();?>img/down.png" id="down" /> -->
-        <img src="<?php echo base_url();?>img/korfbal.png" id="korfbal" />
+    </div> <!-- end makeAccount -->
+
+    <figure class="korfbal">
+        <img id="korfbalbg" src="<?php echo base_url();?>img/korfbalbg.png"/>
+        <div class="startgame">
+            <h1>korfbal</h1>
+            <a href="#" id="startKorfbal">start</a> </div>
+        <div class="korfbalAnimation" style="display: none;">
+            <img src="<?php echo base_url();?>img/korfbal.png" id="korfbal" ondragstart="return false"/>
+        </div>
     </figure>
     <figure class="basketbal">
-        <h1>basketbal</h1>
-        <div id="create">
-            <div class="startgame">
-                <img src="<?php echo base_url();?>img/start.png" />
-                <?php
-                
-
-		echo anchor('main/signup','start');
-		?>
-            </div>
+        <img id="basketbalbg" src="<?php echo base_url();?>img/basketbalbg.png" />
+        <div class="startgame">
+            <h1>basketbal</h1>
+            <a href="#" id="startBasketbal">start</a> </div>
+        <div class="basketbalAnimation" style="display: none;">
+            <img src="<?php echo base_url();?>img/basketbal.png" id="basketbal" ondragstart="return false"/>
         </div>
-<!--         <img src="<?php echo base_url();?>img/down.png" id="down" /> -->
-        <img src="<?php echo base_url();?>img/basketbal.png" id="basketbal" />
     </figure>
     <figure class="volleybal">
-        <h1>volleybal</h1>
-        <div id="create">
-            <div class="startgame">
-                <img src="<?php echo base_url();?>img/start.png" />
-                <?php
-		echo anchor('main/signup','start');
-		?>
-            </div>
+        <img id="volleybalbg" src="<?php echo base_url();?>img/volleybalbg.png" />
+        <div class="startgame">
+            <h1>volleybal</h1>
+            <a id="startVolleybal" href="#">start</a> </div>
+        <div class="volleybalAnimation" style="display: none;">
+            <img src="<?php echo base_url();?>img/volleybal.png" id="volleybal" ondragstart="return false" />
         </div>
-<!--         <img src="<?php echo base_url();?>img/down.png" id="down" /> -->
-        <img src="<?php echo base_url();?>img/volleybal.png" id="volleybal" />
     </figure>
-</section>
-<section id="bottom">
-    <div class="bottomButtons">
+
+       <div class="bottomButtons"> 
+        <!--
         <div class="light"><a href="#">hoe werkt het</a></div>
         <div class="question"><a href="#">bekijk demo</a></div>
+--> 
     </div>
+</section>
+<h1 id="tagline">manage jouw team.</h1>
+<section id="bottom">
+
+
+ </section>
+<section id="belowbottom"> 
+
+<div class="container">
+	
+    <div class="folio_block">
+    	
+        <div class="main_view">
+            <div class="galleryWrapper">	
+                <div class="imgs">
+<img src="<?php echo base_url();?>img/1.jpg" alt="" />
+<img src="<?php echo base_url();?>img/2.jpg" alt="" />
+<img src="<?php echo base_url();?>img/3.jpg" alt="" />
+<img src="<?php echo base_url();?>img/4.jpg" alt="" />
+                </div>
+            </div>
+            <div class="pagingGallery">
+                <a href="#" rel="1">1</a>
+                <a href="#" rel="2">2</a>
+                <a href="#" rel="3">3</a>
+                <a href="#" rel="4">4</a>
+            </div>
+        </div>
+
+    </div>	
+
+</div>
 </section>

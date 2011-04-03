@@ -1,25 +1,21 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Canvas Test</title>
+
     <link rel="stylesheet" href="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.css"/>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script> 
+<!--     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script>  -->
 	<script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 	<script src="<?php echo base_url();?>js/jquery.blockUI.js"></script>
-  </head>
-<body>
-  <section>
+
+  <div class="players">
     <div>
         <canvas style="border: solid 1px #000;" id="canvas" width="800" height="400">
-         This text is displayed if your browser 
-         does not support HTML5 Canvas.
+	    oops, jouw browser ondersteunt dit niet.
         </canvas>
     </div>
-    <div id="links">
+   
+</div>
+<div class="gameRight">
+ <div id="links">
     <input type="hidden" id="wedstrijdid" value="<?php echo $this->uri->segment('4');?>"    
     </div>
-
 <script>
 
 
@@ -467,6 +463,4 @@ $(document).ready(function()
 
 </script>
 
-  </section>
-</body>
-</html>
+</div>

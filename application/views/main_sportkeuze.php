@@ -1,5 +1,5 @@
 <section id="layouts">
-    <h1 id="tagline">manage jouw team</h1>
+
     <figure class="korfbal">
         <h1>Korfbal</h1>
         <div id=""><p id="overview">team:</p>
@@ -57,3 +57,4 @@
         <img src="<?php echo base_url();?>img/volleybal.png" id="volleybal" />
     </figure>
 </section>
+<h1 id="tagline">manage jouw team.</h1>

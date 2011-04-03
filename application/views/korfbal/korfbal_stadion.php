@@ -136,7 +136,7 @@
 	font-size: 9pt;
 }
 </style>
-<script src="<?php echo base_url();?>/js/jquery.flip.js"></script> 
+ 
 <script>
 $(function(){
 	getData();

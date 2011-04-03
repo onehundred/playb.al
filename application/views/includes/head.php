@@ -11,6 +11,7 @@
 <link href="<?php echo base_url();?>css/style.less" rel="stylesheet/less" />
 
 
+
 <!-- Fallback if browser does not support media queries + javascript (Read: Internet Explorer < 9) -->
 <!--[if lt IE 9]>
 	<link rel="stylesheet" href="8col.css" media="screen" />
@@ -24,12 +25,29 @@
 
 <script src="<?php echo base_url();?>js/less-1.0.41.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<!-- jquery lokaal wegens falen van google gedurende productie -->
+<script src="<?php echo base_url();?>js/jquery-1.5.2.min.js"></script>
+<script src="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.mediaqueries.js"></script>
+<script src="<?php echo base_url();?>js/touchswipe.js"></script>
+<script src="<?php echo base_url();?>js/playbal.js"></script>
+<script src="<?php echo base_url();?>js/jquery.transform.js"></script>
+<script src="<?php echo base_url();?>/js/jquery.flip.js"></script>
+<!--<script src="<?php echo base_url();?>js/jquery.circulate.js"></script>-->
+<!--<script src="<?php echo base_url();?>js/jquery.easing.js"></script>-->
+<script src="<?php echo base_url();?>js/jquery.loading.1.6.4.js"></script>
+<!--<script src="<?php echo base_url();?>js/hoverable.js"></script>-->
+<!--<script src="<?php echo base_url();?>js/touchable.js"></script>-->
 <script src="<?php echo base_url();?>js/modernizr-1.6.min.js"></script>
 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-
 </head>
 <body>
+<script>
+$(document).ready(function() {
+$('#wrap').loading({ text: 'loading', pulse: false, mask: true, max: 100 });
+});
+
+</script>

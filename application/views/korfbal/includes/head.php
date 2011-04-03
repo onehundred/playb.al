@@ -36,6 +36,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.mediaqueries.js"></script>
 <script src="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script src="<?php echo base_url();?>/js/jquery.flip.js"></script>
 <script src="<?php echo base_url();?>js/jquery.isotope.js"></script>
 <script src="<?php echo base_url();?>js/reveal/jquery.reveal.js"></script>
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>

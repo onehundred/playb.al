@@ -1,3 +1,4 @@
+<div class="profile">
 <?php $username =$this->session->userdata('username');
 
 if($username != ""){
@@ -16,3 +17,4 @@ if($username != ""){
 	
 
 <?php }?>
+</div>

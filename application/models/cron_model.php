@@ -2352,11 +2352,46 @@
     		$uitteamid = $wedstrijd[$i]['uitteam'];
     		
     		
-    		$thuistotaal = $thuis[$i]['rebound'] + $thuis[$i]['playmaking'] + $thuis[$i]['attack'] + $thuis[$i]['attack2'] + $thuis[$i]['rebound2'] +$thuis[$i]['playmaking2'] + $thuis[$i]['attack3'] + $thuis[$i]['attack4'];
+    	//spelersprestaties ingeven voor thuisteam
+			//reboundspeler
+		$rebound1_th = $this->speler_stats($thuis[$i]['reboundspelerid'],$thuis[$i]['rebound'], 'rebound');
+			//playmakingspeler
+		$playmaking1_th = $this->speler_stats($thuis[$i]['playmakingspelerid'],$thuis[$i]['playmaking'], 'playmaking');
+			//attack1
+		$attack1_th = $this->speler_stats($thuis[$i]['attackspelerid'],$thuis[$i]['attack'], 'attack');
+			//attack2
+		$attack2_th = $this->speler_stats($thuis[$i]['attack2spelerid'],$thuis[$i]['attack2'], 'attack');
+			//rebound2
+		$rebound2_th = $this->speler_stats($thuis[$i]['rebound2spelerid'],$thuis[$i]['rebound2'], 'rebound');
+			//playmaking2
+		$playmaking2_th = $this->speler_stats($thuis[$i]['playmaking2spelerid'],$thuis[$i]['playmaking2'], 'playmaking');	
+			//attack3
+		$attack3_th = $this->speler_stats($thuis[$i]['attack3spelerid'],$thuis[$i]['attack3'], 'attack');		
+			//attack4
+		$attack4_th = $this->speler_stats($thuis[$i]['attack4spelerid'],$thuis[$i]['attack4'], 'attack');		
+    	
+    	
+    	//spelersprestaties ingeven voor uitteam
+			//reboundspeler
+		$rebound1_uit = $this->speler_stats($uit[$i]['reboundspelerid'],$uit[$i]['rebound'], 'rebound');
+			//playmakingspeler
+		$playmaking1_uit = $this->speler_stats($uit[$i]['playmakingspelerid'],$uit[$i]['playmaking'], 'playmaking');
+			//attack1
+		$attack1_uit = $this->speler_stats($uit[$i]['attackspelerid'],$uit[$i]['attack'], 'attack');
+			//attack2
+		$attack2_uit = $this->speler_stats($uit[$i]['attack2spelerid'],$uit[$i]['attack2'], 'attack');
+			//rebound2
+		$rebound2_uit = $this->speler_stats($uit[$i]['rebound2spelerid'],$uit[$i]['rebound2'], 'rebound');
+			//playmaking2
+		$playmaking2_uit = $this->speler_stats($uit[$i]['playmaking2spelerid'],$uit[$i]['playmaking2'], 'playmaking');	
+			//attack3
+		$attack3_uit = $this->speler_stats($uit[$i]['attack3spelerid'],$uit[$i]['attack3'], 'attack');		
+			//attack4
+		$attack4_uit = $this->speler_stats($uit[$i]['attack4spelerid'],$uit[$i]['attack4'], 'attack');	
     		
-    		
-    		$uittotaal = $uit[$i]['rebound'] + $uit[$i]['playmaking'] + $uit[$i]['attack'] + $uit[$i]['attack2'] + $uit[$i]['rebound2'] +$uit[$i]['playmaking2'] + $uit[$i]['attack3'] + $uit[$i]['attack4'];
-
+    		//totaal opmaken adhv de sterkte/zwakte van de spelers
+    		$thuistotaal = $rebound1_th + $playmaking1_th + $attack1_th + $attack2_th + $rebound2_th + $playmaking2_th + $attack3_th + $attack4_th;    		
+    		$uittotaal = $rebound1_uit + $playmaking1_uit + $attack1_uit + $attack2_uit + $rebound2_uit + $playmaking2_uit + $attack3_uit + $attack4_uit; 
 
 		// inititaliseren van arrays voor het opslagen van de gegevens
 		$uitslag['thuis'] = 0;
@@ -2365,23 +2400,29 @@
 		$spelers = '';
 		$tussenstand = '';
 		$minuten = '';
+		//in array steken om random speler te laten scoren
+		$thuisspelerarray = array($thuis[$i]['attack2speler'],$thuis[$i]['attackspeler'],$thuis[$i]['attack3speler'],$thuis[$i]['attack4speler'],$thuis[$i]['reboundspeler'],$thuis[$i]['rebound2speler'],$thuis[$i]['playmakingspeler'],$thuis[$i]['playmaking2speler']);
+		$uitspelerarray = array($uit[$i]['attack2speler'],$uit[$i]['attackspeler'],$uit[$i]['attack3speler'],$uit[$i]['attack4speler'],$uit[$i]['reboundspeler'],$uit[$i]['rebound2speler'],$uit[$i]['playmakingspeler'],$uit[$i]['playmaking2speler']);
+
+
 		
-		
+		//matchacties en goals
 		for($j=1;$j<60;$j++){
 			$randkans1 = rand(0,2);
 			$randmin1 = rand($j,$j+1);
+			$randomspeler = rand(0,7);
 			if($randkans1 == 1 || $randkans1 == 2){
-					if($thuistotaal + rand(0,75) >= $uittotaal + rand(0,75))
+					if($thuistotaal + rand(0,400) >= $uittotaal + rand(0,400))
 					{
 						$uitslag['thuis'] = $uitslag['thuis'] + 1;
 						$minuten .= $randmin1.';';
 						$acties .= rand(1,2).';';
-						$spelers .= $thuis[$i]['attack2speler'].';';
+						$spelers .= $thuisspelerarray[$randomspeler].';';
 						$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
 					}else{
 						$uitslag['uit'] = $uitslag['uit'] + 1;
 						$acties .= '1;';
-						$spelers .= $uit[$i]['attack2speler'].';';
+						$spelers .= $uitspelerarray[$randomspeler].';';
 						$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
 						$minuten .= $randmin1.';';
 		
@@ -2391,6 +2432,8 @@
 
 		
 		}
+						
+						
 		
 		//gelijkstand
 		if($uitslag['thuis'] == $uitslag['uit']){
@@ -2633,182 +2676,57 @@
     	   //return $uitslag; 
     }
     
-    
-    
-    // functie om een standaard transfer te maken, TODO
-    function create_transferMan()
-    {
-    	$voornamen = array(
-    					
-    					'Aamos', 'Aapo', 'Aarne', 'Aatos', 'Ahti', 'Aki', 'Aki-Petteri','Akseli', 'Aleksi', 'Anssi', 'Antero', 'Antti', 'Ari', 'Ari-Pekka', 'Armas' ,'Arsi', 'Arto', 'Arttu', 'Arvi', 'Arvid Atso', 'Atte August', 'Aulis','Christian', 'Eemeli', 'Eemil', 'Eerik', 'Eero', 'Eetu', 'Eino', 'Einojuhani', 'Elias', 'Emppu', 'Ensio', 'Erkki', 'Erno', 'Esa', 'Esa-Pekka','Esko'
-
-
-    				);
-    				
-    	$achternamen = array(
-    					'Smith',
-        				'Jones',
-       				    'Winkler',
-                        'Cooper',
-                        'Cline'
-    	
-    	
-    	);
-    	
-    	
-    	$leeftijden = array(
-    					'16',
-    					'17',
-    					'18',
-    					'19',
-    					'20',
-    					'21',
-    					'22',
-    					'23'
-    					
-    	
-    	);		
-    	
-    	$rugnummer = rand(0, 99);	
-    		
-    		
-    				
-    	$voornaam = $voornamen[array_rand($voornamen)];
-    	$achternaam = $achternamen[array_rand($achternamen)];
-    	$leeftijd = $leeftijden[array_rand($leeftijden)];
-    	
-    	$new_player_insert_data = array(
-    		'voornaam' => $voornaam,
-    		'achternaam' => $achternaam,
-    		'leeftijd' => $leeftijd,
-    		'geslacht' => 'male',
-    		'rugnummer' => $rugnummer,
-    		'transfer' => 1
-    		
-    	
-    	);
-		
-		
-    	$insert = $this->db->insert('korf_spelers', $new_player_insert_data);
-    	
-    	if($insert){
-		    	$this->db->where('FK_team_id', null);
-		    	$this->db->order_by('speler_id', 'desc');
-		    	$query = $this->db->get('korf_spelers',1);
-		    	
-		    	foreach($query->result() as $row)
-		    	{
-		    		$spelerid = $row->speler_id;
-		    		
-		    		$deadline = date('Y-m-d h:i:s', strtotime("+3 days"));
-		    		$minimum = 3000;
-
-				$data = array(
-				'minimum_bod' => $minimum,
-				'FK_speler_id' => $spelerid,
-				'deadline' => $deadline,
-				'FK_hoogste_bieder' => 0
+    function speler_stats($id, $hoofdskill, $positie){
+			if($id == 0){
+				$prestatie = 0;
+				return $prestatie;
 				
-
-				);
-
-
-			$this->db->insert('korf_transfers', $data);
-
-		    	
-		    	
-		    	}
-    	
-    	
-    	
-		}
-    
-    }
-		
-		//functie om standaard transfer te maken, TODO
-		function create_transferVrouw()
-		{
-			$voornamen = array(
-    					'josefien', 
-    					'nele',
-    					'anke',
-    					'mieke',
-    					'maria'
-    				);
-    				
-    	$achternamen = array(
-    					'vandevelde',
-        				'pony',
-       				    'deboi',
-                        'deschelde',
-                        'de moeder'
-    	
-    	
-    	);
-    	
-    	
-    	$leeftijden = array(
-    					'16',
-    					'17',
-    					'18',
-    					'19',
-    					'20',
-    					'21',
-    					'22',
-    					'23'
-    					
-    	
-    	);			
-    		
-    	$rugnummer = rand(0, 99);	
-    				
-    	$voornaam = $voornamen[array_rand($voornamen)];
-    	$achternaam = $achternamen[array_rand($achternamen)];
-    	$leeftijd = $leeftijden[array_rand($leeftijden)];
-    	
-    	$new_player_insert_data = array(
-    		'voornaam' => $voornaam,
-    		'achternaam' => $achternaam,
-    		'leeftijd' => $leeftijd,
-    		'geslacht' => 'female',
-    		'rugnummer' => $rugnummer,
-    		'transfer' => 1
-    		
-    	
-    	);
-		
-    	$insert = $this->db->insert('korf_spelers', $new_player_insert_data);
-    	if($insert){
-		    	$this->db->where('FK_team_id', null);
-		    	$this->db->order_by('speler_id', 'desc');
-		    	$query = $this->db->get('korf_spelers',1);
-		    	
-		    	foreach($query->result() as $row)
-		    	{
-		    		$spelerid = $row->speler_id;
-		    		
-		    		$deadline = date('Y-m-d h:i:s', strtotime("+3 days"));
-		    		$minimum = 3000;
-
-				$data = array(
-				'minimum_bod' => $minimum,
-				'FK_speler_id' => $spelerid,
-				'deadline' => $deadline,
-				'FK_hoogste_bieder' => 9999
+			}else{
+					//echo $thuis[$i]['rebound'];
+			    $prestatie = ($hoofdskill*4)+rand(-10, 10); //(rebound = 80%)(stamina=20%)(random factor)
+       				$this->db->where('FK_speler_id', $id);
+				$statsquery = $this->db->get('korf_spelerstats');
 				
-	
-				);
-
-
-			$this->db->insert('korf_transfers', $data);
-		
+				//als er nog geen entry bestaat == eerste wedstrijd voor deze speler
+				if($statsquery->num_rows() == 0){
+					$data = array(
+						'FK_speler_id' => $id,
+						'prestatie_laatste' => $prestatie,
+						'prestatie_beste' =>$prestatie,
+						'laatste_positie' => $positie
+					
+					);
+					
+					$this->db->insert('korf_spelerstats',$data);
+				
+				}else{
+					foreach($statsquery->result() as $row){
+						$beste = $row->prestatie_beste;
+					}
+						if($beste < $prestatie){
+							$beste_final = $prestatie;
+						}else{
+							$beste_final = $beste;
+						
+						} 
+					
+					 
+					$data = array(
+						'prestatie_laatste' => $prestatie,
+						'prestatie_beste' => $beste_final,
+						'laatste_positie' => $positie
+					
+					);
+					$this->db->where('FK_speler_id',$id);
+					$this->db->update('korf_spelerstats', $data); 
+				
+					
+				}
+				return $prestatie;
 			}
+
+		
 		}
+
     
-    }
-    
-    
-    
-    
-    
- }  
+ }

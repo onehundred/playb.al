@@ -175,7 +175,10 @@ class Korfbal extends CI_Controller {
 		$data['team_id'] = $team_id;
 		$this->load->model('korfbal_model');
 		
-		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);	
+		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);
+		
+		$data['vorige_matchen'] = $this->korfbal_model->get_vorige_matchen($team_id);
+		$data['volgende_matchen'] = $this->korfbal_model->get_volgende_matchen($team_id);	
 		
 		
 		$team = $this->korfbal_model->get_team($team_id);
@@ -301,8 +304,8 @@ class Korfbal extends CI_Controller {
 		$this->load->view('korfbal/includes/template', $data);
 	}
 	
+	
+	
 		
-	}
+}
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

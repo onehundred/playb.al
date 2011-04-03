@@ -200,6 +200,19 @@ class Json extends CI_Controller {
 
 		
 	}
+	
+	
+	function korfbal_sponsors()
+	{
+		$teamid = $_POST['teamid'];
+		
+		$this->load->model('korfbal_model');
+		$sponsors = $this->korfbal_model->get_sponsors($teamid);
+		$json = json_encode($sponsors);
+		echo $json;
+	
+	
+	}
 
 
 }

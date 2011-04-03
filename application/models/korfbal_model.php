@@ -198,6 +198,90 @@
 
 
 	}
+	
+	function get_vorige_matchen($team_id)
+	{
+		$cron = $this->db->get('korf_cron');
+		foreach($cron->result() as $row)
+		{
+			$week = $row->week;
+			$seizoen = $row->seizoen;
+		}
+		if($week == 1){
+		
+		}
+		else{
+		
+		$this->db->where('team_id',$team_id);
+		$divisie = $this->db->get('korf_teams');
+		foreach($divisie->result() as $row){
+			$divisieid = $row->FK_division_id;
+		
+		}
+		
+		$this->db->where('FK_divisie_id',$divisieid);
+		$this->db->where('week', $week-1);
+		$this->db->where('seizoen', $seizoen);
+		$wedstrijd = $this->db->get('korf_wedstrijden');
+		
+			$i=1;
+		foreach($wedstrijd->result() as $row){
+			$team[$i]['uitslag'] = $row->uitslag;
+			$thuisteamid = $row->thuisteam;
+			$uitteamid = $row->bezoekersteam;
+			$thuisteam = $this->get_team($thuisteamid);
+			$uitteam = $this->get_team($uitteamid);
+			foreach($thuisteam->result() as $row){
+				$team[$i]['thuis'] = $row->naam;
+			}
+			foreach($uitteam->result() as $row){
+				$team[$i]['uit'] = $row->naam;
+			}
+			$i++;
+		}
+	
+		return $team;
+		}
+	}
+	
+	function get_volgende_matchen($team_id)
+	{
+		$cron = $this->db->get('korf_cron');
+		foreach($cron->result() as $row)
+		{
+			$week = $row->week;
+			$seizoen = $row->seizoen;
+		}
+		
+		
+		$this->db->where('team_id',$team_id);
+		$divisie = $this->db->get('korf_teams');
+		foreach($divisie->result() as $row){
+			$divisieid = $row->FK_division_id;
+		
+		}
+		
+		$this->db->where('FK_divisie_id',$divisieid);
+		$this->db->where('week', $week);
+		$this->db->where('seizoen', $seizoen);
+		$wedstrijd = $this->db->get('korf_wedstrijden');
+		
+			$i=1;
+		foreach($wedstrijd->result() as $row){
+			$thuisteamid = $row->thuisteam;
+			$uitteamid = $row->bezoekersteam;
+			$thuisteam = $this->get_team($thuisteamid);
+			$uitteam = $this->get_team($uitteamid);
+			foreach($thuisteam->result() as $row){
+				$team[$i]['thuis'] = $row->naam;
+			}
+			foreach($uitteam->result() as $row){
+				$team[$i]['uit'] = $row->naam;
+			}
+			$i++;
+		}
+		return $team;
+	}
 
 
 	function get_transfers()
@@ -689,7 +773,32 @@
 		}
 	
 	}
-
+	
+	function get_sponsors($teamid)
+	{	
+	$this->db->select('*');
+	$this->db->from('korf_teams');
+	$this->db->join('korf_team_sponsors','team_id = FK_team_id');
+	$this->db->join('korf_sponsors', 'FK_sponsor_id = sponsor_id');
+	$this->db->where('team_id', $teamid);
+	$query = $this->db->get();
+	if($query->num_rows() == 0){
+		$niks = "niks";
+		return $niks;
+		
+	}else{
+		$sponsors = "";
+		$i=1;
+		foreach($query->result() as $row){
+			$sponsors[$i]['naam'] = $row->naam;
+			$sponsors[$i]['bedrag'] = $row->bedrag;
+			$sponsors[$i]['weken'] =$row->aantal_weken;
+			$i++;
+		}
+		return $sponsors;
+	}
+	
+	}
 
 
 

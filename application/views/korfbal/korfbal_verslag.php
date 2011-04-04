@@ -510,11 +510,14 @@ $(document).ready(function()
 	var wedstrijdid = $('#wedstrijdid').val();
 	$('#loading').hide();
 	$('#prestaties').hide();
+	$('.gameRight').hide();
 	
 	
 	$('#loading').ajaxSuccess(function() {
   		$(this).hide();
   		$('#prestaties').show();
+  		$('.gameRight').show();
+  		
 	});
 	
 	$('#loading').ajaxStart(function() {

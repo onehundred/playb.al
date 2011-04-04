@@ -44,6 +44,27 @@ class Json extends CI_Controller {
 
 	
 	}
+	
+	function korfbal_jsonSpelerNaam()
+	{
+		$spelerid = $_POST['spelerid'];
+		
+		$this->load->model('korfbal_model');
+		$json = $this->korfbal_model->getSpelerNaam($spelerid);
+		echo json_encode($json);
+	
+	}
+	
+	function korfbal_jsonTeamNaam()
+	{
+		$teamid = $_POST['teamid'];
+		
+		$this->load->model('korfbal_model');
+		$json = $this->korfbal_model->getTeamNaam($teamid);
+		echo json_encode($json);
+	
+	}
+
 	function korfbal_jsonReview()
 	{
 		$wedstrijdid = $_POST['wedstrijdid'];

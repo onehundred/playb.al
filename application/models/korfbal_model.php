@@ -718,13 +718,48 @@
 			$verslag['acties'] = $row->acties;
 			$verslag['minuten'] =$row->minuten;
 			$verslag['spelers'] = $row->spelers;
-			$verslag['tussenstand'] =$row->tussenstand;		
+			$verslag['tussenstand'] =$row->tussenstand;	
+			$verslag['prest_thuisteam']=$row->prestaties_thuisteam;
+			$verslag['opst_thuisteam']=$row->opstelling_thuisteam;
+			$verslag['prest_uitteam']=$row->prestaties_uitteam;
+			$verslag['opst_uitteam']=$row->opstelling_uitteam;	
+			$verslag['thuisteamid']=$row->thuisteam_id;
+			$verslag['uitteamid']= $row->uitteam_id;
 		}
 
 		return $verslag;
 	
 	}
 	
+	function getSpelerNaam($spelerid)
+	{
+		$this->db->where('speler_id', $spelerid);
+		$query = $this->db->get('korf_spelers');
+		foreach($query->result() as $row){
+			$speler['voornaam'] = $row->voornaam;
+			$speler['achternaam'] = $row->achternaam;		
+		}
+		
+		return $speler;
+		
+		
+	
+	}
+	
+	function getTeamNaam($teamid)
+	{
+		$this->db->where('team_id', $teamid);
+		$query = $this->db->get('korf_teams');
+		foreach($query->result() as $row){
+			$team['teamnaam'] = $row->naam;
+				
+		}
+		
+		return $team;
+		
+		
+	
+	}
 	function buySection($sectie, $teamid)
 	{
 		$data = array(

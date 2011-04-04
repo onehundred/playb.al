@@ -30,12 +30,12 @@ class Cron extends CI_Controller {
 	
 	function cron_test()
 	{
-		$teamid = 1;
+		$spelerid = 14;
 		
 		$this->load->model('korfbal_model');
-		$sponsors = $this->korfbal_model->get_sponsors($teamid);
-		$json = json_encode($sponsors);
-		echo $json;
+		$json = $this->korfbal_model->getSpelerNaam($spelerid);
+		echo json_encode($json);
+
 	
 	
 	}
@@ -106,11 +106,11 @@ class Cron extends CI_Controller {
 	//om de 2 dagen
 	function play_games()
 	{
-		$this->load->model('cron_model');
-		$wedstrijd = $this->cron_model->get_wedstrijden();
-		$thuisstats = $this->cron_model->get_statsthuisteam($wedstrijd);
-		$uitstats = $this->cron_model->get_statsuitteam($wedstrijd);
-		$thuis = $this->cron_model->play_games($thuisstats, $uitstats, $wedstrijd);
+		$this->load->model('match_engine');
+		$wedstrijd = $this->match_engine->get_wedstrijden();
+		$thuisstats = $this->match_engine->get_statsthuisteam($wedstrijd);
+		$uitstats = $this->match_engine->get_statsuitteam($wedstrijd);
+		$thuis = $this->match_engine->play_games($thuisstats, $uitstats, $wedstrijd);
 		//print_r ($thuisstats);	
 		
 	}

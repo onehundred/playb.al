@@ -7,7 +7,7 @@
     <div class="players">
         <?php for($i=1;$i<15;$i++){ ?>
 
-        <p id="matchTeamName"><?php echo $matches[$i]['thuis'];?></p>
+      <p>  <p id="matchTeamName"><?php echo $matches[$i]['thuis'];?></p>
 
         <p id="versus">VS</p>
 
@@ -24,16 +24,15 @@
 
                 }
 
-            }else{
+             } } ?></p>
+             
+             
 
-                if(!isset($alien)){ ?>
-                	&nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door.</a><br>
-        <?php }else{ ?>
-        			<br>
-        <?php }
+               <?php if(!isset($alien)){ ?>
+                	&nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door voor de volgende wedstrijd.</a> <?php }?>
+       
 
-
-            } } ?>
+           
     </div>
 
     <div class="gameRight">

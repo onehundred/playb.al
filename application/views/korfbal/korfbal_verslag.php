@@ -10,11 +10,104 @@
 	    oops, jouw browser ondersteunt dit niet.
         </canvas>
     </div>
+    <div id="loading"><img src="<?php echo base_url()?>/img/loading.gif"/></div>
+    <div id="prestaties">
+    	<div style="float:right; margin-right:200px;" id="uitteam">
+    		<h3 id="naam_uitteam"></h3>
+    			<div id="rebound1">
+    			<h4>Rebound</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>
+    		<div id="playmaking1">
+    			<h4>Spelmaken</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="attack1">
+    			<h4>Aanval</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>
+    		<div id="attack2">
+    			<h4>Aanval</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="rebound2">
+    			<h4>Rebound</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="playmaking2">
+    			<h4>Spelmaken</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="attack3">
+    			<h4>Aanval</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="attack4">
+    			<h4>Aanval</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    	</div>
+
+    	<div id="thuisteam">
+    	<h3 id="naam_thuisteam"></h3>
+    		<div id="rebound1">
+    			<h4>Rebound</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>
+    		<div id="playmaking1">
+    			<h4>Spelmaken</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="attack1">
+    			<h4>Aanval</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>
+    		<div id="attack2">
+    			<h4>Aanval</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="rebound2">
+    			<h4>Rebound</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="playmaking2">
+    			<h4>Spelmaken</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="attack3">
+    			<h4>Aanval</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    		<div id="attack4">
+    			<h4>Aanval</h4>
+    			<p id="speler"></p>
+    			<p id="prestatie"></p>
+    		</div>	
+    	</div>
+    	    	
+    
+    </div>
    
 </div>
 <div class="gameRight">
  <div id="links">
-    <input type="hidden" id="wedstrijdid" value="<?php echo $this->uri->segment('4');?>"    
+    <input type="hidden" id="wedstrijdid" value="<?php echo $this->uri->segment('4');?>">
+    <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>">  
     </div>
 <script>
 
@@ -415,7 +508,21 @@ function clear()
 $(document).ready(function()
 {
 	var wedstrijdid = $('#wedstrijdid').val();
+	$('#loading').hide();
+	$('#prestaties').hide();
+	$('.gameRight').hide();
 	
+	
+	$('#loading').ajaxSuccess(function() {
+  		$(this).hide();
+  		$('#prestaties').show();
+  		$('.gameRight').show();
+  		
+	});
+	
+	$('#loading').ajaxStart(function() {
+ 	 $(this).show();
+	});
 			$.ajax({
     			type: "POST",
     			url: "http://playb.al/index.php/Json/korfbal_jsonReview",
@@ -432,6 +539,19 @@ $(document).ready(function()
         			var spelers = verslag['spelers'].split(';');
         			var tussenstand = verslag['tussenstand'].split(';');
         			
+        			
+        			//prestaties van het thuisteam
+        			var prest_thuisteam = verslag['prest_thuisteam'].split(';');
+        			//prestaties van het uitteam
+        			var prest_uitteam = verslag['prest_uitteam'].split(';');
+        			
+        			//opstelling van het thuisteam
+        			var opst_thuisteam = verslag['opst_thuisteam'].split(';');
+        			//opstelling van het uitteam
+        			var opst_uitteam = verslag['opst_uitteam'].split(';');
+        			//alert(verslag['thuisteamid']);
+        			//alert(verslag['uitteamid']);
+        			
         			for(var i in minuten)
         			{
         				if(acties[i] === '1'){
@@ -443,14 +563,172 @@ $(document).ready(function()
         				
         				}
         			}
-        		
+        			
+        			//teamnamen appenden
+        			
+        			$('#naam_thuisteam').append(get_teamnaam(verslag['thuisteamid']));
+        			$('#naam_uitteam').append(get_teamnaam(verslag['uitteamid']));
+        			
+ 					//thuisteam
+ 					$('#thuisteam #rebound1 #speler').append(get_spelernaam(opst_thuisteam[0],verslag['thuisteamid']));
+ 					$('#thuisteam #rebound1 #prestatie').append(aantal_ballen(prest_thuisteam[0])); 
+ 					
+ 					$('#thuisteam #playmaking1 #speler').append(get_spelernaam(opst_thuisteam[1],verslag['thuisteamid']));
+ 					$('#thuisteam #playmaking1 #prestatie').append(aantal_ballen(prest_thuisteam[1]));
+ 					
+ 					$('#thuisteam #attack1 #speler').append(get_spelernaam(opst_thuisteam[2],verslag['thuisteamid']));
+ 					$('#thuisteam #attack1 #prestatie').append(aantal_ballen(prest_thuisteam[2]));
+ 					
+ 					$('#thuisteam #attack2 #speler').append(get_spelernaam(opst_thuisteam[3],verslag['thuisteamid']));
+ 					$('#thuisteam #attack2 #prestatie').append(aantal_ballen(prest_thuisteam[3]));
+ 					
+ 					$('#thuisteam #rebound2 #speler').append(get_spelernaam(opst_thuisteam[4],verslag['thuisteamid']));
+ 					$('#thuisteam #rebound2 #prestatie').append(aantal_ballen(prest_thuisteam[4]));
+ 					
+ 					$('#thuisteam #playmaking2 #speler').append(get_spelernaam(opst_thuisteam[5],verslag['thuisteamid']));
+ 					$('#thuisteam #playmaking2 #prestatie').append(aantal_ballen(prest_thuisteam[5]));
+ 					
+ 					$('#thuisteam #attack3 #speler').append(get_spelernaam(opst_thuisteam[6],verslag['thuisteamid']));
+ 					$('#thuisteam #attack3 #prestatie').append(aantal_ballen(prest_thuisteam[6]));
+ 					
+ 					$('#thuisteam #attack4 #speler').append(get_spelernaam(opst_thuisteam[7],verslag['thuisteamid']));
+ 					$('#thuisteam #attack4 #prestatie').append(aantal_ballen(prest_thuisteam[7]));
+ 					
+ 					//uitteam
+ 					$('#uitteam #rebound1 #speler').append(get_spelernaam(opst_uitteam[0],verslag['uitteamid']));
+ 					$('#uitteam #rebound1 #prestatie').append(aantal_ballen(prest_uitteam[0])); 
+ 				
+ 					$('#uitteam #playmaking1 #speler').append(get_spelernaam(opst_uitteam[1],verslag['uitteamid']));
+ 					$('#uitteam #playmaking1 #prestatie').append(aantal_ballen(prest_uitteam[1]));
+ 					
+ 					$('#uitteam #attack1 #speler').append(get_spelernaam(opst_uitteam[2],verslag['uitteamid']));
+ 					$('#uitteam #attack1 #prestatie').append(aantal_ballen(prest_uitteam[2]));
+ 					
+ 					$('#uitteam #attack2 #speler').append(get_spelernaam(opst_uitteam[3],verslag['uitteamid']));
+ 					$('#uitteam #attack2 #prestatie').append(aantal_ballen(prest_uitteam[3]));
+ 					
+ 					$('#uitteam #rebound2 #speler').append(get_spelernaam(opst_uitteam[4],verslag['uitteamid']));
+ 					$('#uitteam #rebound2 #prestatie').append(aantal_ballen(prest_uitteam[4]));
+ 					
+ 					$('#uitteam #playmaking2 #speler').append(get_spelernaam(opst_uitteam[5],verslag['uitteamid']));
+ 					$('#uitteam #playmaking2 #prestatie').append(aantal_ballen(prest_uitteam[5]));
+ 					
+ 					$('#uitteam #attack3 #speler').append(get_spelernaam(opst_uitteam[6],verslag['uitteamid']));
+ 					$('#uitteam #attack3 #prestatie').append(aantal_ballen(prest_uitteam[6]));
+ 					
+ 					$('#uitteam #attack4 #speler').append(get_spelernaam(opst_uitteam[7],verslag['uitteamid']));
+ 					$('#uitteam #attack4 #prestatie').append(aantal_ballen(prest_uitteam[7]));
+     		
         		
         		}
         		
         		});
+        		
+        		
+     //functie die de namen van de ploegen gaat ophalen   		
+	function get_teamnaam(teamid){
+		var teamnaam = ''; 
+		 $.ajax({
+    			type: "POST",
+    			url: "http://playb.al/index.php/Json/korfbal_jsonTeamNaam",
+    			data:  { teamid: teamid,
+            			
+            			
+        				},
+    			dataType: "json",
+        		success: function(data){
+        			teamnaam = data.teamnaam;
+        			
+        			
+        		},
+        		async:false //asynchronous om da variablen van een ajax call global te kunnen maken
+        		
+			});
 
-
+		return teamnaam;
 	
+	
+	}
+	//functie die de naam van de speler gaat halen 
+	
+	function get_spelernaam(id, teamid){
+		var groepid = $('#teamid').val();
+		//alert(teamid);
+		if(id == 0){
+			return "lege plek";
+		}else{
+				var voornaam;
+				var achternaam;
+			  $.ajax({
+    			type: "POST",
+    			url: "http://playb.al/index.php/Json/korfbal_jsonSpelerNaam",
+    			data:  { spelerid: id,
+            			
+            			
+        				},
+    			dataType: "json",
+        		success: function(data){
+        			voornaam =  data.voornaam;
+        			achternaam = data.achternaam;
+        			
+        			
+        		},
+        		async:false //asynchronous om da variablen van een ajax call global te kunnen maken
+        		
+			});
+			//alert(voornaam);
+			
+			if(groepid == teamid){
+				return '<a href="http://playb.al/index.php/korfbal/korfbal_player/'+teamid+'/'+id+'">'+voornaam+' '+ achternaam+'</a>';
+			}else{
+				return '<a href="http://playb.al/index.php/korfbal_other_team/korfbal_player/'+teamid+'/'+id+'">'+voornaam+' '+ achternaam+'</a>';
+			
+			}
+						
+		
+		}
+	}
+	//functie die het aantal bal images teruggeeft
+	function aantal_ballen(prestatie){
+		if(prestatie>=0 && prestatie<10){
+				return  'Slechte prestatie';
+			}
+		if(prestatie>=10 && prestatie<20){
+				return  '<img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/>';
+			}
+			
+		if(prestatie>=20 && prestatie<30){
+				return  '<img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/>';
+			}
+		
+		if(prestatie>=30 && prestatie<40){
+				return  '<img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/>';
+			}
+		
+		if(prestatie>=40 && prestatie<50){
+				return  '<img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/>';
+			}	
+			
+		if(prestatie>=50 && prestatie<60){
+				return  '<img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/>';
+			}
+			
+		if(prestatie>=60 && prestatie<70){
+				return  '<img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/>';
+			}	
+			
+			
+		if(prestatie>=70 && prestatie<80){
+				return  '<img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/>';
+			}		
+			
+		//nog verder aan te vullen			
+			
+				
+	}
+	
+	
+	//clicken om een actie te bekijken
 	$(".actie").live('click', function(){
 		$('#links').block({ 
                 message: '<h4>Even wachten tot de animatie is afgelopen</h4>', 

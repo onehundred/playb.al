@@ -166,12 +166,38 @@
 
 	function get_finances($team_id)
 	{
+		$cron = $this->db->get('korf_cron');
+		foreach($cron->result() as $row)
+		{
+			$week = $row->week;
+			$seizoen = $row->seizoen;
+		}
+		$this->db->where('week', $week);
+		$this->db->where('seizoen', $seizoen);
 		$this->db->where('FK_team_id', $team_id);
 		$this->db->select('*');
 		$query = $this->db->get('korf_financien');
 		return $query;
 
 	}
+	
+	function get_finances_vorige($team_id)
+	{
+		$cron = $this->db->get('korf_cron');
+		foreach($cron->result() as $row)
+		{
+			$week = $row->week;
+			$seizoen = $row->seizoen;
+		}
+		$this->db->where('week', $week-1);
+		$this->db->where('seizoen', $seizoen);
+		$this->db->where('FK_team_id', $team_id);
+		$this->db->select('*');
+		$query = $this->db->get('korf_financien');
+		return $query;
+
+	}
+
 
 
 	function get_divisie($team_id)
@@ -718,13 +744,48 @@
 			$verslag['acties'] = $row->acties;
 			$verslag['minuten'] =$row->minuten;
 			$verslag['spelers'] = $row->spelers;
-			$verslag['tussenstand'] =$row->tussenstand;		
+			$verslag['tussenstand'] =$row->tussenstand;	
+			$verslag['prest_thuisteam']=$row->prestaties_thuisteam;
+			$verslag['opst_thuisteam']=$row->opstelling_thuisteam;
+			$verslag['prest_uitteam']=$row->prestaties_uitteam;
+			$verslag['opst_uitteam']=$row->opstelling_uitteam;	
+			$verslag['thuisteamid']=$row->thuisteam_id;
+			$verslag['uitteamid']= $row->uitteam_id;
 		}
 
 		return $verslag;
 	
 	}
 	
+	function getSpelerNaam($spelerid)
+	{
+		$this->db->where('speler_id', $spelerid);
+		$query = $this->db->get('korf_spelers');
+		foreach($query->result() as $row){
+			$speler['voornaam'] = $row->voornaam;
+			$speler['achternaam'] = $row->achternaam;		
+		}
+		
+		return $speler;
+		
+		
+	
+	}
+	
+	function getTeamNaam($teamid)
+	{
+		$this->db->where('team_id', $teamid);
+		$query = $this->db->get('korf_teams');
+		foreach($query->result() as $row){
+			$team['teamnaam'] = $row->naam;
+				
+		}
+		
+		return $team;
+		
+		
+	
+	}
 	function buySection($sectie, $teamid)
 	{
 		$data = array(
@@ -799,7 +860,54 @@
 	}
 	
 	}
-
+	
+	function sponsors($cat)
+	{
+		$this->db->where('categorie', $cat);
+		$query = $this->db->get('korf_sponsors');
+		$i = 1;
+		foreach($query->result() as $row){
+			$sponsor[$i]['id'] = $row->sponsor_id;
+			$sponsor[$i]['aantal_weken'] = $row->aantal_weken;
+			$sponsor[$i]['bedrag'] = $row->bedrag;
+			$sponsor[$i]['naam'] =$row->naam;
+			$i++;
+		}
+		return $sponsor;
+	
+	}
+	
+	function contract_sponsor($sponsorid, $teamid)
+	{
+		$data = array(
+			'FK_team_id' => $teamid, 
+			'FK_sponsor_id' => $sponsorid
+		);
+	
+		$this->db->insert('korf_team_sponsors', $data);
+	
+	}
+	
+	function get_weekfinances($teamid)
+	{
+		$cron = $this->db->get('korf_cron');
+		foreach($cron->result() as $row)
+		{
+			$seizoen = $row->seizoen;
+		}
+		
+		$this->db->where('FK_team_id', $teamid);
+		$this->db->where('seizoen', $seizoen);
+		$this->db->order_by('week');
+		$query = $this->db->get('korf_financien');
+		$i = 1;
+		foreach($query->result() as $row)
+		{
+			$finances[$i] = $row->totaal;
+			$i++;
+		}
+		return $finances;
+	}
 
 
 }

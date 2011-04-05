@@ -80,6 +80,8 @@ class Korfbal_other_team extends CI_Controller {
 		
 		$data['matches'] = $this->korfbal_model->get_matches($team_id);
 		
+		$data['vorige_matchen'] = $this->korfbal_model->get_vorige_matchen($team_id);
+		$data['volgende_matchen'] = $this->korfbal_model->get_volgende_matchen($team_id);
 		
 		$team = $this->korfbal_model->get_team($team_id);
 		foreach($team->result() as $row)
@@ -97,11 +99,14 @@ class Korfbal_other_team extends CI_Controller {
 	
 	function korfbal_division()
 	{
-		$team_id = $this->uri->segment('3');
+				$team_id = $this->uri->segment('3');
 		$data['team_id'] = $team_id;
 		$this->load->model('korfbal_model');
 		
-		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);	
+		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);
+		
+		$data['vorige_matchen'] = $this->korfbal_model->get_vorige_matchen($team_id);
+		$data['volgende_matchen'] = $this->korfbal_model->get_volgende_matchen($team_id);	
 		
 		
 		$team = $this->korfbal_model->get_team($team_id);
@@ -112,8 +117,7 @@ class Korfbal_other_team extends CI_Controller {
 		
 		
 		$data['main_content'] = 'korfbal/korfbal_divisie';
-		$this->load->view('korfbal/includes_other_team/template', $data);
-	
+		$this->load->view('korfbal/includes_other_team/template', $data);	
 	}
 	
 	function korfbal_stadium()

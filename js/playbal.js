@@ -61,7 +61,7 @@
 			$('.korfbalAnimation').show(),
 			$('.korfbalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)'),
 			$('.korfbal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce'),
-			$('.volleybal, .basketbal').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
+			$('.volleybal, .basketbal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
 			$('.makeAccount').delay(1350).fadeIn(500);
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
       		return true;
@@ -72,7 +72,7 @@
 			$('.basketbalAnimation').show(),
 			$('.basketbalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)'),
 			$('.basketbal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce'),
-			$('.korfbal, .volleybal').delay(10).animate({opacity: 0}, 1, 'easeInBounce'),
+			$('.korfbal, .volleybal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce'),
 	   		$('.makeAccount').delay(1350).fadeIn(500);
       			
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
@@ -84,7 +84,7 @@
 			$('.volleybalAnimation').show(),
 			$('.volleybalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)'),
 			$('.volleybal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce'),
-			$('.korfbal, .basketbal').delay(10).animate({opacity: 0}, 1, 'easeInBounce'),
+			$('.korfbal, .basketbal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce'),
 	   		$('.makeAccount').delay(1350).fadeIn(500);
       		
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
@@ -96,27 +96,33 @@
 			$('.makeAccount').fadeOut(),
 			$('.korfbalAnimation, .basketbalAnimation, .volleybalAnimation').hide(),
 
-	   		$('.korfbal, .basketbal, .volleybal').animate({opacity: 1}, 1, 'linear').show();
+	   		$('.korfbal, .basketbal, .volleybal, #login').animate({opacity: 1}, 1, 'linear').show();
 	   		      		
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
       		return true;
 		});
 	});
 	$(function() {
-    	$("#makeLoginClose").click(function () {
-			$('.makeLogin').fadeOut('fast'),
+    	$("#closeLogin").click(function () {
+			$('.login').fadeOut('fast'),
 			$('.korfbalAnimation, .basketbalAnimation, .volleybalAnimation').hide(),
 
-	   		$('.korfbal, .basketbal, .volleybal').animate({opacity: 1}, 1, 'linear').show();
+	   		$('.korfbal, .basketbal, .volleybal, #login, .players, .gameRight').animate({opacity: 1}, 1, 'linear').show();
+
+		});
+	});
+	$(function() {
+    	$("#closeProfile").click(function () {
+			$('.profile').fadeOut('fast'),
+	   		$('.korfbal, .basketbal, .volleybal, #login, .players, .gameRight, .sportnav').animate({opacity: 1}, 1, 'linear').show();
+
 
 		});
 	});
 	$(function() {
     	$("#switchAccountToLogin").click(function () {
 			$('.makeAccount').fadeOut('fast'),
-			
-
-	   		$('.makeLogin').animate({opacity: 1}, 1, 'linear').show();
+			$('.login').animate({opacity: 1}, 1, 'linear').show();
 
 		});
 	});
@@ -126,19 +132,19 @@
 // LOGIN begin
 /////////////////////////////////////////////////////////////////
 $(function() {
-    	$("#makeLogin").click(function () {
+    	$("#login").click(function () {
     	
 		$('.korfbal, .basketbal, .volleybal').animate({opacity: 0}, 1, 'linear').hide();
 
 	
-	   	$('.makeLogin').show().animate({opacity: 1}, 1500, 'linear');	
+	   	$('.login').show().animate({opacity: 1}, 1500, 'linear');	
 		});
 });
 $(function() {
     	$("#profile").click(function () {
     	
-		$('.korfbal, .basketbal, .volleybal').animate({opacity: 0}, 1, 'linear').hide();		
-	   	$('.makeLogin').show().animate({opacity: 1}, 1500, 'linear');	
+		$('.korfbal, .basketbal, .volleybal, .players, .gameRight').animate({opacity: 0}, 1, 'linear').hide();		
+	   	$('.profile').show().animate({opacity: 1}, 1500, 'linear');	
 		});
 });
 /////////////////////////////////////////////////////////////////
@@ -146,7 +152,7 @@ $(function() {
 /////////////////////////////////////////////////////////////////
 // TOUCHSWIPE begin
 /////////////////////////////////////////////////////////////////		
-		var IMG_WIDTH = 896;
+		var IMG_WIDTH = 1138;
 			var currentImg=0;
 			var maxImages=4;
 			var speed=500;
@@ -198,14 +204,16 @@ $(function() {
 				{
 					if (direction == "right")
 						previousImage(),
-			$active = $('.pagingGallery a.active').prev();
+						$active = $('.pagingGallery a.active').prev();
+			
 						
 					else if (direction == "left")			
 						nextImage(),
-									$active = $('.pagingGallery a.active').next();
-			if ( $active.length === 0) { //If pagingGallery reaches the end...
-				
-			}
+						$active = $('.pagingGallery a.active').next();
+					if ( $active.length == 0) { //If pagingGallery reaches the end...
+						$active = $('.pagingGallery a:last');
+					}
+					
 			$(".pagingGallery a").removeClass('active'); //Remove all active class
 		$active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
 				}
@@ -244,11 +252,12 @@ $(function() {
 // IMAGE GALLERY begin
 /////////////////////////////////////////////////////////////////
 $(document).ready(function() {
-
 	//Set Default State of each portfolio piece
 	$(".pagingGallery").show();
 	$(".pagingGallery a:first").addClass("active");
-		
+			 if ($(this).data('clicked')) {
+        return false;
+        }
 	//Get size of images, how many there are, then determin the size of the image reel.
 	var imageWidth = $(".galleryWrapper").width();
 	var imageSum = $(".imgs img").size();
@@ -261,22 +270,31 @@ $(document).ready(function() {
 	rotate = function(){	
 		var triggerID = $active.attr("rel") - 1; //Get number of times to slide
 		var imgsPosition = triggerID * imageWidth; //Determines the distance the image reel needs to slide
-
+$('#galleryLeftHide, #galleryRightHide').fadeIn('fast').fadeOut(400);
 		$(".pagingGallery a").removeClass('active'); //Remove all active class
 		$active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
 		
-		//Slider Animation
-		$(".imgs").animate({ 
-			left: -imgsPosition
-		}, 500 );
 		
-	}; 
+
+		
+		//Slider Animation
+			$(".imgs").animate({ 
+			
+			left: -imgsPosition,
+
+			
+		}, 400, 'linear' );
+
+		$(".imgs").animate({opacity: 1}, 100, 'linear');
+	};
+	 
 	
 	//Rotation + Timing Event
 	rotateSwitch = function(){		
 		play = setInterval(function(){ //Set timer - this will repeat itself every 3 seconds
+		
 			$active = $('.pagingGallery a.active').next();
-			if ( $active.length === 0) { //If pagingGallery reaches the end...
+			if ( $active.length == 0) { //If pagingGallery reaches the end...
 				$active = $('.pagingGallery a:first'); //go back to first
 			}
 			//rotate(); //Trigger the pagingGallery and slider function
@@ -296,6 +314,8 @@ $(document).ready(function() {
 	$(".pagingGallery a").click(function() {	
 		$active = $(this); //Activate the clicked pagingGallery
 		//Reset Timer
+						
+
 		clearInterval(play); //Stop the rotation
 		rotate(); //Trigger rotation immediately
 		rotateSwitch(); // Resume rotation
@@ -303,6 +323,8 @@ $(document).ready(function() {
 	});	
 	
 });
+     
+  
 /////////////////////////////////////////////////////////////////
 // IMAGE GALLERY end
 /////////////////////////////////////////////////////////////////

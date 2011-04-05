@@ -104,7 +104,7 @@ html, body {
 	min-height: 100%;
 }
 #main {
- padding-bottom: @footerHeight; /* same as footer */
+ padding-bottom: 75px; /* same as footer */
 }
 footer {
 	position: relative;
@@ -170,6 +170,7 @@ figure img {
 }
 .normal, body {
 	font: 16px/24px Helvetica, Arial, sans-serif;
+	color: #222;
 }
 .small {
 	font-size: 13px;
@@ -272,9 +273,10 @@ footer {
 	color: #FFF;
 	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
 	font-size: 68px;
- .textShadow;
+ 	.textShadow;
 	text-transform: uppercase;
 	margin-bottom: 20px;
+	cursor: default;
 }
 h2 {
 	font-family: 'LeagueGothicRegular';
@@ -540,7 +542,7 @@ cursor: pointer;
 }
 #belowbottom {
 
-	 	background-image: url("../img/slideshowbg.png");
+/* 	 	background-image: url("../img/slideshowbg.png"); */
 	 	background-repeat: no-repeat;
 
 height: 500px;
@@ -598,30 +600,12 @@ position: relative;
 	height:30px;
 	position: relative;
 	z-index: 1;
+	
 }
 #menu img {
 	padding-right:5px;
 }
-#menu li {
-	float:left;
-	display:block;
-	text-align:center;
-	position:relative;
-	border:none;
-	padding-right: 15px;
-	padding-left: 15px;
-	padding-bottom: 10px;
-}
-#menu li:hover {
-}
-#menu li a {
-	padding: 0px;
-	margin: 0px;
-}
-#menu li:hover a {
-}
-#menu li .drop {
-}
+
 .dropdown_3columns {
 	float:left;
 	position:absolute;
@@ -669,62 +653,14 @@ position: relative;
 	float:right;
 	margin-right:0px;
 }
-#menu li .align_right {
+li.menu_right {
+list-style-type: none;
+padding: 10px;
 }
-#menu li:hover .align_right {
-	left:auto;
-	right:0px;
-	top: 32px;
-}
-#menu p, #menu h2, #menu h3, #menu ul li {
-	font-family:Helvetica, Arial, sans-serif;
-	line-height:21px;
-	font-size:12px;
-	text-align:left;
-	color: #444;
-}
-#menu h2 {
-	font-size:21px;
-	font-weight:400;
-	letter-spacing:-1px;
-	margin:7px 0 14px 0;
-	padding-bottom:14px;
-	border-bottom:1px solid #666666;
-}
-#menu h3 {
-	font-size:14px;
-	margin:7px 0 14px 0;
-	padding-bottom:7px;
-	border-bottom:1px solid #888888;
-}
-#menu p {
-	line-height:18px;
-	margin:0 0 10px 0;
-}
-#menu li:hover div a {
-	font-size:12px;
-}
-#menu li:hover div a:hover {
-	color:#029feb;
-}
-#menu li ul {
-	list-style:none;
-	padding:0;
-	margin:0 0 12px 0;
-}
-#menu li .greybox li {
-	background:#e5e5e5;
-	border:1px solid #bbbbbb;
-	margin:0px 0px 4px 0px;
-	padding:4px 6px 4px 6px;
-	width:116px;
 
-}
-#menu li .greybox li:hover {
-	background:#ffffff;
-	padding:4px 6px 4px 6px;
-	margin:0px 0px 4px 0px;
-}
+
+
+
 
 /* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
 
@@ -1011,7 +947,7 @@ select {
 
 
 
-
+/* GALLERY start -------------------------------------------------------------------------------------------------------------*/
 
 .container {
 	width: 790px;
@@ -1032,9 +968,17 @@ select {
 }
 /*--galleryWrapper/Masking Styles--*/
 .galleryWrapper {
-	height:470px;	width: 1138px;
+	height:500px;	width: 1138px;
 	overflow: hidden; /*--Hides anything outside of the set width/height--*/
 	position: relative;
+}
+img#galleryLeftHide {
+left: -20px;
+position: relative;
+}
+img#galleryRightHide {
+left: 1120px;
+position: relative;
 }
 .imgs {
 	position: absolute;
@@ -1051,21 +995,30 @@ margin: 20px auto 0 auto;
 	text-align: center;
 	line-height: 40px;
 	display: none; /*--Hidden by default, will be later shown with jQuery--*/
+
+
 }
 .pagingGallery a {
-	padding: 5px;
-	text-decoration: none;
-	color: #000;
+	padding: 10px 15px 5px 15px;
+	margin: 0 5px 0 0;
+	background-image: url("../img/bullet_inactive.png");
+	opacity: 0.9;
+	z-index: 1;
 }
 .pagingGallery a.active {
 	font-weight: bold; 
-	background: #920000; 
-	border: 1px solid #610000;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-webkit-border-radius: 3px;
+
+
+	
+		background-image: url("../img/bullet_active.png");
 }
-.pagingGallery a:hover {font-weight: bold;}
+.pagingGallery a.active {	
+		background-image: url("../img/bullet_active.png");
+}
+.pagingGallery a:hover {
+
+opacity: 0.8;
+}
 
 
 			#content
@@ -1104,10 +1057,8 @@ margin: 20px auto 0 auto;
 			{
 				padding:0px;
 				margin:0px;
-				
-				
-				width:896px;
-				height:567px;
+				width:1138px;
+				height:500px;
 				
 				/*apply a transfor to kick in the hardware acceleration.  Without this, the first time we add the transform you get odd rendering of the divs (half missing) */
 				-webkit-transform: translate3d(0px,0px,0px); 

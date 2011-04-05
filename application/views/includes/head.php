@@ -10,8 +10,6 @@
 <link rel="stylesheet" media="all" href=""/>
 <link href="<?php echo base_url();?>css/style.less" rel="stylesheet/less" />
 
-
-
 <!-- Fallback if browser does not support media queries + javascript (Read: Internet Explorer < 9) -->
 <!--[if lt IE 9]>
 	<link rel="stylesheet" href="8col.css" media="screen" />
@@ -33,6 +31,7 @@
 <script src="<?php echo base_url();?>js/playbal.js"></script>
 <script src="<?php echo base_url();?>js/jquery.transform.js"></script>
 <script src="<?php echo base_url();?>/js/jquery.flip.js"></script>
+<script src="<?php echo base_url();?>/js/jquery.multiple-bgs.min.js"></script>
 <!--<script src="<?php echo base_url();?>js/jquery.circulate.js"></script>-->
 <!--<script src="<?php echo base_url();?>js/jquery.easing.js"></script>-->
 <script src="<?php echo base_url();?>js/jquery.loading.1.6.4.js"></script>

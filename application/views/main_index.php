@@ -82,18 +82,20 @@
     	
         <div class="main_view">
             <div class="galleryWrapper">	
-                <div class="imgs">
-<img src="<?php echo base_url();?>img/1.jpg" alt="" />
-<img src="<?php echo base_url();?>img/2.jpg" alt="" />
+<img src="<?php echo base_url();?>img/gallery_right_hide.png" id="galleryRightHide" alt="" style="display: ;" />
+<img src="<?php echo base_url();?>img/gallery_left_hide.png" id="galleryLeftHide" alt="" style="display: ;" />
+                <div class="imgs" ondragstart="return false">
+<img src="<?php echo base_url();?>img/gallery1.png" alt="speel playb.al op elke computer" />
+<img src="<?php echo base_url();?>img/gallery2.png" alt="speel playb.al op elke smartphone" />
 <img src="<?php echo base_url();?>img/3.jpg" alt="" />
 <img src="<?php echo base_url();?>img/4.jpg" alt="" />
                 </div>
             </div>
             <div class="pagingGallery">
-                <a href="#" rel="1">1</a>
-                <a href="#" rel="2">2</a>
-                <a href="#" rel="3">3</a>
-                <a href="#" rel="4">4</a>
+                <a href="#" rel="1"></a>
+                <a href="#" rel="2"></a>
+                <a href="#" rel="3"></a>
+                <a href="#" rel="4"></a>
             </div>
         </div>
 

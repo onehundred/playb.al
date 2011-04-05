@@ -5,7 +5,7 @@
 			<!-- todo logo, profiel, login -->
 				<figure>
 				<a href="<?php echo base_url();?>">
-				<img src="<?php echo base_url();?>img/logo.png" id="logo" />
+				<img ondragstart="return false" src="<?php echo base_url();?>img/logo.png" id="logo"  />
 				</a>
 				</figure>
 					<section>

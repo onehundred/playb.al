@@ -1,16 +1,15 @@
 <div id="login">
     <li class="menu_right"> <a href="#" id="profile" class=""> 
-        <!--             <img src="<?php echo base_url();?>img/home.png" /> -->
         <?php $username = $this->session->userdata('username'); if(isset($username)){ echo $username;} ?>
         </a>
         <?php if(!$username){?>
-        <a href="#" id="makeLogin">aanmelden</a>
-        <?php } ?>
+        <a href="#" id="profile">aanmelden</a>
+        <?php } ?>&nbsp;<img src="<?php echo base_url();?>img/home.png" />
     </li>
 </div>
 
 
-<div class="makeLogin" style="display: none; opacity: 0;">
+<div class="profile" style="display: none; opacity: 0;">
 
     <div>
         <?php
@@ -22,10 +21,11 @@
     					if(!$user_id){
     					?>
     </div>
+    </div>
     
 <!--       <h1>login</h1> -->
     
-    <div><a href="#" id="makeLoginClose">sluiten</a>
+    <div class="login" style="display: none; opacity: 0;"><a href="#" id="closeLogin">sluiten</a>
         <?php
                         
 						echo form_open('main/login');
@@ -43,14 +43,11 @@
 						} 
 						?>
     </div>
-</div>
-<!-- end makeLogin --> 
+
+<!-- end login --> 
 
 <!-- End 3 columns container --> 
 
 <!--        <li><?php echo form_input('','zoeken') ?></li>  -->
 
 <!-- End 3 columns Item -->
-
-
-

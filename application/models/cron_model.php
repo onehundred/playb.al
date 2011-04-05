@@ -1670,6 +1670,20 @@
     		
     }
     
+    function update_financien($wedstrijd)
+    {
+    
+    	$lengte = sizeof($wedstrijd);
+    	
+    	for($i=1;$i<$lengte+1;$i++){
+
+    		$thuisteamid = $wedstrijd[$i]['thuisteam'];
+    		$uitteamid = $wedstrijd[$i]['uitteam'];
+    	
+    	}
+    
+    }
+    
    
     
  }

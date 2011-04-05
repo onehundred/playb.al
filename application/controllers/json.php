@@ -234,6 +234,29 @@ class Json extends CI_Controller {
 	
 	
 	}
-
+	
+	function korfbal_get_sponsors()
+	{
+		$cat = $_POST['cat'];
+		
+		$this->load->model('korfbal_model');
+		$sponsors = $this->korfbal_model->sponsors($cat);
+		$json = json_encode($sponsors);
+		echo $json;
+	
+	}
+	
+	function korfbal_contract_sponsor()
+	{
+		$sponsorid = $_POST['sponsorid'];
+		$teamid = $_POST['teamid'];
+		
+		$this->load->model('korfbal_model');
+		$sponsors = $this->korfbal_model->contract_sponsor($sponsorid, $teamid);
+		$json = json_encode($sponsors);
+		echo $json;
+		
+	
+	}
 
 }

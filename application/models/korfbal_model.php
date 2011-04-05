@@ -834,7 +834,33 @@
 	}
 	
 	}
-
+	
+	function sponsors($cat)
+	{
+		$this->db->where('categorie', $cat);
+		$query = $this->db->get('korf_sponsors');
+		$i = 1;
+		foreach($query->result() as $row){
+			$sponsor[$i]['id'] = $row->sponsor_id;
+			$sponsor[$i]['aantal_weken'] = $row->aantal_weken;
+			$sponsor[$i]['bedrag'] = $row->bedrag;
+			$sponsor[$i]['naam'] =$row->naam;
+			$i++;
+		}
+		return $sponsor;
+	
+	}
+	
+	function contract_sponsor($sponsorid, $teamid)
+	{
+		$data = array(
+			'FK_team_id' => $teamid, 
+			'FK_sponsor_id' => $sponsorid
+		);
+	
+		$this->db->insert('korf_team_sponsors', $data);
+	
+	}
 
 
 }

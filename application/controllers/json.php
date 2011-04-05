@@ -258,5 +258,16 @@ class Json extends CI_Controller {
 		
 	
 	}
+	
+	function korfbal_finances()
+	{	
+		$teamid = $_POST['teamid'];
+		
+		$this->load->model('korfbal_model');
+		$finances = $this->korfbal_model->get_weekfinances($teamid);
+		$json = json_encode($finances);
+		echo $json;
+
+	}
 
 }

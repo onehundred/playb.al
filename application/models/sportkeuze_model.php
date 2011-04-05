@@ -129,7 +129,12 @@
     
     function create_korfbalfinancien()
     {
-    
+    	$cron = $this->db->get('korf_cron');
+		foreach($cron->result() as $row)
+		{
+			$week = $row->week;
+			$seizoen = $row->seizoen;
+		}
     $user_id = $this->session->userdata('user_id');
     	
     	$this->db->where('FK_user_id', $user_id);
@@ -146,7 +151,9 @@
 		
     	$new_financien_insert_data = array(
     		'totaal' => 500000,
-    		'FK_team_id' => $team_id
+    		'FK_team_id' => $team_id,
+    		'week' => $week,
+    		'seizoen' => $seizoen
     		
     	
     	);

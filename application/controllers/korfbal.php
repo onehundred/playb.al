@@ -221,6 +221,7 @@ class Korfbal extends CI_Controller {
 		$this->load->model('korfbal_model');
 		
 		$data['financien'] = $this->korfbal_model->get_finances($team_id);
+		$data['financien_vorige'] = $this->korfbal_model->get_finances_vorige($team_id);
 		
 		
 		$team = $this->korfbal_model->get_team($team_id);

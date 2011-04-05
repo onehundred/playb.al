@@ -1670,18 +1670,88 @@
     		
     }
     
-    function update_financien($wedstrijd)
+    function update_financien()
     {
-    
-    	$lengte = sizeof($wedstrijd);
+    	$cron = $this->db->get('korf_cron');
+		foreach($cron->result() as $row)
+		{
+			$week = $row->week;
+			$seizoen = $row->seizoen;
+		}
     	
-    	for($i=1;$i<$lengte+1;$i++){
-
-    		$thuisteamid = $wedstrijd[$i]['thuisteam'];
-    		$uitteamid = $wedstrijd[$i]['uitteam'];
-    	
+    	$this->db->where('bot', 1);
+    	$teams = $this->db->get('korf_teams');
+    	foreach($teams->result() as $row)
+    	{
+    		$teamid = $row->team_id;
+    		
+    		$this->db->where('week', $week);
+    		$this->db->where('seizoen', $seizoen);
+    		$this->db->where('FK_team_id',$teamid);
+    		$totaalquery = $this->db->get('korf_financien');
+    		
+    		foreach($totaalquery->result() as $row)
+    		{
+				$totaal = $row->totaal;
+				$sponsors = $row->sponsors;
+				$wedstrijd = $row->wedstrijdinkomsten;
+				$gek_spelers = $row->gekochte_spelers;
+				$ver_spelers = $row->verkochte_spelers;
+				$spelersloon = $row->spelersloon;
+				$stadion = $row->stadion;
+				
+							
+				$inkomsten = $sponsors + $wedstrijd + $ver_spelers;
+				$uitgaven = $spelersloon + $stadion + $gek_spelers;
+				$uitkomst = $inkomsten - $uitgaven;
+				
+				$totaal_nieuw = $totaal + $uitkomst;
+			}
+    		    		
+    		//sponsorbedragen en spelerslonen aanvullen elke week 1 keer op een vaste dag
+    		$this->db->select('*');
+    		$this->db->from('korf_team_sponsors');
+    		$this->db->join('korf_sponsors','FK_sponsor_id = sponsor_id');	
+    		$this->db->where('FK_team_id', $teamid);
+    		$sponsors = $this->db->get();
+    		
+    		$bedrag = 0;
+    		foreach($sponsors->result() as $row)
+    		{
+    			$bedrag = $bedrag + $row->bedrag; 
+    		
+    		}
+    		
+    		$this->db->select('*');
+    		$this->db->from('korf_skills');
+    		$this->db->join('korf_spelers','FK_player_id = speler_id');
+    		$this->db->where('FK_team_id', $teamid);
+    		$spelers = $this->db->get();
+    		
+    		$loon = 0;
+    		foreach($spelers->result() as $row)
+    		{
+    			$loon = $loon + ($row->rebound * 50) + ($row->stamina * 25) + ($row->passing * 50 ) + ($row->shotprecision * 25) + ($row->shotpower * 25) + ($row->intercepting * 70) + ($row->playmaking * 50);
+    		
+    		}
+    		
+    		$insert = array(
+    			'sponsors' => $bedrag,
+    			'spelersloon' => $loon,
+    			'week' => $week+1,
+    			'seizoen' => $seizoen,
+    			'FK_team_id' =>$teamid,
+    			'stadion' => 0,
+    			'gekochte_spelers' => 0,
+    			'verkochte_spelers' => 0,
+    			'wedstrijdinkomsten' => 0,
+    			'totaal' => $totaal_nieuw
+    		);
+    		
+    		$this->db->where('FK_team_id', $teamid);
+    		$this->db->insert('korf_financien',$insert);
     	}
-    
+    	    
     }
     
    

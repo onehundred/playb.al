@@ -96,14 +96,11 @@ class Cron extends CI_Controller {
 
 	}
 	
-	
+	//elke week op een vaste dag
 	function update_financien()
 	{
-		$this->load->model('match_engine');
-		$wedstrijd = $this->match_engine->get_wedstrijden();
-		
 		$this->load->model('cron_model');
-		$this->cron_model->update_financien($wedstrijd);
+		$this->cron_model->update_financien();
 	
 	}
 	

@@ -103,6 +103,9 @@ $("#transfer").submit(function(){
     <br/>
     <p>Sex: <?php echo $row->geslacht; ?></p>
     <br/>
+    <p>Waarde: <?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?> $</p>
+    <p>Loon: <?php echo ($row->rebound * 50) + ($row->stamina * 25) + ($row->passing * 50 ) + ($row->shotprecision * 25) + ($row->shotpower * 25) + ($row->intercepting * 70) + ($row->playmaking * 50);?> $/ week </p>
+    <br/>
     <p>Rebound: <?php echo $row->rebound; ?>/20</p>
     <p>Passing: <?php echo $row->passing; ?>/20</p>
     <p>Stamina: <?php echo $row->stamina; ?>/20</p>

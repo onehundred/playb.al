@@ -1735,11 +1735,20 @@
     		
     		}
     		
+    		
+    		if($week == 14){
+    			$week_insert = 1;
+    			$seizoen_insert = $seizoen +1;
+    		}else{
+				$week_insert = $week+1;
+				$seizoen_insert = $seizoen;    		
+    		}
+
     		$insert = array(
     			'sponsors' => $bedrag,
     			'spelersloon' => $loon,
-    			'week' => $week+1,
-    			'seizoen' => $seizoen,
+    			'week' => $week_insert,
+    			'seizoen' => $seizoen_insert,
     			'FK_team_id' =>$teamid,
     			'stadion' => 0,
     			'gekochte_spelers' => 0,

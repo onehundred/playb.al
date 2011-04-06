@@ -354,6 +354,7 @@ $(function(){
 
 </script>
 <div class="gameRight">
+
 <?php foreach($stadion->result() as $row)
 		{?>
 			<h2><?php echo $row->naam;?></h2>

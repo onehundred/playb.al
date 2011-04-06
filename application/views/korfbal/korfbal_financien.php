@@ -32,10 +32,10 @@ $(document).ready(function()
         			}
         			if(count === 1){
         				for(var i in data){
-        					$('#sponsors').append('<div id="sponsor1" class="sponsorinfo"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
+        					$('#sponsors').append('<section id="sponsor1" class="sponsorinfo"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
         				}
-        				$('#sponsors').append('<div id="2" class="sponsor"><a href="#">Kies sponsor</a></div>');
-        				$('#sponsors').append('<div id="3" class="sponsor"><a href="#">Kies sponsor</a></div>');
+        				$('#sponsors').append('<section id="2" class="sponsor"><a href="#">Kies sponsor</a></div>');
+        				$('#sponsors').append('<section id="3" class="sponsor"><a href="#">Kies sponsor</a></div>');
         			}
         			if(count === 2){
         				for(var i in data){
@@ -158,7 +158,6 @@ $(document).ready(function()
 
 
 </script>
-
 <?php foreach($financien->result() as $row)
 		{	
 			$totaal = $row->totaal;
@@ -174,7 +173,6 @@ $(document).ready(function()
 			$uitgaven = $spelersloon + $stadion + $gek_spelers;
 			$uitkomst = $inkomsten - $uitgaven;
 	 }?>
-	 
 <?php foreach($financien_vorige->result() as $rij)
 {
 			$totaal_vorige = $rij->totaal;
@@ -185,78 +183,75 @@ $(document).ready(function()
 			$spelersloon_vorige = $rij->spelersloon;
 			$stadion_vorige = $rij->stadion;
 
-}?>	 
+}?>
 
 <div class="players">
-	<p>Kapitaal: <?php echo $totaal;?> (<?php echo $totaal + $uitkomst;?>)</p>
-	<br/>
-	<!-- uitgaven -->
-	<h2>Deze week</h2>
-	<div id="uitgaven" style="float:right; margin-right:100px; width:200px;">
-	<h3>Uitgaven</h3>
-
-		
-		<p>Spelersloon: <?php echo $spelersloon;?></p>
-		<p>Stadionwerken: <?php echo $stadion;?></p>
-		<p>Gekochte spelers: <?php echo $gek_spelers;?></p>
-		<hr/>
-		<p>Totale uitgaven: <?php echo $uitgaven;?></p>
-	</div>
-	<!--inkomsten -->
-	<div id="inkomsten" style="width:200px;">
-	<h3>Inkomsten</h3>
-
-		
-		<p>Sponsors: <?php echo $sponsors;?></p>
-		<p>Wedstrijdinkomsten: <?php echo $wedstrijd;?></p>
-		<p>Verkochte spelers: <?php echo $ver_spelers;?></p>
-		<hr/>
-		<p>Totale inkomsten: <?php  echo $inkomsten;?></p>
-	</div>
-	<br/>
-	<p>Winst/Verlies: <?php echo $uitkomst;?></p>
-	<br/>
-	<br/>
-	
-	<?php if(isset($sponsors_vorige)){?>
-	<h2>Vorige week</h2>
-		<div id="uitgaven" style="float:right; margin-right:100px; width:200px;">
-	<h3>Uitgaven</h3>
-
-		
-		<p>Spelersloon: <?php echo $spelersloon_vorige;?></p>
-		<p>Stadionwerken: <?php echo $stadion_vorige;?></p>
-		<p>Gekochte spelers: <?php echo $gek_spelers_vorige;?></p>
-		<hr/>
-		<p>Totale uitgaven: <?php  $uitgaven_vorige = $spelersloon_vorige + $stadion_vorige + $gek_spelers_vorige; echo $uitgaven_vorige;?></p>
-	</div>
-	<!--inkomsten -->
-	<div id="inkomsten" style="width:200px;">
-	<h3>Inkomsten</h3>
-
-		
-		<p>Sponsors: <?php echo $sponsors_vorige;?></p>
-		<p>Wedstrijdinkomsten: <?php echo $wedstrijd_vorige;?></p>
-		<p>Verkochte spelers: <?php echo $ver_spelers_vorige;?></p>
-		<hr/>
-		<p>Totale inkomsten: <?php $inkomsten_vorige = $sponsors_vorige + $wedstrijd_vorige + $ver_spelers_vorige; echo $inkomsten_vorige;?></p>
-	</div>
-	<br/>
-	<p>Winst/Verlies: <?php echo $inkomsten_vorige - $uitgaven_vorige;?></p>
-	<?php } ?>
+    <p>Kapitaal: <?php echo $totaal;?> (<?php echo $totaal + $uitkomst;?>)</p>
+    <br/>
+    <!-- uitgaven -->
+    <h2>Deze week</h2>
+    <div id="uitgaven" style="float:right; margin-right:100px; width:200px;">
+        <h3>Uitgaven</h3>
+        <p>Spelersloon: <?php echo $spelersloon;?></p>
+        <p>Stadionwerken: <?php echo $stadion;?></p>
+        <p>Gekochte spelers: <?php echo $gek_spelers;?></p>
+        <hr/>
+        <p>Totale uitgaven: <?php echo $uitgaven;?></p>
+    </div>
+    <!--inkomsten -->
+    <div id="inkomsten" style="width:200px;">
+        <h3>Inkomsten</h3>
+        <p>Sponsors: <?php echo $sponsors;?></p>
+        <p>Wedstrijdinkomsten: <?php echo $wedstrijd;?></p>
+        <p>Verkochte spelers: <?php echo $ver_spelers;?></p>
+        <hr/>
+        <p>Totale inkomsten:
+            <?php  echo $inkomsten;?>
+        </p>
+    </div>
+    <br/>
+    <p>Winst/Verlies: <?php echo $uitkomst;?></p>
+    <br/>
+    <br/>
+    <?php if(isset($sponsors_vorige)){?>
+    <h2>Vorige week</h2>
+    <div id="uitgaven" style="float:right; margin-right:100px; width:200px;">
+        <h3>Uitgaven</h3>
+        <p>Spelersloon: <?php echo $spelersloon_vorige;?></p>
+        <p>Stadionwerken: <?php echo $stadion_vorige;?></p>
+        <p>Gekochte spelers: <?php echo $gek_spelers_vorige;?></p>
+        <hr/>
+        <p>Totale uitgaven:
+            <?php  $uitgaven_vorige = $spelersloon_vorige + $stadion_vorige + $gek_spelers_vorige; echo $uitgaven_vorige;?>
+        </p>
+    </div>
+    <!--inkomsten -->
+    <div id="inkomsten" style="width:200px;">
+        <h3>Inkomsten</h3>
+        <p>Sponsors: <?php echo $sponsors_vorige;?></p>
+        <p>Wedstrijdinkomsten: <?php echo $wedstrijd_vorige;?></p>
+        <p>Verkochte spelers: <?php echo $ver_spelers_vorige;?></p>
+        <hr/>
+        <p>Totale inkomsten:
+            <?php $inkomsten_vorige = $sponsors_vorige + $wedstrijd_vorige + $ver_spelers_vorige; echo $inkomsten_vorige;?>
+        </p>
+    </div>
+    <br/>
+    <p>Winst/Verlies: <?php echo $inkomsten_vorige - $uitgaven_vorige;?></p>
+    <?php } ?>
 </div>
-		<div class="gameRight">
-		<div id="sponsors">
-		<h2>Sponsors</h2>	
-			
-		</div>
-		<div id="grafiek">
-			<h2>Overzicht financien</h2>
-			<canvas id="canvas1" width="400" height="300">
-       			 Your web-browser does not support the HTML 5 canvas element.
-    		</canvas>
-    	</div>
-		</div>
-		<input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>">
-		<div id="sponsormodal" class="reveal-modal"><div id="loading"><img src="<?php echo base_url()?>/img/loading.gif"/></div> <a class="close-reveal-modal">&#215;</a> </div>
-		
+<div class="gameRight">
+    <div id="sponsors">
+        <h2>Sponsors</h2>
+    </div>
+    <div id="grafiek">
+        <h2>Overzicht financien</h2>
+        <canvas id="canvas1" width="400" height="300"> Your web-browser does not support the HTML 5 canvas element. </canvas>
+    </div>
+</div>
+<input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>">
+<div id="sponsormodal" class="reveal-modal">
+    <div id="loading">
+        <img src="<?php echo base_url()?>/img/loading.gif"/>
+    </div>
+    <a class="close-reveal-modal">&#215;</a> </div>

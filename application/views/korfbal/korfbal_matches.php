@@ -1,10 +1,8 @@
-<html>
-<head>
-    <title></title>
-</head>
 
-<body>
     <div class="players">
+     <?php if(!isset($alien)){ ?>
+                	&nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door voor de volgende wedstrijd.</a> <?php }?>
+
         <?php for($i=1;$i<15;$i++){ ?>
 
       <p>  <p id="matchTeamName"><?php echo $matches[$i]['thuis'];?></p>
@@ -28,22 +26,26 @@
              
              
 
-               <?php if(!isset($alien)){ ?>
-                	&nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door voor de volgende wedstrijd.</a> <?php }?>
-       
+                     
 
            
     </div>
 
     <div class="gameRight">
-        <h2>huidig seizoen</h2>
+            <div>
+        <h2>kalender</h2>
+        <p>huidige week</p>
+        <p>huidige seizoen</p>
+        <p>eerstvolgende wedstrijd</p>
+        <p>playb.al tijd</p>
+    </div>
 
-        <div class="chart_container">
+        <div class="chart_container"><h2>huidig seizoen</h2>
             <canvas id="chartCanvas1" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
         </div>
-        <h2>vorig seizoen</h2>
 
-        <div class="chart_container">
+
+        <div class="chart_container">        <h2>vorig seizoen</h2>
             <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
         </div>
     </div>
@@ -68,5 +70,4 @@
 
     </script>
     
-</body>
-</html>
+

@@ -30,7 +30,7 @@ foreach($training->result() as $row){
 
         <div class="playerDetail">
           <p class="number"><?php echo $row->rugnummer;?></p>
-            <p class="firstname"><?php echo $team_id;?>/<?php echo $row->speler_id;?><?php echo $row->voornaam;?></p>
+            <p class="firstname"><?php echo $row->voornaam;?></p>
             <p class="lastname"><?php echo $row->achternaam; ?></p>
             <p class="gender">
                 <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" />
@@ -135,8 +135,8 @@ foreach($training->result() as $row){
     <div class="chart_container">    <h2>team skills</h2>
         <canvas id="chartCanvas1" width="350" height="350"> Your web-browser does not support the HTML 5 canvas element. </canvas>
     </div>
-    <h2>laatst getraind op</h2>
+    <div><h2>laatst getraind op</h2>
     <p>test</p>
     <h2>datum</h2>
-    <p>test</p>
+    <p>test</p></div>
 </div>

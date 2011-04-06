@@ -150,11 +150,11 @@ $("#transfer").submit(function(){
 ?>
 </div>
 <div class="gameRight">
-    <h2>overzicht</h2>
-    <h2>aantal matchen gespeeld</h2>
-    <h2>aantal goals in carriere</h2>
-    <h2>goals dit seizoen</h2>
-    <h2>goals vorige wedstrijd</h2>
-    <h2>beste prestatie</h2>
-    <h2>prestatie vorige wedstrijd</h2>
+    <div><h2>overzicht</h2></div>
+    <div><h2>aantal matchen gespeeld</h2></div>
+    <div><h2>aantal goals in carriere</h2></div>
+    <div><h2>goals dit seizoen</h2></div>
+    <div><h2>goals vorige wedstrijd</h2></div>
+    <div><h2>beste prestatie</h2></div>
+    <div><h2>prestatie vorige wedstrijd</h2></div>
 </div>

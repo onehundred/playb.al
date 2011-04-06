@@ -1,10 +1,9 @@
 <div class="players">
-
-<?php foreach($transfers->result() as $row)
+    <?php foreach($transfers->result() as $row)
 { ?>
-	<p><?php echo $row->voornaam;?>&nbsp;<?php echo $row->achternaam;?></p>
-	<p>Deadline: <?php echo $row->deadline;?></p>
-	<?php $huidig = $row->huidig_bod;
+    <p><?php echo $row->voornaam;?>&nbsp;<?php echo $row->achternaam;?></p>
+    <p>Deadline: <?php echo $row->deadline;?></p>
+    <?php $huidig = $row->huidig_bod;
 	if($huidig == null){
 	
 		echo "<p>er is nog geen bod geplaatst op deze speler</p>";
@@ -18,15 +17,19 @@
 	
 	
 	?>
-	<hr/>
-
-<?php } 
+    <hr/>
+    <?php } 
 
 
 
  ?>
-
-
-
 </div>
-<div class="gameRight"><h2>lorem ipsum</h2></div>
+<div class="gameRight">
+    <div>
+        <h2>kalender</h2>
+        <p>huidige week</p>
+        <p>huidige seizoen</p>
+        <p>eerstvolgende wedstrijd</p>
+        <p>playb.al tijd</p>
+    </div>
+</div>

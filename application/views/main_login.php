@@ -11,7 +11,7 @@
 
 <div class="profile" style="display: none; opacity: 0;">
 
-    <div>
+
         <?php
                 		$user_id = $this->session->userdata('user_id'); 
 				     		if (isset($user_id)){
@@ -20,7 +20,7 @@
    
     					if(!$user_id){
     					?>
-    </div>
+   
     </div>
     
 <!--       <h1>login</h1> -->

@@ -69,6 +69,14 @@
 ?>
 </div>
 <div class="gameRight">
+    <div>
+        <h2>kalender</h2>
+        <p>huidige week</p>
+        <p>huidige seizoen</p>
+        <p>eerstvolgende wedstrijd</p>
+        <p>playb.al tijd</p>
+    </div>
+<div>
     <h2>vorige matchen</h2>
     <?php if(isset($vorige_matchen[1]['thuis'])){?>
     <p><?php echo $vorige_matchen[1]['thuis']. " - " . $vorige_matchen[1]['uit']."   ". $vorige_matchen[1]['uitslag']; ?></p>
@@ -76,9 +84,11 @@
     <p><?php echo $vorige_matchen[3]['thuis']. " - " . $vorige_matchen[3]['uit']."   ". $vorige_matchen[3]['uitslag']; ?></p>
     <p><?php echo $vorige_matchen[4]['thuis']. " - " . $vorige_matchen[4]['uit']."   ". $vorige_matchen[4]['uitslag']; ?></p>
     <?php } ?>
+    </div><div>
     <h2>volgende matchen</h2>
      <p><?php echo $volgende_matchen[1]['thuis']. " - " . $volgende_matchen[1]['uit']; ?></p>
     <p><?php echo $volgende_matchen[2]['thuis']. " - " . $volgende_matchen[2]['uit']; ?></p>
     <p><?php echo $volgende_matchen[3]['thuis']. " - " . $volgende_matchen[3]['uit']; ?></p>
     <p><?php echo $volgende_matchen[4]['thuis']. " - " . $volgende_matchen[4]['uit']; ?></p>
+    </div>
 </div>

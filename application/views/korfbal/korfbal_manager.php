@@ -1,15 +1,21 @@
-<div class="players"><?php
+<div class="players">
+    <?php
 //gegevens van users en teams kan hieruit gehaald worden
  foreach($manager->result() as $row)
 		{ ?>
-			<p>Manager: <?php echo $row->gebruikersnaam;?> </p>
-			<p>Team: <?php echo $row->naam;?></p>
-			<p>	Country: <?php echo $row->land; ?></p>
-		
-		
-   <?php }?>
-   </div><div class="gameRight">
-   <h2>achievements</h2>
-      <h2>bekers</h2>
-         <h2>banksaldo</h2>
-   </div>
+    <p>Manager: <?php echo $row->gebruikersnaam;?> </p>
+    <p>Team: <?php echo $row->naam;?></p>
+    <p> Country: <?php echo $row->land; ?></p>
+    <?php }?>
+</div>
+<div class="gameRight">
+    <div>
+        <h2>achievements</h2>
+    </div>
+    <div>
+        <h2>bekers</h2>
+    </div>
+    <div>
+        <h2>banksaldo</h2>
+    </div>
+</div>

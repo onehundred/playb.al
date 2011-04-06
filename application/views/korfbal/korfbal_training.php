@@ -1,6 +1,4 @@
-
-
-
+<script src="<?php echo base_url();?>js/korfbal/training.js"></script>
 <div class="players">
     <?php foreach($energie->result() as $row)
 {

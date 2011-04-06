@@ -30,8 +30,8 @@ foreach($training->result() as $row){
 
         <div class="playerDetail">
           <p class="number"><?php echo $row->rugnummer;?></p>
-            <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></p>
-            <p class="lastname"><?php echo $row->achternaam; ?></a></p>
+            <p class="firstname"><?php echo $team_id;?>/<?php echo $row->speler_id;?><?php echo $row->voornaam;?></p>
+            <p class="lastname"><?php echo $row->achternaam; ?></p>
             <p class="gender">
                 <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" />
             </p>

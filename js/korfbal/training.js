@@ -53,28 +53,28 @@ $(function() {
 					
 					
 					//alert(spelers[i].rebound_tr);
-					$( ".rebound_tr"+spelers[i].spelerid).progressbar({
+					$( ".rebound_tr"+spelers[i].spelerid).progressbarTraining({
 					 value: spelers[i].rebound_tr / 10
 					});
-					$( ".passing_tr"+spelers[i].spelerid ).progressbar({
+					$( ".passing_tr"+spelers[i].spelerid ).progressbarTraining({
 						value: spelers[i].passing_tr /10 
 					});
-					$( ".intercepting_tr"+spelers[i].spelerid ).progressbar({
+					$( ".intercepting_tr"+spelers[i].spelerid ).progressbarTraining({
 						value: spelers[i].intercepting_tr / 10
 					});
-					$( ".shotpower_tr"+spelers[i].spelerid).progressbar({
+					$( ".shotpower_tr"+spelers[i].spelerid).progressbarTraining({
 						value: spelers[i].shotpower_tr  / 10
 					});
-					$( ".shotprecision_tr"+spelers[i].spelerid).progressbar({
+					$( ".shotprecision_tr"+spelers[i].spelerid).progressbarTraining({
 						value: spelers[i].shotprecision_tr / 10
 					});
-					$( ".leadership_tr"+spelers[i].spelerid ).progressbar({
+					$( ".leadership_tr"+spelers[i].spelerid ).progressbarTraining({
 						value: spelers[i].leadership_tr / 10
 					});
-					$( ".playmaking_tr"+spelers[i].spelerid ).progressbar({
+					$( ".playmaking_tr"+spelers[i].spelerid ).progressbarTraining({
 						value: spelers[i].playmaking_tr / 10
 					});
-					$( ".stamina_tr"+spelers[i].spelerid ).progressbar({
+					$( ".stamina_tr"+spelers[i].spelerid ).progressbarTraining({
 						value: spelers[i].stamina_tr / 10
 					});
 

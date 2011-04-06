@@ -10,6 +10,10 @@
    <?php }?>
    </div><div class="gameRight">
    <h2>achievements</h2>
+   <?php foreach($achievements->result() as $row){ ?>
+   		<?php echo $row->naam;?> &nbsp; Punten: <?php echo $row->punten;?><br/>
+   
+  <?php } ?>
       <h2>bekers</h2>
-         <h2>banksaldo</h2>
+      <h2>banksaldo</h2>
    </div>

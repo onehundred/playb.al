@@ -319,6 +319,35 @@
     	
     	}
     	
+    	function create_korfbalteamstats()
+    	{
+    		$user_id = $this->session->userdata('user_id');
+    	
+	    	$this->db->where('FK_user_id', $user_id);
+	    	$this->db->select('team_id');
+	    	$teamidquery = $this->db->get('korf_teams');
+	    	
+	    	
+	    	foreach($teamidquery->result() as $row)
+	    	{
+	    		$team_id = $row->team_id;
+	    	
+	    	}
+	    	
+	    	$insert = array(
+	    		'gespeeld_matchen' => 0,
+	    		'gewonnen_matchen' => 0,
+	    		'verloren_matchen' =>0,
+	    		'gelijke_matchen' =>0,
+	    		'verkochte_spelers' => 0,
+	    		'gekochte_spelers' => 0,
+	    		'overwinningen_op_rij' => 0,
+	    		'FK_team_id' => $team_id
+	    	);
+	    	$this->db->insert('korf_teamstats', $insert);
+
+    		
+    	}
     	
     	function assign_trainingspunten()
     	{

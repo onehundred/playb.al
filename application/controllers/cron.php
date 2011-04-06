@@ -30,16 +30,7 @@ class Cron extends CI_Controller {
 	
 	function cron_test()
 	{
-		$cat = 3;
-		
-		$this->load->model('korfbal_model');
-		$sponsors = $this->korfbal_model->sponsors($cat);
-		$json = json_encode($sponsors);
-		echo $json;
-
-	
-	
-	}
+			}
 	
 	//op het begin van elk nieuw seizoen
 	function arrange_games()

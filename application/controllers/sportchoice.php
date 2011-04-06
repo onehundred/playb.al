@@ -180,6 +180,8 @@ class Sportchoice extends CI_Controller {
 					$this->sportkeuze_model->create_korfbalfinancien();	
 						//creatie stadion
     	    		$this->sportkeuze_model->create_korfbalstadion();
+    	    			//creatie teamstats
+    	    		$this->sportkeuze_model->create_korfbalteamstats();
     	    			
 					$data['main_content'] = 'korfbal/korfbal_signup_succesful';
 					$this->load->view('includes/template', $data);

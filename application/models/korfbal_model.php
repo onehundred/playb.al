@@ -908,6 +908,18 @@
 		}
 		return $finances;
 	}
-
+	
+	function get_achievements($teamid)
+	{
+	
+		$this->db->select('*');
+		$this->db->from('korf_team_achievements');
+		$this->db->where('FK_team_id', $teamid);
+		$this->db->join('korf_achievements','FK_achievements_id = achievement_id');
+		$query = $this->db->get();
+		
+		return $query;
+	
+	}
 
 }

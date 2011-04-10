@@ -1,5 +1,5 @@
 <script src="<?php echo base_url();?>js/korfbal/spelers.js"></script>
-<div class="players">
+<div class="gameLeft">
     <div id="container">
         <?php 
     

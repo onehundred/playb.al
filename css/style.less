@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/* CSS Document */
+
 /* LESS GLOBALS start */
 
 @korfbalColor: #ebbb25;
@@ -196,8 +199,14 @@ body {
 	margin-right:auto;
  -webkit-tap-highlight-color: @selectionColor;
 	text-rendering: optimizeLegibility;
-		background-repeat: repeat;
-	background-image: url("../img/860.jpg");
+
+
+
+	background: 
+
+		
+
+	url(../img/860.jpg) repeat 0% 0%;
 }
 ::selection {
  background: @selectionColor;
@@ -272,10 +281,11 @@ footer {
 	text-align: left;
 	color: #FFF;
 	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
-	font-size: 68px;
+	font-size: 56px;
  	.textShadow;
 	text-transform: uppercase;
-	margin-bottom: 25px;
+	font-weight: normal;
+
 	cursor: default;
 }
 h2 {
@@ -316,15 +326,16 @@ h2 {
           transition-duration: 0s;
 }
 /* ANIMATIONS end *****************************************************************************************************************/
-/* PLAYERS start ----------------------------------------------------------------------------------------------------------*/
-.players {
+/* gameLeft start ----------------------------------------------------------------------------------------------------------*/
+.gameLeft {
 	font-size: 15px;
 	float: left;
-	width: 745px;/* margin-top: 15px; */	
+	width: 568px;/* margin-top: 15px; */	
+	
 }
 
 .player, .playerDetail {
-	width: 335px;
+	width: 245px;
 	height: 250px;
 	background: #FAFAFA;
 	-moz-border-radius-topleft: 3px;
@@ -349,7 +360,7 @@ h2 {
 .playerDetail {
 height: 412px;
 }
-.players .number {
+.gameLeft .number {
 	font-size: 64px;
 	font-family: 'SFCollegiateSolidRegular';
 	display: inline;
@@ -357,113 +368,111 @@ height: 412px;
 	float: left;
 	line-height: 45px;
 }
-.players .firstname {
+.gameLeft .firstname {
 	text-transform: capitalize;
 	display: inline;
 	padding-right: 7px;
 }
-.players .lastname {
+.gameLeft .lastname {
 	text-transform: uppercase;
 	display: inline;
 }
-.players .gender {
+.gameLeft .gender {
 	display: inline;
 	line-height: 30px;
 	padding-left: 5px;
 }
-.players .age {
+.gameLeft .age {
 	display: inline;
 	line-height: 28px;
 }
-.players .price {
+.gameLeft .price {
 	display: inline;
 }
-.players #rightProgress {
-	width: 160px;
+.gameLeft #rightProgress {
+	width: 115px;
 	float: right;
 }
-.players #leftProgress {
-	width: 160px;
+.gameLeft #leftProgress {
+	width: 115px;
 }
 .rebound, .passing, .stamina, .shotprecision, .playmaking, .shotpower, .intercepting, .leadership {
 	display: inline;
 }
-.players #skillTitle {
+.gameLeft #skillTitle {
 	display: inline;
 }
 .gameRight {
 	float: right;
-	width: 390px;
- .borderRadius;
+	width: 297px;
+
 /* 	padding: 0 15px 15px 15px; */
 	font-size: 15px;
 	color: #222;
-}
-.gameRight1 {
-}
-.gameRight2 {
-	float: left;
-	padding: 0 15px 0 0;
-}
-.gameRight3 {
-	float: left;
+	 .borderRadius;
 }
 .gameRight ul, .gameRight li {
 	list-style-type: none;
 	display: inline;
 }
 .gameRight h2 {
-	font-size: 28px;
+	font-size: 32px;
+	font-weight: normal;
 	letter-spacing: 1px;
-	color: #CC;
+	color: #FAFAFA;
+	padding: 0 0 0 10px;
+	text-transform: lowercase;
 }
-.gameRight div:nth-child(1) {
-background: #FFF; /* unsupported */	
-	background: url(../images/box_b2.png) repeat-x 0 100%, 
-				url(../images/box_l.png) repeat-y 0 100%, 
-				url(../images/box_r.png) repeat-y 100% 0%,
-				url(../images/box_t.png) repeat-x 0 0,
-				url(../images/box_tl.png) no-repeat 0 0, 
-				url(../images/box_tr.png) no-repeat 100% 0,
-				url(../images/box_bl.png) no-repeat 0 100%, 
-				url(../images/box_br.png) no-repeat 100% 100%,  
-				url(../images/box_c.png) repeat 0% 0%;
-
+.gameRight p {
+padding: 0 0 10px 10px;
+color: #FFF;
 }
 /*
-.gameRight div:nth-child(1) p {
-background-color: aqua;
-font-size: 20px;
+.gameRight div {
+	margin: 0 0 30px 0;
+	padding: 15px 14px 13px 14px;
+	-webkit-box-shadow:  0px 0px 10px #bdbdbd;
+	-moz-box-shadow: 0px 0px 10px #bdbdbd;
+	box-shadow: 0px 0px 10px #bdbdbd;
+	.borderRadius;
+	.transitionOff;
 }
 */
-.gameRight div:nth-child(2) {
-background-color: grey;
+.gameRight div:hover {
+	-webkit-box-shadow:  0px 0px 10px #a3a3a3;
+	-moz-box-shadow: 0px 0px 10px #a3a3a3;
+	box-shadow: 0px 0px 10px #a3a3a3;
+	.transitionOn2;
 }
-.gameRight div:nth-child(3) {
-background-color: fuchsia;
+/*
+.gameRight div section {
+	-webkit-box-shadow:  inset 0px 0px 10px #bdbdbd;
+	-moz-box-shadow: inset 0px 0px 10px #bdbdbd;
+	box-shadow: inset 0px 0px 10px #000;
+		background-color: rgba(0, 0, 0, 0.75);
 }
-.gameRight div:nth-child(4) {
-background-color: yellow;
+*/
+.gameRight table {
+color: #FFF;
+width: 380px;
+	padding: 15px 14px 13px 14px;
+	border: none;
 }
-.gameRight div:nth-child(5) {
-background-color: red;
-}
-.gameRight div:nth-child(6) {
+.gameRight table tr:nth-child(1) {
 background-color: green;
 }
-.gameRight div:nth-child(7) {
-background-color: white;
-}
-.gameRight div:nth-child(8) {
+.gameRight table tr:nth-child(2) {
 background-color: red;
 }
-.gameRight div:nth-child(9) {
-background-color: aqua;
+.gameRight table tr:nth-child(3) {
+background-color: blue;
 }
-.gameRight div:nth-child(10) {
-background-color: aqua;
+.gameRight table tr:nth-child(4) {
+background-color: yellow;
 }
-/* PLAYERS end -------------------------------------------------------------------------------------------------------------*/
+
+
+/* gameLeft end -------------------------------------------------------------------------------------------------------------*/
 
 .sportnav {
 	margin-bottom: 15px;
@@ -473,7 +482,8 @@ background-color: aqua;
 	font-family: 'LeagueGothicRegular';
 	line-height: 0.8;
 	color: #bfbfbf;
-.transitionOff;
+	.transitionOff;
+	font-size: 32px;
 }
 .sportnav a:hover {
 	color: #888;
@@ -497,7 +507,7 @@ background-color: aqua;
 	display: inline;
 	padding-right: 5px;
 	text-transform: uppercase;
-	font-size: 26px;
+	font-size: 32px;
 	font-family: 'LeagueGothicRegular';
 	line-height: 0.8;
 color: @korfbalColor;

@@ -4,7 +4,7 @@
             $ ('div.division_results #rij:odd').addClass('odd');
         });
     </script>
-    <style>
+<style>
 .even {
 	background: #FFF;
 	border-bottom: 1px solid #CCC;
@@ -14,7 +14,7 @@
 	border-bottom: 1px solid #CCC;
 }
 </style>
-    <?php
+<?php
 
  foreach($divisie->result() as $row)
 			{
@@ -22,7 +22,7 @@
 				 $subdivisie = $row->sub_divisie;
 	} ?>
 
-<div class="players">
+<div class="gameLeft">
     <h1><?php echo $divisienaam;?>.<?php echo $subdivisie;?></h1>
     <div class="division">
         <div id="team"> <a class="tooltip" title="teamnaam" href="#">team </a></div>
@@ -70,25 +70,87 @@
 </div>
 <div class="gameRight">
     <div>
-        <h2>kalender</h2>
-        <p>huidige week</p>
-        <p>huidige seizoen</p>
-        <p>eerstvolgende wedstrijd</p>
-        <p>playb.al tijd</p>
+        <section>
+            <h2>kalender</h2>
+            <p>huidige week</p>
+            <p>huidige seizoen</p>
+            <p>eerstvolgende wedstrijd</p>
+            <p>playb.al tijd</p>
+        </section>
     </div>
-<div>
-    <h2>vorige matchen</h2>
-    <?php if(isset($vorige_matchen[1]['thuis'])){?>
-    <p><?php echo $vorige_matchen[1]['thuis']. " - " . $vorige_matchen[1]['uit']."   ". $vorige_matchen[1]['uitslag']; ?></p>
-    <p><?php echo $vorige_matchen[2]['thuis']. " - " . $vorige_matchen[2]['uit']."   ". $vorige_matchen[2]['uitslag']; ?></p>
-    <p><?php echo $vorige_matchen[3]['thuis']. " - " . $vorige_matchen[3]['uit']."   ". $vorige_matchen[3]['uitslag']; ?></p>
-    <p><?php echo $vorige_matchen[4]['thuis']. " - " . $vorige_matchen[4]['uit']."   ". $vorige_matchen[4]['uitslag']; ?></p>
-    <?php } ?>
-    </div><div>
-    <h2>volgende matchen</h2>
-     <p><?php echo $volgende_matchen[1]['thuis']. " - " . $volgende_matchen[1]['uit']; ?></p>
-    <p><?php echo $volgende_matchen[2]['thuis']. " - " . $volgende_matchen[2]['uit']; ?></p>
-    <p><?php echo $volgende_matchen[3]['thuis']. " - " . $volgende_matchen[3]['uit']; ?></p>
-    <p><?php echo $volgende_matchen[4]['thuis']. " - " . $volgende_matchen[4]['uit']; ?></p>
+    <div>
+        <section>
+            <h2>vorige matchen</h2>
+            <?php if(isset($vorige_matchen[1]['thuis'])){?>
+           <!--
+ <p></p>
+            <p><?php echo $vorige_matchen[2]['thuis']. " - " . $vorige_matchen[2]['uit']."   ". $vorige_matchen[2]['uitslag']; ?></p>
+            <p><?php echo $vorige_matchen[3]['thuis']. " - " . $vorige_matchen[3]['uit']."   ". $vorige_matchen[3]['uitslag']; ?></p>
+            <p><?php echo $vorige_matchen[4]['thuis']. " - " . $vorige_matchen[4]['uit']."   ". $vorige_matchen[4]['uitslag']; ?></p>
+-->
+            <table>
+                <tr>
+                    <td><?php echo $vorige_matchen[1]['thuis']; ?></td>
+                    <td>vs</td>
+                    <td><?php echo $vorige_matchen[1]['uit']; ?></td>
+                    <td><?php echo $vorige_matchen[1]['uitslag']; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo $vorige_matchen[2]['thuis']; ?></td>
+                    <td>vs</td>
+                    <td><?php echo $vorige_matchen[2]['uit']; ?></td>
+                    <td><?php echo $vorige_matchen[2]['uitslag']; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo $vorige_matchen[3]['thuis']; ?></td>
+                    <td>vs</td>
+                    <td><?php echo $vorige_matchen[3]['uit']; ?></td>
+                    <td><?php echo $vorige_matchen[3]['uitslag']; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo $vorige_matchen[4]['thuis']; ?></td>
+                    <td>vs</td>
+                    <td><?php echo $vorige_matchen[4]['uit']; ?></td>
+                    <td><?php echo $vorige_matchen[4]['uitslag']; ?></td>
+                </tr>
+            </table>
+            <?php } ?>
+        </section>
+    </div>
+    <div>
+        <section>
+            <h2>volgende matchen</h2>
+<!--
+            <p><?php echo $volgende_matchen[1]['thuis']. " - " . $volgende_matchen[1]['uit']; ?></p>
+            <p><?php echo $volgende_matchen[2]['thuis']. " - " . $volgende_matchen[2]['uit']; ?></p>
+            <p><?php echo $volgende_matchen[3]['thuis']. " - " . $volgende_matchen[3]['uit']; ?></p>
+            <p><?php echo $volgende_matchen[4]['thuis']. " - " . $volgende_matchen[4]['uit']; ?></p>
+-->
+             <table>
+                <tr>
+                    <td><?php echo $volgende_matchen[1]['thuis']; ?></td>
+                    <td>vs</td>
+                    <td><?php echo $volgende_matchen[1]['uit']; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo $volgende_matchen[2]['thuis']; ?></td>
+                    <td>vs</td>
+                    <td><?php echo $volgende_matchen[2]['uit']; ?></td>
+
+                </tr>
+                <tr>
+                    <td><?php echo $volgende_matchen[3]['thuis']; ?></td>
+                    <td>vs</td>
+                    <td><?php echo $volgende_matchen[3]['uit']; ?></td>
+
+                </tr>
+                <tr>
+                    <td><?php echo $volgende_matchen[4]['thuis']; ?></td>
+                    <td>vs</td>
+                    <td><?php echo $volgende_matchen[4]['uit']; ?></td>
+                </tr>
+            </table>
+
+        </section>
     </div>
 </div>

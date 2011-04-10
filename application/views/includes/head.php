@@ -1,6 +1,7 @@
+<!DOCTYPE HTML>
+
 <!-- head voor homepage -->
 
-<!DOCTYPE HTML>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -30,7 +31,7 @@
 <script src="<?php echo base_url();?>js/touchswipe.js"></script>
 <script src="<?php echo base_url();?>js/playbal.js"></script>
 <script src="<?php echo base_url();?>js/jquery.transform.js"></script>
-<script src="<?php echo base_url();?>/js/jquery.flip.js"></script>
+<!--<script src="<?php echo base_url();?>/js/jquery.flip.js"></script>-->
 <script src="<?php echo base_url();?>/js/jquery.multiple-bgs.min.js"></script>
 <!--<script src="<?php echo base_url();?>js/jquery.circulate.js"></script>-->
 <!--<script src="<?php echo base_url();?>js/jquery.easing.js"></script>-->
@@ -39,8 +40,8 @@
 <!--<script src="<?php echo base_url();?>js/touchable.js"></script>-->
 <script src="<?php echo base_url();?>js/modernizr-1.6.min.js"></script>
 
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
 <body>

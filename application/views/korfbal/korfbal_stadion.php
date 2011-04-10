@@ -159,7 +159,7 @@
 	
 </div>
 <?php } ?>
-</div><div class="players">
+</div><div class="gameLeft">
 <div id="stadion_container">
 <div id="stadion">
 <!-- sectie g rechts boven -->

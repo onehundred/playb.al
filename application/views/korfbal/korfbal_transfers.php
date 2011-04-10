@@ -1,4 +1,4 @@
-<div class="players">
+<div class="gameLeft">
     <?php foreach($transfers->result() as $row)
 { ?>
     <p><?php echo $row->voornaam;?>&nbsp;<?php echo $row->achternaam;?></p>
@@ -25,11 +25,11 @@
  ?>
 </div>
 <div class="gameRight">
-    <div>
+    <div><section>
         <h2>kalender</h2>
         <p>huidige week</p>
         <p>huidige seizoen</p>
         <p>eerstvolgende wedstrijd</p>
         <p>playb.al tijd</p>
-    </div>
+</section>    </div>
 </div>

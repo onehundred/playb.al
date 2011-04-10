@@ -94,7 +94,7 @@ $("#transfer").submit(function(){
 
 </script>
 
-<div class="players">
+<div class="gameLeft">
     <?php $teamid = $this->uri->segment('3');?>
     <?php foreach($speler->result() as $row)
 {?>
@@ -151,38 +151,52 @@ $("#transfer").submit(function(){
 </div>
 <div class="gameRight">
     <div>
-        <h2>overzicht</h2>
-        <p>een regel content minstens</p>
-        <p>bij voorkeur twee</p>
+        <section>
+            <h2>overzicht</h2>
+            <p>een regel content minstens</p>
+            <p>bij voorkeur twee</p>
+        </section>
     </div>
     <div>
-        <h2>aantal matchen gespeeld</h2>
-        <p>een regel content minstens</p>
-        <p>bij voorkeur twee</p>
+        <section>
+            <h2>aantal matchen gespeeld</h2>
+            <p>een regel content minstens</p>
+            <p>bij voorkeur twee</p>
+        </section>
     </div>
     <div>
-        <h2>aantal goals in carriere</h2>
-        <p>een regel content minstens</p>
-        <p>bij voorkeur twee</p>
+        <section>
+            <h2>aantal goals in carriere</h2>
+            <p>een regel content minstens</p>
+            <p>bij voorkeur twee</p>
+        </section>
     </div>
     <div>
-        <h2>goals dit seizoen</h2>
-        <p>een regel content minstens</p>
-        <p>bij voorkeur twee</p>
+        <section>
+            <h2>goals dit seizoen</h2>
+            <p>een regel content minstens</p>
+            <p>bij voorkeur twee</p>
+        </section>
     </div>
     <div>
-        <h2>goals vorige wedstrijd</h2>
-        <p>een regel content minstens</p>
-        <p>bij voorkeur twee</p>
+        <section>
+            <h2>goals vorige wedstrijd</h2>
+            <p>een regel content minstens</p>
+            <p>bij voorkeur twee</p>
+        </section>
     </div>
     <div>
-        <h2>beste prestatie</h2>
-        <p>een regel content minstens</p>
-        <p>bij voorkeur twee</p>
+        <section>
+            <h2>beste prestatie</h2>
+            <p>een regel content minstens</p>
+            <p>bij voorkeur twee</p>
+        </section>
     </div>
     <div>
-        <h2>prestatie vorige wedstrijd</h2>
-        <p>een regel content minstens</p>
-        <p>bij voorkeur twee</p>
+        <section>
+            <h2>prestatie vorige wedstrijd</h2>
+            <p>een regel content minstens</p>
+            <p>bij voorkeur twee</p>
+        </section>
     </div>
 </div>

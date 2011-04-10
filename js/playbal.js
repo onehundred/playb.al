@@ -58,9 +58,9 @@
 /////////////////////////////////////////////////////////////////
     $(function() {
     	$("#startKorfbal").click(function () {
-			$('.korfbalAnimation').show(),
-			$('.korfbalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)'),
-			$('.korfbal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce'),
+			$('.korfbalAnimation').show();
+			$('.korfbalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
+			$('.korfbal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce');
 			$('.volleybal, .basketbal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
 			$('.makeAccount').delay(1350).fadeIn(500);
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
@@ -69,10 +69,10 @@
 	});
     $(function() {
     	$("#startBasketbal").click(function () {
-			$('.basketbalAnimation').show(),
-			$('.basketbalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)'),
-			$('.basketbal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce'),
-			$('.korfbal, .volleybal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce'),
+			$('.basketbalAnimation').show();
+			$('.basketbalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
+			$('.basketbal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce');
+			$('.korfbal, .volleybal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
 	   		$('.makeAccount').delay(1350).fadeIn(500);
       			
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
@@ -81,10 +81,10 @@
 	});
     $(function() {
     	$("#startVolleybal").click(function () {
-			$('.volleybalAnimation').show(),
-			$('.volleybalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)'),
-			$('.volleybal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce'),
-			$('.korfbal, .basketbal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce'),
+			$('.volleybalAnimation').show();
+			$('.volleybalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
+			$('.volleybal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce');
+			$('.korfbal, .basketbal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
 	   		$('.makeAccount').delay(1350).fadeIn(500);
       		
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
@@ -93,8 +93,8 @@
 	});
 	$(function() {
     	$("#makeAccountClose").click(function () {
-			$('.makeAccount').fadeOut(),
-			$('.korfbalAnimation, .basketbalAnimation, .volleybalAnimation').hide(),
+			$('.makeAccount').fadeOut();
+			$('.korfbalAnimation, .basketbalAnimation, .volleybalAnimation').hide();
 
 	   		$('.korfbal, .basketbal, .volleybal, #login').animate({opacity: 1}, 1, 'linear').show();
 	   		      		
@@ -104,24 +104,24 @@
 	});
 	$(function() {
     	$("#closeLogin").click(function () {
-			$('.login').fadeOut('fast'),
-			$('.korfbalAnimation, .basketbalAnimation, .volleybalAnimation').hide(),
+			$('.login').fadeOut('fast');
+			$('.korfbalAnimation, .basketbalAnimation, .volleybalAnimation').hide();
 
-	   		$('.korfbal, .basketbal, .volleybal, #login, .players, .gameRight').animate({opacity: 1}, 1, 'linear').show();
+	   		$('.korfbal, .basketbal, .volleybal, #login, .gameLeft, .gameRight').animate({opacity: 1}, 1, 'linear').show();
 
 		});
 	});
 	$(function() {
     	$("#closeProfile").click(function () {
-			$('.profile').fadeOut('fast'),
-	   		$('.korfbal, .basketbal, .volleybal, #login, .players, .gameRight, .sportnav').animate({opacity: 1}, 1, 'linear').show();
+			$('.profile').fadeOut('fast');
+	   		$('.korfbal, .basketbal, .volleybal, #login, .gameLeft, .gameRight, .sportnav').animate({opacity: 1}, 1, 'linear').show();
 
 
 		});
 	});
 	$(function() {
     	$("#switchAccountToLogin").click(function () {
-			$('.makeAccount').fadeOut('fast'),
+			$('.makeAccount').fadeOut('fast');
 			$('.login').animate({opacity: 1}, 1, 'linear').show();
 
 		});
@@ -143,7 +143,7 @@ $(function() {
 $(function() {
     	$("#profile").click(function () {
     	
-		$('.korfbal, .basketbal, .volleybal, .players, .gameRight').animate({opacity: 0}, 1, 'linear').hide();		
+		$('.korfbal, .basketbal, .volleybal, .gameLeft, .gameRight').animate({opacity: 0}, 1, 'linear').hide();		
 	   	$('.profile').show().animate({opacity: 1}, 1500, 'linear');	
 		});
 });

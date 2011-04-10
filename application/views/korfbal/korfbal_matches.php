@@ -1,5 +1,5 @@
 
-    <div class="players">
+    <div class="gameLeft">
      <?php if(!isset($alien)){ ?>
                 	&nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door voor de volgende wedstrijd.</a> <?php }?>
 
@@ -32,22 +32,22 @@
     </div>
 
     <div class="gameRight">
-            <div>
+            <div><section>
         <h2>kalender</h2>
         <p>huidige week</p>
         <p>huidige seizoen</p>
         <p>eerstvolgende wedstrijd</p>
-        <p>playb.al tijd</p>
+        <p>playb.al tijd</p></section>
     </div>
 
-        <div class="chart_container"><h2>huidig seizoen</h2>
+        <div class="chart_container"><section><h2>huidig seizoen</h2>
             <canvas id="chartCanvas1" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
-        </div>
+</section>        </div>
 
 
-        <div class="chart_container">        <h2>vorig seizoen</h2>
+        <div class="chart_container"> <section>       <h2>vorig seizoen</h2>
             <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
-        </div>
+</section>        </div>
     </div>
     <script type="text/javascript">
      var chart1 = new AwesomeChart('chartCanvas1');

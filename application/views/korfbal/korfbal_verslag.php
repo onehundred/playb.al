@@ -2,7 +2,7 @@
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 <script src="<?php echo base_url();?>js/jquery.blockUI.js"></script>
 
-  <div class="players">
+  <div class="gameLeft">
     <div>
         <canvas style="border: solid 1px #000;" id="canvas" width="800" height="400">
 	    oops, jouw browser ondersteunt dit niet.

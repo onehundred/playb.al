@@ -27,7 +27,7 @@
 
 }?>	 
 
-<div class="players">
+<div class="gameLeft">
 	<p>Kapitaal: <?php echo $totaal;?> (<?php echo $totaal + $uitkomst;?>)</p>
 	<br/>
 	<!-- uitgaven -->

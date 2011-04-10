@@ -2,7 +2,7 @@ $(function() {
 	init();
 	function init(){
 				var teamid = $('#teamid').val();
-				$('#chartCanvas1').empty();
+				$('#chartTeamSkills').empty();
 				//alert(teamid);
 				$.ajax({
     			type: "POST",
@@ -91,12 +91,12 @@ $(function() {
 /////////////////////////////////////////////////////////////////
 // CHARTS TRAINING begin
 /////////////////////////////////////////////////////////////////				
-			 var chart1 = new AwesomeChart('chartCanvas1');
-/*             chart1.title = "Worldwide browser market share: December 2010"; */
+			 var chart1 = new AwesomeChart('chartTeamSkills');
+			 /* chart1.title = "Worldwide browser market share: December 2010"; */
    			 chart1.chartType = "horizontal bars";
              chart1.data = [reboundtotaal,passingtotaal,interceptingtotaal,shotpowertotaal,shotprecisiontotaal, leadershiptotaal,playmakingtotaal, staminatotaal];
              chart1.labels = ['rebound','playmaking','shotpower','shotprecision','passing','stamina', 'intercepting', 'leidersvermogen'];
-             chart1.colors = ['#CCC', '#336b80', '#df1f2e', '#945D59', '#93BBF4', '#F493B8'];
+             chart1.colors = ['#666', '#336b80', '#df1f2e', '#945D59', '#93BBF4', '#F493B8'];
              chart1.randomColors = false;
              chart1.draw();   
 /////////////////////////////////////////////////////////////////

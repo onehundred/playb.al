@@ -572,5 +572,5 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
  */
 .ui-progressbar { height:15px; text-align: left; }
 .ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }
-.ui-progressbarTraining { height:9px; text-align: left; }
+.ui-progressbarTraining { height:10px; text-align: left; }
 .ui-progressbarTraining .ui-progressbarTraining-value {margin: -1px; height:100%; }

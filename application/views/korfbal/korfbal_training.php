@@ -1,5 +1,5 @@
 <script src="<?php echo base_url();?>js/korfbal/training.js"></script>
-<div class="players">
+<div class="gameLeft">
     <?php foreach($energie->result() as $row)
 {
 	$energie = $row->energie;
@@ -130,11 +130,11 @@ foreach($training->result() as $row){
 </div>
 <div class="gameRight">
 
-    <div class="chart_container">    <h2>team skills</h2>
-        <canvas id="chartCanvas1" width="350" height="350"> Your web-browser does not support the HTML 5 canvas element. </canvas>
-    </div>
-    <div><h2>laatst getraind op</h2>
+    <div class="chart_container"> <section>   <h2>team skills</h2>
+        <canvas id="chartTeamSkills" width="350" height="350"> Your web-browser does not support the HTML 5 canvas element. </canvas>
+</section>    </div>
+    <div><section><h2>laatst getraind op</h2>
     <p>test</p>
     <h2>datum</h2>
-    <p>test</p></div>
+    <p>test</p></section></div>
 </div>

@@ -13,8 +13,10 @@
 
 <!-- Fallback if browser does not support media queries + javascript (Read: Internet Explorer < 9) -->
 <!--[if lt IE 9]>
-	<link rel="stylesheet" href="8col.css" media="screen" />
+	<link rel="stylesheet" href="<?php echo base_url();?>css/style768.css" media="screen" />
 	<![endif]-->
+	
+
 
 <!-- Media Queries / Less -->
 <link href="<?php echo base_url();?>css/style1168.less" rel="stylesheet/less" media="only screen and (min-width: 1212px)" />
@@ -32,7 +34,7 @@
 <script src="<?php echo base_url();?>js/playbal.js"></script>
 <script src="<?php echo base_url();?>js/jquery.transform.js"></script>
 <!--<script src="<?php echo base_url();?>/js/jquery.flip.js"></script>-->
-<script src="<?php echo base_url();?>/js/jquery.multiple-bgs.min.js"></script>
+<script src="<?php echo base_url();?>js/jquery.multiple-bgs.min.js"></script>
 <!--<script src="<?php echo base_url();?>js/jquery.circulate.js"></script>-->
 <!--<script src="<?php echo base_url();?>js/jquery.easing.js"></script>-->
 <script src="<?php echo base_url();?>js/jquery.loading.1.6.4.js"></script>
@@ -43,6 +45,10 @@
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+	<!--[if (gte IE 6)&(lte IE 8)]>
+   <script type="text/javascript" src="<?php echo base_url();?>js/selectivizr.js"></script>
+ <![endif]-->
 </head>
 <body>
 <script>

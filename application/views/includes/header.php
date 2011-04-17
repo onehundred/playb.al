@@ -6,7 +6,7 @@
 			<!-- todo logo, profiel, login -->
 				<figure>
 				<a href="<?php echo base_url();?>">
-				<img ondragstart="return false" src="<?php echo base_url();?>img/logo.png" id="logo"  />
+				<img src="<?php echo base_url();?>img/logo.png" id="logo" ondragstart="return false" />
 				</a>
 				</figure>
 					<section>
@@ -16,7 +16,7 @@
 					</section>
 					<img src="<?php echo base_url();?>img/version.png" id="version" />
 			</header>
-			
+			</div> <!-- end headerWrap -->
 			
 			
 			

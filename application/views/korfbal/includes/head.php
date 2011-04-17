@@ -1,7 +1,5 @@
-
-<!-- head voor sport in detail -->
-
 <!DOCTYPE HTML>
+<!-- head voor sport in detail -->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -15,8 +13,10 @@
 
 <!-- Fallback if browser does not support media queries + javascript (Read: Internet Explorer < 9) -->
 <!--[if lt IE 9]>
-	<link rel="stylesheet" href="8col.css" media="screen" />
+	<link rel="stylesheet" href="<?php echo base_url();?>css/style768.css" media="screen" />
 	<![endif]-->
+	
+	
 
 <!-- Media Queries / Less -->
 <link href="<?php echo base_url();?>css/style1168.less" rel="stylesheet/less" media="only screen and (min-width: 1212px)" />
@@ -38,12 +38,14 @@
 <script src="<?php echo base_url();?>js/playbal.js"></script>
 <script src="<?php echo base_url();?>js/touchswipe.js"></script>
 <script src="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
-<script src="<?php echo base_url();?>/js/jquery.flip.js"></script>
+<script src="<?php echo base_url();?>js/jquery.flip.js"></script>
 <script src="<?php echo base_url();?>js/jquery.isotope.js"></script>
 <script src="<?php echo base_url();?>js/reveal/jquery.reveal.js"></script>
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 <script src="<?php echo base_url();?>js/awesomechart.js"></script>
-
+<!--[if (gte IE 6)&(lte IE 8)]>
+   <script type="text/javascript" src="<?php echo base_url();?>js/selectivizr.js"></script>
+ <![endif]-->
 
 </head>
 <body>

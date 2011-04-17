@@ -1,0 +1,1409 @@
+1303259575TS--->
+<!-- head voor sport in detail -->
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1"/>
+<meta name="viewport" content="width=device-width; maximum-scale=1"/>
+
+<title>playb.al</title>
+
+<link rel="stylesheet" media="all" href=""/>
+<link href="http://playb.al/css/style.less" rel="stylesheet/less" />
+
+<!-- Fallback if browser does not support media queries + javascript (Read: Internet Explorer < 9) -->
+<!--[if lt IE 9]>
+	<link rel="stylesheet" href="8col.css" media="screen" />
+	<![endif]-->
+
+<!-- Media Queries / Less -->
+<link href="http://playb.al/css/style1168.less" rel="stylesheet/less" media="only screen and (min-width: 1212px)" />
+<link href="http://playb.al/css/style768.less"  rel="stylesheet/less" media="only screen and (max-width: 991px) and (min-width: 768px)" />
+<link href="http://playb.al/css/style480.less"  rel="stylesheet/less" media="only screen and (max-width: 767px) and (min-width: 480px)" />
+<link href="http://playb.al/css/style320.less"  rel="stylesheet/less" media="only screen and (max-width: 479px)" />
+
+<link rel="stylesheet" href="http://playb.al/js/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css" />
+<link rel="stylesheet" href="http://playb.al/js/toastmessage/jquery.toastmessage.css"/>
+<link rel="stylesheet" href="http://playb.al/js/reveal/reveal.css"/>
+
+<script src="http://playb.al/js/modernizr-1.6.min.js"></script> 
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="http://playb.al/js/less-1.0.41.min.js"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://playb.al/js/jquery.mediaqueries.js"></script>
+<script src="http://playb.al/js/playbal.js"></script>
+<script src="http://playb.al/js/touchswipe.js"></script>
+<script src="http://playb.al/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script src="http://playb.al//js/jquery.flip.js"></script>
+<script src="http://playb.al/js/jquery.isotope.js"></script>
+<script src="http://playb.al/js/reveal/jquery.reveal.js"></script>
+<script src="http://playb.al/js/toastmessage/jquery.toastmessage.js"></script>
+<script src="http://playb.al/js/awesomechart.js"></script>
+
+
+</head>
+<body><div id="topbar"></div>
+	<div id="wrap">
+		<div id="main">
+		<div id="headerWrap">
+			<header>
+			<!-- todo logo, profiel, login -->
+				<figure>
+				<a href="http://playb.al/">
+				<img ondragstart="return false" src="http://playb.al/img/logo.png" id="logo"  />
+				</a>
+				</figure>
+					<section>
+					<div id="login">
+    <li class="menu_right"> <a href="#" id="profile" class=""> 
+        lenny        </a>
+        &nbsp;<img src="http://playb.al/img/home.png" />
+    </li>
+</div>
+
+
+<div class="profile" style="display: none; opacity: 0;">
+
+
+        <a href="#" id="closeProfile">sluiten</a>
+<img src="http://playb.al/img/default_profile.png" />
+
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>	
+	<p>dfgssdfs sdfsdfs sdfffff sdfsdf sdfsdf sdfsdf</p>
+	<p>dfgs</p>
+	<a href="http://playb.al/index.php/main/logout">afmelden</a>
+	
+
+    </div>
+
+<!-- end login --> 
+
+<!-- End 3 columns container --> 
+
+<!--        <li><input type="text" name="" value="zoeken"  /></li>  -->
+
+<!-- End 3 columns Item -->					</section>
+					<img src="http://playb.al/img/version.png" id="version" />
+			</header>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+<h1 id="teamname">k.c. superlenn</h1>
+<section class="sportnavWrap">
+<nav class="sportnav">
+    <p id="test"><a href="http://playb.al/index.php/korfbal/korfbal_start/4089">Overzicht</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_training/4089">Training</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_players/4089">Spelers</a> </p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_matches/4089">Wedstrijden</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_division/4089">Divisie</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_stadium/4089">Stadion</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_manager/4089">Manager</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_finances/4089">Financien</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_transfers/4089">Transfers</a></p>
+</nav>
+</section>
+</div> <!-- end headerWrap -->
+<script src="http://playb.al/js/korfbal/training.js"></script>
+<div class="gameLeft">
+        <h2>Op wat wil je trainen?</h2>
+    <input type="hidden" id="teamid" value="4089"/>
+    <input type="hidden" id="energie" value="10"/>
+    <select class="target">
+        <option value="stamina" selected="selected">Stamina</option>
+        <option value="passing">Passing</option>
+        <option value="shotpower">Shotkracht</option>
+        <option value="shotprecision">Shotprecisie</option>
+        <option value="rebound">Rebound</option>
+        <option value="playmaking">Playmaking</option>
+        <option value="intercepting">Intercepting</option>
+    </select>
+    Een training kost 30 van je energiepunten, je hebt momenteel 10 energiepunten.
+    <div style="text-decoration:underline; color:blue; cursor: pointer;" id="training">Train nu.</div>
+    <br/>
+    
+        <div class="playerDetail">
+          <p class="number">1</p>
+            <p class="firstname">Arsi</p>
+            <p class="lastname">Cline</p>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" />
+            </p>
+            <br />
+            <p class="age">17 jaar oud</p>
+            <p class="price">214300 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">1</p>
+                <p class="rebound">/20</p>
+                <div class="rebound13" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr13" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">14</p>
+                <p class="rebound">/20</p>
+                <div class="stamina13" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">46</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr13" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">12</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision13" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">64</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr13" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">11</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking13" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr13" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">1</p>
+                <p class="rebound">/20</p>
+                <div class="passing13" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr13" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">1</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower13" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr13" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">9</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting13" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr13" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">13</p>
+                <p class="rebound">/20</p>
+                <div class="leadership13" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr13" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">89</p>
+            <p class="firstname">nele</p>
+            <p class="lastname">vandevelde</p>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" />
+            </p>
+            <br />
+            <p class="age">17 jaar oud</p>
+            <p class="price">208375 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">5</p>
+                <p class="rebound">/20</p>
+                <div class="rebound14" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr14" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">11</p>
+                <p class="rebound">/20</p>
+                <div class="stamina14" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">32</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr14" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">5</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision14" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">83</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr14" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">2</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking14" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr14" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">9</p>
+                <p class="rebound">/20</p>
+                <div class="passing14" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr14" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">4</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower14" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr14" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">6</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting14" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr14" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">11</p>
+                <p class="rebound">/20</p>
+                <div class="leadership14" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr14" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">16</p>
+            <p class="firstname">Esa-Pekka</p>
+            <p class="lastname">Cooper</p>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" />
+            </p>
+            <br />
+            <p class="age">19 jaar oud</p>
+            <p class="price">163175 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">3</p>
+                <p class="rebound">/20</p>
+                <div class="rebound15" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr15" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">1</p>
+                <p class="rebound">/20</p>
+                <div class="stamina15" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">37</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr15" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision15" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">57</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr15" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">8</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking15" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr15" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">4</p>
+                <p class="rebound">/20</p>
+                <div class="passing15" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr15" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower15" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr15" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">7</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting15" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr15" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">5</p>
+                <p class="rebound">/20</p>
+                <div class="leadership15" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr15" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">77</p>
+            <p class="firstname">maria</p>
+            <p class="lastname">pony</p>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" />
+            </p>
+            <br />
+            <p class="age">18 jaar oud</p>
+            <p class="price">206550 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">10</p>
+                <p class="rebound">/20</p>
+                <div class="rebound16" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr16" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">2</p>
+                <p class="rebound">/20</p>
+                <div class="stamina16" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">25</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr16" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">7</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision16" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">75</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr16" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">8</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking16" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr16" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">2</p>
+                <p class="rebound">/20</p>
+                <div class="passing16" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr16" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">3</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower16" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr16" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">7</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting16" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr16" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">8</p>
+                <p class="rebound">/20</p>
+                <div class="leadership16" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr16" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">42</p>
+            <p class="firstname">Aki</p>
+            <p class="lastname">Cooper</p>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" />
+            </p>
+            <br />
+            <p class="age">17 jaar oud</p>
+            <p class="price">236175 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">12</p>
+                <p class="rebound">/20</p>
+                <div class="rebound17" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr17" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">9</p>
+                <p class="rebound">/20</p>
+                <div class="stamina17" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">45</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr17" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision17" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">82</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr17" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">2</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking17" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr17" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">3</p>
+                <p class="rebound">/20</p>
+                <div class="passing17" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr17" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">11</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower17" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr17" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">6</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting17" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr17" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">12</p>
+                <p class="rebound">/20</p>
+                <div class="leadership17" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr17" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">86</p>
+            <p class="firstname">anke</p>
+            <p class="lastname">deboi</p>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" />
+            </p>
+            <br />
+            <p class="age">16 jaar oud</p>
+            <p class="price">261300 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">11</p>
+                <p class="rebound">/20</p>
+                <div class="rebound18" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr18" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">18</p>
+                <p class="rebound">/20</p>
+                <div class="stamina18" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">21</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr18" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision18" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">78</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr18" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">5</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking18" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr18" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">1</p>
+                <p class="rebound">/20</p>
+                <div class="passing18" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr18" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">4</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower18" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr18" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">10</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting18" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr18" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">7</p>
+                <p class="rebound">/20</p>
+                <div class="leadership18" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr18" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">6</p>
+            <p class="firstname">Arttu</p>
+            <p class="lastname">Jones</p>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" />
+            </p>
+            <br />
+            <p class="age">20 jaar oud</p>
+            <p class="price">269125 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">8</p>
+                <p class="rebound">/20</p>
+                <div class="rebound19" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr19" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">9</p>
+                <p class="rebound">/20</p>
+                <div class="stamina19" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">22</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr19" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">5</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision19" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">63</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr19" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">12</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking19" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr19" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">10</p>
+                <p class="rebound">/20</p>
+                <div class="passing19" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr19" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">10</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower19" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr19" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">1</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting19" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr19" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">4</p>
+                <p class="rebound">/20</p>
+                <div class="leadership19" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr19" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">46</p>
+            <p class="firstname">anke</p>
+            <p class="lastname">pony</p>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" />
+            </p>
+            <br />
+            <p class="age">19 jaar oud</p>
+            <p class="price">251375 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">1</p>
+                <p class="rebound">/20</p>
+                <div class="rebound20" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr20" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">9</p>
+                <p class="rebound">/20</p>
+                <div class="stamina20" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">26</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr20" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">10</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision20" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">97</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr20" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">12</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking20" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr20" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">2</p>
+                <p class="rebound">/20</p>
+                <div class="passing20" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr20" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">7</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower20" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr20" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">11</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting20" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr20" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">15</p>
+                <p class="rebound">/20</p>
+                <div class="leadership20" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr20" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">12</p>
+            <p class="firstname">Eerik</p>
+            <p class="lastname">Winkler</p>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" />
+            </p>
+            <br />
+            <p class="age">23 jaar oud</p>
+            <p class="price">206650 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">3</p>
+                <p class="rebound">/20</p>
+                <div class="rebound21" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr21" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">12</p>
+                <p class="rebound">/20</p>
+                <div class="stamina21" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">28</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr21" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">6</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision21" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">68</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr21" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">1</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking21" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr21" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">5</p>
+                <p class="rebound">/20</p>
+                <div class="passing21" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr21" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">5</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower21" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr21" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">11</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting21" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr21" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">8</p>
+                <p class="rebound">/20</p>
+                <div class="leadership21" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr21" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">91</p>
+            <p class="firstname">josefien</p>
+            <p class="lastname">vandevelde</p>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" />
+            </p>
+            <br />
+            <p class="age">19 jaar oud</p>
+            <p class="price">234425 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">2</p>
+                <p class="rebound">/20</p>
+                <div class="rebound22" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr22" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">13</p>
+                <p class="rebound">/20</p>
+                <div class="stamina22" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">49</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr22" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision22" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">55</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr22" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">6</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking22" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr22" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">10</p>
+                <p class="rebound">/20</p>
+                <div class="passing22" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr22" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">3</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower22" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr22" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">7</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting22" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr22" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">16</p>
+                <p class="rebound">/20</p>
+                <div class="leadership22" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr22" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">34</p>
+            <p class="firstname">Ari-Pekka</p>
+            <p class="lastname">Cline</p>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" />
+            </p>
+            <br />
+            <p class="age">16 jaar oud</p>
+            <p class="price">302275 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">3</p>
+                <p class="rebound">/20</p>
+                <div class="rebound23" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr23" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">11</p>
+                <p class="rebound">/20</p>
+                <div class="stamina23" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">24</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr23" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">11</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision23" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">79</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr23" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">7</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking23" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr23" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">12</p>
+                <p class="rebound">/20</p>
+                <div class="passing23" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr23" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">8</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower23" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr23" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">10</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting23" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr23" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">19</p>
+                <p class="rebound">/20</p>
+                <div class="leadership23" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr23" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+    
+        <div class="playerDetail">
+          <p class="number">49</p>
+            <p class="firstname">maria</p>
+            <p class="lastname">pony</p>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" />
+            </p>
+            <br />
+            <p class="age">22 jaar oud</p>
+            <p class="price">175050 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">8</p>
+                <p class="rebound">/20</p>
+                <div class="rebound24" id="reboundProgress"></div>
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">0</p>
+                <p class="rebound">/1000</p>
+                <div class="rebound_tr24" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">10</p>
+                <p class="rebound">/20</p>
+                <div class="stamina24" id="staminaProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">27</p>
+                <p class="rebound">/1000</p>
+                <div class="stamina_tr24" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision24" id="shotprecisionProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">78</p>
+                <p class="rebound">/1000</p>
+                <div class="shotprecision_tr24" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">5</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking24" id="playmakingProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">0</p>
+                <p class="rebound">/1000</p>
+                <div class="playmaking_tr24" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">3</p>
+                <p class="rebound">/20</p>
+                <div class="passing24" id="passingProgress"></div>
+                 <p id="skillTitle">passing: </p>
+                <p class="passing">0</p>
+                <p class="rebound">/1000</p>
+                <div class="passing_tr24" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">5</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower24" id="shotpowerProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">0</p>
+                <p class="rebound">/1000</p>
+                <div class="shotpower_tr24" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">2</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting24" id="interceptingProgress"></div>
+                 <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">0</p>
+                <p class="rebound">/1000</p>
+                <div class="intercepting_tr24" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">8</p>
+                <p class="rebound">/20</p>
+                <div class="leadership24" id="leadershipProgress"></div>
+                 <p id="skillTitle">leadership: </p>
+                <p class="leadership">0</p>
+                <p class="rebound">/1000</p>
+                <div class="leadership_tr24" id="leadershipProgress"></div>
+            </div>
+            <!-- vordering van training -->
+<!--             <p>vordering</p> -->
+            <div id="rightProgress">
+                
+                
+                
+                
+            </div>
+            <div id="leftProgress">
+               
+                
+               
+               
+            </div>
+        </div>
+
+        <div id="myModal" class="reveal-modal"> <a class="close-reveal-modal">&#215;</a> </div>
+</div>
+<div class="gameRight">
+
+    <div class="chart_container"> <section>   <h2>team skills</h2>
+        <canvas id="chartTeamSkills" width="350" height="350"> Your web-browser does not support the HTML 5 canvas element. </canvas>
+</section>    </div>
+    <div><section><h2>laatst getraind op</h2>
+    <p>test</p>
+    <h2>datum</h2>
+    <p>test</p></section></div>
+</div>
+<script src="http://playb.al/js/clearlink.js"></script>
+<script src="http://playb.al/js/formToWizard.js"></script>
+<script>
+        $(document).ready(function(){
+            $("#SignupForm").formToWizard({ submitButton: 'submit' })
+            
+        });    
+</script>
+
+<script>
+/*
+$('#test').click(function() { 
+	 $(this).css("font-size","90px");
+			$('#login').slideDown(200);
+			});
+	
+*/
+		
+</script>
+<!--
+	<script>  $(document).ready(function(){			
+		
+			$('#wrap').fadeIn(2000);				
+			
+});</script>
+-->
+<script>
+	/*
+		
+		$('.korfbal').mouseover(function() { 
+    $('#korfbal').animate({ 
+          width: '150px', 
+          height: '137px',
+          opacity: 1.0 }, 
+        1250 ); 
+    
+});
+		$('.korfbal').mouseout(function() { 
+    $('#korfbal').animate({ 
+          width: '150px', 
+          height: '137px',
+          opacity: 1.0 }, 
+        250 ); 
+    
+});
+		$('.basketbal').mouseover(function() { 
+    	$('#basketbal').animate({ 
+          width: '150px', 
+          height: '137px',
+          opacity: 1.0 }, 
+        1250 ); 
+    
+});
+		$('.volleybal').mouseover(function() { 
+    	$('#volleybal').animate({ 
+          width: '150px', 
+          height: '137px',
+          opacity: 1.0 }, 
+        1250 ); 
+    
+});
+*/
+
+</script>
+</div>
+<!-- end main -->
+</div>
+<!-- end wrap -->
+<footer>
+    <section id="footer">
+    
+        <div id="footerLeft">
+            <h2>test</h2>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        </div>
+        <div id="footerCenter">
+            <h2>about</h2>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+            <p></p>
+        </div>
+        <div id="footerRight">
+            <h2>contact</h2>
+            <li>connect with us on facebook</li>
+            <li>follow on twitter</li>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+        </div>
+    </section>
+</footer>
+</body>
+</html>

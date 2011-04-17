@@ -103,6 +103,11 @@ body {
 
 	
 }
+#headerWrap {
+height: 219px;
+/* background: url(../images/headerWrap_bg.png)repeat 0 0; */
+ 	background-image: url("../images/headerWrap_bg.png");
+}
 header {
  height: @headerHeight;
 }
@@ -159,19 +164,18 @@ h2 {
 	color: #666;
 }
 .sportnavWrap {
-	height: 110px;
-	margin: 0 0 20px 0;
+	height: 100px;
+	margin: 0 0 10px 0;
 	background: 
 
-	url(../img/footer.png) repeat-x 0% 100%,
-	url(../img/footer_down.png) repeat-x 0% 0%;
+	url(../img/footer.png) repeat-x 0% 100%;
 }
 .sportnav {
 	margin-bottom: 5px;
 	width: 1168px;
 
 	height: 40px;
-		padding: 40px 0 0 0;
+		padding: 25px 0 0 0;
 
 }
 
@@ -335,10 +339,10 @@ border: 1px dashed rgba(0, 0, 0, 0.15);
 	display: inline;
 }
 .gameRight h2 {
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: normal;
-	letter-spacing: 1px;
-	color: #000;
+	letter-spacing: 0	1px;
+	color: #888;
 	padding: 0 0 0 10px;
 }
 .gameRight p {
@@ -508,7 +512,7 @@ background: #FFF; /* unsupported */
 		url(../images/box_l.png) repeat-y 100% 10px;
 
 }
-/* gameLeft end -------------------------------------------------------------------------------------------------------------*/
+/* gameLeft end ------------------------------------------------------------------------------------------------------------*/
 /* MATCHES start -----------------------------------------------------------------------------------------------------------*/
 #matchTeamName, #versus {
 	font-size: 32px;
@@ -550,18 +554,18 @@ position: relative;
 	background-color: black;
 }
 /* DIVISION end -----------------------------------------------------------------------------------------------------------*/
-
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footer {
 
 	background: #FFF; /* unsupported */
 	background: 
+				url(../img/footer_down.png) repeat-x 0 0;
 
-				url(../img/footer.png) repeat-x 0 0;
 
 
 
 	margin-top: 30px;
+	padding-top: 25px;
 
 }
 #footer h2 {

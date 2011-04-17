@@ -7,7 +7,8 @@ class Korfbal extends CI_Controller {
 		parent::__construct();
 		$this->is_logged_in();
 		$this->is_your_team();
-	
+		
+		$this->output->cache(3600);
 	}
 	
 	//kijken of men ingelogd is

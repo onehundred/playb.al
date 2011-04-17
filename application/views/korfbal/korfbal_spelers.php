@@ -7,8 +7,8 @@ foreach($spelers->result() as $row)
 		{?>
         <div class="player">
             <p class="number"><?php echo $row->rugnummer;?></p>
-            <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></p>
-            <p class="lastname"><?php echo $row->achternaam; ?></a></p>
+            <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></a></p>
+            <p class="lastname"><?php echo $row->achternaam; ?></p>
             <p class="gender">
                 <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" />
             </p>
@@ -166,9 +166,7 @@ foreach($spelers->result() as $row)
             playmaking</a></li>
     </ul>
     <!-- end ul id sort --> 
-</div>
-<!-- end gameRight3 -->
-</div>
+
 <!-- end gameRight -->
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>

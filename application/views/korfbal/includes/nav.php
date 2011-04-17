@@ -12,3 +12,4 @@
     <p><?php echo anchor('korfbal/korfbal_transfers/'.$team_id.'','Transfers') ?></p>
 </nav>
 </section>
+</div> <!-- end headerWrap -->

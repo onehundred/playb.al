@@ -1,6 +1,7 @@
 <div id="topbar"></div>
 	<div id="wrap">
 		<div id="main">
+		<div id="headerWrap">
 			<header>
 			<!-- todo logo, profiel, login -->
 				<figure>

@@ -19,43 +19,43 @@
                 <p>eerstvolgende wedstrijd</p>
                 <p>playb.al tijd</p>
             </section>
-        </div>
+        </div>               </section> <section class="gameRightWrap">
         <div>
             <section>
                 <h2>klassement eerste divisie</h2>
                 <p>Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
             </section>
-        </div>
+        </div></section> <section class="gameRightWrap">
         <div>
             <section>
                 <h2>klassement jouw divisie</h2>
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</p>
             </section>
-        </div>
+        </div></section> <section class="gameRightWrap">
         <div>
             <section>
                 <h2>laatste award</h2>
                 <p>Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
             </section>
-        </div>
+        </div></section> <section class="gameRightWrap">
         <div>
             <section>
                 <h2>laatste achievement</h2>
                 <p>Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
             </section>
-        </div>
+        </div></section> <section class="gameRightWrap">
         <div>
             <section>
                 <h2>laatste speler gekocht</h2>
                 <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
             </section>
-        </div>
+        </div></section> <section class="gameRightWrap">
         <div>
             <section>
                 <h2>laatste speler verkocht</h2>
                 <p>Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             </section>
-        </div>
+        </div></section> <section class="gameRightWrap">
         </section>
     </div>
     <!-- end gameRight --> 

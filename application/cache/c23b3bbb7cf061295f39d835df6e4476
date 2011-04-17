@@ -1,0 +1,338 @@
+1303259580TS--->
+<!-- head voor sport in detail -->
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1"/>
+<meta name="viewport" content="width=device-width; maximum-scale=1"/>
+
+<title>playb.al</title>
+
+<link rel="stylesheet" media="all" href=""/>
+<link href="http://playb.al/css/style.less" rel="stylesheet/less" />
+
+<!-- Fallback if browser does not support media queries + javascript (Read: Internet Explorer < 9) -->
+<!--[if lt IE 9]>
+	<link rel="stylesheet" href="8col.css" media="screen" />
+	<![endif]-->
+
+<!-- Media Queries / Less -->
+<link href="http://playb.al/css/style1168.less" rel="stylesheet/less" media="only screen and (min-width: 1212px)" />
+<link href="http://playb.al/css/style768.less"  rel="stylesheet/less" media="only screen and (max-width: 991px) and (min-width: 768px)" />
+<link href="http://playb.al/css/style480.less"  rel="stylesheet/less" media="only screen and (max-width: 767px) and (min-width: 480px)" />
+<link href="http://playb.al/css/style320.less"  rel="stylesheet/less" media="only screen and (max-width: 479px)" />
+
+<link rel="stylesheet" href="http://playb.al/js/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css" />
+<link rel="stylesheet" href="http://playb.al/js/toastmessage/jquery.toastmessage.css"/>
+<link rel="stylesheet" href="http://playb.al/js/reveal/reveal.css"/>
+
+<script src="http://playb.al/js/modernizr-1.6.min.js"></script> 
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="http://playb.al/js/less-1.0.41.min.js"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://playb.al/js/jquery.mediaqueries.js"></script>
+<script src="http://playb.al/js/playbal.js"></script>
+<script src="http://playb.al/js/touchswipe.js"></script>
+<script src="http://playb.al/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script src="http://playb.al//js/jquery.flip.js"></script>
+<script src="http://playb.al/js/jquery.isotope.js"></script>
+<script src="http://playb.al/js/reveal/jquery.reveal.js"></script>
+<script src="http://playb.al/js/toastmessage/jquery.toastmessage.js"></script>
+<script src="http://playb.al/js/awesomechart.js"></script>
+
+
+</head>
+<body><div id="topbar"></div>
+	<div id="wrap">
+		<div id="main">
+		<div id="headerWrap">
+			<header>
+			<!-- todo logo, profiel, login -->
+				<figure>
+				<a href="http://playb.al/">
+				<img ondragstart="return false" src="http://playb.al/img/logo.png" id="logo"  />
+				</a>
+				</figure>
+					<section>
+					<div id="login">
+    <li class="menu_right"> <a href="#" id="profile" class=""> 
+        lenny        </a>
+        &nbsp;<img src="http://playb.al/img/home.png" />
+    </li>
+</div>
+
+
+<div class="profile" style="display: none; opacity: 0;">
+
+
+        <a href="#" id="closeProfile">sluiten</a>
+<img src="http://playb.al/img/default_profile.png" />
+
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>	
+	<p>dfgssdfs sdfsdfs sdfffff sdfsdf sdfsdf sdfsdf</p>
+	<p>dfgs</p>
+	<a href="http://playb.al/index.php/main/logout">afmelden</a>
+	
+
+    </div>
+
+<!-- end login --> 
+
+<!-- End 3 columns container --> 
+
+<!--        <li><input type="text" name="" value="zoeken"  /></li>  -->
+
+<!-- End 3 columns Item -->					</section>
+					<img src="http://playb.al/img/version.png" id="version" />
+			</header>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+<h1 id="teamname">k.c. superlenn</h1>
+<section class="sportnavWrap">
+<nav class="sportnav">
+    <p id="test"><a href="http://playb.al/index.php/korfbal/korfbal_start/4089">Overzicht</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_training/4089">Training</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_players/4089">Spelers</a> </p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_matches/4089">Wedstrijden</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_division/4089">Divisie</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_stadium/4089">Stadion</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_manager/4089">Manager</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_finances/4089">Financien</a></p>
+    <p><a href="http://playb.al/index.php/korfbal/korfbal_transfers/4089">Transfers</a></p>
+</nav>
+</section>
+</div> <!-- end headerWrap -->
+
+    <div class="gameLeft">
+                     	&nbsp;<a href="../korfbal_teamorders/4089">Geef nu je opstelling door voor de volgende wedstrijd.</a> 
+        
+      <p>  <p id="matchTeamName">k.c. superlenn</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">playbal</p>
+      <p>  <p id="matchTeamName">playbal</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">k.c. superlenn</p>15-13&nbsp;<a href="http://playb.al/index.php/korfbal/korfbal_review/4089/57237">bekijk replay nu</a><br />
+      <p>  <p id="matchTeamName">k.c. superlenn</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">playbal</p>17-23&nbsp;<a href="http://playb.al/index.php/korfbal/korfbal_review/4089/57241">bekijk replay nu</a><br />
+      <p>  <p id="matchTeamName">playbal</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">k.c. superlenn</p>
+      <p>  <p id="matchTeamName">k.c. superlenn</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">playbal</p>
+      <p>  <p id="matchTeamName">playbal</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">k.c. superlenn</p>
+      <p>  <p id="matchTeamName">k.c. superlenn</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">playbal</p>
+      <p>  <p id="matchTeamName">playbal</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">k.c. superlenn</p>
+      <p>  <p id="matchTeamName">k.c. superlenn</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">playbal</p>
+      <p>  <p id="matchTeamName">playbal</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">k.c. superlenn</p>
+      <p>  <p id="matchTeamName">k.c. superlenn</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">playbal</p>
+      <p>  <p id="matchTeamName">playbal</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">k.c. superlenn</p>
+      <p>  <p id="matchTeamName">k.c. superlenn</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">playbal</p>
+      <p>  <p id="matchTeamName">playbal</p>
+
+        <p id="versus">VS</p>
+
+        <p id="matchTeamName">k.c. superlenn</p></p>
+             
+             
+
+                     
+
+           
+    </div>
+
+    <div class="gameRight">
+            <div><section>
+        <h2>kalender</h2>
+        <p>huidige week</p>
+        <p>huidige seizoen</p>
+        <p>eerstvolgende wedstrijd</p>
+        <p>playb.al tijd</p></section>
+    </div>
+
+        <div class="chart_container"><section><h2>huidig seizoen</h2>
+            <canvas id="chartCanvas1" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
+</section>        </div>
+
+
+        <div class="chart_container"> <section>       <h2>vorig seizoen</h2>
+            <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
+</section>        </div>
+    </div>
+    <script type="text/javascript">
+     var chart1 = new AwesomeChart('chartCanvas1');
+    /*             chart1.title = "Worldwide browser market share: December 2010"; */
+            chart1.data = [51.62,31.3, 10];
+            chart1.chartType = "pie";
+    /*             chart1.labels = ['verloren','gewonnen']; */
+            chart1.colors = ['green', 'red', 'blue', '#945D59', '#93BBF4', '#F493B8'];
+            chart1.randomColors = false;
+            chart1.draw();
+            
+              var chart2 = new AwesomeChart('chartCanvas2');
+    /*             chart1.title = "Worldwide browser market share: December 2010"; */
+            chart2.data = [39.62,51.3, 25];
+            chart2.chartType = "pie";
+    /*             chart1.labels = ['verloren','gewonnen']; */
+            chart2.colors = ['green', 'red', 'blue', '#945D59', '#93BBF4', '#F493B8'];
+            chart2.randomColors = false;
+            chart2.draw();
+
+    </script>
+    
+
+<script src="http://playb.al/js/clearlink.js"></script>
+<script src="http://playb.al/js/formToWizard.js"></script>
+<script>
+        $(document).ready(function(){
+            $("#SignupForm").formToWizard({ submitButton: 'submit' })
+            
+        });    
+</script>
+
+<script>
+/*
+$('#test').click(function() { 
+	 $(this).css("font-size","90px");
+			$('#login').slideDown(200);
+			});
+	
+*/
+		
+</script>
+<!--
+	<script>  $(document).ready(function(){			
+		
+			$('#wrap').fadeIn(2000);				
+			
+});</script>
+-->
+<script>
+	/*
+		
+		$('.korfbal').mouseover(function() { 
+    $('#korfbal').animate({ 
+          width: '150px', 
+          height: '137px',
+          opacity: 1.0 }, 
+        1250 ); 
+    
+});
+		$('.korfbal').mouseout(function() { 
+    $('#korfbal').animate({ 
+          width: '150px', 
+          height: '137px',
+          opacity: 1.0 }, 
+        250 ); 
+    
+});
+		$('.basketbal').mouseover(function() { 
+    	$('#basketbal').animate({ 
+          width: '150px', 
+          height: '137px',
+          opacity: 1.0 }, 
+        1250 ); 
+    
+});
+		$('.volleybal').mouseover(function() { 
+    	$('#volleybal').animate({ 
+          width: '150px', 
+          height: '137px',
+          opacity: 1.0 }, 
+        1250 ); 
+    
+});
+*/
+
+</script>
+</div>
+<!-- end main -->
+</div>
+<!-- end wrap -->
+<footer>
+    <section id="footer">
+    
+        <div id="footerLeft">
+            <h2>test</h2>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        </div>
+        <div id="footerCenter">
+            <h2>about</h2>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+            <p></p>
+        </div>
+        <div id="footerRight">
+            <h2>contact</h2>
+            <li>connect with us on facebook</li>
+            <li>follow on twitter</li>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+        </div>
+    </section>
+</footer>
+</body>
+</html>

@@ -1,6 +1,3 @@
-@charset "UTF-8";
-/* CSS Document */
-
 /* LESS GLOBALS start */
 
 @korfbalColor: #ffc929;
@@ -11,7 +8,7 @@
 @volleybalBorderColor: #295666;
 @grey: #f2f2f2;
 @selectionColor: rgba(232, 34, 55, 1);
-@headerHeight: 75px;
+@headerHeight: 70px;
 @footerHeight: 150px;
 .borders {
 	border: 1px solid
@@ -107,7 +104,7 @@ body {
 	
 }
 #headerWrap {
-height: 219px;
+height: 210px;
 /* background: url(../images/headerWrap_bg.png)repeat 0 0; */
  	background-image: url("../images/headerWrap_bg.png");
 }
@@ -116,7 +113,7 @@ header {
 }
 #logo {
  width: : 104px;
-	height: 40px;
+height: 40px;
 }
 /*
 #login {
@@ -167,7 +164,7 @@ h2 {
 	color: #666;
 }
 .sportnavWrap {
-	height: 100px;
+	height: 90px;
 	margin: 0 0 10px 0;
 	background: 
 
@@ -178,7 +175,7 @@ h2 {
 	width: 1168px;
 
 	height: 40px;
-		padding: 25px 0 0 0;
+		padding: 15px 0 0 0;
 
 }
 
@@ -217,11 +214,13 @@ h2 {
 color: @korfbalColor;
 	cursor: pointer;/* -webkit-text-stroke: 1px @korfbalBorderColor; *//* text-shadow: 0px -1px 1px rgba(1, 1, 1, .8); */
 	
+	
 
 }
 #teamname {
 font-size: 68px;
 	text-shadow: 0px 0px 20px #000;
+
 }
 /* FONTS end 		-------------------------------------------------------------------------------------------------------*/
 /* gameLeft start ----------------------------------------------------------------------------------------------------------*/
@@ -235,6 +234,10 @@ float: left;
 width: 1168px;
 }
 */
+.game {
+/* background-color: rgba(0, 0, 0, 0.5); */
+float: left;
+}
 .gameLeft {
 	font-size: 15px;
 	float: left;
@@ -247,7 +250,7 @@ width: 1168px;
 	box-shadow: 0px 0px 10px #bdbdbd;
 */
 	.borderRadius;
-	padding: 0 0 0 15px;
+	padding: 20px 0 0 15px;
 
 }
 .gameLeft h2 {
@@ -325,16 +328,11 @@ height: 394px;
 .gameLeft #skillTitle {
 	display: inline;
 }
-.gameRightWrap {
-margin: 10px;
-border: 1px dashed rgba(0, 0, 0, 0.15);
-.borderRadius;
-}
+
 .gameRight {
 	width: 390px;
 	font-size: 15px;
-		background-color: rgba(255, 255, 255, 0.5);
-		margin: 0 15px 0 0px;
+		margin: 20px 15px 0 0px;
 
 }
 .gameRight ul, .gameRight li {
@@ -342,7 +340,7 @@ border: 1px dashed rgba(0, 0, 0, 0.15);
 	display: inline;
 }
 .gameRight h2 {
-	font-size: 28px;
+	font-size: 32px;
 	font-weight: normal;
 	letter-spacing: 0	1px;
 	color: #888;
@@ -354,7 +352,8 @@ color: #000;
 }
 .gameRight div {
 	margin: 0 0 0px 0;
-	padding: 5px 14px 0px 5px;
+	padding: 0 0 10px 0;
+	margin: 15px 0 15px 0;
 /*
 	-webkit-box-shadow:  0px 0px 10px #bdbdbd;
 	-moz-box-shadow: 0px 0px 10px #bdbdbd;
@@ -364,10 +363,7 @@ color: #000;
 	.transitionOff;
 }
 .gameRight div:hover {
-	-webkit-box-shadow:  0px 0px 10px #a3a3a3;
-	-moz-box-shadow: 0px 0px 10px #a3a3a3;
-	box-shadow: 0px 0px 10px #a3a3a3;
-	.transitionOn2;
+
 }
 .gameRight div section {
 /*
@@ -398,15 +394,30 @@ background-color: yellow;
 .gameRight div:nth-child(1) {
 
 
+background: 
+		url(../images/triangles.png) no-repeat 0% 100%;
 
 
+-webkit-box-shadow:   0px -10px 10px #bdbdbd;
+	-moz-box-shadow:  0px -10px 10px #bdbdbd;
+	box-shadow:  0px -7px 5px #bdbdbd;
 
 
 }
 
 .gameRight div:nth-child(1) section {
+background-color: rgba(255,255,255, 0.7);
+/* .innerShadow; */
 
-
+	border-top-width: 10px;
+	border-right-width: 10px;
+	border-left-width: 10px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-left-color: #FFFFFF;
 
 }
 
@@ -430,23 +441,28 @@ background: #FFF;
 		url(../images/box_l.png) repeat-y 0 100%,
 		url(../images/box_l.png) repeat-y 100% 10px;
 */
-	background: #FAFAFA;
-			background-color: rgba(255, 255, 255, 0.4);
 
+background: 
+		url(../images/triangles.png) no-repeat 0% 100%;
 }
 .gameRight div:nth-child(2):hover {
 
 
 }
 .gameRight div:nth-child(2) section {
+background: 
+		url(../images/bg2.jpg) no-repeat 0% 0%;
 
 
 }
 .gameRight div:nth-child(3) {
+background: 
+		url(../images/triangles.png) no-repeat 0% 100%;
 }
 
 .gameRight div:nth-child(3) section {
-
+background-color: rgba(255,255,255, 0.7);
+.innerShadow;
 
 
 }
@@ -567,8 +583,10 @@ position: relative;
 
 
 
+/*
 	margin-top: 30px;
 	padding-top: 25px;
+*/
 
 }
 #footer h2 {
@@ -909,3 +927,7 @@ margin: 75px 0 0 0;
 	padding: 10px;
 }
 /* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
+/* ICONS begin -------------------------------------------------------------------------------------------------------------*/
+#icon {
+padding: 0 10px 0 0;
+}

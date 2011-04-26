@@ -34,6 +34,8 @@
 <![endif]-->
 <script src="<?php echo base_url();?>js/less-1.0.41.min.js"></script> 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<!-- jquery lokaal voor offline productie -->
+<script src="<?php echo base_url();?>js/jquery-1.5.2.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.mediaqueries.js"></script>
 <script src="<?php echo base_url();?>js/playbal.js"></script>
 <script src="<?php echo base_url();?>js/touchswipe.js"></script>

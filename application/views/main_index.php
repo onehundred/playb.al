@@ -40,7 +40,7 @@
             <h1>korfbal</h1>
             <a href="#" id="startKorfbal">start</a> </div>
         <div class="korfbalAnimation" style="display: none;">
-            <img src="<?php echo base_url();?>img/korfbal.png" id="korfbal" ondragstart="return false"/>
+            <img src="<?php echo base_url();?>img/korfbal.png" type="image/png" id="korfbal" ondragstart="return false"/>
         </div>
     </figure>
     <figure class="basketbal">

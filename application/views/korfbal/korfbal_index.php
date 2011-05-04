@@ -1,4 +1,4 @@
-   <div class="game"><div class="gameLeft"> 
+   <div class="game"><div class="gameRight"> 
         
         <!-- 		<h2 id="tagline">Overzicht</h2> --> 
         <!--     <h3>Stadion: <?php echo $stadionnaam;?></h3> --> 
@@ -8,8 +8,8 @@
         <h2>playb.al updates</h2>
         <p>Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
     </div>
-    <!-- end gameLeft -->
-    <div class="gameRight">
+    <!-- end gameRight -->
+    <div class="gameLeft">
 
         <div>
             <section>
@@ -57,5 +57,5 @@
             </section>
         </div>
     </div>
-    <!-- end gameRight --> 
+    <!-- end gameLeft --> 
 </div> <!-- end game -->

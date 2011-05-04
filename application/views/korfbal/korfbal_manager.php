@@ -1,17 +1,22 @@
-<div class="gameLeft">
+<div class="gameRight">
     <?php
 //gegevens van users en teams kan hieruit gehaald worden
  foreach($manager->result() as $row)
 		{ ?>
-    <p>Manager: <?php echo $row->gebruikersnaam;?> </p>
-    <p>Team: <?php echo $row->naam;?></p>
-    <p> Country: <?php echo $row->land; ?></p>
+    <p>manager: <?php echo $row->gebruikersnaam;?> </p>
+    <p>team: <?php echo $row->naam;?></p>
+    <p> land: <?php echo $row->land; ?></p>
     <?php }?>
 </div>
-<div class="gameRight">
+<div class="gameLeft">
     <div>
         <section>
             <h2>bekers</h2>
+            <!-- if bekers = 0 -->
+            <p>je hebt nog geen bekers gewonnen</p>
+            <!-- else -->
+            <p>beker 1</p>
+            <p>beker 2</p>
         </section>
     </div>
     <div>
@@ -22,6 +27,36 @@
     <div>
         <section>
             <h2>achievements</h2>
+            <!-- if achievements = 0 -->
+            <p>je hebt nog geen achievements behaald</p>
+            <!-- else --><section id="bottom"> </section>
+<section id="belowbottom">
+
+  <div class="containerSmall">
+        <div class="folio_blockSmall">
+            <div class="main_viewSmall">
+                <div class="galleryWrapperSmall">
+                    <img src="<?php echo base_url();?>img/gallery_right_hide.png" id="galleryRightHideSmall" alt="" style="display: ;" />
+                    <img src="<?php echo base_url();?>img/gallery_left_hide.png" id="galleryLeftHideSmall" alt="" style="display: ;" />
+                    <div class="imgsSmall" ondragstart="return false">
+                        <img src="<?php echo base_url();?>img/achievement1.png" alt="achievement" title="playb.al achievement" />
+                        <img src="<?php echo base_url();?>img/achievement1.png" alt="achievement" title="playb.al achievement" />
+                        <img src="<?php echo base_url();?>img/achievement1.jpg" alt="achievement" title="playb.al achievement" />
+                        <img src="<?php echo base_url();?>img/achievement1.jpg" alt="achievement" title="playb.al achievement" />
+                    </div>
+                    <!-- end imgs --> 
+                </div>
+                <!-- end galleryWrapper -->
+                <div class="pagingGallerySmall"> <a href="#" rel="1"></a> <a href="#" rel="2"></a> <a href="#" rel="3"></a> <a href="#" rel="4"></a> </div>
+                <!-- end pagingGallery --> 
+            </div>
+            <!-- end main_view --> 
+            
+        </div>
+        <!-- end folio_block --> 
+        
+    </div></section>
+    <!-- end container -->
         </section>
     </div>
     <?php foreach($achievements->result() as $row){ ?>

@@ -6,12 +6,14 @@
     </script>
 <style>
 .even {
-	background: #FFF;
-	border-bottom: 1px solid #CCC;
+	background-color: #FFFFFF;
+	background-color: rgba(255,255,255,0.5);
+	border-bottom: 1px solid #CCCCCC;
 }
 .odd {
-	background: #E5E5E5;
-	border-bottom: 1px solid #CCC;
+	background-color: #E5E5E5;
+		background-color: rgba(229,229,229,0.5);
+	border-bottom: 1px solid #CCCCCC;
 }
 </style>
 <?php
@@ -22,7 +24,7 @@
 				 $subdivisie = $row->sub_divisie;
 	} ?>
 
-<div class="gameLeft">
+<div class="gameRight">
     <h1><?php echo $divisienaam;?>.<?php echo $subdivisie;?></h1>
     <div class="division">
         <div id="team"> <a class="tooltip" title="teamnaam" href="#">team </a></div>
@@ -68,7 +70,7 @@
 		
 ?>
 </div>
-<div class="gameRight">
+<div class="gameLeft">
     <div>
         <section>
             <h2>kalender</h2>
@@ -82,12 +84,6 @@
         <section>
             <h2>vorige matchen</h2>
             <?php if(isset($vorige_matchen[1]['thuis'])){?>
-           <!--
- <p></p>
-            <p><?php echo $vorige_matchen[2]['thuis']. " - " . $vorige_matchen[2]['uit']."   ". $vorige_matchen[2]['uitslag']; ?></p>
-            <p><?php echo $vorige_matchen[3]['thuis']. " - " . $vorige_matchen[3]['uit']."   ". $vorige_matchen[3]['uitslag']; ?></p>
-            <p><?php echo $vorige_matchen[4]['thuis']. " - " . $vorige_matchen[4]['uit']."   ". $vorige_matchen[4]['uitslag']; ?></p>
--->
             <table>
                 <tr>
                     <td><?php echo $vorige_matchen[1]['thuis']; ?></td>
@@ -120,12 +116,6 @@
     <div>
         <section>
             <h2>volgende matchen</h2>
-<!--
-            <p><?php echo $volgende_matchen[1]['thuis']. " - " . $volgende_matchen[1]['uit']; ?></p>
-            <p><?php echo $volgende_matchen[2]['thuis']. " - " . $volgende_matchen[2]['uit']; ?></p>
-            <p><?php echo $volgende_matchen[3]['thuis']. " - " . $volgende_matchen[3]['uit']; ?></p>
-            <p><?php echo $volgende_matchen[4]['thuis']. " - " . $volgende_matchen[4]['uit']; ?></p>
--->
              <table>
                 <tr>
                     <td><?php echo $volgende_matchen[1]['thuis']; ?></td>

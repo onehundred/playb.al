@@ -1,11 +1,13 @@
 <section id="layouts">
-
     <figure class="korfbal">
         <h1>Korfbal</h1>
         <div id=""><p id="overview">team:</p>
             <p id="continue">
+            <a onclick="parent.location='http://google.be'">in app pagina</a>
                 <?php if(isset($korfNaam)){
 	echo anchor("korfbal/korfbal_start/$korfId", $korfNaam);
+
+
 }else{
 
 	echo anchor('sportchoice/korfbal_signup','Create korfball team');

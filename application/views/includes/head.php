@@ -53,6 +53,7 @@
 <script src="<?php echo base_url();?>js/jquery.mediaqueries.js"></script>
 <script src="<?php echo base_url();?>js/touchswipe.js"></script>
 <script src="<?php echo base_url();?>js/playbal.js"></script>
+<script src="<?php echo base_url();?>js/galleryHome.js"></script>
 <script src="<?php echo base_url();?>js/jquery.transform.js"></script>
 <script src="<?php echo base_url();?>js/jquery.multiple-bgs.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.loading.1.6.4.js"></script>

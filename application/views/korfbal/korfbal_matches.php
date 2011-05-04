@@ -1,5 +1,5 @@
 
-    <div class="gameLeft">
+    <div class="gameRight">
      <?php if(!isset($alien)){ ?>
                 	&nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door voor de volgende wedstrijd.</a> <?php }?>
 
@@ -31,7 +31,7 @@
            
     </div>
 
-    <div class="gameRight">
+    <div class="gameLeft">
             <div><section>
         <h2>kalender</h2>
         <p>huidige week</p>

@@ -395,13 +395,13 @@ $(document).ready(function()
 	var wedstrijdid = $('#wedstrijdid').val();
 	$('#loading').hide();
 	$('#prestaties').hide();
-	$('.gameRight').hide();
+	$('.gameLeft').hide();
 	
 	
 	$('#loading').ajaxSuccess(function() {
   		$(this).hide();
   		$('#prestaties').show();
-  		$('.gameRight').show();
+  		$('.gameLeft').show();
   		
 	});
 	

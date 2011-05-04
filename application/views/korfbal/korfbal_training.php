@@ -1,5 +1,5 @@
 <script src="<?php echo base_url();?>js/korfbal/training.js"></script>
-<div class="gameLeft">
+<div class="gameRight">
     <?php foreach($energie->result() as $row)
 {
 	$energie = $row->energie;
@@ -28,10 +28,10 @@ foreach($training->result() as $row){
 
         <div class="playerDetail">
           <p class="number"><?php echo $row->rugnummer;?></p>
-            <p class="firstname"><?php echo $row->voornaam;?></p>
-            <p class="lastname"><?php echo $row->achternaam; ?></p>
+            <span class="name"><p class="firstname"><?php echo $row->voornaam;?></p>
+            <p class="lastname"><?php echo $row->achternaam; ?></p></span>
             <p class="gender">
-                <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" />
+                <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" ondragstart= "return false" />
             </p>
             <br />
             <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
@@ -128,7 +128,7 @@ foreach($training->result() as $row){
  ?>
     <div id="myModal" class="reveal-modal"> <a class="close-reveal-modal">&#215;</a> </div>
 </div>
-<div class="gameRight">
+<div class="gameLeft">
 
     <div class="chart_container"> <section>   <h2>team skills</h2>
         <canvas id="chartTeamSkills" width="350" height="350"> Your web-browser does not support the HTML 5 canvas element. </canvas>

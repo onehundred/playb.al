@@ -1,4 +1,4 @@
-<div class="gameLeft">
+<div class="gameRight">
     <?php foreach($transfers->result() as $row)
 { ?>
     <p><?php echo $row->voornaam;?>&nbsp;<?php echo $row->achternaam;?></p>
@@ -24,7 +24,7 @@
 
  ?>
 </div>
-<div class="gameRight">
+<div class="gameLeft">
     <div><section>
         <h2>kalender</h2>
         <p>huidige week</p>

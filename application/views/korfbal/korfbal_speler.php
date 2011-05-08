@@ -94,7 +94,7 @@ $("#transfer").submit(function(){
 
 </script>
 
-<div class="gameLeft">
+<div class="gameRight">
     <?php $teamid = $this->uri->segment('3');?>
     <?php foreach($speler->result() as $row)
 {?>
@@ -149,7 +149,7 @@ $("#transfer").submit(function(){
 
 ?>
 </div>
-<div class="gameRight">
+<div class="gameLeft">
     <div>
         <section>
             <h2>overzicht</h2>

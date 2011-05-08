@@ -27,7 +27,7 @@
 
 }?>	 
 
-<div class="gameLeft">
+<div class="gameRight">
 	<p>Kapitaal: <?php echo $totaal;?> (<?php echo $totaal + $uitkomst;?>)</p>
 	<br/>
 	<!-- uitgaven -->
@@ -85,7 +85,7 @@
 	<p>Winst/Verlies: <?php echo $inkomsten_vorige - $uitgaven_vorige;?></p>
 	<?php } ?>
 </div>
-		<div class="gameRight">
+		<div class="gameLeft">
 		<div id="sponsors">
 		<h2>Sponsors</h2>	
 			

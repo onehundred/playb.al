@@ -94,6 +94,9 @@
 	-ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 }
+.cursor {
+cursor: default;
+}
 /* LESS GLOBALS end */
 
 body {
@@ -223,7 +226,7 @@ font-size: 68px;
 
 }
 /* FONTS end 		-------------------------------------------------------------------------------------------------------*/
-/* gameLeft start ----------------------------------------------------------------------------------------------------------*/
+/* gameRight start ----------------------------------------------------------------------------------------------------------*/
 /*
 .game {
 background: #ffffff; 
@@ -238,9 +241,9 @@ width: 1168px;
 /* background-color: rgba(0, 0, 0, 0.5); */
 float: left;
 }
-.gameLeft {
+.gameRight {
 	font-size: 15px;
-	float: left;
+	float: right;
 	width: 745px;/* margin-top: 15px; */	
 /* 	background-color: #FFF; */ /* fallback */
 
@@ -253,7 +256,7 @@ float: left;
 	padding: 20px 0 0 15px;
 
 }
-.gameLeft h2 {
+.gameRight h2 {
 text-transform: lowercase;
 font-weight: normal;
 padding: 15px 0 0 0;
@@ -267,7 +270,7 @@ font-size: 32px;
 	width: 335px;
 	height: 250px;
 	background: #FAFAFA;
-			background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.5);
 	-moz-border-radius-topleft: 3px;
 	-moz-border-radius-topright: 3px;
 	-moz-border-radius-bottomright: 6px;
@@ -279,78 +282,91 @@ font-size: 32px;
 	margin-right: 20px;
 	margin-bottom: 15px;
 	padding: 7px;
+	
 }
 .player:hover, .playerDetail:hover {
 	border: 1px solid #CCC;
+		background: #FAFAFA;
+	background-color: rgba(255, 255, 255, 0.75);
 }
 .playerDetail {
 height: 394px;
 }
-.gameLeft .number {
+.gameRight .number {
 	font-size: 64px;
 	font-family: 'SFCollegiateSolidRegular';
 	display: inline;
-	padding: 7px;
+	padding: 7px 7px 7px 15px;
 	float: left;
 	line-height: 45px;
+	.cursor;
 }
-.gameLeft .firstname {
+.gameRight .name {
+padding: 10px;
+}
+.gameRight .name:hover {
+background-color: #EB1239;
+cursor: pointer;
+}
+.gameRight .firstname {
 	text-transform: capitalize;
 	display: inline;
 	padding-right: 7px;
 }
-.gameLeft .lastname {
+.gameRight .lastname {
 	text-transform: uppercase;
 	display: inline;
 }
-.gameLeft .gender {
+.gameRight .gender {
 	display: inline;
 	line-height: 30px;
-	padding-left: 5px;
 }
-.gameLeft .age {
+.gameRight .age {
 	display: inline;
 	line-height: 28px;
+	padding: 0 0 0 10px;
+	.cursor;
 }
-.gameLeft .price {
+.gameRight .price {
 	display: inline;
+	.cursor;
 }
-.gameLeft #rightProgress {
+.gameRight #rightProgress {
 	width: 160px;
 	float: right;
 }
-.gameLeft #leftProgress {
+.gameRight #leftProgress {
 	width: 160px;
 }
 .rebound, .passing, .stamina, .shotprecision, .playmaking, .shotpower, .intercepting, .leadership {
 	display: inline;
 }
-.gameLeft #skillTitle {
+.gameRight #skillTitle {
 	display: inline;
 }
 
-.gameRight {
+.gameLeft {
 	width: 390px;
 	font-size: 15px;
 		margin: 20px 15px 0 0px;
 
 }
-.gameRight ul, .gameRight li {
+.gameLeft ul, .gameLeft li {
 	list-style-type: none;
 	display: inline;
 }
-.gameRight h2 {
+.gameLeft h2 {
 	font-size: 32px;
 	font-weight: normal;
 	letter-spacing: 0	1px;
 	color: #888;
 	padding: 0 0 0 10px;
 }
-.gameRight p {
+.gameLeft p {
 padding: 0 0 10px 10px;
 color: #000;
 }
-.gameRight div {
+.gameLeft div {
 	margin: 0 0 0px 0;
 	padding: 0 0 10px 0;
 	margin: 15px 0 15px 0;
@@ -362,10 +378,10 @@ color: #000;
 	.borderRadius;
 	.transitionOff;
 }
-.gameRight div:hover {
+.gameLeft div:hover {
 
 }
-.gameRight div section {
+.gameLeft div section {
 /*
 	-webkit-box-shadow:  inset 0px 0px 10px #bdbdbd;
 	-moz-box-shadow: inset 0px 0px 10px #bdbdbd;
@@ -373,41 +389,47 @@ color: #000;
 */
 /* 		background-color: rgba(255, 255, 255, 0.5); */
 }
-.gameRight table {
+.gameLeft table {
 color: #FFF;
 width: 380px;
 	padding: 15px 14px 13px 14px;
 	border: none;
 }
-.gameRight table tr:nth-child(1) {
+.gameLeft table tr:nth-child(1) {
 background-color: green;
 }
-.gameRight table tr:nth-child(2) {
+.gameLeft table tr:nth-child(2) {
 background-color: red;
 }
-.gameRight table tr:nth-child(3) {
+.gameLeft table tr:nth-child(3) {
 background-color: blue;
 }
-.gameRight table tr:nth-child(4) {
+.gameLeft table tr:nth-child(4) {
 background-color: yellow;
 }
-.gameRight div:nth-child(1) {
+.gameLeft div:nth-child(1) {
+background-color: rgba(255,255,255, 0.6);
 
-
+/*
 background: 
 		url(../images/triangles.png) no-repeat 0% 100%;
+*/
 
 
+/*
 -webkit-box-shadow:   0px -10px 10px #bdbdbd;
 	-moz-box-shadow:  0px -10px 10px #bdbdbd;
 	box-shadow:  0px -7px 5px #bdbdbd;
+*/
 
 
 }
 
-.gameRight div:nth-child(1) section {
-background-color: rgba(255,255,255, 0.7);
+.gameLeft div:nth-child(1) section {
 /* .innerShadow; */
+/*
+background-color: rgba(255,255,255, 0.7);
+
 
 	border-top-width: 10px;
 	border-right-width: 10px;
@@ -418,16 +440,17 @@ background-color: rgba(255,255,255, 0.7);
 	border-top-color: #FFFFFF;
 	border-right-color: #FFFFFF;
 	border-left-color: #FFFFFF;
+*/
 
 }
 
 /*
-.gameRight div:nth-child(1) p {
+.gameLeft div:nth-child(1) p {
 background-color: aqua;
 font-size: 20px;
 }
 */
-.gameRight div:nth-child(2) {
+.gameLeft div:nth-child(2) {
 /*
 background: #FFF; 
 
@@ -445,37 +468,37 @@ background: #FFF;
 background: 
 		url(../images/triangles.png) no-repeat 0% 100%;
 }
-.gameRight div:nth-child(2):hover {
+.gameLeft div:nth-child(2):hover {
 
 
 }
-.gameRight div:nth-child(2) section {
+.gameLeft div:nth-child(2) section {
 background: 
 		url(../images/bg2.jpg) no-repeat 0% 0%;
 
 
 }
-.gameRight div:nth-child(3) {
+.gameLeft div:nth-child(3) {
 background: 
 		url(../images/triangles.png) no-repeat 0% 100%;
 }
 
-.gameRight div:nth-child(3) section {
+.gameLeft div:nth-child(3) section {
 background-color: rgba(255,255,255, 0.7);
 .innerShadow;
 
 
 }
-.gameRight div:nth-child(4) {
+.gameLeft div:nth-child(4) {
 
 }
-.gameRight div:nth-child(5) {
+.gameLeft div:nth-child(5) {
 
 }
-.gameRight div:nth-child(6) {
+.gameLeft div:nth-child(6) {
 
 	}
-.gameRight div:nth-child(7) {
+.gameLeft div:nth-child(7) {
 background: #FFF; /* unsupported */	
 
 	background: 
@@ -489,7 +512,7 @@ background: #FFF; /* unsupported */
 		url(../images/box_l.png) repeat-y 100% 10px;
 
 }
-.gameRight div:nth-child(8) {
+.gameLeft div:nth-child(8) {
 background: #FFF; /* unsupported */	
 
 	background: 
@@ -503,7 +526,7 @@ background: #FFF; /* unsupported */
 		url(../images/box_l.png) repeat-y 100% 10px;
 
 }
-.gameRight div:nth-child(9) {
+.gameLeft div:nth-child(9) {
 background: #FFF; /* unsupported */	
 
 	background: 
@@ -517,7 +540,7 @@ background: #FFF; /* unsupported */
 		url(../images/box_l.png) repeat-y 100% 10px;
 
 }
-.gameRight div:nth-child(10) {
+.gameLeft div:nth-child(10) {
 background: #FFF; /* unsupported */	
 
 	background: 
@@ -531,7 +554,7 @@ background: #FFF; /* unsupported */
 		url(../images/box_l.png) repeat-y 100% 10px;
 
 }
-/* gameLeft end ------------------------------------------------------------------------------------------------------------*/
+/* gameRight end ------------------------------------------------------------------------------------------------------------*/
 /* MATCHES start -----------------------------------------------------------------------------------------------------------*/
 #matchTeamName, #versus {
 	font-size: 32px;
@@ -558,7 +581,7 @@ position: relative;
 }
 #team {
 	width: 150px;
-	padding: 5px 15px 5px 0px;
+	padding: 5px 15px 5px 20px;
 }
 #played, #won, #lost, #draw, #goalsPos, #goalsNeg, #goalsSal, #points {
 	padding: 5px 15px 5px 0px;
@@ -931,3 +954,188 @@ margin: 75px 0 0 0;
 #icon {
 padding: 0 10px 0 0;
 }
+/* BIG GALLERY start ---------------------------------------------------------------------------------------------------------*/
+.container {
+	width: 790px;
+	padding: 0;
+	margin: 0 auto;
+}
+.folio_block {
+	position: absolute;
+	left: 0%;
+	top: 15px;
+}
+/*--Main Container--*/
+.main_view {
+	float: left;
+	position: relative;
+}
+/*--galleryWrapper/Masking Styles--*/
+.galleryWrapper {
+	height:500px;
+	width: 1138px;
+	overflow: hidden; /*--Hides anything outside of the set width/height--*/
+	position: relative;
+}
+img#galleryLeftHide {
+	left: -20px;
+	position: relative;
+}
+img#galleryRightHide {
+	left: 1120px;
+	position: relative;
+}
+.imgs {
+	position: absolute;
+	top: 0;
+	left: 15px;
+}
+.imgs img {
+	float: left;
+}
+/*--pagingGallery Styles--*/
+.pagingGallery {
+	margin: 20px auto 0 auto;
+	width: 178px;
+	height:47px;
+	z-index: 100; /*--Assures the pagingGallery stays on the top layer--*/
+	text-align: center;
+	line-height: 40px;
+	display: none; /*--Hidden by default, will be later shown with jQuery--*/
+}
+.pagingGallery a {
+	padding: 10px 15px 5px 15px;
+	margin: 0 5px 0 0;
+	background-image: url("../img/bullet_inactive.png");
+	opacity: 0.9;
+	z-index: 1;
+}
+.pagingGallery a.active {
+	font-weight: bold;
+	background-image: url("../img/bullet_active.png");
+}
+.pagingGallery a.active {
+	background-image: url("../img/bullet_active.png");
+}
+.pagingGallery a:hover {
+	opacity: 0.8;
+}
+#content {
+	height:567px;
+	width:896px;
+	overflow:hidden;
+	position:relative;
+	border : 1px solid black;
+}
+.imgs {
+	float:left;
+	display:inline;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	padding:0px;
+	margin:0px;
+	width:2700px;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.imgs img {
+	padding:0px;
+	margin:0px;
+	width:1138px;
+	height:500px;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+/* BIG GALLERY end ---------------------------------------------------------------------------------------------------------*/
+/* SMALL GALLERY start -------------------------------------------------------------------------------------------------------------*/
+.containerSmall {
+	width: 90px;
+	padding: 0;
+	margin: 0 auto;
+}
+.folio_blockSmall {
+	position: absolute;
+	left: 0%;
+	top: 15px;
+}
+/*--Main Container--*/
+.main_viewSmall {
+	float: left;
+	position: relative;
+}
+/*--galleryWrapper/Masking Styles--*/
+.galleryWrapperSmall {
+	height:50px;
+	width: 138px;
+	overflow: hidden; /*--Hides anything outside of the set width/height--*/
+	position: relative;
+}
+img#galleryLeftHideSmall {
+	left: -20px;
+	position: relative;
+}
+img#galleryRightHideSmall {
+	left: 1120px;
+	position: relative;
+}
+.imgsSmall {
+	position: absolute;
+	top: 0;
+	left: 15px;
+}
+.imgsSmall img {
+	float: left;
+}
+/*--pagingGallery Styles--*/
+.pagingGallerySmall {
+	margin: 20px auto 0 auto;
+	width: 178px;
+	height:47px;
+	z-index: 100; /*--Assures the pagingGallery stays on the top layer--*/
+	text-align: center;
+	line-height: 40px;
+	display: none; /*--Hidden by default, will be later shown with jQuery--*/
+}
+.pagingGallerySmall a {
+	padding: 10px 15px 5px 15px;
+	margin: 0 5px 0 0;
+	background-image: url("../img/bullet_inactive.png");
+	opacity: 0.9;
+	z-index: 1;
+}
+.pagingGallerySmall a.active {
+	font-weight: bold;
+	background-image: url("../img/bullet_active.png");
+}
+.pagingGallerySmall a.active {
+	background-image: url("../img/bullet_active.png");
+}
+.pagingGallerySmall a:hover {
+	opacity: 0.8;
+}
+#contentSmall {
+	height:56px;
+	width:89px;
+	overflow:hidden;
+	position:relative;
+	border : 1px solid black;
+}
+.imgsSmall {
+	float:left;
+	display:inline;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	padding:0px;
+	margin:0px;
+	width:2700px;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.imgsSmall img {
+	padding:0px;
+	margin:0px;
+	width:138px;
+	height:50px;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+/* Small GALLERY end -------------------------------------------------------------------------------------------------------------*/

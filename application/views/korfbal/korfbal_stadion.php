@@ -138,7 +138,7 @@
 </style>
  
 <script src="<?php echo base_url();?>js/korfbal/stadion.js"></script>
-<div class="gameRight">
+<div class="gameLeft">
 
 <?php foreach($stadion->result() as $row)
 		{?>
@@ -159,7 +159,7 @@
 	
 </div>
 <?php } ?>
-</div><div class="gameLeft">
+</div><div class="gameRight">
 <div id="stadion_container">
 <div id="stadion">
 <!-- sectie g rechts boven -->

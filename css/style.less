@@ -57,7 +57,6 @@
 	-moz-transition-duration: 2s;
 	-o-transition-duration: 2s;
 	transition-duration: 2s;
-
 }
 .lessOpacity {
 	opacity: 0.75;
@@ -107,7 +106,7 @@ html, body {
 	min-height: 100%;
 }
 #main {
- padding-bottom: 75px; /* same as footer */
+	padding-bottom: 75px; /* same as footer */
 }
 footer {
 	position: relative;
@@ -148,6 +147,7 @@ figure {
 figure img {
 	width: 100%;
 }
+
 */
 /* RESETS end */
 
@@ -198,15 +198,11 @@ body {
 	margin-left:auto;
 	margin-right:auto;
  -webkit-tap-highlight-color: @selectionColor;
+ 	-webkit-touch-callout: none;
+ 	-webkit-user-select: none;
 	text-rendering: optimizeLegibility;
-
-
-
 	background: 
-
-		
-
-	url(../img/860.jpg) repeat 0% 0%;
+ url(../img/860.jpg) repeat 0% 0%;
 }
 ::selection {
  background: @selectionColor;
@@ -224,9 +220,8 @@ header {
  height: @headerHeight;
 }
 footer {
-/* 	background-image: url("../img/footer1.png"); */
+	/* 	background-image: url("../img/footer1.png"); */
 float: left;
-
 }
 #logo {
 	padding: 7px 7px 0 0;
@@ -234,7 +229,7 @@ float: left;
 	height: 40px;
 	float:left;
 }
-#logo:hover{
+#logo:hover {
 	-moz-transform: scale(1) rotate(-1deg) translate(0px, 0px) skew(0deg, 0deg);
 	-webkit-transform: scale(1) rotate(-1deg) translate(0px, 0px) skew(0deg, 0deg);
 	-o-transform: scale(1) rotate(-1deg) translate(0px, 0px) skew(0deg, 0deg);
@@ -252,7 +247,6 @@ float: left;
 .bottomButtons {
 	float: right;
 	display: inline;
-	
 }
 /* FONTS start 		-------------------------------------------------------------------------------------------------------------*/
 .korfbal h1, .basketbal h1, .volleybal h1 {
@@ -265,17 +259,16 @@ float: left;
 	cursor: default;
 	font-weight: normal;
 }
-
 #tagline {
 	font-family: 'AllerItalic';
 	color: #FAFAFA;
-	 text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px;
+	text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px;
 	font-size: 42px;
-		display: inline;
+	display: inline;
 	float: right;
 	cursor: default;
 	margin: 40px 0 0 0;
-	.textShadow;
+ .textShadow;
 }
 #teamname {
 	font-family: 'SFCollegiateSolidRegular';
@@ -283,7 +276,7 @@ float: left;
 	color: #FFF;
 	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
 	font-size: 56px;
- 	.textShadow;
+ .textShadow;
 	text-transform: uppercase;
 	font-weight: normal;
 	cursor: default;
@@ -326,14 +319,12 @@ h2 {
           transition-duration: 0s;
 }
 /* ANIMATIONS end *****************************************************************************************************************/
-/* gameLeft start ----------------------------------------------------------------------------------------------------------*/
-.gameLeft {
+/* gameRight start ----------------------------------------------------------------------------------------------------------*/
+.gameRight {
 	font-size: 15px;
-	float: left;
-	width: 568px;/* margin-top: 15px; */	
-	
+	float: right;
+	width: 568px;/* margin-top: 15px; */
 }
-
 .player, .playerDetail {
 	width: 245px;
 	height: 250px;
@@ -358,9 +349,9 @@ h2 {
 	border: 1px solid #CCC;
 }
 .playerDetail {
-height: 412px;
+	height: 412px;
 }
-.gameLeft .number {
+.gameRight .number {
 	font-size: 64px;
 	font-family: 'SFCollegiateSolidRegular';
 	display: inline;
@@ -368,54 +359,53 @@ height: 412px;
 	float: left;
 	line-height: 45px;
 }
-.gameLeft .firstname {
+.gameRight .firstname {
 	text-transform: capitalize;
 	display: inline;
 	padding-right: 7px;
 }
-.gameLeft .lastname {
+.gameRight .lastname {
 	text-transform: uppercase;
 	display: inline;
 }
-.gameLeft .gender {
+.gameRight .gender {
 	display: inline;
 	line-height: 30px;
 	padding-left: 5px;
 }
-.gameLeft .age {
+.gameRight .age {
 	display: inline;
 	line-height: 28px;
 }
-.gameLeft .price {
+.gameRight .price {
 	display: inline;
 }
-.gameLeft #rightProgress {
+.gameRight #rightProgress {
 	width: 115px;
 	float: right;
 }
-.gameLeft #leftProgress {
+.gameRight #leftProgress {
 	width: 115px;
 }
 .rebound, .passing, .stamina, .shotprecision, .playmaking, .shotpower, .intercepting, .leadership {
 	display: inline;
 }
-.gameLeft #skillTitle {
+.gameRight #skillTitle {
 	display: inline;
 }
-.gameRight {
-	float: right;
+.gameLeft {
+	float: left;
 	width: 297px;
-
-/* 	padding: 0 15px 15px 15px; */
+	/* 	padding: 0 15px 15px 15px; */
 	font-size: 15px;
 	color: #222;
-	 .borderRadius;
+ .borderRadius;
 }
-.gameRight ul, .gameRight li {
+.gameLeft ul, .gameLeft li {
 	list-style-type: none;
 	display: inline;
 }
-.gameRight h2 {
+.gameLeft h2 {
 	font-size: 32px;
 	font-weight: normal;
 	letter-spacing: 1px;
@@ -423,12 +413,12 @@ height: 412px;
 	padding: 0 0 0 10px;
 	text-transform: lowercase;
 }
-.gameRight p {
-padding: 0 0 10px 10px;
-color: #FFF;
+.gameLeft p {
+	padding: 0 0 10px 10px;
+	color: #FFF;
 }
 /*
-.gameRight div {
+.gameLeft div {
 	margin: 0 0 30px 0;
 	padding: 15px 14px 13px 14px;
 	-webkit-box-shadow:  0px 0px 10px #bdbdbd;
@@ -438,7 +428,7 @@ color: #FFF;
 	.transitionOff;
 }
 */
-.gameRight div:hover {
+.gameLeft div:hover {
 /*
 	-webkit-box-shadow:  0px 0px 10px #a3a3a3;
 	-moz-box-shadow: 0px 0px 10px #a3a3a3;
@@ -447,34 +437,32 @@ color: #FFF;
 */
 }
 /*
-.gameRight div section {
+.gameLeft div section {
 	-webkit-box-shadow:  inset 0px 0px 10px #bdbdbd;
 	-moz-box-shadow: inset 0px 0px 10px #bdbdbd;
 	box-shadow: inset 0px 0px 10px #000;
 		background-color: rgba(0, 0, 0, 0.75);
 }
 */
-.gameRight table {
-color: #FFF;
-width: 380px;
+.gameLeft table {
+	color: #FFF;
+	width: 380px;
 	padding: 15px 14px 13px 14px;
 	border: none;
 }
-.gameRight table tr:nth-child(1) {
-background-color: green;
+.gameLeft table tr:nth-child(1) {
+	background-color: green;
 }
-.gameRight table tr:nth-child(2) {
-background-color: red;
+.gameLeft table tr:nth-child(2) {
+	background-color: red;
 }
-.gameRight table tr:nth-child(3) {
-background-color: blue;
+.gameLeft table tr:nth-child(3) {
+	background-color: blue;
 }
-.gameRight table tr:nth-child(4) {
-background-color: yellow;
+.gameLeft table tr:nth-child(4) {
+	background-color: yellow;
 }
-
-
-/* gameLeft end -------------------------------------------------------------------------------------------------------------*/
+/* gameRight end -------------------------------------------------------------------------------------------------------------*/
 
 .sportnav {
 	margin-bottom: 15px;
@@ -484,7 +472,7 @@ background-color: yellow;
 	font-family: 'LeagueGothicRegular';
 	line-height: 0.8;
 	color: #bfbfbf;
-	.transitionOff;
+ .transitionOff;
 	font-size: 32px;
 }
 .sportnav a:hover {
@@ -516,7 +504,7 @@ color: @korfbalColor;
 	cursor: pointer;/* -webkit-text-stroke: 1px @korfbalBorderColor; *//* text-shadow: 0px -1px 1px rgba(1, 1, 1, .8); */
 }
 /* TOOLTIPS start ---------------------------------------------------------------------------------------------------------*/
-a.tooltip:after{
+a.tooltip:after {
 	font-size: 12px;
 	line-height: 1.2;
 	color: #F2F2F2;
@@ -528,27 +516,19 @@ a.tooltip:after{
 	margin:1em 0 3em;
 	background:#F7F7F7;
 	left:-55px;
- 
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
 	-khtml-border-radius: 3px;
- 
-
-background: #E80332; /* old browsers */
-background: -moz-linear-gradient(top, #CC042C 0%, #E80332 100%); /* firefox */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#CC042C), color-stop(100%,#E80332)); /* webkit */
-
-
- 
+	background: #E80332; /* old browsers */
+	background: -moz-linear-gradient(top, #CC042C 0%, #E80332 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #CC042C), color-stop(100%, #E80332)); /* webkit */
 	-moz-box-shadow: 0px 0px 4px #000; /* FF3.5+ */
 	-webkit-box-shadow: 0px 0px 4px #000; /* Saf3.0+, Chrome */
 	box-shadow: 0px 0px 4px #000; /* Opera 10.5, IE 9.0 */
 }
- 
 /* driehoek */
-a.tooltip:before{
+a.tooltip:before {
 	z-index:13;
 	position:absolute;
 	content:"\00a0";
@@ -556,29 +536,24 @@ a.tooltip:before{
 	width:0;
 	height:0;
 	border-style:solid;
- 
 	bottom:5px;
 	left:-4px;
 	border-width:15px 10px 15px 10px;
 	border-color:#E80332 transparent transparent;
 }
- 
-a.tooltip:hover::before{
+a.tooltip:hover::before {
 	display:block;
 }
- 
-a.tooltip:hover{
+a.tooltip:hover {
 	z-index:10;
 	position:relative;
 }
- 
-a.tooltip:hover::after{
+a.tooltip:hover::after {
 	width: 90px;
 	height: 44px;
 	display:block;
 	margin:-80px 0 0 10px;
 }
-
 /* TOOLTIPS end -----------------------------------------------------------------------------------------------------------*/
 /* FOOTER start		-------------------------------------------------------------------------------------------------------------*/
 #footer {
@@ -589,11 +564,9 @@ a.tooltip:hover::after{
 	top: -29px;
 	position: relative;
 	padding: 40px 0 0 0;
-
 }
 #footer div {
-	float: left;
-/* 	margin-top: 25px; */
+	float: left;/* 	margin-top: 25px; */
 }
 #footer h2 {
 	font-family: LeagueGothicRegular;
@@ -648,72 +621,63 @@ a.tooltip:hover::after{
 .korfbal {
 	top: 25px;
 	margin: 10px;
-	.imageDown;
-	.transitionOff;
+ .imageDown;
+ .transitionOff;
 }
 .korfbal:hover {
 	top: 25px;
-	.imageUp;
-	.transitionOn;
+ .imageUp;
+ .transitionOn;
 }
 .basketbal {
 	top: 25px;
 	margin: 10px 0 0 0px;
-	.imageDown;
-	.transitionOff;
+ .imageDown;
+ .transitionOff;
 }
 .basketbal:hover {
- 	top: 25px;
-	.imageUp;
-	.transitionOn;
+	top: 25px;
+ .imageUp;
+ .transitionOn;
 }
 .volleybal {
 	top: 25px;
 	margin: 10px 0 0 0px;
-	.imageDown;
-	.transitionOff;
+ .imageDown;
+ .transitionOff;
 }
 .volleybal:hover {
- 	top: 25px;
-	.imageUp;
-	.transitionOn;
+	top: 25px;
+ .imageUp;
+ .transitionOn;
 }
 .korfbalAnimation, .basketbalAnimation, .volleybalAnimation {
-	.transitionOn;
-	.imageUp;
+ .transitionOn;
+ .imageUp;
 }
 #korfbal, #basketbal, #volleybal {
-cursor: pointer;
+	cursor: pointer;
 	-moz-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	-webkit-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	-o-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	-ms-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 .transitionOn2;
-
-
 }
 #korfbal:active, #basketbal:active, #volleybal:active {
-
-
 	-moz-transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
 	-webkit-transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
 	-o-transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
 	-ms-transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
 	transform: scale(0.8) rotate(720deg) translate(0px, 0px) skew(0deg, 0deg);
 .transitionOff2;
-
 }
 #belowbottom {
-
-/* 	 	background-image: url("../img/slideshowbg.png"); */
+	/* 	 	background-image: url("../img/slideshowbg.png"); */
 	 	background-repeat: no-repeat;
-
-height: 500px;
-margin: 50px 0 0 0;
-position: relative;
-
-	
+	height: 500px;
+	margin: 50px 0 0 0;
+	position: relative;
 }
 .stripe1 {
  background-color: @korfbalColor;
@@ -756,7 +720,7 @@ position: relative;
 	background-color:#e5e5e5;
 	float:right;
 	color: #444;
-	.borderRadius;
+ .borderRadius;
 }
 #menu {
 	padding-top: 10px;
@@ -764,12 +728,10 @@ position: relative;
 	height:30px;
 	position: relative;
 	z-index: 1;
-	
 }
 #menu img {
 	padding-right:5px;
 }
-
 .dropdown_3columns {
 	float:left;
 	position:absolute;
@@ -818,14 +780,9 @@ position: relative;
 	margin-right:0px;
 }
 li.menu_right {
-list-style-type: none;
-padding: 10px;
+	list-style-type: none;
+	padding: 10px;
 }
-
-
-
-
-
 /* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
 
 /* okay 
@@ -944,23 +901,18 @@ padding: 10px;
 }
 .question a {
 	padding: 10px;
-	color: @grey;
+ color: @grey;
 }
 .startgame a {
 	font-family: 'LeagueGothicRegular';
 	text-transform: uppercase;
  color: @grey;
- letter-spacing: 1px;
- 
+	letter-spacing: 1px;
  .textShadow;
 	font-size: 48px;
-	
-
-
 }
 .startgame a:hover {
-	color: #FFF;
-/*
+	color: #FFF;/*
 	border-bottom-width: 10px;
 	border-bottom-style: solid;
 	border-bottom-color: #000;	
@@ -1010,7 +962,7 @@ input[type="text"], input[type="password"], input[type="email"] {
 	width: 200px;
 	padding: 5px;
 	border: solid 1px #999;
- 	.borderRadius;
+ .borderRadius;
 	background: #FFF; /* old browsers */
 }
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
@@ -1103,128 +1055,3 @@ select {
 	font-weight: normal;
 	font-style: normal;
 }
-
-
-
-
-
-
-
-
-/* GALLERY start -------------------------------------------------------------------------------------------------------------*/
-
-.container {
-	width: 790px;
-	padding: 0;
-	margin: 0 auto;
-}
-.folio_block {
-	position: absolute;
-	left: 0%; top: 15px;
-
-}
-
-
-/*--Main Container--*/
-.main_view {
-	float: left;
-	position: relative;
-}
-/*--galleryWrapper/Masking Styles--*/
-.galleryWrapper {
-	height:500px;	width: 1138px;
-	overflow: hidden; /*--Hides anything outside of the set width/height--*/
-	position: relative;
-}
-img#galleryLeftHide {
-left: -20px;
-position: relative;
-}
-img#galleryRightHide {
-left: 1120px;
-position: relative;
-}
-.imgs {
-	position: absolute;
-	top: 0; left: 15px;
-}
-.imgs img {float: left;}
-
-/*--pagingGallery Styles--*/
-.pagingGallery {
-
-margin: 20px auto 0 auto;
-	width: 178px; height:47px;
-	z-index: 100; /*--Assures the pagingGallery stays on the top layer--*/
-	text-align: center;
-	line-height: 40px;
-	display: none; /*--Hidden by default, will be later shown with jQuery--*/
-
-
-}
-.pagingGallery a {
-	padding: 10px 15px 5px 15px;
-	margin: 0 5px 0 0;
-	background-image: url("../img/bullet_inactive.png");
-	opacity: 0.9;
-	z-index: 1;
-}
-.pagingGallery a.active {
-	font-weight: bold; 
-
-
-	
-		background-image: url("../img/bullet_active.png");
-}
-.pagingGallery a.active {	
-		background-image: url("../img/bullet_active.png");
-}
-.pagingGallery a:hover {
-
-opacity: 0.8;
-}
-
-
-			#content
-			{
-				height:567px;
-				width:896px;
-				overflow:hidden;
-				position:relative;
-				
-				
-				border : 1px solid black;
-				
-				
-			}
-			
-			.imgs 
-			{
-				float:left;
-				display:inline;
-				
-				-webkit-transition-property: -webkit-transform;
-				-webkit-transition-duration: 0.5s;
-				-webkit-transition-timing-function: ease-out;
-				padding:0px;
-				margin:0px;
-				
-				width:2700px;
-				
-				/*apply a transfor to kick in the hardware acceleration.  Without this, the first time we add the transform you get odd rendering of the divs (half missing) */
-				-webkit-transform: translate3d(0px,0px,0px); 
-				
-			}
-	
-	
-			.imgs img
-			{
-				padding:0px;
-				margin:0px;
-				width:1138px;
-				height:500px;
-				
-				/*apply a transfor to kick in the hardware acceleration.  Without this, the first time we add the transform you get odd rendering of the divs (half missing) */
-				-webkit-transform: translate3d(0px,0px,0px); 
-
-			}

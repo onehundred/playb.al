@@ -1,5 +1,5 @@
 <script src="<?php echo base_url();?>js/korfbal/spelers.js"></script>
-<div class="gameLeft">
+<div class="gameRight">
     <div id="container">
         <?php 
     
@@ -7,12 +7,14 @@ foreach($spelers->result() as $row)
 		{?>
         <div class="player">
             <p class="number"><?php echo $row->rugnummer;?></p>
+            <span class="name">
             <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></a></p>
-            <p class="lastname"><?php echo $row->achternaam; ?></p>
+            <p class="lastname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->achternaam;?></a>
+            </p></span>
             <p class="gender">
-                <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" />
+                <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" ondragstart="return false" />
             </p>
-            <br />
+        <br />
             <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
             <p class="price"><?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?> &euro;</p>
             <br />
@@ -58,7 +60,7 @@ foreach($spelers->result() as $row)
         <?php } ?>
     </div>
 </div>
-<div class="gameRight">
+<div class="gameLeft">
     <h2>spelers rangschikken</h2>
     <ul id="sort" class="sort option-set">
         <ul class="sort asc option-set floated clearfix">
@@ -167,7 +169,7 @@ foreach($spelers->result() as $row)
     </ul>
     <!-- end ul id sort --> 
 
-<!-- end gameRight -->
+<!-- end gameLeft -->
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
 </div>

@@ -2,7 +2,7 @@
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 <script src="<?php echo base_url();?>js/jquery.blockUI.js"></script>
 
-  <div class="gameLeft">
+  <div class="gameRight">
     <div>
         <canvas style="border: solid 1px #000;" id="canvas" width="800" height="400">
 	    oops, jouw browser ondersteunt dit niet.
@@ -102,7 +102,7 @@
     </div>
    
 </div>
-<div class="gameRight">
+<div class="gameLeft">
  <div id="links">
     <input type="hidden" id="wedstrijdid" value="<?php echo $this->uri->segment('4');?>">
     <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>">  

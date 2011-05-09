@@ -14,10 +14,13 @@
 
 
 } ?>
-            </p><hr /><p id="overview">divisie:</p><p id="overview2">2</p><hr /><p id="overview">positie:</p><p id="overview2">7</p>
+            </p><hr /><p id="overview">divisie:</p>
+            <p id="overview2">2</p><hr /><p id="overview">positie:</p>
+            <p id="overview2">7</p>
         </div>
-        <img src="<?php echo base_url();?>img/korfbal.png" id="korfbal" />
-    </figure>
+                <!-- if user has team: show image. else: hide -->
+        <img src="<?php echo base_url();?>img/korfbal.png" id="korfbal" ondragstart="return false" />
+    </figure> <!-- end korfbal -->
     <figure class="basketbal">
         <h1>Basketbal</h1>
         <div id="create">
@@ -38,7 +41,8 @@
        
        <p>Divisie:</p>
         <p>Positie:</p>
-        <img src="<?php echo base_url();?>img/basketbal.png" id="basketbal" />
+        <!-- if user has team: show image. else: hide -->
+        <img src="<?php echo base_url();?>img/basketbal.png" id="basketbal" ondragstart="return false" />
     </figure>
     <figure class="volleybal">
         <h1>Volleybal</h1>
@@ -56,7 +60,8 @@
 
 } ?></div>
         </div>
-        <img src="<?php echo base_url();?>img/volleybal.png" id="volleybal" />
+               <!-- if user has team: show image. else: hide -->
+        <img src="<?php echo base_url();?>img/volleybal.png" id="volleybal" ondragstart="return false" />
     </figure>
 </section>
 <h1 id="tagline">manage jouw team.</h1>

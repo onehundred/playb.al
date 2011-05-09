@@ -49,15 +49,21 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <!-- jquery lokaal wegens falen van google gedurende productie -->
 <script src="<?php echo base_url();?>js/jquery-1.5.2.min.js"></script>
-<script src="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
-<script src="<?php echo base_url();?>js/jquery.mediaqueries.js"></script>
-<script src="<?php echo base_url();?>js/touchswipe.js"></script>
-<script src="<?php echo base_url();?>js/playbal.js"></script>
-<script src="<?php echo base_url();?>js/galleryHome.js"></script>
-<script src="<?php echo base_url();?>js/jquery.transform.js"></script>
-<script src="<?php echo base_url();?>js/jquery.multiple-bgs.min.js"></script>
-<script src="<?php echo base_url();?>js/jquery.loading.1.6.4.js"></script>
-<script src="<?php echo base_url();?>js/modernizr-1.6.min.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.mediaqueries.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/playbal.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/galleryHome.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.transform.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.multiple-bgs.min.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.loading.1.6.4.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/modernizr-1.6.min.js"></script>
+<script type="text/javascript">
+if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
+	document.write('<link rel="stylesheet" href="<?php echo base_url();?>css/add2home.css">');
+	document.write('<script type="application/javascript" src="<?php echo base_url();?>js/add2home.js"><\/script>');
+}
+</script>
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->

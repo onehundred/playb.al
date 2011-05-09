@@ -28,8 +28,8 @@ foreach($training->result() as $row){
 
         <div class="playerDetail">
           <p class="number"><?php echo $row->rugnummer;?></p>
-            <span class="name"><p class="firstname"><?php echo $row->voornaam;?></p>
-            <p class="lastname"><?php echo $row->achternaam; ?></p></span>
+           <p class="firstname"><?php echo $row->voornaam;?></p>
+            <p class="lastname"><?php echo $row->achternaam; ?></p>
             <p class="gender">
                 <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" ondragstart= "return false" />
             </p>

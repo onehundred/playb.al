@@ -34,7 +34,7 @@
     </div>
     <!-- end makeAccount -->
     <figure class="korfbal">
-        <img id="korfbalbg" src="<?php echo base_url();?>img/korfbalbg.png"/>
+        <img id="korfbalbg" style="display:none"; src="<?php echo base_url();?>img/korfbalbg.png"/>
         <div class="startgame">
             <h1>korfbal</h1>
             <a href="#" id="startKorfbal">start</a> </div>

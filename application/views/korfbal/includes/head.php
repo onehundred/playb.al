@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!-- head voor sport in detail -->
-<html lang="en" class="no-js">
+<html manifest="<?php echo base_url();?>playbal.appcache" lang="en" class="no-js">
 <head>
 <meta charset="utf-8" />
 
@@ -47,21 +47,21 @@
 <link rel="stylesheet" href="<?php echo base_url()?>js/toastmessage/jquery.toastmessage.css"/>
 <link rel="stylesheet" href="<?php echo base_url()?>js/reveal/reveal.css"/>
 
-<script src="<?php echo base_url();?>js/modernizr-1.6.min.js"></script> 
+<script src="http://playbaleindwerk.appspot.com/js/modernizr-1.6.min.js"></script> 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <script src="<?php echo base_url();?>js/less-1.0.41.min.js"></script> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> -->
 <!-- jquery lokaal voor offline productie -->
-<script src="<?php echo base_url();?>js/jquery-1.5.2.min.js"></script>
-<script src="<?php echo base_url();?>js/jquery.mediaqueries.js"></script>
-<script src="<?php echo base_url();?>js/playbal.js"></script>
-<script src="<?php echo base_url();?>js/galleryGame.js"></script>
-<script src="<?php echo base_url();?>js/touchswipe.js"></script>
-<script src="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
-<script src="<?php echo base_url();?>js/jquery.flip.js"></script>
-<script src="<?php echo base_url();?>js/jquery.isotope.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.mediaqueries.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/playbal.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/galleryGame.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.flip.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.isotope.js"></script>
 <script src="<?php echo base_url();?>js/reveal/jquery.reveal.js"></script>
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 <script src="<?php echo base_url();?>js/awesomechart.js"></script>

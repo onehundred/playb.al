@@ -1,0 +1,19 @@
+application: playbaleindwerk
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /img
+  static_dir: img
+
+- url: /appcache
+  static_dir: appcache
+  
+- url: /js
+  static_dir: js
+- url: .*
+  script: main.py

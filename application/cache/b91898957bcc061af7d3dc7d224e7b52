@@ -1,0 +1,462 @@
+1305193419TS---><!DOCTYPE HTML>
+<!-- head voor sport in detail -->
+<html manifest="http://playb.al/playbal.appcache" lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+
+<title>playb.al</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width; initial-scale=1"/>
+<meta name="viewport" content="width=device-width; maximum-scale=1"/>
+<!-- mobile ie font smoothing -->
+<meta http-equiv="cleartype" content="on">
+<!-- ios app look -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-startup-image" href="http://playb.al/img/l/splash.png">
+<!-- iphone 4, retina display -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://playb.al/img/h/apple-touch-icon.png">
+<!-- ipad 1 -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://playb.al/img/m/apple-touch-icon.png">
+<!-- ios, no retina display. android > 2.1 -->
+<link rel="apple-touch-icon-precomposed" href="http://playb.al/img/l/apple-touch-icon-precomposed.png">
+<!-- nokia -->
+<link rel="shortcut icon" href="http://playb.al/img/l/apple-touch-icon.png">
+    
+<link rel="shortcut icon" href="http://playb.al/img/favicon.ico">
+
+<link rel="stylesheet/less" href="http://playb.al/css/style.less" />
+
+<!-- no mediaqueries fallback -->
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="http://playb.al/css/style768.css" media="screen" />
+<![endif]-->
+	
+	
+
+<!-- Media Queries / Less -->
+<link href="http://playb.al/css/style1168.less" rel="stylesheet/less" media="only screen and (min-width: 1212px)" />
+<link href="http://playb.al/css/style768.less"  rel="stylesheet/less" media="only screen and (max-width: 991px) and (min-width: 768px)" />
+<link href="http://playb.al/css/style480.less"  rel="stylesheet/less" media="only screen and (max-width: 767px) and (min-width: 480px)" />
+<link href="http://playb.al/css/style320.less"  rel="stylesheet/less" media="only screen and (max-width: 479px)" />
+
+<link rel="stylesheet" href="http://playb.al/js/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css" />
+<link rel="stylesheet" href="http://playb.al/js/toastmessage/jquery.toastmessage.css"/>
+<link rel="stylesheet" href="http://playb.al/js/reveal/reveal.css"/>
+
+<script src="http://playbaleindwerk.appspot.com/js/modernizr-1.6.min.js"></script> 
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="http://playb.al/js/less-1.0.41.min.js"></script> 
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> -->
+<!-- jquery lokaal voor offline productie -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.mediaqueries.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/playbal.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/galleryGame.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.flip.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.isotope.js"></script>
+<script src="http://playb.al/js/reveal/jquery.reveal.js"></script>
+<script src="http://playb.al/js/toastmessage/jquery.toastmessage.js"></script>
+<script src="http://playb.al/js/awesomechart.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+   <script type="text/javascript" src="http://playb.al/js/selectivizr.js"></script>
+ <![endif]-->
+
+</head>
+<body><div id="topbar"></div>
+	<div id="wrap">
+		<div id="main">
+<!-- 		<div id="headerWrap"> -->
+			<header>
+				<figure>
+				<a onclick="parent.location='http://playb.al/'">
+				<img src="http://playb.al/img/logo.png" id="logo" alt="logo" title="playb.al" ondragstart="return false" />
+				</a>
+				</figure>
+					<section>
+					<div id="login">
+    <li class="menu_right"> <a href="#" id="profile" class=""> 
+        lenny        </a>
+        &nbsp;<img src="http://playb.al/img/home.png" />
+    </li>
+</div>
+
+
+<div class="profile" style="display: none; opacity: 0;">
+
+
+        <a href="#" id="closeProfile">sluiten</a>
+<img src="http://playb.al/img/default_profile.png" />
+
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>	
+	<p>dfgssdfs sdfsdfs sdfffff sdfsdf sdfsdf sdfsdf</p>
+	<p>dfgs</p>
+	<a href="http://playb.al/index.php/main/logout">afmelden</a>
+	
+
+    </div>
+
+<!-- end login --> 
+
+<!-- End 3 columns container --> 
+
+<!--        <li><input type="text" name="" value="zoeken"  /></li>  -->
+
+<!-- End 3 columns Item -->					</section>
+					<img src="http://playb.al/img/version.png" id="version" />
+			</header>
+
+			
+			
+			
+			
+			
+			
+			
+			
+<h1 id="teamname">k.c. superlenn</h1>
+<section class="sportnavWrap">
+<nav class="sportnav">
+    <p id="overzichtMenu"><a href="http://playb.al/index.php/korfbal/korfbal_start/4089">Overzicht</a></p>
+    <p id="trainingMenu"><a href="http://playb.al/index.php/korfbal/korfbal_training/4089">Training</a></p>
+    <p id="spelersMenu"><a href="http://playb.al/index.php/korfbal/korfbal_players/4089">Spelers</a> </p>
+    <p id="wedstrijdenMenu"><a href="http://playb.al/index.php/korfbal/korfbal_matches/4089">Wedstrijden</a></p>
+    <p id="divisieMenu"><a href="http://playb.al/index.php/korfbal/korfbal_division/4089">Divisie</a></p>
+    <p id="stadionMenu"><a href="http://playb.al/index.php/korfbal/korfbal_stadium/4089">Stadion</a></p>
+    <p id="managerMenu"><a href="http://playb.al/index.php/korfbal/korfbal_manager/4089">Manager</a></p>
+    <p id="financienMenu"><a href="http://playb.al/index.php/korfbal/korfbal_finances/4089">Financien</a></p>
+    <p id="transfersMenu"><a href="http://playb.al/index.php/korfbal/korfbal_transfers/4089">Transfers</a></p>
+</nav>
+</section>
+</div> <!-- end headerWrap -->
+<script type="text/javascript">
+        $(document).ready(function() {
+            $ ('div.division_results #rij:even').addClass('even');
+            $ ('div.division_results #rij:odd').addClass('odd');
+        });
+    </script>
+<style>
+.even {
+	background-color: #FFFFFF;
+	background-color: rgba(255,255,255,0.5);
+	border-bottom: 1px solid #CCCCCC;
+}
+.odd {
+	background-color: #E5E5E5;
+		background-color: rgba(229,229,229,0.5);
+	border-bottom: 1px solid #CCCCCC;
+}
+</style>
+
+<div class="gameRight">
+    <h1>1.1</h1>
+    <div class="division">
+        <div id="team"> <a class="tooltip" title="teamnaam" href="#">team </a></div>
+        <div id="played"> <a class="tooltip" title="totaal aantal matchen gespeeld" href="#">MT </a></div>
+        <div id="won"><a class="tooltip" title="totaal aantal matchen gewonnen" href="#"> M </a></div>
+        <div id="lost"> <a class="tooltip" title="totaal aantal matchen verloren" href="#"> M </a></div>
+        <div id="draw"><a class="tooltip" title="totaal aantal matchen gelijk gespeeld" href="#"> M </a> </div>
+        <div id="goalsPos"><a class="tooltip" title="totaal aantal doelpunten gescoord" href="#"> D</a></div>
+        <div id="goalsNeg"><a class="tooltip" title="totaal aantal doelpunten tegen" href="#"> D </a> </div>
+        <div id="goalsSal"> <a class="tooltip" title="doelpunten saldo" href="#"> DS</a> </div>
+        <div id="points"> <a class="tooltip" title="totaal aantal punten" href="#"> P </a> </div>
+    </div>
+    <br />
+        <div class="division_results">
+        <div id="rij">
+            <div id="team"> playbal </div>
+            <div id="played"> <!-- matches totaal --> 
+                2 </div>
+            <div id="won"> <!-- matches gewonnen --> 
+                2 </div>
+            <div id="lost"> <!-- matches verloren --> 
+                0 </div>
+            <div id="draw"> <!-- matches gelijkspel --> 
+                0 </div>
+            <div id="goalsPos"> <!-- goals gemaakt -->
+                41            </div>
+            <div id="goalsNeg"> <!-- goals tegen -->
+                30            </div>
+            <div id="goalsSal"> <!-- goals saldo -->
+                11            </div>
+            <div id="points"> <!-- punten totaal --> 
+                4 </div>
+        </div>
+    </div>
+        <div class="division_results">
+        <div id="rij">
+            <div id="team"> playbal </div>
+            <div id="played"> <!-- matches totaal --> 
+                2 </div>
+            <div id="won"> <!-- matches gewonnen --> 
+                1 </div>
+            <div id="lost"> <!-- matches verloren --> 
+                0 </div>
+            <div id="draw"> <!-- matches gelijkspel --> 
+                1 </div>
+            <div id="goalsPos"> <!-- goals gemaakt -->
+                40            </div>
+            <div id="goalsNeg"> <!-- goals tegen -->
+                35            </div>
+            <div id="goalsSal"> <!-- goals saldo -->
+                5            </div>
+            <div id="points"> <!-- punten totaal --> 
+                3 </div>
+        </div>
+    </div>
+        <div class="division_results">
+        <div id="rij">
+            <div id="team"> playbal </div>
+            <div id="played"> <!-- matches totaal --> 
+                2 </div>
+            <div id="won"> <!-- matches gewonnen --> 
+                1 </div>
+            <div id="lost"> <!-- matches verloren --> 
+                1 </div>
+            <div id="draw"> <!-- matches gelijkspel --> 
+                0 </div>
+            <div id="goalsPos"> <!-- goals gemaakt -->
+                38            </div>
+            <div id="goalsNeg"> <!-- goals tegen -->
+                41            </div>
+            <div id="goalsSal"> <!-- goals saldo -->
+                -3            </div>
+            <div id="points"> <!-- punten totaal --> 
+                2 </div>
+        </div>
+    </div>
+        <div class="division_results">
+        <div id="rij">
+            <div id="team"> playbal </div>
+            <div id="played"> <!-- matches totaal --> 
+                2 </div>
+            <div id="won"> <!-- matches gewonnen --> 
+                1 </div>
+            <div id="lost"> <!-- matches verloren --> 
+                1 </div>
+            <div id="draw"> <!-- matches gelijkspel --> 
+                0 </div>
+            <div id="goalsPos"> <!-- goals gemaakt -->
+                42            </div>
+            <div id="goalsNeg"> <!-- goals tegen -->
+                41            </div>
+            <div id="goalsSal"> <!-- goals saldo -->
+                1            </div>
+            <div id="points"> <!-- punten totaal --> 
+                2 </div>
+        </div>
+    </div>
+        <div class="division_results">
+        <div id="rij">
+            <div id="team"> playbal </div>
+            <div id="played"> <!-- matches totaal --> 
+                2 </div>
+            <div id="won"> <!-- matches gewonnen --> 
+                1 </div>
+            <div id="lost"> <!-- matches verloren --> 
+                1 </div>
+            <div id="draw"> <!-- matches gelijkspel --> 
+                0 </div>
+            <div id="goalsPos"> <!-- goals gemaakt -->
+                45            </div>
+            <div id="goalsNeg"> <!-- goals tegen -->
+                43            </div>
+            <div id="goalsSal"> <!-- goals saldo -->
+                2            </div>
+            <div id="points"> <!-- punten totaal --> 
+                2 </div>
+        </div>
+    </div>
+        <div class="division_results">
+        <div id="rij">
+            <div id="team"> playbal </div>
+            <div id="played"> <!-- matches totaal --> 
+                2 </div>
+            <div id="won"> <!-- matches gewonnen --> 
+                1 </div>
+            <div id="lost"> <!-- matches verloren --> 
+                1 </div>
+            <div id="draw"> <!-- matches gelijkspel --> 
+                0 </div>
+            <div id="goalsPos"> <!-- goals gemaakt -->
+                40            </div>
+            <div id="goalsNeg"> <!-- goals tegen -->
+                45            </div>
+            <div id="goalsSal"> <!-- goals saldo -->
+                -5            </div>
+            <div id="points"> <!-- punten totaal --> 
+                2 </div>
+        </div>
+    </div>
+        <div class="division_results">
+        <div id="rij">
+            <div id="team"> playbal </div>
+            <div id="played"> <!-- matches totaal --> 
+                2 </div>
+            <div id="won"> <!-- matches gewonnen --> 
+                0 </div>
+            <div id="lost"> <!-- matches verloren --> 
+                1 </div>
+            <div id="draw"> <!-- matches gelijkspel --> 
+                1 </div>
+            <div id="goalsPos"> <!-- goals gemaakt -->
+                34            </div>
+            <div id="goalsNeg"> <!-- goals tegen -->
+                37            </div>
+            <div id="goalsSal"> <!-- goals saldo -->
+                -3            </div>
+            <div id="points"> <!-- punten totaal --> 
+                1 </div>
+        </div>
+    </div>
+        <div class="division_results">
+        <div id="rij">
+            <div id="team"> k.c. superlenn </div>
+            <div id="played"> <!-- matches totaal --> 
+                2 </div>
+            <div id="won"> <!-- matches gewonnen --> 
+                0 </div>
+            <div id="lost"> <!-- matches verloren --> 
+                2 </div>
+            <div id="draw"> <!-- matches gelijkspel --> 
+                0 </div>
+            <div id="goalsPos"> <!-- goals gemaakt -->
+                30            </div>
+            <div id="goalsNeg"> <!-- goals tegen -->
+                38            </div>
+            <div id="goalsSal"> <!-- goals saldo -->
+                -8            </div>
+            <div id="points"> <!-- punten totaal --> 
+                0 </div>
+        </div>
+    </div>
+    </div>
+<div class="gameLeft">
+    <div>
+        <section>
+            <h2>kalender</h2>
+            <p>huidige week</p>
+            <p>huidige seizoen</p>
+            <p>eerstvolgende wedstrijd</p>
+            <p>playb.al tijd</p>
+        </section>
+    </div>
+    <div>
+        <section>
+            <h2>vorige matchen</h2>
+                        <table>
+                <tr>
+                    <td>playbal</td>
+                    <td>vs</td>
+                    <td>k.c. superlenn</td>
+                    <td>15-13</td>
+                </tr>
+                <tr>
+                    <td>playbal</td>
+                    <td>vs</td>
+                    <td>playbal</td>
+                    <td>18-18</td>
+                </tr>
+                <tr>
+                    <td>playbal</td>
+                    <td>vs</td>
+                    <td>playbal</td>
+                    <td>25-19</td>
+                </tr>
+                <tr>
+                    <td>playbal</td>
+                    <td>vs</td>
+                    <td>playbal</td>
+                    <td>17-28</td>
+                </tr>
+            </table>
+                    </section>
+    </div>
+    <div>
+        <section>
+            <h2>volgende matchen</h2>
+             <table>
+                <tr>
+                    <td>k.c. superlenn</td>
+                    <td>vs</td>
+                    <td>playbal</td>
+                </tr>
+                <tr>
+                    <td>playbal</td>
+                    <td>vs</td>
+                    <td>playbal</td>
+
+                </tr>
+                <tr>
+                    <td>playbal</td>
+                    <td>vs</td>
+                    <td>playbal</td>
+
+                </tr>
+                <tr>
+                    <td>playbal</td>
+                    <td>vs</td>
+                    <td>playbal</td>
+                </tr>
+            </table>
+
+        </section>
+    </div>
+</div>
+<script src="http://playb.al/js/clearlink.js"></script>
+<script src="http://playb.al/js/formToWizard.js"></script>
+<script>
+        $(document).ready(function(){
+            $("#SignupForm").formToWizard({ submitButton: 'submit' })
+            
+        });    
+</script>
+</div>
+<!-- end main -->
+</div>
+<!-- end wrap -->
+<footer>
+    <section id="footer">
+    
+        <div id="footerLeft">
+            <h2>test</h2>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        </div>
+        <div id="footerCenter">
+            <h2>about</h2>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+            <p></p>
+        </div>
+        <div id="footerRight">
+            <h2>contact</h2>
+            <li><a href="http://www.facebook.com/pages/playbal/165137856877547">connect with us on facebook</a></li>
+            <li>follow on twitter</li>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+        </div>
+        <DIV STYLE="width:100%; filter:
+    progid:DXImageTransform.Microsoft.MotionBlur(strength=13, direction=310)
+    progid:DXImageTransform.Microsoft.Blur(pixelradius=2)
+    progid:DXImageTransform.Microsoft.Wheel(duration=3);">
+        Blurry text with smudge of gray.</DIV>     
+    </section>
+</footer>
+</body>
+</html>

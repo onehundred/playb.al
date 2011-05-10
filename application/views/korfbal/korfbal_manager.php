@@ -29,7 +29,9 @@
             <h2>achievements</h2>
             <!-- if achievements = 0 -->
             <p>je hebt nog geen achievements behaald</p>
-            <!-- else --><section id="bottom"> </section>
+            <!-- else -->
+            
+            <section id="bottom"> </section>
 <section id="belowbottom">
 
   <div class="containerSmall">

@@ -1,0 +1,1025 @@
+1305193393TS---><!DOCTYPE HTML>
+<!-- head voor sport in detail -->
+<html manifest="http://playb.al/playbal.appcache" lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+
+<title>playb.al</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width; initial-scale=1"/>
+<meta name="viewport" content="width=device-width; maximum-scale=1"/>
+<!-- mobile ie font smoothing -->
+<meta http-equiv="cleartype" content="on">
+<!-- ios app look -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-startup-image" href="http://playb.al/img/l/splash.png">
+<!-- iphone 4, retina display -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://playb.al/img/h/apple-touch-icon.png">
+<!-- ipad 1 -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://playb.al/img/m/apple-touch-icon.png">
+<!-- ios, no retina display. android > 2.1 -->
+<link rel="apple-touch-icon-precomposed" href="http://playb.al/img/l/apple-touch-icon-precomposed.png">
+<!-- nokia -->
+<link rel="shortcut icon" href="http://playb.al/img/l/apple-touch-icon.png">
+    
+<link rel="shortcut icon" href="http://playb.al/img/favicon.ico">
+
+<link rel="stylesheet/less" href="http://playb.al/css/style.less" />
+
+<!-- no mediaqueries fallback -->
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="http://playb.al/css/style768.css" media="screen" />
+<![endif]-->
+	
+	
+
+<!-- Media Queries / Less -->
+<link href="http://playb.al/css/style1168.less" rel="stylesheet/less" media="only screen and (min-width: 1212px)" />
+<link href="http://playb.al/css/style768.less"  rel="stylesheet/less" media="only screen and (max-width: 991px) and (min-width: 768px)" />
+<link href="http://playb.al/css/style480.less"  rel="stylesheet/less" media="only screen and (max-width: 767px) and (min-width: 480px)" />
+<link href="http://playb.al/css/style320.less"  rel="stylesheet/less" media="only screen and (max-width: 479px)" />
+
+<link rel="stylesheet" href="http://playb.al/js/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css" />
+<link rel="stylesheet" href="http://playb.al/js/toastmessage/jquery.toastmessage.css"/>
+<link rel="stylesheet" href="http://playb.al/js/reveal/reveal.css"/>
+
+<script src="http://playbaleindwerk.appspot.com/js/modernizr-1.6.min.js"></script> 
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="http://playb.al/js/less-1.0.41.min.js"></script> 
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> -->
+<!-- jquery lokaal voor offline productie -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.mediaqueries.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/playbal.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/galleryGame.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.flip.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.isotope.js"></script>
+<script src="http://playb.al/js/reveal/jquery.reveal.js"></script>
+<script src="http://playb.al/js/toastmessage/jquery.toastmessage.js"></script>
+<script src="http://playb.al/js/awesomechart.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+   <script type="text/javascript" src="http://playb.al/js/selectivizr.js"></script>
+ <![endif]-->
+
+</head>
+<body><div id="topbar"></div>
+	<div id="wrap">
+		<div id="main">
+<!-- 		<div id="headerWrap"> -->
+			<header>
+				<figure>
+				<a onclick="parent.location='http://playb.al/'">
+				<img src="http://playb.al/img/logo.png" id="logo" alt="logo" title="playb.al" ondragstart="return false" />
+				</a>
+				</figure>
+					<section>
+					<div id="login">
+    <li class="menu_right"> <a href="#" id="profile" class=""> 
+        lenny        </a>
+        &nbsp;<img src="http://playb.al/img/home.png" />
+    </li>
+</div>
+
+
+<div class="profile" style="display: none; opacity: 0;">
+
+
+        <a href="#" id="closeProfile">sluiten</a>
+<img src="http://playb.al/img/default_profile.png" />
+
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>
+	<p>dfgs</p>	
+	<p>dfgssdfs sdfsdfs sdfffff sdfsdf sdfsdf sdfsdf</p>
+	<p>dfgs</p>
+	<a href="http://playb.al/index.php/main/logout">afmelden</a>
+	
+
+    </div>
+
+<!-- end login --> 
+
+<!-- End 3 columns container --> 
+
+<!--        <li><input type="text" name="" value="zoeken"  /></li>  -->
+
+<!-- End 3 columns Item -->					</section>
+					<img src="http://playb.al/img/version.png" id="version" />
+			</header>
+
+			
+			
+			
+			
+			
+			
+			
+			
+<h1 id="teamname">k.c. superlenn</h1>
+<section class="sportnavWrap">
+<nav class="sportnav">
+    <p id="overzichtMenu"><a href="http://playb.al/index.php/korfbal/korfbal_start/4089">Overzicht</a></p>
+    <p id="trainingMenu"><a href="http://playb.al/index.php/korfbal/korfbal_training/4089">Training</a></p>
+    <p id="spelersMenu"><a href="http://playb.al/index.php/korfbal/korfbal_players/4089">Spelers</a> </p>
+    <p id="wedstrijdenMenu"><a href="http://playb.al/index.php/korfbal/korfbal_matches/4089">Wedstrijden</a></p>
+    <p id="divisieMenu"><a href="http://playb.al/index.php/korfbal/korfbal_division/4089">Divisie</a></p>
+    <p id="stadionMenu"><a href="http://playb.al/index.php/korfbal/korfbal_stadium/4089">Stadion</a></p>
+    <p id="managerMenu"><a href="http://playb.al/index.php/korfbal/korfbal_manager/4089">Manager</a></p>
+    <p id="financienMenu"><a href="http://playb.al/index.php/korfbal/korfbal_finances/4089">Financien</a></p>
+    <p id="transfersMenu"><a href="http://playb.al/index.php/korfbal/korfbal_transfers/4089">Transfers</a></p>
+</nav>
+</section>
+</div> <!-- end headerWrap -->
+<script src="http://playb.al/js/korfbal/spelers.js"></script>
+<div class="gameRight">
+    <div id="container">
+                <div class="player">
+            <p class="number">1</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/13">Arsi</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/13">Cline</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">17 jaar oud</p>
+            <p class="price">214300 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">1</p>
+                <p class="rebound">/20</p>
+                <div class="rebound13" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">14</p>
+                <p class="rebound">/20</p>
+                <div class="stamina13" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">12</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision13" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">11</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking13" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">1</p>
+                <p class="rebound">/20</p>
+                <div class="passing13" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">1</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower13" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">9</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting13" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">13</p>
+                <p class="rebound">/20</p>
+                <div class="leadership13" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">89</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/14">nele</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/14">vandevelde</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">17 jaar oud</p>
+            <p class="price">208375 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">5</p>
+                <p class="rebound">/20</p>
+                <div class="rebound14" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">11</p>
+                <p class="rebound">/20</p>
+                <div class="stamina14" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">5</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision14" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">2</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking14" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">9</p>
+                <p class="rebound">/20</p>
+                <div class="passing14" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">4</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower14" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">6</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting14" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">11</p>
+                <p class="rebound">/20</p>
+                <div class="leadership14" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">16</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/15">Esa-Pekka</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/15">Cooper</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">19 jaar oud</p>
+            <p class="price">163175 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">3</p>
+                <p class="rebound">/20</p>
+                <div class="rebound15" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">1</p>
+                <p class="rebound">/20</p>
+                <div class="stamina15" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision15" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">8</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking15" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">4</p>
+                <p class="rebound">/20</p>
+                <div class="passing15" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower15" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">7</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting15" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">5</p>
+                <p class="rebound">/20</p>
+                <div class="leadership15" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">77</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/16">maria</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/16">pony</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">18 jaar oud</p>
+            <p class="price">206550 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">10</p>
+                <p class="rebound">/20</p>
+                <div class="rebound16" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">2</p>
+                <p class="rebound">/20</p>
+                <div class="stamina16" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">7</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision16" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">8</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking16" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">2</p>
+                <p class="rebound">/20</p>
+                <div class="passing16" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">3</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower16" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">7</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting16" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">8</p>
+                <p class="rebound">/20</p>
+                <div class="leadership16" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">42</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/17">Aki</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/17">Cooper</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">17 jaar oud</p>
+            <p class="price">236175 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">12</p>
+                <p class="rebound">/20</p>
+                <div class="rebound17" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">9</p>
+                <p class="rebound">/20</p>
+                <div class="stamina17" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision17" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">2</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking17" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">3</p>
+                <p class="rebound">/20</p>
+                <div class="passing17" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">11</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower17" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">6</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting17" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">12</p>
+                <p class="rebound">/20</p>
+                <div class="leadership17" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">86</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/18">anke</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/18">deboi</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">16 jaar oud</p>
+            <p class="price">261300 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">11</p>
+                <p class="rebound">/20</p>
+                <div class="rebound18" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">18</p>
+                <p class="rebound">/20</p>
+                <div class="stamina18" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision18" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">5</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking18" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">1</p>
+                <p class="rebound">/20</p>
+                <div class="passing18" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">4</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower18" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">10</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting18" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">7</p>
+                <p class="rebound">/20</p>
+                <div class="leadership18" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">6</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/19">Arttu</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/19">Jones</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">20 jaar oud</p>
+            <p class="price">269125 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">8</p>
+                <p class="rebound">/20</p>
+                <div class="rebound19" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">9</p>
+                <p class="rebound">/20</p>
+                <div class="stamina19" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">5</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision19" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">12</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking19" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">10</p>
+                <p class="rebound">/20</p>
+                <div class="passing19" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">10</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower19" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">1</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting19" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">4</p>
+                <p class="rebound">/20</p>
+                <div class="leadership19" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">46</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/20">anke</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/20">pony</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">19 jaar oud</p>
+            <p class="price">251375 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">1</p>
+                <p class="rebound">/20</p>
+                <div class="rebound20" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">9</p>
+                <p class="rebound">/20</p>
+                <div class="stamina20" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">10</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision20" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">12</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking20" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">2</p>
+                <p class="rebound">/20</p>
+                <div class="passing20" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">7</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower20" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">11</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting20" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">15</p>
+                <p class="rebound">/20</p>
+                <div class="leadership20" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">12</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/21">Eerik</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/21">Winkler</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">23 jaar oud</p>
+            <p class="price">206650 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">3</p>
+                <p class="rebound">/20</p>
+                <div class="rebound21" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">12</p>
+                <p class="rebound">/20</p>
+                <div class="stamina21" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">6</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision21" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">1</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking21" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">5</p>
+                <p class="rebound">/20</p>
+                <div class="passing21" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">5</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower21" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">11</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting21" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">8</p>
+                <p class="rebound">/20</p>
+                <div class="leadership21" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">91</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/22">josefien</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/22">vandevelde</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">19 jaar oud</p>
+            <p class="price">234425 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">2</p>
+                <p class="rebound">/20</p>
+                <div class="rebound22" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">13</p>
+                <p class="rebound">/20</p>
+                <div class="stamina22" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision22" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">6</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking22" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">10</p>
+                <p class="rebound">/20</p>
+                <div class="passing22" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">3</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower22" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">7</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting22" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">16</p>
+                <p class="rebound">/20</p>
+                <div class="leadership22" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">34</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/23">Ari-Pekka</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/23">Cline</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/male.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">16 jaar oud</p>
+            <p class="price">302275 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">3</p>
+                <p class="rebound">/20</p>
+                <div class="rebound23" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">11</p>
+                <p class="rebound">/20</p>
+                <div class="stamina23" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">11</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision23" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">7</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking23" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">12</p>
+                <p class="rebound">/20</p>
+                <div class="passing23" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">8</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower23" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">10</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting23" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">19</p>
+                <p class="rebound">/20</p>
+                <div class="leadership23" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+                <div class="player">
+            <p class="number">49</p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/4089/24">maria</a></p>
+            <p class="lastname"><a href="../korfbal_player/4089/24">pony</a>
+            </p></span>
+            <p class="gender">
+                <img src="http://playb.al/img/female.png" ondragstart="return false" />
+            </p>
+        <br />
+            <p class="age">22 jaar oud</p>
+            <p class="price">175050 &euro;</p>
+            <br />
+            <br />
+            <div id="rightProgress">
+                <p id="skillTitle">rebound: </p>
+                <p class="rebound">8</p>
+                <p class="rebound">/20</p>
+                <div class="rebound24" id="reboundProgress"></div>
+                <p id="skillTitle">stamina: </p>
+                <p class="stamina">10</p>
+                <p class="rebound">/20</p>
+                <div class="stamina24" id="staminaProgress"></div>
+                <p id="skillTitle">shotprecision: </p>
+                <p class="shotprecision">2</p>
+                <p class="rebound">/20</p>
+                <div class="shotprecision24" id="shotprecisionProgress"></div>
+                <p id="skillTitle">playmaking: </p>
+                <p class="playmaking">5</p>
+                <p class="rebound">/20</p>
+                <div class="playmaking24" id="playmakingProgress"></div>
+            </div>
+            <div id="leftProgress">
+                <p id="skillTitle">passing: </p>
+                <p class="passing">3</p>
+                <p class="rebound">/20</p>
+                <div class="passing24" id="passingProgress"></div>
+                <p id="skillTitle">shotpower: </p>
+                <p class="shotpower">5</p>
+                <p class="rebound">/20</p>
+                <div class="shotpower24" id="shotpowerProgress"></div>
+                <p id="skillTitle">intercepting: </p>
+                <p class="intercepting">2</p>
+                <p class="rebound">/20</p>
+                <div class="intercepting24" id="interceptingProgress"></div>
+                <p id="skillTitle">leadership: </p>
+                <p class="leadership">8</p>
+                <p class="rebound">/20</p>
+                <div class="leadership24" id="leadershipProgress"></div>
+            </div>
+        </div>
+        <!-- <hr/> -->
+            </div>
+</div>
+<div class="gameLeft">
+    <h2>spelers rangschikken</h2>
+    <ul id="sort" class="sort option-set">
+        <ul class="sort asc option-set floated clearfix">
+            <li><a href="#number" class="selected">
+                <img src="http://playb.al/img/down.png" />
+                </a></li>
+        </ul>
+        <li><a href="#number" class="" id="playerSort">
+            <img src="http://playb.al/img/up.png" />
+            rugnummer</a></li>
+        <br />
+        <ul class="sort asc option-set floated clearfix">
+            <li><a href="#age" class="selected">
+                <img src="http://playb.al/img/down.png" />
+                </a></li>
+        </ul>
+        <li><a href="#age" class="">
+            <img src="http://playb.al/img/up.png" />
+            leeftijd</a></li>
+        <br />
+        <ul class="sort asc option-set floated clearfix">
+            <li><a href="#price" class="selected">
+                <img src="http://playb.al/img/down.png" />
+                </a></li>
+        </ul>
+        <li><a href="#price" class="">
+            <img src="http://playb.al/img/up.png" />
+            prijs</a></li>
+        <br />
+        <hr />
+        <div class="gameRight2">
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#passing" class="selected">
+                    <img src="http://playb.al/img/down.png" />
+                    </a></li>
+            </ul>
+            <li><a href="#passing" class="">
+                <img src="http://playb.al/img/up.png" />
+                passing</a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#shotpower" class="selected">
+                    <img src="http://playb.al/img/down.png" />
+                    </a></li>
+            </ul>
+            <li><a href="#shotpower" class="">
+                <img src="http://playb.al/img/up.png" />
+                shotpower</a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#intercepting" class="selected">
+                    <img src="http://playb.al/img/down.png" />
+                    </a></li>
+            </ul>
+            <li><a href="#intercepting" class="">
+                <img src="http://playb.al/img/up.png" />
+                intercepting</a></li>
+            <br />
+            <ul class="sort asc option-set floated clearfix">
+                <li><a href="#leadership" class="selected">
+                    <img src="http://playb.al/img/down.png" />
+                    </a></li>
+            </ul>
+            <li><a href="#leadership" class="">
+                <img src="http://playb.al/img/up.png" />
+                leadership</a></li>
+            <br />
+        </div>
+        <!-- end gameRight2 -->
+        <div class="gameRight3">
+        <ul class="sort asc option-set floated clearfix">
+            <li><a href="#rebound" class="">
+                <img src="http://playb.al/img/down.png" />
+                </a></li>
+        </ul>
+        <li><a href="#rebound" class="selected">
+            <img src="http://playb.al/img/up.png" />
+            rebound</a></li>
+        <br />
+        <ul class="sort asc option-set floated clearfix">
+            <li><a href="#stamina" class="selected">
+                <img src="http://playb.al/img/down.png" />
+                </a></li>
+        </ul>
+        <li><a href="#stamina" class="">
+            <img src="http://playb.al/img/up.png" />
+            stamina</a></li>
+        <br />
+        <ul class="sort asc option-set floated clearfix">
+            <li><a href="#shotprecision" class="selected">
+                <img src="http://playb.al/img/down.png" />
+                </a></li>
+        </ul>
+        <li><a href="#shotprecision" class="">
+            <img src="http://playb.al/img/up.png" />
+            shotprecsion</a></li>
+        <br />
+        <ul class="sort asc option-set floated clearfix">
+            <li><a href="#playmaking" class="selected">
+                <img src="http://playb.al/img/down.png" />
+                </a></li>
+        </ul>
+        <li><a href="#playmaking" class="">
+            <img src="http://playb.al/img/up.png" />
+            playmaking</a></li>
+    </ul>
+    <!-- end ul id sort --> 
+
+<!-- end gameLeft -->
+<input type="hidden" id="teamid" value="4089"/>
+<input type="hidden" id="teamid" value="4089"/>
+</div>
+<!-- end container --> 
+
+<script>
+
+
+    var $container = $('#container');
+    
+    
+      // sorting
+      $('#sort a').click(function(){
+        // get href attribute, minus the #
+        var $this = $(this),
+            sortName = $this.attr('href').slice(1),
+            asc = $this.parents('.sort').hasClass('asc');
+        $container.isotope({ 
+          sortBy : sortName,
+          sortAscending : asc
+        });
+        return false;
+      });
+    
+    
+      // switches selected class on buttons
+      $('#options').find('.option-set a').click(function(){
+        var $this = $(this);
+
+        // don't proceed if already selected
+        if ( !$this.hasClass('selected') ) {
+          $this.parents('.option-set').find('.selected').removeClass('selected');
+          $this.addClass('selected');
+        }
+
+      });
+
+  
+    $(function(){
+      
+      $container.isotope({
+        itemSelector : '.player',
+        getSortData : {
+          symbol : function( $elem ) {
+            return $elem.attr('data-symbol');
+          },
+          category : function( $elem ) {
+            return $elem.attr('data-category');
+          },
+          number : function( $elem ) {
+            return parseInt( $elem.find('.number').text(), 10 );
+          },
+          age : function( $elem ) {
+            return parseInt( $elem.find('.age').text(), 10 );
+          },
+          price : function( $elem ) {
+            return parseInt( $elem.find('.price').text(), 10 );
+          },
+          rebound : function( $elem ) {
+            return parseInt( $elem.find('.rebound').text(), 10 );
+          },
+          stamina : function( $elem ) {
+            return parseInt( $elem.find('.stamina').text(), 10 );
+          },
+           shotprecision : function( $elem ) {
+            return parseInt( $elem.find('.shotprecision').text(), 10 );
+          },
+          playmaking : function( $elem ) {
+            return parseInt( $elem.find('.playmaking').text(), 10 );
+          },
+           passing : function( $elem ) {
+            return parseInt( $elem.find('.passing').text(), 10 );
+          },
+          shotpower : function( $elem ) {
+            return parseInt( $elem.find('.shotpower').text(), 10 );
+          },
+          intercepting : function( $elem ) {
+            return parseInt( $elem.find('.intercepting').text(), 10 );
+          },
+          leadership : function( $elem ) {
+            return parseInt( $elem.find('.leadership').text(), 10 );
+          },
+          weight : function( $elem ) {
+            return parseFloat( $elem.find('.weight').text().replace( /[\(\)]/g, '') );
+          },
+          firstname : function ( $elem ) {
+            return $elem.find('.firstname').text();
+          },
+          lastname : function ( $elem ) {
+            return $elem.find('.lastname').text();
+          }
+          
+        
+          
+        }
+      });
+      
+    });
+  </script><script src="http://playb.al/js/clearlink.js"></script>
+<script src="http://playb.al/js/formToWizard.js"></script>
+<script>
+        $(document).ready(function(){
+            $("#SignupForm").formToWizard({ submitButton: 'submit' })
+            
+        });    
+</script>
+</div>
+<!-- end main -->
+</div>
+<!-- end wrap -->
+<footer>
+    <section id="footer">
+    
+        <div id="footerLeft">
+            <h2>test</h2>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        </div>
+        <div id="footerCenter">
+            <h2>about</h2>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+            <p></p>
+        </div>
+        <div id="footerRight">
+            <h2>contact</h2>
+            <li><a href="http://www.facebook.com/pages/playbal/165137856877547">connect with us on facebook</a></li>
+            <li>follow on twitter</li>
+            <li>test</li>
+            <li>test</li>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+        </div>
+        <DIV STYLE="width:100%; filter:
+    progid:DXImageTransform.Microsoft.MotionBlur(strength=13, direction=310)
+    progid:DXImageTransform.Microsoft.Blur(pixelradius=2)
+    progid:DXImageTransform.Microsoft.Wheel(duration=3);">
+        Blurry text with smudge of gray.</DIV>     
+    </section>
+</footer>
+</body>
+</html>

@@ -47,6 +47,21 @@
 .textShadow {
 	text-shadow: 0px 0px 7px #474747;
 }
+.imageDown {
+	-moz-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+.imageUp {
+	-moz-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+
 /* LESS GLOBALS end */
 
 
@@ -129,64 +144,33 @@ h2 {
 	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.854, transparent), to(rgba(255,255,255, 0.2)));
 }
 .korfbal {
- background-color: @korfbalColor;
-	height: 70px;
- border: 1px solid @korfbalBorderColor;
-	top: 10px;
-	margin-left: 0px;
- .borderRadius;
- .lessOpacity;
- .transitionOff;
-	width: 228px;
+	top: 5px;
+
+
+	.imageDown;
 }
 .korfbal:hover {
- background-color: @korfbalColor;
-	height: 70px;
- border: 1px solid @korfbalBorderColor;
-	top: 10px;
- .moreOpacity;
- .transitionOn;
- .borderRadius;
+top: 5px;
+	.imageUp;
 }
 .basketbal {
- background-color: @basketbalColor;
-	margin-left: 0px;
-	height: 70px;
- .borderRadius;
- border: 1px solid @basketbalBorderColor;
- .lessOpacity;
- .transitionOff;
-	top: 15px;
-	width: 228px;
+	top: 5px;
+
+
+	.imageDown;
 }
 .basketbal:hover {
- background-color: @basketbalColor;
-	height: 70px;
- .borderRadius;
- border: 1px solid @basketbalBorderColor;
- .moreOpacity;
- .transitionOn;
-	top: 15px;
+ 	top: 5px;
+	.imageUp;
 }
 .volleybal {
- background-color: @volleybalColor;
-	margin-left: 0px;
-	height: 70px;
- .borderRadius;
- border: 1px solid @volleybalBorderColor;
- .lessOpacity;
- .transitionOff;
-	top: 20px;
-	width: 228px;
+	top: 85px;
+
+	.imageDown;
 }
 .volleybal:hover {
- background-color: @volleybalColor;
-	height: 70px;
- .borderRadius;
- border: 1px solid @volleybalBorderColor;
- .moreOpacity;
- .transitionOn;
-	top: 20px;
+ 	top: 85px;
+	.imageUp;
 }
 #korfbal, #basketbal, #volleybal {
 	position: absolute;
@@ -227,6 +211,100 @@ h2 {
 #footer {
 	background-image: url("../img/footer3.png");
 }
+/* BIG GALLERY start ---------------------------------------------------------------------------------------------------------*/
+.container {
+	width: 790px;
+	padding: 0;
+	margin: 0 auto;
+}
+.folio_block {
+	position: absolute;
+	left: 0%;
+	top: 15px;
+}
+/*--Main Container--*/
+.main_view {
+	float: left;
+	position: relative;
+}
+/*--galleryWrapper/Masking Styles--*/
+.galleryWrapper {
+	height:500px;
+	width: 290px;
+	overflow: hidden; /*--Hides anything outside of the set width/height--*/
+	position: relative;
+}
+img#galleryLeftHide {
+	left: -20px;
+	position: relative;
+}
+img#galleryRightHide {
+	left: 1120px;
+	position: relative;
+}
+.imgs {
+	position: absolute;
+	top: 0;
+	left: 15px;
+}
+.imgs img {
+	float: left;
+}
+/*--pagingGallery Styles--*/
+.pagingGallery {
+	margin: 20px auto 0 auto;
+	width: 178px;
+	height:47px;
+	z-index: 100; /*--Assures the pagingGallery stays on the top layer--*/
+	text-align: center;
+	line-height: 40px;
+	display: none; /*--Hidden by default, will be later shown with jQuery--*/
+}
+.pagingGallery a {
+	padding: 10px 15px 5px 15px;
+	margin: 0 5px 0 0;
+	background-image: url("../img/bullet_inactive.png");
+	opacity: 0.9;
+	z-index: 1;
+}
+.pagingGallery a.active {
+	font-weight: bold;
+	background-image: url("../img/bullet_active.png");
+}
+.pagingGallery a.active {
+	background-image: url("../img/bullet_active.png");
+}
+.pagingGallery a:hover {
+	opacity: 0.8;
+}
+#content {
+	height:567px;
+	width:896px;
+	overflow:hidden;
+	position:relative;
+	border : 1px solid black;
+}
+.imgs {
+	float:left;
+	display:inline;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	padding:0px;
+	margin:0px;
+	width:2700px;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.imgs img {
+	padding:0px;
+	margin:0px;
+	width:290px;
+	height:500px;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+/* BIG GALLERY end ---------------------------------------------------------------------------------------------------------*/
+
 /* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
 
 /* okay 

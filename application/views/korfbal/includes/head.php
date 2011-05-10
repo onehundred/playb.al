@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!-- head voor sport in detail -->
-<html manifest="<?php echo base_url();?>playbal.appcache" lang="en" class="no-js">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8" />
 

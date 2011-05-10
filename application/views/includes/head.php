@@ -2,7 +2,7 @@
 
 <!-- head homepage -->
 
-<html lang="en" class="no-js">
+<html manifest="<?php echo base_url();?>playbal.appcache?v=1" lang="en" class="no-js">
 <head>
 <meta charset="utf-8" />
 

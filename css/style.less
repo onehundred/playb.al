@@ -106,7 +106,7 @@ html, body {
 	min-height: 100%;
 }
 #main {
-	/* padding-bottom: 75px; */ /* same as footer */
+	padding-bottom: 75px; /* same as footer */
 }
 footer {
 	position: relative;
@@ -192,10 +192,8 @@ cols    1     2      3      4      5      6      7      8      9      10
 px      68    160    252    344    436    528    620    712    804    896    */
 
 body {
-/*
 	width: 896px;
 	padding: 0px 48px 84px;
-*/
 	background-color: #F7F7F7;
 	margin-left:auto;
 	margin-right:auto;
@@ -1026,6 +1024,100 @@ select {
 	padding: 10px;
 	font-size: 16px;
 }
+/* BIG GALLERY start ---------------------------------------------------------------------------------------------------------*/
+.container {
+	width: 790px;
+	padding: 0;
+	margin: 0 auto;
+}
+.folio_block {
+	position: absolute;
+	left: 0%;
+	top: 15px;
+}
+/*--Main Container--*/
+.main_view {
+	float: left;
+	position: relative;
+}
+/*--galleryWrapper/Masking Styles--*/
+.galleryWrapper {
+	height:500px;
+	width: 866px;
+	overflow: hidden; /*--Hides anything outside of the set width/height--*/
+	position: relative;
+}
+img#galleryLeftHide {
+	left: -20px;
+	position: relative;
+}
+img#galleryRightHide {
+	left: 1120px;
+	position: relative;
+}
+.imgs {
+	position: absolute;
+	top: 0;
+	left: 15px;
+}
+.imgs img {
+	float: left;
+}
+/*--pagingGallery Styles--*/
+.pagingGallery {
+	margin: 20px auto 0 auto;
+	width: 178px;
+	height:47px;
+	z-index: 100; /*--Assures the pagingGallery stays on the top layer--*/
+	text-align: center;
+	line-height: 40px;
+	display: none; /*--Hidden by default, will be later shown with jQuery--*/
+}
+.pagingGallery a {
+	padding: 10px 15px 5px 15px;
+	margin: 0 5px 0 0;
+	background-image: url("../img/bullet_inactive.png");
+	opacity: 0.9;
+	z-index: 1;
+}
+.pagingGallery a.active {
+	font-weight: bold;
+	background-image: url("../img/bullet_active.png");
+}
+.pagingGallery a.active {
+	background-image: url("../img/bullet_active.png");
+}
+.pagingGallery a:hover {
+	opacity: 0.8;
+}
+#content {
+	height:567px;
+	width:896px;
+	overflow:hidden;
+	position:relative;
+	border : 1px solid black;
+}
+.imgs {
+	float:left;
+	display:inline;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	padding:0px;
+	margin:0px;
+	width:2700px;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.imgs img {
+	padding:0px;
+	margin:0px;
+	width:866px;
+	height:500px;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+/* BIG GALLERY end ---------------------------------------------------------------------------------------------------------*/
+
 /* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
 @font-face {
 	/* This declaration targets Internet Explorer */

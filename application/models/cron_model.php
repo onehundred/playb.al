@@ -3,7 +3,6 @@
     function __construct()
     {
         parent::__construct();
-        ini_set('memory_limit', '192M');
     }
     
     function get_croninfo(){

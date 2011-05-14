@@ -110,8 +110,7 @@ class Cron extends CI_Controller {
 		$wedstrijd = $this->match_engine->get_wedstrijden();
 		$thuisstats = $this->match_engine->get_statsthuisteam($wedstrijd);
 		$uitstats = $this->match_engine->get_statsuitteam($wedstrijd);
-		$thuis = $this->match_engine->play_games($thuisstats, $uitstats, $wedstrijd);
-		//print_r ($thuisstats);	
+		$thuis = $this->match_engine->play_games($thuisstats, $uitstats, $wedstrijd);	
 		
 	}
 	

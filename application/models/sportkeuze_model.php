@@ -164,62 +164,6 @@
     
     }
     
-    //functie om het team toe te wijzen aan een divisie
-    // word automatisch gedaan in de cron/bot functie
-    /*function assign_korfbaldivisie()
-    {
-    	$user_id = $this->session->userdata('user_id');
-    	
-    	$this->db->where('FK_user_id', $user_id);
-    	$this->db->select('team_id');
-    	$teamidquery = $this->db->get('korf_teams');
-    	
-    	
-    	foreach($teamidquery->result() as $row)
-    	{
-    		$team_id = $row->team_id;
-    	
-    	}
-    	
-    	
-    	
-    	//gaat elke divisie af, waar het getal onder de 8 is daar voegt hij het team aan toe
-    	
-    	$divisies = $this->db->get('korf_divisies');
-    	$divRows = $divisies->num_rows();
-    	
-    	for($i=1;$i<=$divRows;$i++){
-    	
-    			$this->db->where('FK_division_id', $i);
-    			$this->db->where('bot', 0);
-    			$teams = $this->db->get('korf_teams');
-    			
-    			$teamRows = $teams->num_rows();
-               
-            if($teamRows < 8){
-            
-            	$data = array(
-            		'FK_division_id' => $i
-            	
-            	
-            	);
-            
-               	$this->db->where('FK_user_id', $user_id);
-               	$this->db->update('korf_teams', $data);
-                break;
-
-            }
-
-
-
-          }
-    	
-
-    	
-    
-    }*/
-    
-    
     //functie om een speler(man) aan te maken
     function create_korfbalplayer_man(){
     	$user_id = $this->session->userdata('user_id');

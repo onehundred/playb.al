@@ -121,7 +121,7 @@
     }
     
     //25 matchen gespeeld
-    function 25_matchen($teamid)
+    function vijfentwintig_matchen($teamid)
     {
     	$this->db->where('FK_team_id', $teamid);
     	$query = $this->db->get('korf_teamstats');
@@ -174,9 +174,9 @@
     		$this->db->insert('korf_berichten', $bericht);
     	}
       }
-      
+
       //50 matchen gespeeld
-      function 50_matchen($teamid){
+      function vijftig_matchen($teamid){
       	$this->db->where('FK_team_id', $teamid);
     	$query = $this->db->get('korf_teamstats');
     	
@@ -231,8 +231,7 @@
       }
       
       //100 matchen gespeeld
-      function 100_matchen($teamid)
-      {
+      function honderd_matchen($teamid){
       	$this->db->where('FK_team_id', $teamid);
     	$query = $this->db->get('korf_teamstats');
     	

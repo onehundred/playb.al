@@ -1,4 +1,8 @@
-<?php $this->load->view('includes/head');?>
+<?php  if($main_content == 'main_sportkeuze'){ ?>
+	<?php $this->load->view('korfbal/includes/head');?>
+<?php }else{?>
+	<?php $this->load->view('includes/head');?>
+<?php }?>
 <?php $this->load->view('includes/header');?>
 
 

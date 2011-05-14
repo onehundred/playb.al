@@ -118,7 +118,6 @@ $(document).ready(function() {
 	rotate = function(){	
 		var triggerID = $active.attr("rel") - 1; //Get number of times to slide
 		var imgsPosition = triggerID * imageWidth; //Determines the distance the image reel needs to slide
-$('#galleryLeftHide, #galleryRightHide').fadeIn('fast').fadeOut(400);
 		$(".pagingGallery a").removeClass('active'); //Remove all active class
 		$active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
 		

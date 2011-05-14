@@ -38,8 +38,7 @@
         <div class="folio_blockSmall">
             <div class="main_viewSmall">
                 <div class="galleryWrapperSmall">
-                    <img src="<?php echo base_url();?>img/gallery_right_hide.png" id="galleryRightHideSmall" alt="" style="display: ;" />
-                    <img src="<?php echo base_url();?>img/gallery_left_hide.png" id="galleryLeftHideSmall" alt="" style="display: ;" />
+            
                     <div class="imgsSmall" ondragstart="return false">
                         <img src="<?php echo base_url();?>img/achievement1.png" alt="achievement" title="playb.al achievement" />
                         <img src="<?php echo base_url();?>img/achievement1.png" alt="achievement" title="playb.al achievement" />

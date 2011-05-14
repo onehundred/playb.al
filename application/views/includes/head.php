@@ -39,16 +39,16 @@
 
 <noscript><meta http-equiv="refresh" content="0; URL=<?php echo base_url();?>js/sorry"</noscript>
 
-<!-- Media Queries / Less -->
+<!-- media Queries / less -->
 <link rel="stylesheet/less" href="<?php echo base_url();?>css/style1168.less" media="only screen and (min-width: 1212px)" />
 <link rel="stylesheet/less" href="<?php echo base_url();?>css/style768.less"  media="only screen and (max-width: 991px) and (min-width: 768px)" />
 <link rel="stylesheet/less" href="<?php echo base_url();?>css/style480.less"  media="only screen and (max-width: 767px) and (min-width: 480px)" />
 <link rel="stylesheet/less" href="<?php echo base_url();?>css/style320.less"  media="only screen and (max-width: 479px)" />
 
 <script src="<?php echo base_url();?>js/less-1.0.41.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
 <!-- jquery lokaal wegens falen van google gedurende productie -->
-<script src="<?php echo base_url();?>js/jquery-1.5.2.min.js"></script>
+<!-- <script src="<?php echo base_url();?>js/jquery-1.5.2.min.js"></script> -->
 <script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.mediaqueries.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
@@ -56,7 +56,6 @@
 <script src="http://playbaleindwerk.appspot.com/js/galleryHome.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.transform.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.multiple-bgs.min.js"></script>
-<script src="http://playbaleindwerk.appspot.com/js/jquery.loading.1.6.4.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/modernizr-1.6.min.js"></script>
 <script type="text/javascript">
 if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
@@ -72,8 +71,3 @@ if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi)
 <![endif]-->
 </head>
 <body>
-<script>
-$(document).ready(function() {
-$('#wrap').loading({ text: 'loading', pulse: false, mask: true, max: 100 });
-});
-</script>

@@ -72,9 +72,7 @@
         <div class="folio_block">
             <div class="main_view">
                 <div class="galleryWrapper">
-                    <img src="<?php echo base_url();?>img/gallery_right_hide.png" id="galleryRightHide" alt="" style="display: ;" />
-                    <img src="<?php echo base_url();?>img/gallery_left_hide.png" id="galleryLeftHide" alt="" style="display: ;" />
-                    <div class="imgs" ondragstart="return false">
+                        <div class="imgs" ondragstart="return false">
                         <img src="<?php echo base_url();?>img/gallery1.png" alt="speel playb.al op elke computer" />
                         <img src="<?php echo base_url();?>img/gallery2.png" alt="speel playb.al op elke smartphone" />
                         <img src="<?php echo base_url();?>img/3.jpg" alt="" />

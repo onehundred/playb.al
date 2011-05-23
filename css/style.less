@@ -111,8 +111,9 @@ html, body {
 footer {
 	position: relative;
  margin-top: -@footerHeight; /* negative of footer */
- height: @footerHeight;
-	background-repeat: no-repeat;
+
+height: 450px;
+
 }
 /*Opera Fix*/
 body:before {/* thanks to Maleika (Kohoutec)*/
@@ -137,11 +138,6 @@ a img {
 }
 figure {
 	position: relative;
-}
-#version {
-	position: absolute;
-	right: 0px;
-	top: 0px;
 }
 /*
 figure img {
@@ -193,7 +189,7 @@ px      68    160    252    344    436    528    620    712    804    896    */
 
 body {
 	width: 896px;
-	padding: 0px 48px 84px;
+/* 	padding: 0px 48px 84px; */
 	background-color: #F7F7F7;
 	margin-left:auto;
 	margin-right:auto;
@@ -201,8 +197,7 @@ body {
  	-webkit-touch-callout: none;
  	-webkit-user-select: none;
 	text-rendering: optimizeLegibility;
-	background: 
- url(../img/860.jpg) repeat 0% 0%;
+	background: url(../img/400.jpg) repeat 0% 0%;
 }
 ::selection {
  background: @selectionColor;
@@ -221,7 +216,7 @@ header {
 }
 footer {
 	/* 	background-image: url("../img/footer1.png"); */
-float: left;
+/* float: left; */
 }
 #logo {
 	padding: 7px 7px 0 0;
@@ -243,6 +238,9 @@ float: left;
 	-o-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	-ms-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+iframe {
+width: 708px; height: 430px;
 }
 .bottomButtons {
 	float: right;
@@ -603,8 +601,8 @@ a.tooltip:hover::after {
 	float: left;
 }
 #layouts, #layouts2 {
-	float: left;
-	width: 100%;
+
+
 	height: 475px;
 }
 #layouts p, #layouts figure {
@@ -1026,7 +1024,7 @@ select {
 }
 /* BIG GALLERY start ---------------------------------------------------------------------------------------------------------*/
 .container {
-	width: 790px;
+	width: 866px;
 	padding: 0;
 	margin: 0 auto;
 }
@@ -1045,14 +1043,6 @@ select {
 	height:500px;
 	width: 866px;
 	overflow: hidden; /*--Hides anything outside of the set width/height--*/
-	position: relative;
-}
-img#galleryLeftHide {
-	left: -20px;
-	position: relative;
-}
-img#galleryRightHide {
-	left: 1120px;
 	position: relative;
 }
 .imgs {
@@ -1111,8 +1101,8 @@ img#galleryRightHide {
 .imgs img {
 	padding:0px;
 	margin:0px;
-	width:866px;
-	height:500px;
+	width:1006px;
+	height:600px;
 	-webkit-transform: translate3d(0px, 0px, 0px);
 }
 

@@ -1,7 +1,6 @@
-<div id="topbar"></div>
 	<div id="wrap">
 		<div id="main">
-<!-- 		<div id="headerWrap"> -->
+		<div id="headerWrap">
 			<header>
 				<figure>
 				<a onclick="parent.location='<?php echo base_url();?>'">
@@ -13,8 +12,8 @@
 					$this->load->view('main_login');
 					?>
 					</section>
-					<img src="<?php echo base_url();?>img/version.png" id="version" />
 			</header>
+			</div> <!-- end headerWrap -->
 
 			
 			

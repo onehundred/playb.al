@@ -1,5 +1,3 @@
-<script src="<?php echo base_url();?>js/clearlink.js"></script>
-<script src="<?php echo base_url();?>js/formToWizard.js"></script>
 <script>
         $(document).ready(function(){
             $("#SignupForm").formToWizard({ submitButton: 'submit' })
@@ -10,7 +8,7 @@
 <!-- end main -->
 </div>
 <!-- end wrap -->
-<footer>
+<section id="footerWrap"><footer>
     <section id="footer">
     
         <div id="footerLeft">
@@ -43,5 +41,6 @@
         Blurry text with smudge of gray.</DIV>     
     </section>
 </footer>
+</section> <!-- end footerWrap -->
 </body>
 </html>

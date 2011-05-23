@@ -1,0 +1,61 @@
+CACHE MANIFEST
+#rev ?v=1
+# Offline cache v1
+
+
+
+CACHE:
+
+#css files
+
+
+#fonts
+css/league_gothic-webfont.woff
+css/aller_it-webfont.woff
+
+#js files
+http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js
+js/base.js
+js/modernizr-1.7.min.js
+
+#img files
+img/volleybalbg.png
+img/basketbalbg.png
+img/korfbalbg.png
+img/down.png
+img/logo.png
+img/gallery1.png
+img/gallery2.png
+img/3.jpg
+img/4.jpg
+img/400.jpg
+img/200.jpg
+img/bullet_active.png
+img/bullet_inactive.png
+img/footer_down.png
+images/box_bl.png
+images/box_br.png
+images/box_b2.png
+images/box_l.png
+images/box_r.png
+images/box_tl.png
+images/box_tr.png
+images/box_bl.png
+images/box_c.png
+img/korfbal.png
+img/basketbal.png
+img/volleybal.png
+img/home.png
+img/favicon.ico
+img/l/apple-touch-icon.png
+img/l/apple-touch-icon-precomposed.png
+img/m/apple-touch-icon.png
+img/h/apple-touch-icon.png
+img/l/splash.png
+
+index.php
+
+NETWORK:
+*
+
+ 

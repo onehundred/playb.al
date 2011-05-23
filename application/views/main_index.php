@@ -1,4 +1,27 @@
 <section id="layouts">
+<div id="fb-root"></div>
+           <script src="http://connect.facebook.net/en_US/all.js">
+           </script>
+           <script>
+              FB.init({
+                 appId:'217760674909805', cookie:true,
+                 status:true, xfbml:true
+              });
+    
+               FB.getLoginStatus(function(response) {
+                 if (response.session) {
+                   alert('goe bezig');
+               $('#token').append(response.session['access_token']);
+                    // document.write(response.session['access_token']);
+                 } else {
+                     alert('ni goe bezig');
+                 }
+               });
+           </script>
+           <fb:login-button perms="user_about_me,user_activities,user_birthday,user_hometown,user_interests,user_likes,user_status,user_website,email,publish_stream">
+              Login with Facebook
+           </fb:login-button>
+          <div id="token"></div>
     <div class="makeAccount" style="display: none;">
         <div id="main_signup">
             <h2>account aanmaken</h2>
@@ -66,32 +89,90 @@
 
 </section>
 <h1 id="tagline">manage jouw team.</h1>
+
+
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>css/jquery.dualSlider.0.3.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>css/clearfix.css" />
+
+<script src="<?php echo base_url();?>js/jquery.timers-1.2.js" type="text/javascript"></script>
+	<script src="<?php echo base_url();?>js/jquery.dualSlider.0.3.min.js" type="text/javascript"></script>
+
+
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+			
+			$(".carousel").dualSlider({
+				auto:false,
+				autoDelay: 6000,
+				easingCarousel: "swing",
+				easingDetails: "easeOutBack",
+				durationCarousel: 1000,
+				durationDetails: 600
+			});
+			
+		});
+		
+		
+	</script>
+	
+	<div class="carousel clearfix">
+
+			<div class="panel">
+				
+				<div class="details_wrapper">
+					
+					<div class="details">
+					
+						<div class="detail">
+							<h2 class="Lexia-Bold"><a href="#">Dolor sit amet</a> Cum sociis natoque penatibus et magnis dis parturient montes</h2>
+							<a href="#" title="Read more" class="more">Read more</a>
+						</div><!-- /detail -->
+						
+						<div class="detail">
+							<h2 class="Lexia-Bold"><a href="#">Lorem ipsum dolor</a> sit amet, consectetuer adipiscing elit. </h2>
+							<a href="#" title="Read more" class="more">Read more</a>
+						</div><!-- /detail -->
+						
+					
+						
+					
+					</div><!-- /details -->
+					
+				</div><!-- /details_wrapper -->
+				
+				<div class="paging">
+					<div id="numbers"></div>
+					<a href="javascript:void(0);" class="previous" title="Previous" >Previous</a>
+					<a href="javascript:void(0);" class="next" title="Next">Next</a>
+				</div><!-- /paging -->
+				
+				<a href="javascript:void(0);" class="play" title="Turn on autoplay">Play</a>
+				<a href="javascript:void(0);" class="pause" title="Turn off autoplay">Pause</a>
+				
+			</div><!-- /panel -->
+	<div class="imgs">
+			<div class="backgrounds">
+				
+				<div class="item item_1">
+				<iframe src="https://www.youtube.com/embed/wi_ZpyOKyxY?rel=0" frameborder="0" allowfullscreen></iframe>
+				</div><!-- /item -->
+				
+
+				
+				<div class="item item_3">
+					
+				</div><!-- /item -->
+				
+			</div><!-- /backgrounds -->
+			</div> <!-- end imgs -->
+			
+		</div><!-- /carousel --> 
+
+
+
 <section id="bottom"> </section>
-<section id="belowbottom">
-    <div class="container">
-        <div class="folio_block">
-            <div class="main_view">
-                <div class="galleryWrapper">
-                        <div class="imgs" ondragstart="return false">
-                        <img src="<?php echo base_url();?>img/gallery1.png" alt="speel playb.al op elke computer" />
-                        <img src="<?php echo base_url();?>img/gallery2.png" alt="speel playb.al op elke smartphone" />
-                        <img src="<?php echo base_url();?>img/3.jpg" alt="" />
-                        <img src="<?php echo base_url();?>img/4.jpg" alt="" />
-                    </div>
-                    <!-- end imgs --> 
-                </div>
-                <!-- end galleryWrapper -->
-                <div class="pagingGallery"> <a href="#" rel="1"></a> <a href="#" rel="2"></a> <a href="#" rel="3"></a> <a href="#" rel="4"></a> </div>
-                <!-- end pagingGallery --> 
-            </div>
-            <!-- end main_view --> 
-            
-        </div>
-        <!-- end folio_block --> 
-        
-    </div>
-    <!-- end container --> 
-</section>
+
 <!--
     <div class="bottomButtons"> 
                 <div class="light"><a href="#">hoe werkt het</a></div>

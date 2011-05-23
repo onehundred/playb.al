@@ -1,8 +1,8 @@
 // TOUCHSWIPE begin
 /////////////////////////////////////////////////////////////////		
-		var IMG_WIDTH = 1138;
+		var IMG_WIDTH = window.innerWidth;
 			var currentImg=0;
-			var maxImages=1;
+			var maxImages=4;
 			var speed=500;
 			
 			var imgs;

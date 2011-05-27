@@ -48,6 +48,8 @@ class Korfbal extends CI_Controller {
 		}
 		
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
+		$data['divisie_eerste'] = $this->korfbal_model->get_sidebar_divisie();
+		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_index';
 		$this->load->view('korfbal/includes/template', $data);
@@ -179,6 +181,7 @@ class Korfbal extends CI_Controller {
 		$data['teamnaam'] = $row->naam; 
 		}
 		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_divisie';
 		$this->load->view('korfbal/includes/template', $data);
@@ -246,7 +249,7 @@ class Korfbal extends CI_Controller {
 		$data['teamnaam'] = $row->naam; 
 		}
 		
-		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_matches';
 		$this->load->view('korfbal/includes/template', $data);
@@ -270,7 +273,7 @@ class Korfbal extends CI_Controller {
 		$data['teamnaam'] = $row->naam; 
 		}
 		
-		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_transfers';
 		$this->load->view('korfbal/includes/template', $data);

@@ -944,23 +944,14 @@
 		return $data;
 	}
 	
-function get_sidebar_divisie($team_id)
+function get_sidebar_divisie()
 	{
-		$this->db->where('team_id', $team_id);
-		$this->db->select('FK_division_id');
-		$query = $this->db->get('korf_teams');
+		
 
-
-		foreach($query->result() as $row)
-		{
-			$division_id = $row->FK_division_id;
-
-		}
-
-		$this->db->select('*');
+		$this->db->select('naam, divisiepunten');
 		$this->db->from('korf_divisies');
 		$this->db->join('korf_teams', 'FK_division_id = divisie_id');
-		$this->db->where('divisie_id', $division_id);
+		$this->db->where('divisie_id', 1);
 		$this->db->order_by('divisiepunten','desc');
 		$this->db->order_by('doelpunten_tegen','asc');
 		$query = $this->db->get();

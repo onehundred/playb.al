@@ -18,13 +18,21 @@
         <div>
             <section>
             <h2><img src="<?php echo base_url();?>img/icons/podium.png" id="icon" ondragstart="return false" />klassement eerste divisie</h2>
-                <p>Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+                <?php foreach($divisie_eerste->result() as $team){ ?>
+                	<p><?php echo $team->naam;?> <?php echo $team->divisiepunten;?> punten</p>
+                
+                
+                <?php }?></p>
             </section>
         </div>
         <div>
             <section>
                 <h2>klassement jouw divisie</h2>
-                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</p>
+                <?php foreach($divisie->result() as $team){ ?>
+                	<p><?php echo $team->naam;?> <?php echo $team->divisiepunten;?> punten</p>
+                
+                
+                <?php }?></p>
             </section>
         </div>
         <div>

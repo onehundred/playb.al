@@ -33,11 +33,11 @@
 
     <div class="gameLeft">
             <div><section>
-        <h2>kalender</h2>
-        <p>huidige week</p>
-        <p>huidige seizoen</p>
-        <p>eerstvolgende wedstrijd</p>
-        <p>playb.al tijd</p></section>
+      <h2><img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />kalender</h2>
+                <p>huidige week: week <?php echo $calendar['week'];?></p>
+                <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
+                <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+</section>
     </div>
 
         <div class="chart_container"><section><h2>huidig seizoen</h2>

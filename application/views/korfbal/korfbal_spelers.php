@@ -17,8 +17,6 @@ foreach($spelers->result() as $row)
         <br />
             <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
             <p class="price"><?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?> &euro;</p>
-            <br />
-            <br />
             <div id="rightProgress">
                 <p id="skillTitle">rebound: </p>
                 <p class="rebound"><?php echo $row->rebound; ?></p>
@@ -62,6 +60,8 @@ foreach($spelers->result() as $row)
 </div>
 <div class="gameLeft">
     <h2>spelers rangschikken</h2>
+        <p><a id="watchSkills" href="#">skills bekijken</a></p>
+    <p><a id="watchProgress" href="#">vordering bekijken</a></p>
     <ul id="sort" class="sort option-set">
         <ul class="sort asc option-set floated clearfix">
             <li><a href="#number" class="selected">

@@ -1,3 +1,4 @@
+<div id="overview">
    <div class="game"><div class="gameRight"> 
         
         <!-- 		<h2 id="tagline">Overzicht</h2> --> 
@@ -59,3 +60,4 @@
     </div>
     <!-- end gameLeft --> 
 </div> <!-- end game -->
+</div>

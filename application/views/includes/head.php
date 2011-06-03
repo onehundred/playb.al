@@ -27,18 +27,18 @@
 <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>img/l/apple-touch-icon-precomposed.png">
 <!-- nokia -->
 <link rel="shortcut icon" href="<?php echo base_url();?>img/l/apple-touch-icon.png">
-    
 <link rel="shortcut icon" href="<?php echo base_url();?>img/favicon.ico">
 
 <link rel="stylesheet/less" href="<?php echo base_url();?>css/style.less" />
 
+
 <!-- no mediaqueries fallback -->
 <!--[if lt IE 9]>
-<link rel="stylesheet" href="<?php echo base_url();?>css/style768.css" media="screen" />
+<link rel="stylesheet" href="<?php echo base_url();?>css/style_nomq.css" media="screen" />
 <![endif]-->
 
-<!-- in commentaar omdat ie < 9 de pagina niet laadt -->
-<!-- <noscript><meta http-equiv="Refresh" content="1;URL=<?php echo base_url();?>js/sorry/index.html"</noscript> -->
+<!-- no javascipt fallback -->
+<noscript><link rel="stylesheet" href="<?php echo base_url();?>css/style_nojs.css" media="screen" /></noscript>
 
 <!-- media queries / less -->
 <link rel="stylesheet/less" href="<?php echo base_url();?>css/style1168.less" media="only screen and (min-width: 1212px)" />
@@ -56,12 +56,6 @@
 <script src="http://playbaleindwerk.appspot.com/js/jquery.transform.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.multiple-bgs.min.js"></script>
 <script src="<?php echo base_url();?>/js/modernizr-1.7.min.js"></script>
-<!--<script type="text/javascript">
-if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
-	document.write('<link rel="stylesheet" href="<?php echo base_url();?>css/add2home.css">');
-	document.write('<script type="application/javascript" src="<?php echo base_url();?>js/add2home.js"><\/script>');
-}
-</script>-->
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -70,3 +64,4 @@ if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi)
 <![endif]-->
 </head>
 <body>
+<?php include_once ("analytics.php") ?>

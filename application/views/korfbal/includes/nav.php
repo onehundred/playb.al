@@ -2,8 +2,8 @@
 <section class="sportnavWrap">
 <nav class="sportnav">
     <p id="overzichtMenu"><?php echo anchor('korfbal/korfbal_start/'.$team_id.'','Overzicht') ?></p>
-    <p id="trainingMenu"><?php echo anchor('korfbal/korfbal_training/'.$team_id.'','Training') ?></p>
-    <p id="spelersMenu"><?php echo anchor('korfbal/korfbal_players/'.$team_id.'','Spelers') ?> </p>
+    <p id="trainingMenu"><?php echo anchor('korfbal/korfbal_training/'.$team_id.'','team') ?></p>
+    <!-- <p id="spelersMenu"><?php echo anchor('korfbal/korfbal_players/'.$team_id.'','Spelers') ?> </p> -->
     <p id="wedstrijdenMenu"><?php echo anchor('korfbal/korfbal_matches/'.$team_id.'','Wedstrijden') ?></p>
     <p id="divisieMenu"><?php echo anchor('korfbal/korfbal_division/'.$team_id.'','Divisie') ?></p>
     <p id="stadionMenu"><?php echo anchor('korfbal/korfbal_stadium/'.$team_id.'','Stadion') ?></p>

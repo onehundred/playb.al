@@ -1,4 +1,9 @@
- <div class="game"><div class="gameRight"> 
+<div id="overview">
+   <div class="game"><div class="gameRight"> 
+        
+        <!-- 		<h2 id="tagline">Overzicht</h2> --> 
+        <!--     <h3>Stadion: <?php echo $stadionnaam;?></h3> --> 
+        <!--     <h5>Aantal plaatsen: <?php echo $stadionplaatsen; ?></h5> -->
         <h2>nieuws</h2>
         <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.</p>
         <h2>playb.al updates</h2>
@@ -10,29 +15,22 @@
         <div>
             <section>
                 <h2><img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />kalender</h2>
-                <p>huidige week: week <?php echo $calendar['week'];?></p>
-                <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
-                <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                <p>huidige week</p>
+                <p>huidige seizoen</p>
+                <p>eerstvolgende wedstrijd</p>
+                <p>playb.al tijd</p>
             </section>
         </div>               
         <div>
             <section>
             <h2><img src="<?php echo base_url();?>img/icons/podium.png" id="icon" ondragstart="return false" />klassement eerste divisie</h2>
-                <?php foreach($divisie_eerste->result() as $team){ ?>
-                	<p><?php echo $team->naam;?> <?php echo $team->divisiepunten;?> punten</p>
-                
-                
-                <?php }?></p>
+                <p>Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
             </section>
         </div>
         <div>
             <section>
                 <h2>klassement jouw divisie</h2>
-                <?php foreach($divisie->result() as $team){ ?>
-                	<p><?php echo $team->naam;?> <?php echo $team->divisiepunten;?> punten</p>
-                
-                
-                <?php }?></p>
+                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</p>
             </section>
         </div>
         <div>
@@ -62,3 +60,4 @@
     </div>
     <!-- end gameLeft --> 
 </div> <!-- end game -->
+</div>

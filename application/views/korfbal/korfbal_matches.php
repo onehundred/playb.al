@@ -51,7 +51,7 @@
     </div>
     <script type="text/javascript">
      var chart1 = new AwesomeChart('chartCanvas1');
-    /*             chart1.title = "Worldwide browser market share: December 2010"; */
+    /*             chart1.title = ""; */
             chart1.data = [51.62,31.3, 10];
             chart1.chartType = "pie";
     /*             chart1.labels = ['verloren','gewonnen']; */
@@ -60,7 +60,7 @@
             chart1.draw();
             
               var chart2 = new AwesomeChart('chartCanvas2');
-    /*             chart1.title = "Worldwide browser market share: December 2010"; */
+    /*             chart1.title = ""; */
             chart2.data = [39.62,51.3, 25];
             chart2.chartType = "pie";
     /*             chart1.labels = ['verloren','gewonnen']; */

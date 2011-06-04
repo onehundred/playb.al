@@ -1,9 +1,3 @@
-<script>
-        $(document).ready(function(){
-            $("#SignupForm").formToWizard({ submitButton: 'submit' })
-            
-        });    
-</script>
 </div>
 <!-- end main -->
 </div>
@@ -42,5 +36,6 @@
     </section>
 </footer>
 </section> <!-- end footerWrap -->
+<div id="nojs"><a href="http://www.enable-javascript.com/nl/">javascript inschakelen</a></div>
 </body>
 </html>

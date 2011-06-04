@@ -248,7 +248,18 @@ color: @korfbalColor;
 }
 #teamname {
 font-size: 68px;
-	text-shadow: 0px 0px 20px #000;
+ text-shadow: 0 1px 0 #ccc, 
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
 
 }
 /* FONTS end 		-------------------------------------------------------------------------------------------------------*/
@@ -292,31 +303,25 @@ font-size: 32px;
 
 }
 
-.player, .playerDetail {
+.player, .playerDetail, .playerMale, .playerFemale {
 	width: 335px;
-	height: 250px;
+	height: 55px;
+
 	background: #FAFAFA;
 	background-color: rgba(255, 255, 255, 0.5);
-	-moz-border-radius-topleft: 3px;
-	-moz-border-radius-topright: 3px;
-	-moz-border-radius-bottomright: 6px;
-	-moz-border-radius-bottomleft: 6px;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 6px;
-	border-bottom-left-radius: 6px;
 	margin-right: 20px;
 	margin-bottom: 15px;
-	padding: 7px;
+
 	
 }
+
 .player:hover, .playerDetail:hover {
 	border: 1px solid #CCC;
 		background: #FAFAFA;
 	background-color: rgba(255, 255, 255, 0.75);
 }
 .playerDetail {
-height: 394px;
+
 }
 .gameRight .number {
 	font-size: 64px;
@@ -360,9 +365,19 @@ cursor: pointer;
 .gameRight #rightProgress {
 	width: 160px;
 	float: right;
+	margin: 15px 0 0 0;
+	/* display: none; */
 }
 .gameRight #leftProgress {
 	width: 160px;
+	margin: 15px 0 0 0;
+	/* display: none; */
+}
+.playerFemale section:nth-child(2), .playerFemale section:nth-child(4), .playerFemale section:nth-child(6), .playerFemale section:nth-child(8), .playerMale section:nth-child(2), .playerMale section:nth-child(4), .playerMale section:nth-child(6), .playerMale section:nth-child(8) {
+display: none;
+}
+.playerFemale section:nth-child(1), .playerFemale section:nth-child(3), .playerFemale section:nth-child(5), .playerFemale section:nth-child(7), .playerMale section:nth-child(1), .playerMale section:nth-child(3), .playerMale section:nth-child(5), .playerMale section:nth-child(7) {
+display: none;
 }
 .rebound, .passing, .stamina, .shotprecision, .playmaking, .shotpower, .intercepting, .leadership {
 	display: inline;
@@ -625,6 +640,9 @@ position: relative;
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footerWrap {
 background-color: rgba(0,0,0,0.25);
+	z-index: -999;
+		float: left;
+		width: 100%;
 
 }
 #footer {

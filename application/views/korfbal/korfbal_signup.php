@@ -1,3 +1,9 @@
+<script>
+        $(document).ready(function(){
+            $("#SignupForm").formToWizard({ submitButton: 'submit' })
+            
+        });    
+</script>
 <div id="korfbal_signup">
 <form id="SignupForm" method="post" action="create_korfbalteam">
 <fieldset>

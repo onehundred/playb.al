@@ -126,6 +126,7 @@ function touchend(e){
 };
 function gesturestart(e){
 	_sizing = [$('#'+this.id).css("width"), $('#'+this.id).css("height")];
+	
 };
 function gesturechange(e){
 	if(_sizing){
@@ -140,6 +141,7 @@ function gesturechange(e){
 function gestureend(e){
 	_sizing = false;
 	_rotating = (_rotating + e.rotation) % 360;
+	
 };
 
 function changeBack(target){

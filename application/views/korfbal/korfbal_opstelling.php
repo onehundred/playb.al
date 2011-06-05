@@ -11,7 +11,7 @@
 }
 #players {
 	float:left;
-	width: 250px;
+
 	margin-right: 1em;
 	
 }
@@ -26,7 +26,8 @@
 
 /* Bubble pop-up */
 	   .bubbleInfo {
-	position: relative;
+	   position: relative;
+
 }
 .popup {
 	position: absolute;
@@ -127,12 +128,9 @@
 }
 </style>
 <script src="<?php echo base_url();?>js/korfbal/opstelling.js"></script>
-    <script type="text/javascript" language="javascript" src="<?php echo base_url();?>js/jquery.touch.js"></script>
-    <script type="text/javascript" language="javascript" src="<?php echo base_url();?>js/site.js"></script>
- <div>
-        <div id="touchme1" class="largetouchbox"><span>#1</span><b>Touch Me :)</b></div>
 
-    </div>
+    <script src="<?php echo base_url();?>js/jqueryui.touch.js"></script>
+
 <div>
 
 	<div id="korfbalField" style="background-color: yellow; height: 500px; width: 75%; float:right;">
@@ -149,7 +147,7 @@
                     <?php foreach($spelers->result() as $row){  ?>
                     <div class="bubbleInfo">
                    
-                       <div id="<?php echo $row->speler_id;?>" class="trigger largetouchbox"><?php echo $row->voornaam.' '.$row->achternaam; ?></div>
+                       <div id="<?php echo $row->speler_id;?>" class="trigger"><?php echo $row->voornaam.' '.$row->achternaam; ?></div>
                         
                         <div id="dpop<?php echo $row->speler_id;?>" class="popup">
                             <p id="geslacht">Geslacht: <?php echo $row->geslacht;?></p>

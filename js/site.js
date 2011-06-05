@@ -25,14 +25,15 @@ function setOrientation(){
 
 $().ready(function(){
 	setInterval(checkOrientAndLocation,1000);
-	$('#13').touch({
+	$('.trigger').touch({
 		animate: true,
 		sticky: false,
 		dragx: true,
 		dragy: true,
 		rotate: true,
 		resort: true,
-		scale: true
+
+		scale: false
 	});
 	$('#touchme2').touch({
 		animate: false,

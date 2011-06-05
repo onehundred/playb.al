@@ -45,7 +45,7 @@
 .transitionOff {
 	-webkit-transition-duration: 1.6s;
 	-webkit-transition-timing-function: ease-in-out;
-	-moz-transition-duration: 0.6s;
+	-moz-transition-duration: 1.6s;
 	-moz-transition-timing-function: ease-in-out;
 	-o-transition-duration: 1.6s;
 	-o-transition-timing-function: ease-in-out;
@@ -97,6 +97,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 }
 html, body {
 	height:100%;
+
 }
 #topbar {
 	background-color: #d9d9d9;
@@ -146,9 +147,8 @@ figure img {
 	width: 100%;
 }
 */
-#nojs {
-display: none;
-}
+.js #jsnotice { display: none; }
+.no-js #jsnotice { display: block; }
 
 /* RESETS end */
 
@@ -204,6 +204,8 @@ body {
  	-webkit-tap-highlight-color: @selectionColor;
  	-webkit-touch-callout: none;
  	-webkit-user-select: none;
+ 	overflow-y: scroll;
+ 			overflow-x: hidden;
 }
 ::selection {
  background: @selectionColor;
@@ -328,7 +330,7 @@ h2 {
 	font-size: 15px;
 	float: right;
 	width: 568px;/* margin-top: 15px; */
-	display: none;
+
 }
 .player, .playerDetail, .playerFemale, .playerMale {
 	width: 245px;
@@ -405,7 +407,7 @@ h2 {
 	font-size: 15px;
 	color: #222;
  .borderRadius;
- display: none;
+
 }
 .gameLeft ul, .gameLeft li {
 	list-style-type: none;
@@ -620,10 +622,10 @@ a.tooltip:hover::after {
 #layouts figure {
 }
 .korfbal, .basketbal, .volleybal {
-	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.854, transparent), to(rgba(255,255,255, 0.15)));
+-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottombottom, from(transparent), color-stop(.7, transparent), to(white));
 }
 .korfbal:hover, .basketbal:hover, .volleybal:hover {
-	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.854, transparent), to(rgba(255,255,255, 0.15)));
+
 }
 .korfbal {
 	top: 25px;
@@ -1126,25 +1128,33 @@ select {
 @font-face {
 	/* This declaration targets everything else */
 	font-family: 'SFCollegiateSolidRegular';
-	src: url(//:) format('no404'), url('sf_collegiate_solid-webfont.woff') format('woff'), url('sf_collegiate_solid-webfont.ttf') format('truetype'), url('sf_collegiate_solid-webfont.svg#webfontvViDQrFS') format('svg');
+	src: url(//:) format('no404'), url('fonts/sf_collegiate_solid-webfont.woff') format('woff'), url('fonts/sf_collegiate_solid-webfont.ttf') format('truetype'), url('fonts/sf_collegiate_solid-webfont.svg#webfontvViDQrFS') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	/* This declaration targets Internet Explorer */
 	font-family: 'LeagueGothicRegular';
-	src: url('league_gothic-webfont.eot');
+	src: url('fonts/league_gothic-webfont.eot');
 }
 @font-face {
 	/* This declaration targets everything else */
 	font-family: 'LeagueGothicRegular';
-	src: url(//:) format('no404'), url('league_gothic-webfont.woff') format('woff'), url('league_gothic-webfont.ttf') format('truetype'), url('league_gothic-webfont.svg#webfont60yFay8f') format('svg');
+	src: url(//:) format('no404'), url('fonts/league_gothic-webfont.woff') format('woff'), url('fonts/league_gothic-webfont.ttf') format('truetype'), url('fonts/league_gothic-webfont.svg#webfont60yFay8f') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'AllerItalic';
-	src: url('aller_it-webfont.eot?') format('eot'), url('aller_it-webfont.woff') format('woff'), url('aller_it-webfont.ttf') format('truetype'), url('aller_it-webfont.svg#webfont7oSuZnvY') format('svg');
+	src: url('fonts/aller_it-webfont.eot?') format('eot'), url('fonts/aller_it-webfont.woff') format('woff'), url('fonts/aller_it-webfont.ttf') format('truetype'), url('fonts/aller_it-webfont.svg#webfont7oSuZnvY') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+#laadtest {
+
+.transitionOff;
+position: relative;
+left: 1800px
+
+
 }

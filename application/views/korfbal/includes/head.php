@@ -28,30 +28,30 @@
     
 <link rel="shortcut icon" href="<?php echo base_url();?>img/favicon.ico">
 
-<link rel="stylesheet/less" href="<?php echo base_url();?>css/style.less" />
+<link rel="stylesheet" href="<?php echo base_url();?>style/style.css" />
 
 <!-- no mediaqueries fallback -->
 <!--[if lt IE 9]>
-<link rel="stylesheet" href="<?php echo base_url();?>css/style768.css" media="screen" />
+<link rel="stylesheet" href="<?php echo base_url();?>style/style_nomq.css" media="screen" />
 <![endif]-->
 	
 	
 
 <!-- media queries / Less -->
-<link href="<?php echo base_url();?>css/style1168.less" rel="stylesheet/less" media="only screen and (min-width: 1212px)" />
-<link href="<?php echo base_url();?>css/style768.less"  rel="stylesheet/less" media="only screen and (max-width: 991px) and (min-width: 768px)" />
-<link href="<?php echo base_url();?>css/style480.less"  rel="stylesheet/less" media="only screen and (max-width: 767px) and (min-width: 480px)" />
-<link href="<?php echo base_url();?>css/style320.less"  rel="stylesheet/less" media="only screen and (max-width: 479px)" />
+<link href="<?php echo base_url();?>style/style1168.css" rel="stylesheet" media="only screen and (min-width: 1212px)" />
+<link href="<?php echo base_url();?>style/style768.css"  rel="stylesheet" media="only screen and (max-width: 991px) and (min-width: 768px)" />
+<link href="<?php echo base_url();?>style/style480.css"  rel="stylesheet" media="only screen and (max-width: 767px) and (min-width: 480px)" />
+<link href="<?php echo base_url();?>style/style320.css"  rel="stylesheet" media="only screen and (max-width: 479px)" />
 
 <link rel="stylesheet" href="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css" />
 <link rel="stylesheet" href="<?php echo base_url()?>js/toastmessage/jquery.toastmessage.css"/>
 <link rel="stylesheet" href="<?php echo base_url()?>js/reveal/reveal.css"/>
 
-<script src="<?php echo base_url();?>/js/modernizr-1.7.min.js"></script> 
+<script src="<?php echo base_url();?>/js/modernizr.custom.js"></script> 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<script src="<?php echo base_url();?>js/less-1.0.41.min.js"></script> 
+<script src="<?php echo base_url();?>js/less-1.1.3.min.js"></script> 
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> -->
 <!-- jquery lokaal voor offline productie -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
@@ -63,8 +63,11 @@
 <script src="http://playbaleindwerk.appspot.com/js/jquery.flip.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.isotope.js"></script>
 <script src="<?php echo base_url();?>js/reveal/jquery.reveal.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.transform.js"></script>
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 <script src="<?php echo base_url();?>js/awesomechart.js"></script>
+<script src="http://playb.al/js/jquery.keynav.js"></script>
+
 
 <!--[if (gte IE 6)&(lte IE 8)]>
    <script type="text/javascript" src="<?php echo base_url();?>js/selectivizr.js"></script>
@@ -72,4 +75,11 @@
 
 </head>
 <body>
-<?php include_once ("analytics.php") ?>
+<script>
+Modernizr.load({
+  test: Modernizr.touch,
+  yep : 'geo.js',
+  nope: 'http://playb.al/js/geo-polyfill.js'
+});
+  
+</script>

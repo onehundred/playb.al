@@ -2,23 +2,43 @@ CACHE MANIFEST
 #rev ?v=1
 # Offline cache v1
 
-
-
 CACHE:
 
-#css files
+#css 
 
+style/style.css
+style/style320.css
+style/style480.css
+style/style768.css
+style/style1168.css
 
 #fonts
-css/league_gothic-webfont.woff
-css/aller_it-webfont.woff
+
+style/fonts/league_gothic-webfont.woff
+style/fonts/league_gothic-webfont.ttf
+style/fonts/league_gothic-webfont.svg
+style/fonts/league_gothic-webfont.eot
+
+style/fonts/aller_it-webfont.woff
+style/fonts/aller_it-webfont.ttf
+style/fonts/aller_it-webfont.svg
+style/fonts/aller_it-webfont.eot
+
+style/fonts/sf_collegiate_solid-webfont.woff
+style/fonts/sf_collegiate_solid-webfont.ttf
+style/fonts/sf_collegiate_solid-webfont.svg
+style/fonts/sf_collegiate_solid-webfont.eot
+
 
 #js files
+
 http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js
 js/base.js
 js/modernizr-1.7.min.js
 
+
 #img files
+
 img/volleybalbg.png
 img/basketbalbg.png
 img/korfbalbg.png

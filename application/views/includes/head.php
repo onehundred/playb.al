@@ -5,6 +5,7 @@
 <html manifest="<?php echo base_url();?>playbal.manifest?v=1" lang="en" class="no-js">
 <head>
 <meta charset="utf-8" />
+<link rel="dns-prefetch" href="//s3-eu-west-1.amazonaws.com">
 
 <title>playb.al</title>
 
@@ -29,33 +30,39 @@
 <link rel="shortcut icon" href="<?php echo base_url();?>img/l/apple-touch-icon.png">
 <link rel="shortcut icon" href="<?php echo base_url();?>img/favicon.ico">
 
-<link rel="stylesheet/less" href="<?php echo base_url();?>css/style.less" />
-
 
 <!-- no mediaqueries fallback -->
 <!--[if lt IE 9]>
-<link rel="stylesheet" href="<?php echo base_url();?>css/style_nomq.css" media="screen" />
+<link rel="stylesheet" href="<?php echo base_url();?>style/style_nomq.css" media="screen" />
 <![endif]-->
 
-<!-- no javascipt fallback -->
-<noscript><link rel="stylesheet" href="<?php echo base_url();?>css/style_nojs.css" media="screen" /></noscript>
+<!-- media queries -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style1168.css" media="only screen and (min-width: 1212px)" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style768.css"  media="only screen and (max-width: 991px) and (min-width: 768px)" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style480.css"  media="only screen and (max-width: 767px) and (min-width: 480px)" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style320.css"  media="only screen and (max-width: 479px)" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>style/jquery.dualSlider.0.3.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>style/clearfix.css" />
 
-<!-- media queries / less -->
-<link rel="stylesheet/less" href="<?php echo base_url();?>css/style1168.less" media="only screen and (min-width: 1212px)" />
-<link rel="stylesheet/less" href="<?php echo base_url();?>css/style768.less"  media="only screen and (max-width: 991px) and (min-width: 768px)" />
-<link rel="stylesheet/less" href="<?php echo base_url();?>css/style480.less"  media="only screen and (max-width: 767px) and (min-width: 480px)" />
-<link rel="stylesheet/less" href="<?php echo base_url();?>css/style320.less"  media="only screen and (max-width: 479px)" />
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- source for styles CHANGE BEFORE DEPLOY -->
+<!-- https://s3-eu-west-1.amazonaws.com/styles.playb.al/filename.css -->
 
-<script src="<?php echo base_url();?>js/less-1.0.41.min.js"></script>
+<!-- source for scripts CHANGE BEFORE DEPLOY -->
+<!-- https://s3-eu-west-1.amazonaws.com/scripts.playb.al/filename.js -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
-<!-- jquery lokaal wegens falen van google gedurende productie -->
-<!-- <script src="<?php echo base_url();?>js/jquery-1.5.2.min.js"></script> -->
+<script src="<?php echo base_url();?>js/jquery.timers-1.2.js"></script>
+<script src="<?php echo base_url();?>js/jquery.dualSlider.0.3.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
-<script src="<?php echo base_url();?>js/base.js"></script>
+<script src="<?php echo base_url();?>/js/base.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.transform.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.multiple-bgs.min.js"></script>
-<script src="<?php echo base_url();?>/js/modernizr-1.7.min.js"></script>
+<script src="<?php echo base_url();?>/js/modernizr.custom.js"></script>
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -64,4 +71,3 @@
 <![endif]-->
 </head>
 <body>
-<?php include_once ("analytics.php") ?>

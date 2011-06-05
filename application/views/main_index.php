@@ -1,27 +1,4 @@
 <section id="layouts">
-<div id="fb-root"></div>
-           <script src="http://connect.facebook.net/en_US/all.js">
-           </script>
-           <script>
-              FB.init({
-                 appId:'217760674909805', cookie:true,
-                 status:true, xfbml:true
-              });
-    
-               FB.getLoginStatus(function(response) {
-                 if (response.session) {
-                   alert('goe bezig');
-               $('#token').append(response.session['access_token']);
-                    // document.write(response.session['access_token']);
-                 } else {
-                     alert('ni goe bezig');
-                 }
-               });
-           </script>
-           <fb:login-button perms="user_about_me,user_activities,user_birthday,user_hometown,user_interests,user_likes,user_status,user_website,email,publish_stream">
-              Login with Facebook
-           </fb:login-button>
-          <div id="token"></div>
     <div class="makeAccount" style="display: none;">
         <div id="main_signup">
             <h2>account aanmaken</h2>
@@ -91,11 +68,7 @@
 <h1 id="tagline">manage jouw team.</h1>
 
 
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>css/jquery.dualSlider.0.3.css" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>css/clearfix.css" />
 
-<script src="<?php echo base_url();?>js/jquery.timers-1.2.js" type="text/javascript"></script>
-	<script src="<?php echo base_url();?>js/jquery.dualSlider.0.3.min.js" type="text/javascript"></script>
 
 
 	<script type="text/javascript">

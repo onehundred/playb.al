@@ -1,4 +1,8 @@
-<div id="overview">
+<div class="overview">
+<b>Successful Response (should be blank):</b>
+<div id="successs">sdfsdfsdf</div>
+<b>Error Response:</b>
+<div id="error"></div>
    <div class="game"><div class="gameRight"> 
         
         <!-- 		<h2 id="tagline">Overzicht</h2> --> 

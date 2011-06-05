@@ -1,13 +1,13 @@
-<script src="<?php echo base_url();?>js/korfbal/training.js"></script>
-
-<div class="gameRight">
-    <div id="container">
-        <?php
+<div id="laadtest">
+       <script src="<?php echo base_url();?>js/korfbal/training.js"></script>
+    <div class="gameRight">
+        <div id="container">
+            <?php
 foreach($training->result() as $row){
 
 //echo $row->FK_team_id;
  ?>
-        <?php 
+            <?php 
             $geslacht = $row->geslacht; 
             if($geslacht== "female"){ 
             	echo '<div class="playerFemale">';
@@ -16,127 +16,127 @@ foreach($training->result() as $row){
             	echo '<div class="playerMale">';
             }
 		?>
-        <p class="number"><?php echo $row->rugnummer;?></p>
-        <span class="name">
-        <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></a></p>
-        <p class="lastname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->achternaam;?></a> </p>
-        </span>
-        <p class="gender">
-            <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" ondragstart= "return false" />
-        </p>
-        <br />
-        <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
-        <p class="price"><?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?> &euro;</p>
-        <div id="rightProgress">
-            <section>
-                <p id="skillTitle">rebound: </p>
-                <p class="rebound"><?php echo $row->rebound; ?></p>
-                <p class="rebound">/20</p>
-                <div class="rebound<?php echo $row->speler_id;?>" id="reboundProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">rebound: </p>
-                <p class="rebound"><?php echo $row->rebound_tr; ?></p>
-                <p class="rebound">/1000</p>
-                <div class="rebound_tr<?php echo $row->speler_id;?>" id="reboundProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">stamina: </p>
-                <p class="stamina"><?php echo $row->stamina; ?></p>
-                <p class="rebound">/20</p>
-                <div class="stamina<?php echo $row->speler_id;?>" id="staminaProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">stamina: </p>
-                <p class="stamina"><?php echo $row->stamina_tr; ?></p>
-                <p class="rebound">/1000</p>
-                <div class="stamina_tr<?php echo $row->speler_id;?>" id="staminaProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">shotprecision: </p>
-                <p class="shotprecision"><?php echo $row->shotprecision; ?></p>
-                <p class="rebound">/20</p>
-                <div class="shotprecision<?php echo $row->speler_id;?>" id="shotprecisionProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">shotprecision: </p>
-                <p class="shotprecision"><?php echo $row->shotprecision_tr; ?></p>
-                <p class="rebound">/1000</p>
-                <div class="shotprecision_tr<?php echo $row->speler_id;?>" id="shotprecisionProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">playmaking: </p>
-                <p class="playmaking"><?php echo $row->playmaking; ?></p>
-                <p class="rebound">/20</p>
-                <div class="playmaking<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">playmaking: </p>
-                <p class="playmaking"><?php echo $row->playmaking_tr; ?></p>
-                <p class="rebound">/1000</p>
-                <div class="playmaking_tr<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
-            </section>
+            <p class="number"><?php echo $row->rugnummer;?></p>
+            <span class="name">
+            <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></a></p>
+            <p class="lastname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->achternaam;?></a> </p>
+            </span>
+            <p class="gender">
+                <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" ondragstart= "return false" />
+            </p>
+            <br />
+            <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
+            <p class="price"><?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?> &euro;</p>
+            <div id="rightProgress">
+                <section>
+                    <p id="skillTitle">rebound: </p>
+                    <p class="rebound"><?php echo $row->rebound; ?></p>
+                    <p class="rebound">/20</p>
+                    <div class="rebound<?php echo $row->speler_id;?>" id="reboundProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">rebound: </p>
+                    <p class="rebound"><?php echo $row->rebound_tr; ?></p>
+                    <p class="rebound">/1000</p>
+                    <div class="rebound_tr<?php echo $row->speler_id;?>" id="reboundProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">stamina: </p>
+                    <p class="stamina"><?php echo $row->stamina; ?></p>
+                    <p class="rebound">/20</p>
+                    <div class="stamina<?php echo $row->speler_id;?>" id="staminaProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">stamina: </p>
+                    <p class="stamina"><?php echo $row->stamina_tr; ?></p>
+                    <p class="rebound">/1000</p>
+                    <div class="stamina_tr<?php echo $row->speler_id;?>" id="staminaProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">shotprecision: </p>
+                    <p class="shotprecision"><?php echo $row->shotprecision; ?></p>
+                    <p class="rebound">/20</p>
+                    <div class="shotprecision<?php echo $row->speler_id;?>" id="shotprecisionProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">shotprecision: </p>
+                    <p class="shotprecision"><?php echo $row->shotprecision_tr; ?></p>
+                    <p class="rebound">/1000</p>
+                    <div class="shotprecision_tr<?php echo $row->speler_id;?>" id="shotprecisionProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">playmaking: </p>
+                    <p class="playmaking"><?php echo $row->playmaking; ?></p>
+                    <p class="rebound">/20</p>
+                    <div class="playmaking<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">playmaking: </p>
+                    <p class="playmaking"><?php echo $row->playmaking_tr; ?></p>
+                    <p class="rebound">/1000</p>
+                    <div class="playmaking_tr<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
+                </section>
+            </div>
+            <div id="leftProgress">
+                <section>
+                    <p id="skillTitle">passing: </p>
+                    <p class="passing"><?php echo $row->passing; ?></p>
+                    <p class="rebound">/20</p>
+                    <div class="passing<?php echo $row->speler_id;?>" id="passingProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">passing: </p>
+                    <p class="passing"><?php echo $row->passing_tr; ?></p>
+                    <p class="rebound">/1000</p>
+                    <div class="passing_tr<?php echo $row->speler_id;?>" id="passingProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">shotpower: </p>
+                    <p class="shotpower"><?php echo $row->shotpower; ?></p>
+                    <p class="rebound">/20</p>
+                    <div class="shotpower<?php echo $row->speler_id;?>" id="shotpowerProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">shotpower: </p>
+                    <p class="shotpower"><?php echo $row->shotpower_tr; ?></p>
+                    <p class="rebound">/1000</p>
+                    <div class="shotpower_tr<?php echo $row->speler_id;?>" id="shotpowerProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">intercepting: </p>
+                    <p class="intercepting"><?php echo $row->intercepting; ?></p>
+                    <p class="rebound">/20</p>
+                    <div class="intercepting<?php echo $row->speler_id;?>" id="interceptingProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">intercepting: </p>
+                    <p class="intercepting"><?php echo $row->intercepting_tr; ?></p>
+                    <p class="rebound">/1000</p>
+                    <div class="intercepting_tr<?php echo $row->speler_id;?>" id="interceptingProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">leadership: </p>
+                    <p class="leadership"><?php echo $row->leadership; ?></p>
+                    <p class="rebound">/20</p>
+                    <div class="leadership<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
+                </section>
+                <section>
+                    <p id="skillTitle">leadership: </p>
+                    <p class="leadership"><?php echo $row->leadership_tr; ?></p>
+                    <p class="rebound">/1000</p>
+                    <div class="leadership_tr<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
+                </section>
+            </div>
+            <!-- vordering van training --> 
+            <!--             <p>vordering</p> --> 
+            
         </div>
-        <div id="leftProgress">
-            <section>
-                <p id="skillTitle">passing: </p>
-                <p class="passing"><?php echo $row->passing; ?></p>
-                <p class="rebound">/20</p>
-                <div class="passing<?php echo $row->speler_id;?>" id="passingProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">passing: </p>
-                <p class="passing"><?php echo $row->passing_tr; ?></p>
-                <p class="rebound">/1000</p>
-                <div class="passing_tr<?php echo $row->speler_id;?>" id="passingProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">shotpower: </p>
-                <p class="shotpower"><?php echo $row->shotpower; ?></p>
-                <p class="rebound">/20</p>
-                <div class="shotpower<?php echo $row->speler_id;?>" id="shotpowerProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">shotpower: </p>
-                <p class="shotpower"><?php echo $row->shotpower_tr; ?></p>
-                <p class="rebound">/1000</p>
-                <div class="shotpower_tr<?php echo $row->speler_id;?>" id="shotpowerProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">intercepting: </p>
-                <p class="intercepting"><?php echo $row->intercepting; ?></p>
-                <p class="rebound">/20</p>
-                <div class="intercepting<?php echo $row->speler_id;?>" id="interceptingProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">intercepting: </p>
-                <p class="intercepting"><?php echo $row->intercepting_tr; ?></p>
-                <p class="rebound">/1000</p>
-                <div class="intercepting_tr<?php echo $row->speler_id;?>" id="interceptingProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">leadership: </p>
-                <p class="leadership"><?php echo $row->leadership; ?></p>
-                <p class="rebound">/20</p>
-                <div class="leadership<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
-            </section>
-            <section>
-                <p id="skillTitle">leadership: </p>
-                <p class="leadership"><?php echo $row->leadership_tr; ?></p>
-                <p class="rebound">/1000</p>
-                <div class="leadership_tr<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
-            </section>
-        </div>
-        <!-- vordering van training --> 
-        <!--             <p>vordering</p> --> 
-        
-    </div>
-    <?php }
+        <?php }
 
 
  ?>
-    <div id="myModal" class="reveal-modal"> <a class="close-reveal-modal">&#215;</a> </div>
-</div>
+        <div id="myModal" class="reveal-modal"> <a class="close-reveal-modal">&#215;</a> </div>
+    </div>
 </div>
 <div class="gameLeft">
     <?php foreach($energie->result() as $row)
@@ -409,4 +409,5 @@ $('#filters a').click(function(){
     
   </script>
 </div>
-<!-- end gameLeft --> 
+<!-- end gameLeft -->
+</div>

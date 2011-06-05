@@ -36,6 +36,6 @@
     </section>
 </footer>
 </section> <!-- end footerWrap -->
-<div id="nojs"><a href="http://www.enable-javascript.com/nl/">javascript inschakelen</a></div>
+<?php include_once ("analytics.php") ?>
 </body>
 </html>

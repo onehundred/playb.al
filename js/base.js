@@ -3,8 +3,7 @@
 
 $(document).ready(function() {
 $('.gameLeft, .gameRight').load().fadeIn(250);
-$('#laadtest').css('transform', 'translate(-1800px, 0px) rotate(0deg) scale(1,1) skew(0deg)');
-
+$('#laadtest').show().fadeIn(500);
 });
 
 

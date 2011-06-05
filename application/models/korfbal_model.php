@@ -321,10 +321,6 @@
 		$query = $this->db->get();
 
 		return $query;
-
-
-
-
 	}
 	
 	function get_training($team_id)
@@ -413,8 +409,6 @@
 
 	function insert_opstelling($field,$teamid,$geslacht,$vak, $spelerid)
 	{
-
-
 
 		$this->db->select('FK_team_id');
 		$this->db->where('FK_team_id', $teamid);
@@ -921,5 +915,46 @@
 		return $query;
 	
 	}
+	
+	function get_sidebar_calendar($team_id){
+	
+		$data = array();
+		$cron_query = $this->db->get('korf_cron');
+		foreach($cron_query->result() as $cron){
+			$data['week'] = $cron->week;
+			$data['seizoen'] = $cron->seizoen;
+		}
+		
+		$this->db->select('thuisteam, bezoekersteam');
+		$this->db->from('korf_wedstrijden');
+		$this->db->where('week', $data['week']);
+		$this->db->where('seizoen',$data['seizoen']);
+		$this->db->where('thuisteam', $team_id);
+		$this->db->or_where('bezoekersteam', $team_id);
+		$match_query = $this->db->get();
+		
+		foreach($match_query->result() as $match){
+			$thuisteam_id = $match->thuisteam;
+			$bezoekers_id = $match->bezoekersteam;
+			
+			$data['thuisteam'] = $this->getTeamNaam($thuisteam_id);
+			$data['uitteam'] = $this->getTeamNaam($bezoekers_id);
+		}
+		
+		return $data;
+	}
+	
+function get_sidebar_divisie()
+	{
+		
 
+		$this->db->select('naam, divisiepunten');
+		$this->db->from('korf_divisies');
+		$this->db->join('korf_teams', 'FK_division_id = divisie_id');
+		$this->db->where('divisie_id', 1);
+		$this->db->order_by('divisiepunten','desc');
+		$this->db->order_by('doelpunten_tegen','asc');
+		$query = $this->db->get();
+		return $query;
+	}
 }

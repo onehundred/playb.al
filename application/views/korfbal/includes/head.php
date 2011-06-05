@@ -36,7 +36,7 @@
 <![endif]-->
 	
 
-<!-- media queries / Less -->
+<!-- media queries -->
 <link href="<?php echo base_url();?>style/style1168.css" rel="stylesheet" media="only screen and (min-width: 1212px)" />
 <link href="<?php echo base_url();?>style/style768.css"  rel="stylesheet" media="only screen and (max-width: 991px) and (min-width: 768px)" />
 <link href="<?php echo base_url();?>style/style480.css"  rel="stylesheet" media="only screen and (max-width: 767px) and (min-width: 480px)" />

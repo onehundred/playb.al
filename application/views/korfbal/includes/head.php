@@ -35,7 +35,6 @@
 <link rel="stylesheet" href="<?php echo base_url();?>style/style_nomq.css" media="screen" />
 <![endif]-->
 	
-	
 
 <!-- media queries / Less -->
 <link href="<?php echo base_url();?>style/style1168.css" rel="stylesheet" media="only screen and (min-width: 1212px)" />

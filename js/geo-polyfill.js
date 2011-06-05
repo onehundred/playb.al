@@ -1,1 +1,1 @@
-alert("modernizr load");
+//alert("modernizr load");

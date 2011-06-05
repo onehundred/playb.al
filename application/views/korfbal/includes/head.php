@@ -74,11 +74,3 @@
 
 </head>
 <body>
-<script>
-Modernizr.load({
-  test: Modernizr.touch,
-  yep : 'geo.js',
-  nope: 'http://playb.al/js/geo-polyfill.js'
-});
-  
-</script>

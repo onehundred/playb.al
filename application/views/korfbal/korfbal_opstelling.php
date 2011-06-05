@@ -51,11 +51,89 @@
 	cursor: move;
 
 }
-</style>
- 
-<script src="<?php echo base_url();?>js/korfbal/opstelling.js"></script>
 
-<div style="height: 400px;">
+
+
+
+
+
+
+
+
+
+#touchme1 {
+	float: left;
+}
+#touchme2 {
+	float: right;
+}
+.largetouchbox {
+	width: 130px;
+	height:130px;
+	background-color:#999;
+	color: #FFF;
+	opacity: .75;
+	filter: alpha(opacity = 75);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 10px;
+	z-index: 950;
+}
+.largetouchbox b {
+	line-height: 130px;
+}
+.smalltouchbox {
+	width: 50px;
+	height:50px;
+	background-color:#999;
+	color: #FFF;
+	opacity: .75;
+	filter: alpha(opacity = 75);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 10px;
+	z-index: 900;
+	position: absolute;
+}
+.smalltouchbox span, .largetouchbox span {
+	position: relative;
+	float: left;
+	top: 10px;
+	left: 10px;
+	font-size: 10px;
+}
+#notes {
+	position: absolute;
+	display: block;
+	top: 240px;
+	width: 300px;
+	z-index: 800;
+	padding: 10px;
+	font-size: 16px;
+}
+#notes b {
+	font-size: 20px;
+}
+#smallwrapper {
+	position: absolute;
+	top: 150px;
+	left: 0px;
+}
+</style>
+<script src="<?php echo base_url();?>js/korfbal/opstelling.js"></script>
+    <script type="text/javascript" language="javascript" src="<?php echo base_url();?>js/jquery.touch.js"></script>
+    <script type="text/javascript" language="javascript" src="<?php echo base_url();?>js/site.js"></script>
+ <div>
+        <div id="touchme1" class="largetouchbox"><span>#1</span><b>Touch Me :)</b></div>
+
+    </div>
+<div>
 
 	<div id="korfbalField" style="background-color: yellow; height: 500px; width: 75%; float:right;">
 		<div id="vak2"><h2>Vak2</h2></div>
@@ -71,7 +149,7 @@
                     <?php foreach($spelers->result() as $row){  ?>
                     <div class="bubbleInfo">
                    
-                       <div id="<?php echo $row->speler_id;?>" class="trigger"><?php echo $row->voornaam.' '.$row->achternaam; ?></div>
+                       <div id="<?php echo $row->speler_id;?>" class="trigger largetouchbox"><?php echo $row->voornaam.' '.$row->achternaam; ?></div>
                         
                         <div id="dpop<?php echo $row->speler_id;?>" class="popup">
                             <p id="geslacht">Geslacht: <?php echo $row->geslacht;?></p>
@@ -93,6 +171,3 @@
     <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>" />
 </div>
 <!-- End demo --> 
- 
-<!-- <script src="<?php echo base_url();?>/js/toastmessage/jquery.toastmessage.js"></script> --> 
-

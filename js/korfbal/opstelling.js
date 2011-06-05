@@ -134,8 +134,13 @@ $(function() {
 								appendTo: "body"
 												
 							});	
+							
+							
+							
+							
 							$(".droppable" ).draggable({
 								start: function() {
+								
 									spelerid = $(this).find(':input').attr('id');
 									wissel = "wissel";
 									positie = $(this).attr('id');

@@ -195,7 +195,12 @@ $(function() {
 								
 								
 								}
-				    			
+								if(data.check === 'invalid dezelfde'){
+									$().toastmessage('showErrorToast', "Deze speler is al opgesteld");
+								}
+				    			if(data.check === 'invalid opgesteld'){
+									$().toastmessage('showErrorToast', "De speler moet opgesteld! ");
+								}
 				    			getData();
 						
 		      

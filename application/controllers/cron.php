@@ -23,14 +23,15 @@ class Cron extends CI_Controller {
 	{
 		$this->load->model('cron_model');
 		$this->cron_model->bots();
-	
-	
 	}
 	
 	
 	function cron_test()
 	{
-			}
+		$this->load->model('match_engine');
+		$this->match_engine->wedstrijdinkomsten(1);
+	
+	}
 	
 	//op het begin van elk nieuw seizoen
 	function arrange_games()

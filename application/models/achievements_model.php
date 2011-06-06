@@ -5,33 +5,28 @@
         parent::__construct();
     }
     
-    //1 match gespeeld
-    function eerste_match($teamid)
-    {
-    
-    	$this->db->where('FK_team_id', $teamid);
-    	$query = $this->db->get('korf_teamstats');
-    	
-    	foreach($query->result() as $row){
-    		$aantal_matchen = $row->gespeeld_matchen;
-    	
-    	}
-    	
-    	if($aantal_matchen == 1){   
-    	
-    		$this->db->select('naam');
-    		$this->db->from('korf_teams');
-    		$this->db->where('team_id', $teamid);
-    		$naamquery = $this->db->get(); 
-    		
-    		foreach($naamquery->result() as $row)
-    		{
-    			$naam = $row->naam;
-    		}	
-    		
+   	function get_teamnaam($teamid){
+		$this->db->select('naam');
+		$this->db->from('korf_teams');
+		$this->db->where('team_id', $teamid);
+		$naamquery = $this->db->get(); 
+		
+		foreach($naamquery->result() as $row)
+		{
+			$naam = $row->naam;
+		}	
+		
+		return $naam;
+	}
+   	
+   	function complete_achievement($teamid, $naam, $anumber)
+   	{
+   		//achievementnaam ophalen om mee te sturen met bericht
+   			if($anumber != 0){
+   		
     		$this->db->select('naam');
     		$this->db->from('korf_achievements');
-    		$this->db->where('achievement_id', 1);
+    		$this->db->where('achievement_id', $anumber);
     		$aquery = $this->db->get(); 
     		
     		foreach($aquery->result() as $row)
@@ -41,14 +36,14 @@
     			
     		$insert = array(
     			'FK_team_id' => $teamid,
-    			'FK_achievements_id' => 1
+    			'FK_achievements_id' => $anumber
     		);
     		
     		$bericht = "Gefeliciteerd u heeft de achievement:".$anaam." verkregen!";
     		
     		$this->db->insert('korf_team_achievements', $insert);
     		
-    		$bericht = array(
+    		$bericht_insert = array(
     			'verzender' => 'playb.al',
     			'ontvanger' => $naam,
     			'onderwerp' => 'Achievement',
@@ -57,230 +52,105 @@
     		
     		);
     		
-    		$this->db->insert('korf_berichten', $bericht);
-    	}
+    		$this->db->insert('korf_berichten', $bericht_insert);
+    	}	
+	}
+   
+    function aantal_matchen($teamid)
+    {
+    	$anumber = 0;
+    	$this->db->where('FK_team_id', $teamid);
+    	$query = $this->db->get('korf_teamstats');
     	
+    	
+    	
+    	if($query->num_rows() != 0){
+	    	foreach($query->result() as $row){
+	    		$aantal_matchen = $row->gespeeld_matchen;
+	    	}
+	    	
+	    		 //1 match gespeeld
+	    	if($aantal_matchen == 1){ 
+	    		$anumber = 1;
+	    	}
+	    	if($aantal_matchen == 10){
+	    		$anumber = 2;
+	    	}
+	    	if($aantal_matchen == 25){
+	    		$anumber == 3;
+	    	}
+	    	if($aantal_matchen == 50){
+	    		$anumber == 4;
+	    	}
+	    	if($aantal_matchen == 100){
+	    		$anumber == 5;
+	    	}
+	    	  
+	    	//teamnaam ophalen om het bericht te versturen 
+	    	$naam = $this->get_teamnaam($teamid);
+	    		
+	    	$this->complete_achievement($teamid, $naam, $anumber);	
+    	}	
+  }
+    
+  function aantal_overwinningen($teamid)
+  {
+    //TODO - check if the team has allready has this achievement
+    	$anumber = 0;
+    	
+    	$this->db->where('FK_team_id', $teamid);
+    	$query = $this->db->get('korf_teamstats');
+    	
+    	if($query->num_rows() != 0){
+	    	foreach($query->result() as $row){
+	    		$gewonnen_matchen = $row->gewonnen_matchen;
+	    	}
+	    	
+	    	if($gewonnen_matchen == 1){
+	    		$anumber = 6;
+	    	}
+	    	if($gewonnen_matchen == 3){
+	    		$anumber = 7;
+	    	}
+	    	
+	    	//teamnaam ophalen om het bericht te versturen 
+	    	$naam = $this->get_teamnaam($teamid);
+	    		
+	    	$this->complete_achievement($teamid, $naam, $anumber);	
+    	}
     }
     
+    //kan uitgebreid worden tot meeer achievements voor meer transfers
+    function aantal_transfers($teamid){
+    	//checken of achievement al behaald is -> array en dan check_in array
+    	$anumber = 0;
     
-    //10 matchen gespeeld
-    function tien_matchen($teamid)
-    {
     	$this->db->where('FK_team_id', $teamid);
     	$query = $this->db->get('korf_teamstats');
     	
     	foreach($query->result() as $row){
-    		$aantal_matchen = $row->gespeeld_matchen;
-    	
+    		$verkocht = $row->verkochte_spelers;
+    		$gekocht = $row->gekochte_spelers;
     	}
     	
-    	if($aantal_matchen == 10){   
+    	$totaal = $verkocht + $gekocht;
     	
-    		$this->db->select('naam');
-    		$this->db->from('korf_teams');
-    		$this->db->where('team_id', $teamid);
-    		$naamquery = $this->db->get(); 
-    		
-    		foreach($naamquery->result() as $row)
-    		{
-    			$naam = $row->naam;
-    		}	
-    		
-    		$this->db->select('naam');
-    		$this->db->from('korf_achievements');
-    		$this->db->where('achievement_id', 2);
-    		$aquery = $this->db->get(); 
-    		
-    		foreach($aquery->result() as $row)
-    		{
-    			$anaam = $row->naam;
-    		}
-    			
-    		$insert = array(
-    			'FK_team_id' => $teamid,
-    			'FK_achievements_id' => 2
-    		);
-    		
-    		$bericht = "Gefeliciteerd u heeft de achievement:".$anaam." verkregen!";
-    		
-    		$this->db->insert('korf_team_achievements', $insert);
-    		
-    		$bericht = array(
-    			'verzender' => 'playb.al',
-    			'ontvanger' => $naam,
-    			'onderwerp' => 'Achievement',
-    			'bericht' => $bericht,
-    			'categorie' => 1
-    		
-    		);
-    		
-    		$this->db->insert('korf_berichten', $bericht);
+    	$time = date("H:i:s");
+    	
+    	
+    	if($totaal == 1){
+    		$anumber = 8;
     	}
-
-    
+    	//nachtbraker
+    	if($time > '24:00:00'){
+    		$anumber = 9;
+    	}
+    	//early bird
+    	if($time > '04:00:00' && $time < '08:00:00'){
+    		$anumber = 10;
+    	}
+    	
+    	$naam = $this->get_teamnaam($teamid);
+    	$this->complete_achievement($teamid, $naam, $anumber);
     }
-    
-    //25 matchen gespeeld
-    function vijfentwintig_matchen($teamid)
-    {
-    	$this->db->where('FK_team_id', $teamid);
-    	$query = $this->db->get('korf_teamstats');
-    	
-    	foreach($query->result() as $row){
-    		$aantal_matchen = $row->gespeeld_matchen;
-    	
-    	}
-    	
-    	if($aantal_matchen == 25){   
-    	
-    		$this->db->select('naam');
-    		$this->db->from('korf_teams');
-    		$this->db->where('team_id', $teamid);
-    		$naamquery = $this->db->get(); 
-    		
-    		foreach($naamquery->result() as $row)
-    		{
-    			$naam = $row->naam;
-    		}	
-    		
-    		$this->db->select('naam');
-    		$this->db->from('korf_achievements');
-    		$this->db->where('achievement_id', 3);
-    		$aquery = $this->db->get(); 
-    		
-    		foreach($aquery->result() as $row)
-    		{
-    			$anaam = $row->naam;
-    		}
-    			
-    		$insert = array(
-    			'FK_team_id' => $teamid,
-    			'FK_achievements_id' => 3
-    		);
-    		
-    		$bericht = "Gefeliciteerd u heeft de achievement:".$anaam." verkregen!";
-    		
-    		$this->db->insert('korf_team_achievements', $insert);
-    		
-    		$bericht = array(
-    			'verzender' => 'playb.al',
-    			'ontvanger' => $naam,
-    			'onderwerp' => 'Achievement',
-    			'bericht' => $bericht,
-    			'categorie' => 1
-    		
-    		);
-    		
-    		$this->db->insert('korf_berichten', $bericht);
-    	}
-      }
-
-      //50 matchen gespeeld
-      function vijftig_matchen($teamid){
-      	$this->db->where('FK_team_id', $teamid);
-    	$query = $this->db->get('korf_teamstats');
-    	
-    	foreach($query->result() as $row){
-    		$aantal_matchen = $row->gespeeld_matchen;
-    	
-    	}
-    	
-    	if($aantal_matchen == 50){   
-    	
-    		$this->db->select('naam');
-    		$this->db->from('korf_teams');
-    		$this->db->where('team_id', $teamid);
-    		$naamquery = $this->db->get(); 
-    		
-    		foreach($naamquery->result() as $row)
-    		{
-    			$naam = $row->naam;
-    		}	
-    		
-    		$this->db->select('naam');
-    		$this->db->from('korf_achievements');
-    		$this->db->where('achievement_id', 4);
-    		$aquery = $this->db->get(); 
-    		
-    		foreach($aquery->result() as $row)
-    		{
-    			$anaam = $row->naam;
-    		}
-    			
-    		$insert = array(
-    			'FK_team_id' => $teamid,
-    			'FK_achievements_id' => 5
-    		);
-    		
-    		$bericht = "Gefeliciteerd u heeft de achievement:".$anaam." verkregen!";
-    		
-    		$this->db->insert('korf_team_achievements', $insert);
-    		
-    		$bericht = array(
-    			'verzender' => 'playb.al',
-    			'ontvanger' => $naam,
-    			'onderwerp' => 'Achievement',
-    			'bericht' => $bericht,
-    			'categorie' => 1
-    		
-    		);
-    		
-    		$this->db->insert('korf_berichten', $bericht);
-    	}
-      
-      }
-      
-      //100 matchen gespeeld
-      function honderd_matchen($teamid){
-      	$this->db->where('FK_team_id', $teamid);
-    	$query = $this->db->get('korf_teamstats');
-    	
-    	foreach($query->result() as $row){
-    		$aantal_matchen = $row->gespeeld_matchen;
-    	
-    	}
-    	
-    	if($aantal_matchen == 100){   
-    	
-    		$this->db->select('naam');
-    		$this->db->from('korf_teams');
-    		$this->db->where('team_id', $teamid);
-    		$naamquery = $this->db->get(); 
-    		
-    		foreach($naamquery->result() as $row)
-    		{
-    			$naam = $row->naam;
-    		}	
-    		
-    		$this->db->select('naam');
-    		$this->db->from('korf_achievements');
-    		$this->db->where('achievement_id', 5);
-    		$aquery = $this->db->get(); 
-    		
-    		foreach($aquery->result() as $row)
-    		{
-    			$anaam = $row->naam;
-    		}
-    			
-    		$insert = array(
-    			'FK_team_id' => $teamid,
-    			'FK_achievements_id' => 5
-    		);
-    		
-    		$bericht = "Gefeliciteerd u heeft de achievement:".$anaam." verkregen!";
-    		
-    		$this->db->insert('korf_team_achievements', $insert);
-    		
-    		$bericht = array(
-    			'verzender' => 'playb.al',
-    			'ontvanger' => $naam,
-    			'onderwerp' => 'Achievement',
-    			'bericht' => $bericht,
-    			'categorie' => 1
-    		
-    		);
-    		
-    		$this->db->insert('korf_berichten', $bericht);
-    	}
-      }
 }    

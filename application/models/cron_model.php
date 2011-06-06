@@ -1679,7 +1679,7 @@
 			$seizoen = $row->seizoen;
 		}
     	
-    	$this->db->where('bot', 1);
+    	$this->db->where('bot', 1); // alle echte gebruikers
     	$teams = $this->db->get('korf_teams');
     	foreach($teams->result() as $row)
     	{

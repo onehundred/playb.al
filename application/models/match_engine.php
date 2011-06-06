@@ -29,7 +29,6 @@
     		//wedstrijdid
     		$wedstrijd[$i]['wedstrijdid'] = $row->wedstrijd_id;
     		$wedstrijd[$i]['thuisteam'] = $row->thuisteam;
-    		//echo $row->thuisteam;
     		$wedstrijd[$i]['uitteam'] = $row->bezoekersteam;
     		$i++;
     	}	
@@ -51,9 +50,7 @@
     	$play2id = array();
     	$att3id = array();
     	$att4id = array();
-    	
-    		
-    		//thuisteamstats
+    		//loop door alle uitteams van de wedstrijden
     		for($j=1;$j<$lengte;$j++){
     			
     			$empty = "empty";
@@ -91,7 +88,7 @@
     				}
     		}
     		
-    		//2044 reboundspelers
+    		//2044 spelers
     		$lengterebound1 = sizeof($rebound1id) + 1;
     		
     			
@@ -675,6 +672,7 @@
 			return $thuisstats;
     
     }
+    
     //speel wedstrijden
     function play_games($thuis, $uit, $wedstrijd)
     {
@@ -729,7 +727,7 @@
     		$thuistotaal = $rebound1_th + $playmaking1_th + $attack1_th + $attack2_th + $rebound2_th + $playmaking2_th + $attack3_th + $attack4_th;    		
     		$uittotaal = $rebound1_uit + $playmaking1_uit + $attack1_uit + $attack2_uit + $rebound2_uit + $playmaking2_uit + $attack3_uit + $attack4_uit; 
 
-		// inititaliseren van arrays voor het opslagen van de gegevens
+		// inititaliseren van variabelen voor het opslagen van de gegevens
 		$uitslag['thuis'] = 0;
 		$uitslag['uit'] = 0;
 		$acties = '';
@@ -783,11 +781,16 @@
 
 		
 		}
-						
+		$this->update_gespeeld($thuisteamid);
+		$this->update_gespeeld($uitteamid);			
 						
 		
 		//gelijkstand
 		if($uitslag['thuis'] == $uitslag['uit']){
+		
+			$this->update_gelijk($thuisteamid);
+			$this->update_gelijk($uitteamid);
+			
 			//insert verslag
 			$insert = array(
 				'FK_wedstrijd_id' => $wedstrijdid,
@@ -867,6 +870,10 @@
 		
 		//thuisteam wint////////////////////////////
 		if($uitslag['thuis'] > $uitslag['uit']){
+		
+		$this->update_gewonnen($thuisteamid);
+		$this->update_verloren($uitteamid);
+		
 		//insert verslag
 			$insert = array(
 				'FK_wedstrijd_id' => $wedstrijdid,
@@ -950,6 +957,10 @@
 		
 		//uitteam wint////////////////////////////
 		if($uitslag['thuis'] < $uitslag['uit']){
+		
+		$this->update_gewonnen($uitteamid);
+		$this->update_verloren($thuisteamid);
+		
 		//insert verslag
 			$insert = array(
 				'FK_wedstrijd_id' => $wedstrijdid,
@@ -1041,7 +1052,6 @@
 		$this->db->update('korf_wedstrijden', $einduitslag);
 		
     	}
-    	   //return $uitslag; 
     }
     
     function speler_stats($id, $hoofdskill, $positie){
@@ -1095,6 +1105,121 @@
 
 		
 		}
+		
+		function get_thuisteamstats($teamid){
+			$this->db->select('gespeeld, verloren, doelpunten_voor, doelpunten_tegen');
+			$this->db->from('korf_teams');
+			$this->db->where('team_id', $teamid);
+			$thuisteamquery = $this->db->get();
+			
+			foreach($thuisteamquery->result() as $row)
+			{
+				$tstats['gespeeld'] = $row->gespeeld;
+				$tstats['verloren'] = $row->verloren;
+				$tstats['voor'] = $row->doelpunten_voor;
+				$tstats['tegen'] = $row->doelpunten_tegen;
+				
+			
+			}
 
+			return $tstats;
+		}
+		
+		
+		
+		//update aantal gepseelde wedstrijden
+		function update_gespeeld($teamid){
+			$this->db->select('gespeeld_matchen');
+			$this->db->from('korf_teamstats');
+			$this->db->where('FK_team_id', $teamid);
+			$query = $this->db->get();
+			
+			if($query->num_rows() != 0){
+				foreach($query->result() as $row){
+					$gespeeld = $row->gespeeld_matchen;
+				}
+			
+				$update = array(
+					'gespeeld_matchen' => $gespeeld+1,
+				
+				
+				);
+				
+				$this->db->where('FK_team_id', $teamid);
+				$this->db->update('korf_teamstats',$update);
+			}
+
+		
+		
+		}
+		//update aantal gelijke wedstrijden
+		function update_gelijk($teamid){
+		
+			$this->db->select('gelijke_matchen');
+			$this->db->from('korf_teamstats');
+			$this->db->where('FK_team_id', $teamid);
+			$query = $this->db->get();
+			
+			if($query->num_rows() != 0){
+				foreach($query->result() as $row){
+					$gelijk = $row->gelijke_matchen;
+				}
+			
+				$update = array(
+					'gelijke_matchen' => $gelijk+1,
+				
+				
+				);
+				
+				$this->db->where('FK_team_id', $teamid);
+				$this->db->update('korf_teamstats',$update);
+			}
+		}
+		//update aantal gewonnen wedstrijden
+		function update_gewonnen($teamid){
+		
+			$this->db->select('gewonnen_matchen');
+			$this->db->from('korf_teamstats');
+			$this->db->where('FK_team_id', $teamid);
+			$query = $this->db->get();
+			
+			if($query->num_rows() != 0){
+				foreach($query->result() as $row){
+					$gewonnen = $row->gewonnen_matchen;
+				}
+			
+				$update = array(
+					'gewonnen_matchen' => $gewonnen+1,
+				
+				
+				);
+				
+				$this->db->where('FK_team_id', $teamid);
+				$this->db->update('korf_teamstats',$update);
+			}
+		
+		}
+		//update aantal verloren wedstrijden
+		function update_verloren($teamid){
+			$this->db->select('verloren_matchen');
+			$this->db->from('korf_teamstats');
+			$this->db->where('FK_team_id', $teamid);
+			$query = $this->db->get();
+			
+			if($query->num_rows() != 0){
+				foreach($query->result() as $row){
+					$verloren = $row->verloren_matchen;
+				}
+			
+				$update = array(
+					'verloren_matchen' => $verloren+1,
+				
+				
+				);
+				
+				$this->db->where('FK_team_id', $teamid);
+				$this->db->update('korf_teamstats',$update);
+			}
+		}
 
 }

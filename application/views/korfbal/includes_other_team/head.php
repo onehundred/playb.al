@@ -25,7 +25,6 @@
 <link href="<?php echo base_url();?>css/style320.less"  rel="stylesheet/less" media="only screen and (max-width: 479px)" />
 
 <link rel="stylesheet" href="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css" />
-<link rel="stylesheet" href="<?php echo base_url()?>js/toastmessage/jquery.toastmessage.css"/>
 <link rel="stylesheet" href="<?php echo base_url()?>js/reveal/reveal.css"/>
 
 <script src="<?php echo base_url();?>js/modernizr-1.6.min.js"></script> 

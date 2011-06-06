@@ -3,7 +3,7 @@
 
 $(document).ready(function() {
 $('.gameLeft, .gameRight').load().fadeIn(250);
-$('#laadtest').show().fadeIn(500);
+
 });
 
 

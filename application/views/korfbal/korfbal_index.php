@@ -1,8 +1,3 @@
-<div class="overview">
-<b>Successful Response (should be blank):</b>
-<div id="successs">sdfsdfsdf</div>
-<b>Error Response:</b>
-<div id="error"></div>
    <div class="game"><div class="gameRight"> 
         
         <!-- 		<h2 id="tagline">Overzicht</h2> --> 
@@ -14,6 +9,7 @@
         <p>Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
     </div>
     <!-- end gameRight -->
+    <aside>
     <div class="gameLeft">
 
         <div>
@@ -63,5 +59,6 @@
         </div>
     </div>
     <!-- end gameLeft --> 
+    </aside>
 </div> <!-- end game -->
 </div>

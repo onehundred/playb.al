@@ -33,7 +33,7 @@
 
 <!-- no mediaqueries fallback -->
 <!--[if lt IE 9]>
-<link rel="stylesheet" href="<?php echo base_url();?>style/style_nomq.css" media="screen" />
+<link rel="stylesheet" href="<?php echo base_url();?>style/style.css" media="screen" />
 <![endif]-->
 
 <!-- media queries -->
@@ -42,7 +42,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style768.css"  media="only screen and (max-width: 991px) and (min-width: 768px)" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style480.css"  media="only screen and (max-width: 767px) and (min-width: 480px)" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style320.css"  media="only screen and (max-width: 479px)" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>style/jquery.dualSlider.0.3.css" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url();?>style/clearfix.css" />
 
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -54,7 +53,7 @@
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.timers-1.2.js"></script>
 <script src="<?php echo base_url();?>js/jquery.dualSlider.0.3.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>

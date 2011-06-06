@@ -151,7 +151,36 @@ figure img {
 .no-js #jsnotice { display: block; }
 
 /* RESETS end */
-
+@font-face {
+	/* This declaration targets Internet Explorer */
+	font-family: 'SFCollegiateSolidRegular';
+	src: url('sf_collegiate_solid-webfont.eot');
+}
+@font-face {
+	/* This declaration targets everything else */
+	font-family: 'SFCollegiateSolidRegular';
+	src: url(//:) format('no404'), url('fonts/sf_collegiate_solid-webfont.woff') format('woff'), url('fonts/sf_collegiate_solid-webfont.ttf') format('truetype'), url('fonts/sf_collegiate_solid-webfont.svg#webfontvViDQrFS') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	/* This declaration targets Internet Explorer */
+	font-family: 'LeagueGothicRegular';
+	src: url('fonts/league_gothic-webfont.eot');
+}
+@font-face {
+	/* This declaration targets everything else */
+	font-family: 'LeagueGothicRegular';
+	src: url(//:) format('no404'), url('fonts/league_gothic-webfont.woff') format('woff'), url('fonts/league_gothic-webfont.ttf') format('truetype'), url('fonts/league_gothic-webfont.svg#webfont60yFay8f') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'AllerItalic';
+	src: url('fonts/aller_it-webfont.eot?') format('eot'), url('fonts/aller_it-webfont.woff') format('woff'), url('fonts/aller_it-webfont.ttf') format('truetype'), url('fonts/aller_it-webfont.svg#webfont7oSuZnvY') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 /* TYPE PRESETS begin */
 
 .gigantic {
@@ -400,8 +429,11 @@ h2 {
 .gameRight #skillTitle {
 	display: inline;
 }
-.gameLeft {
+aside {
 	float: left;
+}
+.gameLeft {
+
 	width: 297px;
 	/* 	padding: 0 15px 15px 15px; */
 	font-size: 15px;
@@ -1118,42 +1150,346 @@ select {
 }
 
 /* BIG GALLERY end ---------------------------------------------------------------------------------------------------------*/
+/* CAROUSEL */
 
+.carousel{
+    margin:  0 0 25px 0;
+    position:relative;
+    height: 430px;
+    width: 1168px;
+    overflow:hidden;    
+}
+
+.carousel h2{
+	color: #fff;
+}	
+
+
+.carousel .backgrounds{
+    height: 354px;
+}
+
+.carousel .backgrounds .item{
+    width: 1168px;
+    height: 430px;
+    float:left;
+    position:relative;
+    z-index:1;
+}
+
+.carousel .backgrounds .item_1{
+    background: transparent url(../images/carousel_bg_arrow.jpg) no-repeat 0 0;
+}
+
+.carousel .backgrounds .item_2{
+    background: transparent url(../images/carousel_bg_arrow.jpg) no-repeat 0 0;
+}
+
+.carousel .backgrounds .item_3{
+    background: transparent url(../images/carousel_bg_1.jpg) no-repeat 0 0;
+}
+
+.carousel .panel{
+    background: #000;
+    color: #fff;
+    position:absolute;
+    right: 0;
+    top:0;
+    height: 430px;
+    width: 460px;
+    z-index:10;
+}
+
+.carousel .panel .paging{
+    position:absolute;
+    bottom: 25px;
+    left:25px;
+    width: 225px;    
+    text-align:center;   
+}
+
+.carousel .panel .paging a{
+    color: #4c4c4c;
+    font-size: 1.1em;
+}
+
+.carousel .panel .pause{
+    position:absolute;
+    right:20px;
+    top:25px;
+    display:block;
+    width: 18px;
+    height: 18px;
+    background: transparent url(../images/carousel_pause_bg.gif) no-repeat 0 0;
+    text-indent: -6000px;
+}
+
+.carousel .panel .play{
+    position:absolute;
+    right:20px;
+    top:25px;
+    display:block;
+    width: 18px;
+    height: 18px;
+    background: transparent url(../images/carousel_play_bg.gif) no-repeat 0 0;
+    text-indent: -6000px;
+}
+
+
+.carousel .panel .paging .next{
+    position:absolute;
+    right:0;
+    bottom:0;
+    display:block;
+    width: 18px;
+    height: 18px;
+    background: transparent url(../images/carousel_next_bg.gif) no-repeat 0 0;
+    text-indent: -6000px;
+}
+
+.carousel .panel .paging .previous{
+    position:absolute;
+    left:0;
+    bottom:0;
+    display:block;
+    width: 18px;
+    height: 18px;
+    background: transparent url(../images/carousel_previous_bg.gif) no-repeat 0 0;
+    text-indent: -6000px;
+}
+
+.carousel .panel .paging #numbers a {
+    padding: 0 5px 0 5px;
+}
+
+.carousel .panel .paging #numbers a.selected {
+    color: #fff;
+}
+
+
+
+.carousel .panel .details_wrapper {
+    position:absolute;
+    top:20px;
+    left:25px;
+    width: 225px;
+    overflow:hidden;
+    height: 200px;
+}
+
+.carousel .panel .details_wrapper .details{
+    height: 200px;
+}
+
+.carousel .panel .details_wrapper .details .detail{
+    width: 225px;
+    height: 200px;
+    float:left;
+    
+}
+
+.carousel .panel .details_wrapper .details h2{
+    font-size: 1.9em;
+    line-height: 1.2em;
+    margin: 0 0 5px 0;
+}
+
+.carousel .panel .details_wrapper .details a.more{
+    color: #fff;
+    font-size:1.1em;
+}   
+
+/* END CAROUSEL */
+
+/* TOASTMESSAGES begin -------------------------------------------------------------------------------------------------------------*/
+.toast-container {
+	width: 280px;
+	z-index: 9999;
+}
+
+
+* html .toast-container {
+	position: absolute;		
+}
+ 
+.toast-item {
+	height: auto;
+	background: #333;
+    opacity: 0.9;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #eee;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 6px;
+	padding-right: 6px;
+	font-family: lucida Grande;
+	font-size: 14px;
+	border: 2px solid #999;
+	display: block;
+	position: relative;
+	margin: 0 0 12px 0;
+}
+
+.toast-item p {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.toast-item-close {
+    background:url(../../img/close.gif);
+    width:22px;
+    height:22px;
+    position: absolute;
+    top:7px;
+    right:7px;
+}
+
+.toast-item-image {
+    width:32px;
+    height: 32px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    float:left;
+}
+
+.toast-item-image-notice {
+    background:url(../../img/notice.png);
+}
+
+.toast-item-image-success {
+    background:url(../../img/success.png);
+}
+
+.toast-item-image-warning {
+    background:url(../../img/warning.png);
+}
+
+.toast-item-image-error {
+    background:url(../../img/error.png);
+}
+
+
+/** 
+ * toast types 
+ * 
+ * pattern: toast-type-[value]
+ * where 'value' is the real value of the plugin option 'type'
+ * 
+ */
+.toast-type-notice {
+    color: white;    
+}
+
+.toast-type-success {
+    color: white;    
+}
+
+.toast-type-warning {
+    color: white;
+    border-color: #FCBD57;
+}
+
+.toast-type-error {
+    color: white;
+    border-color: #B32B2B;
+}
+
+/** 
+ * positions 
+ * 
+ * pattern: toast-position-[value]
+ * where 'value' is the real value of the plugin option 'position'
+ * 
+ */
+.toast-position-top-left {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+}
+
+.toast-position-top-center {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    margin-left: -140px;
+}
+
+.toast-position-top-right {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.toast-position-middle-left {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    margin-top: -40px;
+}
+
+.toast-position-middle-center {
+    position: fixed;
+    left: 50%;
+    margin-left: -140px;
+    margin-top: -40px;
+    top: 50%;
+}
+
+.toast-position-middle-right {
+    position: fixed;
+    right: 20px;
+    margin-left: -140px;
+    margin-top: -40px;
+    top: 50%;
+}
+/* TOASTMESSAGES end -------------------------------------------------------------------------------------------------------------*/
 /* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
-@font-face {
-	/* This declaration targets Internet Explorer */
-	font-family: 'SFCollegiateSolidRegular';
-	src: url('sf_collegiate_solid-webfont.eot');
-}
-@font-face {
-	/* This declaration targets everything else */
-	font-family: 'SFCollegiateSolidRegular';
-	src: url(//:) format('no404'), url('fonts/sf_collegiate_solid-webfont.woff') format('woff'), url('fonts/sf_collegiate_solid-webfont.ttf') format('truetype'), url('fonts/sf_collegiate_solid-webfont.svg#webfontvViDQrFS') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	/* This declaration targets Internet Explorer */
-	font-family: 'LeagueGothicRegular';
-	src: url('fonts/league_gothic-webfont.eot');
-}
-@font-face {
-	/* This declaration targets everything else */
-	font-family: 'LeagueGothicRegular';
-	src: url(//:) format('no404'), url('fonts/league_gothic-webfont.woff') format('woff'), url('fonts/league_gothic-webfont.ttf') format('truetype'), url('fonts/league_gothic-webfont.svg#webfont60yFay8f') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'AllerItalic';
-	src: url('fonts/aller_it-webfont.eot?') format('eot'), url('fonts/aller_it-webfont.woff') format('woff'), url('fonts/aller_it-webfont.ttf') format('truetype'), url('fonts/aller_it-webfont.svg#webfont7oSuZnvY') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
 #laadtest {
 
-.transitionOff;
-display: none;
+
+
 
 
 }
+#korfbal_signup fieldset { border:none; width:320px;}
+#korfbal_signup legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
+#korfbal_signup label { display:block; margin:15px 0 5px;}
+#korfbal_signup input[type=text], input[type=password] { width:300px; padding:5px; border:solid 1px #000;}
+#korfbal_signup .prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
+#korfbal_signup .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
+#korfbal_signup .prev { float:left;}
+#korfbal_signup .next { float:right;}
+#korfbal_signup #steps { list-style:none; width:100%; overflow:hidden; margin:0px; padding:0px;}
+#korfbal_signup #steps li {font-size:24px; float:left; padding:10px; color:#b0b1b3;}
+#korfbal_signup #steps li span {font-size:11px; display:block;}
+#korfbal_signup #steps li.current { color:#000;}
+       
+
+#basketbal_signup fieldset { border:none; width:320px;}
+#basketbal_signup legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
+#basketbal_signup label { display:block; margin:15px 0 5px;}
+#basketbal_signup input[type=text], input[type=password] { width:300px; padding:5px; border:solid 1px #000;}
+#basketbal_signup .prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
+#basketbal_signup .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
+#basketbal_signup .prev { float:left;}
+#basketbal_signup .next { float:right;}
+#basketbal_signup #steps { list-style:none; width:100%; overflow:hidden; margin:0px; padding:0px;}
+#basketbal_signup #steps li {font-size:24px; float:left; padding:10px; color:red;}
+#basketbal_signup #steps li span {font-size:11px; display:block;}
+#basketbal_signup #steps li.current { color:#000;} 
+
+
+#volleybal_signup fieldset { border:none; width:320px;}
+#volleybal_signup legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
+#volleybal_signup label { display:block; margin:15px 0 5px;}
+#volleybal_signup input[type=text], input[type=password] { width:300px; padding:5px; border:solid 1px #000;}
+#volleybal_signup .prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
+#volleybal_signup .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
+#volleybal_signup .prev { float:left;}
+#volleybal_signup .next { float:right;}
+#volleybal_signup #steps { list-style:none; width:100%; overflow:hidden; margin:0px; padding:0px;}
+#volleybal_signup #steps li {font-size:24px; float:left; padding:10px; color:green;}
+#volleybal_signup #steps li span {font-size:11px; display:block;}
+#volleybal_signup #steps li.current { color:#000;}     

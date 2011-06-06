@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.css"/>
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 <script src="<?php echo base_url();?>js/jquery.blockUI.js"></script>
 

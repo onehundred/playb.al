@@ -55,7 +55,6 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.timers-1.2.js"></script>
-<script src="<?php echo base_url();?>js/jquery.dualSlider.0.3.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
 <script src="<?php echo base_url();?>/js/base.js"></script>

@@ -15,22 +15,28 @@
         <div>
             <section>
                 <h2><img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />kalender</h2>
-                <p>huidige week</p>
-                <p>huidige seizoen</p>
-                <p>eerstvolgende wedstrijd</p>
-                <p>playb.al tijd</p>
+            	 <p>huidige week: week <?php echo $calendar['week'];?></p>
+                <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
+                <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
             </section>
         </div>               
         <div>
             <section>
             <h2><img src="<?php echo base_url();?>img/icons/podium.png" id="icon" ondragstart="return false" />klassement eerste divisie</h2>
-                <p>Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+                
+                <?php foreach($divisie_eerste->result() as $row){ ?>
+               	 <p><?php echo $row->naam;?> - <?php echo $row->divisiepunten;?></p>
+                
+                <?php } ?>
             </section>
         </div>
         <div>
             <section>
                 <h2>klassement jouw divisie</h2>
-                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</p>
+             	<?php foreach($divisie->result() as $row){ ?>
+                	<p><?php echo $row->naam;?> - <?php echo $row->divisiepunten;?></p>
+                
+                <?php } ?>
             </section>
         </div>
         <div>

@@ -137,14 +137,56 @@
 	
 	function removePlayer_Opstelling($spelerid, $teamid, $positie)
 	{
-		$data = array(
-			$positie.'_speler' => null,
-			$positie.'_geslacht' => null
+	
+		if($positie == 'captain' || $positie == 'setpieces'){
 		
-		);
+			$data = array(
+				$positie.'_speler' => null,
+			);
+			
+			$this->db->where('FK_team_id', $teamid);
+			$this->db->update('korf_opstelling', $data);
 		
-		$this->db->where('FK_team_id', $teamid);
-		$this->db->update('korf_opstelling', $data);
+		}else{
+			$this->db->select('captain_speler, setpieces_speler');
+			$this->db->where('FK_team_id', $teamid);
+			$spelers = $this->db->get('korf_opstelling');
+			
+			foreach($spelers->result() as $srow){
+				$cap = $srow->captain_speler;
+				$set = $srow->setpieces_speler;
+			}
+			
+			if($cap == $spelerid){
+				
+				$data = array(
+					'captain_speler' => null,
+				);
+				
+				$this->db->where('FK_team_id', $teamid);
+				$this->db->update('korf_opstelling', $data);
+			
+			}
+			
+			if($set == $spelerid){
+				$data = array(
+					'setpieces_speler' => null,
+				);
+				
+				$this->db->where('FK_team_id', $teamid);
+				$this->db->update('korf_opstelling', $data);
+			}
+			
+			$data = array(
+				$positie.'_speler' => null,
+				$positie.'_geslacht' => null
+			
+			);
+			
+			$this->db->where('FK_team_id', $teamid);
+			$this->db->update('korf_opstelling', $data);
+		
+		}
 		
 	}
 
@@ -431,6 +473,53 @@
 
 		}
 		else{ //is er al wel een opstelling dan updaten we de huidige
+		
+				//nagaan of speler al op het veld staat
+				$this->db->select('*');
+				$this->db->where('FK_team_id', $teamid);
+				$spelers = $this->db->get('korf_opstelling');
+				
+				foreach($spelers->result() as $srow){
+					$sp['r1'] = $srow->rebound1_speler;
+					$sp['p1'] = $srow->playmaking1_speler;
+					$sp['a1'] = $srow->attack1_speler;
+					$sp['a2'] = $srow->attack2_speler;
+					$sp['r2'] = $srow->rebound2_speler;
+					$sp['p2'] = $srow->playmaking2_speler;
+					$sp['a3'] = $srow->attack3_speler;
+					$sp['a4'] = $srow->attack4_speler;
+
+				
+				}
+				
+				if($vak == 0){
+					if(in_array($spelerid, $sp)){
+					$update = array(
+						$field."_speler" => $spelerid,
+					);
+
+
+					$this->db->where('FK_team_id', $teamid);
+					$this->db->update('korf_opstelling', $update);
+
+					$vakcheck = "valid";
+					return $vakcheck;
+					}else{
+						$vakcheck = "invalid opgesteld";
+						return $vakcheck;
+					
+					}
+				}else{
+				
+				//print_r($sp);
+				if(in_array($spelerid, $sp)){
+					$vakcheck = "invalid dezelfde";
+					return $vakcheck;
+				
+				}else{
+				
+				
+			
 			$mannen = 0;
 			$vrouwen = 0;
 			//kijken of er al 2 mannen of vrouwen in een vak staan
@@ -557,12 +646,12 @@
 				}
 			}
 
-
+		}
 
 
 		}
 
-
+		}
 
 	}
 

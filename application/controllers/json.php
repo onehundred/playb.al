@@ -154,11 +154,13 @@ class Json extends CI_Controller {
 		if($positie=="captain")
 		{
 			$field = "captain";
+			$vak = 0;
 		}
 		
 		if($positie=="setpieces")
 		{
 			$field = "setpieces";
+			$vak = 0;
 		}
 		
 		$this->load->model('korfbal_model');

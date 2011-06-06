@@ -62,32 +62,35 @@
     	$this->db->where('FK_team_id', $teamid);
     	$query = $this->db->get('korf_teamstats');
     	
-    	foreach($query->result() as $row){
-    		$aantal_matchen = $row->gespeeld_matchen;
-    	}
     	
-    		 //1 match gespeeld
-    	if($aantal_matchen == 1){ 
-    		$anumber = 1;
-    	}
-    	if($aantal_matchen == 10){
-    		$anumber = 2;
-    	}
-    	if($aantal_matchen == 25){
-    		$anumber == 3;
-    	}
-    	if($aantal_matchen == 50){
-    		$anumber == 4;
-    	}
-    	if($aantal_matchen == 100){
-    		$anumber == 5;
-    	}
-    	  
-    	//teamnaam ophalen om het bericht te versturen 
-    	$naam = $this->get_teamnaam($teamid);
-    		
-    	$this->complete_achievement($teamid, $naam, $anumber);	
-    		
+    	
+    	if($query->num_rows() != 0){
+	    	foreach($query->result() as $row){
+	    		$aantal_matchen = $row->gespeeld_matchen;
+	    	}
+	    	
+	    		 //1 match gespeeld
+	    	if($aantal_matchen == 1){ 
+	    		$anumber = 1;
+	    	}
+	    	if($aantal_matchen == 10){
+	    		$anumber = 2;
+	    	}
+	    	if($aantal_matchen == 25){
+	    		$anumber == 3;
+	    	}
+	    	if($aantal_matchen == 50){
+	    		$anumber == 4;
+	    	}
+	    	if($aantal_matchen == 100){
+	    		$anumber == 5;
+	    	}
+	    	  
+	    	//teamnaam ophalen om het bericht te versturen 
+	    	$naam = $this->get_teamnaam($teamid);
+	    		
+	    	$this->complete_achievement($teamid, $naam, $anumber);	
+    	}	
   }
     
   function aantal_overwinningen($teamid)
@@ -98,22 +101,23 @@
     	$this->db->where('FK_team_id', $teamid);
     	$query = $this->db->get('korf_teamstats');
     	
-    	foreach($query->result() as $row){
-    		$gewonnen_matchen = $row->gewonnen_matchen;
+    	if($query->num_rows() != 0){
+	    	foreach($query->result() as $row){
+	    		$gewonnen_matchen = $row->gewonnen_matchen;
+	    	}
+	    	
+	    	if($gewonnen_matchen == 1){
+	    		$anumber = 6;
+	    	}
+	    	if($gewonnen_matchen == 3){
+	    		$anumber = 7;
+	    	}
+	    	
+	    	//teamnaam ophalen om het bericht te versturen 
+	    	$naam = $this->get_teamnaam($teamid);
+	    		
+	    	$this->complete_achievement($teamid, $naam, $anumber);	
     	}
-    	
-    	if($gewonnen_matchen == 1){
-    		$anumber = 6;
-    	}
-    	if($gewonnen_matchen == 3){
-    		$anumber = 7;
-    	}
-    	
-    	//teamnaam ophalen om het bericht te versturen 
-    	$naam = $this->get_teamnaam($teamid);
-    		
-    	$this->complete_achievement($teamid, $naam, $anumber);	
-    
     }
     
     //kan uitgebreid worden tot meeer achievements voor meer transfers

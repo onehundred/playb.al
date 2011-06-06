@@ -781,18 +781,12 @@
 
 		
 		}
+		$this->wedstrijdinkomsten($thuisteamid); // enkel inkomsten voor het thuisteam
 		$this->update_gespeeld($thuisteamid);
-		$this->update_gespeeld($uitteamid);			
-						
+		$this->update_gespeeld($uitteamid);		
 		
-		//gelijkstand
-		if($uitslag['thuis'] == $uitslag['uit']){
-		
-			$this->update_gelijk($thuisteamid);
-			$this->update_gelijk($uitteamid);
-			
-			//insert verslag
-			$insert = array(
+		//insert verslag
+		$insert = array(
 				'FK_wedstrijd_id' => $wedstrijdid,
 				'minuten' => $minuten,
 				'acties' => $acties,
@@ -804,33 +798,32 @@
 				'opstelling_uitteam' => $opst_uitteam,
 				'thuisteam_id' => $thuisteamid,
 				'uitteam_id' => $uitteamid
+		);
 			
-			);
+		$this->db->insert('korf_verslagen', $insert);
+		
+		
 			
-			$this->db->insert('korf_verslagen', $insert);
+						
+		
+		//gelijkstand
+		if($uitslag['thuis'] == $uitslag['uit']){
+		
+			$this->update_gelijk($thuisteamid);
+			$this->update_gelijk($uitteamid);
+			
+			$this->overwinningenOpRij($thuisteamid, 0);
+			$this->overwinningenOpRij($uitteamid, 0);
 			
 			//haal de thuisteamgegevens op
-			$this->db->select('gespeeld, gelijk, doelpunten_voor, doelpunten_tegen, divisiepunten');
-			$this->db->from('korf_teams');
-			$this->db->where('team_id', $thuisteamid);
-			$thuisteamquery = $this->db->get();
-			
-			foreach($thuisteamquery->result() as $row)
-			{
-				$gespeeld = $row->gespeeld;
-				$gelijk = $row->gelijk;
-				$voor = $row->doelpunten_voor;
-				$tegen = $row->doelpunten_tegen;
-				$punten = $row->divisiepunten;
-			
-			}
+			$tstats = $this->get_teamstats($thuisteamid);
 			
 			$thuisupdate = array(
-				'gespeeld' => $gespeeld +1,
-				'gelijk' => $gelijk + 1,
-				'doelpunten_voor' => $voor + $uitslag['thuis'],
-				'doelpunten_tegen' => $tegen + $uitslag['uit'], 
-				'divisiepunten' => $punten + 1
+				'gespeeld' => $tstats['gespeeld'] +1,
+				'gelijk' => $tstats['gelijk'] + 1,
+				'doelpunten_voor' => $tstats['voor'] + $uitslag['thuis'],
+				'doelpunten_tegen' => $tstats['tegen'] + $uitslag['uit'], 
+				'divisiepunten' => $tstats['punten'] + 1
 			
 			);
 			
@@ -838,28 +831,14 @@
 			$this->db->update('korf_teams', $thuisupdate);
 			
 			//haal de uitteamgegevens op
-			$this->db->select('gespeeld, gelijk, doelpunten_voor, doelpunten_tegen, divisiepunten');
-			$this->db->from('korf_teams');
-			$this->db->where('team_id', $uitteamid);
-			$uitteamquery = $this->db->get();
-			
-			foreach($uitteamquery->result() as $row)
-			{
-				$gespeeld = $row->gespeeld;
-				$gelijk = $row->gelijk;
-				$voor = $row->doelpunten_voor;
-				$tegen = $row->doelpunten_tegen;
-				$punten = $row->divisiepunten;
-			
-			}
+			$ustats = $this->get_teamstats($uitteamid);
 
-			
 			$uitupdate = array(
-				'gespeeld' => $gespeeld +1,
-				'gelijk' => $gelijk + 1,
-				'doelpunten_voor' => $voor + $uitslag['uit'],
-				'doelpunten_tegen' => $tegen + $uitslag['thuis'], 
-				'divisiepunten' => $punten + 1
+				'gespeeld' => $ustats['gespeeld'] +1,
+				'gelijk' => $ustats['gelijk'] + 1,
+				'doelpunten_voor' => $ustats['voor'] + $uitslag['uit'],
+				'doelpunten_tegen' => $ustats['tegen'] + $uitslag['thuis'], 
+				'divisiepunten' => $ustats['punten'] + 1
 			
 			);
 			
@@ -874,47 +853,20 @@
 		$this->update_gewonnen($thuisteamid);
 		$this->update_verloren($uitteamid);
 		
-		//insert verslag
-			$insert = array(
-				'FK_wedstrijd_id' => $wedstrijdid,
-				'minuten' => $minuten,
-				'acties' => $acties,
-				'spelers' => $spelers,
-				'tussenstand' => $tussenstand,
-				'prestaties_thuisteam' => $prest_thuisteam,
-				'prestaties_uitteam' => $prest_uitteam,
-				'opstelling_thuisteam' => $opst_thuisteam,
-				'opstelling_uitteam' => $opst_uitteam,
-				'thuisteam_id' => $thuisteamid,
-				'uitteam_id' => $uitteamid
-
-			
-			);
-			
-			$this->db->insert('korf_verslagen', $insert);
+		$this->overwinningenOpRij($thuisteamid, 1);
+		$this->overwinningenOpRij($uitteamid, 0);
+		
+	
 			
 			//haal de thuisteamgegevens op
-			$this->db->select('gespeeld, gewonnen, doelpunten_voor, doelpunten_tegen, divisiepunten');
-			$this->db->from('korf_teams');
-			$this->db->where('team_id', $thuisteamid);
-			$thuisteamquery = $this->db->get();
-			
-			foreach($thuisteamquery->result() as $row)
-			{
-				$gespeeld = $row->gespeeld;
-				$gewonnen = $row->gewonnen;
-				$voor = $row->doelpunten_voor;
-				$tegen = $row->doelpunten_tegen;
-				$punten = $row->divisiepunten;
-			
-			}
+			$tstats = $this->get_teamstats($thuisteamid);
 			
 			$thuisupdate = array(
-				'gespeeld' => $gespeeld +1,
-				'gewonnen' => $gewonnen + 1,
-				'doelpunten_voor' => $voor + $uitslag['thuis'],
-				'doelpunten_tegen' => $tegen + $uitslag['uit'], 
-				'divisiepunten' => $punten + 2
+				'gespeeld' => $tstats['gespeeld'] +1,
+				'gewonnen' => $tstats['gewonnen'] + 1,
+				'doelpunten_voor' => $tstats['voor'] + $uitslag['thuis'],
+				'doelpunten_tegen' => $tstats['tegen'] + $uitslag['uit'], 
+				'divisiepunten' => $tstats['punten'] + 2
 			
 			);
 			
@@ -922,37 +874,19 @@
 			$this->db->update('korf_teams', $thuisupdate);
 			
 			//haal de uitteamgegevens op
-			$this->db->select('gespeeld, verloren, doelpunten_voor, doelpunten_tegen');
-			$this->db->from('korf_teams');
-			$this->db->where('team_id', $uitteamid);
-			$uitteamquery = $this->db->get();
-			
-			foreach($uitteamquery->result() as $row)
-			{
-				$gespeeld = $row->gespeeld;
-				$verloren = $row->verloren;
-				$voor = $row->doelpunten_voor;
-				$tegen = $row->doelpunten_tegen;
-				
-			
-			}
+			$ustats = $this->get_teamstats($uitteamid);
 
-			
 			$uitupdate = array(
-				'gespeeld' => $gespeeld +1,
-				'verloren' => $verloren + 1,
-				'doelpunten_voor' => $voor + $uitslag['uit'],
-				'doelpunten_tegen' => $tegen + $uitslag['thuis']
+				'gespeeld' => $ustats['gespeeld'] +1,
+				'verloren' => $ustats['verloren'] + 1,
+				'doelpunten_voor' => $ustats['voor'] + $uitslag['uit'],
+				'doelpunten_tegen' => $ustats['tegen'] + $uitslag['thuis']
 				
 			
 			);
 			
 			$this->db->where('team_id', $uitteamid);
 			$this->db->update('korf_teams', $uitupdate);
-			
-		
-		
-		
 		}
 		
 		//uitteam wint////////////////////////////
@@ -961,45 +895,17 @@
 		$this->update_gewonnen($uitteamid);
 		$this->update_verloren($thuisteamid);
 		
-		//insert verslag
-			$insert = array(
-				'FK_wedstrijd_id' => $wedstrijdid,
-				'minuten' => $minuten,
-				'acties' => $acties,
-				'spelers' => $spelers,
-				'tussenstand' => $tussenstand,
-				'prestaties_thuisteam' => $prest_thuisteam,
-				'prestaties_uitteam' => $prest_uitteam,
-				'opstelling_thuisteam' => $opst_thuisteam,
-				'opstelling_uitteam' => $opst_uitteam,
-				'thuisteam_id' => $thuisteamid,
-				'uitteam_id' => $uitteamid
-			
-			);
-			
-			$this->db->insert('korf_verslagen', $insert);
-			
+		$this->overwinningenOpRij($thuisteamid, 0);
+		$this->overwinningenOpRij($uitteamid, 1);
+		
 			//haal de thuisteamgegevens op
-			$this->db->select('gespeeld, verloren, doelpunten_voor, doelpunten_tegen');
-			$this->db->from('korf_teams');
-			$this->db->where('team_id', $thuisteamid);
-			$thuisteamquery = $this->db->get();
-			
-			foreach($thuisteamquery->result() as $row)
-			{
-				$gespeeld = $row->gespeeld;
-				$verloren = $row->verloren;
-				$voor = $row->doelpunten_voor;
-				$tegen = $row->doelpunten_tegen;
-				
-			
-			}
+			$tstats = $this->get_teamstats($thuisteamid);
 			
 			$thuisupdate = array(
-				'gespeeld' => $gespeeld +1,
-				'verloren' => $verloren + 1,
-				'doelpunten_voor' => $voor + $uitslag['thuis'],
-				'doelpunten_tegen' => $tegen + $uitslag['uit']
+				'gespeeld' => $tstats['gespeeld'] +1,
+				'verloren' => $tstats['verloren'] + 1,
+				'doelpunten_voor' => $tstats['voor'] + $uitslag['thuis'],
+				'doelpunten_tegen' => $tstats['tegen'] + $uitslag['uit']
 				
 			
 			);
@@ -1008,29 +914,14 @@
 			$this->db->update('korf_teams', $thuisupdate);
 			
 			//haal de uitteamgegevens op
-			$this->db->select('gespeeld, gewonnen, doelpunten_voor, doelpunten_tegen, divisiepunten');
-			$this->db->from('korf_teams');
-			$this->db->where('team_id', $uitteamid);
-			$uitteamquery = $this->db->get();
-			
-			foreach($uitteamquery->result() as $row)
-			{
-				$gespeeld = $row->gespeeld;
-				$gewonnen = $row->gewonnen;
-				$voor = $row->doelpunten_voor;
-				$tegen = $row->doelpunten_tegen;
-				$punten = $row->divisiepunten;
-				
-			
-			}
+			$ustats = $this->get_teamstats($uitteamid);
 
-			
 			$uitupdate = array(
-				'gespeeld' => $gespeeld +1,
-				'gewonnen' => $gewonnen + 1,
-				'doelpunten_voor' => $voor + $uitslag['uit'],
-				'doelpunten_tegen' => $tegen + $uitslag['thuis'], 
-				'divisiepunten' => $punten + 2
+				'gespeeld' => $ustats['gespeeld'] +1,
+				'gewonnen' => $ustats['gewonnen'] + 1,
+				'doelpunten_voor' => $ustats['voor'] + $uitslag['uit'],
+				'doelpunten_tegen' => $ustats['tegen'] + $uitslag['thuis'], 
+				'divisiepunten' => $ustats['punten'] + 2
 				
 			
 			);
@@ -1052,6 +943,15 @@
 		$this->db->update('korf_wedstrijden', $einduitslag);
 		
     	}
+    	
+    	//achievements check
+    	$this->load->model('achievements_model');
+    	$this->achievements_model->aantal_matchen($thuisteamid);
+    	$this->achievements_model->aantal_matchen($uitteamid);
+    	
+    	$this->achievements_model->aantal_overwinningen($thuisteamid);
+    	$this->achievements_model->aantal_overwinningen($uitteamid);
+    	
     }
     
     function speler_stats($id, $hoofdskill, $positie){
@@ -1106,25 +1006,26 @@
 		
 		}
 		
-		function get_thuisteamstats($teamid){
-			$this->db->select('gespeeld, verloren, doelpunten_voor, doelpunten_tegen');
+		function get_teamstats($teamid){
+			$this->db->select('gespeeld, gewonnen, divisiepunten, verloren, doelpunten_voor, doelpunten_tegen, gelijk');
 			$this->db->from('korf_teams');
 			$this->db->where('team_id', $teamid);
 			$thuisteamquery = $this->db->get();
 			
 			foreach($thuisteamquery->result() as $row)
 			{
-				$tstats['gespeeld'] = $row->gespeeld;
-				$tstats['verloren'] = $row->verloren;
-				$tstats['voor'] = $row->doelpunten_voor;
-				$tstats['tegen'] = $row->doelpunten_tegen;
-				
+				$stats['gespeeld'] = $row->gespeeld;
+				$stats['verloren'] = $row->verloren;
+				$stats['gewonnen'] = $row->gewonnen;
+				$stats['voor'] = $row->doelpunten_voor;
+				$stats['tegen'] = $row->doelpunten_tegen;
+				$stats['punten'] = $row->divisiepunten;
+				$stats['gelijk'] =$row->gelijk;
 			
 			}
 
-			return $tstats;
+			return $stats;
 		}
-		
 		
 		
 		//update aantal gepseelde wedstrijden
@@ -1221,5 +1122,81 @@
 				$this->db->update('korf_teamstats',$update);
 			}
 		}
-
+		
+		
+		function overwinningenOpRij($teamid, $boolean){
+			if($boolean == 0){
+				$update = array(
+					'overwinningen_op_rij' => 0,
+				);
+				$this->db->where('FK_team_id', $teamid);
+				$this->db->update('korf_teamstats',$update);
+			
+			}else{
+				$this->db->select('overwinningen_op_rij');
+				$this->db->from('korf_teamstats');
+				$this->db->where('FK_team_id', $teamid);
+				$query = $this->db->get();
+				
+				if($query->num_rows() != 0){
+				foreach($query->result() as $row){
+					$oprij = $row->overwinningen_op_rij;
+				}
+			
+				$update = array(
+					'overwinningen_op_rij' => $oprij+1,
+				
+				);
+				
+				$this->db->where('FK_team_id', $teamid);
+				$this->db->update('korf_teamstats',$update);
+			
+				
+			
+			}
+			
+		}
+	}
+	
+	function wedstrijdinkomsten($teamid){
+		$this->db->select('*');
+		$this->db->from('korf_stadion');
+		$this->db->where('FK_team_id', $teamid);
+		$query = $this->db->get();
+		
+		if($query->num_rows() != 0){
+			foreach($query->result() as $row){
+				$plaatsena = $row->plaatsen_a;
+				$plaatsenb = $row->plaatsen_b;
+				$plaatsenc = $row->plaatsen_c;
+				$plaatsend = $row->plaatsen_d;
+				$plaatsene = $row->plaatsen_e;
+				$plaatsenf = $row->plaatsen_f;
+				$plaatseng = $row->plaatsen_g;
+				$plaatsenh = $row->plaatsen_h;
+			}
+		$totaalplaatsen = $plaatsena + $plaatsenb + $plaatsenc + $plaatsend + $plaatsene + $plaatsenf + $plaatseng + $plaatsenh;
+		
+		$inkomsten = 15 * (rand($totaalplaatsen-800, $totaalplaatsen)); // random aantal toeschouwers per wedstrijd
+		
+		$cron = $this->db->get('korf_cron');
+		
+		foreach($cron->result() as $crow){
+			$week = $crow->week;
+			$seizoen = $crow->seizoen;
+		}
+		
+		$update = array(
+			'wedstrijdinkomsten' => $inkomsten,
+		
+		);
+		
+		$this->db->where('FK_team_id', $teamid);
+		$this->db->where('week', $week);
+		$this->db->where('seizoen', $seizoen);
+		$this->db->update('korf_financien', $update);
+		
+		}
+	
+	}
 }

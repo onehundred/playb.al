@@ -29,7 +29,7 @@ class Cron extends CI_Controller {
 	function cron_test()
 	{
 		$this->load->model('match_engine');
-		$this->match_engine->update_gewonnen(1);
+		$this->match_engine->wedstrijdinkomsten(1);
 	
 	}
 	

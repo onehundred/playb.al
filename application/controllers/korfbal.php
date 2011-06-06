@@ -148,7 +148,6 @@ class Korfbal extends CI_Controller {
 		$this->load->model('korfbal_model');
 		
 		$data['spelers'] = $this->korfbal_model->get_spelers($team_id);
-		//$data['opstelling'] = $this->korfbal_model->get_opstelling($team_id);
 		
 		$team = $this->korfbal_model->get_team($team_id);
 		foreach($team->result() as $row)

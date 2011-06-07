@@ -1,44 +1,47 @@
+<script type="text/javascript">
+$.fn.cycle.defaults.timeout = 6000;
+$(function() {
+    // run the code in the markup!
+    $('table pre code').not('#skip,#skip2').each(function() {
+        eval($(this).text());
+    });
+    
+    $('#s4').after('<div id="nav" class="nav">').cycle({
+        fx:     'fade',
+        speed:  500,
+        timeout: 0,
+        next:   '#s4', 
+        pager:  '#nav'
+    });
+});
+
+function onBefore() {
+    $('#output').html("Scrolling image:<br>" + this.src);
+    //window.console.log(  $(this).parent().children().index(this) );
+}
+function onAfter() {
+    $('#output').html("Scroll complete for:<br>" + this.src)
+        .append('<h3>' + this.alt + '</h3>');
+}
+</script>
+
 <section class="register">
 <article>
-    <div class="makeAccount" style="display: ;">
-        <div id="main_signup">
-<!--             <h2>account aanmaken</h2> -->
-            <!-- <a href="#" id="makeAccountClose">sluiten</a> <a href="#" id="switchAccountToLogin">heb je al een account?</a> -->
-            <section id="">
-               <!--
- <figure class="stripe1"></figure>
-                <figure class="stripe2"></figure>
-                <figure class="stripe3"></figure>
--->
-                <fieldset>
-                    <legend>Personal Information</legend>
-                    <?php
-		$js= "onClick=this.value=''";
-		echo form_open('main/create_user');
-		echo form_input('voornaam', set_value('voornaam', 'First Name'), $js);
-		echo form_input('achternaam', set_value('achternaam', 'Last Name'), $js);
-		echo form_email('email', set_value('email', 'E-Mail'),$js);
-		#echo form_input('land', set_value('land', 'Country'),$js);
-	?>
-                </fieldset>
-                <fieldset>
-                   <!--  <legend>Login Info</legend> -->
-                    <?php	
-		echo form_input('username', set_value('username', 'Username'),$js);
-		echo form_input('paswoord', set_value('paswoord', 'Password'),$js);
-		echo form_input('paswoord2', set_value('paswoord2', 'Password confirm'),$js);
-		echo form_submit('submitsignup', 'Create account');
-		echo form_close();
-	?>
-                    <?php echo validation_errors('<p class="errors">');?>
-                </fieldset>
-          
+
+
+
+<div id="s4" class="pics">
+<iframe src="http://www.youtube.com/embed/zS_F4wE5kUs?rel=0" frameborder="0" allowfullscreen></iframe>
+            <div><img src="http://cloud.github.com/downloads/malsup/cycle/beach1.jpg" width="680" height="423" /></div>
+<div>            <img src="http://cloud.github.com/downloads/malsup/cycle/beach2.jpg" width="680" height="423" /></div>
+            <img src="http://cloud.github.com/downloads/malsup/cycle/beach3.jpg" width="680" height="423" />
+            <img src="http://cloud.github.com/downloads/malsup/cycle/beach4.jpg" width="680" height="423" />
+            <img src="http://cloud.github.com/downloads/malsup/cycle/beach5.jpg" width="680" height="423" />
+            <img src="http://cloud.github.com/downloads/malsup/cycle/beach6.jpg" width="680" height="423" />
+            <img src="http://cloud.github.com/downloads/malsup/cycle/beach7.jpg" width="680" height="423" />
+            <img src="http://cloud.github.com/downloads/malsup/cycle/beach8.jpg" width="680" height="423" />
         </div>
-    </div>
-    <!-- end makeAccount -->
-    <h1 id="tagline">manage jouw team</h1>
-    <h3>de leukste manier om eigen baas te spelen. </h3><h3>stel je club samen en klim naar de top van de eerste divisie.</h3>
-lorem ipsum dolor sit amet</h3>
+
 </article>
       </section>
     <section class="sports">

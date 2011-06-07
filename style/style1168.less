@@ -458,25 +458,39 @@ background-color: blue;
 background-color: yellow;
 }
 .gameLeft div:nth-child(1) {
-background-color: rgba(255,255,255, 0.6);
+background-color: rgba(255,255,255, 0.96);
 
 /*
 background: 
 		url(../images/triangles.png) no-repeat 0% 100%;
 */
-
-
-/*
 -webkit-box-shadow:   0px -10px 10px #bdbdbd;
 	-moz-box-shadow:  0px -10px 10px #bdbdbd;
-	box-shadow:  0px -7px 5px #bdbdbd;
-*/
+	box-shadow:  0px 0px 10px #CCC;
 
+-webkit-border-top-left-radius: 3px;
+-webkit-border-top-right-radius: 3px;
+-webkit-border-bottom-right-radius: 9px;
+-webkit-border-bottom-left-radius: 9px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-topright: 3px;
+-moz-border-radius-bottomright: 9px;
+-moz-border-radius-bottomleft: 9px;
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 9px;
+border-bottom-left-radius: 9px;
 
 }
-
+#testkalender {
+background: 
+		url(../img/1168/boxtop.png) no-repeat 0% 0%;
+}
 .gameLeft div:nth-child(1) section {
 /* .innerShadow; */
+.borderRadius;
+
+		
 /*
 background-color: rgba(255,255,255, 0.7);
 
@@ -514,36 +528,58 @@ background: #FFF;
 		url(../images/box_l.png) repeat-y 0 100%,
 		url(../images/box_l.png) repeat-y 100% 10px;
 */
+/*
+-webkit-box-shadow:   0px -10px 10px #bdbdbd;
+	-moz-box-shadow:  0px -10px 10px #bdbdbd;
+	box-shadow:  0px 0px 5px #444;
+*/
+.innerShadow;
 
-background: 
-		url(../images/triangles.png) no-repeat 0% 100%;
+	
+
 }
+
 .gameLeft div:nth-child(2):hover {
 
 
 }
 .gameLeft div:nth-child(2) section {
-background: 
-		url(../images/bg2.jpg) no-repeat 0% 0%;
+background-color: rgba(0,0,0,0.05);
 
 
 }
 .gameLeft div:nth-child(3) {
 background: 
-		url(../images/triangles.png) no-repeat 0% 100%;
+		url(../img/1168/boxtop.png) no-repeat 0% 0%;
 }
 
-.gameLeft div:nth-child(3) section {
-background-color: rgba(255,255,255, 0.7);
-.innerShadow;
+.gameLeft div:nth-child(4) section {
 
+background: 
+		url(../img/1168/boxtop_bw.png) no-repeat 0% 0%;
+/*
 
+-webkit-box-shadow:   0px -10px 10px #bdbdbd;
+	-moz-box-shadow:  0px -10px 10px #bdbdbd;
+	box-shadow:  0px 0px 5px #bdbdbd;
+*/
+	.transitionOff;
+		height: 50px;
+	margin-bottom: 100px;
+
+}
+.gameLeft div:nth-child(4) section:hover {
+background: 
+		url(../img/1168/boxtop.png) no-repeat 0% 0%;
+		.transitionOn;
 }
 .gameLeft div:nth-child(4) {
+background-color: rgba(255,255,255, 0.7);
 
 }
-.gameLeft div:nth-child(5) {
 
+.gameLeft div:nth-child(5) {
+background-color: rgba(245, 189, 24, 0.9);
 }
 .gameLeft div:nth-child(6) {
 
@@ -703,20 +739,24 @@ footer {
 /* FOOTER end -------------------------------------------------------------------------------------------------------------*/
 /* LAYOUTS start 	-------------------------------------------------------------------------------------------------------------*/
 .register {
-background-color: rgba(0,0,0,0.5);
+background-color: rgba(0,0,0,0.05);
 
-		border-bottom-width: 1px;
-		border-bottom-style: dotted;
-	border-right-color: #D9D9D9;
+	
+/*
+position: relative;
+top: -60px;
+*/
 
 }
 .register article {
-height: 300px;
+height: 475px;
 /* 	background-color: black; */
 /*  	background-image: url("../img/layouts_bg.png"); */
 .center1168;
 }
+#s4 {
 
+}
 #layouts p, #layouts figure {
 /* margin-top: 5px; */
 }
@@ -725,6 +765,7 @@ height: 300px;
 .sports {
 height: 500px;
 .center1168;
+
 }
 .sports figure {
 float: left;
@@ -764,8 +805,8 @@ margin: 50px;
 
 }
 iframe {
-width: 590px;
-height: 367px;
+width: 702px;
+height: 436px;
 
 }
 /* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
@@ -774,8 +815,9 @@ height: 367px;
 /* 	top: 0px; */
 	margin: 10px;
 	width: 290px;
-	height: 390px;
+	height: 260px;
 	.imageDown;
+
 }
 .korfbal:hover {
 
@@ -848,7 +890,7 @@ height: 367px;
 	padding: 25px;
 	-webkit-box-shadow:  0px 0px 10px #000;
 	-moz-box-shadow:  0px 0px 10px #bdbdbd;
-	box-shadow:  0px 0px 35px #999;
+	box-shadow:  0px 0px 100px #999;
 	background: #FFF; /* unsupported */	
 	background: url(../images/box_b2.png) repeat-x 0 100%, 
 				url(../images/box_l.png) repeat-y 0 100%, 

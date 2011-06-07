@@ -1,4 +1,4 @@
-<section id="layouts">
+<section class="sports">
     <figure class="korfbal">
         <h1>Korfbal</h1>
         <div id=""><p id="overview">team:</p>

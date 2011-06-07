@@ -417,7 +417,7 @@ alert (initHeight);
 $(function() {
     	$("#login").click(function () {
     	
-		$('.korfbal, .basketbal, .volleybal').animate({opacity: 0}, 1, 'linear').hide();
+		$('.korfbal, .basketbal, .volleybal, #s4').animate({opacity: 0}, 1, 'linear').hide();
 
 	
 	   	$('.login').show().animate({opacity: 1}, 1500, 'linear');	

@@ -189,10 +189,10 @@ class Json extends CI_Controller {
 		 $bedrag = $_POST['bedrag'];
 		 $speler_id = $_POST['spelerid'];
 		 $team_id = $_POST['teamid'];
-		 
+		 $positie = $_POST['positie'];
 		 
 		 $this->load->model('korfbal_model');
-		 $check = $this->korfbal_model->addTransfer($bedrag, $speler_id, $team_id);
+		 $check = $this->korfbal_model->addTransfer($bedrag, $speler_id, $team_id, $positie);
 		 
 		 //array omzetten naar json, gaat naar de succes function van de ajaxcall
 		 $arr = array('check' => $check);
@@ -270,6 +270,18 @@ class Json extends CI_Controller {
 		$json = json_encode($finances);
 		echo $json;
 
+	}
+	
+	function korfbal_transfers()
+	{
+		$positie = $_POST['positie'];
+		
+		$this->load->model('korfbal_model');
+		$transfers = $this->korfbal_model->get_transfers($positie);
+		$json = json_encode($transfers);
+		echo $json;
+
+	
 	}
 
 }

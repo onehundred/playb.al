@@ -352,17 +352,39 @@
 	}
 
 
-	function get_transfers()
+	function get_transfers($positie)
 	{
 
 		$this->db->select('*');
 		$this->db->from('korf_transfers');
 		$this->db->join('korf_spelers', 'FK_speler_id = speler_id');
 		$this->db->join('korf_teams','FK_hoogste_bieder = team_id');
+		if($positie != 'all'){
+			$this->db->where('positie', $positie);
+		}
+	
 		$this->db->order_by('deadline', 'asc');
 		$query = $this->db->get();
+		
+		$transfers = array();
+		
+		$i = 1;
+		foreach($query->result() as $row){
+			$transfers[$i]['spelernaam'] = $row->voornaam.' '.$row->achternaam;
+			$transfers[$i]['leeftijd'] = $row->leeftijd;
+			$transfers[$i]['geslacht'] = $row->geslacht;
+			$transfers[$i]['hoogste_bieder'] = $row->naam;
+			$transfers[$i]['positie'] = $row->positie;
+			$transfers[$i]['minimum_bod'] = $row->minimum_bod;
+			$transfers[$i]['huidig_bod'] = $row->huidig_bod;
+			$transfers[$i]['deadline'] = $row->deadline;
+			$transfers[$i]['spelerid'] = $row->speler_id;
+			$transfers[$i]['teamid'] = $row->team_id;
+		
+			$i++;
+		}
 
-		return $query;
+		return $transfers;
 	}
 	
 	function get_training($team_id)
@@ -656,7 +678,7 @@
 	}
 
 
-	function addTransfer($minimum, $spelerid, $team_id)
+	function addTransfer($minimum, $spelerid, $team_id, $positie)
 	{
 
 
@@ -677,7 +699,8 @@
 				'minimum_bod' => $minimum,
 				'FK_speler_id' => $spelerid,
 				'deadline' => $deadline,
-				'FK_hoogste_bieder' => $team_id
+				'FK_hoogste_bieder' => $team_id, 
+				'positie' => $positie,
 
 			);
 

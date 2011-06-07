@@ -263,9 +263,6 @@ class Korfbal extends CI_Controller {
 		$data['team_id'] = $team_id;	
 		$this->load->model('korfbal_model');
 		
-		$data['transfers'] = $this->korfbal_model->get_transfers();
-		
-		
 		$team = $this->korfbal_model->get_team($team_id);
 		foreach($team->result() as $row)
 		{
@@ -299,6 +296,8 @@ class Korfbal extends CI_Controller {
 		$data['main_content'] = 'korfbal/korfbal_training';
 		$this->load->view('korfbal/includes/template', $data);
 	}
+	
+	
 			
 }
 

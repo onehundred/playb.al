@@ -53,16 +53,21 @@ $(function(){
 $("#transfer").submit(function(){ 
 
 		var bedrag = document.getElementById('bedrag').value;
+		if(bedrag == ''){
+			alert('U moet een minimum bedrag invullen');
+		}else{
+		
 		var spelerid = document.getElementById('spelerid').value;
 		var teamid = document.getElementById('teamid').value;
+		var positie = $("#positie option:selected").text();
 
-		//alert (spelerid); 
             $.ajax({
     			type: "POST",
     			url: "http://playb.al/index.php/Json/korfbal_addTransfer",
     			data: { bedrag: bedrag,
             			spelerid: spelerid,
-            			teamid : teamid
+            			teamid : teamid,
+            			positie : positie
             			
         				},
         		dataType: "json",
@@ -83,6 +88,8 @@ $("#transfer").submit(function(){
       
                 }
   				});
+  				
+  		}		
        });  
    });  
   
@@ -126,6 +133,12 @@ $("#transfer").submit(function(){
         <form id="transfer" onsubmit="return false;">
             <label>Vraagprijs:</label>
             <input type="text" id="bedrag" name="bedrag"/>
+         	<select id="positie">
+         		<option value="aanvaller">Aanvaller</option>
+         		<option value="spelmaker">Spelmaker</option>
+         		<option value="rebounder">Rebounder</option>
+         	
+         	</select>
             <input type="hidden" id="spelerid" value="<?php echo $row->speler_id;?>"/>
             <input type="hidden" id="teamid" value="<?php echo $teamid;?>"/>
             <input type="submit" name="transfer"/>

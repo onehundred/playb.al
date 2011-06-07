@@ -1,12 +1,15 @@
-<section id="layouts">
-    <div class="makeAccount" style="display: none;">
+<section class="register">
+<article>
+    <div class="makeAccount" style="display: ;">
         <div id="main_signup">
-            <h2>account aanmaken</h2>
-            <a href="#" id="makeAccountClose">sluiten</a> <a href="#" id="switchAccountToLogin">heb je al een account?</a>
-            <section id="layouts">
-                <figure class="stripe1"></figure>
+<!--             <h2>account aanmaken</h2> -->
+            <!-- <a href="#" id="makeAccountClose">sluiten</a> <a href="#" id="switchAccountToLogin">heb je al een account?</a> -->
+            <section id="">
+               <!--
+ <figure class="stripe1"></figure>
                 <figure class="stripe2"></figure>
                 <figure class="stripe3"></figure>
+-->
                 <fieldset>
                     <legend>Personal Information</legend>
                     <?php
@@ -15,11 +18,11 @@
 		echo form_input('voornaam', set_value('voornaam', 'First Name'), $js);
 		echo form_input('achternaam', set_value('achternaam', 'Last Name'), $js);
 		echo form_email('email', set_value('email', 'E-Mail'),$js);
-		echo form_input('land', set_value('land', 'Country'),$js);
+		#echo form_input('land', set_value('land', 'Country'),$js);
 	?>
                 </fieldset>
                 <fieldset>
-                    <legend>Login Info</legend>
+                   <!--  <legend>Login Info</legend> -->
                     <?php	
 		echo form_input('username', set_value('username', 'Username'),$js);
 		echo form_input('paswoord', set_value('paswoord', 'Password'),$js);
@@ -29,12 +32,18 @@
 	?>
                     <?php echo validation_errors('<p class="errors">');?>
                 </fieldset>
-            </section>
+          
         </div>
     </div>
     <!-- end makeAccount -->
+    <h1 id="tagline">manage jouw team</h1>
+    <h3>de leukste manier om eigen baas te spelen. </h3><h3>stel je club samen en klim naar de top van de eerste divisie.</h3>
+lorem ipsum dolor sit amet</h3>
+</article>
+      </section>
+    <section class="sports">
     <figure class="korfbal">
-        <img id="korfbalbg" style="display:none"; src="<?php echo base_url();?>img/korfbalbg.png"/>
+        <img id="korfbalbg" src="<?php echo base_url();?>img/korfbalbg.png"/>
         <div class="startgame">
             <h1>korfbal</h1>
             <a href="#" id="startKorfbal">start</a> </div>
@@ -65,7 +74,6 @@
     <!-- end volleybal -->
 
 </section>
-<h1 id="tagline">manage jouw team.</h1>
 
 
 
@@ -74,11 +82,10 @@
 
 
 
-<section id="bottom"> </section>
-
-<!--
-    <div class="bottomButtons"> 
-                <div class="light"><a href="#">hoe werkt het</a></div>
-        <div class="question"><a href="#">bekijk demo</a></div> 
-    </div>
--->
+    <section class="gallery">
+    <article>
+    <div id="goleft"></div>
+    <div class="slider"></div>
+    <div id="goright"></div>
+</article>
+</section>

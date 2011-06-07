@@ -64,4 +64,4 @@
         <img src="<?php echo base_url();?>img/volleybal.png" id="volleybal" ondragstart="return false" />
     </figure>
 </section>
-<h1 id="tagline">manage jouw team.</h1>
+<!-- <h1 id="tagline">manage jouw team.</h1> -->

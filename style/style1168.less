@@ -103,13 +103,13 @@ cursor: default;
 }
 .lighter {
 background: #f2f2f2; /* Old browsers */
-background: -moz-linear-gradient(left, rgba(242,242,242,0.75) 0%, rgba(255,255,255,0.75) 50%, rgba(242,242,242,0.75) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(242,242,242,0.75)), color-stop(50%,rgba(255,255,255,0.75)), color-stop(100%,rgba(242,242,242,0.75))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left, rgba(242,242,242,0.75) 0%,rgba(255,255,255,0.75) 50%,rgba(242,242,242,0.75) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left, rgba(242,242,242,0.75) 0%,rgba(255,255,255,0.75) 50%,rgba(242,242,242,0.75) 100%); /* Opera11.10+ */
-background: -ms-linear-gradient(left, rgba(242,242,242,0.75) 0%,rgba(255,255,255,0.75) 50%,rgba(242,242,242,0.75) 100%); /* IE10+ */
+background: -moz-linear-gradient(left, rgba(242,242,242,0.075) 0%, rgba(255,255,255,0.75) 50%, rgba(242,242,242,0.075) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(242,242,242,0.075)), color-stop(50%,rgba(255,255,255,0.75)), color-stop(100%,rgba(242,242,242,0.075))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, rgba(242,242,242,0.075) 0%,rgba(255,255,255,0.95) 50%,rgba(242,242,242,0.075) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, rgba(242,242,242,0.075) 0%,rgba(255,255,255,0.75) 50%,rgba(242,242,242,0.075) 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(left, rgba(242,242,242,0.075) 0%,rgba(255,255,255,0.75) 50%,rgba(242,242,242,0.075) 100%); /* IE10+ */
 /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(242,242,242,0.75)', endColorstr='rgba(242,242,242,0.75)',GradientType=1 ); */ /* IE6-9 */
-background: linear-gradient(left, rgba(242,242,242,0.75) 0%,rgba(255,255,255,0.75) 50%,rgba(242,242,242,0.75) 100%); /* W3C */
+background: linear-gradient(left, rgba(242,242,242,0.075) 0%,rgba(255,255,255,0.75) 50%,rgba(242,242,242,0.075) 100%); /* W3C */
 
 }
 /* LESS GLOBALS end */
@@ -123,14 +123,11 @@ body {
 	
 }
 #headerWrap {
-height: 40px;
-/* background: url(../images/headerWrap_bg.png)repeat 0 0; */
-background: #d44255; /* Old browsers */
+height: 55px;
+background: url(../img/top.png);
+background-repeat: repeat-x;
 
 
-	-webkit-box-shadow:  0px 0px 10px #444;
-	-moz-box-shadow: 0px 0px 10px #bdbdbd;
-	box-shadow: 0px 0px 10px #444;
 margin: 0 0 15px 0;
 
 }
@@ -184,6 +181,11 @@ footer {
 #tagline {
 	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
 	font-size: 62px;
+}
+.makeAccount {
+float: right;
+width: 285px;
+
 }
 h2 {
 	font-family: 'LeagueGothicRegular';
@@ -646,18 +648,15 @@ position: relative;
 /* DIVISION end -----------------------------------------------------------------------------------------------------------*/
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footerWrap {
-background-color: rgba(0,0,0,0.25);
-	z-index: -999;
+
+
 		float: left;
 		width: 100%;
+background-image: url(../img/footerfill.png);
 
 }
-#footer {
-
-	background: #FFF; /* unsupported */
-	background: 
-				url(../img/footer_down.png) repeat-x 0 0;
-
+#footer img {
+	width: 100%;
 
 
 
@@ -665,6 +664,10 @@ background-color: rgba(0,0,0,0.25);
 	margin-top: 30px;
 	padding-top: 25px;
 */
+
+}
+footer {
+
 
 }
 #footer h2 {
@@ -675,10 +678,10 @@ background-color: rgba(0,0,0,0.25);
 	text-shadow: 0px 2px 3px #FFF;
 }
 #footerLeft, #footerCenter, #footerRight {
-	padding-left: 35px;
-	padding-right: 35px;
+/* 	padding-left: 35px; */
+	padding-right: 100px;
 	width: 250px;
-	margin-bottom: 25px;
+/* 	margin-bottom: 25px; */
 	font-size: 16px;
 }
 #footerLeft {
@@ -694,12 +697,21 @@ background-color: rgba(0,0,0,0.25);
 	border-left-color: #D9D9D9;
 }
 #footerRight {
-	margin-left: 45px;
+	margin-left: 5px;
+	width: 290px;
 }
 /* FOOTER end -------------------------------------------------------------------------------------------------------------*/
 /* LAYOUTS start 	-------------------------------------------------------------------------------------------------------------*/
-#layouts {
-height: 375px;
+.register {
+background-color: rgba(0,0,0,0.5);
+
+		border-bottom-width: 1px;
+		border-bottom-style: dotted;
+	border-right-color: #D9D9D9;
+
+}
+.register article {
+height: 300px;
 /* 	background-color: black; */
 /*  	background-image: url("../img/layouts_bg.png"); */
 .center1168;
@@ -710,39 +722,85 @@ height: 375px;
 }
 #layouts figure {
 }
+.sports {
+height: 500px;
+.center1168;
+}
+.sports figure {
+float: left;
+
+}
+.gallery {
+
+
+}
+.gallery article {
+.center1168;
+height: 400px;
+}
+.gallery div {
+float: left;
+}
+
+.slider {
+width: 590px;
+background-color: black;
+height: 100px;
+
+
+}
+#goleft {
+width: 150px;
+height: 50px;
+background-color: aqua;
+margin: 50px;
+
+}
+#goright {
+background-color: aqua;
+height: 50px;
+width: 15px;
+margin: 50px;
+
+}
+iframe {
+width: 590px;
+height: 367px;
+
+}
 /* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
 
 .korfbal {
-	top: 85px;
+/* 	top: 0px; */
 	margin: 10px;
 	width: 290px;
 	height: 390px;
 	.imageDown;
 }
 .korfbal:hover {
-top: 85px;
+
 	.imageUp;
 }
 .basketbal {
-	top: 85px;
+/* 	top: 85px; */
 	width: 290px;
 	height: 390px;
 	margin: 10px 0 0 130px;
 	.imageDown;
 }
 .basketbal:hover {
- 	top: 85px;
+/*  	top: 85px; */
 	.imageUp;
 }
 .volleybal {
-	top: 85px;
+/* 	top: 85px; */
 	width: 290px;
 	height: 390px;
 	margin: 10px 0 0 140px;
 	.imageDown;
 }
 .volleybal:hover {
- 	top: 85px;
+/*  	top: 85px; */
 	.imageUp;
 }
 #korfbal{

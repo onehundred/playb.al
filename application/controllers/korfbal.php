@@ -299,6 +299,8 @@ class Korfbal extends CI_Controller {
 		$data['main_content'] = 'korfbal/korfbal_training';
 		$this->load->view('korfbal/includes/template', $data);
 	}
+	
+	
 			
 }
 

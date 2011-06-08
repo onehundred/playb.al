@@ -27,7 +27,10 @@
             <p></p>
         </div>
         <div id="footerRight">
+         
+         
             <h2>playb.al op twitter</h2>
+            <div id="twitter"></div>
             <li><a href="http://www.facebook.com/pages/playbal/165137856877547">connect with us on facebook</a></li>
             <li>follow on twitter</li>
             <li>test</li>
@@ -42,8 +45,12 @@
     progid:DXImageTransform.Microsoft.Wheel(duration=3);">
         Blurry text with smudge of gray.</DIV>   
 -->  
- 
+
 </footer>
+<script src="<?php echo base_url();?>js/jquery.zrssfeed.min.js"></script>
+<script type="text/javascript"> 
+$('#twitter').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=07185e6fedce25a36a4b39cd537f98e1&_render=rss', {    limit: 1  });
+</script>
 </section> <!-- end footerWrap -->
 <?php include_once ("analytics.php") ?>
 <script type="text/javascript" charset="utf-8">

@@ -1,8 +1,8 @@
 <script>
 $(document).ready(function(){
 	$('#loginform').submit(function() {
-  		var username = $('#username').val();
-  		var password = $('#password').val();
+  		var username = $('#login_username').val();
+  		var password = $('#login_password').val();
   		
   		if(username == '' || password == ''){
   			$('.login').effect('shake', { times:3 }, 80);
@@ -66,7 +66,7 @@ $(document).ready(function(){
 		    			echo("<p>gebruikersnaam of e-mail adres</p>");
 		    			$userdata = array(
 			              'name'        => 'username',
-			              'id'          => 'username',
+			              'id'          => 'login_username',
 			              'value'       => '',
 			          	);
 
@@ -74,7 +74,7 @@ $(document).ready(function(){
 		 				echo("<p>paswoord</p>");
 		 				$passdata = array(
 			              'name'        => 'password',
-			              'id'          => 'password',
+			              'id'          => 'login_password',
 			              'value'       => '',
 			          	);
 						echo form_password($passdata);

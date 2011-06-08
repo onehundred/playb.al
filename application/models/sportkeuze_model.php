@@ -61,9 +61,21 @@
     }
     
     
+    function check_teamnaam($teamnaam)
+    {
+    	$this->db->where('naam', $teamnaam);
+		$query = $this->db->get('korf_teams');
+		
+		if($query->num_rows() != 0){
+			return false;
+		
+		}else{
+			return true;
+		}
     
+    }
     //maakt het korfbalteam aan
-    function create_korfbalteam()
+    function create_korfbalteam($teamnaam)
     {
     
     	$user_id = $this->session->userdata('user_id');    	
@@ -83,7 +95,7 @@
     	    	
     	    	
     	$new_team_update_data = array(
-    		'naam' => $this->input->post('teamnaam'),
+    		'naam' => $teamnaam,
     		'FK_user_id' => $user_id,
     		'startdatum' => $mdate, 
     		'bot' => '1'
@@ -97,7 +109,7 @@
     }
     
     //maakt het korfbalstadion aan
-    function create_korfbalstadion()
+    function create_korfbalstadion($stadionnaam)
     {
     
     $user_id = $this->session->userdata('user_id');
@@ -114,7 +126,7 @@
     	}
     	
     	$new_stadion_insert_data = array(
-    		'naam' => $this->input->post('stadionnaam'),
+    		'naam' => $stadionnaam,
     		'plaatsen_a' => rand(500,2000), 
     		'FK_team_id' => $team_id
     		

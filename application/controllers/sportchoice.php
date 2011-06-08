@@ -136,22 +136,30 @@ class Sportchoice extends CI_Controller {
 	
 	}
 	
+	function check_teamnaam(){
+		$teamnaam = $_POST['teamnaam'];
+		
+		$this->load->model('sportkeuze_model');
+		$check = $this->sportkeuze_model->check_teamnaam($teamnaam);
+		
+		echo json_encode($check);
+		
+	
+	}
+	
+	function korfbalsignup_success(){
+		$data['main_content'] = 'korfbal/korfbal_signup_succesful';
+		$this->load->view('includes/template', $data);
+	
+	}
+	
 	function create_korfbalteam()
 	{
-		$this->load->library('form_validation');
-		//field name, error message, validation rules
-			
-			$this->form_validation->set_rules('teamnaam', 'Team Name', 'trim|required');
-			$this->form_validation->set_rules('stadionnaam', 'Arena Name', 'trim|required');
-			
-			
-			if($this->form_validation->run() == FALSE)
-			{
-				$this->korfbal_signup();
-			}
-			else{
+		$teamnaam = $_POST['teamnaam'];
+		$stadionnaam = $_POST['stadionnaam'];
+	
 				$this->load->model('sportkeuze_model');
-				if($query = $this->sportkeuze_model->create_korfbalteam())
+				if($query = $this->sportkeuze_model->create_korfbalteam($teamnaam))
 				{
 					for($i=0;$i<6;$i++)
     	    			{
@@ -179,20 +187,15 @@ class Sportchoice extends CI_Controller {
 					
 					$this->sportkeuze_model->create_korfbalfinancien();	
 						//creatie stadion
-    	    		$this->sportkeuze_model->create_korfbalstadion();
+    	    		$this->sportkeuze_model->create_korfbalstadion($stadionnaam);
     	    			//creatie teamstats
     	    		$this->sportkeuze_model->create_korfbalteamstats();
-    	    			
-					$data['main_content'] = 'korfbal/korfbal_signup_succesful';
-					$this->load->view('includes/template', $data);
+    	    		
+    	    		$done = true;
+    	    		echo json_encode($done);
+					
 				}
-				else{
-					$this->korfbal_signup();
-				}
-			}
-		
-
-	
+				
 	}
 	
 	

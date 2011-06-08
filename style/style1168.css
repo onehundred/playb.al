@@ -15,8 +15,8 @@
 .cursor{cursor:default;}
 .lighter{background:#f2f2f2;background:-moz-linear-gradient(left, rgba(242, 242, 242, 0.075) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(242, 242, 242, 0.075) 100%);background:-webkit-gradient(linear, left top, right top, color-stop(0%, rgba(242, 242, 242, 0.075)), color-stop(50%, rgba(255, 255, 255, 0.75)), color-stop(100%, rgba(242, 242, 242, 0.075)));background:-webkit-linear-gradient(left, rgba(242, 242, 242, 0.075) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(242, 242, 242, 0.075) 100%);background:-o-linear-gradient(left, rgba(242, 242, 242, 0.075) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(242, 242, 242, 0.075) 100%);background:-ms-linear-gradient(left, rgba(242, 242, 242, 0.075) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(242, 242, 242, 0.075) 100%);background:linear-gradient(left, rgba(242, 242, 242, 0.075) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(242, 242, 242, 0.075) 100%);}
 body{width:100%;}
-#headerWrap{height:55px;background:url(../img/top.png);background-repeat:repeat-x;margin:0 0 15px 0;}
-header{height:55px;width:1168px;margin:0 auto 0 auto;}
+header{height:55px;background:url(../img/top.png);background-repeat:repeat-x;}
+#header{width:1168px;margin:0 auto 0 auto;}
 #logo{width:113px;height:33px;}
 footer{width:1168px;margin:0 auto 0 auto;}
 .korfbal h1,.basketbal h1,.volleybal h1{padding:0px 0 0px 15px;font-size:48px;}
@@ -51,7 +51,7 @@ h2{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#666;}
 .playerFemale section:nth-child(2),.playerFemale section:nth-child(4),.playerFemale section:nth-child(6),.playerFemale section:nth-child(8),.playerMale section:nth-child(2),.playerMale section:nth-child(4),.playerMale section:nth-child(6),.playerMale section:nth-child(8){display:none;}
 .rebound,.passing,.stamina,.shotprecision,.playmaking,.shotpower,.intercepting,.leadership{display:inline;}
 .gameRight #skillTitle{display:inline;}
-aside{background:url(../img/400-4.png) repeat 0% 0%;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;-webkit-box-shadow:inset 0px 0px 10px #bdbdbd;-moz-box-shadow:inset 0px 0px 10px #bdbdbd;box-shadow:inset 0px 0px 10px #bdbdbd;}
+aside{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;}
 .gameLeft{width:390px;font-size:15px;margin:20px 15px 0 0px;}
 .gameLeft ul,.gameLeft li{list-style-type:none;display:inline;}
 .gameLeft h2{font-size:32px;font-weight:normal;letter-spacing:0	1px;color:#888;padding:0 0 0 10px;}
@@ -63,7 +63,7 @@ aside{background:url(../img/400-4.png) repeat 0% 0%;border-radius:3px;-moz-borde
 .gameLeft table tr:nth-child(2){background-color:red;}
 .gameLeft table tr:nth-child(3){background-color:blue;}
 .gameLeft table tr:nth-child(4){background-color:yellow;}
-.gameLeft div:nth-child(1){background-color:rgba(255, 255, 255, 0.96);-webkit-box-shadow:0px -10px 10px #bdbdbd;-moz-box-shadow:0px -10px 10px #bdbdbd;box-shadow:0px 0px 10px #CCC;-webkit-border-top-left-radius:3px;-webkit-border-top-right-radius:3px;-webkit-border-bottom-right-radius:9px;-webkit-border-bottom-left-radius:9px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;border-right-width:1px;border:1px solid #B3B3B3;}
+.gameLeft div:nth-child(1){background-color:rgba(255, 255, 255, 0.96);-webkit-box-shadow:0px -10px 10px #bdbdbd;-moz-box-shadow:0px -10px 10px #bdbdbd;box-shadow:0px 0px 8px #999;-webkit-border-top-left-radius:3px;-webkit-border-top-right-radius:3px;-webkit-border-bottom-right-radius:9px;-webkit-border-bottom-left-radius:9px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;border:8px solid #FFF;}
 #testkalender{background:url(../img/1168/boxtop_bw.png) no-repeat 0% 0%;height:60px;}
 .gameLeft div:nth-child(1) section{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;}
 .gameLeft div:nth-child(2){-webkit-box-shadow:inset 0px 0px 10px #bdbdbd;-moz-box-shadow:inset 0px 0px 10px #bdbdbd;box-shadow:inset 0px 0px 10px #bdbdbd;}

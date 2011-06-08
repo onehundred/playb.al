@@ -1,52 +1,41 @@
-<script type="text/javascript">
-$.fn.cycle.defaults.timeout = 6000;
-$(function() {
-    // run the code in the markup!
-    $('table pre code').not('#skip,#skip2').each(function() {
-        eval($(this).text());
-    });
-    
-    $('#s4').after('<div id="nav" class="nav">').cycle({
-        fx:     'fade',
-        speed:  500,
-        timeout: 0,
-        next:   '#s4', 
-        pager:  '#nav'
-    });
-});
-
-function onBefore() {
-    $('#output').html("Scrolling image:<br>" + this.src);
-    //window.console.log(  $(this).parent().children().index(this) );
-}
-function onAfter() {
-    $('#output').html("Scroll complete for:<br>" + this.src)
-        .append('<h3>' + this.alt + '</h3>');
-}
-</script>
-
-<section class="register">
-<article>
-
-
-
-<div id="s4" class="pics">
-<iframe src="http://www.youtube.com/embed/zS_F4wE5kUs?rel=0" frameborder="0" allowfullscreen></iframe>
-            <div><img src="http://cloud.github.com/downloads/malsup/cycle/beach1.jpg" width="680" height="423" /></div>
-<div>            <img src="http://cloud.github.com/downloads/malsup/cycle/beach2.jpg" width="680" height="423" /></div>
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach3.jpg" width="680" height="423" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach4.jpg" width="680" height="423" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach5.jpg" width="680" height="423" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach6.jpg" width="680" height="423" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach7.jpg" width="680" height="423" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach8.jpg" width="680" height="423" />
+<section id="layouts">
+    <div class="makeAccount" style="display: none;">
+        <div id="main_signup">
+            <h2>account aanmaken</h2>
+            <a href="#" id="makeAccountClose">sluiten</a> <a href="#" id="switchAccountToLogin">heb je al een account?</a>
+            <section id="layouts">
+                <figure class="stripe1"></figure>
+                <figure class="stripe2"></figure>
+                <figure class="stripe3"></figure>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <?php
+		$js= "onClick=this.value=''";
+		$attributes = array('id'=> 'signupform');
+		echo form_open('#',$attributes);
+		echo form_input('voornaam', set_value('voornaam', 'First Name'), $js);
+		echo form_input('achternaam', set_value('achternaam', 'Last Name'), $js);
+		echo form_email('email', set_value('email', 'E-Mail'),$js);
+		echo form_input('land', set_value('land', 'Country'),$js);
+	?>
+                </fieldset>
+                <fieldset>
+                    <legend>Login Info</legend>
+                    <?php	
+		echo form_input('username', set_value('username', 'Username'),$js);
+		echo form_input('paswoord', set_value('paswoord', 'Password'),$js);
+		echo form_input('paswoord2', set_value('paswoord2', 'Password confirm'),$js);
+		echo form_submit('submitsignup', 'Create account');
+		echo form_close();
+	?>
+                    <?php echo validation_errors('<p class="errors">');?>
+                </fieldset>
+            </section>
         </div>
-
-</article>
-      </section>
-    <section class="sports">
+    </div>
+    <!-- end makeAccount -->
     <figure class="korfbal">
-        <img id="korfbalbg" src="<?php echo base_url();?>img/korfbalbg.png"/>
+        <img id="korfbalbg" style="display:none"; src="<?php echo base_url();?>img/korfbalbg.png"/>
         <div class="startgame">
             <h1>korfbal</h1>
             <a href="#" id="startKorfbal">start</a> </div>
@@ -77,6 +66,7 @@ function onAfter() {
     <!-- end volleybal -->
 
 </section>
+<h1 id="tagline">manage jouw team.</h1>
 
 
 
@@ -85,10 +75,11 @@ function onAfter() {
 
 
 
-    <section class="gallery">
-    <article>
-    <div id="goleft"></div>
-    <div class="slider"></div>
-    <div id="goright"></div>
-</article>
-</section>
+<section id="bottom"> </section>
+
+<!--
+    <div class="bottomButtons"> 
+                <div class="light"><a href="#">hoe werkt het</a></div>
+        <div class="question"><a href="#">bekijk demo</a></div> 
+    </div>
+-->

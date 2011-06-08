@@ -9,6 +9,7 @@
 <legend>Personal Information</legend>	
 	<?php
 		$js= "onClick=this.value=''";
+		//onblur => dezelfde value
 		echo form_open('main/create_user');
 		echo form_input('voornaam', set_value('voornaam', 'First Name'), $js);
 		echo form_input('achternaam', set_value('achternaam', 'Last Name'), $js);

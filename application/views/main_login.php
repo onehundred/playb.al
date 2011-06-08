@@ -18,7 +18,7 @@ $(document).ready(function(){
     			dataType: "json",
         		success: function(data){
         			if(data == 'false'){
-        				$('.login').effect('shake', { times:3 }, 200);
+        				$('.login').effect('shake', { times:3 }, 80);
         			
         			}else{
         				window.location = '../../index.php/sportchoice/sport';

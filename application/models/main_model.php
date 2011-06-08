@@ -33,26 +33,54 @@
     }
     
     
-    function create_user()
+    function create_user($username, $paswoord, $voornaam, $achternaam, $email)
     {
     	
 
 		$mdate =  date('Y-m-d h:i:s');
 		
     	$new_user_insert_data = array(
-    		'voornaam' => $this->input->post('voornaam'),
-    		'achternaam' => $this->input->post('achternaam'),
-    		'email' => $this->input->post('email'),
-    		'land' => $this->input->post('land'),
-    		'gebruikersnaam' => $this->input->post('username'),
-    		
-    		'paswoord' => md5($this->input->post('paswoord')),
+    		'voornaam' => $voornaam,
+    		'achternaam' => $achternaam,
+    		'email' => $email,
+    		'gebruikersnaam' => $username,
+    		'paswoord' => md5($paswoord),
     		'datum_creatie' => $mdate
     	
     	);
     	
     	$insert = $this->db->insert('users', $new_user_insert_data);
     	return $insert;
+    
+    }
+    
+    function check_username($username, $email){
+    	$check = array();
+    
+    	$this->db->where('gebruikersnaam', $username);
+    	$query = $this->db->get('users');
+    	
+    	if($query->num_rows() != 0){
+    		$check['username'] = false;
+     	
+    	}else{
+    		$check['username'] = true;
+     	
+    	}
+    	
+    	
+    	$this->db->where('email', $email);
+    	$query2 = $this->db->get('users');
+    	
+    	if($query2->num_rows() != 0){
+    		$check['email'] = false;
+     	
+    	}else{
+    		$check['email'] = true;
+     	
+    	}
+    	
+    	return $check;
     
     }
 			

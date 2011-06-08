@@ -6,10 +6,10 @@
     }
     
     
-    function validate()
+    function validate($username, $password)
     {
-    	$this->db->where('gebruikersnaam', $this->input->post('username'));
-    	$this->db->where('paswoord', md5($this->input->post('password')));
+    	$this->db->where('gebruikersnaam', $username);
+    	$this->db->where('paswoord', md5($password));
     	
     	$query1 = $this->db->get('users');
     	

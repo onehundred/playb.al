@@ -1,3 +1,37 @@
+<script>
+$(document).ready(function(){
+	$('#loginform').submit(function() {
+  		var username = $('#username').val();
+  		var password = $('#password').val();
+  		
+  		if(username == '' || password == ''){
+  			$('.login').effect('shake', { times:3 }, 80);
+  		}else{
+  		
+  			$.ajax({
+    			type: "POST",
+    			url: "../../index.php/main/login",
+    			data:  { username: username,
+            			 password: password,    
+            			
+        				},
+    			dataType: "json",
+        		success: function(data){
+        			if(data == 'false'){
+        				$('.login').effect('shake', { times:3 }, 200);
+        			
+        			}else{
+        				window.location = '../../index.php/sportchoice/sport';
+        			
+        			}
+  				}
+  		
+  			});
+  		}
+  		return false;
+	});
+});
+</script>
 <div id="login">
     <li class="menu_right"> <a href="#" id="profile" class=""> 
         <?php $username = $this->session->userdata('username'); if(isset($username)){ echo $username;} ?>
@@ -27,12 +61,23 @@
     
     <div class="login" style="display: none; opacity: 0;"><a href="#" id="closeLogin">sluiten</a>
         <?php
-                        
-						echo form_open('main/login');
+                        $attributes = array('id'=>'loginform');
+						echo form_open('#', $attributes);
 		    			echo("<p>gebruikersnaam of e-mail adres</p>");
-						echo form_input('username', '');
+		    			$userdata = array(
+			              'name'        => 'username',
+			              'id'          => 'username',
+			              'value'       => '',
+			          	);
+
+						echo form_input($userdata);
 		 				echo("<p>paswoord</p>");
-						echo form_password('password', '');
+		 				$passdata = array(
+			              'name'        => 'password',
+			              'id'          => 'password',
+			              'value'       => '',
+			          	);
+						echo form_password($passdata);
 		    			echo("<p ></p>");
 						/* todo paswoord vergeten functionaliteit */
 		    			echo("<p >paswoord vergeten?</p>");

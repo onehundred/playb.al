@@ -19,24 +19,32 @@ function start(id)
 	
 	
     
-	spelers[0] = new Speler1(390,200,10,"#0D0","1");
-	spelers[1] = new Speler1(250,60,10, "#0D0","50");
-	spelers[2] = new Speler1(190,340,10,"#0D0","80");
-	spelers[3] = new Speler1(70,200, 10, "#0D0","43")
+	spelers[0] = new Speler1((WIDTH/2)-15,HEIGHT/2,10,"#0D0","1");
+	spelers[1] = new Speler1((WIDTH/100)*30,(HEIGHT/100)*18,10, "#0D0","50");
+	spelers[2] = new Speler1((WIDTH/100)*24,(HEIGHT/100)*85,10,"#0D0","80");
+	spelers[3] = new Speler1((WIDTH/100)*5,(HEIGHT/100)*50, 10, "#0D0","43");
+	spelers[4] = new Speler1((WIDTH/2)+40,HEIGHT/2,10,"#0D0","1");
+	spelers[5] = new Speler1((WIDTH/100)*73,(HEIGHT/100)*18,10,"#0D0","1");
+	spelers[6] = new Speler1((WIDTH/100)*79,(HEIGHT/100)*85,10,"#0D0","1");
+	spelers[7] = new Speler1((WIDTH/100)*93,(HEIGHT/100)*50,10,"#0D0","1");
 	
-	tegenstanders[0] = new Speler1(360,200,10,"#FD0","2");
-	tegenstanders[1] = new Speler1(220,60,10, "#FD0","3");
-	tegenstanders[2] = new Speler1(160,340,10,"#FD0","5");
-	tegenstanders[3] = new Speler1(40,200, 10, "#FD0","11");
+	tegenstanders[0] = new Speler1((WIDTH/2)-40,HEIGHT/2,10,"#FD0","2");
+	tegenstanders[1] = new Speler1((WIDTH/100)*27,(HEIGHT/100)*18,10, "#FD0","3");
+	tegenstanders[2] = new Speler1((WIDTH/100)*21,(HEIGHT/100)*85,10,"#FD0","5");
+	tegenstanders[3] = new Speler1((WIDTH/100)*8,(HEIGHT/100)*50, 10, "#FD0","11");
+	tegenstanders[4] = new Speler1((WIDTH/2)+15,HEIGHT/2,10,"#FD0","1");
+	tegenstanders[5] = new Speler1((WIDTH/100)*70,(HEIGHT/100)*18,10,"#FD0","1");
+	tegenstanders[6] = new Speler1((WIDTH/100)*76,(HEIGHT/100)*85,10,"#FD0","1");
+	tegenstanders[7] = new Speler1((WIDTH/100)*90,(HEIGHT/100)*50,10,"#FD0","1");
+	
 	ball[0] = new Ball(380, 200, 5, "#000");
-	ball[1] = new Ball(380, 200, 5, "#000");
 
-	
+		
 	if(id === '1'){
 		intervalID = setInterval(actie1, 10);
 		return intervalID;	}
 	if(id === '2'){
-	intervalID = setInterval(actie2, 10);
+		intervalID = setInterval(actie2, 10);
 		return intervalID;
 	}
 	
@@ -61,7 +69,7 @@ function Ball(x,y,r,color)
 	
 	this.getX = function()
 	{
-		return x;
+		return this.x;
 	}
 	
 	this.getY = function()
@@ -69,79 +77,22 @@ function Ball(x,y,r,color)
 		return this.y;
 	}
 	
-	//eerste actie ball//////////////////////////////////////////////////////
-	this.dx_actie1 = -1;
-	this.dy_actie1 = -1;
-	this.move1 = function()
-	{
-		
-		this.x += this.dx_actie1;
-		this.y += this.dy_actie1;
 	
-		if(this.x <= 250)
-		{
-			this.dx_actie1 = -0.85;
-			this.dy_actie1 = 1;
-			
-			spelers[0].move1_speler1();
-			tegenstanders[0].move1_tegenstander1();
-			
-				if(this.y >= 195)
-				{
-					this.dx_actie1 = 0;
-					this.dy_actie1 = 0;
-					var naam = spelers[0].getNaam();
-					$().toastmessage('showNoticeToast', 'Speler met nummer'+naam+' maakt een mooie inloper!');
-					//alert("Speler met nummer"+naam+" maakt een mooie inloper");
-					$('#links').unblock();
-					clearInterval(intervalID);
-					
-				}
-			}
-	}
-	
-	//2de actie ball ////////////////////////////////////////////////
-	this.dx_actie2 = -1;
-	this.dy_actie2 = -1;
-	this.move2 = function()
-	{
-		this.x += this.dx_actie2;
-		this.y += this.dy_actie2;
-		spelers[3].move2_speler4();
-		tegenstanders[3].move2_tegenstander4();
-		spelers[2].move2_speler3();
-		tegenstanders[2].move2_tegenstander3();
-		
-		if(this.y <= 50)
-		{
-			this.dx_actie2 = -2;
-			this.dy_actie2 = 0.3;
-			
-			
-		}
-		if(this.x <= 70){
-				this.dx_actie2 = 0.4;
-				this.dy_actie2 = 0.8;
-				
-			}
-		if(this.y >= 220)
-		{
-			this.dx_actie2 = 0;
-			this.dy_actie2 = 0;
-			var naam = spelers[2].getNaam();
-			$().toastmessage('showNoticeToast', 'Speler met nummer '+naam+' maakt een mooie inloper!');
-			$('#links').unblock();
-			clearInterval(intervalID);
-			
-
-				
-				
-		}	
-
-	}
-
+	this.move = function(dx,dy){	
+		this.x = beweeg_horizontaal(this.x, dx);
+		this.y = beweeg_verticaal(this.y, dy);
+	 }
 }
-
+//horizontaal bewegen over het canvas
+function beweeg_horizontaal(x, dx){
+	var verplaats = x + dx;	
+	return verplaats;
+}
+//verticaal bewegen over het canvas
+function beweeg_verticaal(y, dy){
+	var verplaats = y + dy;	
+	return verplaats;
+}
 
 // speler Class	
 function Speler1(x,y,r,color,naam)
@@ -175,119 +126,11 @@ function Speler1(x,y,r,color,naam)
 		return naam;
 	}
 	
-	this.getX = function()
-	{
-		return x;
+	this.move = function(dx, dy){
+		this.x = beweeg_horizontaal(this.x, dx);
+		this.y = beweeg_verticaal(this.y, dy);
 	}
 	
-	this.getY = function()
-	{
-		return this.y;
-	}
-	
-	//eerste actie////////////////////////////////////////////////////////////////////////////////////
-	this.dx_move1_speler1 = -2;
-	this.dy_move1_speler1 = 0;
-	this.move1_speler1 = function()
-	{	
-		this.x += this.dx_move1_speler1;
-		this.y += this.dy_move1_speler1;
-	
-		if(this.x <= 150 )
-		{
-			this.dx_move1_speler1 =0;
-		}
-		
-		
-	}
-	this.dx_move1_tegenstander1 = -1;
-	this.dy_move1_tegenstander1 = 0;
-	this.move1_tegenstander1 = function()
-	{
-		
-		this.x += this.dx_move1_tegenstander1;
-		this.y += this.dy_move1_tegenstander1;
-	
-		if(this.x <= 150 )
-		{
-			this.dx_move1_tegenstander1 =0;
-		}
-		
-	
-	}
-	
-	
-	//2de actie////////////////////////////////////////////////////
-	this.dx_move2_speler4 = 0;
-	this.dy_move2_speler4 = -2;
-	this.move2_speler4 = function()
-	{
-		
-		this.x += this.dx_move2_speler4;
-		this.y += this.dy_move2_speler4;
-	
-		if(this.y <= 65  )
-		{
-			this.dx_move2_speler4 = 0;
-			this.dy_move2_speler4 = 0;
-			
-		}
-	}
-	this.dx_move2_tegenstander4 = 0.5;
-	this.dy_move2_tegenstander4 = -1;
-	this.move2_tegenstander4 = function()
-	{
-		
-		this.x += this.dx_move2_tegenstander4;
-		this.y += this.dy_move2_tegenstander4;
-	
-		if(this.y <= 90  )
-		{
-			this.dx_move2_tegenstander4 = 0;
-			this.dy_move2_tegenstander4 = 0;
-			
-		}
-		
-	
-	}
-	this.dx_move2_speler3 = -0.1;
-	this.dy_move2_speler3 = -0.3;
-	this.move2_speler3 = function()
-	{
-		
-		this.x += this.dx_move2_speler3;
-		this.y += this.dy_move2_speler3;
-	
-		if(this.y <= 220 )
-		{
-			this.dx_move2_speler3 = 0;
-			this.dy_move2_speler3 = 0;
-			
-		}
-	}
-	this.dx_move2_tegenstander3 = -0.05;
-	this.dy_move2_tegenstander3 = -0.27;
-	this.move2_tegenstander3 = function()
-	{
-		
-		this.x += this.dx_move2_tegenstander3;
-		this.y += this.dy_move2_tegenstander3;
-	
-		if(this.y <= 240 )
-		{
-			this.dx_move2_tegenstander3 = 0;
-			this.dy_move2_tegenstander3 = 0;
-			
-		}
-	}
-
-	
-
-
-
-	
-	
-
 }
 
 
@@ -341,11 +184,19 @@ function drawPlayers()
 		spelers[1].draw();
 		spelers[2].draw();
 		spelers[3].draw();
+		spelers[4].draw();
+		spelers[5].draw();
+		spelers[6].draw();
+		spelers[7].draw();
 		
 		tegenstanders[0].draw();
 		tegenstanders[1].draw();
 		tegenstanders[2].draw();
 		tegenstanders[3].draw();
+		tegenstanders[4].draw();
+		tegenstanders[5].draw();
+		tegenstanders[6].draw();
+		tegenstanders[7].draw();
 		
 		spelers[0].text();
 		spelers[1].text();
@@ -364,20 +215,61 @@ function actie1()
 		clear();
 		draw();
 		drawPlayers();
-				
-		
 		ball[0].draw();
-		ball[0].move1();
+		
+		ball[0].move(-1,-1)
+	 	if(ball[0].getX() <= (WIDTH/100)*30)
+		{
+			spelers[0].move(-4, 0);
+			tegenstanders[0].move(-3,0);
+			
+			ball[0].move(-0.85,3)
+		}
+		if(ball[0].getY() >= HEIGHT/2){
+						ball[0].move(0,0)
+						var naam = spelers[0].getNaam();
+						$().toastmessage('showNoticeToast', 'Speler met nummer'+naam+' maakt een mooie inloper!');
+						//alert("Speler met nummer"+naam+" maakt een mooie inloper");
+						$('#links').unblock();
+						clearInterval(intervalID);
+						
+		}
 }
-
+var i = 1;
 function actie2()
-{
+{	
+	alert(i);
+	i++;
 	clear();
 	draw();
 	drawPlayers();
+	var x = -1;
+	var y = 1;
+	ball[0].draw();
 	
-	ball[1].draw();
-	ball[1].move2();
+	
+	if(ball[0].getY() >= (HEIGHT/100)*85 && ball[0].getX() <= (WIDTH/100)*30) {
+		x = -2;
+		y = -2;
+	}
+	if(ball[0].getY() <= (HEIGHT/100)*45 && ball[0].getX() <= (WIDTH/100)*5 ){
+		x=3;
+		y=-2;
+			
+	}
+	if(ball[0].getY() <= (HEIGHT/100)*10 && ball[0].getX() >= (WIDTH/100)*30){
+		x=-2;
+		y=2;
+	
+	}
+	if(ball[0].getY() <= (HEIGHT/100)*30 && ball[0].getX() >= (WIDTH/100)*20){
+		x=0;
+		y=0;
+		$('#links').unblock();
+		clearInterval(intervalID);
+	}else{}
+	
+	ball[0].move(x,y);
 
 }
 

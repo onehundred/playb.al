@@ -11,7 +11,8 @@
                     <legend>Personal Information</legend>
                     <?php
 		$js= "onClick=this.value=''";
-		echo form_open('main/create_user');
+		$attributes = array('id'=> 'signupform');
+		echo form_open('#',$attributes);
 		echo form_input('voornaam', set_value('voornaam', 'First Name'), $js);
 		echo form_input('achternaam', set_value('achternaam', 'Last Name'), $js);
 		echo form_email('email', set_value('email', 'E-Mail'),$js);

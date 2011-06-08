@@ -1,4 +1,91 @@
 <script>
+	function username_click(){
+		var username = $('#sign_username').val();
+		if(username == 'Username'){
+			$('#sign_username').val('');
+		}
+		if(username == ''){
+			$('#sign_username').val('Username');
+		}
+		if(username != '' && username != 'Username'){
+		
+			$('#sign_username').val(username);
+		}
+	}
+	function voornaam_click(){
+		var voornaam = $('#sign_voornaam').val();
+		if(voornaam == 'Voornaam'){
+			$('#sign_voornaam').val('');
+		}
+		if(voornaam == ''){
+			$('#sign_voornaam').val('Voornaam');
+		}
+		if(voornaam != '' && voornaam != 'Voornaam'){
+		
+			$('#sign_voornaam').val(voornaam);
+		}
+	
+	}
+	function achternaam_click(){
+		var achternaam = $('#sign_achternaam').val();
+		if(achternaam == 'Achternaam'){
+			$('#sign_achternaam').val('');
+		}
+		if(achternaam == ''){
+			$('#sign_achternaam').val('Achternaam');
+		}
+		if(achternaam != '' && achternaam != 'Achternaam'){
+		
+			$('#sign_achternaam').val(achternaam);
+		}
+	
+	}
+	
+	function email_click(){
+		var email = $('#sign_email').val();
+		if(email == 'Email'){
+			$('#sign_email').val('');
+		}
+		if(email == ''){
+			$('#sign_email').val('Email');
+		}
+		if(email != '' && email != 'Email'){
+		
+			$('#sign_email').val(email);
+		}
+	
+	}
+	
+	function password_click(){
+			var password = $('#sign_password').val();
+		if(password == 'Paswoord'){
+			$('#sign_password').val('');
+		}
+		if(password == ''){
+			$('#sign_password').val('Paswoord');
+		}
+		if(password != '' && password != 'Paswoord'){
+		
+			$('#sign_password').val(password);
+		}
+	
+	
+	}
+		function password2_click(){
+			var password = $('#sign_password2').val();
+		if(password == 'Password'){
+			$('#sign_password2').val('');
+		}
+		if(password == ''){
+			$('#sign_password2').val('Password');
+		}
+		if(password != '' && password != 'Password'){
+		
+			$('#sign_password2').val(password);
+		}
+	
+	
+	}
 	$(document).ready(function(){
 	
 	function checkemail(str){
@@ -112,7 +199,7 @@
 
 					
 					}
-				     if(password2 == '' || password2 == 'Herhaal paswoord'){
+				     if(password2 == '' || password2 == 'Password'){
 						$('#sign_password2').css({    
 												'border' : '1px solid red',
 											});
@@ -170,17 +257,17 @@
                 <form action="#" method="post" id="signupform">
                 <fieldset>
                     <legend>Personal Information</legend>
-                    <input type="text" name="voornaam" id="sign_voornaam" onClick="this.value=''" value="Voornaam"/>
-                    <input type="text" name="achternaam" id="sign_achternaam" onClick="this.value=''" value="Achternaam"/>
-                    <input type="text" name="email" id="sign_email" onClick="this.value=''" value="Email"/>
+                    <input type="text" name="voornaam" id="sign_voornaam" onFocus="voornaam_click()" onblur="voornaam_click()" value="Voornaam"/>
+                    <input type="text" name="achternaam" id="sign_achternaam" onFocus="achternaam_click()" onblur="achternaam_click()" value="Achternaam"/>
+                    <input type="text" name="email" id="sign_email" onFocus="email_click()" onblur="email_click()" value="Email"/>
                     <p id="personal_error"></p>
                 </fieldset>
                 <fieldset>
                     <legend>Login Info</legend>
-                    <input type="text" name="username" id="sign_username" onClick="this.value=''" value="Username"/>
+                    <input type="text" name="username" id="sign_username" onFocus="username_click()" onblur="username_click()" value="Username"/>
                     <p id="username_error"></p>
-                    <input type="password" name="password" id="sign_password" onClick="this.value=''" value="Paswoord"/>
-                    <input type="password" name="password2" id="sign_password2" onClick="this.value=''" value="Herhaal paswoord"/>
+                    <input type="password" name="password" id="sign_password" onFocus="password_click()" onblur="password_click()" value="Paswoord"/>
+                    <input type="password" name="password2" id="sign_password2" onFocus="password2_click()" onblur="password2_click()" value="Password"/>
                     <p id="paswoord_error"></p>
                     <input type="submit" name="submitsignup" value="Registreer"/>
            

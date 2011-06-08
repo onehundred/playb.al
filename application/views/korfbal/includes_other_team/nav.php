@@ -1,5 +1,5 @@
 <nav class="sportnav">
-<h1 id="teamname"><?php echo $teamnaam;?></h1>
+
 
 <p id="test"><?php echo anchor('korfbal_other_team/korfbal_overview/'.$team_id.'','Overzicht') ?></p>
 <p><?php echo anchor('korfbal_other_team/korfbal_players/'.$team_id.'','Spelers') ?>	</p>

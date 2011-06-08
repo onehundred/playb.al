@@ -64,7 +64,6 @@
 <script src="http://playbaleindwerk.appspot.com/js/jquery.transform.js"></script>
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 <script src="<?php echo base_url();?>js/awesomechart.js"></script>
-<script src="http://playb.al/js/jquery.keynav.js"></script>
 
 
 <!--[if (gte IE 6)&(lte IE 8)]>

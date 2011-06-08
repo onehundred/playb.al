@@ -1,134 +1,115 @@
 <style>
-#plaatsen{
+#plaatsen {
 	width: 400px;
-
 }
-#stadion{
+#stadion {
 	width: 600px;
 	height: 706px;
 	float: left;
-	
 }
-#links_boven{
+#links_boven {
 	width: 100px;
 	height: 100px;
 	float: left;
 	background-color: blue;
 	-webkit-border-top-left-radius: 100px;
 }
-
-#links_boven_kopen{
+#links_boven_kopen {
 	width: 100px;
 	height: 100px;
 	float: left;
-		-webkit-border-top-left-radius: 100px;
+	-webkit-border-top-left-radius: 100px;
 }
-
-
-#midden_boven{
+#midden_boven {
 	float:right;
 	width: 400px;
 	height: 100px;
 	background-color: green;
 }
-
-#midden_boven_kopen{
+#midden_boven_kopen {
 	float:right;
 	width: 400px;
 	height: 100px;
 	text-align: center;
 }
-
-
-#rechts_boven{
+#rechts_boven {
 	width: 100px;
 	height: 100px;
 	float:right;
 	background-color: blue;
 	-webkit-border-top-right-radius: 100px;
 }
-#rechts_boven_kopen{
+#rechts_boven_kopen {
 	width: 100px;
 	height: 100px;
 	float:right;
 	-webkit-border-top-right-radius: 100px;
 	text-align: center;
 }
-
-#rechts_midden{
+#rechts_midden {
 	width: 100px;
 	height: 500px;
 	float: right;
 	background-color: green;
 }
-#rechts_midden_kopen{
+#rechts_midden_kopen {
 	width: 100px;
 	height: 500px;
 	float: right;
 	text-align: center;
 }
-
-
-#midden_midden{
+#midden_midden {
 	width: 400px;
 	height: 500px;
 	float: right;
 	background-color: #bc8f66;
-
 }
-
-#links_midden{
+#links_midden {
 	width: 100px;
 	height: 500px;
 	float: left;
 	background-color: green;
 }
-
-#rechts_onder{
+#rechts_onder {
 	width: 100px;
 	height: 100px;
 	float: right;
 	background-color: blue;
 	-webkit-border-bottom-right-radius: 100px;
 }
-#rechts_onder_kopen{
+#rechts_onder_kopen {
 	width: 100px;
 	height: 100px;
 	float: right;
 	text-align: center;
 	-webkit-border-bottom-right-radius: 100px;
 }
-
-#midden_onder{
+#midden_onder {
 	width: 400px;
 	height: 100px;
 	float: right;
 	background-color: green;
 }
-#midden_onder_kopen{
+#midden_onder_kopen {
 	width: 400px;
 	height: 100px;
 	float: right;
 	text-align: center;
 }
-#links_onder{
+#links_onder {
 	width: 100px;
 	height: 100px;
 	float: left;
 	background-color: blue;
 	-webkit-border-bottom-left-radius: 100px;
-
 }
-#links_onder_kopen{
+#links_onder_kopen {
 	width: 100px;
 	height: 100px;
 	float: left;
-	text-align: center
-	-webkit-border-bottom-left-radius: 100px;
-
+ text-align: center  -webkit-border-bottom-left-radius: 100px;
 }
-
-.kopen{
+.kopen {
 	text-decoration: underline;
 	cursor: pointer;
 	color:blue;
@@ -136,55 +117,55 @@
 	font-size: 9pt;
 }
 </style>
- 
 <script src="<?php echo base_url();?>js/korfbal/stadion.js"></script>
-<div class="gameLeft">
-
-<?php foreach($stadion->result() as $row)
+<div class="game">
+    <div class="gameRight">
+        <div id="stadion_container">
+            <div id="stadion"> 
+                <!-- sectie g rechts boven --> 
+                
+                <!-- sectie b midden boven --> 
+                
+                <!-- sectie f links boven --> 
+                
+                <!-- sectie c rechts midden --> 
+                
+                <!-- speelveld midden midden --> 
+                
+                <!-- sectie a standaard --> 
+                
+                <!-- sectie h rechts onder --> 
+                
+                <!-- sectie d midden onder --> 
+                
+                <!-- sectie e links onder --> 
+                
+            </div>
+        </div>
+        <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3')?>"/>
+    </div>
+    <aside>
+        <div class="gameLeft">
+            <?php foreach($stadion->result() as $row)
 		{?>
-			<h2><?php echo $row->naam;?></h2>
-						
-	<?php	}
+            <h2><?php echo $row->naam;?></h2>
+            <?php	}
 ?>
-<?php if(!isset($alien)){?>
-<div id="plaatsen">
-	<div id="sec_a">Sectie A: </div>
-	<div id="sec_b">Sectie B:</div>
-	<div id="sec_c">Sectie C: </div>
-	<div id="sec_d">Sectie D: </div>
-	<div id="sec_e">Sectie E: </div>
-	<div id="sec_f">Sectie F: </div>
-	<div id="sec_g">Sectie G: </div>
-	<div id="sec_h">Sectie H: </div>
-	
-</div>
-<?php } ?>
-</div><div class="gameRight">
-<div id="stadion_container">
-<div id="stadion">
-<!-- sectie g rechts boven -->
-
-<!-- sectie b midden boven -->
-
-<!-- sectie f links boven -->
-
-<!-- sectie c rechts midden -->
-
-<!-- speelveld midden midden -->	
-	
-<!-- sectie a standaard -->
-	
-<!-- sectie h rechts onder -->
-
-<!-- sectie d midden onder -->
-
-<!-- sectie e links onder -->
-
-</div>
-</div>
-
-<input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3')?>"/>
-</div>
-<div id="dialog-confirm" title="Plaatsen kopen?">
-	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Bent u zeker dat u deze plaatsen wilt aankopen?</p>
+            <?php if(!isset($alien)){?>
+            <div id="plaatsen">
+                <div id="sec_a">Sectie A: </div>
+                <div id="sec_b">Sectie B:</div>
+                <div id="sec_c">Sectie C: </div>
+                <div id="sec_d">Sectie D: </div>
+                <div id="sec_e">Sectie E: </div>
+                <div id="sec_f">Sectie F: </div>
+                <div id="sec_g">Sectie G: </div>
+                <div id="sec_h">Sectie H: </div>
+            </div>
+            <?php } ?>
+        </div>
+        <div id="dialog-confirm" title="Plaatsen kopen?">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Bent u zeker dat u deze plaatsen wilt aankopen?</p>
+        </div>
+    </aside>
 </div>

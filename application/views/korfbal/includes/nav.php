@@ -1,4 +1,5 @@
 <h1 id="teamname"><?php echo $teamnaam;?></h1>
+
 <section class="sportnavWrap">
 <nav class="sportnav">
     <p id="overzichtMenu"><?php echo anchor('korfbal/korfbal_start/'.$team_id.'','Overzicht') ?></p>
@@ -12,4 +13,4 @@
     <p id="transfersMenu"><?php echo anchor('korfbal/korfbal_transfers/'.$team_id.'','Transfers') ?></p>
 </nav>
 </section>
-</div> <!-- end headerWrap -->
+

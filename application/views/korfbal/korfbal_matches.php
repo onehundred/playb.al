@@ -58,8 +58,9 @@
             <h2>vorig seizoen</h2>
             <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
         </section>
-    </div></aside>
-</div>
+    </div>
+    </aside>
+
 
 <script type="text/javascript">
      var chart1 = new AwesomeChart('chartCanvas1');

@@ -50,30 +50,32 @@ $(document).ready(function(){
 });
 	
 </script>
-
+<div class="game">
 <div class="gameRight">
-<input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>"/>
-	<div id="transfer_filter">
-		<select id="positie">
-			<option id="all" value="all">Alle Posities</option>
-			<option id="aanvaller" value="aanvaller">Aanvaller</option>
-			<option id="spelmaker" value="spelmaker">Spelmaker</option>
-			<option id="rebounder" value="rebounder">Rebounder</option>
-		</select>
-		<p id="submit_search">Zoek</p>
-	
-	</div>
-	<div id="transfers">
-		
-	
-	</div>
- 
+    <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>"/>
+    <div id="transfer_filter">
+        <select id="positie">
+            <option id="all" value="all">Alle Posities</option>
+            <option id="aanvaller" value="aanvaller">Aanvaller</option>
+            <option id="spelmaker" value="spelmaker">Spelmaker</option>
+            <option id="rebounder" value="rebounder">Rebounder</option>
+        </select>
+        <p id="submit_search">Zoek</p>
+    </div>
+    <div id="transfers"> </div>
 </div>
-<div class="gameLeft">
-    <div><section>
-       <h2><img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />kalender</h2>
+<aside>
+    <div class="gameLeft">
+        <div>
+            <section>
+                <h2>
+                    <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
+                    kalender</h2>
                 <p>huidige week: week <?php echo $calendar['week'];?></p>
                 <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
                 <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
-</section>    </div>
+            </section>
+        </div>
+    </div>
+</aside>
 </div>

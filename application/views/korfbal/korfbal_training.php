@@ -78,6 +78,7 @@ foreach($training->result() as $row){
                     <div class="playmaking_tr<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
                 </section>
             </div>
+            <!-- end rightProgress -->
             <div id="leftProgress">
                 <section>
                     <p id="skillTitle">passing: </p>
@@ -128,16 +129,19 @@ foreach($training->result() as $row){
                     <div class="leadership_tr<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
                 </section>
             </div>
+            <!-- end leftProgress --> 
             <!-- vordering van training --> 
             <!--             <p>vordering</p> --> 
             
         </div>
+        <!-- end container -->
         <?php }
 
 
  ?>
         <div id="myModal" class="reveal-modal"> <a class="close-reveal-modal">&#215;</a> </div>
     </div>
+    <!-- end gameRight --> 
 </div>
 <aside>
     <div class="gameLeft">
@@ -169,7 +173,7 @@ foreach($training->result() as $row){
                     <img src="<?php echo base_url();?>img/down.png" />
                     </a></li>
             </ul>
-            <li><a href="#number" class="" id="playerSort">
+            <li><a href="#number" id="playerSort">
                 <img src="<?php echo base_url();?>img/up.png" />
                 rugnummer</a></li>
             <br />
@@ -178,7 +182,7 @@ foreach($training->result() as $row){
                     <img src="<?php echo base_url();?>img/down.png" />
                     </a></li>
             </ul>
-            <li><a href="#age" class="">
+            <li><a href="#age">
                 <img src="<?php echo base_url();?>img/up.png" />
                 leeftijd</a></li>
             <br />
@@ -187,18 +191,23 @@ foreach($training->result() as $row){
                     <img src="<?php echo base_url();?>img/down.png" />
                     </a></li>
             </ul>
-            <li><a href="#price" class="">
+            <li><a href="#price">
                 <img src="<?php echo base_url();?>img/up.png" />
                 prijs</a></li>
             <br />
             <hr />
-            <div class="gameRight2">
+                 <ul id="filters">
+            <li><a href="#" data-filter="*">mannen & vrouwen</a></li>
+            <li><a href="#" data-filter=".playerMale">mannen</a></li>
+            <li><a href="#" data-filter=".playerFemale">vrouwen</a></li>
+        </ul>  
+            <div class="sortTeamLeft">
                 <ul class="sort asc option-set floated clearfix">
                     <li><a href="#passing" class="selected">
                         <img src="<?php echo base_url();?>img/down.png" />
                         </a></li>
                 </ul>
-                <li><a href="#passing" class="">
+                <li><a href="#passing">
                     <img src="<?php echo base_url();?>img/up.png" />
                     passing</a></li>
                 <br />
@@ -207,7 +216,7 @@ foreach($training->result() as $row){
                         <img src="<?php echo base_url();?>img/down.png" />
                         </a></li>
                 </ul>
-                <li><a href="#shotpower" class="">
+                <li><a href="#shotpower">
                     <img src="<?php echo base_url();?>img/up.png" />
                     shotpower</a></li>
                 <br />
@@ -216,7 +225,7 @@ foreach($training->result() as $row){
                         <img src="<?php echo base_url();?>img/down.png" />
                         </a></li>
                 </ul>
-                <li><a href="#intercepting" class="">
+                <li><a href="#intercepting">
                     <img src="<?php echo base_url();?>img/up.png" />
                     intercepting</a></li>
                 <br />
@@ -225,15 +234,15 @@ foreach($training->result() as $row){
                         <img src="<?php echo base_url();?>img/down.png" />
                         </a></li>
                 </ul>
-                <li><a href="#leadership" class="">
+                <li><a href="#leadership">
                     <img src="<?php echo base_url();?>img/up.png" />
                     leadership</a></li>
                 <br />
             </div>
-            <!-- end gameRight2 -->
-            <div class="gameRight3">
+            <!-- end sortTeamLeft -->
+            <div class="sortTeamRight">
             <ul class="sort asc option-set floated clearfix">
-                <li><a href="#rebound" class="">
+                <li><a href="#rebound">
                     <img src="<?php echo base_url();?>img/down.png" />
                     </a></li>
             </ul>
@@ -246,7 +255,7 @@ foreach($training->result() as $row){
                     <img src="<?php echo base_url();?>img/down.png" />
                     </a></li>
             </ul>
-            <li><a href="#stamina" class="">
+            <li><a href="#stamina">
                 <img src="<?php echo base_url();?>img/up.png" />
                 stamina</a></li>
             <br />
@@ -255,7 +264,7 @@ foreach($training->result() as $row){
                     <img src="<?php echo base_url();?>img/down.png" />
                     </a></li>
             </ul>
-            <li><a href="#shotprecision" class="">
+            <li><a href="#shotprecision">
                 <img src="<?php echo base_url();?>img/up.png" />
                 shotprecsion</a></li>
             <br />
@@ -264,20 +273,21 @@ foreach($training->result() as $row){
                     <img src="<?php echo base_url();?>img/down.png" />
                     </a></li>
             </ul>
-            <li><a href="#playmaking" class="">
+            <li><a href="#playmaking">
                 <img src="<?php echo base_url();?>img/up.png" />
                 playmaking</a></li>
-        </ul>
+
+
+         </div>
+          </ul>
+
+
         <!-- end ul id sort -->
-        <ul id="filters">
-            <li><a href="#" data-filter="*">mannen & vrouwen</a></li>
-            <li><a href="#" data-filter=".playerMale">mannen</a></li>
-            <li><a href="#" data-filter=".playerFemale">vrouwen</a></li>
-        </ul>
         <div class="chart_container">
-            <section>
+      
             <h2>team skills</h2>
-            <canvas id="chartTeamSkills" width="350" height="350"> Your web-browser does not support the HTML 5 canvas element. </canvas>
+           <canvas id="chartTeamSkills" width="350" height="350"> Your web-browser does not support the HTML 5 canvas element. </canvas>
+
         </div>
         <div>
             <section>
@@ -287,11 +297,9 @@ foreach($training->result() as $row){
                 <p>test</p>
             </section>
         </div>
-        
-        <!-- end gameLeft -->
         <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
         <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
-    </div>
+    
     <!-- end container --> 
     
     <script>
@@ -414,3 +422,4 @@ $('#filters a').click(function(){
     <!-- end gameLeft --> 
 </aside>
 </div>
+<!-- end game --> 

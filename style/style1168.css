@@ -38,6 +38,8 @@ h2{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#666;}
 .gameRight h2{text-transform:lowercase;font-weight:normal;padding:15px 0 0 0;letter-spacing:1px;color:#444;font-size:32px;}
 .player,.playerDetail,.playerMale,.playerFemale{width:335px;height:240px;background:#FAFAFA;background-color:rgba(255, 255, 255, 0.5);margin-right:20px;margin-bottom:15px;}
 .player:hover,.playerDetail:hover{border:1px solid #CCC;background:#FAFAFA;background-color:rgba(255, 255, 255, 0.75);}
+.sortTeamLeft{float:left;}
+.sortTeamRight{float:right;}
 .gameRight .number{font-size:64px;font-family:'SFCollegiateSolidRegular';display:inline;padding:7px 7px 7px 15px;float:left;line-height:45px;cursor:default;}
 .gameRight .name{padding:10px;}
 .gameRight .name:hover{background-color:#EB1239;cursor:pointer;}
@@ -53,7 +55,8 @@ h2{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#666;}
 .gameRight #skillTitle{display:inline;}
 aside{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;}
 .gameLeft{width:390px;font-size:15px;margin:20px 15px 0 0px;}
-.gameLeft ul,.gameLeft li{list-style-type:none;display:inline;}
+.gameLeft ul,.gameLeft li{list-style-type:none;}
+ul#filters{display:block;}
 .gameLeft h2{font-size:32px;font-weight:normal;letter-spacing:0	1px;color:#888;padding:0 0 0 10px;}
 .gameLeft p{padding:0 0 10px 10px;color:#000;}
 .gameLeft div{margin:0 0 0px 0;padding:0 0 10px 0;margin:15px 0 15px 0;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}

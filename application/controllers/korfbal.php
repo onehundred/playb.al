@@ -32,6 +32,7 @@ class Korfbal extends CI_Controller {
 			redirect('korfbal_other_team/korfbal_overview/'.$teamid);
 		}
 	}
+
 	//de mainfunctie van korfbal -> laadt de hoofdpage
 	function korfbal_start()
 	{
@@ -72,6 +73,7 @@ class Korfbal extends CI_Controller {
 		$data['teamnaam'] = $row->naam; 
 		}
 		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_spelers';
 		$this->load->view('korfbal/includes/template', $data);
@@ -91,6 +93,8 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
+		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_verslag';
 		$this->load->view('korfbal/includes/template', $data);
@@ -114,6 +118,8 @@ class Korfbal extends CI_Controller {
 		$data['teamnaam'] = $row->naam; 
 		}
 		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
+		
 		$data['main_content'] = 'korfbal/korfbal_speler';
 		$this->load->view('korfbal/includes/template', $data);
 	}
@@ -133,6 +139,7 @@ class Korfbal extends CI_Controller {
 		$data['teamnaam'] = $row->naam; 
 		}
 		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_stadion';
 		$this->load->view('korfbal/includes/template', $data);
@@ -155,6 +162,7 @@ class Korfbal extends CI_Controller {
 		$data['teamnaam'] = $row->naam; 
 		}
 		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_opstelling';
 		$this->load->view('korfbal/includes/template', $data);
@@ -203,6 +211,8 @@ class Korfbal extends CI_Controller {
 		$data['teamnaam'] = $row->naam; 
 		}
 		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
+		
 		$data['main_content'] = 'korfbal/korfbal_manager';
 		$this->load->view('korfbal/includes/template', $data);
 	
@@ -225,6 +235,7 @@ class Korfbal extends CI_Controller {
 		$data['teamnaam'] = $row->naam; 
 		}
 		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_financien';
 		$this->load->view('korfbal/includes/template', $data);
@@ -292,6 +303,8 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
+		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_training';
 		$this->load->view('korfbal/includes/template', $data);

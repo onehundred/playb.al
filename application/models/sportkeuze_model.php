@@ -28,6 +28,49 @@
 
     }
     
+    function get_rankschikking($userid)
+    {
+    	$data = array();
+    	
+    	$this->db->select('*');
+    	$this->db->from('users');
+    	$this->db->join('korf_teams','FK_user_id = user_id');
+    	$this->db->join('korf_divisies', 'FK_division_id = divisie_id');
+    	$this->db->where('user_id',$userid);
+    	$query = $this->db->get();
+    	
+    	foreach($query->result() as $row){
+    		$divid = $row->divisie_id;
+    		$teamnaam = $row->naam;
+    		$data['divisie'] = $row->divisie .'.'.$row->sub_divisie; 
+    	}
+    	
+    	
+    	$this->db->select('*');
+    	$this->db->from('korf_teams');
+    	$this->db->where('FK_division_id', $divid);
+    	$this->db->order_by('divisiepunten', 'DESC');
+    	$query2 = $this->db->get();
+    	
+    	
+    	$i = 1;
+    	foreach($query2->result() as $crow)
+    	{
+    		if($crow->naam == $teamnaam){
+    			break;
+    		
+    		}else{	
+    			$i++;
+    		}	
+    	}
+    	
+    	$data['positie'] = $i;
+    	
+    	return $data;
+    	
+    
+    }
+    
     //functie die kijkt of er al een volleybalteam bestaat
     function check_volleybal($id)
     {

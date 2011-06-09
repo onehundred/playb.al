@@ -67,15 +67,16 @@ $(document).ready(function(){
 <aside>
     <div class="gameLeft">
         <div>
-            <section>
-                <h2>
+        <h2>
                     <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
                     kalender</h2>
+            <section>
+                
                 <p>huidige week: week <?php echo $calendar['week'];?></p>
                 <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
                 <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
             </section>
         </div>
-    </div>
+    </div> <!-- end gameLeft -->
 </aside>
-</div>
+</div> <!-- end game -->

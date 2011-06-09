@@ -131,7 +131,7 @@
 
     <script src="<?php echo base_url();?>js/jqueryui.touch.js"></script>
 
-<div>
+<div class="game">
 
 	<div id="korfbalField" style="background-color: yellow; height: 500px; width: 75%; float:right;">
 		<div id="vak2"><h2>Vak2</h2></div>
@@ -168,4 +168,4 @@
     	
     <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>" />
 </div>
-<!-- End demo --> 
+<!-- end game -->

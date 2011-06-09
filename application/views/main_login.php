@@ -5,7 +5,7 @@ $(document).ready(function(){
   		var password = $('#login_password').val();
   		
   		if(username == '' || password == ''){
-  			$('.login').effect('shake', { times:3 }, 80);
+  			$('.login').effect('shake', { times:3 }, 60);
   		}else{
   		
   			$.ajax({
@@ -18,7 +18,7 @@ $(document).ready(function(){
     			dataType: "json",
         		success: function(data){
         			if(data == 'false'){
-        				$('.login').effect('shake', { times:3 }, 80);
+        				$('.login').effect('shake', { times:3 }, 60);
         			
         			}else{
         				window.location = '../../index.php/sportchoice/sport';
@@ -59,7 +59,7 @@ $(document).ready(function(){
     
 <!--       <h1>login</h1> -->
     
-    <div class="login" style="display: none; opacity: 0;"><a href="#" id="closeLogin">sluiten</a>
+    <div class="login" style="display: none; opacity: 0;"><a href="#" id="closeLogin"><img src="<?php echo base_url();?>img/close.png" /></a>
         <?php
                         $attributes = array('id'=>'loginform');
 						echo form_open('#', $attributes);

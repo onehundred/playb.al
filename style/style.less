@@ -175,12 +175,6 @@ figure img {
 	font-weight: normal;
 	font-style: normal;
 }
-@font-face {
-	font-family: 'AllerItalic';
-	src: url('fonts/aller_it-webfont.eot?') format('eot'), url('fonts/aller_it-webfont.woff') format('woff'), url('fonts/aller_it-webfont.ttf') format('truetype'), url('fonts/aller_it-webfont.svg#webfont7oSuZnvY') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
 /* TYPE PRESETS begin */
 
 .gigantic {
@@ -194,8 +188,10 @@ figure img {
 	letter-spacing: 1px;
 }
 .large, h2 {
+/*
 	font-size: 36px;
 	line-height: 48px;
+*/
 }
 .big, h3 {
 	font-size: 26px;
@@ -251,10 +247,7 @@ img::-moz-selection {
 header {
  height: @headerHeight;
 }
-footer {
-	/* 	background-image: url("../img/footer1.png"); */
-/* float: left; */
-}
+
 #logo {
 	padding: 8px 7px 0 0;
 	width:113px;
@@ -262,19 +255,19 @@ footer {
 	float:left;
 }
 #logo:hover {
-	-moz-transform: scale(1.02) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-webkit-transform: scale(1.02) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-o-transform: scale(1.02) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-ms-transform: scale(1.02) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	transform: scale(1.02) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	cursor: pointer;
 }
 #logo:active {
-	-moz-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-webkit-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-o-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-ms-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-moz-transform: scale(1) rotate(0deg) translate(0px, 1px) skew(0deg, 0deg);
+	-webkit-transform: scale(1) rotate(0deg) translate(0px, 1px) skew(0deg, 0deg);
+	-o-transform: scale(1) rotate(0deg) translate(0px, 1px) skew(0deg, 0deg);
+	-ms-transform: scale(1) rotate(0deg) translate(0px, 1px) skew(0deg, 0deg);
+	transform: scale(1) rotate(0deg) translate(0px, 1px) skew(0deg, 0deg);
 }
 iframe {
 width: 708px; height: 430px;
@@ -596,6 +589,10 @@ a.tooltip:hover::after {
 }
 /* TOOLTIPS end -----------------------------------------------------------------------------------------------------------*/
 /* FOOTER start		-------------------------------------------------------------------------------------------------------------*/
+footer {
+	/* 	background-image: url("../img/footer1.png"); */
+/* float: left; */
+}
 #footer {
 	float: left;
 	width: 100%;
@@ -631,6 +628,7 @@ footer div {
 	margin-left: 15px;
 }
 #footerCenter {
+/*
 	margin-left:15px;
 	border-right-width: 1px;
 	border-left-width: 1px;
@@ -638,6 +636,7 @@ footer div {
 	border-left-style: dotted;
 	border-right-color: #D9D9D9;
 	border-left-color: #D9D9D9;
+*/
 }
 #footerRight {
 	margin-left: 15px;
@@ -1217,19 +1216,17 @@ select {
 	height: auto;
 	background: #333;
     opacity: 0.9;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
+
 	color: #eee;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 6px;
 	padding-right: 6px;
-	font-family: lucida Grande;
 	font-size: 14px;
-	border: 2px solid #999;
+
 	display: block;
 	position: relative;
-	margin: 0 0 12px 0;
+
 }
 
 .toast-item p {
@@ -1238,7 +1235,7 @@ select {
 }
 
 .toast-item-close {
-    background:url(../../img/close.gif);
+    background:url(../img/close.gif);
     width:22px;
     height:22px;
     position: absolute;
@@ -1256,19 +1253,19 @@ select {
 }
 
 .toast-item-image-notice {
-    background:url(../../img/notice.png);
+    background:url(../img/notice.png);
 }
 
 .toast-item-image-success {
-    background:url(../../img/success.png);
+    background:url(../img/success.png);
 }
 
 .toast-item-image-warning {
-    background:url(../../img/warning.png);
+    background:url(../img/warning.png);
 }
 
 .toast-item-image-error {
-    background:url(../../img/error.png);
+    background:url(../img/error.png);
 }
 
 
@@ -1362,7 +1359,7 @@ display: none;
 #korfbal_signup fieldset { border:none; width:320px;}
 #korfbal_signup legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
 #korfbal_signup label { display:block; margin:15px 0 5px;}
-#korfbal_signup input[type=text], input[type=password] { width:300px; padding:5px; border:solid 1px #000;}
+#korfbal_signup input[type=text], input[type=password] { width:200px; padding:5px; border:solid 1px #000;}
 #korfbal_signup .prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
 #korfbal_signup .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
 #korfbal_signup .prev { float:left;}
@@ -1376,7 +1373,7 @@ display: none;
 #basketbal_signup fieldset { border:none; width:320px;}
 #basketbal_signup legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
 #basketbal_signup label { display:block; margin:15px 0 5px;}
-#basketbal_signup input[type=text], input[type=password] { width:300px; padding:5px; border:solid 1px #000;}
+#basketbal_signup input[type=text], input[type=password] { width:200px; padding:5px; border:solid 1px #000;}
 #basketbal_signup .prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
 #basketbal_signup .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
 #basketbal_signup .prev { float:left;}
@@ -1390,7 +1387,7 @@ display: none;
 #volleybal_signup fieldset { border:none; width:320px;}
 #volleybal_signup legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
 #volleybal_signup label { display:block; margin:15px 0 5px;}
-#volleybal_signup input[type=text], input[type=password] { width:300px; padding:5px; border:solid 1px #000;}
+#volleybal_signup input[type=text], input[type=password] { width:200px; padding:5px; border:solid 1px #000;}
 #volleybal_signup .prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
 #volleybal_signup .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
 #volleybal_signup .prev { float:left;}

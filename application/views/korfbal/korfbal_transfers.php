@@ -15,10 +15,10 @@ $(document).ready(function(){
         			for(var i in data){
         				if(data[i].huidig_bod == null){
         					var huidig = '<p>Er is nog geen bod geplaatst op deze speler.</p>'
-        							+ '<a href="../../korfbal/korfbal_player/'+data[i].teamid+'/'+data[i].spelerid+'">Plaats een bod</a>'; 
+        							+ '<a href="../../korfbal_other_team/korfbal_player/'+data[i].teamid+'/'+data[i].spelerid+'">Plaats een bod</a>'; 
         				}else{
         					var huidig = '<p>Huidig bod: '+data[i].huidig_bod+'$ door: '+data[i].hoogste_bieder +'</p>'
-        								+ '<a href="../../korfbal/korfbal_player/'+data[i].teamid+'/'+data[i].spelerid+'">Plaats een bod</a>'; ;
+        								+ '<a href="../../korfbal_other_team/korfbal_player/'+data[i].teamid+'/'+data[i].spelerid+'">Plaats een bod</a>'; ;
         				}
         			
 	        			   var content = '<div id="transfer" class="transfer">' 

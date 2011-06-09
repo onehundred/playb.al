@@ -20,6 +20,7 @@ class Sportchoice extends CI_Controller {
 		
 		$this->load->model('sportkeuze_model');
 		
+		$data['korfRank'] = $this->sportkeuze_model->get_rankschikking($user_id);
 		
 		//checken of er al een korfbalteam bestaat
 		$korfquery = $this->sportkeuze_model->check_korfbal($user_id);

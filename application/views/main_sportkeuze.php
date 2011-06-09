@@ -13,10 +13,10 @@
             </p>
             <hr />
             <p id="overview">divisie:</p>
-            <p id="overview2">2</p>
+            <p id="overview2"><?php echo $korfRank['divisie'];?></p>
             <hr />
             <p id="overview">positie:</p>
-            <p id="overview2">7</p>
+            <p id="overview2"><?php echo $korfRank['positie']; ?></p>
             <img src="<?php echo base_url();?>img/korfbal.png" id="korfbal" ondragstart="return false" />
        
         <?php

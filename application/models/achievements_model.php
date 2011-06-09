@@ -38,17 +38,19 @@
     			'FK_team_id' => $teamid,
     			'FK_achievements_id' => $anumber
     		);
+    		$this->db->insert('korf_team_achievements', $insert);
     		
     		$bericht = "Gefeliciteerd u heeft de achievement:".$anaam." verkregen!";
     		
-    		$this->db->insert('korf_team_achievements', $insert);
-    		
+    		$mdate =  date('Y-m-d h:i:s');
     		$bericht_insert = array(
     			'verzender' => 'playb.al',
     			'ontvanger' => $naam,
     			'onderwerp' => 'Achievement',
     			'bericht' => $bericht,
-    			'categorie' => 1
+    			'categorie' => 1,
+    			'datum' => $mdate, 
+    			'status' => 0,
     		
     		);
     		

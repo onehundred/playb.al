@@ -985,9 +985,19 @@
 	
 	function contract_sponsor($sponsorid, $teamid)
 	{
+	
+		$this->db->where('sponsor_id', $sponsorid);
+		$query = $this->db->get('korf_sponsors');
+		
+		foreach($query->result() as $row){
+			$weken = $row->aantal_weken;
+		}
+		
+	
 		$data = array(
 			'FK_team_id' => $teamid, 
-			'FK_sponsor_id' => $sponsorid
+			'FK_sponsor_id' => $sponsorid,
+			'weken_lopend' => $weken,
 		);
 	
 		$this->db->insert('korf_team_sponsors', $data);
@@ -1037,14 +1047,11 @@
 			$data['seizoen'] = $cron->seizoen;
 		}
 		
-		$this->db->select('thuisteam, bezoekersteam');
-		$this->db->from('korf_wedstrijden');
-		$this->db->where('week', $data['week']);
-		$this->db->where('seizoen',$data['seizoen']);
-		$this->db->where('thuisteam', $team_id);
-		$this->db->or_where('bezoekersteam', $team_id);
-		$match_query = $this->db->get();
+		//geen active record omdat de query te complex is
+		$m_query = "SELECT thuisteam, bezoekersteam from korf_wedstrijden where week = '".$data['week']."' and seizoen = '".$data['seizoen']."' and (thuisteam = '".$team_id."' or bezoekersteam = '".$team_id."');";
 		
+		$match_query = $this->db->query($m_query);
+	
 		foreach($match_query->result() as $match){
 			$thuisteam_id = $match->thuisteam;
 			$bezoekers_id = $match->bezoekersteam;

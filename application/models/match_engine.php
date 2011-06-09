@@ -5,6 +5,28 @@
         parent::__construct();
        
     }
+    
+    function send_message($titel, $onderwerp, $bericht, $cat, $verzender, $ontvanger){
+    	
+    	
+    	$mdate =  date('Y-m-d h:i:s');
+    	
+    	$data = array(
+    		'titel' => $titel,
+    		'onderwerp' => $onderwerp, 
+    		'bericht' => $bericht, 
+    		'categorie' => $cat, 
+    		'verzender' => $verzender, 
+    		'ontvanger' => $ontvanger,
+    		'datum' => $mdate,
+    		'status' => 0,
+    	);
+    	
+    	
+    	$this->db->insert('korf_berichten', $data);
+    
+    }
+
 	
 	 function get_wedstrijden()
     {
@@ -942,7 +964,8 @@
 		$this->db->where('wedstrijd_id', $wedstrijdid);
 		$this->db->update('korf_wedstrijden', $einduitslag);
 		
-    	}
+		$this->send_message('', 'Wedstrijd', 'Uw team heeft een wedstrijd gespeeld, bekijk vlug het resultaat onder wedstrijden.',1, 'playb.al', $thuisteamid);
+    	$this->send_message('', 'Wedstrijd', 'Uw team heeft een wedstrijd gespeeld, bekijk vlug het resultaat onder wedstrijden.',1, 'playb.al', $uitteamid);
     	
     	//achievements check
     	$this->load->model('achievements_model');
@@ -951,6 +974,10 @@
     	
     	$this->achievements_model->aantal_overwinningen($thuisteamid);
     	$this->achievements_model->aantal_overwinningen($uitteamid);
+		
+    	}
+    	
+    	
     	
     }
     

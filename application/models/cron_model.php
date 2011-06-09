@@ -9,7 +9,26 @@
     	$query = $this->db->get('korf_cron');
     	return $query;
     }
+    function send_message($titel, $onderwerp, $bericht, $cat, $verzender, $ontvanger){
+    	
     
+    	$mdate =  date('Y-m-d h:i:s');
+    	$data = array(
+    		'titel' => $titel,
+    		'onderwerp' => $onderwerp, 
+    		'bericht' => $bericht, 
+    		'categorie' => $cat, 
+    		'verzender' => $verzender, 
+    		'ontvanger' => $ontvanger,
+    		'datum' => $mdate, 
+    		'status' => 0,
+    	
+    	);
+    	
+    	
+    	$this->db->insert('korf_berichten', $data);
+    
+    }
     //om de 2 dagen
     function update_week($week)
     {
@@ -50,6 +69,7 @@
     	{
     		$team_id = $row->team_id;
     		
+    		$this->send_message('', 'Einde Seizoen', 'Het seizoen is afgelopen, all updates zijn uitgevoerd. De aanvang van het volgende seizoen zal heel binnenkort plaatsvinden', 1, 'playb.al', $team_id);
     		
     		$legen = array(
     			'gespeeld' => 0,
@@ -113,6 +133,10 @@
     		
     		$promTeamId = $row->team_id;
     		$promDivId = $row->FK_division_id;
+    		
+    		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
+    		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$i]);
+    		
     		$update = array(
     			'FK_division_id' => $degrDivId[$i],
     			'geupdate' => 1
@@ -182,12 +206,8 @@
     		$promTeamId = $row->team_id;
     		$promDivId = $row->FK_division_id;
     		
-    		//echo $l;
-    		//echo $degrDivId[$l];
-    		//echo $degrTeamId[$l];
-    		//echo $promTeamId;
-    		//echo $promDivId;
-    		//echo '<br/>';
+    		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
+    		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -263,12 +283,8 @@
     		$promTeamId = $row->team_id;
     		$promDivId = $row->FK_division_id;
     		
-    		//echo $l;
-    		//echo $degrDivId[$l];
-    		//echo $degrTeamId[$l];
-    		//echo $promTeamId;
-    		//echo $promDivId;
-    		//echo '<br/>';
+    		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
+    		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -346,12 +362,8 @@
     		$promTeamId = $row->team_id;
     		$promDivId = $row->FK_division_id;
     		
-    		//echo $l;
-    		//echo $degrDivId[$l];
-    		//echo $degrTeamId[$l];
-    		//echo $promTeamId;
-    		//echo $promDivId;
-    		//echo '<br/>';
+    		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
+    		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -425,12 +437,8 @@
     		$promTeamId = $row->team_id;
     		$promDivId = $row->FK_division_id;
     		
-    		//echo $l;
-    		//echo $degrDivId[$l];
-    		//echo $degrTeamId[$l];
-    		//echo $promTeamId;
-    		//echo $promDivId;
-    		//echo '<br/>';
+    		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
+    		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -505,12 +513,8 @@
     		$promTeamId = $row->team_id;
     		$promDivId = $row->FK_division_id;
     		
-    		//echo $l;
-    		//echo $degrDivId[$l];
-    		//echo $degrTeamId[$l];
-    		//echo $promTeamId;
-    		//echo $promDivId;
-    		//echo '<br/>';
+    		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
+    		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -586,12 +590,8 @@
     		$promTeamId = $row->team_id;
     		$promDivId = $row->FK_division_id;
     		
-    		//echo $l;
-    		//echo $degrDivId[$l];
-    		//echo $degrTeamId[$l];
-    		//echo $promTeamId;
-    		//echo $promDivId;
-    		//echo '<br/>';
+    		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
+    		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -669,12 +669,8 @@
     		$promTeamId = $row->team_id;
     		$promDivId = $row->FK_division_id;
     		
-    		//echo $l;
-    		//echo $degrDivId[$l];
-    		//echo $degrTeamId[$l];
-    		//echo $promTeamId;
-    		//echo $promDivId;
-    		//echo '<br/>';
+  			$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
+    		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -727,7 +723,12 @@
     				
     				$this->db->where('speler_id', $spelerid);
     				$this->db->update('korf_spelers', $update);
+    				
+    				$this->send_message('','Transfer','Uw speler is niet verkocht.',1,'playb.al', $hoogste_bieder);
+    				
     			}else{
+    			
+    				//voor de update een bericht sturen naar de huidige owner om te zeggen dat speler verkocht is.
     				$update = array(
     					'transfer' => 0,
     					'FK_team_id'=> $hoogste_bieder    				
@@ -737,7 +738,8 @@
     				
     				$this->db->where('speler_id', $spelerid);
     				$this->db->update('korf_spelers', $update);
-    			
+    				
+    				$this->send_message('','Transfer','Uw hebt een nieuwe speler aangekocht.',1,'playb.al', $hoogste_bieder);
     			}
     			
     			$this->db->where('transfer_id', $transferid);
@@ -955,10 +957,7 @@
     		
     	
     	}
-    
-    
-    
-    }
+   }
     
     //teams tegen elkaar uitzetten per divisie
     function arrange_matches()
@@ -1715,13 +1714,23 @@
     		$this->db->where('FK_team_id', $teamid);
     		$sponsors = $this->db->get();
     		
+    		$weken = array();
+    		$ts_id = array();
+    		$snaam = array();
+    		$tid = array();
     		$bedrag = 0;
+    		$i=0;
     		foreach($sponsors->result() as $row)
     		{
     			$bedrag = $bedrag + $row->bedrag; 
-    		
+    			$weken[$i] = $row->weken_lopend;
+    			$ts_id[$i] = $row->team_sponsor_id;
+    			$snaam[$i] = $row->naam;
+    			$tid[$i] = $row->FK_team_id;
+    			$i++;
     		}
     		
+    		//get spelerslonen
     		$this->db->select('*');
     		$this->db->from('korf_skills');
     		$this->db->join('korf_spelers','FK_player_id = speler_id');
@@ -1735,6 +1744,26 @@
     		
     		}
     		
+    		$length = sizeof($weken);
+    		for($j=0;$j<$length;$j++){
+    			if($weken[$j] - 1 == 0){
+    				//delete sponsor
+    				$this->db->where('team_sponsor_id', $ts_id[$j]);
+    				$this->db->delete('korf_team_sponsors');
+    				
+    				$this->send_message('', 'Sponsorcontract', 'Uw contract met '.$snaam[$j].' is nu afgelopen',1,'playb.al', $tid[$j]);
+    			
+    			}else{
+    				//update weken_lopend
+    				$data = array(
+    					'weken_lopend' => $weken[$j] - 1,
+    				
+    				);
+    				$this->db->where('team_sponsor_id', $ts_id[$j]);
+    				$this->db->update('korf_team_sponsors', $data);
+    			}
+    		}
+    		
     		
     		if($week == 14){
     			$week_insert = 1;
@@ -1743,7 +1772,7 @@
 				$week_insert = $week+1;
 				$seizoen_insert = $seizoen;    		
     		}
-
+			//insert voor de volgende week, alle vaststaande bedragen worden reeds ingsteld
     		$insert = array(
     			'sponsors' => $bedrag,
     			'spelersloon' => $loon,

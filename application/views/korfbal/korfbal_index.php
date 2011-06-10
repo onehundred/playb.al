@@ -18,7 +18,18 @@
                     <h2>
                         <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
                         nieuws</h2>
+                        <p id="twitter_nieuws"></p>
                     <!-- tweets van @playb_al zonder mentions --> 
+					    <script type="text/javascript"> 
+					     $(document).ready(function(){
+					  		  $.jTwitter('playb_al',1,'geen', function(userdata){
+								  //Callback functn with the user data as shown above
+								  $('#twitter_nieuws').append(userdata.results[0].text);
+								  
+								});
+					
+						});
+					</script> 
                 </section>
             </div>
             <div>
@@ -26,6 +37,18 @@
                     <h2>
                         <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
                         status</h2>
+                        <p id="twitter_status"></p> 
+					    <script type="text/javascript"> 
+					     $(document).ready(function(){
+					  		  $.jTwitter('playb_al',1,'status', function(userdata){
+								  //Callback functn with the user data as shown above
+								  $('#twitter_status').append(userdata.results[0].text);
+								  
+								});
+					
+						});
+					</script> 
+
                     <!-- tweets van @playb_al met #status --> 
                 </section>
             </div>
@@ -36,7 +59,18 @@
                     <h2>
                         <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
                         updates</h2>
+                        <p id="twitter_update"></p>
                     <!-- tweets van @playb_al met #update --> 
+                    	    <script type="text/javascript"> 
+					     $(document).ready(function(){
+					  		  $.jTwitter('playb_al',1,'update', function(userdata){
+								  //Callback functn with the user data as shown above
+								  $('#twitter_update').append(userdata.results[0].text);
+								  
+								});
+					
+						});
+					</script> 
                 </section>
             </div>
             <div>

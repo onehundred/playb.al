@@ -67,8 +67,9 @@ ul#filters{display:block;}
 .gameLeft div{background-color:rgba(255, 255, 255, 0.5);-webkit-border-top-left-radius:3px;-webkit-border-top-right-radius:3px;-webkit-border-bottom-right-radius:12px;-webkit-border-bottom-left-radius:12px;-moz-border-radius-topleft:3px;-moz-border-radius-topright:3px;-moz-border-radius-bottomright:12px;-moz-border-radius-bottomleft:12px;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:12px;border-bottom-left-radius:12px;border:1px solid #CCCCCC;}
 #testkalender{background:url(../img/1168/boxtop_bw.png) no-repeat 0% 0%;height:60px;}
 .gameLeft div section{-webkit-box-shadow:inset 0px 0px 10px #bdbdbd;-moz-box-shadow:inset 0px 0px 10px #bdbdbd;box-shadow:inset 0px 0px 10px #CCC;-webkit-border-top-left-radius:0px;-webkit-border-top-right-radius:0px;-webkit-border-bottom-right-radius:10px;-webkit-border-bottom-left-radius:10px;-moz-border-radius-topleft:0px;-moz-border-radius-topright:0px;-moz-border-radius-bottomright:10px;-moz-border-radius-bottomleft:10px;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;background-color:rgba(255, 255, 255, 0.25);}
-#gameLeftOverview,.thin{width:1168px;clear:both;}
-#gameLeftOverview div{float:left;margin:0 17px 17px 0;}
+#gameLeftOverview{width:1168px;}
+#gameLeftOverview div{margin:0 0 17px 0;}
+#gameLeftOverview .column{float:left;margin:0 17px 0 0;}
 #matchTeamName,#versus{font-size:32px;font-family:'SFCollegiateSolidRegular';text-transform:uppercase;color:#FFF;text-shadow:0px 0px 15px #333;display:inline;line-height:34px;width:100px;}
 #versus{color:black;}
 .division div{float:left;display:inline;padding:0 15px 0 0;}

@@ -2,6 +2,7 @@
 <div class="game">
     <aside>
         <div class="gameLeft" id="gameLeftOverview">
+        <section class="column">
             <div>
                 <section>
                     <h2>
@@ -28,6 +29,8 @@
                     <!-- tweets van @playb_al met #status --> 
                 </section>
             </div>
+            </section> <!-- end column -->
+            <section class="column">
             <div>
                 <section>
                     <h2>
@@ -56,6 +59,7 @@
                     <?php } ?>
                 </section>
             </div>
+            
             <div>
                 <section>
                     <h2>klassement jouw divisie</h2>
@@ -64,6 +68,8 @@
                     <?php } ?>
                 </section>
             </div>
+            </section> <!-- end column -->
+            <section class="column">
             <div>
                 <section>
                     <h2>
@@ -96,6 +102,7 @@
                     <p>Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 </section>
             </div>
+            </section> <!-- end column -->
         </div>
         <!-- end gameLeft --> 
     </aside>

@@ -15,7 +15,7 @@
  */
 (function( $ ){
 	$.extend( {
-		jTwitter: function( username, numPosts, fnk ) {
+		jTwitter: function( username, numPosts, hashtag,  fnk ) {
 			var info = {};
 			
 			// If no arguments are sent or only username is set
@@ -27,14 +27,31 @@
 				numPosts = 5;
 			}
 			
-			var url = "http://twitter.com/status/user_timeline/"
-				+ username + ".json?count="+numPosts+"&callback=?";
-
-			$.getJSON( url, function( data ){
+			if(hashtag == 'status'){
+				var url = "http://search.twitter.com/search.json?q=+from%3Ascarlenn";
+			}
+			if( hashtag == 'update'){
+				var url = "http://search.twitter.com/search.json?q=+from%3Ascarlenn";
+			}
+			if( hashtag == 'geen'){
+				var url = "http://search.twitter.com/search.json?q=+from%3Ascarlenn";
+			}
+			
+			$.ajax({
+  				url: url,
+  				dataType: "jsonp",
+  				success: function(data){
 				if( $.isFunction( fnk ) ) {
 					fnk.call( this, data );
 				}
+				}
 			});
+			
+			/*$.getJSON( url, function( data ){
+				if( $.isFunction( fnk ) ) {
+					fnk.call( this, data );
+				}
+			});*/
 		}
 	});
 })( jQuery );

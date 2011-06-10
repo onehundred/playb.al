@@ -36,10 +36,9 @@
     <script src="<?php echo base_url();?>js/jquery.jtwitter.js"></script> 
     <script type="text/javascript"> 
      $(document).ready(function(){
-  		  $.jTwitter('justin', function(userdata){
-  		  	//alert(userdata[0].text);
+  		  $.jTwitter('justin',1, 'geen', function(userdata){
 			  //Callback functn with the user data as shown above
-			  $('#twitter').append(userdata[0].text);
+			   $('#twitter').append(userdata.results[0].text);
 			  
 			});
 

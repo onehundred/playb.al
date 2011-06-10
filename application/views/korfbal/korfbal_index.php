@@ -1,16 +1,6 @@
-   <div class="game"><div class="gameRight"> 
-        
-        <!-- 		<h2 id="tagline">Overzicht</h2> --> 
-        <!--     <h3>Stadion: <?php echo $stadionnaam;?></h3> --> 
-        <!--     <h5>Aantal plaatsen: <?php echo $stadionplaatsen; ?></h5> -->
-        <h2>nieuws</h2>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.</p>
-        <h2>playb.al updates</h2>
-        <p>Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-    </div>
-    <!-- end gameRight -->
-    <aside>
-    <div class="gameLeft">
+   <div class="game">
+       <aside>
+    <div class="gameLeft" id="gameLeftOverview">
 
         <div>
             <section>
@@ -67,4 +57,3 @@
     <!-- end gameLeft --> 
     </aside>
 </div> <!-- end game -->
-</div>

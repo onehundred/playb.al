@@ -60,6 +60,7 @@ $(document).ready(function(){
 <!--       <h1>login</h1> -->
     
     <div class="login" style="display: none; opacity: 0;"><a href="#" id="closeLogin"><img src="<?php echo base_url();?>img/close.png" /></a>
+    
         <?php
                         $attributes = array('id'=>'loginform');
 						echo form_open('#', $attributes);

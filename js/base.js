@@ -1,10 +1,6 @@
 // playb.al
 
 
-$(document).ready(function() {
-$('.gameLeft, .gameRight').load().fadeIn(250);
-
-});
 
 
 
@@ -303,6 +299,15 @@ $('.gameLeft, .gameRight').load().fadeIn(250);
 			$('.login').fadeOut('fast');
 			$('.korfbalAnimation, .basketbalAnimation, .volleybalAnimation').hide();
 
+	   		$('.register, .sports').delay(500).animate({opacity: 1}, 1, 'linear').show();
+
+		});
+	});
+		$(function() {
+    	$("#closeOops").click(function () {
+			$('#oops').fadeOut('fast');
+			$('.korfbalAnimation, .basketbalAnimation, .volleybalAnimation').hide();
+
 	   		$('.korfbal, .basketbal, .volleybal, #login, .gameRight, .gameLeft').animate({opacity: 1}, 1, 'linear').show();
 
 		});
@@ -310,7 +315,7 @@ $('.gameLeft, .gameRight').load().fadeIn(250);
 	$(function() {
     	$("#closeProfile").click(function () {
 			$('.profile').fadeOut('fast');
-	   		$('.korfbal, .basketbal, .volleybal, #login, .gameRight, .gameLeft, .sportnav').animate({opacity: 1}, 1, 'linear').show();
+	   		$('.register, .sports, .game').animate({opacity: 1}, 1, 'linear').show();
 
 
 		});
@@ -322,9 +327,288 @@ $('.gameLeft, .gameRight').load().fadeIn(250);
 
 		});
 	});
+	/////////////////////////////////////////////////////////////////
+// LOGIN begin
+/////////////////////////////////////////////////////////////////
+$(function() {
+    	$("#login").click(function () {
+    	
+		$('.register, .sports').animate({opacity: 0}, 1, 'linear').hide();
+
+	
+	   	$('.login').show().animate({opacity: 1}, 1500, 'linear');	
+		});
+});
+$(function() {
+    	$("#profile").click(function () {
+    	
+		$('.register, .sports, .game').animate({opacity: 0}, 1, 'linear').hide();		
+	   	$('.profile').show().animate({opacity: 1}, 1500, 'linear');	
+		});
+});
+$(function() {
+    	$(".oops").click(function () {
+    	
+		$('.korfbal, .basketbal, .volleybal, .gameRight, .gameLeft').animate({opacity: 0}, 1, 'linear').hide();		
+	   	$('#oops').show().animate({opacity: 1}, 1500, 'linear');	
+		});
+});
+
+/////////////////////////////////////////////////////////////////
+// LOGIN  end
+/////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
 // HOMEPAGE ANIMATIONS end
 /////////////////////////////////////////////////////////////////
+// REGISTER begin
+/////////////////////////////////////////////////////////////////
+	function username_click(){
+		var username = $('#sign_username').val();
+		if(username == 'Username'){
+			$('#sign_username').val('');
+		}
+		if(username == ''){
+			$('#sign_username').val('Username');
+		}
+		if(username != '' && username != 'Username'){
+		
+			$('#sign_username').val(username);
+		}
+	}
+	function voornaam_click(){
+		var voornaam = $('#sign_voornaam').val();
+		if(voornaam == 'Voornaam'){
+			$('#sign_voornaam').val('');
+		}
+		if(voornaam == ''){
+			$('#sign_voornaam').val('Voornaam');
+		}
+		if(voornaam != '' && voornaam != 'Voornaam'){
+		
+			$('#sign_voornaam').val(voornaam);
+		}
+	
+	}
+	function achternaam_click(){
+		var achternaam = $('#sign_achternaam').val();
+		if(achternaam == 'Achternaam'){
+			$('#sign_achternaam').val('');
+		}
+		if(achternaam == ''){
+			$('#sign_achternaam').val('Achternaam');
+		}
+		if(achternaam != '' && achternaam != 'Achternaam'){
+		
+			$('#sign_achternaam').val(achternaam);
+		}
+	
+	}
+	
+	function email_click(){
+		var email = $('#sign_email').val();
+		if(email == 'Email'){
+			$('#sign_email').val('');
+		}
+		if(email == ''){
+			$('#sign_email').val('Email');
+		}
+		if(email != '' && email != 'Email'){
+		
+			$('#sign_email').val(email);
+		}
+	
+	}
+	
+	function password_click(){
+			var password = $('#sign_password').val();
+		if(password == 'Paswoord'){
+			$('#sign_password').val('');
+		}
+		if(password == ''){
+			$('#sign_password').val('Paswoord');
+		}
+		if(password != '' && password != 'Paswoord'){
+		
+			$('#sign_password').val(password);
+		}
+	
+	
+	}
+		function password2_click(){
+			var password = $('#sign_password2').val();
+		if(password == 'Password'){
+			$('#sign_password2').val('');
+		}
+		if(password == ''){
+			$('#sign_password2').val('Password');
+		}
+		if(password != '' && password != 'Password'){
+		
+			$('#sign_password2').val(password);
+		}
+	
+	
+	}
+	$(function(){
+	
+	function checkemail(str){
+	   var filter=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+	
+	   if ( !filter.test(str)) {
+	    //alert ("bad");
+	    return false;
+	   }
+	   else {
+	    //alert ("ok");
+	    return true;
+	  }
+	}
+	
+	$('#signupform').submit(function() {
+		var status = 0;
+		$('#personal_error').text('');
+		$('#username_error').text('');
+		$('#paswoord_error').text('');
+		
+		
+		var voornaam = $('#sign_voornaam').val();
+		var achternaam = $('#sign_achternaam').val();
+		var email = $('#sign_email').val();
+  		var username = $('#sign_username').val();
+  		var password = $('#sign_password').val();
+  		var password2 = $('#sign_password2').val();
+  		
+		$.ajax({
+    			type: "POST",
+    			url: "../../index.php/main/check_username",
+    			data:  { username: username,
+    					 email: email,    
+            			
+        				},
+    			dataType: "json",
+        		success: function(check_data){ 
+
+  					//alert(check_data.username);
+
+					if(voornaam == '' || voornaam == 'Voornaam'){
+						$('#sign_voornaam').css({    
+												'border' : '1px solid red',
+											});
+					
+					}else{
+						status = status +1;
+								$('#sign_voornaam').css({    
+												'border' : '1px solid gray',
+											});
+					
+					}
+					if(achternaam == '' || achternaam == 'Achternaam'){
+						$('#sign_achternaam').css({    
+												'border' : '1px solid red',
+											});
+					
+					}else{
+						status = status +1;
+							$('#sign_achternaam').css({    
+												'border' : '1px solid gray',
+											});
+					
+					}
+					if(email == '' || email =='email' || checkemail(email) == false){
+						$('#sign_email').css({    
+												'border' : '1px solid red',
+											});
+					}else{
+						status = status +1;
+						$('#sign_email').css({    
+												'border' : '1px solid gray',
+											});
+					
+					}
+					if(check_data.email == false){
+						$('#personal_error').text('Dit e-mail adres bestaat al.');
+					}else{
+						status = status +1;
+					
+					}
+					if(username == '' || username == 'Username'){
+						$('#sign_username').css({    
+												'border' : '1px solid red',
+											});
+					}else{
+						status = status +1;
+						$('#sign_username').css({    
+												'border' : '1px solid gray',
+											});
+					
+					}
+					if( check_data.username == false){
+				
+						$('#username_error').text('Deze username bestaat al.');
+						
+					}else{
+						status = status +1;
+					
+					}
+					if(password == '' || password =='Paswoord'){
+						$('#sign_password').css({    
+												'border' : '1px solid red',
+											});
+					}else{
+						status = status +1;
+						$('#sign_password').css({    
+												'border' : '1px solid gray',
+											});
+
+					
+					}
+				     if(password2 == '' || password2 == 'Password'){
+						$('#sign_password2').css({    
+												'border' : '1px solid red',
+											});
+					}else{
+						status = status +1;
+						$('#sign_password2').css({    
+												'border' : '1px solid gray',
+											});
+					
+					}
+					if(password != password2){
+						$('#paswoord_error').text('De paswoorden zijn niet identiek.');
+					
+					}else{
+						status = status +1;
+					
+					}
+					
+					if(status == 9){
+			  			$.ajax({
+			    			type: "POST",
+			    			url: "../../index.php/main/create_user",
+			    			data:  { username: username,
+			            			 password: password, 
+			            			 voornaam: voornaam,
+			            			 achternaam: achternaam,
+			            			 email: email,   
+			            			
+			        				},
+			    			dataType: "json",
+			        		success: function(data){
+			        			window.location = "../../index.php/main/signup_success"
+			    			  }
+			  		
+			  			});
+			  		}
+  			}
+  	});		
+  		
+  		return false;
+	});
+});
+
+
+
+
 // TEAM ANIMATIONS begin
 /////////////////////////////////////////////////////////////////
 $(function() {
@@ -411,28 +695,7 @@ alert (initHeight);
 });
 /////////////////////////////////////////////////////////////////
 // TEAM ANIMATIONS end
-/////////////////////////////////////////////////////////////////
-// LOGIN begin
-/////////////////////////////////////////////////////////////////
-$(function() {
-    	$("#login").click(function () {
-    	
-		$('.korfbal, .basketbal, .volleybal, #s4').animate({opacity: 0}, 1, 'linear').hide();
 
-	
-	   	$('.login').show().animate({opacity: 1}, 1500, 'linear');	
-		});
-});
-$(function() {
-    	$("#profile").click(function () {
-    	
-		$('.korfbal, .basketbal, .volleybal, .gameRight, .gameLeft').animate({opacity: 0}, 1, 'linear').hide();		
-	   	$('.profile').show().animate({opacity: 1}, 1500, 'linear');	
-		});
-});
-/////////////////////////////////////////////////////////////////
-// LOGIN  end
-/////////////////////////////////////////////////////////////////
 // TOUCHSWIPE begin
 /////////////////////////////////////////////////////////////////		
 		var IMG_WIDTH = innerWidth;

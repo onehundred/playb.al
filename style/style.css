@@ -95,7 +95,6 @@ footer div{float:left;}
 #footerCenter{}
 #footerRight{margin-left:15px;}
 #layouts figure{float:left;}
-#layouts,#layouts2{height:400px;}
 #layouts p,#layouts figure{}
 .korfbal,.basketbal,.volleybal{-webkit-box-reflect:below 4px -webkit-gradient(linear, left top, left bottombottom, from(transparent), color-stop(0.7, transparent), to(white));}
 .korfbal{top:25px;margin:10px;-moz-transform:scale(0.85) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-webkit-transform:scale(0.85) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-o-transform:scale(0.85) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-ms-transform:scale(0.85) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);transform:scale(0.85) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
@@ -147,7 +146,7 @@ div#profile:active{background:#3282d3;border:1px solid #154c8c;border-bottom:1px
 .startgame a:hover{color:#FFF;}
 .startgame img{display:inline;bottom:-7px;left:-46px;position:absolute;}
 #continue a{color:#F7F7F7;font-family:'LeagueGothicRegular';font-size:32px;padding-left:15px;text-shadow:0px 0px 15px #333;color:#F7F7F7;text-transform:uppercase;}
-#overview{padding-left:15px;font-family:'LeagueGothicRegular';text-transform:uppercase;font-size:32px;color:#F7F7F7;text-shadow:0px 0px 15px #333;}
+.overview{padding-left:15px;font-family:'LeagueGothicRegular';text-transform:uppercase;font-size:32px;color:#F7F7F7;text-shadow:0px 0px 15px #333;}
 #overview2{padding-left:15px;font-family:'LeagueGothicRegular';text-transform:uppercase;font-size:32px;color:#F7F7F7;text-shadow:0px 0px 15px #333;}
 #down{display:inline;bottom:80px;left:33px;position:absolute;}
 input[type="text"],input[type="password"],input[type="email"]{display:block;margin:0 0 1em 0;width:200px;padding:5px;border:solid 1px #999;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;background:#FFF;}
@@ -228,3 +227,6 @@ select{background:#F7F7F7;padding:10px;font-size:16px;}
 #volleybal_signup #steps li{font-size:24px;float:left;padding:10px;color:green;}
 #volleybal_signup #steps li span{font-size:11px;display:block;}
 #volleybal_signup #steps li.current{color:#000;}
+#twitter{position:relative;padding:15px;margin:1em 0 3em;border:5px solid #444;color:#333;background:#000;background:rgba(0, 0, 0, 0.5);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+#twitter:before{content:"";position:absolute;bottom:-20px;left:40px;border-width:20px 20px 0;border-style:solid;border-color:#444 transparent;display:block;width:0;}
+#twitter:after{content:"";position:absolute;bottom:-13px;left:47px;border-width:13px 13px 0;border-style:solid;border-color:#000 transparent;display:block;width:0;}

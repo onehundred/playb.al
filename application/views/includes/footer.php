@@ -20,7 +20,7 @@
       
             <li><a href="http://www.facebook.com/apps/application.php?id=217760674909805&sk=app_2373072738">forum</a></li>
             <li><a href="http://getsatisfaction.com/playbal">meld een probleem</a></li>
-   <li><a href="mailto:admin@playb.al">mail ons</a></li>
+<?php   echo safe_mailto('admin@playb.al', 'mail ons'); ?>
 
 
  

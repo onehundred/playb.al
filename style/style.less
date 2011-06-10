@@ -649,7 +649,6 @@ footer div {
 #layouts, #layouts2 {
 
 
-	height: 400px;
 }
 #layouts p, #layouts figure {
 /* 	margin-top: 5px; */
@@ -1025,7 +1024,7 @@ div#profile:active {
 	color: #F7F7F7;
 	text-transform: uppercase;
 }
-#overview {
+.overview {
 	padding-left: 15px;
 	font-family: 'LeagueGothicRegular';
 	text-transform: uppercase;
@@ -1396,3 +1395,52 @@ display: none;
 #volleybal_signup #steps li {font-size:24px; float:left; padding:10px; color:green;}
 #volleybal_signup #steps li span {font-size:11px; display:block;}
 #volleybal_signup #steps li.current { color:#000;}     
+
+
+
+#twitter {
+	position:relative;
+	padding:15px;
+	margin:1em 0 3em;
+	border:5px solid #444;
+	color:#333;
+	background:#000;
+	background: rgba(0,0,0,0.5);
+	/* css3 */
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+}
+
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+#twitter:before {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	left:40px; /* controls horizontal position */
+    border-width:20px 20px 0;
+	border-style:solid;
+    border-color:#444 transparent;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;
+}
+
+/* creates the smaller  triangle */
+#twitter:after {
+	content:"";
+	position:absolute;
+	bottom:-13px; /* value = - border-top-width - border-bottom-width */
+	left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+	border-width:13px 13px 0;
+	border-style:solid;
+	border-color:#000 transparent;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;
+}
+
+

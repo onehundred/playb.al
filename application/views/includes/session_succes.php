@@ -2,7 +2,8 @@
 
 if($username != ""){
 ?>
-<a href="#" id="closeProfile">sluiten</a>
+<a href="#" id="closeProfile"><img src="<?php echo base_url();?>img/close.png" /></a>
+
 <img src="<?php echo base_url();?>img/default_profile.png" />
 
 	<p>dfgs</p>

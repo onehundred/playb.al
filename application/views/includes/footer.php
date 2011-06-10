@@ -20,7 +20,7 @@
       
             <li><a href="http://www.facebook.com/apps/application.php?id=217760674909805&sk=app_2373072738">forum</a></li>
             <li><a href="http://getsatisfaction.com/playbal">meld een probleem</a></li>
-<?php   echo safe_mailto('admin@playb.al', 'mail ons'); ?>
+   <li><a href="mailto:admin@playb.al">mail ons</a></li>
 
 
  
@@ -33,9 +33,17 @@
        
     </footer>
        
-    <script src="<?php echo base_url();?>js/jquery.zrssfeed.min.js"></script> 
+    <script src="<?php echo base_url();?>js/jquery.jtwitter.js"></script> 
     <script type="text/javascript"> 
-$('#twitter').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=07185e6fedce25a36a4b39cd537f98e1&_render=rss', {    limit: 1  });
+     $(document).ready(function(){
+  		  $.jTwitter('justin', function(userdata){
+  		  	alert(userdata[0].text);
+			  //Callback functn with the user data as shown above
+			  $('#twitter').append(userdata[0].text);
+			  
+			});
+
+	});
 </script> 
 </section>
 <!-- end footerWrap -->

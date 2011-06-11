@@ -1489,8 +1489,8 @@
     		
     		
     				
-    	$voornaam = $voornamen[array_rand($voornamen)];
-    	$achternaam = $achternamen[array_rand($achternamen)];
+    	$voornaam = strtolower($voornamen[array_rand($voornamen)]);
+    	$achternaam = strtolower($achternamen[array_rand($achternamen)]);
     	$leeftijd = $leeftijden[array_rand($leeftijden)];
     	
     	$new_player_insert_data = array(

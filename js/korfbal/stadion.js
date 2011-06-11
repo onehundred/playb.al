@@ -99,7 +99,7 @@ $(function(){
 	$( "#dialog-confirm" ).hide();
 		
 	$('.kopen').live('click', function(){
-	
+		$('.aankoop_overzicht').remove();
 				
 		var teamid = $('#teamid').val();
 		//alert(teamid);
@@ -109,6 +109,7 @@ $(function(){
 		if(id === 'sectie_b' || id === 'sectie_c' || id === 'sectie_d' || id === 'sectie_e' || id === 'sectie_f' || id === 'sectie_g' || id === 'sectie_h')
 		{
 			var url = "http://playb.al/index.php/Json/korfbal_buySection";
+			$('#dialog-confirm').append('<p class="aankoop_overzicht">1 Sectie voor 500 000 </p>');
 			
 		}
 		
@@ -118,8 +119,9 @@ $(function(){
 			var input = id.split('plaatsen_');
 			//alert(input[1]);
 			var aantalplaatsen = $('#'+input[1]+'').val();
+			var betalenplaatsen = aantalplaatsen * 100;
 			//alert(aantalplaatsen);
-		
+			$('#dialog-confirm').append('<p class="aankoop_overzicht">'+aantalplaatsen+' plaatsen voor '+betalenplaatsen+' </p>');
 		}
 		
 		
@@ -146,8 +148,8 @@ $(function(){
 		dataType: "json",
         success: function(data) {
         
-        if(data.section){
-			if(data.section === true)
+        if(data.section != undefined){
+        	if(data.section === true)
 			{
 				$().toastmessage('showSuccessToast', 'Sectie is aangekocht!');
 				$('#stadion').slideUp(500,function(){
@@ -157,19 +159,20 @@ $(function(){
 					$('#stadion').slideDown(2000);
 			
 			}
-			else{
+			if(data.section === false){
+			
 				$().toastmessage('showErrorToast', 'U heeft te weinig geld om deze sectie te kopen!');
 			}
 		}
 		
-		if(data.seats){
+		if(data.seats != undefined){
 			if(data.seats === true)
 				{
 					$().toastmessage('showSuccessToast', 'Plaatsen zijn aangekocht!');
 					
 						//$( "#sec_"+input[1]).effect( 'explode', 500, getData() );
 						//getData();
-						$("#sec_"+input[1]).flip({
+					$("#sec_"+input[1]).flip({
 					direction:'tb',
 					color : '#FFF',
 					onBefore: function(){
@@ -183,13 +186,9 @@ $(function(){
 					}
 				})
 										
-					
-					
-				
-				
 				}
 				else{
-					$().toastmessage('showErrorToast', 'U heeft te weinig geld om deze plaatsen te kopen!');
+					$().toastmessage('showErrorToast', 'U heeft te weinig geld om deze plaatsen te kopen of u uw totaal aantal plaatsen overstijgt de 5000!');
 				}
 	
 	         }

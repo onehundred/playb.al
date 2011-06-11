@@ -90,12 +90,15 @@
                 <h2>Sponsors</h2>
                 </section>		
             </div>
-            <div id="grafiek">
+            <div id="grafiek"> 
             <section>
                 <h2>Overzicht financien</h2>
-                <canvas id="canvas1" width="400" height="300"> uw browser ondersteunt geen canvas. </canvas>
+
+                <canvas id="canvas1" width="350" height="350"> uw browser ondersteunt geen canvas. </canvas>
+
                 </section>
             </div> <!-- end grafiek -->
+            
         </div>
         <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>">
         <div id="sponsormodal" class="reveal-modal">

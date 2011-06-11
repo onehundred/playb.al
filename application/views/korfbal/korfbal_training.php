@@ -290,7 +290,7 @@ foreach($training->result() as $row){
         </div>
         <div class="chart_container">
             <h2>team skills</h2>
-            <canvas id="chartTeamSkills" width="350" height="350"> Your web-browser does not support the HTML 5 canvas element. </canvas>
+            <canvas id="chartTeamSkills" width="390" height="350"> uw browser ondersteunt dit niet. </canvas>
         </div>
         <div>
             <section>

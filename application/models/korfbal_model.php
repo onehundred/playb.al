@@ -894,50 +894,103 @@
 	}
 	function buySection($sectie, $teamid)
 	{
-		$data = array(
-			$sectie => 1
-		);
-		
+		$this->db->select('totaal, stadion, financien_id');
+		$this->db->from('korf_financien');
 		$this->db->where('FK_team_id', $teamid);
-		$update = $this->db->update('korf_stadion', $data);
-		if($update){
-			return true;
-		}else{
-			return false;
+		$this->db->order_by('financien_id', 'DESC');
+		$this->db->limit(1);
+		$query = $this->db->get();
+		
+		foreach($query->result() as $row){
+			$fid = $row->financien_id;
+			$totaal = $row->totaal;
+			$stadion = $row->stadion;
 		}
+		$verschil = $totaal - $stadion;
+		if($verschil < 500000){
+			return false;
+		}else{
 	
+	
+			$stadion = array(
+				'stadion' => $stadion + 500000,
+			);
+			
+			$this->db->where('financien_id', $fid);
+			$update = $this->db->update('korf_financien', $stadion);
+			
+			
+			$data = array(
+				$sectie => 1
+			);
+			$this->db->where('FK_team_id', $teamid);
+			$update = $this->db->update('korf_stadion', $data);
+
+			return true;
+		
+		}
 	
 	}
 	
 	function buySeats($sectie, $teamid, $aantalplaatsen)
 	{
+	
+		$betalen = $aantalplaatsen * 100;
 		
-		$this->db->select(''.$sectie.'');
+		$this->db->select('totaal, stadion, financien_id');
+		$this->db->from('korf_financien');
 		$this->db->where('FK_team_id', $teamid);
-		$this->db->from('korf_stadion');
-		$query = $this->db->get();
+		$this->db->order_by('financien_id', 'DESC');
+		$this->db->limit(1);
+		$finances = $this->db->get();
 		
-		foreach($query->result() as $row)
-		{
-			$plaatsen = $row->$sectie;
-		
+		foreach($finances->result() as $row){
+			$fid = $row->financien_id;
+			$totaal = $row->totaal;
+			$stadion = $row->stadion;
 		}
 		
-		$totaalplaatsen = $plaatsen + $aantalplaatsen;
+		$verschil = $totaal - $stadion;
 		
-		$data = array(
-			$sectie => $totaalplaatsen
-		
-		);
-		
-		$this->db->where('FK_team_id', $teamid);
-		$update = $this->db->update('korf_stadion', $data);
-		if($update){
-			return true;
+		if($verschil < $aantalplaatsen){
+			return false;
 		}else{
 		
-			return false;
-		}
+			$this->db->select(''.$sectie.'');
+			$this->db->where('FK_team_id', $teamid);
+			$this->db->from('korf_stadion');
+			$query = $this->db->get();
+			
+			foreach($query->result() as $row)
+			{
+				$plaatsen = $row->$sectie;
+			
+			}
+			
+			$totaalplaatsen = $plaatsen + $aantalplaatsen;
+			
+			if($totaalplaatsen > 5000){
+				return false;
+			}else{
+			
+				$stadion = array(
+					'stadion' => $stadion + $betalen,
+				);
+			
+				$this->db->where('financien_id', $fid);
+				$update = $this->db->update('korf_financien', $stadion);
+				
+				$data = array(
+					$sectie => $totaalplaatsen
+				
+				);
+				
+				$this->db->where('FK_team_id', $teamid);
+				$update = $this->db->update('korf_stadion', $data);
+			
+				return true;
+			}
+		}	
 	
 	}
 	

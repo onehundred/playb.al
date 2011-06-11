@@ -173,8 +173,8 @@
             </div>
         </div>
         <!-- end gameLeft -->
-        <div id="dialog-confirm" title="Plaatsen kopen?">
-            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Bent u zeker dat u deze plaatsen wilt aankopen?</p>
+        <div id="dialog-confirm" title="Kopen?">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Bent u zeker over deze aankoop?</p>
         </div>
     </aside>
 </div>

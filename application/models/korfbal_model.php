@@ -1063,7 +1063,7 @@
 		return $data;
 	}
 	
-function get_sidebar_divisie()
+	function get_sidebar_divisie()
 	{
 		
 
@@ -1076,4 +1076,48 @@ function get_sidebar_divisie()
 		$query = $this->db->get();
 		return $query;
 	}
+	
+	function get_sidebar_berichten($team_id, $status){
+		
+		$this->db->where('ontvanger', $team_id);
+		$this->db->where('status', $status);
+		$query = $this->db->get('korf_berichten');
+		
+		$i = 0;
+		foreach($query->result() as $row){
+			$data[$i]['onderwerp'] = $row->onderwerp;
+			$data[$i]['bericht'] = $row->bericht;
+			$data[$i]['verzender'] = $row->verzender;
+			$data[$i]['datum'] = $row->datum;
+			$data[$i]['bericht_id'] = $row->bericht_id;
+			$i++;
+		
+		}
+		
+		return $data;
+	}	
+	
+	function update_sidebar_berichten($berichtid)
+	{
+		$data = array(
+			'status' => 1,
+		
+		);
+		
+		$this->db->where('bericht_id', $berichtid);
+		$this->db->update('korf_berichten', $data);
+		
+		return true;
+	
+	}
+	
+	function verwijder_sidebar_berichten($berichtid)
+	{
+		$this->db->where('bericht_id', $berichtid);
+		$this->db->delete('korf_berichten');
+		
+		return true;
+	
+	}
+	
 }

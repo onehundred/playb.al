@@ -1,7 +1,8 @@
 <script>
 $(document).ready(function(){
 	$('#loginform').submit(function() {
-  		var username = $('#login_username').val();
+	
+		var username = $('#login_username').val();
   		var password = $('#login_password').val();
   		
   		if(username == '' || password == ''){
@@ -20,6 +21,7 @@ $(document).ready(function(){
         			if(data == 'false'){
         				$('.login').effect('shake', { times:3 }, 60);
         			
+        			
         			}else{
         				window.location = '../../index.php/sportchoice/sport';
         			
@@ -28,6 +30,7 @@ $(document).ready(function(){
   		
   			});
   		}
+  			
   		return false;
 	});
 });

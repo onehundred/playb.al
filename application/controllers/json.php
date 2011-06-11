@@ -283,5 +283,33 @@ class Json extends CI_Controller {
 
 	
 	}
+	
+	function get_berichten()
+	{
+		$team_id = $_POST['teamid'];
+		$status = $_POST['status'];
+		
+		$this->load->model('korfbal_model');
+		$data = $this->korfbal_model->get_sidebar_berichten($team_id, $status);
+		echo json_encode($data);
+	
+	}
+	
+	function update_berichten()
+	{
+		$berichtid = $_POST['berichtid'];
+		$this->load->model('korfbal_model');
+		$data = $this->korfbal_model->update_sidebar_berichten($berichtid);
+		echo json_encode($data);
+	}
+	
+	function verwijder_berichten()
+	{
+		$berichtid = $_POST['berichtid'];
+		$this->load->model('korfbal_model');
+		$data = $this->korfbal_model->verwijder_sidebar_berichten($berichtid);
+		echo json_encode($data);
+	}
+
 
 }

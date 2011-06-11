@@ -32,9 +32,7 @@
         </div>
        
     </footer>
-       
-    <script src="<?php echo base_url();?>js/jquery.jtwitter.js"></script> 
-    <script type="text/javascript"> 
+   <script type="text/javascript"> 
      $(document).ready(function(){
   		  $.jTwitter('justin',1, 'geen', function(userdata){
 			  //Callback functn with the user data as shown above

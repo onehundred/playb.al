@@ -140,8 +140,7 @@ $(document).ready(function()
 									if(!!document.createElement('canvas').getContext){ //check that the canvas
 						                                                           // element is supported
 						            var mychart = new AwesomeChart('canvas1');
-						         
-						            mychart.title = "Verloop financien";
+						         	mychart.chartType = "horizontal bars";
 						            mychart.data = [data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13],data[14]];
 						            mychart.labels = ["Week1", "Week2", "Week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11", "week12", "week13", "week14"];
 						            mychart.draw();

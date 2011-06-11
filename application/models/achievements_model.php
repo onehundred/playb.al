@@ -42,7 +42,7 @@
     		
     		$bericht = "Gefeliciteerd u heeft de achievement:".$anaam." verkregen!";
     		
-    		$mdate =  date('Y-m-d h:i:s');
+    		$mdate =  date("F j Y, H:m"); 
     		$bericht_insert = array(
     			'verzender' => 'playb.al',
     			'ontvanger' => $naam,

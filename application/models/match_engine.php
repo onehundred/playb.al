@@ -9,7 +9,7 @@
     function send_message($titel, $onderwerp, $bericht, $cat, $verzender, $ontvanger){
     	
     	
-    	$mdate =  date('Y-m-d h:i:s');
+    		$mdate =  date("F j Y, H:m"); 
     	
     	$data = array(
     		'titel' => $titel,

@@ -58,10 +58,12 @@
 <script src="<?php echo base_url();?>js/jquery.cycle.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
+<script src="<?php echo base_url();?>js/jquery.jtwitter.js"></script> 
 <script src="<?php echo base_url();?>/js/base.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.transform.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.multiple-bgs.min.js"></script>
 <script src="<?php echo base_url();?>/js/modernizr.custom.js"></script>
+
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->

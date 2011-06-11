@@ -24,10 +24,10 @@ $(document).ready(function(){
 	$('#korfbal_berichten div').remove();
 	
 	if(status == 0){
-		var class = 'unread';
+		var klas = 'unread';
 	
 	}else{
-		var class = 'read';
+		var klas = 'read';
 	}
 		var teamid = $('#team_id').val();
 		$.ajax({
@@ -49,7 +49,7 @@ $(document).ready(function(){
         							}
         							content += '<p class="verwijder" id="'+data[i]['bericht_id']+'">Verwijder bericht</p>'
         							+ '<p class="bericht_datum">'+data[i]['datum']+' '+ data[i]['verzender']+'</p>'
-        							+ '<p class="'+class+'">'+data[i].bericht+'<p>'
+        							+ '<p class="'+klas+'">'+data[i].bericht+'<p>'
         				
         							+ '</div>';
         			

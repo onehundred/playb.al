@@ -46,7 +46,7 @@ iframe{width:708px;height:430px;}
 #tagline{font-family:'LeagueGothicRegular';color:#FAFAFA;text-shadow:rgba(0, 0, 0, 0.5) -1px 0,rgba(0, 0, 0, 0.3) 0 -1px,rgba(255, 255, 255, 0.5) 0 1px,rgba(0, 0, 0, 0.3) 0px -1px;font-size:42px;text-transform:uppercase;cursor:default;text-shadow:0px 0px 15px #333;}
 #teamname{font-family:'SFCollegiateSolidRegular';text-align:left;color:#FFF;font-size:56px;text-shadow:0px 0px 15px #333;text-transform:uppercase;font-weight:normal;cursor:default;}
 h2{font-family:'LeagueGothicRegular';text-transform:uppercase;}
-.isotope,.isotope .isotope-item{-webkit-transition-duration:0.5s;-moz-transition-duration:0.5s;-o-transition-duration:0.5s;-ms-transition-duration:0.5s;transition-duration:0.5s;}
+.isotope,.isotope .isotope-item{-webkit-transition-duration:0.4s;-moz-transition-duration:0.4s;-o-transition-duration:0.4s;-ms-transition-duration:0.4s;transition-duration:0.4s;}
 .isotope{-webkit-transition-property:height, width;-moz-transition-property:height, width;-o-transition-property:height, width;-ms-transition-property:height, width;transition-property:height, width;}
 .isotope.infinite-scrolling{-webkit-transition:none;-moz-transition:none;-o-transition:none;-ms-transition:none;transition:none;}
 .isotope .isotope-item{-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:-moz-transform,opacity;-o-transition-property:-o-transform,opacity;-ms-transition-property:-o-transform,opacity;transition-property:transform, opacity;}

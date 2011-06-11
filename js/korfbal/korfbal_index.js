@@ -43,7 +43,7 @@ $(document).ready(function(){
         			
         			for(var i =0;i<data.length;i++){
         			
-        				var content = '<div>'
+        				var content = '<p>'
         							if(status == 0){	
         								content += '<p class="markeer" id="'+data[i]['bericht_id']+'">Markeer als gelezen</p>'
         							}
@@ -51,7 +51,7 @@ $(document).ready(function(){
         							+ '<p class="bericht_datum">'+data[i]['datum']+' '+ data[i]['verzender']+'</p>'
         							+ '<p class="'+klas+'">'+data[i].bericht+'<p>'
         				
-        							+ '</div>';
+        							+ '</p>';
         			
         				$('#korfbal_berichten').append(content);
         			

@@ -295,7 +295,7 @@ width: 708px; height: 430px;
 text-transform: uppercase;
 
 	cursor: default;
-	margin: 40px 0 0 0;
+
  .textShadow;
 }
 #teamname {
@@ -318,13 +318,15 @@ h2 {
 .isotope, .isotope .isotope-item {
 	-webkit-transition-duration: 0.5s;
 	-moz-transition-duration: 0.5s;
-	/*     -o-transition-duration: 0.8s;*/
+	    -o-transition-duration: 0.5s;
+	    -ms-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
 .isotope {
 	-webkit-transition-property: height, width;
 	-moz-transition-property: height, width;
-	/*     -o-transition-property: height, width;*/
+	    -o-transition-property: height, width;
+	    -ms-transition-property: height, width;	    
           transition-property: height, width;
 }
 /* disable CSS transitions for containers with infinite scrolling*/
@@ -332,18 +334,21 @@ h2 {
 	-webkit-transition: none;
 	-moz-transition: none;
 	-o-transition: none;
+	-ms-transition: none;	
 	transition: none;
 }
 .isotope .isotope-item {
 	-webkit-transition-property: -webkit-transform, opacity;
 	-moz-transition-property:    -moz-transform, opacity;
-	/*     -o-transition-property:      -o-transform, opacity;*/
+	    -o-transition-property:      -o-transform, opacity;
+	    -ms-transition-property:      -o-transform, opacity;	    
           transition-property:         transform, opacity;
 }
 .isotope.no-transition, .isotope.no-transition .isotope-item {
 	-webkit-transition-duration: 0s;
 	-moz-transition-duration: 0s;
-	/*     -o-transition-duration: 0s;*/
+	    -o-transition-duration: 0s;
+   	    -ms-transition-duration: 0s;
           transition-duration: 0s;
 }
 /* ANIMATIONS end *****************************************************************************************************************/
@@ -1402,7 +1407,7 @@ display: none;
 	position:relative;
 	padding:15px;
 	margin:1em 0 3em;
-	border:5px solid #444;
+	border:5px solid rgba(0,0,0,0.5);
 	color:#333;
 	background:#000;
 	background: rgba(0,0,0,0.5);
@@ -1423,7 +1428,7 @@ display: none;
 	left:40px; /* controls horizontal position */
     border-width:20px 20px 0;
 	border-style:solid;
-    border-color:#444 transparent;
+    border-color: #000000 transparent;
     /* reduce the damage in FF3.0 */
     display:block; 
     width:0;
@@ -1437,7 +1442,7 @@ display: none;
 	left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
 	border-width:13px 13px 0;
 	border-style:solid;
-	border-color:#000 transparent;
+	border-color:rgba(0,0,0,0.5) transparent;
     /* reduce the damage in FF3.0 */
     display:block; 
     width:0;

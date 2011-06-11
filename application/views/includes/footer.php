@@ -49,6 +49,12 @@
   <section id="footerEnd">
 <div><p>
 playb.al 2011 - alle rechten voorbehouden
+<img src="<?php echo base_url(); ?>img/HTML5_1Color_Black.png" />
+<img src="<?php echo base_url(); ?>img/HTML5_Styling.png" />
+<img src="<?php echo base_url(); ?>img/HTML5_Semantics.png" />
+<img src="<?php echo base_url(); ?>img/HTML5_Connectivity.png" />
+<img src="<?php echo base_url(); ?>img/HTML5_Offline_Storage.png" />
+<img src="<?php echo base_url(); ?>img/HTML5_Performance.png" />
 
 </p>
 </div>

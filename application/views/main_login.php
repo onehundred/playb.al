@@ -57,7 +57,7 @@ $(document).ready(function(){
    
     </div>
     
-<!--       <h1>login</h1> -->
+
     
     <div class="login" style="display: none; opacity: 0;"><a href="#" id="closeLogin"><img src="<?php echo base_url();?>img/close.png" /></a>
     
@@ -91,9 +91,3 @@ $(document).ready(function(){
     </div>
 
 <!-- end login --> 
-
-<!-- End 3 columns container --> 
-
-<!--        <li><?php echo form_input('','zoeken') ?></li>  -->
-
-<!-- End 3 columns Item -->

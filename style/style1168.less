@@ -30,6 +30,8 @@
 	-moz-transition-timing-function: ease-in-out;
 	-o-transition-duration: 0.1s;
 	-o-transition-timing-function: ease-in-out;
+	-ms-transition-duration: 0.1s;
+	-ms-transition-timing-function: ease-in-out;
 	transition-duration: 0.1s;
 	transition-timing-function: ease-in-out;
 }
@@ -40,16 +42,20 @@
 	-moz-transition-timing-function: ease-in-out;
 	-o-transition-duration: 0.2s;
 	-o-transition-timing-function: ease-in-out;
+	-ms-transition-duration: 0.2s;
+	-ms-transition-timing-function: ease-in-out;
 	transition-duration: 0.2s;
 	transition-timing-function: ease-in-out;
 }
 .transitionOff {
 	-webkit-transition-duration: 1.6s;
 	-webkit-transition-timing-function: ease-in-out;
-	-moz-transition-duration: 0.6s;
+	-moz-transition-duration: 1.6s;
 	-moz-transition-timing-function: ease-in-out;
 	-o-transition-duration: 1.6s;
 	-o-transition-timing-function: ease-in-out;
+	-ms-transition-duration: 1.6s;
+	-ms-transition-timing-function: ease-in-out;
 	transition-duration: 1.6s;
 	transition-timing-function: ease-in-out;
 }
@@ -57,6 +63,7 @@
 	-webkit-transition-duration: 2s;
 	-moz-transition-duration: 2s;
 	-o-transition-duration: 2s;
+	-ms-transition-duration: 2s;
 	transition-duration: 2s;
 }
 .lessOpacity {
@@ -67,8 +74,8 @@
 }
 .innerShadow {
 	-webkit-box-shadow: inset 0px 0px 10px #bdbdbd;
-	-moz-box-shadow: inset 0px 0px 10px #bdbdbd;
-	box-shadow: inset 0px 0px 10px #bdbdbd;
+	   -moz-box-shadow: inset 0px 0px 10px #bdbdbd;
+	        box-shadow: inset 0px 0px 10px #bdbdbd;
 }
 .textShadow {
 	text-shadow: 0px 0px 15px #333;
@@ -175,13 +182,20 @@ header {
 }
 #tagline {
 	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
-	font-size: 62px;
+	font-size: 42px;
 	clear: both;
 }
 .makeAccount {
 	float: right;
 	width: 285px;
 
+}
+#main_signup {
+float: right;
+
+}
+form#signupform {
+float: right;
 }
 h2 {
 	font-family: 'LeagueGothicRegular';
@@ -286,19 +300,27 @@ height: 500px;
 	background-color: rgba(255, 255, 255, 0.5);
 	margin-right: 20px;
 	margin-bottom: 15px;
+
+	.transitionOff;
 }
 .player:hover, .playerDetail:hover, .playerMale:hover, .playerFemale:hover {
 	border: 1px solid #CCC;
 	background: #FAFAFA;
 	background-color: rgba(255, 255, 255, 0.75);
+	.transitionOn;
+	-webkit-box-shadow:  0px 0px 10px #bdbdbd;
+	-moz-box-shadow: 0px 0px 10px #bdbdbd;
+	box-shadow: 0px 0px 10px #bdbdbd;
+
 }
 .playerDetail {
 }
 .sortTeamLeft {
-	float: left;
+
 }
 .sortTeamRight {
-	float: right;
+
+
 }
 .gameRight .number {
 	font-size: 64px;
@@ -440,15 +462,6 @@ background-color: rgba(255,255,255,0.5);
 }
 .gameLeft div {
 	background-color: rgba(255,255,255, 0.5);
-	/*
-background: 
-		url(../images/triangles.png) no-repeat 0% 100%;
-*/
-/*
--webkit-box-shadow:   0px 0px 5px #bdbdbd;
-	-moz-box-shadow:  0px 0px 5px #bdbdbd;
-	box-shadow:  0px 0px 5px #999;
-*/
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-top-right-radius: 3px;
 	-webkit-border-bottom-right-radius: 12px;
@@ -462,11 +475,7 @@ background:
 	border-bottom-right-radius: 12px;
 	border-bottom-left-radius: 12px;
 	border: 1px solid #CCCCCC;
-}
-#testkalender {
-	background: 
- url(../img/1168/boxtop_bw.png) no-repeat 0% 0%;
-	height: 60px;
+	margin: 0 0 15px 0;
 }
 .gameLeft div section {
 	-webkit-box-shadow: inset 0px 0px 10px #bdbdbd;
@@ -561,6 +570,9 @@ float: left;
 display: block;
 display: none;
 }
+#s4 img {
+border: 14px solid #FFF;
+}
 #layouts p, #layouts figure {
 /* margin-top: 5px; */
 }
@@ -599,18 +611,7 @@ background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%); /* W3C
 	background-color: black;
 	height: 100px;
 }
-#goleft {
-	width: 150px;
-	height: 50px;
-	background-color: aqua;
-	margin: 50px;
-}
-#goright {
-	background-color: aqua;
-	height: 50px;
-	width: 15px;
-	margin: 50px;
-}
+
 iframe {
 	width: 702px;
 	height: 436px;
@@ -638,7 +639,7 @@ box-shadow: 0px 0px 10px #BFBFBF;
 	/* 	top: 85px; */
 	width: 275px;
 	height: 250px;
-	margin: 10px 0 0 130px;
+	margin: 10px 0 0 155px;
  .imageDown;
 -webkit-box-shadow: 0px 0px 5px #BFBFBF;
 -moz-box-shadow: 0px 0px 5px #BFBFBF;
@@ -656,7 +657,7 @@ box-shadow: 0px 0px 10px #BFBFBF;
 	/* 	top: 85px; */
 	width: 275px;
 	height: 250px;
-	margin: 10px 0 0 140px;
+	margin: 10px 0 0 160px;
  .imageDown;
  -webkit-box-shadow: 0px 0px 5px #BFBFBF;
 -moz-box-shadow: 0px 0px 5px #BFBFBF;

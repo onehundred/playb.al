@@ -20,9 +20,9 @@ $(document).ready(function()
     			dataType: "json",
         		success: function(data){
         			if(data === "niks"){
-        				$('#sponsors').append('<div id="1" class="sponsor"><a href="#">Kies sponsor</a></div>');
-        				$('#sponsors').append('<div id="2" class="sponsor"><a href="#">Kies sponsor</a></div>');
-        				$('#sponsors').append('<div id="3" class="sponsor"><a href="#">Kies sponsor</a></div>');
+        				$('#sponsors').append('<p id="1" class="sponsor"><a href="#">Kies sponsor</a></p>');
+        				$('#sponsors').append('<p id="2" class="sponsor"><a href="#">Kies sponsor</a></p>');
+        				$('#sponsors').append('<p id="3" class="sponsor"><a href="#">Kies sponsor</a></p>');
         			
         			}
         			var count=0;
@@ -31,10 +31,10 @@ $(document).ready(function()
         			}
         			if(count === 1){
         				for(var i in data){
-        					$('#sponsors').append('<div id="sponsor1" class="sponsorinfo"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
+        					$('#sponsors').append('<p id="sponsor1" class="sponsorinfo"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></p>');
         				}
-        				$('#sponsors').append('<div id="2" class="sponsor"><a href="#">Kies sponsor</a></div>');
-        				$('#sponsors').append('<div id="3" class="sponsor"><a href="#">Kies sponsor</a></div>');
+        				$('#sponsors').append('<p id="2" class="sponsor"><a href="#">Kies sponsor</a></p>');
+        				$('#sponsors').append('<p id="3" class="sponsor"><a href="#">Kies sponsor</a></p>');
         			}
         			if(count === 2){
         				for(var i in data){

@@ -107,7 +107,7 @@
 	width: 100px;
 	height: 100px;
 	float: left;
- text-align: center  -webkit-border-bottom-left-radius: 100px;
+ text-align: center -webkit-border-bottom-left-radius: 100px;
 }
 .kopen {
 	text-decoration: underline;
@@ -141,31 +141,41 @@
                 <!-- sectie e links onder --> 
                 
             </div>
+            <!-- end stadion --> 
         </div>
+        <!-- end stadion_container -->
         <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3')?>"/>
     </div>
+    <!-- end gameRight -->
     <aside>
         <div class="gameLeft">
-            <?php foreach($stadion->result() as $row)
+            <div>
+                <section>
+                    <?php foreach($stadion->result() as $row)
 		{?>
-            <h2><?php echo $row->naam;?></h2>
-            <?php	}
+                    <h2><?php echo $row->naam;?></h2>
+                    <?php	}
 ?>
-            <?php if(!isset($alien)){?>
-            <div id="plaatsen">
-                <div id="sec_a">Sectie A: </div>
-                <div id="sec_b">Sectie B:</div>
-                <div id="sec_c">Sectie C: </div>
-                <div id="sec_d">Sectie D: </div>
-                <div id="sec_e">Sectie E: </div>
-                <div id="sec_f">Sectie F: </div>
-                <div id="sec_g">Sectie G: </div>
-                <div id="sec_h">Sectie H: </div>
+                    <?php if(!isset($alien)){?>
+                    <div id="plaatsen">
+                        <div id="sec_a">Sectie A: </div>
+                        <div id="sec_b">Sectie B:</div>
+                        <div id="sec_c">Sectie C: </div>
+                        <div id="sec_d">Sectie D: </div>
+                        <div id="sec_e">Sectie E: </div>
+                        <div id="sec_f">Sectie F: </div>
+                        <div id="sec_g">Sectie G: </div>
+                        <div id="sec_h">Sectie H: </div>
+                    </div>
+                    <!-- end plaatsen -->
+                    <?php } ?>
+                </section>
             </div>
-            <?php } ?>
         </div>
+        <!-- end gameLeft -->
         <div id="dialog-confirm" title="Plaatsen kopen?">
             <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Bent u zeker dat u deze plaatsen wilt aankopen?</p>
         </div>
     </aside>
 </div>
+<!-- end game --> 

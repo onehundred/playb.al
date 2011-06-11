@@ -82,21 +82,28 @@
         <p>Winst/Verlies: <?php echo $inkomsten_vorige - $uitgaven_vorige;?></p>
         <?php } ?>
     </div>
+    <!-- end gameRight -->
     <aside>
         <div class="gameLeft">
-            <div id="sponsors">
+            <div id="sponsors">	
+            <section>
                 <h2>Sponsors</h2>
+                </section>		
             </div>
             <div id="grafiek">
+            <section>
                 <h2>Overzicht financien</h2>
-                <canvas id="canvas1" width="400" height="300"> Your web-browser does not support the HTML 5 canvas element. </canvas>
-            </div>
+                <canvas id="canvas1" width="400" height="300"> uw browser ondersteunt geen canvas. </canvas>
+                </section>
+            </div> <!-- end grafiek -->
         </div>
         <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>">
         <div id="sponsormodal" class="reveal-modal">
             <div id="loading">
                 <img src="<?php echo base_url()?>/img/loading.gif"/>
-            </div>
+            </div> <!-- end loading -->
             <a class="close-reveal-modal">&#215;</a> </div>
+        <!-- end gameLeft --> 
     </aside>
 </div>
+<!-- end game -->

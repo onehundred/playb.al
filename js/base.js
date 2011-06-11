@@ -315,7 +315,7 @@
 	$(function() {
     	$("#closeProfile").click(function () {
 			$('.profile').fadeOut('fast');
-	   		$('.register, .sports, .game').animate({opacity: 1}, 1, 'linear').show();
+	   		$('.register, .sports, .game, .sportnav').animate({opacity: 1}, 1, 'linear').show();
 
 
 		});
@@ -342,7 +342,7 @@ $(function() {
 $(function() {
     	$("#profile").click(function () {
     	
-		$('.register, .sports, .game').animate({opacity: 0}, 1, 'linear').hide();		
+		$('.register, .sports, .game, .sportnav').animate({opacity: 0}, 1, 'linear').hide();		
 	   	$('.profile').show().animate({opacity: 1}, 1500, 'linear');	
 		});
 });

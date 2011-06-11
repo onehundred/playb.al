@@ -2,17 +2,13 @@
 
 if($username != ""){
 ?>
-<a href="#" id="closeProfile"><img src="<?php echo base_url();?>img/close.png" /></a>
+<a href="#" id="closeProfile"><img src="<?php echo base_url();?>img/close.png" ondragstart="return false" /></a>
 
-<img src="<?php echo base_url();?>img/default_profile.png" />
+<img src="<?php echo base_url();?>img/default_profile.png" id="profilePhoto" alt="profielfoto" ondragstart="return false" />
 
-	<p>dfgs</p>
-	<p>dfgs</p>
-	<p>dfgs</p>
-	<p>dfgs</p>	
-	<p>dfgssdfs sdfsdfs sdfffff sdfsdf sdfsdf sdfsdf</p>
-	<p>dfgs</p>
-	<?php echo anchor('main/logout','afmelden') ?>
+	<p><?php echo($username);?></p>
+		<p><?php echo($teamnaam);?></p>
+	<?php echo anchor('main/logout','afmelden', 'id="logout"') ?>
 
 	
 

@@ -1,14 +1,14 @@
 <div class="game">
-<div class="gameRight">
-    <?php if(!isset($alien)){ ?>
-    &nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door voor de volgende wedstrijd.</a>
-    <?php }?>
-    <?php for($i=1;$i<15;$i++){ ?>
-    <p>
-    <p id="matchTeamName"><?php echo $matches[$i]['thuis'];?></p>
-    <p id="versus">VS</p>
-    <p id="matchTeamName"><?php echo $matches[$i]['uit'];?></p>
-    <?php $uitslag = $matches[$i]['uitslag'];
+    <div class="gameRight">
+        <?php if(!isset($alien)){ ?>
+        &nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door voor de volgende wedstrijd.</a>
+        <?php }?>
+        <?php for($i=1;$i<15;$i++){ ?>
+        <p>
+        <p id="matchTeamName"><?php echo $matches[$i]['thuis'];?></p>
+        <p id="versus">VS</p>
+        <p id="matchTeamName"><?php echo $matches[$i]['uit'];?></p>
+        <?php $uitslag = $matches[$i]['uitslag'];
             if(isset($uitslag)){
                 if(!isset($alien)){ 
                     echo "".$uitslag."&nbsp;";
@@ -22,47 +22,36 @@
                 }
 
              } } ?>
-    </p>
-</div>
-<aside>
-<div class="gameLeft">
-    <div>
-        <section>
-            <h2 id="testkalender">
-                <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
-                kalender</h2>
-            <p>huidige week: week <?php echo $calendar['week'];?></p>
-            <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
-            <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
-        </section>
+        </p>
     </div>
-    <div>
-        <section>
-            <h2>
-                <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
-                kalender</h2>
-            <p>huidige week: week <?php echo $calendar['week'];?></p>
-            <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
-            <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
-        </section>
-    </div>
-    <div class="chart_container">
-        <section>
-            <h2>huidig seizoen</h2>
-            <canvas id="chartCanvas1" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
-        </section>
-      
-    </div>  <div id="nest"></div>
-    <div class="chart_container">
-        <section>
-            <h2>vorig seizoen</h2>
-            <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
-        </section>
-    </div>
+    <!-- end gameRight -->
+    <aside>
+        <div class="gameLeft">
+            <div>
+                <section>
+                    <h2>
+                        <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
+                        kalender</h2>
+                    <p>huidige week: week <?php echo $calendar['week'];?></p>
+                    <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
+                    <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                </section>
+            </div>
+            <div class="chart_container">
+                <section>
+                    <h2>huidig seizoen</h2>
+                    <canvas id="chartCanvas1" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
+                </section>
+            </div>
+            <div class="chart_container">
+                <section>
+                    <h2>vorig seizoen</h2>
+                    <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
+                </section>
+            </div>
+        </div>
     </aside>
-
-
-<script type="text/javascript">
+    <script type="text/javascript">
      var chart1 = new AwesomeChart('chartCanvas1');
             chart1.data = [51.62,31.3, 10];
             chart1.chartType = "pie";
@@ -81,3 +70,4 @@
 
     </script> 
 </div>
+<!-- end game -->

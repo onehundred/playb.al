@@ -21,7 +21,7 @@ $(document).ready(function(){
 	function get_berichten(status){
 	
 	
-	$('#korfbal_berichten div').remove();
+	$('#korfbal_berichten p').remove();
 	
 	if(status == 0){
 		var klas = 'unread';

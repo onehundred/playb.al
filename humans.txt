@@ -12,5 +12,5 @@ back-end: dimitri leonidas\
 front-end: lenny benaicha\
 \
 twitter: http://twitter.com/#!/playb_al\
-facebook: http://www.facebook.com/pages/playbal/165137856877547\
+{\field{\*\fldinst{HYPERLINK "http://www.facebook.com/apps/application.php?id=217760674909805"}}{\fldrslt http://www.facebook.com/apps/application.php?id=217760674909805}}\
 }

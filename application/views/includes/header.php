@@ -13,6 +13,6 @@
     </header>
 
 <p id="jsnotice">
-  Javascript is currently disabled. This site requires Javascript to function correctly.
-  Please <a href="http://enable-javascript.com/"> enable Javascript in your browser</a>!
+  javascript is uitgeschakeld.  u heeft javascript nodig om deze site te bekijken.
+   <a href="http://enable-javascript.com/">javascript aanzetten</a>
 </p>

@@ -46,7 +46,7 @@ $(document).ready(function(){
 </div>
 
 
-<div class="profile" style="display: none; opacity: 0;">
+<div class="profile">
 
 
         <?php

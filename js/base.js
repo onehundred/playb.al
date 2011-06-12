@@ -331,9 +331,9 @@
 // LOGIN begin
 /////////////////////////////////////////////////////////////////
 $(function() {
-    	$("#login").click(function () {
+    	$("#login, #loginNewAccount").click(function () {
     	
-		$('.register, .sports').animate({opacity: 0}, 1, 'linear').hide();
+		$('.register, .sports, .createdAccount').animate({opacity: 0}, 1, 'linear').hide();
 
 	
 	   	$('.login').show().animate({opacity: 1}, 1500, 'linear');	
@@ -342,7 +342,7 @@ $(function() {
 $(function() {
     	$("#profile").click(function () {
     	
-		$('.register, .sports, .game, .sportnav').animate({opacity: 0}, 1, 'linear').hide();		
+		$('.register, .sports, .game, .sportnav, .createdAccount').animate({opacity: 0}, 1, 'linear').hide();		
 	   	$('.profile').show().animate({opacity: 1}, 1500, 'linear');	
 		});
 });

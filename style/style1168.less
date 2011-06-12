@@ -183,11 +183,14 @@ header {
 #tagline {
 	/*  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) 0px -1px; */
 	font-size: 42px;
-	clear: both;
+
 }
 .makeAccount {
 	float: right;
 	width: 285px;
+	margin: 0 10px 0 0;
+	position: absolute;
+	left: 865px;
 
 }
 #main_signup {
@@ -310,7 +313,7 @@ height: 500px;
 	.transitionOn;
 	-webkit-box-shadow:  0px 0px 10px #bdbdbd;
 	-moz-box-shadow: 0px 0px 10px #bdbdbd;
-	box-shadow: 0px 0px 10px #bdbdbd;
+	box-shadow: 0px 0px 5px #D1D1D1;
 
 }
 .playerDetail {
@@ -405,11 +408,11 @@ ul#filters {
 	display: block;
 }
 .gameLeft h2 {
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: normal;
-	letter-spacing: 0 1px;
+	letter-spacing: 1px;
 	color: #888;
-	padding: 2px 0 6px 10px;
+	padding: 4px 0 8px 10px;
 	background: #C3C3C3;
 background: -moz-linear-gradient(top, rgba(204,204,204,0.75) 0%, rgba(191,191,191,0.75) 47%, rgba(178,178,178,0.75) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,204,204,0.75)), color-stop(47%,rgba(191,191,191,0.75)), color-stop(100%,rgba(178,178,178,0.75))); /* Chrome,Safari4+ */
@@ -417,8 +420,10 @@ background: -webkit-linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,
 background: -o-linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,191,0.75) 47%,rgba(178,178,178,0.75) 100%); /* Opera11.10+ */
 background: -ms-linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,191,0.75) 47%,rgba(178,178,178,0.75) 100%); /* IE10+ */
 
-background: linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,191,0.75) 47%,rgba(178,178,178,0.75) 100%); /* W3C */border-bottom: 1px solid #CCC;
-border-bottom: 1px solid #a6a6a6;
+background: linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,191,0.75) 47%,rgba(178,178,178,0.75) 100%); /* W3C */
+border-bottom: 1px solid #b3b3b3;
+border-left: 1px solid #b3b3b3;
+border-right: 1px solid #b3b3b3;
 }
 .gameLeft p {
 	padding: 0 0 10px 10px;
@@ -442,6 +447,8 @@ width: 370px;
 /* 		background-color: rgba(255, 255, 255, 0.5); */
 background-color: #FFFFFF;
 background-color: rgba(255,255,255,0.5);
+
+
 }
 .gameLeft table {
 	color: #FFF;
@@ -476,7 +483,7 @@ background-color: rgba(255,255,255,0.5);
 	border-bottom-right-radius: 12px;
 	border-bottom-left-radius: 12px;
 	border: 1px solid #CCCCCC;
-	margin: 0 0 15px 0;
+	margin: 0 0 20px 0;
 }
 .gameLeft div section {
 	-webkit-box-shadow: inset 0px 0px 10px #bdbdbd;
@@ -501,11 +508,30 @@ background-color: rgba(255,255,255,0.5);
 	width: 1168px;
 }
 #gameLeftOverview div {
-margin: 0 0 17px 0;
+margin: 0 0 20px 0;
 }
 #gameLeftOverview .column {
 float: left;
-margin: 0 17px 0 0;
+}
+.column:nth-child(1) {
+margin: 0 22px 0 0;
+}
+.column:nth-child(2) {
+margin: 0 22px 0 0;
+}
+.bericht_datum {
+float: right;
+
+}
+.read, .unread {
+clear: both;
+}
+.read {
+background-color: green;
+
+}
+.unread {
+background-color: red;
 }
 /* gameRight end ------------------------------------------------------------------------------------------------------------*/
 /* MATCHES start -----------------------------------------------------------------------------------------------------------*/
@@ -552,27 +578,38 @@ position: relative;
 
 /* LAYOUTS start 	-------------------------------------------------------------------------------------------------------------*/
 .register {
-
-	/*
-position: relative;
-top: -60px;
-*/
-
+background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 95%, rgba(0,0,0,0.1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(95%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* IE10+ */
+background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* W3C */
+margin: 20px 0 0 0;
 }
 .register article {
-	height: 400px;
-/* 	background-color: black; */
-/*  	background-image: url("../img/layouts_bg.png"); */
+	height: 330px;
 .center1168;
 
 }
-#s4 {
-float: left;
-display: block;
+#sliderHome {
+margin: 0 0 0 10px;
+
 display: none;
+
+width: 1168px;
+height: 350px;
+
 }
-#s4 img {
-border: 14px solid #FFF;
+#sliderHome div {
+width: 1168px;
+}
+#sliderHome img {
+float: left;
+}
+#sliderHome section {
+float: right;
+width: 275px;
+
 }
 #layouts p, #layouts figure {
 /* margin-top: 5px; */
@@ -581,12 +618,7 @@ border: 14px solid #FFF;
 }
 .sports {
 	height: 400px;
-background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.05))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%); /* Opera11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%); /* IE10+ */
-background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%); /* W3C */
+
 
 	z-index: 1;
 
@@ -695,7 +727,9 @@ box-shadow: 0px 0px 10px #BFBFBF;
 }
 #playerSort img {
 }
-.login, .profile {
+.login, .profile, .createdAccount {
+display: none;
+opacity: 0;
 -webkit-border-top-left-radius: 3px;
 -webkit-border-top-right-radius: 3px;
 -webkit-border-bottom-right-radius: 12px;
@@ -711,7 +745,7 @@ border-bottom-left-radius: 12px;
 	position: absolute;
 	padding: 35px;
 left: 39%;
-	margin-top: 25%;
+	margin-top: 150px;
 	width: 290px;
 	height: 270px;
 
@@ -722,6 +756,11 @@ background:
 
 
 	}
+	.createdAccount {
+	display: block;
+	opacity: 1;
+	}
+	
 	#profilePhoto {
 	background-color: #FFFFFF;
 	background-color: rgba(255,255,255,0.75);
@@ -987,8 +1026,8 @@ top: -190px;
 }
 .galleryNav {
 position: absolute;
-top: 400px;
-width: 400px;
+top: 355px;
+margin: 10px 0 0 10px;
 
 }
 .pagingGallery a, #galleryNav a {

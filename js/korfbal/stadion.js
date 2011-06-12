@@ -109,7 +109,7 @@ $(function(){
 		if(id === 'sectie_b' || id === 'sectie_c' || id === 'sectie_d' || id === 'sectie_e' || id === 'sectie_f' || id === 'sectie_g' || id === 'sectie_h')
 		{
 			var url = "http://playb.al/index.php/Json/korfbal_buySection";
-			$('#dialog-confirm').append('<p class="aankoop_overzicht">1 Sectie voor 500 000 </p>');
+			$('#dialog-confirm').append('<p class="aankoop_overzicht">1 Sectie voor 500 000 &euro;</p>');
 			
 		}
 		
@@ -121,7 +121,7 @@ $(function(){
 			var aantalplaatsen = $('#'+input[1]+'').val();
 			var betalenplaatsen = aantalplaatsen * 100;
 			//alert(aantalplaatsen);
-			$('#dialog-confirm').append('<p class="aankoop_overzicht">'+aantalplaatsen+' plaatsen voor '+betalenplaatsen+' </p>');
+			$('#dialog-confirm').append('<p class="aankoop_overzicht">'+aantalplaatsen+' plaats(en) voor '+betalenplaatsen+' &euro; </p>');
 		}
 		
 		
@@ -130,7 +130,7 @@ $(function(){
 		
 		$( "#dialog-confirm" ).dialog({
 			resizable: false,
-			height:300,
+			height:280,
 			modal: false,
 			buttons: {
 				"Kopen": function() {

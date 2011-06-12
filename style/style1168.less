@@ -206,37 +206,64 @@ h2 {
 	color: #666;
 }
 .sportnavWrap {
-	height: 70px;
-/* 	margin: 0 0 10px 0; */
-	.center1168;
-/*
-	background: 
-	
+	height: 65px;
 
-	url(../img/footer.png) repeat-x 0% 100%;
-*/
-/* background-image: url(../img/footerfill.png); */
+background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 95%, rgba(0,0,0,0.1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(95%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* IE10+ */
+background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* W3C */
 }
+.sportnavWrap {
+	position:relative;
+	padding:15px;
+	margin:1em 0 3em;
+
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px; }
+	.sportnavWrap:after {
+	content:"";
+	position:absolute;
+	bottom:-15px; /* value = - border-top-width - border-bottom-width */
+	left:50px; /* controls horizontal position */
+	border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#CCC transparent;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;}
 .sportnav {
 	margin-bottom: 5px;
 	width: 1168px;
 	height: 40px;
 	padding: 15px 0 0 0;
+	.center1168;
 }
 .sportnav a {
 	font-size: 42px;
 	line-height: 0.8;
 	color: rgba(0, 0, 0, 0.6);
+	padding: 10px 10px 7px 0;
 }
 .sportnav a:hover {
 	color: #222;
  .transitionOn;
+background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.2))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* IE10+ */
+background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* W3C */
+/*
 	border-top-width: 7px;
 	border-top-style: solid;
 	border-top-color: #888;
 	border-bottom-width: 7px;
 	border-bottom-style: solid;
 	border-bottom-color: #888;
+*/
 }
 .sportnav a:active {
 	text-transform: uppercase;
@@ -248,7 +275,6 @@ h2 {
 }
 .sportnav p {
 	display: inline;
-	padding-right: 10px;
 	text-transform: uppercase;
 	font-size: 42px;
 	font-family: 'LeagueGothicRegular';
@@ -411,8 +437,8 @@ ul#filters {
 	font-size: 28px;
 	font-weight: normal;
 	letter-spacing: 1px;
-	color: #888;
-	padding: 4px 0 8px 10px;
+	color: #7B7B7B;
+	padding: 8px 0 8px 10px;
 	background: #C3C3C3;
 background: -moz-linear-gradient(top, rgba(204,204,204,0.75) 0%, rgba(191,191,191,0.75) 47%, rgba(178,178,178,0.75) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,204,204,0.75)), color-stop(47%,rgba(191,191,191,0.75)), color-stop(100%,rgba(178,178,178,0.75))); /* Chrome,Safari4+ */
@@ -424,6 +450,7 @@ background: linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,191,0.75
 border-bottom: 1px solid #b3b3b3;
 border-left: 1px solid #b3b3b3;
 border-right: 1px solid #b3b3b3;
+text-shadow: 0px 0px 4px #F2F2F2;
 }
 .gameLeft p {
 	padding: 0 0 10px 10px;
@@ -518,6 +545,40 @@ margin: 0 22px 0 0;
 }
 .column:nth-child(2) {
 margin: 0 22px 0 0;
+}
+/* icons -------------------------------------------------------- */
+.icon {
+opacity: 0.8;
+background-repeat: no-repeat;
+width: 25px;
+height: 25px;
+float: left;
+margin: 4px 10px 0 12px;
+
+}
+.icon:hover {
+opacity: 1;
+}
+#gameMessage  {
+background-image: url(../img/icons/message.png);
+}
+#gameCalendar  {
+background-image: url(../img/icons/calendar.png);
+}
+#gamePlayerBought  {
+background-image: url(../img/icons/player_bought.png);
+}
+#gamePlayerSold  {
+background-image: url(../img/icons/player_sold.png);
+}
+#gameCup  {
+background-image: url(../img/icons/cup.png);
+}
+#gameMedaille  {
+background-image: url(../img/icons/medaille.png);
+}
+#gameRanking  {
+background-image: url(../img/icons/podium.png);
 }
 .bericht_datum {
 float: right;
@@ -1167,7 +1228,12 @@ img#galleryRightHideSmall {
 	-webkit-transform: translate3d(0px, 0px, 0px);
 }
 /* Small GALLERY end -------------------------------------------------------------------------------------------------------------*/
-#laadtest {
+#midden_midden {
+	width: 500px;
+	height: 1000px;
+	float: right;
+background-image: url(../img/field.png);
+background-repeat: no-repeat;
 }
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footerWrap {

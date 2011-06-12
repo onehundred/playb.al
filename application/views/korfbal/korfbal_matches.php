@@ -55,7 +55,7 @@
      var chart1 = new AwesomeChart('chartCanvas1');
             chart1.data = [51.62,31.3, 10];
             chart1.chartType = "pie";
-            chart1.colors = ['#50B432', '#ED561B', '#058DC7', '#945D59', '#93BBF4', '#F493B8'];
+            chart1.colors = ['#E5E5E5', '#333', '#CCC', '#945D59', '#93BBF4', '#F493B8'];
             chart1.randomColors = false;
             chart1.draw();
             

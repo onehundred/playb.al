@@ -5,15 +5,16 @@
         <section class="column">
             <div id="korfbal_berichten">
                 <section>
+                <figure class="icon" id="gameMessage"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
                         berichten</h2>
                  </section>
             </div>
             <div>
                 <section>
+                <figure class="icon" id="gameMessage"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
+                       
                         nieuws</h2>
                         <p id="twitter_nieuws"></p>
                     <!-- tweets van @playb_al zonder mentions --> 
@@ -22,8 +23,9 @@
             </div>
             <div>
                 <section>
+                <figure class="icon" id="gameMessage"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
+                        
                         status</h2>
                         <p id="twitter_status"></p> 
 				
@@ -35,8 +37,9 @@
             <section class="column">
             <div>
                 <section>
+                <figure class="icon" id="gameMessage"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
+                      
                         updates</h2>
                         <p id="twitter_update"></p>
                     <!-- tweets van @playb_al met #update --> 
@@ -45,8 +48,9 @@
             </div>
             <div>
                 <section>
+                <figure class="icon" id="gameCalendar"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
+                       
                         kalender</h2>
                     <p>huidige week: week <?php echo $calendar['week'];?></p>
                     <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
@@ -55,8 +59,9 @@
             </div>
             <div>
                 <section>
+<figure class="icon" id="gameRanking"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/podium.png" id="icon" ondragstart="return false" />
+                       
                         klassement eerste divisie</h2>
                     <?php foreach($divisie_eerste->result() as $row){ ?>
                     <p><?php echo $row->naam;?> - <?php echo $row->divisiepunten;?></p>
@@ -66,6 +71,7 @@
             
             <div>
                 <section>
+                <figure class="icon" id="gameRanking"></figure>
                     <h2>klassement jouw divisie</h2>
                     <?php foreach($divisie->result() as $row){ ?>
                     <p><?php echo $row->naam;?> - <?php echo $row->divisiepunten;?></p>
@@ -76,32 +82,36 @@
             <section class="column">
             <div>
                 <section>
+                <figure class="icon" id="gameCup"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/cup.png" id="icon" ondragstart="return false" />
+                       
                         laatste award</h2>
                     <p>Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
                 </section>
             </div>
             <div>
                 <section>
+                <figure class="icon" id="gameMedaille"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/medaille.png" id="icon" ondragstart="return false" />
+                        
                         laatste achievement</h2>
                     <p>Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
                 </section>
             </div>
             <div>
                 <section>
+                <figure class="icon" id="gamePlayerBought"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/player_bought.png" id="icon" ondragstart="return false" />
+                       
                         laatste speler gekocht</h2>
                     <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
                 </section>
             </div>
             <div>
                 <section>
+                <figure class="icon" id="gamePlayerSold"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/player_sold.png" id="icon" ondragstart="return false" />
+                      
                         laatste speler verkocht</h2>
                     <p>Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 </section>

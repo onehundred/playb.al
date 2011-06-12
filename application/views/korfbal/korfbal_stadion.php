@@ -58,12 +58,7 @@
 	float: right;
 	text-align: center;
 }
-#midden_midden {
-	width: 400px;
-	height: 500px;
-	float: right;
-	background-color: #bc8f66;
-}
+
 #links_midden {
 	width: 100px;
 	height: 500px;
@@ -174,7 +169,7 @@
         </div>
         <!-- end gameLeft -->
         <div id="dialog-confirm" title="Kopen?">
-            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Bent u zeker over deze aankoop?</p>
+            <p>Bent u zeker over deze aankoop?</p>
         </div>
     </aside>
 </div>

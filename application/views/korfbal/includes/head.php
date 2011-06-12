@@ -58,7 +58,7 @@
 <script src="<?php echo base_url();?>js/base.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/galleryGame.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
-<script src="http://playbaleindwerk.appspot.com/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script src="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.flip.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.isotope.js"></script>
 <script src="<?php echo base_url();?>js/reveal/jquery.reveal.js"></script>

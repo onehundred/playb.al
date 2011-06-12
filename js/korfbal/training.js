@@ -26,28 +26,28 @@ $(function() {
         		
         		
         		for(var i in spelers){
-	        		$( ".rebound"+spelers[i].spelerid).progressbar({
+	        		$( ".rebound"+spelers[i].spelerid).progressbarSkill({
 					value: spelers[i].rebound * 5
 					});
-					$( ".passing"+spelers[i].spelerid ).progressbar({
+					$( ".passing"+spelers[i].spelerid ).progressbarSkill({
 						value: spelers[i].passing * 5
 					});
-					$( ".intercepting"+spelers[i].spelerid ).progressbar({
+					$( ".intercepting"+spelers[i].spelerid ).progressbarSkill({
 						value: spelers[i].intercepting * 5
 					});
-					$( ".shotpower"+spelers[i].spelerid).progressbar({
+					$( ".shotpower"+spelers[i].spelerid).progressbarSkill({
 						value: spelers[i].shotpower * 5
 					});
-					$( ".shotprecision"+spelers[i].spelerid).progressbar({
+					$( ".shotprecision"+spelers[i].spelerid).progressbarSkill({
 						value: spelers[i].shotprecision * 5
 					});
-					$( ".leadership"+spelers[i].spelerid ).progressbar({
+					$( ".leadership"+spelers[i].spelerid ).progressbarSkill({
 						value: spelers[i].leadership * 5
 					});
-					$( ".playmaking"+spelers[i].spelerid ).progressbar({
+					$( ".playmaking"+spelers[i].spelerid ).progressbarSkill({
 						value: spelers[i].playmaking * 5
 					});
-					$( ".stamina"+spelers[i].spelerid ).progressbar({
+					$( ".stamina"+spelers[i].spelerid ).progressbarSkill({
 						value: spelers[i].stamina * 5
 					});
 					

@@ -1243,8 +1243,8 @@ img#galleryRightHideSmall {
 /* Small GALLERY end -------------------------------------------------------------------------------------------------------------*/
 /* STADION begin -------------------------------------------------------------------------------------------------------------*/
 #midden_midden {
-	width: 500px;
-	height: 1000px;
+	width: 50px;
+	height: 359px;
 	float: right;
 /*
 background-image: url(../img/field.png);
@@ -1255,9 +1255,10 @@ background-repeat: no-repeat;
 	width: 400px;
 }
 #stadion {
-	width: 600px;
-	height: 706px;
+	width: 640px;
+	height: 806px;
 	float: left;
+	margin: 0 0 0 60px;
 }
 #links_boven {
 	width: 100px;
@@ -1267,97 +1268,131 @@ background-repeat: no-repeat;
 	-webkit-border-top-left-radius: 100px;
 }
 #links_boven_kopen {
-	width: 275px;
-	height: 275px;
+	width: 235px;
+	height: 277px;
 	float: left;
 	background-image: url(../img/stadion/a_sectie.png);
 	background-repeat: no-repeat;
-	opacity: 0.25;
+	opacity: 0.2;
+	.transitionOff;
+}
+#links_boven_kopen:hover, #midden_boven_kopen:hover, #rechts_boven_kopen:hover, #rechts_midden_kopen:hover, #rechts_onder_kopen:hover, #midden_onder_kopen:hover, #links_onder_kopen:hover, #links_midden_kopen:hover {
+.transitionOn;
+	opacity: 0.3;
 }
 #midden_boven {
 	float:right;
-	width: 400px;
-	height: 100px;
+	background-image: url(../img/stadion/b_sectie_bought.png);
+	background-repeat: no-repeat;
+	opacity: 0.75;
+		width: 206px;
+	height: 274px;
+	
 
 }
 #midden_boven_kopen {
 	float:right;
-	width: 400px;
-	height: 100px;
-	text-align: center;
+	background-image: url(../img/stadion/b_sectie.png);
+	background-repeat: no-repeat;
+	opacity: 0.2;
+		width: 206px;
+	height: 274px;
+	.transitionOff;
 }
 #rechts_boven {
-	width: 100px;
-	height: 100px;
-	float:right;
-	background-color: blue;
-	-webkit-border-top-right-radius: 100px;
+	width: 196px;
+	height: 274px;
+	float: right;
+	background-image: url(../img/stadion/c_sectie_bought.png);
+	background-repeat: no-repeat;
+	opacity: 0.75;
 }
 #rechts_boven_kopen {
-	width: 100px;
-	height: 100px;
-	float:right;
-	-webkit-border-top-right-radius: 100px;
-	text-align: center;
-}
-#rechts_midden {
-	width: 100px;
-	height: 500px;
+	width: 196px;
+	height: 274px;
 	float: right;
-	background-color: green;
+	background-image: url(../img/stadion/c_sectie.png);
+	background-repeat: no-repeat;
+	opacity: 0.2;
+	.transitionOff;
+	}
+#rechts_midden {
+	width: 196px;
+	height: 359px;
+	float: right;
+	background-image: url(../img/stadion/d_sectie_bought.png);
+	background-repeat: no-repeat;
+	opacity: 0.75;
 }
 #rechts_midden_kopen {
-	width: 100px;
-	height: 500px;
+	width: 196px;
+	height: 359px;
 	float: right;
-	text-align: center;
+	background-image: url(../img/stadion/d_sectie.png);
+	background-repeat: no-repeat;
+	opacity: 0.2;
+	.transitionOff;
 }
 
 #links_midden {
-	width: 100px;
-	height: 500px;
+	width: 235px;
+	height: 359px;
 	float: left;
-	background-color: green;
+	background-image: url(../img/stadion/h_sectie_bought.png);
+	background-repeat: no-repeat;
+	opacity: 0.75;
+	
 }
 #rechts_onder {
-	width: 100px;
-	height: 100px;
+	width: 196px;
+	height: 269px;
 	float: right;
-	background-color: blue;
-	-webkit-border-bottom-right-radius: 100px;
+	background-image: url(../img/stadion/e_sectie_bought.png);
+	background-repeat: no-repeat;
+		opacity: 0.75;
 }
 #rechts_onder_kopen {
-	width: 100px;
-	height: 100px;
+	width: 196px;
+	height: 269px;
 	float: right;
-	text-align: center;
-	-webkit-border-bottom-right-radius: 100px;
+	background-image: url(../img/stadion/e_sectie.png);
+	background-repeat: no-repeat;
+	opacity: 0.2;
+	.transitionOff;
 }
 #midden_onder {
-	width: 400px;
-	height: 100px;
+	width: 206px;
+	height: 209px;
 	float: right;
-	background-color: green;
+	background-image: url(../img/stadion/f_sectie_bought.png);
+	background-repeat: no-repeat;
+	opacity: 0.75;
 }
 #midden_onder_kopen {
-	width: 400px;
-	height: 100px;
+	width: 206px;
+	height: 209px;
 	float: right;
-	text-align: center;
+	background-image: url(../img/stadion/f_sectie.png);
+	background-repeat: no-repeat;
+	opacity: 0.2;
+	.transitionOff;
 }
 #links_onder {
-	width: 100px;
-	height: 100px;
+	width: 235px;
+	height: 269px;
 	float: left;
-	background-color: blue;
-	-webkit-border-bottom-left-radius: 100px;
+	background-image: url(../img/stadion/g_sectie_bought.png);
+	background-repeat: no-repeat;
+	opacity: 0.75;
 }
 #links_onder_kopen {
-	width: 100px;
-	height: 100px;
+	width: 235px;
+	height: 269px;
 	float: left;
- text-align: center;
-  -webkit-border-bottom-left-radius: 100px;
+	background-image: url(../img/stadion/g_sectie.png);
+	background-repeat: no-repeat;
+	opacity: 0.2;
+	.transitionOff;
 }
 .kopen {
 	text-decoration: underline;

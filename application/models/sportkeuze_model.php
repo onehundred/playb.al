@@ -123,7 +123,7 @@
     {
     
     	$user_id = $this->session->userdata('user_id');    	
-    	$mdate =  date('Y-m-d h:i:s');
+    	$mdate =  date("F j Y, H:m"); 
     	
     	$this->db->select('team_id');
     	$this->db->where('bot', '0');

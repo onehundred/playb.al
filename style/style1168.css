@@ -187,7 +187,7 @@ img#galleryRightHideSmall{left:1120px;position:relative;}
 #midden_midden{width:50px;height:359px;float:right;}
 #plaatsen{width:400px;}
 #stadion{width:640px;height:806px;float:left;margin:0 0 0 60px;}
-#links_boven{width:100px;height:100px;float:left;background-color:blue;-webkit-border-top-left-radius:100px;}
+#links_boven{width:235px;height:277px;float:left;background-image:url(../img/stadion/a_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
 #links_boven_kopen{width:235px;height:277px;float:left;background-image:url(../img/stadion/a_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
 #links_boven_kopen:hover,#midden_boven_kopen:hover,#rechts_boven_kopen:hover,#rechts_midden_kopen:hover,#rechts_onder_kopen:hover,#midden_onder_kopen:hover,#links_onder_kopen:hover,#links_midden_kopen:hover{-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;opacity:0.3;}
 #midden_boven{float:right;background-image:url(../img/stadion/b_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;width:206px;height:274px;}

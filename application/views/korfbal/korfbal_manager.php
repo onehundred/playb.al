@@ -1,4 +1,4 @@
-<div class="game">
+ <div class="game">
     <div class="gameRight">
     <?php if(isset($error)){
     	foreach($error as $erro){ ?>

@@ -2,9 +2,13 @@
 
 if($username != ""){
 ?>
-<a href="#" id="closeProfile"><img src="<?php echo base_url();?>img/close.png" ondragstart="return false" /></a>
+<?php if($profilepic != null){ ?>
+	<img id="profilePhoto" alt="profielfoto" src="<?php echo base_url();?>userpics/thumbs/<?php echo $profilepic;?>" ondragstart="return false" />
+<?php }else{ ?>
+	<img src="<?php echo base_url();?>img/default_profile.png" id="profilePhoto" alt="profielfoto" ondragstart="return false" />
+<?php } ?>
 
-<img src="<?php echo base_url();?>img/default_profile.png" id="profilePhoto" alt="profielfoto" ondragstart="return false" />
+<a href="#" id="closeProfile"><img src="<?php echo base_url();?>img/close.png" ondragstart="return false" /></a>
 
 	<p><?php echo($username);?></p>
 		<p><?php echo($teamnaam);?></p>

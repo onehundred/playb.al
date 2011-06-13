@@ -5,6 +5,7 @@ class Korfbal extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->helper(array('form', 'url'));
 		$this->is_logged_in();
 		$this->is_your_team();
 		
@@ -48,7 +49,7 @@ class Korfbal extends CI_Controller {
 			$data['teamnaam'] = $row->naam; 
 		}
 		
-	
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		$data['divisie_eerste'] = $this->korfbal_model->get_sidebar_divisie();
 		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);
@@ -94,7 +95,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_verslag';
@@ -118,7 +119,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_speler';
@@ -139,7 +140,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_stadion';
@@ -162,7 +163,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_opstelling';
@@ -188,7 +189,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_divisie';
@@ -211,7 +212,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_manager';
@@ -219,6 +220,65 @@ class Korfbal extends CI_Controller {
 	
 	}
 	
+	function korfbal_manager_update()
+	{
+		$config['upload_path'] = './userpics/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '1000';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload())
+		{
+			$team_id = $this->uri->segment('3');
+			$data['team_id'] = $team_id;
+			$this->load->model('korfbal_model');
+			
+			$data['manager'] = $this->korfbal_model->get_manager();
+			$data['achievements'] = $this->korfbal_model->get_achievements($team_id);
+			
+			$team = $this->korfbal_model->get_team($team_id);
+			foreach($team->result() as $row)
+			{
+			$data['teamnaam'] = $row->naam; 
+			}
+			$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
+			$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
+			$data['error'] = array('error' => $this->upload->display_errors());
+		
+			$data['main_content'] = 'korfbal/korfbal_manager';
+			$this->load->view('korfbal/includes/template', $data);
+		
+		}
+		else
+		{
+			$land = $_POST['country'];
+			$userid = $this->session->userdata('user_id');
+			$upfile = array('upload_data' => $this->upload->data());
+			
+		
+				$conf['image_library'] = 'gd2';
+				$conf['source_image']	= './userpics/'.$upfile['upload_data']['file_name'].'';
+				$conf['create_thumb'] = FALSE;
+				$conf['maintain_ratio'] = FALSE;
+				$conf['width']	 = 100;
+				$conf['height']	= 100;
+				$conf['new_image'] ='./userpics/thumbs';
+		
+				$this->load->library('image_lib', $conf); 
+		
+				$this->image_lib->resize();
+		
+			$this->load->model('korfbal_model');
+			$this->korfbal_model->update_manager($upfile['upload_data']['file_name'], $land, $userid);
+			
+			$this->korfbal_manager();
+			
+		}
+	
+	}
 	
 	function korfbal_finances()
 	{
@@ -235,7 +295,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_financien';
@@ -259,7 +319,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_matches';
@@ -280,7 +340,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_transfers';
@@ -304,7 +364,7 @@ class Korfbal extends CI_Controller {
 		{
 		$data['teamnaam'] = $row->naam; 
 		}
-		
+		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_training';

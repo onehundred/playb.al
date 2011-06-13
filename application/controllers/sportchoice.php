@@ -36,7 +36,9 @@ class Sportchoice extends CI_Controller {
       				 $korfId = $row->team_id;
       				
   				 }
-			$data['korfNaam'] = $korfNaam;
+  			$this->load->model('korfbal_model');
+  			$data['profilepic'] = $this->korfbal_model->get_profile_pic($korfId);	 
+  			$data['korfNaam'] = $korfNaam;
 			$data['korfId'] = $korfId;  
 			$data['teamnaam'] = $korfNaam;  
 		}

@@ -25,7 +25,20 @@
 
 	
 	}
-
+	function get_profile_pic($team_id){
+	
+		$this->db->select('afbeelding');
+		$this->db->from('users');
+		$this->db->join('korf_teams', 'FK_user_id = user_id');
+		$this->db->where('team_id', $team_id);
+		$query = $this->db->get();
+		
+		foreach($query->result() as $row){
+			$afbeelding = $row->afbeelding;
+		}
+		
+		return $afbeelding;
+	}
 
 	function get_team($team_id)
 	{
@@ -199,11 +212,24 @@
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->join('korf_teams', 'FK_user_id = user_id');
+		$this->db->join('korf_teamstats', 'FK_team_id = team_id');
 		$this->db->where('user_id', $user_id);
 		$query = $this->db->get();
 		return $query;
 
 
+	}
+	
+	function update_manager($upfile, $land, $userid)
+	{
+		$update = array(
+			'land' => $land,
+			'afbeelding' => $upfile
+		);
+		
+		$this->db->where('user_id', $userid);
+		$this->db->update('users', $update);
+		
 	}
 
 

@@ -45,10 +45,10 @@ $(document).ready(function(){
         			
         				var content = '<p>'
         							if(status == 0){	
-        								content += '<p class="markeer" id="'+data[i]['bericht_id']+'">Markeer als gelezen</p>'
+        								content += '<p class="markeer" id="'+data[i]['bericht_id']+'">markeer als gelezen</p>'
         							}
         							content += '<p class="verwijder" id="'+data[i]['bericht_id']+'">Verwijder bericht</p>'
-        							+ '<p class="bericht_datum">'+data[i]['datum']+' '+ data[i]['verzender']+'</p>'
+        							+ '<p class="bericht_datum">'+data[i]['datum']+'</p>'
         							+ '<p class="'+klas+'">'+data[i].bericht+'<p>'
         				
         							+ '</p>';

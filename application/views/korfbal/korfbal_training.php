@@ -290,11 +290,15 @@ foreach($training->result() as $row){
             </section>
         </div>
         <div class="chart_container">
+        <section>
+         <figure class="icon" id="gameGraph"></figure>
             <h2>team skills</h2>
             <canvas id="chartTeamSkills" width="390" height="350"> uw browser ondersteunt dit niet. </canvas>
+</section>
         </div>
         <div>
             <section>
+         <figure class="icon" id="gameCalendar"></figure>            
                 <h2>laatst getraind op</h2>
                 <p>test</p>
                 <p>datum</p>

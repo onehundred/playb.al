@@ -133,7 +133,7 @@ $(function(){
 			height:280,
 			modal: false,
 			buttons: {
-				"Kopen": function() {
+				"kopen": function() {
 					$.ajax({
 
         type: "POST",
@@ -198,7 +198,7 @@ $(function(){
 
 					$( this ).dialog( "close" );
 				},
-				Cancel: function() {
+				sluiten: function() {
 					$( this ).dialog( "close" );
 				}
 			}

@@ -38,6 +38,7 @@ class Sportchoice extends CI_Controller {
   				 }
 			$data['korfNaam'] = $korfNaam;
 			$data['korfId'] = $korfId;  
+			$data['teamnaam'] = $korfNaam;  
 		}
 		
 		//kijken of er al een volleybalteam bestaat

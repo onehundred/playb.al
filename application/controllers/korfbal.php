@@ -289,7 +289,7 @@ class Korfbal extends CI_Controller {
 	}
 	
 	
-	function korfbal_training()
+	function korfbal_team()
 	{
 		$team_id = $this->uri->segment('3');
 		$data['team_id'] = $team_id;	

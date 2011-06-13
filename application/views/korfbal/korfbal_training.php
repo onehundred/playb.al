@@ -306,7 +306,6 @@ foreach($training->result() as $row){
             </section>
         </div>
         <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
-        <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
         
         <!-- end container --> 
         

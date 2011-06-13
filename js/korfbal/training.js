@@ -6,7 +6,7 @@ $(function() {
 				//alert(teamid);
 				$.ajax({
     			type: "POST",
-    			url: "http://playb.al/index.php/Json/korfbal_jsonPlayers",
+    			url: "http://playb.al/index.php/json/korfbal_jsonPlayers",
     			data:  { teamid: teamid,
             			
             			

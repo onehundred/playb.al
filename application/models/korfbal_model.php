@@ -67,6 +67,7 @@
 		$this->db->select('*');
 		$this->db->from('korf_spelers');
 		$this->db->join('korf_skills','FK_player_id = speler_id');
+		$this->db->join('korf_training', 'FK_skill_id = skill_id');
 		$this->db->where('speler_id', $speler_id);
 		$query = $this->db->get();
 

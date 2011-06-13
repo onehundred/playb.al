@@ -220,10 +220,9 @@
 
 	}
 	
-	function update_manager($upfile, $land, $userid)
+	function update_manager($upfile, $userid)
 	{
 		$update = array(
-			'land' => $land,
 			'afbeelding' => $upfile
 		);
 		

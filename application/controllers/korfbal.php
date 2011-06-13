@@ -254,7 +254,6 @@ class Korfbal extends CI_Controller {
 		}
 		else
 		{
-			$land = $_POST['country'];
 			$userid = $this->session->userdata('user_id');
 			$upfile = array('upload_data' => $this->upload->data());
 			
@@ -272,7 +271,7 @@ class Korfbal extends CI_Controller {
 				$this->image_lib->resize();
 		
 			$this->load->model('korfbal_model');
-			$this->korfbal_model->update_manager($upfile['upload_data']['file_name'], $land, $userid);
+			$this->korfbal_model->update_manager($upfile['upload_data']['file_name'], $userid);
 			
 			$this->korfbal_manager();
 			

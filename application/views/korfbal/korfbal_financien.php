@@ -28,7 +28,7 @@
 
 <div class="game">
     <div class="gameRight">
-        <p>Kapitaal: <?php echo $totaal;?> (<?php echo $totaal + $uitkomst;?>)</p>
+        <p>Kapitaal: <?php echo $totaal;?> &euro; (<?php echo $totaal + $uitkomst;?>)&euro;</p>
         <br/>
         <!-- uitgaven -->
         <h2>Deze week</h2>
@@ -85,13 +85,19 @@
     <!-- end gameRight -->
     <aside>
         <div class="gameLeft">
+        
+    
+        
             <div id="sponsors">	
             <section>
+            <figure class="icon" id="gameSponsors"></figure>
+
                 <h2>Sponsors</h2>
                 </section>		
             </div>
             <div id="grafiek"> 
             <section>
+             <figure class="icon" id="gameBank"></figure>
                 <h2>Overzicht financien</h2>
 
                 <canvas id="canvas1" width="350" height="350"> uw browser ondersteunt geen canvas. </canvas>

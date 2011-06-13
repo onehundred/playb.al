@@ -1,7 +1,4 @@
-/*
-spritemapper.sprite_dirs = ../img
-  spritemapper.output_css = awesome.css
-*/
+@charset "UTF-8";
 .borders{border:1px solid;}
 .borderRadius{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;}
 .transitionOn{-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;}

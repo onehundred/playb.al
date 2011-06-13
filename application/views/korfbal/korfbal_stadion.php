@@ -146,6 +146,7 @@
         <div class="gameLeft">
             <div>
                 <section>
+                            <figure class="icon" id="gameStadium"></figure>
                     <?php foreach($stadion->result() as $row)
 		{?>
                     <h2><?php echo $row->naam;?></h2>

@@ -23,3 +23,6 @@ body{width:712px;padding:0px 28px 60px;}
 #content{height:567px;width:896px;overflow:hidden;position:relative;border:1px solid black;}
 .imgs{float:left;display:inline;-webkit-transition-property:-webkit-transform;-webkit-transition-duration:0.5s;-webkit-transition-timing-function:ease-out;padding:0px;margin:0px;width:2700px;-webkit-transform:translate3d(0px, 0px, 0px);}
 .imgs img{padding:0px;margin:0px;width:738px;height:500px;-webkit-transform:translate3d(0px, 0px, 0px);}
+#wedstrijdenMenu{display:none;}
+#stadionMenu{display:none;}
+#financienMenu{display:none;}

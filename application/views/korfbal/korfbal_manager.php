@@ -251,6 +251,7 @@
         <div class="gameLeft">
             <div>
                 <section>
+                <figure class="icon" id="gameCup"></figure>
                     <h2>bekers</h2>
                     <!-- if bekers = 0 -->
                     <p>je hebt nog geen bekers gewonnen</p>
@@ -259,11 +260,7 @@
                     <p>beker 2</p>
                 </section>
             </div>
-            <div>
-                <section>
-                    <h2>banksaldo</h2>
-                </section>
-            </div>
+           
             <script>
 
 $.fn.cycle.defaults.timeout = 6000;
@@ -281,6 +278,7 @@ $(function() {
 </script>
             <div>
                 <section>
+                <figure class="icon" id="gameMedaille"></figure>
                     <h2>achievements</h2>
                     <!-- if achievements = 0 -->
                     <p>je hebt nog geen achievements behaald</p>

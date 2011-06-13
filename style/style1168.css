@@ -28,8 +28,6 @@ header{height:55px;background:url(../img/top.png);background-repeat:repeat-x;}
 form#signupform{float:right;}
 h2{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#666;}
 .sportnavWrap{height:65px;background:-moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(95%, rgba(0, 0, 0, 0.05)), color-stop(100%, rgba(0, 0, 0, 0.1)));background:-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);}
-.sportnavWrap{position:relative;padding:15px;margin:1em 0 3em;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;}
-.sportnavWrap:after{content:"";position:absolute;bottom:-15px;left:50px;border-width:15px 15px 0;border-style:solid;border-color:#CCC transparent;display:block;width:0;}
 .sportnav{margin-bottom:5px;width:1168px;height:40px;padding:15px 0 0 0;width:1168px;margin:0 auto 0 auto;}
 .sportnav a{font-size:42px;line-height:0.8;color:rgba(0, 0, 0, 0.6);padding:10px 10px 7px 0;}
 .sportnav a:hover{color:#222;-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;background:-moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.2)));background:-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);background:-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);background:-ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);background:linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);}
@@ -59,17 +57,17 @@ aside{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-
 ul#filters{display:block;}
 .gameLeft h2{font-size:28px;font-weight:normal;letter-spacing:1px;color:#7B7B7B;padding:8px 0 8px 10px;background:#C3C3C3;background:-moz-linear-gradient(top, rgba(204, 204, 204, 0.75) 0%, rgba(191, 191, 191, 0.75) 47%, rgba(178, 178, 178, 0.75) 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(204, 204, 204, 0.75)), color-stop(47%, rgba(191, 191, 191, 0.75)), color-stop(100%, rgba(178, 178, 178, 0.75)));background:-webkit-linear-gradient(top, rgba(204, 204, 204, 0.75) 0%, rgba(191, 191, 191, 0.75) 47%, rgba(178, 178, 178, 0.75) 100%);background:-o-linear-gradient(top, rgba(204, 204, 204, 0.75) 0%, rgba(191, 191, 191, 0.75) 47%, rgba(178, 178, 178, 0.75) 100%);background:-ms-linear-gradient(top, rgba(204, 204, 204, 0.75) 0%, rgba(191, 191, 191, 0.75) 47%, rgba(178, 178, 178, 0.75) 100%);background:linear-gradient(top, rgba(204, 204, 204, 0.75) 0%, rgba(191, 191, 191, 0.75) 47%, rgba(178, 178, 178, 0.75) 100%);border-bottom:1px solid #b3b3b3;border-left:1px solid #b3b3b3;border-right:1px solid #b3b3b3;text-shadow:0px 0px 4px #F2F2F2;}
 .gameLeft p{padding:0 0 10px 10px;color:#000;}
-.gameLeft div{width:370px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
 .gameLeft div section{background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.5);}
 .gameLeft table{color:#FFF;width:380px;padding:15px 14px 13px 14px;border:none;}
 .gameLeft table tr:nth-child(1){background-color:green;}
 .gameLeft table tr:nth-child(2){background-color:red;}
 .gameLeft table tr:nth-child(3){background-color:blue;}
 .gameLeft table tr:nth-child(4){background-color:yellow;}
+.gameLeft div{width:370px;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
 .gameLeft div{background-color:rgba(255, 255, 255, 0.5);-webkit-border-top-left-radius:3px;-webkit-border-top-right-radius:3px;-webkit-border-bottom-right-radius:12px;-webkit-border-bottom-left-radius:12px;-moz-border-radius-topleft:3px;-moz-border-radius-topright:3px;-moz-border-radius-bottomright:12px;-moz-border-radius-bottomleft:12px;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:12px;border-bottom-left-radius:12px;border:1px solid #CCCCCC;margin:0 0 20px 0;}
 .gameLeft div section{-webkit-box-shadow:inset 0px 0px 10px #bdbdbd;-moz-box-shadow:inset 0px 0px 10px #bdbdbd;box-shadow:inset 0px 0px 10px #CCC;-webkit-border-top-left-radius:0px;-webkit-border-top-right-radius:0px;-webkit-border-bottom-right-radius:10px;-webkit-border-bottom-left-radius:10px;-moz-border-radius-topleft:0px;-moz-border-radius-topright:0px;-moz-border-radius-bottomright:10px;-moz-border-radius-bottomleft:10px;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;background-color:rgba(255, 255, 255, 0.25);}
 #gameLeftOverview{width:1168px;}
-#gameLeftOverview div{margin:0 0 20px 0;}
+#gameLeftOverview div{margin:0 0 35px 0;}
 #gameLeftOverview .column{float:left;}
 .column:nth-child(1){margin:0 22px 0 0;}
 .column:nth-child(2){margin:0 22px 0 0;}
@@ -82,6 +80,15 @@ ul#filters{display:block;}
 #gameCup{background-image:url(../img/icons/cup.png);}
 #gameMedaille{background-image:url(../img/icons/medaille.png);}
 #gameRanking{background-image:url(../img/icons/podium.png);}
+#gameTweets{background-image:url(../img/icons/tweets.png);}
+#gameSponsors{background-image:url(../img/icons/sponsors.png);}
+#gameBank{background-image:url(../img/icons/bank.png);}
+#gameTraining{background-image:url(../img/icons/training.png);}
+#gamePlayers{background-image:url(../img/icons/players.png);}
+#gameGraph{background-image:url(../img/icons/graph.png);}
+#gameNext{background-image:url(../img/icons/next.png);}
+#gamePrevious{background-image:url(../img/icons/previous.png);}
+#gameStadium{background-image:url(../img/icons/stadium.png);}
 .bericht_datum{float:right;}
 .read,.unread{clear:both;}
 .read{background-color:green;}

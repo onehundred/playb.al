@@ -84,6 +84,7 @@
             </div>
             <div>
                 <section>
+                            <figure class="icon" id="gamePrevious"></figure>
                     <h2>vorige matchen</h2>
                     <?php if(isset($vorige_matchen[1]['thuis'])){?>
                     <table>
@@ -117,6 +118,7 @@
             </div>
             <div>
                 <section>
+                            <figure class="icon" id="gameNext"></figure>
                     <h2>volgende matchen</h2>
                     <table>
                         <tr>

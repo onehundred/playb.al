@@ -151,8 +151,8 @@ foreach($training->result() as $row){
 
 } ?>
         <div>
-            <section>
-                <h2>Op wat wil je trainen?</h2>
+            <section><figure class="icon" id="gameTraining"></figure>
+                <h2>training</h2>
                 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>"/>
                 <input type="hidden" id="energie" value="<?php echo $energie;?>"/>
                 <select class="target">
@@ -170,7 +170,8 @@ foreach($training->result() as $row){
         </div>
         <div>
             <section>
-                <h2>spelers rangschikken</h2>
+            <figure class="icon" id="gamePlayers"></figure>
+                <h2>spelers</h2>
                 <p><a id="watchSkills" href="#">skills bekijken</a><a id="hideSkills" style="display: none;" href="#">skills verbergen</a></p>
                 <p><a id="watchProgress" href="#">vordering bekijken</a><a id="hideProgress" style="display: none;" href="#">vordering verbergen</a></p>
                 <ul id="sort" class="sort option-set">

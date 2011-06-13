@@ -58,6 +58,7 @@ iframe{width:320px;height:200px;}
 .question:active{background:#018096;background:-moz-linear-gradient(top, #018096 0%, #016c7f 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #018096), color-stop(100%, #016c7f));-moz-box-shadow:inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);-webkit-box-shadow:inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);box-shadow:inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);}
 .question a{padding:10px;}
 #spelersMenu{display:none;}
+#wedstrijdenMenu{display:none;}
 #stadionMenu{display:none;}
 #financienMenu{display:none;}
 #transfersMenu{display:none;}

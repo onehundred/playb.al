@@ -29,8 +29,9 @@
         <div class="gameLeft">
             <div>
                 <section>
+                            <figure class="icon" id="gameCalendar"></figure>
                     <h2>
-                        <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
+                        
                         kalender</h2>
                     <p>huidige week: week <?php echo $calendar['week'];?></p>
                     <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
@@ -39,12 +40,14 @@
             </div>
             <div class="chart_container">
                 <section>
+                            <figure class="icon" id="gameGraph"></figure>
                     <h2>huidig seizoen</h2>
                     <canvas id="chartCanvas1" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
                 </section>
             </div>
             <div class="chart_container">
                 <section>
+                <figure class="icon" id="gameGraph"></figure>
                     <h2>vorig seizoen</h2>
                     <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
                 </section>

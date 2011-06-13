@@ -184,24 +184,25 @@ img#galleryRightHideSmall{left:1120px;position:relative;}
 #contentSmall{height:56px;width:89px;overflow:hidden;position:relative;border:1px solid black;}
 .imgsSmall{float:left;display:inline;-webkit-transition-property:-webkit-transform;-webkit-transition-duration:0.5s;-webkit-transition-timing-function:ease-out;padding:0px;margin:0px;width:2700px;-webkit-transform:translate3d(0px, 0px, 0px);}
 .imgsSmall img{padding:0px;margin:0px;width:138px;height:50px;-webkit-transform:translate3d(0px, 0px, 0px);}
-#midden_midden{width:500px;height:1000px;float:right;}
+#midden_midden{width:50px;height:359px;float:right;}
 #plaatsen{width:400px;}
-#stadion{width:600px;height:706px;float:left;}
+#stadion{width:640px;height:806px;float:left;margin:0 0 0 60px;}
 #links_boven{width:100px;height:100px;float:left;background-color:blue;-webkit-border-top-left-radius:100px;}
-#links_boven_kopen{width:275px;height:275px;float:left;background-image:url(../img/stadion/a_sectie.png);background-repeat:no-repeat;opacity:0.25;}
-#midden_boven{float:right;width:400px;height:100px;}
-#midden_boven_kopen{float:right;width:400px;height:100px;text-align:center;}
-#rechts_boven{width:100px;height:100px;float:right;background-color:blue;-webkit-border-top-right-radius:100px;}
-#rechts_boven_kopen{width:100px;height:100px;float:right;-webkit-border-top-right-radius:100px;text-align:center;}
-#rechts_midden{width:100px;height:500px;float:right;background-color:green;}
-#rechts_midden_kopen{width:100px;height:500px;float:right;text-align:center;}
-#links_midden{width:100px;height:500px;float:left;background-color:green;}
-#rechts_onder{width:100px;height:100px;float:right;background-color:blue;-webkit-border-bottom-right-radius:100px;}
-#rechts_onder_kopen{width:100px;height:100px;float:right;text-align:center;-webkit-border-bottom-right-radius:100px;}
-#midden_onder{width:400px;height:100px;float:right;background-color:green;}
-#midden_onder_kopen{width:400px;height:100px;float:right;text-align:center;}
-#links_onder{width:100px;height:100px;float:left;background-color:blue;-webkit-border-bottom-left-radius:100px;}
-#links_onder_kopen{width:100px;height:100px;float:left;text-align:center;-webkit-border-bottom-left-radius:100px;}
+#links_boven_kopen{width:235px;height:277px;float:left;background-image:url(../img/stadion/a_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
+#links_boven_kopen:hover,#midden_boven_kopen:hover,#rechts_boven_kopen:hover,#rechts_midden_kopen:hover,#rechts_onder_kopen:hover,#midden_onder_kopen:hover,#links_onder_kopen:hover,#links_midden_kopen:hover{-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;opacity:0.3;}
+#midden_boven{float:right;background-image:url(../img/stadion/b_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;width:206px;height:274px;}
+#midden_boven_kopen{float:right;background-image:url(../img/stadion/b_sectie.png);background-repeat:no-repeat;opacity:0.2;width:206px;height:274px;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
+#rechts_boven{width:196px;height:274px;float:right;background-image:url(../img/stadion/c_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
+#rechts_boven_kopen{width:196px;height:274px;float:right;background-image:url(../img/stadion/c_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
+#rechts_midden{width:196px;height:359px;float:right;background-image:url(../img/stadion/d_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
+#rechts_midden_kopen{width:196px;height:359px;float:right;background-image:url(../img/stadion/d_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
+#links_midden{width:235px;height:359px;float:left;background-image:url(../img/stadion/h_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
+#rechts_onder{width:196px;height:269px;float:right;background-image:url(../img/stadion/e_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
+#rechts_onder_kopen{width:196px;height:269px;float:right;background-image:url(../img/stadion/e_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
+#midden_onder{width:206px;height:209px;float:right;background-image:url(../img/stadion/f_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
+#midden_onder_kopen{width:206px;height:209px;float:right;background-image:url(../img/stadion/f_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
+#links_onder{width:235px;height:269px;float:left;background-image:url(../img/stadion/g_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
+#links_onder_kopen{width:235px;height:269px;float:left;background-image:url(../img/stadion/g_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
 .kopen{text-decoration:underline;cursor:pointer;color:blue;margin-left:35px;font-size:9pt;}
 #footerWrap{float:left;width:100%;background:url(../img/1168/footerfill_top.png) repeat-x 0% 0%,url(../img/1168/footerfill.png) repeat-x 0px 40px;}
 footer{width:1168px;margin:0 auto 0 auto;}

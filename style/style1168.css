@@ -188,7 +188,7 @@ img#galleryRightHideSmall{left:1120px;position:relative;}
 #plaatsen{width:400px;}
 #stadion{width:600px;height:706px;float:left;}
 #links_boven{width:100px;height:100px;float:left;background-color:blue;-webkit-border-top-left-radius:100px;}
-#links_boven_kopen{width:275px;height:275px;float:left;background-image:url(../img/stadion/a_sectie.png);background-repeat:no-repeat;opacity:0.5;}
+#links_boven_kopen{width:275px;height:275px;float:left;background-image:url(../img/stadion/a_sectie.png);background-repeat:no-repeat;opacity:0.25;}
 #midden_boven{float:right;width:400px;height:100px;}
 #midden_boven_kopen{float:right;width:400px;height:100px;text-align:center;}
 #rechts_boven{width:100px;height:100px;float:right;background-color:blue;-webkit-border-top-right-radius:100px;}

@@ -49,22 +49,36 @@
                         
                     </section>
                 </div>
+                <?php foreach($divisie->result() as $test){
+                	$divisie_id = $test->divisie_id;
+                
+                }?>
+                <?php if($divisie_id != 1){ ?>
                 <div>
                     <section>
                         <figure class="icon" id="gameRanking"></figure>
                         <h2> klassement eerste divisie</h2>
-                        <?php foreach($divisie_eerste->result() as $row){ ?>
-                        <p><?php echo $row->naam;?> - <?php echo $row->divisiepunten;?></p>
-                        <?php } ?>
+                        <?php 
+                        $i =1;
+                        foreach($divisie_eerste->result() as $row){ ?>
+                        <p><?php echo $i.' '. $row->naam;?> - <?php echo $row->divisiepunten;?></p>
+                        <?php
+                        	$i++;
+                         } ?>
                     </section>
                 </div>
+                <?php } ?>
                 <div>
                     <section>
                         <figure class="icon" id="gameRanking"></figure>
                         <h2>klassement jouw divisie</h2>
-                        <?php foreach($divisie->result() as $row){ ?>
-                        <p><?php echo $row->naam;?> - <?php echo $row->divisiepunten;?></p>
-                        <?php } ?>
+                        <?php
+                         $i=1;
+                         foreach($divisie->result() as $row){ ?>
+                        <p><?php echo $i.' '.$row->naam;?> - <?php echo $row->divisiepunten;?></p>
+                        <?php
+                        	$i++;
+                         } ?>
                     </section>
                 </div>
             </section>

@@ -6,7 +6,11 @@ $(document).ready(function(){
   		var password = $('#login_password').val();
   		
   		if(username == '' || password == ''){
-  			$('.login').effect('shake', { times:3 }, 60);
+  			$(':submit').hide();
+  			$('.login').effect('shake', { times:3 }, 60, function (){
+  				$(':submit').show();
+  			
+  			});
   		}else{
   		
   			$.ajax({
@@ -19,7 +23,11 @@ $(document).ready(function(){
     			dataType: "json",
         		success: function(data){
         			if(data == 'false'){
-        				$('.login').effect('shake', { times:3 }, 60);
+        			$(':submit').hide();
+		  			$('.login').effect('shake', { times:3 }, 60, function (){
+		  				$(':submit').show();
+		  			
+		  			});
         			
         			
         			}else{

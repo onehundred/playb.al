@@ -172,8 +172,7 @@ $(function() {
 	        		var spelers = data;
 	        		
 	        		if(data.energiecheck === false){
-	        		$().toastmessage('showErrorToast', "U heeft te weinig energiepunten.");
-	        		//alert('U hebt te weinig energiepunten');
+	        		$().toastmessage('showErrorToast', "je hebt niet genoeg energie");
 	        		}
 	        		else{
 	        		

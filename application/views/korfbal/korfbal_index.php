@@ -14,9 +14,8 @@
                     <section>
                         <figure class="icon" id="gameCalendar"></figure>
                         <h2> kalender</h2>
-                        <p>huidige week: week <?php echo $calendar['week'];?></p>
-                        <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
-                        <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                        <p>week <?php echo $calendar['week'];?>, seizoen <?php echo $calendar['seizoen'];?></p>
+                        <p>volgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
                     </section>
                 </div>
             </section>
@@ -61,7 +60,7 @@
                         <?php 
                         $i =1;
                         foreach($divisie_eerste->result() as $row){ ?>
-                        <p><?php echo $i.' '. $row->naam;?> - <?php echo $row->divisiepunten;?></p>
+                        <span><p><?php echo $i.' '. $row->naam;?></p><p id="klassementPunten"> - <?php echo $row->divisiepunten;?></p></span>
                         <?php
                         	$i++;
                          } ?>
@@ -75,7 +74,7 @@
                         <?php
                          $i=1;
                          foreach($divisie->result() as $row){ ?>
-                        <p><?php echo $i.' '.$row->naam;?> - <?php echo $row->divisiepunten;?></p>
+                      <div id="klassementEntry">  <p id="klassementTeamnaam"><?php echo $i.' '.$row->naam;?><span id="klassementPunten"><?php echo $row->divisiepunten;?></div>
                         <?php
                         	$i++;
                          } ?>

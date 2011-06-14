@@ -722,6 +722,7 @@ footer div {
 }
 #korfbal, #basketbal, #volleybal {
 	cursor: pointer;
+	margin: 60px 10px 0 0;
 	-moz-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	-webkit-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	-o-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
@@ -875,10 +876,10 @@ div#profile {
     font-size: 12px;
     font-weight: bold;
     line-height: 1;
-    padding: 4px 0 6px 0;
+    padding: 4px 5px 6px 5px;
     text-align: center;
     text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8);
-    width: 80px
+    width: auto;
     }
 div#profile:hover {
 	background: #de1f2f;
@@ -1052,11 +1053,7 @@ div#profile a {
 	font-size: 48px;
 }
 .startgame a:hover {
-	color: #FFF;/*
-	border-bottom-width: 10px;
-	border-bottom-style: solid;
-	border-bottom-color: #000;	
-*/
+	color: #FFF;
 	
 }
 .startgame img {
@@ -1068,19 +1065,29 @@ div#profile a {
 #continue a {
 	color: #F7F7F7;
 	font-family: 'LeagueGothicRegular';
-	font-size: 32px;
+	font-size: 38px;
 	padding-left: 15px;
+position: absolute;
+bottom: 35px;
+width: 250px;
+left: -15px;
 .textShadow;
 	color: #F7F7F7;
 	text-transform: uppercase;
+	text-align: right;
+
 }
 .overview {
-	padding-left: 15px;
+	padding: 10px 0 0 15px;
 	font-family: 'LeagueGothicRegular';
+	letter-spacing: 1px;
 	text-transform: uppercase;
-	font-size: 32px;
+	font-size: 28px;
+	font-weight: normal;
 	color: #F7F7F7;
  .textShadow;
+ position: relative;
+ top: 50px;
 }
 #overview2 {
 	padding-left: 15px;
@@ -1319,21 +1326,21 @@ select {
 }
 
 .toast-item-close {
-    background:url(../img/close.gif);
-    width:22px;
-    height:22px;
+    background:url(../img/close.png);
+    width:30px;
+    height:30px;
     position: absolute;
-    top:7px;
-    right:7px;
+    bottom:15px;
+    left:7px;
 }
 
 .toast-item-image {
     width:32px;
     height: 32px;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-bottom: 10px;
     margin-right: 10px;
-    float:left;
+    float:right;
 }
 
 .toast-item-image-notice {

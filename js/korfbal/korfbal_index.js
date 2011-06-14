@@ -43,15 +43,15 @@ $(document).ready(function(){
         			
         			for(var i =0;i<data.length;i++){
         			
-        				var content = '<p>'
+        				var content = '<span>'
         							if(status == 0){	
-        								content += '<p class="markeer" id="'+data[i]['bericht_id']+'">markeer als gelezen</p>'
+        								content += '<p class="markeer" id="'+data[i]['bericht_id']+'"></p>'
         							}
-        							content += '<p class="verwijder" id="'+data[i]['bericht_id']+'">Verwijder bericht</p>'
+        							content += '<p class="verwijder" id="'+data[i]['bericht_id']+'"></p>'
         							+ '<p class="bericht_datum">'+data[i]['datum']+'</p>'
-        							+ '<p class="'+klas+'">'+data[i].bericht+'<p>'
+        							+ '<p class="'+klas+'">'+data[i].bericht+'</p>'
         				
-        							+ '</p>';
+        							+ '</span>';
         			
         				$('#korfbal_berichten').append(content);
         			

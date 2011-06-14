@@ -435,50 +435,48 @@ border-right: 1px solid #b3b3b3;
 text-shadow: 0px 0px 4px #F2F2F2;
 }
 .gameLeft p {
-	padding: 0 0 10px 10px;
+	padding: 10px 15px 10px 15px;
 	color: #000;
 }
 
-.gameLeft div:hover {
-}
-.gameLeft div section {
-/*
-	-webkit-box-shadow:  inset 0px 0px 10px #bdbdbd;
-	-moz-box-shadow: inset 0px 0px 10px #bdbdbd;
-	box-shadow: inset 0px 0px 10px #000;
-*/
-/* 		background-color: rgba(255, 255, 255, 0.5); */
-background-color: #FFFFFF;
-background-color: rgba(255,255,255,0.5);
 
 
-}
 .gameLeft table {
-	color: #FFF;
-	width: 380px;
+	color: #444;
+	width: 370px;
 	padding: 15px 14px 13px 14px;
 	border: none;
+	text-align: center;
 }
 .gameLeft table tr:nth-child(1) {
-	background-color: green;
+background-color: rgba(191, 191, 191, 0.2);
+border: 1px solid rgba(191, 191, 191, 0.25);
 }
 .gameLeft table tr:nth-child(2) {
-	background-color: red;
+background-color: rgba(191, 191, 191, 0.8);
+border: 1px solid rgba(191, 191, 191, 0.9);
 }
 .gameLeft table tr:nth-child(3) {
-	background-color: blue;
+background-color: rgba(191, 191, 191, 0.2);
+border: 1px solid rgba(191, 191, 191, 0.25);
 }
 .gameLeft table tr:nth-child(4) {
-	background-color: yellow;
+background-color: rgba(191, 191, 191, 0.8);
+border: 1px solid rgba(191, 191, 191, 0.9);
 }
-.gameLeft div {
-
-
-width: 370px;
-
- .transitionOff;
+.even {
+	background-color: #FFFFFF;
+	background-color: rgba(255,255,255,0.5);
+	border-bottom: 1px solid #CCCCCC;
 }
+.odd {
+	background-color: #E5E5E5;
+	background-color: rgba(229,229,229,0.5);
+	border-bottom: 1px solid #CCCCCC;
+}
+
 .gameLeft div {
+background-color: #FFFFFF;
 	background-color: rgba(255,255,255, 0.5);
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-top-right-radius: 3px;
@@ -494,11 +492,12 @@ width: 370px;
 	border-bottom-left-radius: 12px;
 	border: 1px solid #CCCCCC;
 	margin: 0 0 20px 0;
+	width: 370px;
+
+ .transitionOff;
 }
 .gameLeft div section {
-	-webkit-box-shadow: inset 0px 0px 10px #bdbdbd;
-	-moz-box-shadow: inset 0px 0px 10px #bdbdbd;
-	box-shadow: inset 0px 0px 10px #CCC;
+
 	-webkit-border-top-left-radius: 0px;
 	-webkit-border-top-right-radius: 0px;
 	-webkit-border-bottom-right-radius: 10px;
@@ -511,7 +510,10 @@ width: 370px;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
-	background-color: rgba(255,255,255,0.25);
+
+
+
+
 }
 
 #gameLeftOverview {
@@ -593,19 +595,77 @@ background-image: url(../img/icons/stadium.png);
 #gameView  {
 background-image: url(../img/icons/view.png);
 }
-.bericht_datum {
-float: right;
-
+p.bericht_datum {
+float: left;
+color: #666666;
+font-size: 12px;
 }
 .read, .unread {
 clear: both;
+margin: 0 15px 10px 15px;
+}
+p.verwijder {
+float: right;
+background-image: url(../img/icons/trash.png);
+background-repeat: no-repeat;
+width: 20px;
+height: 25px;
+padding: 0 15px 0 0;
+opacity: 0.8;
+}
+p.markeer:hover, p.verwijder:hover {
+cursor: pointer;
+opacity: 1;
+}
+p.markeer {
+opacity: 0.8;
+float: right;
+
+padding: 0 15px 0 0;
+width: 25px;
+height: 25px;
+background-image: url(../img/icons/seen.png);
+background-repeat: no-repeat;
 }
 .read {
-background-color: green;
-
+background-color: rgba(30, 166, 68, 0.2);
+border: 1px solid rgba(30, 166, 68, 0.25);
+.borderRadius;
 }
 .unread {
-background-color: red;
+background-color: rgba(166, 30, 41, 0.2);
+border: 1px solid rgba(166, 30, 41, 0.25);
+.borderRadius;
+}
+div#klassementEntry {
+background-color: rgba(191, 191, 191, 0.2);
+border: 1px solid rgba(191, 191, 191, 0.25);
+.borderRadius;
+width: 340px;
+height: 25px;
+padding: 0 0 10px 0;
+margin: 10px 15px 10px 15px;
+.transitionOff;
+}
+div#klassementEntry:hover {
+background-color: rgba(191, 191, 191, 0.4);
+border: 1px solid rgba(191, 191, 191, 0.5);
+.transitionOn;
+
+}
+#klassementTeamnaam {
+
+line-height: 1;
+}
+#klassementPunten {
+float: right;
+line-height: 1;
+
+
+}
+#twitter_nieuws, #twitter_status {
+
+
 }
 /* gameRight end ------------------------------------------------------------------------------------------------------------*/
 /* MATCHES start -----------------------------------------------------------------------------------------------------------*/
@@ -676,9 +736,31 @@ height: 350px;
 }
 #sliderHome div {
 width: 1168px;
+height: 285px;
+}
+#sliderHome div:nth-child(1) {
+background-image: url(../img/slider/1168/1.png);
+background-repeat: no-repeat;
+}
+#sliderHome div:nth-child(2) {
+background-image: url(../img/slider/1168/2.png);
+background-repeat: no-repeat;
+}
+#sliderHome div:nth-child(3) {
+background-image: url(../img/slider/1168/3.png);
+background-repeat: no-repeat;
+}
+#sliderHome div:nth-child(4) {
+background-image: url(../img/slider/1168/4.png);
+background-repeat: no-repeat;
+}
+#sliderHome div:nth-child(5) {
+background-image: url(../img/slider/1168/5.png);
+background-repeat: no-repeat;
 }
 #sliderHome img {
 float: left;
+
 }
 #sliderHome section {
 float: right;
@@ -690,19 +772,23 @@ width: 275px;
 }
 #layouts figure {
 }
-.sports {
+.sports, .sportsChoice {
 	height: 400px;
 
 
 	z-index: 1;
 
 }
-.sports article {
+.sports article, .sportsChoice article {
 .center1168;
 
 }
-.sports figure {
+
+.sports figure, .sportsChoice figure {
 	float: left;
+}
+.sportsChoice figure {
+margin-top: 10%;
 }
 .gallery {
 }
@@ -724,9 +810,12 @@ iframe {
 	height: 436px;
 }
 /* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
-
+#korfbalbg, #basketbalbg, #volleybalbg {
+display: none;
+}
 .korfbal {
 	/* 	top: 0px; */
+	display: none;
 	margin: 10px;
 	width: 275px;
 	height: 250px;
@@ -742,6 +831,7 @@ box-shadow: 0px 0px 5px #BFBFBF;
 box-shadow: 0px 0px 10px #BFBFBF;
 }
 .basketbal {
+	display: none;
 .borderRadius;
 	/* 	top: 85px; */
 	width: 275px;
@@ -761,6 +851,7 @@ box-shadow: 0px 0px 5px #BFBFBF;
 box-shadow: 0px 0px 10px #BFBFBF;
 }
 .volleybal {
+	display: none;
 	/* 	top: 85px; */
 	width: 275px;
 	height: 250px;
@@ -885,8 +976,12 @@ left: 39%;
 
 }
 .startgame {
-	position: relative;
+	position: absolute;
 	z-index: 100;
+	top: 255px;
+	left: 0px;
+
+
 }
 .startgame h1 {
 
@@ -895,23 +990,18 @@ left: 39%;
 	position: absolute;
 }
 .startgame a {
-	bottom: 35px;
-	right: 25px;
-	position: absolute;
+
+
 }
 .teamPosition {
-z-index: 100;
+float: left;
 position: relative;
-top: -190px;
+bottom: 215px;
+left: 12px;
+width: 250px;
 }
-#belowbottom {
-	/* 	 	background-image: url("../img/slideshowbg.png"); */
-	 	background-repeat: no-repeat;
-	height: 500px;
-	margin: 75px 0 0 0;
-}
-#playnow {
-}
+
+/*
 .stripe1 {
  background-color: @korfbalColor;
 	height: 282px;
@@ -934,6 +1024,7 @@ top: -190px;
 	margin-left: 37px;
 	margin-right: 50px;
 }
+*/
 /* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
 
 /* okay 

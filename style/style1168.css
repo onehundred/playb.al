@@ -23,7 +23,7 @@ header{height:55px;background:url(../img/top.png);background-repeat:repeat-x;}
 .basketbal h1{}
 .volleybal h1{}
 #tagline{font-size:42px;}
-.makeAccount{float:right;width:285px;margin:0 10px 0 0;position:absolute;left:865px;}
+.makeAccount{display:none;width:285px;margin:0 10px 0 0;position:absolute;left:865px;}
 #main_signup{float:right;}
 form#signupform{float:right;}
 h2{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#666;}
@@ -120,7 +120,7 @@ div#klassementEntry:hover{background-color:rgba(191, 191, 191, 0.4);border:1px s
 #sliderHome img{float:left;}
 #sliderHome section{float:right;width:275px;height:310px;}
 h1.sliderTag{margin:35px 0 0 0;font-family:'LeagueGothicRegular';font-weight:normal;letter-spacing:2px;font-size:92px;text-transform:uppercase;color:#666666;color:rgba(0, 0, 0, 0.35);}
-p.sliderCopy{border:12px solid #FFFFFF;border:12px solid rgba(255, 255, 255, 0.5);background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.5);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;width:234px;font-size:13px;margin:15px 0 0 0;-webkit-box-shadow:0px 0px 5px #BFBFBF;-moz-box-shadow:0px 0px 5px #BFBFBF;box-shadow:0px 0px 5px #BFBFBF;}
+p.sliderCopy{padding:12px;background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.5);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;width:234px;font-size:13px;margin:22px 0 0 0;-webkit-box-shadow:0px 0px 5px #BFBFBF;-moz-box-shadow:0px 0px 5px #BFBFBF;box-shadow:0px 0px 5px #BFBFBF;}
 #layouts p,#layouts figure{}
 .sports,.sportsChoice{height:400px;z-index:1;}
 .sports article,.sportsChoice article{width:1168px;margin:0 auto 0 auto;}
@@ -171,7 +171,7 @@ a#closeLogin img:hover,a#closeProfile img:hover,a#closeOops img:hover{padding:7p
 .imgs{position:absolute;top:0;left:15px;}
 .imgs img{float:left;}
 .pagingGallery{margin:20px auto 0 auto;width:178px;height:47px;z-index:100;text-align:center;line-height:40px;display:none;}
-.galleryNav{position:absolute;top:355px;margin:10px 0 0 10px;}
+.galleryNav{position:absolute;top:355px;margin:10px 0 0 15px;}
 .pagingGallery a,#galleryNav a{padding:10px 15px 5px 15px;margin:0 5px 0 0;background-image:url("../img/bullet_inactive.png");background-repeat:no-repeat;opacity:0.9;z-index:1;color:transparent;}
 .pagingGallery a.active,#galleryNav .activeSlide{font-weight:bold;background-image:url("../img/bullet_active.png");}
 .pagingGallery a.active{background-image:url("../img/bullet_active.png");}

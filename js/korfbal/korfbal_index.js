@@ -44,11 +44,12 @@ $(document).ready(function(){
         			for(var i =0;i<data.length;i++){
         			
         				var content = '<span>'
+        						
+        							content += '<p class="verwijder" id="'+data[i]['bericht_id']+'"></p>'
         							if(status == 0){	
         								content += '<p class="markeer" id="'+data[i]['bericht_id']+'"></p>'
         							}
-        							content += '<p class="verwijder" id="'+data[i]['bericht_id']+'"></p>'
-        							+ '<p class="bericht_datum">'+data[i]['datum']+'</p>'
+        							content += '<p class="bericht_datum">'+data[i]['datum']+'</p>'
         							+ '<p class="'+klas+'">'+data[i].bericht+'</p>'
         				
         							+ '</span>';

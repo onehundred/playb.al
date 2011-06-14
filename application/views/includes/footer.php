@@ -11,7 +11,8 @@
             <li>test</li>
             <li>test</li>
             <li>test</li>
-    <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=217760674909805&amp;xfbml=1"></script><fb:like href="http://playb.al" send="true" width="250" show_faces="true" font=""></fb:like>
+            
+    <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=217760674909805&amp;xfbml=1"></script><fb:like href="http://playb.al" send="true" width="450" show_faces="true" font=""></fb:like>
         </div>
         <div id="footerCenter">
             <h2>connect</h2>

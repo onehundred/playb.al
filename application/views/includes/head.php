@@ -56,7 +56,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.cycle.min.js"></script>
 <script src="<?php echo base_url();?>/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
-<!-- /* <script src="<?php echo base_url();?>/js/touchswipe.js"></script> */ -->
+<script src="<?php echo base_url();?>/js/touchswipe.js"></script>
 <script src="<?php echo base_url();?>js/jquery.jtwitter.js"></script> 
 <script src="<?php echo base_url();?>/js/base.js"></script>
 <script src="<?php echo base_url();?>/js/jquery.transform.js"></script>

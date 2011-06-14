@@ -87,7 +87,23 @@
 		return $query;
 
 	}
-
+	function get_spelerstats($speler_id)
+	{
+		$this->db->where('FK_speler_id', $speler_id);
+		$query = $this->db->get('korf_spelerstats');
+		
+		$data = array();
+		foreach($query->result() as $row){
+			$data['goals_carriere'] = $row->goals_carriere;
+			$data['goals_seizoen'] = $row->goals_seizoen;
+			$data['goals_wedstrijd'] = $row->goals_wedstrijd;
+			$data['laatste_prestatie'] = $row->prestatie_laatste;
+			$data['beste_prestatie'] = $row->prestatie_beste;
+			$data['laatste_positei'] = $row->laatste_positie;
+			$data['aantal_matchen'] = $row->aantal_matchen;
+		}
+		return $data;
+	}
 
 	function get_opstelling($team_id)
 	{

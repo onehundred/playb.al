@@ -9,7 +9,7 @@
     function send_message($titel, $onderwerp, $bericht, $cat, $verzender, $ontvanger){
     	
     	
-    		$mdate =  date("F j Y, H:m"); 
+    	$mdate =  date("F j Y, H:m"); 
     	
     	$data = array(
     		'titel' => $titel,
@@ -774,8 +774,22 @@
 		//in array steken om random speler te laten scoren
 		$thuisspelerarray = array($thuis[$i]['attack2speler'],$thuis[$i]['attackspeler'],$thuis[$i]['attack3speler'],$thuis[$i]['attack4speler'],$thuis[$i]['reboundspeler'],$thuis[$i]['rebound2speler'],$thuis[$i]['playmakingspeler'],$thuis[$i]['playmaking2speler']);
 		$uitspelerarray = array($uit[$i]['attack2speler'],$uit[$i]['attackspeler'],$uit[$i]['attack3speler'],$uit[$i]['attack4speler'],$uit[$i]['reboundspeler'],$uit[$i]['rebound2speler'],$uit[$i]['playmakingspeler'],$uit[$i]['playmaking2speler']);
-
-
+		
+		
+		//id's opvragen om aantal goals te kunnen toevoegen
+		$thuisspeleridarray = array($thuis[$i]['attack2spelerid'],$thuis[$i]['attackspelerid'],$thuis[$i]['attack3spelerid'],$thuis[$i]['attack4spelerid'],$thuis[$i]['reboundspelerid'],$thuis[$i]['rebound2spelerid'],$thuis[$i]['playmakingspelerid'],$thuis[$i]['playmaking2spelerid']);
+		
+		$uitspeleridarray = array($uit[$i]['attack2spelerid'],$uit[$i]['attackspelerid'],$uit[$i]['attack3spelerid'],$uit[$i]['attack4spelerid'],$uit[$i]['reboundspelerid'],$uit[$i]['rebound2spelerid'],$uit[$i]['playmakingspelerid'],$uit[$i]['playmaking2spelerid']);
+		
+		//doelpunten resetten van vorige wedstrijd
+		foreach($thuisspeleridarray as $tspelerid){
+			$this->reset_doelpunten_wedstrijd($tspelerid);
+		
+		}
+		foreach($uitspeleridarray as $uspelerid){
+			$this->reset_doelpunten_wedstrijd($uspelerid);
+		
+		}
 		
 		//matchacties en goals
 		for($j=1;$j<60;$j++){
@@ -790,13 +804,17 @@
 						$acties .= rand(1,2).';';
 						$spelers .= $thuisspelerarray[$randomspeler].';';
 						$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
+						
+						$this->update_doelpunten($thuisspeleridarray[$randomspeler]);
+						
 					}else{
 						$uitslag['uit'] = $uitslag['uit'] + 1;
 						$acties .= '1;';
 						$spelers .= $uitspelerarray[$randomspeler].';';
 						$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
 						$minuten .= $randmin1.';';
-		
+						
+						$this->update_doelpunten($uitspeleridarray[$randomspeler]);
 					
 					}
 			}
@@ -988,7 +1006,7 @@
 				
 			}else{
 					//echo $thuis[$i]['rebound'];
-			    $prestatie = ($hoofdskill*3.5)+rand(0, 10); //(rebound = 70%)(stamina=20%)(random factor = 10%)
+			    $prestatie = ($hoofdskill*3.5)+rand(0, 10); //(rebound = 70%)(stamina=20%)(random factor = 10%) @TODO-> stamina ophalen
        				$this->db->where('FK_speler_id', $id);
 				$statsquery = $this->db->get('korf_spelerstats');
 				
@@ -1224,6 +1242,59 @@
 		$this->db->update('korf_financien', $update);
 		
 		}
+	
+	}
+	
+	function reset_doelpunten_wedstrijd($spelerid)
+	{
+		$this->db->select('aantal_matchen');
+		$this->db->from('korf_spelerstats');
+		$this->db->where('FK_speler_id', $spelerid);
+		$query = $this->db->get();
+		
+		$matchen = 0;
+		foreach($query->result() as $row){
+			$matchen = $row->aantal_matchen;
+		}
+	
+		$update = array(
+			'goals_wedstrijd' => 0,
+			'aantal_matchen' => $matchen + 1,
+			
+		);
+	
+		$this->db->where('FK_speler_id', $spelerid);
+		$this->db->update('korf_spelerstats', $update);
+	}
+	
+	
+	function update_doelpunten($spelerid)
+	{
+		$this->db->select('goals_carriere, goals_seizoen, goals_wedstrijd');
+		$this->db->from('korf_spelerstats');
+		$this->db->where('FK_speler_id', $spelerid);
+		$query = $this->db->get();
+		
+		$carriere = 0;
+		$seizoen = 0;
+		$wedstrijd = 0;
+		
+		foreach($query->result() as $row){
+			$carriere = $row->goals_carriere;
+			$seizoen = $row->goals_seizoen;
+			$wedstrijd = $row->goals_wedstrijd;
+		}
+		
+		$update = array(
+			'goals_carriere' => $carriere + 1,
+			'goals_seizoen' => $seizoen + 1,
+			'goals_wedstrijd' => $wedstrijd +1,
+		
+		);
+	
+		$this->db->where('FK_speler_id', $spelerid);
+		$this->db->update('korf_spelerstats', $update);
+		
 	
 	}
 }

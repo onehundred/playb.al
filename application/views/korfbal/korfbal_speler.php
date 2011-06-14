@@ -278,43 +278,81 @@ $("#transfer").submit(function(){
     <div>
         <section>
             <h2>aantal matchen gespeeld</h2>
-            <p>een regel content minstens</p>
-            <p>bij voorkeur twee</p>
+            <?php if(isset($spelerstats['aantal_matchen'])){ ?>
+           	    <p><?php echo $spelerstats['aantal_matchen']?></p>
+	            <p>in zijn volledige korfbalcarrière</p>
+            <?php }else{ ?>
+            	<p>Deze speler speelde nog geen wedstrijden</p>
+            <?php } ?>
         </section>
     </div>
     <div>
         <section>
             <h2>aantal goals in carriere</h2>
-            <p>een regel content minstens</p>
-            <p>bij voorkeur twee</p>
+           <?php if(isset($spelerstats['goals_carriere'])){ ?>
+           	    <p><?php echo $spelerstats['goals_carriere']?></p>
+	            <p>in zijn volledige korfbalcarrière</p>
+            <?php }else{ ?>
+            	<p>Deze speler maakte nog geen goals</p>
+            <?php } ?>
         </section>
     </div>
     <div>
         <section>
             <h2>goals dit seizoen</h2>
-            <p>een regel content minstens</p>
-            <p>bij voorkeur twee</p>
+   		    <?php if(isset($spelerstats['goals_seizoen'])){ ?>
+           	    <p><?php echo $spelerstats['goals_seizoen']?></p>
+	            <p>in het huidige seizoen</p>
+            <?php }else{ ?>
+            	<p>Deze speler maakte nog geen goals dit seizoen</p>
+            <?php } ?>
+
         </section>
     </div>
     <div>
         <section>
             <h2>goals vorige wedstrijd</h2>
-            <p>een regel content minstens</p>
-            <p>bij voorkeur twee</p>
+            <?php if(isset($spelerstats['goals_wedstrijd'])){ ?>
+           	    <p><?php echo $spelerstats['goals_wedstrijd']?></p>
+	            <p>goals maakte deze speler vorige wedstrijd</p>
+            <?php }else{ ?>
+            	<p>Deze speler maakte vorige wedstrijd geen goals</p>
+            <?php } ?>
+
         </section>
     </div>
     <div>
         <section>
             <h2>beste prestatie</h2>
-            <p>een regel content minstens</p>
-            <p>bij voorkeur twee</p>
+             <?php if(isset($spelerstats['beste_prestatie'])){ ?>
+           	    <p><?php echo $spelerstats['beste_prestatie']?>/100</p>
+	            <p>was deze speler zijn beste prestatie tot nu toe</p>
+            <?php }else{ ?>
+            	<p>Deze speler speelde nog geen wedstrijd</p>
+            <?php } ?>
+
         </section>
     </div>
     <div>
         <section>
             <h2>prestatie vorige wedstrijd</h2>
-            <p>een regel content minstens</p>
-            <p>bij voorkeur twee</p>
+             <?php if(isset($spelerstats['laatste_prestatie'])){ ?>
+           	    <p><?php echo $spelerstats['laatste_prestatie']?>/100</p>
+	            <p>was deze speler zijn prestatie voor vorige wedstrijd</p>
+            <?php }else{ ?>
+            	<p>Deze speler speelde nog geen wedstrijd</p>
+            <?php } ?>
+        </section>
+    </div>
+    <div>
+        <section>
+            <h2>positie laatste wedstrijd</h2>
+             <?php if(isset($spelerstats['laatste_positie'])){ ?>
+           	    <p><?php echo $spelerstats['laatste_positie']?></p>
+	            <p>was deze speler zijn laatste positie</p>
+            <?php }else{ ?>
+            	<p>Deze speler speelde nog geen wedstrijd</p>
+            <?php } ?>
         </section>
     </div>
 </div>

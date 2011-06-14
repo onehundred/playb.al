@@ -84,7 +84,65 @@
     
     }
 			
+	function resend_password($email)
+	{
+		$this->db->where('email', $email);
+		$query = $this->db->get('users');
+		
+		if($query->num_rows() == 0){
+			return false;
+		
+		}else{
+			$this->db->select('voornaam, achternaam, gebruikersnaam, paswoord');
+			$this->db->from('users');
+			$this->db->where('email', $email);
+			$users = $this->db->get();
 			
+			
+			foreach($users->result() as $user){
+				$voornaam = $user->voornaam;
+				$achternaam = $user->achternaam;
+				$username = $user->gebruikersnaam;
+				$paswoord = $user->paswoord;
+				
+				$message = $voornaam.' '.$achternaam.', klik op onderstaande link om uw paswoord te resetten: <br/>:
+					<a href="playb.al/index.php/main/update_password/'.$username.'/'.$paswoord;
+				
+				mail($email, 'Playb.al: Paswoord vergeten', $message);
+				
+				
+				
+			}
+			
+			return true;	
+		}
+	
+	}		
     
-    
+    function update_password($userid, $pass)
+	{
+		
+		$this->db->where('paswoord', $pass);
+		$this->db->where('gebruikersnaam', $userid);
+		$query = $this->db->get('users');
+		
+		if($query->num_rows() == 0){
+			return false;
+		
+		}else{
+			return true;
+		}
+	}
+	
+	function reset_paswoord($pass, $userid){
+		$hash = md5($pass);
+		
+		$update  = array(
+			'paswoord' => $hash,
+		);
+		
+		$this->db->where('gebruikersnaam', $userid);
+		$this->db->update('users', $update);
+	
+	}
 }

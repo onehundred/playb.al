@@ -76,7 +76,7 @@ $(document).ready(function(){
         <?php
                         $attributes = array('id'=>'loginform');
 						echo form_open('#', $attributes);
-		    			echo("<p>username of email adres</p>");
+		    			echo "<p>gebruikersnaam of e-mail adres</p>";
 		    			$userdata = array(
 			              'name'        => 'username',
 			              'id'          => 'login_username',
@@ -91,9 +91,9 @@ $(document).ready(function(){
 			              'value'       => '',
 			          	);
 						echo form_password($passdata);
-		    			echo("<p ></p>");
+		    			echo("<p></p>");
 						/* todo paswoord vergeten functionaliteit */
-		    			echo("<p >paswoord vergeten?</p>");
+		    			echo anchor('http://playb.al/index.php/main/resend_password', 'paswoord vergeten?');
 		    			
 						echo form_submit('submit', 'login');
 						

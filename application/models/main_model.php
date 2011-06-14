@@ -37,7 +37,7 @@
     {
     	
 
-		$mdate =  date("F j Y, H:m"); 
+		$mdate =  date("F j Y, H:i"); 
 		
     	$new_user_insert_data = array(
     		'voornaam' => $voornaam,

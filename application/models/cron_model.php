@@ -12,7 +12,7 @@
     function send_message($titel, $onderwerp, $bericht, $cat, $verzender, $ontvanger){
     	
     
-    	$mdate =  date('Y-m-d h:i:s');
+    	$mdate =  date("F j Y, H:i"); 
     	$data = array(
     		'titel' => $titel,
     		'onderwerp' => $onderwerp, 
@@ -93,10 +93,38 @@
     	
 
     }
+    function update_trophies($teamid, $divisie)
+    {
+    	$mdate =  date("F j Y, H:m");
+    	$insert = array(
+    		'FK_team_id' => $teamid,
+    		'naam' => 'Kampioen divisie '.$divisie,
+    		'datum' => $mdate,
+    	
+    	);
+    	
+    	$this->db->insert('korf_trophies', $insert);
     
+    
+    }
     
     function promotion_division1()
     {
+    	//kampioen eerste divisie
+    	$this->db->select('team_id');
+    	$this->db->from('korf_teams');
+    	$this->db->join('korf_divisies','FK_division_id = divisie_id');
+    	$this->db->where('divisie', 1);
+    	$this->db->where('sub_divisie', 1);
+    	$this->db->order_by('divisiepunten desc, doelpunten_tegen asc');
+    	$this->db->limit(1);
+    	$kampioen = $this->db->get();
+    	
+    	foreach($kampioen->result() as $champ){
+    		$this->update_trophies($champ->team_id, '1.1');
+    	
+    	}
+
     	//verdienen te zakken naar divisie 2
 	
 		$this->db->select('*');
@@ -136,6 +164,8 @@
     		
     		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
     		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$i]);
+    		
+    		$this->update_trophies($promTeamId, '2.'.$i);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$i],
@@ -208,6 +238,8 @@
     		
     		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
     		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
+    		
+    		$this->update_trophies($promTeamId, '3.'.$j);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -285,6 +317,8 @@
     		
     		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
     		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
+    		
+    		$this->update_trophies($promTeamId, '4.'.$j);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -365,6 +399,8 @@
     		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
     		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
+    		$this->update_trophies($promTeamId, '5.'.$j);
+    		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
     			'geupdate' => 1
@@ -439,6 +475,8 @@
     		
     		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
     		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
+    		
+    		$this->update_trophies($promTeamId, '6.'.$j);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -516,6 +554,8 @@
     		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
     		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
+    		$this->update_trophies($promTeamId, '7.'.$j);
+    		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
     			'geupdate' => 1
@@ -592,6 +632,8 @@
     		
     		$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
     		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
+    		
+    		$this->update_trophies($promTeamId, '8.'.$j);
     		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
@@ -672,6 +714,8 @@
   			$this->send_message('','Promovatie','Gefeliciteerd u bent gepromoveerd!', 1, 'playb.al', $promTeamId);
     		$this->send_message('','Degredatie','Jammer, maar u bent gedegradeerd dit seizoen', 1, 'playb.al', $degrTeamId[$l]);
     		
+    		$this->update_trophies($promTeamId, '9.'.$j);
+    		
     		$update = array(
     			'FK_division_id' => $degrDivId[$l],
     			'geupdate' => 1
@@ -724,11 +768,55 @@
     				$this->db->where('speler_id', $spelerid);
     				$this->db->update('korf_spelers', $update);
     				
-    				$this->send_message('','Transfer','Uw speler is niet verkocht.',1,'playb.al', $hoogste_bieder);
+    				
+    				$this->db->select('voornaam, achternaam');
+    				$this->db->from('korf_spelers');
+					$this->db->where('speler_id', $spelerid);
+					$speler = $this->db->get();
+					
+					foreach($speler->result() as $gast){
+						
+						$voornaam = $gast->voornaam;
+						$achternaam = $gast->achternaam;
+						$this->send_message('','Transfer', $voornaam.' '.$achternaam.' is niet verkocht.',1,'playb.al', $hoogste_bieder);
+					}
+    				
+    			
     				
     			}else{
-    			
-    				//voor de update een bericht sturen naar de huidige owner om te zeggen dat speler verkocht is.
+    				
+    				//teamid van het huidige team ophalen
+    				$this->db->select('team_id, voornaam, achternaam');
+    				$this->db->from('korf_teams');
+    				$this->db->join('korf_spelers', 'FK_team_id = team_id');
+					$this->db->where('speler_id', $spelerid);
+					$query = $this->db->get();
+					
+    				foreach($query->result() as $row){
+    					$team_id = $row->team_id;
+    					$voornaam = $row->voornaam;
+    					$achternaam = $row->achternaam;
+    					
+    					$verkocht = array(
+    						'laatste_verkocht' => $spelerid,
+    					);
+    					
+    					$this->db->where('FK_team_id', $team_id);
+    					$this->db->update('korf_teamstats', $verkocht);
+    					
+    					$this->send_message('','Transfer', $voornaam.' '.$achternaam.' is verkocht.',1,'playb.al', $team_id);
+    					$this->send_message('','Transfer','Uw hebt een nieuwe speler aangekocht: '.$voornaam.' '.$achternaam,1,'playb.al', $hoogste_bieder);
+    				}
+    				
+    				
+    				$gekocht = array(
+						'laatste_gekocht' => $spelerid,
+					);
+					
+					$this->db->where('FK_team_id', $hoogste_bieder);
+					$this->db->update('korf_teamstats', $gekocht);
+
+    				
     				$update = array(
     					'transfer' => 0,
     					'FK_team_id'=> $hoogste_bieder    				
@@ -739,7 +827,7 @@
     				$this->db->where('speler_id', $spelerid);
     				$this->db->update('korf_spelers', $update);
     				
-    				$this->send_message('','Transfer','Uw hebt een nieuwe speler aangekocht.',1,'playb.al', $hoogste_bieder);
+    				
     			}
     			
     			$this->db->where('transfer_id', $transferid);

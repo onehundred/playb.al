@@ -319,7 +319,7 @@ $("#transfer").submit(function(){
             <h2>beste prestatie</h2>
              <?php if(isset($spelerstats['beste_prestatie'])){ ?>
            	    <p><?php echo $spelerstats['beste_prestatie']?>/100</p>
-	            <p>was deze speler zijn beste prestatie tot nu toe</p>
+	            <p>was deze speler zijn/haar beste prestatie tot nu toe</p>
             <?php }else{ ?>
             	<p>Deze speler speelde nog geen wedstrijd</p>
             <?php } ?>
@@ -331,7 +331,7 @@ $("#transfer").submit(function(){
             <h2>prestatie vorige wedstrijd</h2>
              <?php if(isset($spelerstats['laatste_prestatie'])){ ?>
            	    <p><?php echo $spelerstats['laatste_prestatie']?>/100</p>
-	            <p>was deze speler zijn prestatie voor vorige wedstrijd</p>
+	            <p>was deze speler zijn/haar prestatie voor vorige wedstrijd</p>
             <?php }else{ ?>
             	<p>Deze speler speelde nog geen wedstrijd</p>
             <?php } ?>
@@ -342,7 +342,7 @@ $("#transfer").submit(function(){
             <h2>positie laatste wedstrijd</h2>
              <?php if(isset($spelerstats['laatste_positie'])){ ?>
            	    <p><?php echo $spelerstats['laatste_positie']?></p>
-	            <p>was deze speler zijn laatste positie</p>
+	            <p>was deze speler zijn/haar laatste positie</p>
             <?php }else{ ?>
             	<p>Deze speler speelde nog geen wedstrijd</p>
             <?php } ?>

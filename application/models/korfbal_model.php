@@ -39,7 +39,47 @@
 		
 		return $afbeelding;
 	}
-
+	function get_sidebar_stats($teamid)
+	{
+		$stats = array();
+	
+		$this->db->where('FK_team_id', $teamid);
+		$query = $this->db->get('korf_teamstats');
+		foreach($query->result() as $row){
+			$verkocht = $row->laatste_verkocht;
+			$gekocht = $row->laatste_gekocht;
+			$stats['verkocht'] = $this->getSpelerNaam($verkocht);
+			$stats['gekocht'] = $this->getSpelerNaam($gekocht);
+		}
+		
+		$this->db->select('*');
+		$this->db->from('korf_team_achievements');
+		$this->db->join('korf_achievements', 'FK_achievements_id = achievement_id');
+		$this->db->where('FK_team_id', $teamid);
+		$this->db->order_by('team_achievements_id', 'DESC');
+		$this->db->limit('1');
+		$query2 = $this->db->get();
+		
+		foreach($query2->result() as $row2){
+			$stats['achievement']['naam'] = $row2->naam;
+			$stats['achievement']['punten'] = $row2->punten;
+			$stats['achievement']['afbeelding'] = $row2->afbeelding;
+		}
+		
+		
+		$this->db->select('naam');
+		$this->db->from('korf_trophies');
+		$this->db->where('FK_team_id', $teamid);
+		$query3 = $this->db->get();
+		
+		foreach($query3->result() as $row3){
+			$stats['award'] = $row3->naam;
+		
+		}
+		
+		return $stats;
+	}
+	
 	function get_team($team_id)
 	{
 		$this->db->where('team_id', $team_id);
@@ -909,6 +949,8 @@
 	{
 		$this->db->where('speler_id', $spelerid);
 		$query = $this->db->get('korf_spelers');
+		$speler = array();
+			$speler['id'] = $spelerid;
 		foreach($query->result() as $row){
 			$speler['voornaam'] = $row->voornaam;
 			$speler['achternaam'] = $row->achternaam;		
@@ -916,8 +958,6 @@
 		
 		return $speler;
 		
-		
-	
 	}
 	
 	function getTeamNaam($teamid)

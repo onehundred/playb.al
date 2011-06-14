@@ -7,7 +7,7 @@ $(function() {
     $('#sliderHome').show().after('<div id="galleryNav" class="galleryNav">').cycle({
         fx:     'fade',
         speed:  500,
-        timeout: 5000,
+ 
        
         pager:  '#galleryNav',
          pause:   1 
@@ -21,7 +21,7 @@ $(function() {
             <div>
                 <section>
                     <h1 class="sliderTag">manage</h1>
-                    <p>beheer elk aspect van je team. houd je budget in de gaten en sluit de juiste deals op de transfermarkt</p>
+                    <p class="sliderCopy">beheer elk aspect van je team. houd je budget in de gaten en sluit de juiste deals op de transfermarkt.</p>
                     <input class="registreren" id="sliderButton" type="submit" name="submitsignup" value="manage jouw team"/>
                 </section>
             </div>
@@ -29,7 +29,7 @@ $(function() {
             <div>
                  <section>
                     <h1 class="sliderTag">train</h1>
-                    <p>je spelers wachten op jou. houdt hun conditie hoog, zorg wel dat ze nog energie hebben voor competitie.</p>
+                    <p class="sliderCopy">je spelers wachten op jou. houdt hun conditie hoog, zorg wel dat ze nog energie hebben tijdens wedstrijden.</p>
                     <input class="registreren" id="sliderButton" type="submit" name="submitsignup" value="manage jouw team"/>
                 </section>
 
@@ -38,7 +38,7 @@ $(function() {
             <div>
                  <section>
                     <h1 class="sliderTag">coach</h1>
-                    <p>jij bepaalt de strategie. stel je spelers op voor de wedstrijden. zonder jou tactisch inzicht loopt alles in de war.</p>
+                    <p class="sliderCopy">jij bepaalt de strategie. stel je spelers op voor de wedstrijden. zonder jou tactisch inzicht loopt alles in de war.</p>
                     <input class="registreren" id="sliderButton" type="submit" name="submitsignup" value="manage jouw team"/>
                 </section>
 
@@ -48,7 +48,7 @@ $(function() {
             <div>
                  <section>
                     <h1 class="sliderTag">bouw</h1>
-                    <p>bouw delen bij en plaats extra zitjes in je stadion.  meer publiek, meer inkomsten.</p>
+                    <p class="sliderCopy">bouw delen bij en plaats extra zitjes in je stadion.  meer publiek, meer inkomsten.</p>
                     <input class="registreren" id="sliderButton" type="submit" name="submitsignup" value="manage jouw team"/>
                 </section>
 
@@ -58,7 +58,7 @@ $(function() {
             <div>
                <section>
                     <h1 class="sliderTag">heers</h1>
-                    <p>klim naar de top van de eerste divisie. sleep de titel in de wacht en maak alvast plaats in je kast voor een beker.</p>
+                    <p class="sliderCopy">klim naar de top van de eerste divisie. sleep de titel in de wacht en maak alvast plaats in je kast voor een beker.</p>
                     <input class="registreren" id="sliderButton" type="submit" name="submitsignup" value="manage jouw team"/>
                 </section>
             </div>

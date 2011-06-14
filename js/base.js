@@ -256,7 +256,7 @@
 			$('.volleybal, .basketbal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
 			$('.makeAccount').delay(1350).fadeIn(500);
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
-      		return true;
+      		return false;
 		});
 	});
     $(function() {
@@ -268,7 +268,7 @@
 	   		$('.makeAccount').delay(1350).fadeIn(500);
       			
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
-      		return true;
+      		return false;
 		});
 	});
     $(function() {
@@ -280,7 +280,7 @@
 	   		$('.makeAccount').delay(1350).fadeIn(500);
       		
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
-      		return true;
+      		return false;
 		});
 	});
 	$(function() {

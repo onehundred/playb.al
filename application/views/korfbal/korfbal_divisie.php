@@ -1,21 +1,3 @@
-<script type="text/javascript">
-        $(document).ready(function() {
-            $ ('div.division_results #rij:even').addClass('even');
-            $ ('div.division_results #rij:odd').addClass('odd');
-        });
-    </script>
-<style>
-.even {
-	background-color: #FFFFFF;
-	background-color: rgba(255,255,255,0.5);
-	border-bottom: 1px solid #CCCCCC;
-}
-.odd {
-	background-color: #E5E5E5;
-	background-color: rgba(229,229,229,0.5);
-	border-bottom: 1px solid #CCCCCC;
-}
-</style>
 <?php
 
  foreach($divisie->result() as $row)
@@ -77,9 +59,9 @@
                     <h2>
                         <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
                         kalender</h2>
-                    <p>huidige week: week <?php echo $calendar['week'];?></p>
-                    <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
-                    <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                    <p>week <?php echo $calendar['week'];?>
+                    seizoen <?php echo $calendar['seizoen'];?></p>
+                    <p>volgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
                 </section>
             </div>
             <div>

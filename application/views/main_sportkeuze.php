@@ -1,4 +1,4 @@
-<section class="sports">
+<section class="sportsChoice">
 <article>
     <figure class="korfbal">
         <?php if(isset($korfNaam)){ ?>
@@ -11,7 +11,7 @@
 			} 
 		?>
         <div class="startgame">
-            <h1>Korfbal</h1>
+            <h1>korfbal</h1>
             <p id="continue"> <!-- <a onclick="parent.location='http://google.be'">in app pagina</a> -->
                 <?php if(isset($korfNaam)){
 	echo anchor("korfbal/korfbal_start/$korfId", $korfNaam);

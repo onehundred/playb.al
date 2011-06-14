@@ -33,9 +33,9 @@
                     <h2>
                         
                         kalender</h2>
-                    <p>huidige week: week <?php echo $calendar['week'];?></p>
-                    <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
-                    <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                    <p>week <?php echo $calendar['week'];?>
+                    seizoen <?php echo $calendar['seizoen'];?></p>
+                    <p>volgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
                 </section>
             </div>
             <div class="chart_container">

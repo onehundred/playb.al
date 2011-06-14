@@ -36,12 +36,13 @@ $(document).ready(function(){
 });
 </script>
 <div id="login">
-    <li class="menu_right"> <a href="#" id="profile" class=""> 
+
+    <li class="menu_right"><div id="profile"><a href="#" id="profile"> 
         <?php $username = $this->session->userdata('username'); if(isset($username)){ echo $username;} ?>
         </a>
         <?php if(!$username){?>
         <a href="#" id="profile">aanmelden</a>
-        <?php } ?>&nbsp;<img src="<?php echo base_url();?>img/home.png" />
+        <?php } ?></div>
     </li>
 </div>
 

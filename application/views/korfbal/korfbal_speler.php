@@ -268,14 +268,7 @@ $("#transfer").submit(function(){
 </div>
 <aside>
 <div class="gameLeft">
-    <div>
-        <section>
-            <h2>overzicht</h2>
-            <p>een regel content minstens</p>
-            <p>bij voorkeur twee</p>
-        </section>
-    </div>
-    <div>
+	<div>
         <section>
             <h2>aantal matchen gespeeld</h2>
             <?php if(isset($spelerstats['aantal_matchen'])){ ?>

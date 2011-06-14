@@ -21,7 +21,7 @@ $(function() {
             <div>
                 <section>
                     <h1 class="sliderTag">manage</h1>
-                    <p>als manager beheer jij elk aspect van je team. </p>
+                    <p>beheer elk aspect van je team. houd je budget in de gaten en sluit de juiste deals op de transfermarkt</p>
                     <input class="registreren" id="sliderButton" type="submit" name="submitsignup" value="manage jouw team"/>
                 </section>
             </div>

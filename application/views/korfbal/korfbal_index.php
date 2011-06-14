@@ -90,7 +90,7 @@
                         <?php if(isset($stats['award'])){ ?>
                         	<p><?php echo $stats['award'];?></p>
                         <?php }else{ ?>
-                      	  <p>U heeft nog geen award behaald.</p>
+                      	  <p>je hebt nog geen award behaald.</p>
                         <?php } ?>
                     </section>
                 </div>
@@ -103,7 +103,7 @@
                         		<img width="75px" height="75px" src="<?php echo base_url();?>img/achievements/<?php echo $stats['achievement']['afbeelding'];?>"/>
                         		<p><?php echo $stats['achievement']['punten'];?> punten</p>
                         <?php }else{ ?>
-                      	  <p>U heeft nog geen achievement behaald.</p>
+                      	  <p>je hebt nog geen achievement behaald.</p>
                         <?php } ?>
                     </section>
                 </div>
@@ -114,7 +114,7 @@
                          <?php if(isset($stats['gekocht']['voornaam'])){ ?>
                         	<p><?php echo $stats['gekocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
                         <?php }else{ ?>
-                      	  <p>U hebt nog geen speler gekocht.</p>
+                      	  <p>je hebt nog geen speler gekocht.</p>
                         <?php } ?>
                     </section>
                 </div>
@@ -125,7 +125,7 @@
                         <?php if(isset($stats['verkocht']['voornaam'])){ ?>
                         	<p><?php echo $stats['verkocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
                         <?php }else{ ?>
-                      	  <p>U hebt nog geen speler verkocht.</p>
+                      	  <p>je hebt nog geen speler verkocht.</p>
                         <?php } ?>
                     </section>
                 </div>

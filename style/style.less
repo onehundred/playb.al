@@ -1106,30 +1106,42 @@ left: -15px;
 input[type="text"], input[type="password"], input[type="email"] {
 	display:block;
 	margin: 0 0 1em 0;
-	width: 200px;
+	width: 235px;
 	padding: 5px;
 	border: solid 1px #999;
  .borderRadius;
-	background: #FFF; /* old browsers */
+	background: #FFFFFF;
+		background: rgba(255,255,255,0.7);
+	-webkit-box-shadow: inset 0px 0px 5px #bdbdbd;
+	-moz-box-shadow: inset 0px 0px 5px #bdbdbd;
+	box-shadow: inset 0px 0px 5px #bdbdbd;
 }
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
 	display:block;
 	margin: 0 0 1em 0;
-	width: 200px;
+	width: 235px;
 	padding: 5px;
 	border: solid 1px #999;
  .borderRadius;
-	background: #FFF;
+	background: #FFFFFF;
+		background: rgba(255,255,255,0.7);
+	-webkit-box-shadow: inset 0px 0px 3px #bdbdbd;
+	-moz-box-shadow: inset 0px 0px 3px #bdbdbd;
+	box-shadow: inset 0px 0px 3px #bdbdbd;
+outline-color: #df1f2e;
 }
 input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover {
 	display:block;
 	margin: 0 0 1em 0;
-	width: 200px;
+	width: 235px;
 	padding: 5px;
-	border: solid 1px #444;
+	border: solid 1px #999;
  .borderRadius;
-	background: #FFF;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 3px;
+	background: #FFFFFF;
+		background: rgba(255,255,255,0.8);
+	-webkit-box-shadow: inset 0px 0px 3px #bdbdbd;
+	-moz-box-shadow: inset 0px 0px 3px #bdbdbd;
+	box-shadow: inset 0px 0px 3px #bdbdbd;
 }
 input[type="submit"] {
 	background: #02A9CD; /* old browsers */
@@ -1201,7 +1213,7 @@ input.registreren[type="submit"]:active {
 	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 }
-input#sliderButton.registreren[type="submit"] {
+input#sliderButton.registreren[type="submit"], input#sliderButton2.registreren[type="submit"] {
 	background: #02A9CD; /* old browsers */
 	background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #02A9CD), color-stop(100%, #0195B2)); /* webkit */
@@ -1487,7 +1499,7 @@ display: none;
 #korfbal_signup fieldset { border:none; width:320px;}
 #korfbal_signup legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
 #korfbal_signup label { display:block; margin:15px 0 5px;}
-#korfbal_signup input[type=text], input[type=password] { width:200px; padding:5px; border:solid 1px #000;}
+
 #korfbal_signup .prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
 #korfbal_signup .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
 #korfbal_signup .prev { float:left;}
@@ -1501,7 +1513,7 @@ display: none;
 #basketbal_signup fieldset { border:none; width:320px;}
 #basketbal_signup legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
 #basketbal_signup label { display:block; margin:15px 0 5px;}
-#basketbal_signup input[type=text], input[type=password] { width:200px; padding:5px; border:solid 1px #000;}
+
 #basketbal_signup .prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
 #basketbal_signup .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
 #basketbal_signup .prev { float:left;}
@@ -1515,7 +1527,7 @@ display: none;
 #volleybal_signup fieldset { border:none; width:320px;}
 #volleybal_signup legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
 #volleybal_signup label { display:block; margin:15px 0 5px;}
-#volleybal_signup input[type=text], input[type=password] { width:200px; padding:5px; border:solid 1px #000;}
+
 #volleybal_signup .prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
 #volleybal_signup .prev:hover, .next:hover { background-color:#000; text-decoration:none;}
 #volleybal_signup .prev { float:left;}
@@ -1525,7 +1537,9 @@ display: none;
 #volleybal_signup #steps li span {font-size:11px; display:block;}
 #volleybal_signup #steps li.current { color:#000;}     
 
-
+#username_error, #paswoord_error {
+font-size: 12px;
+}
 
 #twitter {
 	position:relative;

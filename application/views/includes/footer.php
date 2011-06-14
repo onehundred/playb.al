@@ -7,11 +7,11 @@
 <section id="footerWrap">
     <footer>
         <div id="footerLeft">
-            <h2>test</h2>
+            <h2>share</h2>
             <li>test</li>
             <li>test</li>
             <li>test</li>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+    <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=217760674909805&amp;xfbml=1"></script><fb:like href="http://playb.al" send="true" width="250" show_faces="true" font=""></fb:like>
         </div>
         <div id="footerCenter">
             <h2>connect</h2>

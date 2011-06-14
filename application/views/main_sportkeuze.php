@@ -113,7 +113,7 @@
     <!-- end korfbal -->
     <div id="oops"><a href="#" id="closeOops">
         <img src="<?php echo base_url();?>img/close.png" />
-        </a> oops, voorlopig is alleen korfbal beschikbaar, houd facebook en twitter in de gaten om op de hoogte te blijven wanneer basketbal en volleybal uitkomen.</div>
+        </a><h1>oops</h1>  <p>voorlopig is alleen korfbal beschikbaar, houd facebook en twitter in de gaten om op de hoogte te blijven wanneer basketbal en volleybal uitkomen.</p></div>
         </article>
 </section> <!-- end sports -->
 <!-- <h1 id="tagline">manage jouw team.</h1> -->

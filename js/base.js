@@ -245,13 +245,14 @@
 })(jQuery);
 
 
+
 /////////////////////////////////////////////////////////////////
 // HOMEPAGE ANIMATIONS begin
 /////////////////////////////////////////////////////////////////
     $(function() {
     	$("#startKorfbal").click(function () {
 			$('.korfbalAnimation').show();
-			$('.korfbalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
+			$('.korfbalAnimation').css('transform', 'translate(0px, -155px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
 			$('.korfbal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce');
 			$('.volleybal, .basketbal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
 			$('.makeAccount').delay(1350).fadeIn(500);
@@ -285,10 +286,10 @@
 	});
 	$(function() {
     	$("#makeAccountClose").click(function () {
-			$('.makeAccount').fadeOut();
+			$('.makeAccount').hide();
 			$('.korfbalAnimation, .basketbalAnimation, .volleybalAnimation').hide();
 
-	   		$('.korfbal, .basketbal, .volleybal, #login').animate({opacity: 1}, 1, 'linear').show();
+	   		$('.korfbal, .basketbal, .volleybal, #login, .register, .sports').animate({opacity: 1}, 1, 'linear').show();
 	   		      		
 			//setTimeout('window.location = "index.php/main/signup/"',1000);  
       		return true;
@@ -333,7 +334,7 @@
 $(function() {
     	$("#login, #loginNewAccount").click(function () {
     	
-		$('.register, .sports, .createdAccount').animate({opacity: 0}, 1, 'linear').hide();
+		$('.register, .sports, .createdAccount, .makeAccount').animate({opacity: 0}, 1, 'linear').hide();
 
 	
 	   	$('.login').show().animate({opacity: 1}, 1500, 'linear');	
@@ -354,7 +355,7 @@ $(function() {
 		});
 });
 $(function() {
-    	$("#sliderButton").click(function () {
+    	$("#sliderButton, #sliderButton2").click(function () {
     	
 		$('.korfbal, .basketbal, .volleybal, .gameRight, .gameLeft, .register').animate({opacity: 0}, 1, 'linear').hide();		
 	   	$('.makeAccount').show().animate({opacity: 1}, 1500, 'linear');	

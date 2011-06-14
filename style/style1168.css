@@ -23,9 +23,8 @@ header{height:55px;background:url(../img/top.png);background-repeat:repeat-x;}
 .basketbal h1{}
 .volleybal h1{}
 #tagline{font-size:42px;}
-.makeAccount{display:none;width:285px;margin:0 10px 0 0;position:absolute;left:865px;}
-#main_signup{float:right;}
-form#signupform{float:right;}
+.makeAccount{display:none;width:350px;height:360px;margin:100px auto 0 auto;background-image:url(../img/boxbgRegister.png);background-repeat:no-repeat;}
+p{color:#444444;color:rgba(0, 0, 0, 0.7);}
 h2{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#666;}
 .sportnavWrap{height:65px;background:-moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(95%, rgba(0, 0, 0, 0.05)), color-stop(100%, rgba(0, 0, 0, 0.1)));background:-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);}
 .sportnav{margin-bottom:5px;width:1168px;height:40px;padding:15px 0 0 0;width:1168px;margin:0 auto 0 auto;}
@@ -112,16 +111,16 @@ div#klassementEntry:hover{background-color:rgba(191, 191, 191, 0.4);border:1px s
 .register article{height:330px;width:1168px;margin:0 auto 0 auto;}
 #sliderHome{margin:0 0 0 10px;display:none;width:1168px;height:350px;}
 #sliderHome div{width:1156px;height:285px;}
-#sliderHome div:nth-child(1){background-image:url(../img/slider/1168/1.png);background-repeat:no-repeat;}
-#sliderHome div:nth-child(2){background-image:url(../img/slider/1168/2.png);background-repeat:no-repeat;}
-#sliderHome div:nth-child(3){background-image:url(../img/slider/1168/3.png);background-repeat:no-repeat;}
-#sliderHome div:nth-child(4){background-image:url(../img/slider/1168/4.png);background-repeat:no-repeat;}
-#sliderHome div:nth-child(5){background-image:url(../img/slider/1168/5.png);background-repeat:no-repeat;}
+#sliderHome div:nth-child(1){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/1168/1.png);background-repeat:no-repeat;}
+#sliderHome div:nth-child(2){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/1168/2.png);background-repeat:no-repeat;}
+#sliderHome div:nth-child(3){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/1168/3.png);background-repeat:no-repeat;}
+#sliderHome div:nth-child(4){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/1168/4.png);background-repeat:no-repeat;}
+#sliderHome div:nth-child(5){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/1168/5.png);background-repeat:no-repeat;}
 #sliderHome img{float:left;}
 #sliderHome section{float:right;width:275px;height:310px;}
 h1.sliderTag{margin:35px 0 0 0;font-family:'LeagueGothicRegular';font-weight:normal;letter-spacing:2px;font-size:92px;text-transform:uppercase;color:#666666;color:rgba(0, 0, 0, 0.35);}
 p.sliderCopy{padding:12px;background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.5);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;width:234px;font-size:13px;margin:22px 0 0 0;-webkit-box-shadow:0px 0px 5px #BFBFBF;-moz-box-shadow:0px 0px 5px #BFBFBF;box-shadow:0px 0px 5px #BFBFBF;}
-#layouts p,#layouts figure{}
+#layouts{padding:0 0 0 54px;}
 .sports,.sportsChoice{height:400px;z-index:1;}
 .sports article,.sportsChoice article{width:1168px;margin:0 auto 0 auto;}
 .sports figure,.sportsChoice figure{float:left;}
@@ -147,7 +146,9 @@ iframe{width:702px;height:436px;}
 a#closeLogin,a#closeProfile,a#closeOops{position:absolute;top:0px;left:0px;}
 a#closeLogin img,a#closeProfile img,a#closeOops img{padding:7px 0 7px 7px;opacity:0.9;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
 a#closeLogin img:hover,a#closeProfile img:hover,a#closeOops img:hover{padding:7px 0 7px 7px;opacity:1;-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;}
-#oops{display:none;background:url(../img/boxbg.png) no-repeat 2px 6px;position:absolute;padding:50px;left:39%;margin-top:100px;width:350px;height:380px;}
+#oops{display:none;background:url(../img/boxbg.png) no-repeat 2px 6px;position:absolute;padding:30px;left:39%;margin-top:100px;width:350px;height:380px;}
+#oops h1{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#666;margin:5px;}
+#oops p{width:250px;margin:5px;}
 .startgame{position:absolute;z-index:100;top:255px;left:0px;}
 .startgame h1{bottom:175px;left:10px;position:absolute;}
 .teamPosition{float:left;position:relative;bottom:215px;left:12px;width:250px;}
@@ -217,12 +218,12 @@ img#galleryRightHideSmall{left:1120px;position:relative;}
 .kopen{text-decoration:underline;cursor:pointer;color:blue;margin-left:35px;font-size:9pt;}
 #footerWrap{float:left;width:100%;background:url(../img/1168/footerfill_top.png) repeat-x 0% 0%,url(../img/1168/footerfill.png) repeat-x 0px 40px;}
 footer{width:1168px;margin:0 auto 0 auto;}
-footer h2{font-family:'LeagueGothicRegular';text-transform:uppercase;letter-spacing:1px;color:#DEDEDE;font-size:42px;text-shadow:0px 2px 3px #000;margin:0 0 25px 0;}
+footer h2{font-family:'LeagueGothicRegular';text-transform:uppercase;letter-spacing:1px;color:#DEDEDE;font-size:40px;text-shadow:0px 2px 3px #000;margin:0 0 25px 0;}
 footer a{color:#DEDEDE;}
-#footerLeft,#footerCenter,#footerRight{padding-right:100px;width:250px;font-size:16px;margin:50px 0 0 0;color:#CCC;}
+#footerLeft,#footerCenter,#footerRight{width:250px;font-size:16px;margin:50px 0 0 0;color:#CCC;}
 #footerLeft{margin-left:15px;}
-#footerCenter{}
-#footerRight{margin-left:5px;width:290px;}
+#footerCenter{margin:50px 120px 0 192px;}
+#footerRight{margin-left:60px;width:280px;}
 #footerEnd{float:left;height:80px;width:100%;background:url(../img/1168/footerfill_down.png) repeat-x 0% 0%;}
 #footerEnd div{width:1168px;margin:0 auto 0 auto;position:relative;top:53px;}
 #footerEnd div p{text-align:center;width:1168px;font-size:12px;}

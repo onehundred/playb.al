@@ -76,7 +76,7 @@ $(document).ready(function(){
         <?php
                         $attributes = array('id'=>'loginform');
 						echo form_open('#', $attributes);
-		    			echo("<p>gebruikersnaam of e-mail adres</p>");
+		    			echo("<p>username of email adres</p>");
 		    			$userdata = array(
 			              'name'        => 'username',
 			              'id'          => 'login_username',

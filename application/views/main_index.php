@@ -63,8 +63,15 @@ $(function() {
                 </section>
             </div>
             <!-- end slide 5 -->
-            <div class="makeAccount">
-                <div id="main_signup">
+                    </div>
+        <!-- end slider --> 
+
+
+    </article>
+</section>
+<!-- end register -->
+        <div class="makeAccount">
+                <div id="main_signup"><a href="#" id="closeLogin"><img src="<?php echo base_url();?>img/close.png" /></a>
                     <h1 id="tagline">manage jouw team.</h1>
                     <!--             <a href="#" id="makeAccountClose">sluiten</a> <a href="#" id="switchAccountToLogin">heb je al een account?</a> -->
                     <div id="layouts"> 
@@ -94,12 +101,6 @@ $(function() {
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- end slider --> 
-        
-    </article>
-</section>
-<!-- end register -->
 <section class="sports">
     <article>
         <figure class="korfbal">

@@ -353,6 +353,13 @@ $(function() {
 	   	$('#oops').show().animate({opacity: 1}, 1500, 'linear');	
 		});
 });
+$(function() {
+    	$("#sliderButton").click(function () {
+    	
+		$('.korfbal, .basketbal, .volleybal, .gameRight, .gameLeft, .register').animate({opacity: 0}, 1, 'linear').hide();		
+	   	$('.makeAccount').show().animate({opacity: 1}, 1500, 'linear');	
+		});
+});
 
 /////////////////////////////////////////////////////////////////
 // LOGIN  end

@@ -87,28 +87,46 @@
                     <section>
                         <figure class="icon" id="gameCup"></figure>
                         <h2> laatste award</h2>
-                        <p>Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                        <?php if(isset($stats['award'])){ ?>
+                        	<p><?php echo $stats['award'];?></p>
+                        <?php }else{ ?>
+                      	  <p>U heeft nog geen award behaald.</p>
+                        <?php } ?>
                     </section>
                 </div>
                 <div>
                     <section>
                         <figure class="icon" id="gameMedaille"></figure>
                         <h2> laatste achievement</h2>
-                        <p>Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                            <?php if(isset($stats['achievement']['naam'])){ ?>
+                        		<p><?php echo $stats['achievement']['naam'];?></p>
+                        		<img width="75px" height="75px" src="<?php echo base_url();?>img/achievements/<?php echo $stats['achievement']['afbeelding'];?>"/>
+                        		<p><?php echo $stats['achievement']['punten'];?> punten</p>
+                        <?php }else{ ?>
+                      	  <p>U heeft nog geen achievement behaald.</p>
+                        <?php } ?>
                     </section>
                 </div>
                 <div>
                     <section>
                         <figure class="icon" id="gamePlayerBought"></figure>
                         <h2> laatste speler gekocht</h2>
-                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                         <?php if(isset($stats['gekocht']['voornaam'])){ ?>
+                        	<p><?php echo $stats['gekocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
+                        <?php }else{ ?>
+                      	  <p>U hebt nog geen speler gekocht.</p>
+                        <?php } ?>
                     </section>
                 </div>
                 <div>
                     <section>
                         <figure class="icon" id="gamePlayerSold"></figure>
                         <h2> laatste speler verkocht</h2>
-                        <p>Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <?php if(isset($stats['verkocht']['voornaam'])){ ?>
+                        	<p><?php echo $stats['verkocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
+                        <?php }else{ ?>
+                      	  <p>U hebt nog geen speler verkocht.</p>
+                        <?php } ?>
                     </section>
                 </div>
             </section>

@@ -14,6 +14,7 @@ function start(id)
 {
 	//alert(id);
 	g = $('#canvas')[0].getContext("2d");
+	
 	WIDTH = $("#canvas").width();
 	HEIGHT = $("#canvas").height();
 	
@@ -39,7 +40,9 @@ function start(id)
 	
 	ball[0] = new Ball(380, 200, 5, "#000");
 
-		
+	if(id === '0'){
+		draw();
+	}	
 	if(id === '1'){
 		intervalID = setInterval(actie1, 10);
 		return intervalID;	}
@@ -141,41 +144,10 @@ function Speler1(x,y,r,color,naam)
 function draw()
 {
 	//speelveld
-	g.fillStyle = "#fdc68c";
-	g.fillRect (0,0,800,400);
-	g.fill();
-	
-	//middenlijn
-	g.beginPath();
-    g.moveTo(400,0);
-    g.lineTo(400,400);
-    g.closePath();
-    g.stroke();
-    
-    //paal
-    g.beginPath();
-    g.moveTo(110,200);
-    g.lineTo(110, 140);
-    g.lineTo(130, 140);
-    g.lineTo(130, 150);
-    g.lineTo(110, 150);
-    g.lineTo(110, 200)
-    g.closePath();
-    g.stroke();
-    g.fillStyle = "#fae769";
-    g.fill();
-    
-    //middencirkel
-    g.beginPath();
-	g.arc(400, 200, 100, Math.PI*2, 0, true);
-	g.closePath();
-	g.stroke();
-		
-				
-		
-		//spelers[0].move();
-		//tegenstanders[0].move();
-		
+	var img=new Image();
+	img.src="http://playb.al/img/field.png";
+	g.drawImage(img,0,0);
+
 }
 
 function drawPlayers()
@@ -284,6 +256,7 @@ function clear()
 // Use JQuery to wait for document load
 $(document).ready(function()
 {
+	
 	var wedstrijdid = $('#wedstrijdid').val();
 	$('#loading').hide();
 	$('#prestaties').hide();
@@ -309,6 +282,7 @@ $(document).ready(function()
         				},
     			dataType: "json",
         		success: function(data){
+        			
         			var verslag = data;
         			//alert(verslag['acties']);
         			var minuten = verslag['minuten'].split(';');

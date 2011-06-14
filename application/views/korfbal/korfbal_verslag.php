@@ -4,7 +4,7 @@
 <div class="game">
     <div class="gameRight">
         <div>
-            <canvas style="border: solid 1px #000;" id="canvas" width="800" height="400"> oops, jouw browser ondersteunt dit niet. </canvas>
+            <canvas id="canvas" width="802" height="401"> oops, jouw browser ondersteunt dit niet. </canvas>
         </div>
         <div id="loading">
             <img src="<?php echo base_url()?>/img/loading.gif"/>

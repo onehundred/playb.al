@@ -9,7 +9,8 @@
 			$is_logged_in = $this->session->userdata('is_logged_in'); 
 			if(isset($is_logged_in) && $is_logged_in == true) { 
 				redirect('sportchoice/sport'); 
-			}else{ $data['main_content'] = 'main_index'; 
+			}else{ 
+				$data['main_content'] = 'main_index'; 
 				$this->load->view('includes/template', $data); 
 			} 
 		} 
@@ -89,7 +90,85 @@
 	   	 $this->load->view('includes/template', $data); 
 	
 	   	}
+		
+		
+		function resend_password()
+		{
+			if(isset($_POST['email'])){
+			
+				$this->load->model('main_model');
+				$check = $this->main_model->resend_password($_POST['email']);
+				
+				if($check == false){
+					$data['resend'] = "error";
+				}else{
+				
+					$data['resend'] = "resend";
+				}
+				$data['main_content'] = 'main_resend_password'; 
+				$this->load->view('includes/template', $data); 
+				
+			}else{
+		
+				$data['main_content'] = 'main_resend_password'; 
+				$this->load->view('includes/template', $data); 
+			}
+		}
+		
+		
+		function update_password()
+		{
+			if(isset($_POST['password1'])){
+				$this->load->library('form_validation');
 
+			
+			$this->form_validation->set_rules('password1', 'Password', 'required|matches[password2]');
+			$this->form_validation->set_rules('password2', 'Password Confirmation', 'required');
+			
+				if ($this->form_validation->run() == FALSE)
+				{
+					$data['update'] = 'true';
+					$data['main_content'] = 'main_resend_password'; 
+					$this->load->view('includes/template', $data);
+				}
+				else
+				{
+					$userid = $this->uri->segment('3');
+					$this->load->model('main_model');
+					$this->main_model->reset_paswoord($_POST['password1'], $userid);
+				
+					$data['update'] = 'success';
+					$data['main_content'] = 'main_resend_password'; 
+					$this->load->view('includes/template', $data);
+				}
+			
+			}else{
+			
+				$userid = $this->uri->segment('3');
+				$oud_pass = $this->uri->segment('4');
+				
+				if($userid == ''){
+						$data['update'] = 'false';
+						$data['main_content'] = 'main_resend_password'; 
+						$this->load->view('includes/template', $data);
+				}else{
+					$this->load->model('main_model');
+					$check = $this->main_model->update_password($userid, $oud_pass);
+						
+						if($check === true){
+							$data['update'] = 'true';
+							$data['main_content'] = 'main_resend_password'; 
+							$this->load->view('includes/template', $data); 
+						
+						}else{
+							$data['update'] = 'false';
+							$data['main_content'] = 'main_resend_password'; 
+							$this->load->view('includes/template', $data);
+						}
+				}
+			}	
+		}
+		
 } 
 	   
 	   

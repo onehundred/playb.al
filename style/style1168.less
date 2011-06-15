@@ -785,7 +785,8 @@ float: left;
 }
 .sliderHome section {
 position: relative;
-left: 600px;
+left: 862px;
+
 width: 275px;
 height: 310px;
 
@@ -807,7 +808,8 @@ background-color: #FFFFFF;
 background-color: rgba(255,255,255,0.5);
 .borderRadius;
 width: 234px;
-font-size: 13px;
+font-size: 14px;
+line-height: 17px;
 
 margin: 22px 0 0 0;
  -webkit-box-shadow: 0px 0px 5px #BFBFBF;
@@ -862,19 +864,15 @@ iframe {
 .korfbal {
 	/* 	top: 0px; */
 
-	margin: 10px;
+	margin: 32px 0 0 0;
 	width: 275px;
 	height: 250px;
  .imageDown;
- -webkit-box-shadow: 0px 0px 5px #BFBFBF;
--moz-box-shadow: 0px 0px 5px #BFBFBF;
-box-shadow: 0px 0px 5px #BFBFBF;
+
 }
 .korfbal:hover {
  .imageUp;
- 	-webkit-box-shadow: 0px 0px 10px #BFBFBF;
--moz-box-shadow: 0px 0px 10px #BFBFBF;
-box-shadow: 0px 0px 10px #BFBFBF;
+
 }
 .basketbal {
 
@@ -882,7 +880,7 @@ box-shadow: 0px 0px 10px #BFBFBF;
 	/* 	top: 85px; */
 	width: 275px;
 	height: 250px;
-	margin: 10px 0 0 155px;
+	margin: 32px 0 0 155px;
  .imageDown;
 -webkit-box-shadow: 0px 0px 5px #BFBFBF;
 -moz-box-shadow: 0px 0px 5px #BFBFBF;
@@ -901,7 +899,7 @@ box-shadow: 0px 0px 10px #BFBFBF;
 	/* 	top: 85px; */
 	width: 275px;
 	height: 250px;
-	margin: 10px 0 0 160px;
+	margin: 32px 0 0 160px;
  .imageDown;
  -webkit-box-shadow: 0px 0px 5px #BFBFBF;
 -moz-box-shadow: 0px 0px 5px #BFBFBF;
@@ -1136,6 +1134,44 @@ border-radius: 150px;
 .okay a {
 	padding: 10px;
 }
+input#sliderButton.registreren[type="submit"], input#sliderButton2.registreren[type="submit"] {
+	background: #02A9CD; /* old browsers */
+	background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #02A9CD), color-stop(100%, #0195B2)); /* webkit */
+	border: 1px solid #666;
+ .borderRadius;
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4), 0 1px 3px #333;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
+	width: 255px;
+
+	display: block;
+	color: #FFFFFF;
+	position: absolute;
+	bottom: 35px;
+}
+input#sliderButton.registreren[type="submit"]:hover {
+	background: #0195B2; /* old browsers */
+	background: -moz-linear-gradient(top, #0195B2 0%, #018299 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0195B2), color-stop(100%, #018299)); /* webkit */
+	cursor: pointer;
+}
+input#sliderButton.registreren[type="submit"]:active {
+	background: #018096; /* old browsers */
+	background: -moz-linear-gradient(top, #018096 0%, #016C7F 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #018096), color-stop(100%, #016C7F)); /* webkit */
+	-moz-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
+}
+
 /* light
 *******************************************************************************/
 .light {
@@ -1605,15 +1641,7 @@ footer a {
 	width: 300px;
 }
 #footerCenter {
-/*
-	margin-left: 45px;
-	border-right-width: 1px;
-	border-left-width: 1px;
-	border-right-style: dotted;
-	border-left-style: dotted;
-	border-right-color: #D9D9D9;
-	border-left-color: #D9D9D9;
-*/
+
 margin: 50px 120px 0 140px;
 }
 #footerRight {
@@ -1635,5 +1663,11 @@ margin: 50px 120px 0 140px;
 	text-align: center;
 	width: 1168px;
 	font-size: 12px;
+}
+.share896 {
+display: none;
+}
+.share1168 {
+display: block;
 }
 /* FOOTER end -------------------------------------------------------------------------------------------------------------*/

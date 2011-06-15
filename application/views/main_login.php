@@ -95,7 +95,7 @@ $(document).ready(function(){
 						/* todo paswoord vergeten functionaliteit */
 		    			echo anchor('http://playb.al/index.php/main/resend_password', 'paswoord vergeten?');
 		    			
-						echo form_submit('submit', 'login');
+						echo form_submit('submit', 'aanmelden');
 						
 						echo form_close();
 						} 

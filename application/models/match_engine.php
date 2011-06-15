@@ -8,7 +8,7 @@
     
     function send_message($titel, $onderwerp, $bericht, $cat, $verzender, $ontvanger){
     	
-    	
+    	date_default_timezone_set('Europe/Brussels');
     	$mdate =  date("F j Y, H:i"); 
     	
     	$data = array(

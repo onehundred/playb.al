@@ -774,7 +774,8 @@
 			return $check;
 
 		}else{ // genoeg spelers in een team, speler kan op de transfermarkt geplaatst worden
-
+			
+			date_default_timezone_set('Europe/Brussels');
 			$deadline = date('Y-m-d h:i:s', strtotime("+3 days"));
 
 			$insert = array(

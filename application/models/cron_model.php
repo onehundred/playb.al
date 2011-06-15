@@ -11,7 +11,7 @@
     }
     function send_message($titel, $onderwerp, $bericht, $cat, $verzender, $ontvanger){
     	
-    
+    	date_default_timezone_set('Europe/Brussels');
     	$mdate =  date("F j Y, H:i"); 
     	$data = array(
     		'titel' => $titel,
@@ -753,7 +753,7 @@
     		$huidigbod = $row->huidig_bod;
     		$transferid = $row->transfer_id;
     		
-    		
+    		date_default_timezone_set('Europe/Brussels');
     		$mdate =  date('Y-m-d h:i:s');
     	
     		if($deadline <= $mdate)
@@ -785,6 +785,15 @@
     				
     			}else{
     				
+    				//get cron
+    				$crons = $this->db->get('korf_cron');
+    				$week = 0;
+    				$seizoen = 0;
+    				foreach($crons->result() as $cron){
+    					$week = $cron->week;
+    					$seizoen = $cron->seizoen;
+    				}
+    				
     				//teamid van het huidige team ophalen
     				$this->db->select('team_id, voornaam, achternaam');
     				$this->db->from('korf_teams');
@@ -797,6 +806,16 @@
     					$voornaam = $row->voornaam;
     					$achternaam = $row->achternaam;
     					
+    					//update financien van verkoper
+    					$fin_verkocht = array(
+    						'verkochte_spelers' => $huidigbod,
+    					);
+    					
+    					$this->db->where('FK_team_id', $team_id);
+    					$this->db->where('week', $week);
+    					$this->db->where('seizoen', $seizoen);
+    					$this->db->update('korf_financien', $fin_verkocht);
+    					
     					$verkocht = array(
     						'laatste_verkocht' => $spelerid,
     					);
@@ -804,10 +823,20 @@
     					$this->db->where('FK_team_id', $team_id);
     					$this->db->update('korf_teamstats', $verkocht);
     					
+    					//stuur bericht naar beide partijen met melding van gebeurtenissen
     					$this->send_message('','Transfer', $voornaam.' '.$achternaam.' is verkocht.',1,'playb.al', $team_id);
     					$this->send_message('','Transfer','Uw hebt een nieuwe speler aangekocht: '.$voornaam.' '.$achternaam,1,'playb.al', $hoogste_bieder);
     				}
     				
+    					//update financien van koper
+    					$fin_gekocht = array(
+    						'gekochte_spelers' => $huidigbod,
+    					);
+    					
+    					$this->db->where('FK_team_id', $hoogste_bieder);
+    					$this->db->where('week', $week);
+    					$this->db->where('seizoen', $seizoen);
+    					$this->db->update('korf_financien', $fin_gekocht);
     				
     				$gekocht = array(
 						'laatste_gekocht' => $spelerid,
@@ -972,6 +1001,7 @@
     	//gaat elke divisie af, waar het getal onder de 8 is daar voegt hij een bot toe
     	$divisies = $this->db->get('korf_divisies');
     	//$divRows = $divisies->num_rows();
+    	date_default_timezone_set('Europe/Brussels');
     	$mdate =  date('Y-m-d h:i:s');
     	
     	foreach($divisies->result() as $row){

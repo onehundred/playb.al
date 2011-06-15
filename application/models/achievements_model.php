@@ -42,6 +42,7 @@
     		
     		$bericht = "Gefeliciteerd u heeft de achievement:".$anaam." verkregen!";
     		
+    		date_default_timezone_set('Europe/Brussels');
     		$mdate =  date("F j Y, H:i"); 
     		$bericht_insert = array(
     			'verzender' => 'playb.al',
@@ -111,8 +112,20 @@
 	    	if($gewonnen_matchen == 1){
 	    		$anumber = 6;
 	    	}
-	    	if($gewonnen_matchen == 3){
+	    	/*if($gewonnen_matchen == 5){
 	    		$anumber = 7;
+	    	}*/
+	    	if($gewonnen_matchen == 10){
+	    		$anumber = 17;
+	    	}
+	    	 if($gewonnen_matchen == 25){
+	    		$anumber = 18;
+	    	}
+	    	if($gewonnen_matchen == 50){
+	    		$anumber = 19;
+	    	}
+	    	if($gewonnen_matchen == 100){
+	    		$anumber = 20;
 	    	}
 	    	
 	    	//teamnaam ophalen om het bericht te versturen 

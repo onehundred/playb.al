@@ -36,7 +36,7 @@
     function create_user($username, $paswoord, $voornaam, $achternaam, $email)
     {
     	
-
+		date_default_timezone_set('Europe/Brussels');
 		$mdate =  date("F j Y, H:i"); 
 		
     	$new_user_insert_data = array(

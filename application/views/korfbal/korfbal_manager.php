@@ -25,7 +25,7 @@
         <?php if($row->afbeelding == null){ ?>
         	<img src="<?php echo base_url();?>img/default_profile.png" alt="profielfoto" ondragstart="return false" />
         <?php }else{ ?>
-        	<img src="<?php echo base_url();?>userpics/thumbs/<?php echo $row->afbeelding;?>"/>
+        	<img src="<?php echo base_url();?>img/userpics/thumbs/<?php echo $row->afbeelding;?>"/>
         <?php } ?>	
         </p>
         <a href="<?php echo $this->uri->segment('3');?>/edit">Wijzig</a>

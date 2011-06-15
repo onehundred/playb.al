@@ -60,7 +60,7 @@
                         <?php 
                         $i =1;
                         foreach($divisie_eerste->result() as $row){ ?>
-                        <span><p><?php echo $i.' '. $row->naam;?></p><p id="klassementPunten"> - <?php echo $row->divisiepunten;?></p></span>
+                           <div id="klassementEntry">  <p id="klassementTeamnaam"><?php echo $i.' '.$row->naam;?><span id="klassementPunten"><?php echo $row->divisiepunten;?></div>
                         <?php
                         	$i++;
                          } ?>
@@ -88,6 +88,7 @@
                         <figure class="icon" id="gameCup"></figure>
                         <h2> laatste award</h2>
                         <?php if(isset($stats['award'])){ ?>
+                        	<img src="<?php echo base_url();?>img/awards/cup_gold.png" />
                         	<p><?php echo $stats['award'];?></p>
                         <?php }else{ ?>
                       	  <p>je hebt nog geen award behaald.</p>

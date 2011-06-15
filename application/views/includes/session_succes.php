@@ -6,7 +6,7 @@ if($username != ""){
 
 if(isset($profilepic)){
  if($profilepic != null){ ?>
-	<img id="profilePhoto" alt="profielfoto" src="<?php echo base_url();?>userpics/thumbs/<?php echo $profilepic;?>" ondragstart="return false" />
+	<img id="profilePhoto" alt="profielfoto" src="<?php echo base_url();?>img/userpics/thumbs/<?php echo $profilepic;?>" ondragstart="return false" />
 <?php }else{ ?>
 	<img src="<?php echo base_url();?>img/default_profile.png" id="profilePhoto" alt="profielfoto" ondragstart="return false" />
 <?php } }else{?>

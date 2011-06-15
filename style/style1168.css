@@ -100,6 +100,7 @@ div#klassementEntry{background-color:rgba(191, 191, 191, 0.2);border:1px solid r
 div#klassementEntry:hover{background-color:rgba(191, 191, 191, 0.4);border:1px solid rgba(191, 191, 191, 0.5);-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;}
 #klassementTeamnaam{line-height:1;}
 #klassementPunten{float:right;line-height:1;}
+#trainingSkill{float:left;}
 #matchTeamName,#versus{font-size:32px;font-family:'SFCollegiateSolidRegular';text-transform:uppercase;color:#FFF;text-shadow:0px 0px 15px #333;display:inline;line-height:34px;width:100px;}
 #versus{color:black;}
 .division div{float:left;display:inline;padding:0 15px 0 0;}

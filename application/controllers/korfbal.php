@@ -224,7 +224,7 @@ class Korfbal extends CI_Controller {
 	
 	function korfbal_manager_update()
 	{
-		$config['upload_path'] = './userpics/';
+		$config['upload_path'] = './img/userpics/';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '1000';
 		$config['max_width']  = '1024';
@@ -261,12 +261,12 @@ class Korfbal extends CI_Controller {
 			
 		
 				$conf['image_library'] = 'gd2';
-				$conf['source_image']	= './userpics/'.$upfile['upload_data']['file_name'].'';
+				$conf['source_image']	= './img/userpics/'.$upfile['upload_data']['file_name'].'';
 				$conf['create_thumb'] = FALSE;
 				$conf['maintain_ratio'] = FALSE;
 				$conf['width']	 = 100;
 				$conf['height']	= 100;
-				$conf['new_image'] ='./userpics/thumbs';
+				$conf['new_image'] ='./img/userpics/thumbs';
 		
 				$this->load->library('image_lib', $conf); 
 		

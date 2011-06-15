@@ -47,50 +47,46 @@
 .textShadow {
 	text-shadow: 0px 0px 7px #474747;
 }
-.center480 {
-width: 396px;
-margin: 0 auto 0 auto;
-}
 .imageDown {
-	-moz-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-webkit-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-o-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-ms-transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	transform: scale(0.95) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-moz-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 .imageUp {
-	-moz-transform: scale(0.97) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-webkit-transform: scale(0.97) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-o-transform: scale(0.97) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-ms-transform: scale(0.97) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	transform: scale(0.97) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-moz-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+.center320 {
+width: 320px;
+margin: 0 auto 0 auto;
 }
 /* LESS GLOBALS end */
 
 
 
 
-
-/*	5-column layout
-
-	60 px columns, 24 px gutters, 42 px margins, 480 px total
-
-	---------------------------------------------------------
-
-	1     2      3      4      5
-
-	60px  144px  228px  312px  396px	*/
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
 
 
 
 
 body {
-
 	width: 100%;
 	-webkit-text-size-adjust: 100%;
-}
+	background: url(../img/200.jpg) repeat 0% 0%;
 #header {
-.center480;
+.center320;
 }
 #logo {
 	padding: 8px 7px 0 0;
@@ -154,7 +150,7 @@ background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,
 }
 .register article {
 	height: 550px;
-.center480;
+.center320;
 
 }
 .sliderHome {
@@ -171,29 +167,29 @@ width: 40px;
 height: 220px;
 }
 .sliderHome div:nth-child(1) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/480/1.png);
+background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/1.png);
 background-repeat: no-repeat;
 width: 40px;
 height: 220px;
 }
 .sliderHome div:nth-child(2) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/480/2.png);
+background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/2.png);
 background-repeat: no-repeat;
 width: 40px;
 height: 220px;
 }
 .sliderHome div:nth-child(3) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/480/3.png);
+background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/3.png);
 background-repeat: no-repeat;
 width: 40px;
 height: 220px;
 }
 .sliderHome div:nth-child(4) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/480/4.png);
+background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/4.png);
 background-repeat: no-repeat;
 }
 .sliderHome div:nth-child(5) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/480/5.png);
+background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/5.png);
 background-repeat: no-repeat;
 }
 .sliderHome img {
@@ -268,7 +264,7 @@ display: none;
 
 }
 .sports article, .sportsChoice article {
-.center480;
+.center320;
 
 }
 
@@ -1255,7 +1251,7 @@ select {
 }
 #content {
 	height:567px;
-	width:480px;
+	width:320px;
 	overflow:hidden;
 	position:relative;
 	border : 1px solid black;
@@ -1544,7 +1540,7 @@ font-size: 12px;
 }
 
 footer {
-.center480;
+.center320;
 }
 footer div {
 	float: left;
@@ -1591,16 +1587,44 @@ display: none;
 	background: url(../img/1168/footerfill_down.png) repeat-x 0% 0%;
 }
 #footerEnd div {
-.center480;
+.center320;
 	position: relative;
 	top: 53px;
 }
 #footerEnd div p {
 	text-align: center;
-	width: 480px;
+	width: 320px;
 	font-size: 12px;
 }
 .share1168 {
 display: none;
 }
 /* FOOTER end -------------------------------------------------------------------------------------------------------------*/
+
+/* CUSTOM MENU begin ///////////////////////////////////////////////////////////////// */
+#overzichtMenu {
+}
+#trainingMenu {
+}
+#spelersMenu {
+display: none;
+}
+#wedstrijdenMenu {
+display: none;
+}
+#divisieMenu {
+
+}
+#stadionMenu {
+display: none;
+}
+#managerMenu {
+
+}
+#financienMenu {
+display: none;
+}
+#transfersMenu {
+display: none;
+}
+/* CUSTOM MENU end /////////////////////////////////////////////////////////////////// */

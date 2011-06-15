@@ -10,7 +10,8 @@
 .textShadow{text-shadow:0px 0px 7px #474747;}
 .imageDown{-moz-transform:scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-webkit-transform:scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-o-transform:scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-ms-transform:scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);transform:scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);}
 .imageUp{-moz-transform:scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-webkit-transform:scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-o-transform:scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-ms-transform:scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);transform:scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);}
-body{width:320px;-webkit-text-size-adjust:100%;background:url(../img/200.jpg) repeat 0% 0%;}
+.center320{width:320px;margin:0 auto 0 auto;}
+body{width:100%;-webkit-text-size-adjust:100%;background:url(../img/200.jpg) repeat 0% 0%;}
 header{height:50px;}
 #logo{width:: 104px;height:40px;}
 .korfbal h1,.basketbal h1,.volleybal h1{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#f2f2f2;padding-left:15px;text-shadow:0px 0px 7px #474747;font-size:28px;}

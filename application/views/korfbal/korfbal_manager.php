@@ -1,4 +1,3 @@
-<!--  miljaar -->
  <div class="game">
     <div class="gameRight">
     <?php if(isset($error)){
@@ -69,7 +68,7 @@ $(function() {
     $('#s5').show().after('<div id="galleryNav" class="galleryNav">').cycle({
         fx:     'fade',
         speed:  500,
-        timeout: 5000,
+
         next:   '#s5', 
         pager:  '#galleryNav'
     });
@@ -79,15 +78,16 @@ $(function() {
                 <section>
                 <figure class="icon" id="gameMedaille"></figure>
                     <h2>achievements</h2>
+                       <?php if($achievements->result() == null){ ?>
+			                   	 <p>je hebt nog geen achievements behaald</p>
+
+			                    <?php }else{ ?>
                          <div id="s5" class="pics">
                  			
-                  			  <!-- if achievements = 0 -->
-			                    <?php if($achievements->result() == null){ ?>
-			                   	 <p>je hebt nog geen achievements behaald</p>
-			                    <!-- else -->
-			                    <?php }else{ ?>
+			                 
 			                    <?php foreach($achievements->result() as $row){ ?>
-                   						<img width="68px" height="50px" src="<?php echo base_url()?>/img/achievements/<?php echo $row->afbeelding;?>" ondragstart="return false"/>
+                   						<div><img width="68px" height="50px" src="<?php echo base_url()?>/img/achievements/<?php echo $row->afbeelding;?>" ondragstart="return false" /></div>
+                   						
 								<?php
 										}
 			 						} ?>

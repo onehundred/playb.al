@@ -50,15 +50,15 @@ iframe{width:708px;height:430px;}
 h2{font-family:'LeagueGothicRegular';text-transform:uppercase;}
 .register{background:-moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(95%, rgba(0, 0, 0, 0.05)), color-stop(100%, rgba(0, 0, 0, 0.1)));background:-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);}
 .register article{height:290px;width:896px;margin:0 auto 0 auto;}
-#sliderHome{margin:0 0 0 10px;display:none;width:896px;height:285px;}
-#sliderHome div{width:884px;height:220px;}
-#sliderHome div:nth-child(1){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/1.png);background-repeat:no-repeat;}
-#sliderHome div:nth-child(2){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/2.png);background-repeat:no-repeat;}
-#sliderHome div:nth-child(3){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/3.png);background-repeat:no-repeat;}
-#sliderHome div:nth-child(4){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/4.png);background-repeat:no-repeat;}
-#sliderHome div:nth-child(5){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/5.png);background-repeat:no-repeat;}
-#sliderHome img{float:left;}
-#sliderHome section{float:right;width:275px;height:280px;}
+.sliderHome{margin:0 0 0 10px;display:none;width:896px;height:285px;}
+.sliderHome div{width:884px;height:220px;}
+.sliderHome div:nth-child(1){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/1.png);background-repeat:no-repeat;width:884px;height:220px;}
+.sliderHome div:nth-child(2){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/2.png);background-repeat:no-repeat;width:884px;height:220px;}
+.sliderHome div:nth-child(3){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/3.png);background-repeat:no-repeat;width:884px;height:220px;}
+.sliderHome div:nth-child(4){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/4.png);background-repeat:no-repeat;}
+.sliderHome div:nth-child(5){background-image:url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/896/5.png);background-repeat:no-repeat;}
+.sliderHome img{float:left;}
+.sliderHome section{position:relative;left:400px;width:220px;height:280px;}
 h1.sliderTag{margin:35px 0 0 0;font-family:'LeagueGothicRegular';font-weight:normal;letter-spacing:2px;font-size:92px;text-transform:uppercase;color:#666666;color:rgba(0, 0, 0, 0.35);}
 p.sliderCopy{padding:12px;background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.5);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;width:234px;font-size:13px;margin:22px 0 0 0;-webkit-box-shadow:0px 0px 5px #BFBFBF;-moz-box-shadow:0px 0px 5px #BFBFBF;box-shadow:0px 0px 5px #BFBFBF;}
 .galleryNav{position:absolute;top:315px;margin:10px 0 0 15px;}

@@ -25,7 +25,13 @@
 			{?>
         <div class="division_results">
             <div id="rij">
-                <div id="team"> <?php echo $row->naam;?> </div>
+                <div id="team">
+                <?php if($row->bot == 1){ ?>
+                	<a href="../../korfbal/korfbal_start/<?php echo $row->team_id;?>"><?php echo $row->naam;?></a> 
+                <?php }else{ ?>
+                	<?php echo $row->naam;?>
+                <?php } ?>
+                </div>
                 <div id="played"> <!-- matches totaal --> 
                     <?php echo $row->gespeeld;?> </div>
                 <div id="won"> <!-- matches gewonnen --> 

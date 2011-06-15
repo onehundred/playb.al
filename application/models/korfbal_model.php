@@ -33,6 +33,7 @@
 		$this->db->where('team_id', $team_id);
 		$query = $this->db->get();
 		
+		$afbeelding = null;
 		foreach($query->result() as $row){
 			$afbeelding = $row->afbeelding;
 		}

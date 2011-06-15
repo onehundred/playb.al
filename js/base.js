@@ -81,7 +81,7 @@
 
 // ADRESBALK VERBERGEN OP IPHONE EN ANDROID begin
 
- if (navigator.userAgent.indexOf('iPhone' || 'Android') != -1) 
+ if (navigator.userAgent.indexOf('iPhone') != -1) 
      { 
          addEventListener("load", function() 
          { 
@@ -93,6 +93,10 @@
      { 
          window.scrollTo(0, 1); 
      }
+     
+     if(navigator.userAgent.match(/Android/i)){
+   		 window.scrollTo(0,1);
+	 }
 
 // ADRESBALK VERBERGEN OP IPHONE EN ANDROID end     
 

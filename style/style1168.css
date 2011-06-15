@@ -1162,13 +1162,8 @@ a#closeLogin img:hover, a#closeProfile img:hover, a#closeOops img:hover {
 .startgame {
   position: absolute;
   z-index: 100;
-  top: 255px;
-  left: 0px;
-}
-.startgame h1 {
-  bottom: 175px;
+  top: 10px;
   left: 10px;
-  position: absolute;
 }
 .teamPosition {
   float: left;

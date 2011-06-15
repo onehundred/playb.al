@@ -1,10 +1,10 @@
 <script>
 
 $.fn.cycle.defaults.timeout = 6000;
-$(function() {
+$(document).ready(function() {
 
     
-    $('#sliderHome').show().after('<div id="galleryNav" class="galleryNav">').cycle({
+    $('.sliderHome').show().after('<div id="galleryNav" class="galleryNav">').cycle({
         fx:     'fade',
         speed:  500,
  
@@ -17,7 +17,7 @@ $(function() {
 
 <section class="register">
     <article>
-        <div id="sliderHome" class="pics">
+        <div class="sliderHome" class="pics">
             <div>
                 <section>
                     <h1 class="sliderTag">manage</h1>

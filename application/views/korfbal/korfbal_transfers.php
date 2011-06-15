@@ -60,7 +60,7 @@ $(document).ready(function(){
             <option id="spelmaker" value="spelmaker">Spelmaker</option>
             <option id="rebounder" value="rebounder">Rebounder</option>
         </select>
-        <p id="submit_search">Zoek</p>
+        <p class="question" id="submit_search">Zoek</p>
     </div>
     <div id="transfers"> </div>
 </div>

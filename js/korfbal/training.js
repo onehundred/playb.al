@@ -92,7 +92,7 @@ $(function() {
 // CHARTS TRAINING begin
 /////////////////////////////////////////////////////////////////				
 			 var chart1 = new AwesomeChart('chartTeamSkills');
-			 /* chart1.title = "Worldwide browser market share: December 2010"; */
+
    			 chart1.chartType = "horizontal bars";
              chart1.data = [reboundtotaal,passingtotaal,interceptingtotaal,shotpowertotaal,shotprecisiontotaal, leadershiptotaal,playmakingtotaal, staminatotaal];
              chart1.labels = ['rebound','playmaking','shotpower','shotprecision','passing','stamina', 'intercepting', 'leidersvermogen'];

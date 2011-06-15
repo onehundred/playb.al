@@ -23,21 +23,21 @@ $(function() {
         					//rebound1
         					if(data === false){
         					
-        						$('#vak1').append('<div class="droppable" id="rebound1">Drop speler hier</div>');
-        						$('#vak1').append('<div class="droppable" id="playmaking1">Drop speler hier</div>');
-        						$('#vak1').append('<div class="droppable" id="attack1">Drop speler hier</div>');
-    		        			$('#vak1').append('<div class="droppable" id="attack2">Drop speler hier</div>');
-    		        			$('#vak2').append('<div class="droppable" id="rebound2">Drop speler hier</div>');
-    		        			$('#vak2').append('<div class="droppable" id="playmaking2">Drop speler hier</div>');
-    		        			$('#vak2').append('<div class="droppable" id="attack3">Drop speler hier</div>');
-    		        			$('#vak2').append('<div class="droppable" id="attack4">Drop speler hier</div>');
-    		        			$('#general').append('<div class="droppable" id="captain">Drop speler hier</div>');
-    		        			$('#general').append('<div class="droppable" id="septpieces">Drop speler hier</div>');
+        						$('#vak1').append('<div class="droppable" id="rebound1">drop</div>');
+        						$('#vak1').append('<div class="droppable" id="playmaking1">drop</div>');
+        						$('#vak1').append('<div class="droppable" id="attack1">drop</div>');
+    		        			$('#vak1').append('<div class="droppable" id="attack2">drop</div>');
+    		        			$('#vak2').append('<div class="droppable" id="rebound2">drop</div>');
+    		        			$('#vak2').append('<div class="droppable" id="playmaking2">drop</div>');
+    		        			$('#vak2').append('<div class="droppable" id="attack3">drop</div>');
+    		        			$('#vak2').append('<div class="droppable" id="attack4">drop</div>');
+    		        			$('#general').append('<div class="droppable" id="captain">drop</div>');
+    		        			$('#general').append('<div class="droppable" id="septpieces">drop</div>');
     		        			}
         					else{
 		        			if(spelers[0].voornaam === 'null')
 		        			{
-		        				$('#vak1').append('<div class="droppable" id="rebound1">Drop speler hier</div>');
+		        				$('#vak1').append('<div class="droppable" id="rebound1">drop</div>');
 		        			
 		        			}else
 		        			{
@@ -47,7 +47,7 @@ $(function() {
 		        			//playmaking1
 		        			if(spelers[1].voornaam === 'null')
 		        			{
-		        				$('#vak1').append('<div class="droppable" id="playmaking1">Drop speler hier</div>');
+		        				$('#vak1').append('<div class="droppable" id="playmaking1">drop</div>');
 		        			
 		        			}else
 		        			{
@@ -56,7 +56,7 @@ $(function() {
 		        			//attack1
 		        			if(spelers[2].voornaam === 'null')
 		        			{
-		        				$('#vak1').append('<div class="droppable" id="attack1">Drop speler hier</div>');
+		        				$('#vak1').append('<div class="droppable" id="attack1">drop</div>');
 		        			
 		        			}else
 		        			{
@@ -65,7 +65,7 @@ $(function() {
 		        			//attack2
 		        			if(spelers[3].voornaam === 'null')
 		        			{
-		        				$('#vak1').append('<div class="droppable" id="attack2">Drop speler hier</div>');
+		        				$('#vak1').append('<div class="droppable" id="attack2">drop</div>');
 		        			
 		        			}else
 		        			{
@@ -74,7 +74,7 @@ $(function() {
 		        			//reobund2
 		        			if(spelers[4].voornaam === 'null')
 		        			{
-		        				$('#vak2').append('<div class="droppable" id="rebound2">Drop speler hier</div>');
+		        				$('#vak2').append('<div class="droppable" id="rebound2">drop</div>');
 		        			
 		        			}else
 		        			{
@@ -83,7 +83,7 @@ $(function() {
 		        			//playmaking2
 		        			if(spelers[5].voornaam === 'null')
 		        			{
-		        				$('#vak2').append('<div class="droppable" id="playmaking2">Drop speler hier</div>');
+		        				$('#vak2').append('<div class="droppable" id="playmaking2">drop</div>');
 		        			
 		        			}else
 		        			{
@@ -92,7 +92,7 @@ $(function() {
 							//attack3
 							if(spelers[6].voornaam === 'null')
 		        			{
-		        				$('#vak2').append('<div class="droppable" id="attack3">Drop speler hier</div>');
+		        				$('#vak2').append('<div class="droppable" id="attack3">drop</div>');
 		        			
 		        			}else
 		        			{
@@ -101,7 +101,7 @@ $(function() {
 							//attack4
 							if(spelers[7].voornaam === 'null')
 		        			{
-		        				$('#vak2').append('<div class="droppable" id="attack4">Drop speler hier</div>');
+		        				$('#vak2').append('<div class="droppable" id="attack4">drop</div>');
 		        			
 		        			}else
 		        			{
@@ -110,7 +110,7 @@ $(function() {
 							//kapitein
 							if(spelers[8].voornaam === 'null')
 		        			{
-		        				$('#general').append('<div class="droppable" id="captain">Drop speler hier</div>');
+		        				$('#general').append('<div class="droppable" id="captain">drop</div>');
 		        			
 		        			}else
 		        			{
@@ -119,7 +119,7 @@ $(function() {
 		        			//vrijworpen
 		        			if(spelers[9].voornaam === 'null')
 		        			{
-		        				$('#korfbalField').append('<div class="droppable" id="setpieces">Drop speler hier</div>');
+		        				$('#korfbalField').append('<div class="droppable" id="setpieces">drop</div>');
 		        			
 		        			}else
 		        			{

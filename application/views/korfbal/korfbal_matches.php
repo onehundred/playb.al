@@ -1,7 +1,8 @@
 <div class="game">
     <div class="gameRight">
         <?php if(!isset($alien)){ ?>
-        &nbsp;<a href="../korfbal_teamorders/<?php echo $team_id;?>">Geef nu je opstelling door voor de volgende wedstrijd.</a>
+
+        <a class="question" href="../korfbal_teamorders/<?php echo $team_id;?>">opstelling</a>
         <?php }?>
         <?php for($i=1;$i<15;$i++){ ?>
         <p>
@@ -58,7 +59,7 @@
      var chart1 = new AwesomeChart('chartCanvas1');
             chart1.data = [51.62,31.3, 10];
             chart1.chartType = "pie";
-            chart1.colors = ['#E5E5E5', '#333', '#CCC', '#945D59', '#93BBF4', '#F493B8'];
+            chart1.colors = ['#333333', '#808080', '#CCCCCC'];
             chart1.randomColors = false;
             chart1.draw();
             
@@ -67,7 +68,7 @@
             chart2.data = [39.62,51.3, 25];
             chart2.chartType = "pie";
     /*             chart1.labels = ['verloren','gewonnen']; */
-            chart2.colors = ['green', 'red', 'blue', '#945D59', '#93BBF4', '#F493B8'];
+            chart2.colors = ['333333', '808080', 'CCCCCC'];
             chart2.randomColors = false;
             chart2.draw();
 

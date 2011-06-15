@@ -7,7 +7,7 @@
 	} ?>
 <div class="game">
     <div class="gameRight">
-        <h1><?php echo $divisienaam;?>.<?php echo $subdivisie;?></h1>
+        <h1 id="divisionNumber"><?php echo $divisienaam;?>.<?php echo $subdivisie;?></h1>
         <div class="division">
             <div id="team"> <a class="tooltip" title="teamnaam" href="#">team </a></div>
             <div id="played"> <a class="tooltip" title="totaal aantal matchen gespeeld" href="#">MT </a></div>

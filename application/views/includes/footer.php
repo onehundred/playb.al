@@ -10,15 +10,31 @@
             <h2>share</h2>
 <li>deel playb.al op je favoriete netwerk</li>
 <br />
+<div class="share1168">
 <div class="addthis_toolbox addthis_default_style ">
 <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
 <a class="addthis_button_tweet"></a>
 <a class="addthis_counter addthis_pill_style"></a>
 </div>
+
+</div>
+      
+        
+     <div class="share896">
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+</div>
+  </div>
 <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4df7d8130a0d7723"></script>
-
-        </div>
+        
+        
         <div id="footerCenter">
             <h2>connect</h2>
                        <li><a href="http://www.facebook.com/apps/application.php?id=217760674909805">join op facebook</a></li>
@@ -51,17 +67,7 @@
 </section>
 <!-- end footerWrap -->
   <section id="footerEnd">
-<div><p>
-playb.al 2011 - alle rechten voorbehouden
-<img src="<?php echo base_url(); ?>img/HTML5_1Color_Black.png" />
-<img src="<?php echo base_url(); ?>img/HTML5_Styling.png" />
-<img src="<?php echo base_url(); ?>img/HTML5_Semantics.png" />
-<img src="<?php echo base_url(); ?>img/HTML5_Connectivity.png" />
-<img src="<?php echo base_url(); ?>img/HTML5_Offline_Storage.png" />
-<img src="<?php echo base_url(); ?>img/HTML5_Performance.png" />
 
-</p>
-</div>
         </section> 
 <?php include_once ("analytics.php") ?>
 <script type="text/javascript" charset="utf-8">

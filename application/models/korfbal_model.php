@@ -82,6 +82,7 @@
 	
 	function get_team($team_id)
 	{
+	
 		$this->db->where('team_id', $team_id);
 		$this->db->select('naam');
 		$query = $this->db->get('korf_teams');
@@ -89,7 +90,18 @@
 
 	}
 	
-
+	function get_team_ori(){
+	
+		$userid = $this->session->userdata('user_id');
+		
+		$this->db->select('naam, afbeelding');
+		$this->db->from('users');
+		$this->db->join('korf_teams', 'FK_user_id = user_id');
+		$this->db->where('user_id', $userid);
+		$query = $this->db->get();
+		return $query;
+	}
+	
 	function get_stadion($team_id)
 	{
 		$this->db->where('FK_team_id', $team_id);
@@ -260,16 +272,14 @@
 		
 	}
 
-	function get_manager()
+	function get_manager($team_id)
 	{
-
-		$user_id = $this->session->userdata('user_id');
 
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->join('korf_teams', 'FK_user_id = user_id');
 		$this->db->join('korf_teamstats', 'FK_team_id = team_id');
-		$this->db->where('user_id', $user_id);
+		$this->db->where('team_id', $team_id);
 		$query = $this->db->get();
 		return $query;
 

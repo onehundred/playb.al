@@ -21,13 +21,15 @@
         <p>Team: <?php echo $row->naam;?></p>
         <p>Manager sinds: <?php echo $row->datum_creatie;?></p>
         <p>
-        <?php if($row->afbeelding == null){ ?>
-        	<img src="<?php echo base_url();?>img/default_profile.png" alt="profielfoto" ondragstart="return false" />
-        <?php }else{ ?>
-        	<img src="<?php echo base_url();?>img/userpics/thumbs/<?php echo $row->afbeelding;?>"/>
-        <?php } ?>	
+	        <?php if($row->afbeelding == null){ ?>
+	        	<img src="<?php echo base_url();?>img/default_profile.png" alt="profielfoto" ondragstart="return false" />
+	        <?php }else{ ?>
+	        	<img src="<?php echo base_url();?>img/userpics/thumbs/<?php echo $row->afbeelding;?>"/>
+	        <?php } ?>	
         </p>
-        <a href="<?php echo $this->uri->segment('3');?>/edit">Wijzig</a>
+        <?php if(!isset($alien)){ ?>
+       	 	<a href="<?php echo $this->uri->segment('3');?>/edit">Wijzig</a>
+        <?php } ?>
 		<p>Totaal gespeelde matchen in carrière: <?php echo $row->gespeeld_matchen;?></p>
 		<p>Totaal gewonnen matchen in carrière: <?php echo $row->gewonnen_matchen;?></p>
 		<p>Totaal verloren matchen in carrière: <?php echo $row->verloren_matchen;?></p>
@@ -86,7 +88,8 @@ $(function() {
                  			
 			                 
 			                    <?php foreach($achievements->result() as $row){ ?>
-                   						<div><img width="68px" height="50px" src="<?php echo base_url()?>/img/achievements/<?php echo $row->afbeelding;?>" ondragstart="return false" /></div>
+                   						<div><img width="68px" height="50px" src="<?php echo base_url()?>/img/achievements/<?php echo $row->afbeelding;?>" ondragstart="return false" />
+                   						<?php echo $row->naam;?></div>
                    						
 								<?php
 										}

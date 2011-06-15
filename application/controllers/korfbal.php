@@ -206,7 +206,7 @@ class Korfbal extends CI_Controller {
 		$data['team_id'] = $team_id;
 		$this->load->model('korfbal_model');
 		
-		$data['manager'] = $this->korfbal_model->get_manager();
+		$data['manager'] = $this->korfbal_model->get_manager($team_id);
 		$data['achievements'] = $this->korfbal_model->get_achievements($team_id);
 		
 		$team = $this->korfbal_model->get_team($team_id);

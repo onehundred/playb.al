@@ -4,12 +4,14 @@
     <aside>
         <div class="gameLeft" id="gameLeftOverview">
             <section class="column">
+            <?php if(!isset($alien)){ ?>
                 <div id="korfbal_berichten">
                     <section>
                         <figure class="icon" id="gameMessage"></figure>
                         <h2> berichten</h2>
                     </section>
                 </div>
+             <?php } ?>   
                 <div>
                     <section>
                         <figure class="icon" id="gameCalendar"></figure>
@@ -67,6 +69,7 @@
                     </section>
                 </div>
                 <?php } ?>
+                <?php if(!isset($alien)){ ?>
                 <div>
                     <section>
                         <figure class="icon" id="gameRanking"></figure>
@@ -80,6 +83,7 @@
                          } ?>
                     </section>
                 </div>
+                <?php } ?>
             </section>
             <!-- end column -->
             <section class="column">

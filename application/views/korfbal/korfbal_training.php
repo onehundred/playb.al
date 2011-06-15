@@ -149,6 +149,7 @@ foreach($training->result() as $row){
 	$energie = $row->energie;
 
 } ?>
+	   <?php if(!isset($alien)){ ?>
         <div>
             <section><figure class="icon" id="gameTraining"></figure>
                 <h2>training</h2>
@@ -168,6 +169,7 @@ foreach($training->result() as $row){
                 <p style="text-decoration:underline; color:blue; cursor: pointer;" id="training">Train nu.</p>
             </section>
         </div>
+       <?php } ?> 
         <div>
             <section>
             <figure class="icon" id="gamePlayers"></figure>
@@ -296,6 +298,7 @@ foreach($training->result() as $row){
             <canvas id="chartTeamSkills" width="390" height="350"> uw browser ondersteunt dit niet. </canvas>
 </section>
         </div>
+        <?php if(!isset($alien)){ ?>
         <div>
             <section>
          <figure class="icon" id="gameCalendar"></figure>            
@@ -305,6 +308,7 @@ foreach($training->result() as $row){
                 <p>test</p>
             </section>
         </div>
+        <?php } ?>
         <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>
         
         <!-- end container --> 

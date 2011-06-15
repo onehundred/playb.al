@@ -100,6 +100,7 @@ div#klassementEntry{background-color:rgba(191, 191, 191, 0.2);border:1px solid r
 div#klassementEntry:hover{background-color:rgba(191, 191, 191, 0.4);border:1px solid rgba(191, 191, 191, 0.5);-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;}
 #klassementTeamnaam{line-height:1;}
 #klassementPunten{float:right;line-height:1;}
+#trainingSkill{float:left;}
 #matchTeamName,#versus{font-size:32px;font-family:'SFCollegiateSolidRegular';text-transform:uppercase;color:#FFF;text-shadow:0px 0px 15px #333;display:inline;line-height:34px;width:100px;}
 #versus{color:black;}
 .division div{float:left;display:inline;padding:0 15px 0 0;}
@@ -221,8 +222,8 @@ footer{width:1168px;margin:0 auto 0 auto;}
 footer h2{font-family:'LeagueGothicRegular';text-transform:uppercase;letter-spacing:1px;color:#DEDEDE;font-size:40px;text-shadow:0px 2px 3px #000;margin:0 0 25px 0;}
 footer a{color:#DEDEDE;}
 #footerLeft,#footerCenter,#footerRight{width:250px;font-size:16px;margin:50px 0 0 0;color:#CCC;}
-#footerLeft{margin-left:15px;}
-#footerCenter{margin:50px 120px 0 192px;}
+#footerLeft{margin-left:15px;width:300px;}
+#footerCenter{margin:50px 120px 0 140px;}
 #footerRight{margin-left:60px;width:280px;}
 #footerEnd{float:left;height:80px;width:100%;background:url(../img/1168/footerfill_down.png) repeat-x 0% 0%;}
 #footerEnd div{width:1168px;margin:0 auto 0 auto;position:relative;top:53px;}

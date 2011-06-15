@@ -6,7 +6,6 @@
             <?php
 foreach($training->result() as $row){
 
-//echo $row->FK_team_id;
  ?>
             <?php 
             $geslacht = $row->geslacht; 
@@ -157,7 +156,7 @@ foreach($training->result() as $row){
                 <input type="hidden" id="energie" value="<?php echo $energie;?>"/>
            
                 Een training kost 30 van je energiepunten, je hebt momenteel <?php echo $energie; ?> energiepunten.
-                     <select class="target">
+                     <select class="target" id="trainingSkill">
                     <option value="stamina" selected="selected">Stamina</option>
                     <option value="passing">Passing</option>
                     <option value="shotpower">Shotkracht</option>

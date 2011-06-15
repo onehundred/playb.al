@@ -8,11 +8,16 @@
     <footer>
         <div id="footerLeft">
             <h2>share</h2>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            
-    <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=217760674909805&amp;xfbml=1"></script><fb:like href="http://playb.al" send="true" width="450" show_faces="true" font=""></fb:like>
+<li>deel playb.al op je favoriete netwerk</li>
+<br />
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4df7d8130a0d7723"></script>
+
         </div>
         <div id="footerCenter">
             <h2>connect</h2>

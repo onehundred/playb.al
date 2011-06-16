@@ -801,7 +801,7 @@
 					{
 						$uitslag['thuis'] = $uitslag['thuis'] + 1;
 						$minuten .= $randmin1.';';
-						$acties .= rand(1,2).';';
+						$acties .= rand(1,6).';';
 						$spelers .= $thuisspelerarray[$randomspeler].';';
 						$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
 						
@@ -809,7 +809,7 @@
 						
 					}else{
 						$uitslag['uit'] = $uitslag['uit'] + 1;
-						$acties .= '1;';
+						$acties .= rand(9,13).';';
 						$spelers .= $uitspelerarray[$randomspeler].';';
 						$tussenstand .= $uitslag['thuis'].'-'.$uitslag['uit'].';';
 						$minuten .= $randmin1.';';

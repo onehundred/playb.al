@@ -9,7 +9,7 @@
             	
             	$.ajax({
     					type: "POST",
-    					url: "../../index.php/sportchoice/check_teamnaam",
+    					url: "<?php echo base_url();?>index.php/sportchoice/check_teamnaam",
     					data:  { teamnaam: teamnaam,
              
             			
@@ -33,7 +33,7 @@
 			            	}else{
 			            		$.ajax({
 			    					type: "POST",
-			    					url: "../../index.php/sportchoice/create_korfbalteam",
+			    					url: "<?php echo base_url();?>index.php/sportchoice/create_korfbalteam",
 			    					data:  { teamnaam: teamnaam,
 			            					 stadionnaam: stadionnaam,    
 			            			
@@ -41,7 +41,7 @@
 			    					dataType: "json",
 			        				success: function(data){
 			        					if(data == true){
-			        						window.location = "../../index.php/sportchoice/korfbalsignup_success";
+			        						window.location = "<?php echo base_url();?>index.php/sportchoice/korfbalsignup_success";
 			        					}	
 			        				}
 			        				

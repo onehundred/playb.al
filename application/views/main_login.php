@@ -15,7 +15,7 @@ $(document).ready(function(){
   		
   			$.ajax({
     			type: "POST",
-    			url: "../../index.php/main/login",
+    			url: "<?php echo base_url();?>index.php/main/login",
     			data:  { username: username,
             			 password: password,    
             			
@@ -31,7 +31,7 @@ $(document).ready(function(){
         			
         			
         			}else{
-        				window.location = '../../index.php/sportchoice/sport';
+        				window.location = '<?php echo base_url();?>index.php/sportchoice/sport';
         			
         			}
   				}

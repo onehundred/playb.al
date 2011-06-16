@@ -1,5 +1,10 @@
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 <script src="<?php echo base_url();?>js/jquery.blockUI.js"></script>
+<style>
+	#canvas{
+		background-image:url(<?php echo base_url();?>img/field.png);
+	}
+</style>
 
 <div class="game">
     <div class="gameRight">
@@ -11,7 +16,7 @@
         </div>
         <div id="prestaties">
             <div style="float:right; margin-right:200px;" id="uitteam">
-                <h3 id="naam_uitteam"></h3>
+                <h3 id="naam_uitteam"></h3><img src="<?php echo base_url();?>img/player_theirs.png"/>
                 <div id="rebound1">
                     <h4>Rebound</h4>
                     <p id="speler"></p>
@@ -54,7 +59,7 @@
                 </div>
             </div>
             <div id="thuisteam">
-                <h3 id="naam_thuisteam"></h3>
+                <h3 id="naam_thuisteam"></h3><img src="<?php echo base_url();?>img/player_ours.png"/>
                 <div id="rebound1">
                     <h4>Rebound</h4>
                     <p id="speler"></p>

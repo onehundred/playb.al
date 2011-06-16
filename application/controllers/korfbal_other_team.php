@@ -246,6 +246,7 @@ class Korfbal_other_team extends CI_Controller {
 		
 		$this->load->model('korfbal_model');
 		$data['speler'] = $this->korfbal_model->get_speler($speler_id);
+		$data['spelerstats'] = $this->korfbal_model->get_spelerstats($speler_id);
 		
 		$team = $this->korfbal_model->get_team($team_id);
 		foreach($team->result() as $row)

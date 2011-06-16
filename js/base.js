@@ -516,6 +516,16 @@ $(function() {
 											});
 					
 					}
+					if(username.length > 16){
+						$('#personal_error').text('De username kan niet langer zijn dan 16 tekens.');
+					
+					}else{
+						status = status +1;
+								$('#sign_voornaam').css({    
+												'border' : '1px solid gray',
+											});
+					
+					}
 					if(achternaam == '' || achternaam == 'Achternaam'){
 						$('#sign_achternaam').css({    
 												'border' : '1px solid red',
@@ -595,7 +605,7 @@ $(function() {
 					
 					}
 					
-					if(status == 9){
+					if(status == 10){
 			  			$.ajax({
 			    			type: "POST",
 			    			url: "../../index.php/main/create_user",

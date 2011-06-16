@@ -186,7 +186,7 @@ $(function() {
 		    					$('#myModal').append('<p>'+spelers[i].naam +' is gestegen naar niveau '+spelers[i].niveau+'</p>');
 		        			$('#myModal').append('<div background-color=red; style=height:10px; id=progressbar'+i+'></div>');
 		        			
-		        			$( "#progressbar"+i ).progressbar({
+		        			$( "#progressbar"+i ).progressbarSkill({
 								value: progress
 							});
 
@@ -198,7 +198,7 @@ $(function() {
 		        			$('#myModal').append('<p>'+spelers[i].naam +' is '+spelers[i].gestegen+' punten gestegen. En heeft een totaal van '+ spelers[i].totaal+'</p>');
 		        			$('#myModal').append('<div style=height:10px; id=progressbar'+i+'></div>');
 		        			
-		        			$( "#progressbar"+i ).progressbar({
+		        			$( "#progressbar"+i ).progressbarSkill({
 								value: progress
 							});
 		        			

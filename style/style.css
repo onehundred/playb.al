@@ -213,8 +213,8 @@ select{background:#F7F7F7;padding:10px;font-size:16px;}
 #gamePrevious{background-image:url(../img/icons/previous.png);}
 #gameStadium{background-image:url(../img/icons/stadium.png);}
 #gameView{background-image:url(../img/icons/view.png);}
-#gameDown{background-image:url(../img/icons/down.png);}
-#gameUp{background-image:url(../img/icons/up.png);}
+#gameDown{background-image:url(../img/icons/down.png);bottom:10px;}
+#gameUp{background-image:url(../img/icons/up.png);bottom:10px;}
 .toast-container{width:100%;z-index:9999;}
 * html .toast-container{position:absolute;}
 .toast-item{height:auto;background:#333;opacity:0.9;color:#FFF;padding-top:20px;padding-bottom:20px;padding-left:6px;padding-right:6px;font-size:14px;display:block;position:relative;}
@@ -275,7 +275,7 @@ select{background:#F7F7F7;padding:10px;font-size:16px;}
 #twitter:before{content:"";position:absolute;bottom:-20px;left:40px;border-width:20px 20px 0;border-style:solid;border-color:#000000 transparent;display:block;width:0;}
 #twitter:after{content:"";position:absolute;bottom:-13px;left:47px;border-width:13px 13px 0;border-style:solid;border-color:rgba(0, 0, 0, 0.5) transparent;display:block;width:0;}
 .trainingPlayerName{margin:5px 0 5px 0;text-transform:capitalize;}
-.reveal-modal-bg{position:fixed;height:200%;width:100%;background:#000;background:rgba(0, 0, 0, 0.8);z-index:100;display:none;top:0;left:0;}
+.reveal-modal-bg{position:fixed;height:100%;width:100%;background:#000;background:rgba(0, 0, 0, 0.8);z-index:100;display:none;top:0;left:0;}
 .reveal-modal{visibility:hidden;width:520px;background:url(../img/boxbgBig.png) no-repeat;position:absolute;margin-left:22%;top:50px;z-index:101;padding:30px 40px 34px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;}
 .reveal-modal .close-reveal-modal{font-size:22px;line-height:.5;position:absolute;top:8px;left:4px;color:#aaa;text-shadow:0 -1px 1px rbga(0, 0, 0, 0.6);font-weight:bold;cursor:pointer;}
 #footerWrap{float:left;width:100%;background:url(../img/1168/footerfill_top.png) repeat-x 0% 0%,url(../img/1168/footerfill.png) repeat-x 0px 40px;}

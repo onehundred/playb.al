@@ -775,6 +775,14 @@ $(document).ready(function()
 						var id = $(this).attr('id');
 						start(id,naam_thuisteam, naam_uitteam);
 					});
+					
+					$('#replay').click(function(){
+							for(var i =0;i<minuten.length-1;i++)
+        						{
+        							start(acties[i],naam_thuisteam, naam_uitteam);
+        						}
+					
+					});
         		
         		}
         		

@@ -37,10 +37,12 @@
 	
 
 <!-- media queries -->
-<link href="<?php echo base_url();?>style/style1168.css" rel="stylesheet" media="only screen and (min-width: 1212px)" />
-<link href="<?php echo base_url();?>style/style768.css"  rel="stylesheet" media="only screen and (max-width: 991px) and (min-width: 768px)" />
-<link href="<?php echo base_url();?>style/style480.css"  rel="stylesheet" media="only screen and (max-width: 767px) and (min-width: 480px)" />
-<link href="<?php echo base_url();?>style/style320.css"  rel="stylesheet" media="only screen and (max-width: 479px)" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style1168.css" media="only screen and (max-width: 1852px) and (min-width: 1212px)" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/styleHD.css"   media="only screen and (min-width: 1853px)" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style768.css"  media="only screen and (max-width: 991px) and (min-width: 768px)" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style480.css"  media="only screen and (max-width: 767px) and (min-width: 480px)" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>style/style320.css"  media="only screen and (max-width: 479px)" />
 
 <link rel="stylesheet" href="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css" />
 <link rel="stylesheet" href="<?php echo base_url()?>js/reveal/reveal.css"/>

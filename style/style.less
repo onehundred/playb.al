@@ -245,7 +245,6 @@ body {
 	background: url(../img/400.jpg) repeat 0% 0%;
  	-webkit-tap-highlight-color: @selectionColor;
  	-webkit-touch-callout: none;
- 	-webkit-user-select: none;
  	overflow-y: scroll;
  			overflow-x: hidden;
 }
@@ -1769,3 +1768,17 @@ margin: 50px 127px 0 20px;
 display: none;
 }
 /* FOOTER end -------------------------------------------------------------------------------------------------------------*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */

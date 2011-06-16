@@ -982,8 +982,8 @@
 		$this->db->where('wedstrijd_id', $wedstrijdid);
 		$this->db->update('korf_wedstrijden', $einduitslag);
 		
-		$this->send_message('', 'Wedstrijd', 'Uw team heeft een wedstrijd gespeeld, bekijk vlug het resultaat onder wedstrijden.',1, 'playb.al', $thuisteamid);
-    	$this->send_message('', 'Wedstrijd', 'Uw team heeft een wedstrijd gespeeld, bekijk vlug het resultaat onder wedstrijden.',1, 'playb.al', $uitteamid);
+		$this->send_message('', 'Wedstrijd', 'je team heeft een wedstrijd gespeeld, bekijk het resultaat onder wedstrijden.',1, 'playb.al', $thuisteamid);
+    	$this->send_message('', 'Wedstrijd', 'je team heeft een wedstrijd gespeeld, bekijk het resultaat onder wedstrijden.',1, 'playb.al', $uitteamid);
     	
     	//achievements check
     	$this->load->model('achievements_model');

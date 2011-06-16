@@ -810,8 +810,6 @@ $(document).ready(function()
 							
 					 		if(j == minuten.length-1){
 								infLoopStop=true;
-								$('#links').show();
-								$('#replay').show();
 								j=0;
 							}
 							if(infLoopStop == false){

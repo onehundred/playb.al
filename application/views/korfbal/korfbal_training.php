@@ -158,8 +158,8 @@ foreach($training->result() as $row){
                 <h2>training</h2>
                 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>"/>
                 <input type="hidden" id="energie" value="<?php echo $energie;?>"/>
-                Een training kost 30 van je energiepunten, je hebt momenteel <?php echo $energie; ?> energiepunten.
-                <select class="target" id="trainingSkill">
+                 <p>trainen kost 30 energiepunten</p><p> je hebt momenteel <?php echo $energie; ?> energiepunten.</p>
+<p>                <select class="target" id="trainingSkill">
                     <option value="stamina" selected="selected">Stamina</option>
                     <option value="passing">Passing</option>
                     <option value="shotpower">Shotkracht</option>
@@ -167,8 +167,8 @@ foreach($training->result() as $row){
                     <option value="rebound">Rebound</option>
                     <option value="playmaking">Playmaking</option>
                     <option value="intercepting">Intercepting</option>
-                </select>
-                <p class="question" id="training">trainen</p>
+                </select></p>
+                <p id="trainingButton"><a class="question" id="training">trainen</a></p>
             </section>
         </div>
         <?php } ?>
@@ -324,10 +324,7 @@ $('#filters a').click(function(){
 });
     var $container = $('#container');
     
-    
-    
-    
-    
+
     $('#toggle-sizes a').click(function(){
         $container
           .toggleClass('variable-sizes')
@@ -335,12 +332,6 @@ $('#filters a').click(function(){
         return false;
       });
 
-    
-    
-    
-    
-    
-    
     
       // sorting
       $('#sort a').click(function(){

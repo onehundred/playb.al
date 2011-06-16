@@ -49,7 +49,7 @@
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<script src="<?php echo base_url();?>js/less-1.1.3.min.js"></script> 
+
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> -->
 <!-- jquery lokaal voor offline productie -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
@@ -60,7 +60,7 @@
 <script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>
 <script src="<?php echo base_url();?>js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.flip.js"></script>
-<script src="http://playbaleindwerk.appspot.com/js/jquery.isotope.js"></script>
+<script src="http://playbaleindwerk.appspot.com/js/jquery.isotope.min.js"></script>
 <script src="<?php echo base_url();?>js/reveal/jquery.reveal.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/jquery.transform.js"></script>
 <script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>

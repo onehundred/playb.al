@@ -1418,9 +1418,7 @@ div#profile a {
   padding: 12px 0 14px 0;
   text-align: center;
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
-  display: inline;
   width: 170px;
-  margin-left: 10px;
 }
 .question:hover {
   background: #0195B2;
@@ -1743,8 +1741,6 @@ input#sliderButton.registreren[type="submit"]:active {
 }
 select {
   background: #F7F7F7;
-  /* old browsers */
-
   padding: 10px;
   font-size: 16px;
 }
@@ -2239,6 +2235,7 @@ footer div {
 footer h2 {
   font-family: 'LeagueGothicRegular';
   text-transform: uppercase;
+  font-weight: normal;
   letter-spacing: 1px;
   color: #DEDEDE;
   font-size: 35px;

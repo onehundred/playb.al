@@ -40,15 +40,13 @@ function start(id)
 	tegenstanders[7] = new Speler1((WIDTH/100)*93,(HEIGHT/100)*50,10,"#0D0","16","uit");
 	
 	ball[0] = new Ball(380, 200, 5, "#000");
-
-	if(id === '0'){
-		draw();
-	}	
+	ball[1] = new Ball(420, 200, 5, "#000");
+	
 	if(id === '1'){
-		intervalID = setInterval(actie6, 10);
+		intervalID = setInterval(actie9, 10);
 		return intervalID;	}
 	if(id === '2'){
-		intervalID = setInterval(actie6, 10);
+		intervalID = setInterval(actie9, 10);
 		return intervalID;
 	}
 	
@@ -414,6 +412,51 @@ function actie6(){
 
 }
 
+function actie9(){
+	//alert(i);
+	i++;
+	clear();
+	draw();
+	drawPlayers();
+	ball[1].draw();
+		
+	if(i < 180){
+		tegenstanders[1].move(0.8, 0);
+		tegenstanders[2].move(1, 0);
+		spelers[1].move(0.5, 0);
+		spelers[3].move(0.8, 0);
+		
+	}	
+	if( i > 0 && i<149 ){
+		ball[1].move(1,-0.8);
+		}
+
+	if(i >= 150 && i < 300){
+		tegenstanders[7].move(0,0.1);
+		ball[1].move(1.2, 1);
+	}
+	if(i >= 310 && i < 440){
+		ball[1].move(-1, 1);
+	}
+	if(i >= 470 && i < 560){
+		ball[1].move(0.4, -2);
+	}
+	if(i > 450 && i < 500){
+		spelers[5].move(0.5, 0.5);
+		tegenstanders[5].move(1.5, 2);
+	}
+	if(i > 580){
+		ball[1].move(0, 0);
+		var naam = tegenstanders[5].getNaam();
+		$().toastmessage('showNoticeToast', 'Speler met nummer'+naam+' maakt een mooie inloper!');
+		$('#links').unblock();
+		clearInterval(intervalID);
+		i = 1;
+	}
+	//op het einde i terug resetten naar 1
+
+
+}
 //elke keer moeten de circles terug verdwijnen van het canvas
 function clear() 
 {

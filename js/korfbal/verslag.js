@@ -20,23 +20,24 @@ function start(id)
 	
 	
     
-	spelers[0] = new Speler1((WIDTH/2)-15,HEIGHT/2,10,"#0D0","1");
-	spelers[1] = new Speler1((WIDTH/100)*30,(HEIGHT/100)*18,10, "#0D0","50");
-	spelers[2] = new Speler1((WIDTH/100)*24,(HEIGHT/100)*85,10,"#0D0","80");
-	spelers[3] = new Speler1((WIDTH/100)*5,(HEIGHT/100)*50, 10, "#0D0","43");
-	spelers[4] = new Speler1((WIDTH/2)+40,HEIGHT/2,10,"#0D0","1");
-	spelers[5] = new Speler1((WIDTH/100)*73,(HEIGHT/100)*18,10,"#0D0","1");
-	spelers[6] = new Speler1((WIDTH/100)*79,(HEIGHT/100)*85,10,"#0D0","1");
-	spelers[7] = new Speler1((WIDTH/100)*93,(HEIGHT/100)*50,10,"#0D0","1");
+	spelers[0] = new Speler1((WIDTH/2)-40,HEIGHT/2,10,"#0D0","1","thuis");
+	spelers[1] = new Speler1((WIDTH/100)*30,(HEIGHT/100)*18,10, "#0D0","2","thuis");
+	spelers[2] = new Speler1((WIDTH/100)*24,(HEIGHT/100)*85,10,"#0D0","3","thuis");
+	spelers[3] = new Speler1((WIDTH/100)*5,(HEIGHT/100)*50, 10, "#0D0","4","thuis");
+	spelers[4] = new Speler1((WIDTH/2)+40,HEIGHT/2,10,"#0D0","5","thuis");
+	spelers[5] = new Speler1((WIDTH/100)*73,(HEIGHT/100)*18,10,"#0D0","6","thuis");
+	spelers[6] = new Speler1((WIDTH/100)*79,(HEIGHT/100)*85,10,"#0D0","7","thuis");
+	spelers[7] = new Speler1((WIDTH/100)*90,(HEIGHT/100)*50,10,"#FD0","8","thuis");
 	
-	tegenstanders[0] = new Speler1((WIDTH/2)-40,HEIGHT/2,10,"#FD0","2");
-	tegenstanders[1] = new Speler1((WIDTH/100)*27,(HEIGHT/100)*18,10, "#FD0","3");
-	tegenstanders[2] = new Speler1((WIDTH/100)*21,(HEIGHT/100)*85,10,"#FD0","5");
-	tegenstanders[3] = new Speler1((WIDTH/100)*8,(HEIGHT/100)*50, 10, "#FD0","11");
-	tegenstanders[4] = new Speler1((WIDTH/2)+15,HEIGHT/2,10,"#FD0","1");
-	tegenstanders[5] = new Speler1((WIDTH/100)*70,(HEIGHT/100)*18,10,"#FD0","1");
-	tegenstanders[6] = new Speler1((WIDTH/100)*76,(HEIGHT/100)*85,10,"#FD0","1");
-	tegenstanders[7] = new Speler1((WIDTH/100)*90,(HEIGHT/100)*50,10,"#FD0","1");
+	
+	tegenstanders[0] = new Speler1((WIDTH/2)-70,HEIGHT/2,10,"#FD0","9","uit");
+	tegenstanders[1] = new Speler1((WIDTH/100)*27,(HEIGHT/100)*18,10, "#FD0","10","uit");
+	tegenstanders[2] = new Speler1((WIDTH/100)*21,(HEIGHT/100)*85,10,"#FD0","11","uit");
+	tegenstanders[3] = new Speler1((WIDTH/100)*8,(HEIGHT/100)*50, 10, "#FD0","12","uit");
+	tegenstanders[4] = new Speler1((WIDTH/2)+15,HEIGHT/2,10,"#FD0","13","uit");
+	tegenstanders[5] = new Speler1((WIDTH/100)*70,(HEIGHT/100)*18,10,"#FD0","14","uit");
+	tegenstanders[6] = new Speler1((WIDTH/100)*76,(HEIGHT/100)*85,10,"#FD0","15","uit");
+	tegenstanders[7] = new Speler1((WIDTH/100)*93,(HEIGHT/100)*50,10,"#0D0","16","uit");
 	
 	ball[0] = new Ball(380, 200, 5, "#000");
 
@@ -44,10 +45,10 @@ function start(id)
 		draw();
 	}	
 	if(id === '1'){
-		intervalID = setInterval(actie1, 10);
+		intervalID = setInterval(actie6, 10);
 		return intervalID;	}
 	if(id === '2'){
-		intervalID = setInterval(actie2, 10);
+		intervalID = setInterval(actie6, 10);
 		return intervalID;
 	}
 	
@@ -63,11 +64,9 @@ function Ball(x,y,r,color)
 	
 	this.draw = function()
 	{
-		g.beginPath();
-		g.fillStyle = this.color;
-		g.arc(this.x, this.y, this.r, 0, Math.PI*2, true);
-		g.closePath();
-		g.fill();
+			var bal=new Image();
+			bal.src="http://playb.al/img/gameball.png";
+			g.drawImage(bal,this.x,this.y);
 	}
 	
 	this.getX = function()
@@ -98,7 +97,7 @@ function beweeg_verticaal(y, dy){
 }
 
 // speler Class	
-function Speler1(x,y,r,color,naam)
+function Speler1(x,y,r,color,naam, team)
 {
 	this.x = x;
 	this.y = y;
@@ -107,19 +106,24 @@ function Speler1(x,y,r,color,naam)
 	this.naam = naam;
 	this.draw = function()
 	{
-		g.beginPath();
-		g.fillStyle = this.color;
-		g.arc(this.x, this.y, this.r, 0, Math.PI*2, true);
-		g.closePath();
-		g.fill();
+	
+		if(team == "thuis"){
+			var speler=new Image();
+			speler.src="http://playb.al/img/player_ours.png";
+			g.drawImage(speler,this.x,this.y);
+		}else{
+			var speler=new Image();
+			speler.src="http://playb.al/img/player_theirs.png";
+			g.drawImage(speler,this.x,this.y);
 		
-		
+		}
 	}
 	
 	this.text = function()
 	{
-		g.fillStyle = "#000";
-		g.fillText( this.naam,this.x - 5, this.y + 2);
+		g.fillStyle = "#FFF";
+		g.font = '18px LeagueGothicRegular';
+		g.fillText( this.naam,this.x + 10, this.y + 21);
 		
 		
 	}
@@ -174,14 +178,22 @@ function drawPlayers()
 		spelers[1].text();
 		spelers[2].text();
 		spelers[3].text();
+		spelers[4].text();
+		spelers[5].text();
+		spelers[6].text();
+		spelers[7].text();
 		
 		tegenstanders[0].text();
 		tegenstanders[1].text();
 		tegenstanders[2].text();
 		tegenstanders[3].text();
+		tegenstanders[4].text();
+		tegenstanders[5].text();
+		tegenstanders[6].text();
+		tegenstanders[7].text();
 
 }
-
+var i = 1;
 function actie1()
 {
 		clear();
@@ -192,10 +204,10 @@ function actie1()
 		ball[0].move(-1,-1)
 	 	if(ball[0].getX() <= (WIDTH/100)*30)
 		{
-			spelers[0].move(-4, 0);
-			tegenstanders[0].move(-3,0);
+			spelers[0].move(-3, 0);
+			tegenstanders[0].move(-2,0);
 			
-			ball[0].move(-0.85,3)
+			ball[0].move(-0.1,3)
 		}
 		if(ball[0].getY() >= HEIGHT/2){
 						ball[0].move(0,0)
@@ -207,44 +219,200 @@ function actie1()
 						
 		}
 }
-var i = 1;
+
 function actie2()
 {	
-	alert(i);
+	//alert(i);
 	i++;
 	clear();
 	draw();
 	drawPlayers();
-	var x = -1;
-	var y = 1;
 	ball[0].draw();
-	
-	
-	if(ball[0].getY() >= (HEIGHT/100)*85 && ball[0].getX() <= (WIDTH/100)*30) {
-		x = -2;
-		y = -2;
+		
+	if(i < 180){
+		tegenstanders[5].move(-0.8, 0);
+		tegenstanders[6].move(-1, 0);
+		spelers[5].move(-0.5, 0);
+		spelers[6].move(-0.8, 0);
+		
+	}	
+	if( i > 0 && i<149 ){
+		ball[0].move(-1,1);
+		}
+
+	if(i >= 150 && i < 300){
+		ball[0].move(-1.2, -1);
 	}
-	if(ball[0].getY() <= (HEIGHT/100)*45 && ball[0].getX() <= (WIDTH/100)*5 ){
-		x=3;
-		y=-2;
-			
+	if(i >= 300 && i < 400){
+		ball[0].move(2, -1);
 	}
-	if(ball[0].getY() <= (HEIGHT/100)*10 && ball[0].getX() >= (WIDTH/100)*30){
-		x=-2;
-		y=2;
-	
+	if(i >= 450 && i < 600){
+		ball[0].move(-1.2, 2);
 	}
-	if(ball[0].getY() <= (HEIGHT/100)*30 && ball[0].getX() >= (WIDTH/100)*20){
-		x=0;
-		y=0;
+	if(i > 450 && i < 510){
+		spelers[2].move(-0.5, -2);
+		tegenstanders[2].move(-0.5, -1);
+	}
+	if(i > 520){
+		ball[0].move(0, 0);
+		var naam = spelers[2].getNaam();
+		$().toastmessage('showNoticeToast', 'Speler met nummer'+naam+' maakt een mooie inloper!');
 		$('#links').unblock();
 		clearInterval(intervalID);
-	}else{}
+		i = 1;
+	}
+	//op het einde i terug resetten naar 1
+}
+function actie3(){
+	i++;
+	clear();
+	draw();
+	drawPlayers();
+	ball[0].draw();
 	
-	ball[0].move(x,y);
+	if( i > 0 && i < 60){
+		ball[0].move(-2, -2);
+		spelers[3].move(1, 0);
+		tegenstanders[3].move(1, 0.5);
+	}
+	if( i >= 150 && i < 200){
+		ball[0].move(-3, 0.5);
+	}
+	
+	if( i >= 70 && i < 180){
+		
+		spelers[3].move(0, -1);
+	
+	}
+	if( i >= 200 && i < 285){
+		ball[0].move(0.3, 1);
+	}
+	if( i > 285){
+		ball[0].move(0, 0);
+		var naam = spelers[3].getNaam();
+		$().toastmessage('showNoticeToast', 'Speler met nummer '+naam+' trekt weg onder de paal. Goal!');
+		$('#links').unblock();
+		clearInterval(intervalID);
+		i = 1;
+	}
 
 }
 
+function actie4(){
+	i++;
+	clear();
+	draw();
+	drawPlayers();
+	ball[0].draw();
+		if(i < 180){
+		tegenstanders[5].move(-0.8, 0);
+		tegenstanders[6].move(-1, 0);
+		spelers[5].move(-0.5, 0);
+		spelers[6].move(-0.8, 0);
+		
+	}
+	if( i > 0 && i < 60){
+		ball[0].move(-2, -2);
+		
+	}
+	if( i >= 60 && i< 100){
+		ball[0].move(2, 2);
+		spelers[0].move(-1, -1.3);
+		tegenstanders[0].move(-2, -1);
+	}
+	if(i >= 110){
+		ball[0].move(-3, 0.5);
+	}
+	
+	if(i > 177){
+		ball[0].move(0, 0);
+		var naam = spelers[3].getNaam();
+		$().toastmessage('showNoticeToast', 'Ver shot van speler met nummer '+naam+'. Goal!');
+		$('#links').unblock();
+		clearInterval(intervalID);
+		i = 1;
+	}
+}
+
+function actie5(){
+	i++;
+	clear();
+	draw();
+	drawPlayers();
+	ball[0].draw();
+	if( i > 0 && i < 60){
+		ball[0].move(-2, -2);
+		tegenstanders[2].move(0, -0.5);
+		tegenstanders[1].move(0, 0.5);
+	}
+	if( i >= 70 && i< 200){
+		ball[0].move(-0.5, 2);
+	}
+	if(i >= 200){
+			ball[0].move(-0.8, -2);
+	
+	}
+	if(i > 273){
+		ball[0].move(0, 0);
+		var naam = spelers[2].getNaam();
+		$().toastmessage('showNoticeToast', 'Ver shot van speler met nummer '+naam+'. Goal!');
+		$('#links').unblock();
+		clearInterval(intervalID);
+		i = 1;
+
+	}
+
+}
+
+function actie6(){
+	i++;
+	clear();
+	draw();
+	drawPlayers();
+	ball[0].draw();
+	
+	if( i > 0 && i < 80){
+		ball[0].move(-2.4, 2);
+		spelers[1].move(-2, 0);
+		tegenstanders[2].move(0, -0.5);
+		tegenstanders[1].move(-1.5, 0.5);
+	}
+	
+	if(i >= 85 && i < 155){
+		ball[0].move(-2.1, -2);
+		spelers[0].move(-3, -0.5);
+		tegenstanders[0].move(-2.5, -0.3);
+	}
+	if(i >= 160 && i < 220){
+		ball[0].move(0.8, -2.2);
+		
+	}
+	if(i >= 230 && i < 270){
+		ball[0].move(1.5, 2);
+		spelers[2].move(2, -1);
+		tegenstanders[2].move(2, -1);
+	}
+	if(i >= 275 && i < 315){
+		spelers[2].move(-3, -2);
+		tegenstanders[2].move(-0.5, -0.5);
+	}
+	if(i >= 290 && i < 310){
+		ball[0].move(0, 3);
+	}
+
+	if(i > 330){
+		ball[0].move(0, 0);
+		var naam = spelers[2].getNaam();
+		$().toastmessage('showNoticeToast', 'Speler met nummer'+naam+' maakt een prachtige inloper!');
+		$('#links').unblock();
+		clearInterval(intervalID);
+		i = 1;
+
+	
+	}
+
+
+}
 
 //elke keer moeten de circles terug verdwijnen van het canvas
 function clear() 

@@ -22,7 +22,7 @@ body:before{content:"";height:100%;float:left;width:0;margin-top:-32767px;}
 article,aside,canvas,figure,figure img,figcaption,hgroup,footer,header,nav,section,audio,video{display:block;}
 a{text-decoration:none;color:#444;}
 a:hover{color:#000;}
-a img{border:0;}
+a img{border:0;outline:none;}
 figure{position:relative;}
 .js #jsnotice{display:none;}
 .no-js #jsnotice{display:block;margin:50px auto 0 auto;width:700px;padding:10px;border:1px dashed #000;}

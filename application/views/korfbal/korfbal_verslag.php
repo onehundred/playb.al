@@ -105,6 +105,7 @@
     </div>
     <aside>
         <div class="gameLeft">
+        	<p id="replay">Volledige replay</p>
             <div id="links">
                 <input type="hidden" id="wedstrijdid" value="<?php echo $this->uri->segment('4');?>">
                 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>">

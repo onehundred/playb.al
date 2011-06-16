@@ -16,17 +16,19 @@ foreach($training->result() as $row){
             	echo '<div class="playerMale">';
             }
 		?>
+		<header class="playerHeader">
             <p class="number"><?php echo $row->rugnummer;?></p>
-            <span class="name">
-            <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></a></p>
-            <p class="lastname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->achternaam;?></a> </p>
-            </span>
+            <span class="name"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>">
+            <p class="firstname"><?php echo $row->voornaam;?></p>
+            <p class="lastname"><?php echo $row->achternaam;?></p>
+            </a> </span>
             <p class="gender">
                 <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" ondragstart= "return false" />
             </p>
             <br />
             <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
             <p class="price"><?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?> &euro;</p>
+            </header> <!-- end playerHeader -->
             <div id="rightProgress">
                 <section>
                     <p id="skillTitle">rebound: </p>
@@ -149,15 +151,15 @@ foreach($training->result() as $row){
 	$energie = $row->energie;
 
 } ?>
-	   <?php if(!isset($alien)){ ?>
+        <?php if(!isset($alien)){ ?>
         <div>
-            <section><figure class="icon" id="gameTraining"></figure>
+            <section>
+                <figure class="icon" id="gameTraining"></figure>
                 <h2>training</h2>
                 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>"/>
                 <input type="hidden" id="energie" value="<?php echo $energie;?>"/>
-           
                 Een training kost 30 van je energiepunten, je hebt momenteel <?php echo $energie; ?> energiepunten.
-                     <select class="target" id="trainingSkill">
+                <select class="target" id="trainingSkill">
                     <option value="stamina" selected="selected">Stamina</option>
                     <option value="passing">Passing</option>
                     <option value="shotpower">Shotkracht</option>
@@ -166,13 +168,13 @@ foreach($training->result() as $row){
                     <option value="playmaking">Playmaking</option>
                     <option value="intercepting">Intercepting</option>
                 </select>
-                <p style="text-decoration:underline; color:blue; cursor: pointer;" id="training">Train nu.</p>
+                <p class="question" id="training">trainen</p>
             </section>
         </div>
-       <?php } ?> 
+        <?php } ?>
         <div>
             <section>
-            <figure class="icon" id="gamePlayers"></figure>
+                <figure class="icon" id="gamePlayers"></figure>
                 <h2>spelers</h2>
                 <p><a id="watchSkills" href="#">skills bekijken</a><a id="hideSkills" style="display: none;" href="#">skills verbergen</a></p>
                 <p><a id="watchProgress" href="#">vordering bekijken</a><a id="hideProgress" style="display: none;" href="#">vordering verbergen</a></p>
@@ -292,16 +294,16 @@ foreach($training->result() as $row){
             </section>
         </div>
         <div class="chart_container">
-        <section>
-         <figure class="icon" id="gameGraph"></figure>
-            <h2>team skills</h2>
-            <canvas id="chartTeamSkills" width="390" height="350"> uw browser ondersteunt dit niet. </canvas>
-</section>
+            <section>
+                <figure class="icon" id="gameGraph"></figure>
+                <h2>team skills</h2>
+                <canvas id="chartTeamSkills" width="390" height="350"> uw browser ondersteunt dit niet. </canvas>
+            </section>
         </div>
         <?php if(!isset($alien)){ ?>
         <div>
             <section>
-         <figure class="icon" id="gameCalendar"></figure>            
+                <figure class="icon" id="gameCalendar"></figure>
                 <h2>laatst getraind op</h2>
                 <p>test</p>
                 <p>datum</p>

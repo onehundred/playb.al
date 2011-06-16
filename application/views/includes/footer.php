@@ -57,19 +57,10 @@
     </footer>
 
 <script src="<?php echo base_url();?>js/jquery.zrssfeed.min.js"></script>
-<!--
-/*
-<script type="text/javascript"> 
-$('#twitter_status').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=07185e6fedce25a36a4b39cd537f98e1&_render=rss', {    limit: 2  });
-$('#twitter_update').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=07185e6fedce25a36a4b39cd537f98e1&_render=rss', {    limit: 1  });
 
-
-</script>
-*/
--->
 <script type="text/javascript">
 $(document).ready(function () {
-$('#twitter_status').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=07185e6fedce25a36a4b39cd537f98e1&_render=rss', {    limit: 1  });
+$('#twitter_status').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=07185e6fedce25a36a4b39cd537f98e1&_render=rss', {    limit: 1, header: false, titletag: false, date: false  });
 
 $('#twitter_update').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=fa9fa99002ab82cad3452ef36de1ba79&_render=rss', {    limit: 1  });
 

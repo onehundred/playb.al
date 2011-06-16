@@ -390,24 +390,48 @@ height: 500px;
   cursor: default;
 }
 .gameRight .name {
-  padding: 10px;
+  padding: 5px 10px 5px 10px;
+  -webkit-transition-duration: 1.6s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-duration: 1.6s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-duration: 1.6s;
+  -o-transition-timing-function: ease-in-out;
+  -ms-transition-duration: 1.6s;
+  -ms-transition-timing-function: ease-in-out;
+  transition-duration: 1.6s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: #CCCCCC;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
 }
 .gameRight .name:hover {
-  background-color: #EB1239;
+  background-color: #CCCCCC;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -webkit-transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-duration: 0.1s;
+  -o-transition-timing-function: ease-in-out;
+  -ms-transition-duration: 0.1s;
+  -ms-transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
   cursor: pointer;
 }
 .gameRight .firstname {
-  text-transform: capitalize;
-  display: inline;
   padding-right: 7px;
-}
-.gameRight .lastname {
-  text-transform: uppercase;
-  display: inline;
-}
-.gameRight .gender {
-  display: inline;
-  line-height: 30px;
 }
 .gameRight .age {
   display: inline;
@@ -422,15 +446,9 @@ height: 500px;
 .gameRight #rightProgress {
   width: 160px;
   float: right;
-  margin: 15px 0 0 0;
-  /* display: none; */
-
 }
 .gameRight #leftProgress {
   width: 160px;
-  margin: 15px 0 0 0;
-  /* display: none; */
-
 }
 .playerFemale section:nth-child(2),
 .playerFemale section:nth-child(4),
@@ -441,6 +459,12 @@ height: 500px;
 .playerMale section:nth-child(6),
 .playerMale section:nth-child(8) {
   display: none;
+}
+.playerHeader {
+  height: 60px;
+  background: aqua;
+  padding: 8px 0 4px 0;
+  margin: 0 0 4px 0;
 }
 .rebound,
 .passing,
@@ -936,7 +960,7 @@ p.sliderCopy {
   float: left;
 }
 .sportsChoice figure {
-  margin-top: 10%;
+  margin-top: 15%;
 }
 .gallery article {
   width: 1168px;
@@ -1140,7 +1164,6 @@ a#closeLogin img:hover, a#closeProfile img:hover, a#closeOops img:hover {
   transition-timing-function: ease-in-out;
 }
 #oops {
-  display: none;
   background: url(../img/boxbg.png) no-repeat 2px 6px;
   position: absolute;
   padding: 30px;
@@ -1164,13 +1187,6 @@ a#closeLogin img:hover, a#closeProfile img:hover, a#closeOops img:hover {
   z-index: 100;
   top: 10px;
   left: 10px;
-}
-.teamPosition {
-  float: left;
-  position: relative;
-  bottom: 215px;
-  left: 12px;
-  width: 250px;
 }
 /*
 .stripe1 {

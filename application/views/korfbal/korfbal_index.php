@@ -27,7 +27,7 @@
                     <section>
                         <figure class="icon" id="gameTweets"></figure>
                         <h2> nieuws</h2>
-                        <p id="twitter_nieuws"></p>
+                        <div id="twitter_nieuws"></div>
                         <!-- tweets van @playb_al zonder mentions --> 
                         
                     </section>
@@ -36,7 +36,7 @@
                     <section>
                         <figure class="icon" id="gameTweets"></figure>
                         <h2> status</h2>
-                        <p id="twitter_status"></p>
+                        <div id="twitter_status"></div>
                         
                         <!-- tweets van @playb_al met #status --> 
                     </section>

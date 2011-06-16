@@ -54,7 +54,7 @@
 <!-- jquery lokaal voor offline productie -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
 <!-- <script src="http://playbaleindwerk.appspot.com/js/jquery.mediaqueries.js"></script> -->
-<script src="<?php echo base_url();?>js/jquery.jtwitter.js"></script> 
+<!-- /* <script src="<?php echo base_url();?>js/jquery.jtwitter.js"></script>  */ -->
 <script src="<?php echo base_url();?>js/base.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/galleryGame.js"></script>
 <script src="http://playbaleindwerk.appspot.com/js/touchswipe.js"></script>

@@ -7,10 +7,10 @@
 	$(window).load(function(){
 		
 		// images infaden voor flash te vermijden
-		$('#korfbalbg, #basketbalbg, #volleybalbg').fadeIn(500);
+		$('.korfbal img, .basketbal img, .vollebal img').fadeIn(500);
 		
 		// clone image
-		$('#korfbalbg, #basketbalbg, #volleybalbg').each(function(){
+		$('.korfbal img, .basketbal img, .volleybal img').each(function(){
 			var el = $(this);
 			el.css({"position":"absolute"}).wrap("<div class='img_wrapper' style='display: inline-block'>").clone().addClass('img_grayscale').css({"position":"absolute","z-index":"2","opacity":"0"}).insertBefore(el).queue(function(){
 				var el = $(this);
@@ -21,12 +21,12 @@
 		});
 		
 		// Fade image 
-		$('#korfbalbg, #basketbalbg, #volleybalbg').mouseover(function(){
-			$(this).parent().find('img:first').stop().animate({opacity:1}, 100);
+		$('.korfbal img, .basketbal img, .volleybal img').mouseover(function(){
+			$(this).parent().find('img:first').stop().animate({opacity:1}, 1000);
 		})
 
 		$('.img_grayscale').mouseout(function(){
-			$(this).stop().animate({opacity:0}, 1600);
+			$(this).stop().animate({opacity:0}, 2500);
 		});		
 	});
 	

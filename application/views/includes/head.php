@@ -57,7 +57,7 @@
 <script src="<?php echo base_url();?>js/jquery.cycle.min.js"></script>
 <script src="<?php echo base_url();?>/js/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js"></script>
 <script src="<?php echo base_url();?>/js/touchswipe.js"></script>
-<script src="<?php echo base_url();?>js/jquery.jtwitter.js"></script> 
+<!-- /* <script src="<?php echo base_url();?>js/jquery.jtwitter.js"></script>  */ -->
 <script src="<?php echo base_url();?>/js/base.js"></script>
 <script src="<?php echo base_url();?>/js/jquery.transform.js"></script>
 <script src="<?php echo base_url();?>/js/jquery.multiple-bgs.min.js"></script>

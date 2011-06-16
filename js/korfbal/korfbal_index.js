@@ -1,20 +1,6 @@
 $(document).ready(function(){
 
- $.jTwitter('playb_al',1,'geen', function(userdata){
-	  //Callback functn with the user data as shown above
-	  $('#twitter_nieuws').append(userdata.results[0].text);
-	  
-	});
-  $.jTwitter('playb_al',1,'status', function(userdata){
-	  //Callback functn with the user data as shown above
-	  $('#twitter_status').append(userdata.results[0].text);
-	  
-	});
- $.jTwitter('playb_al',1,'update', function(userdata){
-	  //Callback functn with the user data as shown above
-	  $('#twitter_update').append(userdata.results[0].text);
-	  
-	});
+
 	
 	get_berichten(0);
 	get_berichten(1);

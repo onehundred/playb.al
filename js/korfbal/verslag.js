@@ -5,7 +5,9 @@ var intervalID;
 
 var spelers = new Array();
 var ball = new Array();
-var tegenstanders = new Array(); 
+var tegenstanders = new Array();
+
+var status = 0; 
 
 
 
@@ -245,7 +247,7 @@ function actie1()
 		if(ball[0].getY() >= HEIGHT/2){
 						ball[0].move(0,0)
 						var naam = spelers[0].getNaam();
-						$().toastmessage('showNoticeToast', 'Speler met nummer'+naam+' maakt een mooie inloper!');
+						$().toastmessage('showNoticeToast', naam+' maakt een mooie inloper!');
 						//alert("Speler met nummer"+naam+" maakt een mooie inloper");
 						$('#links').unblock();
 						clearInterval(intervalID);
@@ -658,6 +660,7 @@ $(document).ready(function()
 	$('#loading').hide();
 	$('#prestaties').hide();
 	$('.gameLeft').hide();
+	$('#terminating').hide();
 	
 	
 	$('#loading').ajaxSuccess(function() {
@@ -776,19 +779,66 @@ $(document).ready(function()
 						start(id,naam_thuisteam, naam_uitteam);
 					});
 					
-					$('#replay').click(function(){
-							for(var i =0;i<minuten.length-1;i++)
-        						{
-        							start(acties[i],naam_thuisteam, naam_uitteam);
-        						}
 					
+					var infLoopStop=true;
+					var infLoop=null;
+					var show_things = null;
+					var j=0;
+					
+					$('#replay').click(function(){
+						$('#replay').hide();
+						$('#links').hide();
+						infLoopStop = false;
+						infLoop();
+					});			
+					
+					
+					$('#stop_replay').click(function(){
+						infLoopStop=true;
+						infLoop();
+						j=0;
 					});
+				
+					show_things = function(){
+						$('#terminating').hide();
+						$('#replay').show();
+						$('#links').show();
+					}
+					
+					
+					infLoop=function(){
+							
+					 		if(j == minuten.length-1){
+								infLoopStop=true;
+								$('#links').show();
+								$('#replay').show();
+								j=0;
+							}
+							if(infLoopStop == false){
+								$('#replay').hide();
+								start(acties[j],naam_thuisteam, naam_uitteam)
+								window.setTimeout(infLoop,7000);
+								j++;
+							}
+							if(infLoopStop == true){
+								$('#terminating').show();
+								window.setTimeout(show_things,7000);
+								infLoopStop = null;
+							}
+
+								 
+					};
+					
+				
+					
+					
+					
         		
         		}
         		
         		});
         		
-        		
+     		
      //functie die de namen van de ploegen gaat ophalen   		
 	function get_teamnaam(teamid){
 		var teamnaam = ''; 

@@ -182,9 +182,11 @@ foreach($training->result() as $row){
                 <figure class="icon" id="gameView"></figure>                
                 <p><a id="watchProgress" href="#">vordering bekijken</a><a id="hideProgress" style="display: none;" href="#">vordering verbergen</a></p>
    <ul id="filters">
-                      <p> <figure class="icon" id="gameView"></figure>       <li><a href="#" data-filter="*">mannen & vrouwen</a></li></p>
-                        <li><a href="#" data-filter=".playerMale">mannen</a></li>
-                        <li><a href="#" data-filter=".playerFemale">vrouwen</a></li>
+ <figure class="icon" id="gameView"></figure>                         <p><a href="#" data-filter=".playerFemale">vrouwen</a></p>
+
+                         <figure class="icon" id="gameView"></figure> <p><a href="#" data-filter=".playerMale">mannen</a></p>
+                                                <figure class="icon" id="gameView"></figure>     <p>  <a href="#" data-filter="*">mannen & vrouwen</a></p>
+
                     </ul>
                 <ul id="sort" class="sort option-set">
                     <ul class="sort asc option-set floated clearfix">

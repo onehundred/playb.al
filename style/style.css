@@ -2198,9 +2198,6 @@ select {
   -moz-border-radius: 3px;
   border-radius: 3px;
   -khtml-border-radius: 3px;
-  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  -box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 .reveal-modal .close-reveal-modal {
   font-size: 22px;

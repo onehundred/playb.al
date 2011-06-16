@@ -176,7 +176,7 @@ foreach($training->result() as $row){
         </div>
         <?php } ?>
         <div>
-            <section>
+            <section class="sortingFeatures">
                 <figure class="icon" id="gamePlayers"></figure>
                 <h2>spelers</h2>
                 <figure class="icon" id="gameView"></figure>
@@ -296,7 +296,7 @@ foreach($training->result() as $row){
                 <figure class="icon" id="gameGraph"></figure>
                 <h2>team skills</h2>
                 <p>
-                <canvas id="chartTeamSkills" width="360" height="350"> uw browser ondersteunt dit niet. </canvas>
+                <canvas id="chartTeamSkills" width="360" height="350">jammer, je browser ondersteunt geen canvas.</canvas>
                 </p>
             </section>
         </div>

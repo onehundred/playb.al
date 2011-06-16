@@ -232,7 +232,7 @@ $("#transfer").submit(function(){
 			if(!isset($alien)){?>
     
     <!--p tag en geen a href omwille van verspringen van pagina-->
-    <p id="spelertransfer" style="text-decoration:underline; cursor:pointer;">Plaats deze speler op de transfer markt</p>
+    <p class="question" id="spelertransfer">speler verkopen</p>
     <div id="slide" style=" display:none;">
         <form id="transfer" onsubmit="return false;">
             <label>Vraagprijs:</label>

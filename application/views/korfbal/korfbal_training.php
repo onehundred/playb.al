@@ -140,7 +140,7 @@ foreach($training->result() as $row){
 
 
  ?>
-        <div id="myModal" class="reveal-modal"> <a class="close-reveal-modal">&#215;</a> </div>
+
     </div>
     <!-- end gameRight --> 
 </div>
@@ -434,5 +434,6 @@ $('#filters a').click(function(){
     </div>
     <!-- end gameLeft --> 
 </aside>
+        <div id="myModal" class="reveal-modal"> <a class="close-reveal-modal"><img src="<?php echo base_url();?>img/close.png" /></a> </div>
 </div>
 <!-- end game --> 

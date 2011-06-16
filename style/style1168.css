@@ -388,6 +388,7 @@ height: 500px;
   float: left;
   line-height: 45px;
   cursor: default;
+  color: #222222;
 }
 .gameRight .name {
   padding: 5px 10px 5px 10px;
@@ -462,9 +463,10 @@ height: 500px;
 }
 .playerHeader {
   height: 60px;
-  background: aqua;
+  border: 1px solid #E5E5E5;
+  background: none;
   padding: 8px 0 4px 0;
-  margin: 0 0 4px 0;
+  margin: 0 0 2px 0;
 }
 .rebound,
 .passing,

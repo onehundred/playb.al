@@ -11,7 +11,7 @@
 	<?php }
 		if($update == 'true'){ ?>
 		<?php echo validation_errors(); ?>
-		<form method="post" action="http://playb.al/index.php/main/update_password/<?php echo $this->uri->segment('3');?>/<?php echo $this->uri->segment('4');?>">
+		<form method="post" action="<?php echo base_url();?>index.php/main/update_password/<?php echo $this->uri->segment('3');?>/<?php echo $this->uri->segment('4');?>">
 			<label>Paswoord:</label><input type="password" name="password1"/>
 			<label>Herhaal paswoord:</label><input type="password" name="password2"/>
 			<input type="submit"/>
@@ -35,7 +35,7 @@
 	<h3>Paswoord vergeten?</h3>
 	<p>Geef hieronder uw e-mail adres in, dan sturen we u een mail met verdere instructies.</p>
 	
-	<form method="post" action="http://playb.al/index.php/main/resend_password">
+	<form method="post" action="<?php echo base_url();?>index.php/main/resend_password">
 		<input type="input" name="email"/>
 		<input type="submit"/>
 	

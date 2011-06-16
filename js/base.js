@@ -479,6 +479,7 @@ $(function() {
 	}
 	
 	$('#signupform').submit(function() {
+		var base_url = "http://"+document.location.hostname;
 		var status = 0;
 		$('#personal_error').text('');
 		$('#username_error').text('');
@@ -494,7 +495,7 @@ $(function() {
   		
 		$.ajax({
     			type: "POST",
-    			url: "../../index.php/main/check_username",
+    			url: base_url+"/index.php/main/check_username",
     			data:  { username: username,
     					 email: email,    
             			
@@ -608,7 +609,7 @@ $(function() {
 					if(status == 10){
 			  			$.ajax({
 			    			type: "POST",
-			    			url: "../../index.php/main/create_user",
+			    			url: base_url+"/index.php/main/create_user",
 			    			data:  { username: username,
 			            			 password: password, 
 			            			 voornaam: voornaam,
@@ -618,7 +619,7 @@ $(function() {
 			        				},
 			    			dataType: "json",
 			        		success: function(data){
-			        			window.location = "../../index.php/main/signup_success"
+			        			window.location = base_url+"/index.php/main/signup_success"
 			    			  }
 			  		
 			  			});

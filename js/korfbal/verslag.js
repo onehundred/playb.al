@@ -10,7 +10,7 @@ var tegenstanders = new Array();
 
 
 // Main Function To Start
-function start(id)
+function start(id,thuisteam,uitteam)
 {
 	//alert(id);
 	g = $('#canvas')[0].getContext("2d");
@@ -20,36 +20,71 @@ function start(id)
 	
 	
     
-	spelers[0] = new Speler1((WIDTH/2)-40,HEIGHT/2,10,"#0D0","1","thuis");
-	spelers[1] = new Speler1((WIDTH/100)*30,(HEIGHT/100)*18,10, "#0D0","2","thuis");
-	spelers[2] = new Speler1((WIDTH/100)*24,(HEIGHT/100)*85,10,"#0D0","3","thuis");
-	spelers[3] = new Speler1((WIDTH/100)*5,(HEIGHT/100)*50, 10, "#0D0","4","thuis");
-	spelers[4] = new Speler1((WIDTH/2)+40,HEIGHT/2,10,"#0D0","5","thuis");
-	spelers[5] = new Speler1((WIDTH/100)*73,(HEIGHT/100)*18,10,"#0D0","6","thuis");
-	spelers[6] = new Speler1((WIDTH/100)*79,(HEIGHT/100)*85,10,"#0D0","7","thuis");
-	spelers[7] = new Speler1((WIDTH/100)*90,(HEIGHT/100)*50,10,"#FD0","8","thuis");
+	spelers[0] = new Speler1((WIDTH/2)-40,HEIGHT/2,10,"#0D0",thuisteam,"thuis");
+	spelers[1] = new Speler1((WIDTH/100)*30,(HEIGHT/100)*18,10, "#0D0",thuisteam,"thuis");
+	spelers[2] = new Speler1((WIDTH/100)*24,(HEIGHT/100)*85,10,"#0D0",thuisteam,"thuis");
+	spelers[3] = new Speler1((WIDTH/100)*5,(HEIGHT/100)*50, 10, "#0D0",thuisteam,"thuis");
+	spelers[4] = new Speler1((WIDTH/2)+40,HEIGHT/2,10,"#0D0",thuisteam,"thuis");
+	spelers[5] = new Speler1((WIDTH/100)*73,(HEIGHT/100)*18,10,"#0D0",thuisteam,"thuis");
+	spelers[6] = new Speler1((WIDTH/100)*79,(HEIGHT/100)*85,10,"#0D0",thuisteam,"thuis");
+	spelers[7] = new Speler1((WIDTH/100)*90,(HEIGHT/100)*50,10,"#FD0",thuisteam,"thuis");
 	
 	
-	tegenstanders[0] = new Speler1((WIDTH/2)-70,HEIGHT/2,10,"#FD0","9","uit");
-	tegenstanders[1] = new Speler1((WIDTH/100)*27,(HEIGHT/100)*18,10, "#FD0","10","uit");
-	tegenstanders[2] = new Speler1((WIDTH/100)*21,(HEIGHT/100)*85,10,"#FD0","11","uit");
-	tegenstanders[3] = new Speler1((WIDTH/100)*8,(HEIGHT/100)*50, 10, "#FD0","12","uit");
-	tegenstanders[4] = new Speler1((WIDTH/2)+15,HEIGHT/2,10,"#FD0","13","uit");
-	tegenstanders[5] = new Speler1((WIDTH/100)*70,(HEIGHT/100)*18,10,"#FD0","14","uit");
-	tegenstanders[6] = new Speler1((WIDTH/100)*76,(HEIGHT/100)*85,10,"#FD0","15","uit");
-	tegenstanders[7] = new Speler1((WIDTH/100)*93,(HEIGHT/100)*50,10,"#0D0","16","uit");
+	tegenstanders[0] = new Speler1((WIDTH/2)-70,HEIGHT/2,10,"#FD0",uitteam,"uit");
+	tegenstanders[1] = new Speler1((WIDTH/100)*27,(HEIGHT/100)*18,10, "#FD0",uitteam,"uit");
+	tegenstanders[2] = new Speler1((WIDTH/100)*21,(HEIGHT/100)*85,10,"#FD0",uitteam,"uit");
+	tegenstanders[3] = new Speler1((WIDTH/100)*8,(HEIGHT/100)*50, 10, "#FD0",uitteam,"uit");
+	tegenstanders[4] = new Speler1((WIDTH/2)+15,HEIGHT/2,10,"#FD0",uitteam,"uit");
+	tegenstanders[5] = new Speler1((WIDTH/100)*70,(HEIGHT/100)*18,10,"#FD0",uitteam,"uit");
+	tegenstanders[6] = new Speler1((WIDTH/100)*76,(HEIGHT/100)*85,10,"#FD0",uitteam,"uit");
+	tegenstanders[7] = new Speler1((WIDTH/100)*93,(HEIGHT/100)*50,10,"#0D0",uitteam,"uit");
 	
 	ball[0] = new Ball(380, 200, 5, "#000");
 	ball[1] = new Ball(420, 200, 5, "#000");
 	
 	if(id === '1'){
-		intervalID = setInterval(actie9, 10);
+		intervalID = setInterval(actie1, 10);
 		return intervalID;	}
 	if(id === '2'){
+		intervalID = setInterval(actie2, 10);
+		return intervalID;
+	}
+	if(id === '3'){
+		intervalID = setInterval(actie3, 10);
+		return intervalID;
+	}
+	if(id === '4'){
+		intervalID = setInterval(actie4, 10);
+		return intervalID;
+	}
+	if(id === '5'){
+		intervalID = setInterval(actie5, 10);
+		return intervalID;
+	}
+	if(id === '6'){
+		intervalID = setInterval(actie6, 10);
+		return intervalID;
+	}
+	if(id === '9'){
 		intervalID = setInterval(actie9, 10);
 		return intervalID;
 	}
-	
+	if(id === '10'){
+		intervalID = setInterval(actie10, 10);
+		return intervalID;
+	}
+	if(id === '11'){
+		intervalID = setInterval(actie11, 10);
+		return intervalID;
+	}
+	if(id === '12'){
+		intervalID = setInterval(actie12, 10);
+		return intervalID;
+	}
+	if(id === '13'){
+		intervalID = setInterval(actie13, 10);
+		return intervalID;
+	}
 }
 
 //ball class
@@ -119,9 +154,9 @@ function Speler1(x,y,r,color,naam, team)
 	
 	this.text = function()
 	{
-		g.fillStyle = "#FFF";
-		g.font = '18px LeagueGothicRegular';
-		g.fillText( this.naam,this.x + 10, this.y + 21);
+		/*g.fillStyle = "#FFF";
+		g.font = '12px LeagueGothicRegular';
+		g.fillText( this.naam,this.x - 5, this.y + 40);*/
 		
 		
 	}
@@ -254,7 +289,7 @@ function actie2()
 	if(i > 520){
 		ball[0].move(0, 0);
 		var naam = spelers[2].getNaam();
-		$().toastmessage('showNoticeToast', 'Speler met nummer'+naam+' maakt een mooie inloper!');
+		$().toastmessage('showNoticeToast', naam+' maakt een mooie inloper!');
 		$('#links').unblock();
 		clearInterval(intervalID);
 		i = 1;
@@ -288,7 +323,7 @@ function actie3(){
 	if( i > 285){
 		ball[0].move(0, 0);
 		var naam = spelers[3].getNaam();
-		$().toastmessage('showNoticeToast', 'Speler met nummer '+naam+' trekt weg onder de paal. Goal!');
+		$().toastmessage('showNoticeToast', naam+' scoort door een wegtrekker onder de paal!');
 		$('#links').unblock();
 		clearInterval(intervalID);
 		i = 1;
@@ -325,7 +360,7 @@ function actie4(){
 	if(i > 177){
 		ball[0].move(0, 0);
 		var naam = spelers[3].getNaam();
-		$().toastmessage('showNoticeToast', 'Ver shot van speler met nummer '+naam+'. Goal!');
+		$().toastmessage('showNoticeToast', naam+' doet een ver shot. Goal!');
 		$('#links').unblock();
 		clearInterval(intervalID);
 		i = 1;
@@ -353,7 +388,7 @@ function actie5(){
 	if(i > 273){
 		ball[0].move(0, 0);
 		var naam = spelers[2].getNaam();
-		$().toastmessage('showNoticeToast', 'Ver shot van speler met nummer '+naam+'. Goal!');
+		$().toastmessage('showNoticeToast', naam+' doet een ver shot. Goal!');
 		$('#links').unblock();
 		clearInterval(intervalID);
 		i = 1;
@@ -401,7 +436,7 @@ function actie6(){
 	if(i > 330){
 		ball[0].move(0, 0);
 		var naam = spelers[2].getNaam();
-		$().toastmessage('showNoticeToast', 'Speler met nummer'+naam+' maakt een prachtige inloper!');
+		$().toastmessage('showNoticeToast', naam+' maakt een prachtige inloper!');
 		$('#links').unblock();
 		clearInterval(intervalID);
 		i = 1;
@@ -448,13 +483,164 @@ function actie9(){
 	if(i > 580){
 		ball[1].move(0, 0);
 		var naam = tegenstanders[5].getNaam();
-		$().toastmessage('showNoticeToast', 'Speler met nummer'+naam+' maakt een mooie inloper!');
+		$().toastmessage('showNoticeToast', naam+' maakt een prachtige inloper!');
 		$('#links').unblock();
 		clearInterval(intervalID);
 		i = 1;
 	}
 	//op het einde i terug resetten naar 1
+}
 
+function actie10(){
+	i++;
+	clear();
+	draw();
+	drawPlayers();
+	ball[1].draw();
+	
+	if( i > 0 && i < 60){
+		ball[1].move(2, 2);
+		tegenstanders[6].move(-1.2, -0.5);
+		tegenstanders[7].move(-1, -0);
+		spelers[7].move(-1, -1);
+	}
+	if( i >= 150 && i < 200){
+		ball[1].move(3, -0.5);
+	}
+	
+	if( i >= 70 && i < 180){
+		
+		tegenstanders[7].move(0, 0.7);
+	
+	}
+	if( i >= 200 && i < 295){
+		ball[1].move(-0.1, -1);
+	}
+	if( i > 295){
+		ball[1].move(0, 0);
+		var naam = tegenstanders[7].getNaam();
+		$().toastmessage('showNoticeToast', naam+' scoort door een wegtrekker onder de paal!');
+		$('#links').unblock();
+		clearInterval(intervalID);
+		i = 1;
+	}
+
+}
+
+function actie11(){
+	i++;
+	clear();
+	draw();
+	drawPlayers();
+	ball[1].draw();
+		if(i < 180){
+		spelers[1].move(0.5, 0);
+		spelers[2].move(0.8, 0);
+		tegenstanders[1].move(0.5, 0);
+		tegenstanders[2].move(0.8, 0);
+		
+	}
+	if( i > 0 && i < 100){
+		ball[1].move(1.5, 1.5);
+		tegenstanders[6].move(-0.5,0);
+		
+	}
+	if( i >= 110 && i< 155){
+		ball[1].move(-2, -2);
+		tegenstanders[4].move(1, 1.3);
+		spelers[4].move(2, 1);
+	}
+	if(i >= 170){
+		ball[1].move(3, -0.9);
+	}
+	
+	if(i > 236){
+		ball[1].move(0, 0);
+		var naam = tegenstanders[4].getNaam();
+		$().toastmessage('showNoticeToast', naam+' doet een ver shot. Goal!');
+		$('#links').unblock();
+		clearInterval(intervalID);
+		i = 1;
+	}
+}
+
+function actie12(){
+	i++;
+	clear();
+	draw();
+	drawPlayers();
+	ball[1].draw();
+	if( i > 0 && i < 60){
+		ball[1].move(1.5, 1.5);
+		spelers[6].move(-1, -0.5);
+		spelers[5].move(0, 0.5);
+		tegenstanders[6].move(-2, -1);
+		tegenstanders[5].move(0, -1);
+	}
+	if( i >= 70 && i< 200){
+		ball[1].move(0.5, -2);
+	}
+	if(i >= 210){
+			ball[1].move(1.2, 2);
+	
+	}
+	if(i > 295){
+		ball[1].move(0, 0);
+		var naam = tegenstanders[5].getNaam();
+		$().toastmessage('showNoticeToast', naam+' doet een ver shot. Goal!');
+		$('#links').unblock();
+		clearInterval(intervalID);
+		i = 1;
+
+	}
+}
+function actie13(){
+	i++;
+	clear();
+	draw();
+	drawPlayers();
+	ball[1].draw();
+	
+	if( i > 0 && i < 80){
+		ball[1].move(2.4, -2);
+		tegenstanders[5].move(0.5, -0.5);
+		spelers[6].move(0.2, 0);
+		spelers[5].move(0.2, 0);
+	}
+	
+	if(i >= 85 && i < 165){
+		ball[1].move(2, 2);
+		tegenstanders[4].move(3, 0.5);
+		spelers[4].move(2.5, 0.3);
+	}
+	if(i >= 170 && i < 270){
+		tegenstanders[6].move(-0.5, -0.5);
+		ball[1].move(-2, 1);
+		
+	}
+	if(i >= 280 && i < 345){
+		ball[1].move(1.5, -1);
+		tegenstanders[5].move(-2, 1);
+		spelers[5].move(-2, 1);
+	}
+	if(i >= 355 && i < 400){
+		tegenstanders[5].move(3.5, 2);
+		spelers[5].move(0.5, 0.5);
+	}
+	if(i >= 400 && i < 415){
+		ball[1].move(-1.5, -2.5);
+	}
+
+	if(i > 420){
+		ball[1].move(0, 0);
+		var naam = spelers[2].getNaam();
+		$().toastmessage('showNoticeToast', naam+' maakt een prachtige inloper!');
+		$('#links').unblock();
+		clearInterval(intervalID);
+		i = 1;
+
+	
+	}
 
 }
 //elke keer moeten de circles terug verdwijnen van het canvas
@@ -514,22 +700,20 @@ $(document).ready(function()
         			//alert(verslag['thuisteamid']);
         			//alert(verslag['uitteamid']);
         			
-        			for(var i in minuten)
+        			
+        			for(var i =0;i<minuten.length-1;i++)
         			{
-        				if(acties[i] === '1'){
-        					$('#links').append('<p id="1" class="actie" style="text-decoration:underline; cursor:pointer;">In minuut '+minuten[i]+' scoort: '+spelers[i]+' de '+tussenstand[i]+'</p>')
-        				
-        				}
-        				if(acties[i] === '2'){
-        					$('#links').append('<p id="2" class="actie" style="text-decoration:underline; cursor:pointer;">In minuut '+minuten[i]+' scoort: '+spelers[i]+' de '+tussenstand[i]+'</p>')
-        				
-        				}
+        			
+        			$('#links').append('<p id="'+acties[i]+'" class="actie" style="text-decoration:underline; cursor:pointer;">In minuut '+minuten[i]+' scoort: '+spelers[i]+' de '+tussenstand[i]+'</p>');
         			}
         			
         			//teamnamen appenden
         			
-        			$('#naam_thuisteam').append(get_teamnaam(verslag['thuisteamid']));
-        			$('#naam_uitteam').append(get_teamnaam(verslag['uitteamid']));
+        			var naam_thuisteam = get_teamnaam(verslag['thuisteamid']);
+        			var naam_uitteam = get_teamnaam(verslag['uitteamid']) 
+        			
+        			$('#naam_thuisteam').append(naam_thuisteam);
+        			$('#naam_uitteam').append(naam_uitteam);
         			
  					//thuisteam
  					$('#thuisteam #rebound1 #speler').append(get_spelernaam(opst_thuisteam[0],verslag['thuisteamid']));
@@ -580,7 +764,17 @@ $(document).ready(function()
  					
  					$('#uitteam #attack4 #speler').append(get_spelernaam(opst_uitteam[7],verslag['uitteamid']));
  					$('#uitteam #attack4 #prestatie').append(aantal_ballen(prest_uitteam[7]));
-     		
+     				
+     				
+     					//clicken om een actie te bekijken
+					$(".actie").live('click', function(){
+						$('#links').block({ 
+				                message: '<h4>Even wachten tot de animatie is afgelopen</h4>', 
+				                css: { border: '1px solid #000' } 
+				            }); 
+						var id = $(this).attr('id');
+						start(id,naam_thuisteam, naam_uitteam);
+					});
         		
         		}
         		
@@ -635,7 +829,7 @@ $(document).ready(function()
         			
         			
         		},
-        		async:false //asynchronous om da variablen van een ajax call global te kunnen maken
+        		async:false //async:false om da variablen van een ajax call global te kunnen maken
         		
 			});
 			//alert(voornaam);
@@ -690,13 +884,5 @@ $(document).ready(function()
 	}
 	
 	
-	//clicken om een actie te bekijken
-	$(".actie").live('click', function(){
-		$('#links').block({ 
-                message: '<h4>Even wachten tot de animatie is afgelopen</h4>', 
-                css: { border: '1px solid #000' } 
-            }); 
-		var id = $(this).attr('id');
-		start(id);
-	});
+
 });

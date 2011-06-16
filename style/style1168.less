@@ -342,26 +342,36 @@ height: 500px;
 	float: left;
 	line-height: 45px;
  .cursor;
+ color: #222222;
 }
 .gameRight .name {
-	padding: 10px;
+	padding: 5px 10px 5px 10px;
+	.transitionOff;
+	border: 1px solid rgba(0, 0, 0, 0);
+		background-color: #CCCCCC;
+	background-color: rgba(0, 0, 0, 0.05);
+border: 1px solid rgba(0, 0, 0, 0.15);
+.borderRadius;
 }
 .gameRight .name:hover {
-	background-color: #EB1239;
+	background-color: #CCCCCC;
+	background-color: rgba(0, 0, 0, 0.2);
+border: 1px solid rgba(0, 0, 0, 0.25);
+.borderRadius;
+.transitionOn;
 	cursor: pointer;
+	
 }
 .gameRight .firstname {
-	text-transform: capitalize;
-	display: inline;
+
 	padding-right: 7px;
 }
 .gameRight .lastname {
-	text-transform: uppercase;
-	display: inline;
+
 }
 .gameRight .gender {
-	display: inline;
-	line-height: 30px;
+
+
 }
 .gameRight .age {
 	display: inline;
@@ -376,16 +386,23 @@ height: 500px;
 .gameRight #rightProgress {
 	width: 160px;
 	float: right;
-	margin: 15px 0 0 0;/* display: none; */
+
 }
 .gameRight #leftProgress {
 	width: 160px;
-	margin: 15px 0 0 0;/* display: none; */
+
 }
 .playerFemale section:nth-child(2), .playerFemale section:nth-child(4), .playerFemale section:nth-child(6), .playerFemale section:nth-child(8), .playerMale section:nth-child(2), .playerMale section:nth-child(4), .playerMale section:nth-child(6), .playerMale section:nth-child(8) {
 	display: none;
 }
 .playerFemale section:nth-child(1), .playerFemale section:nth-child(3), .playerFemale section:nth-child(5), .playerFemale section:nth-child(7), .playerMale section:nth-child(1), .playerMale section:nth-child(3), .playerMale section:nth-child(5), .playerMale section:nth-child(7) {
+}
+.playerHeader {
+height: 60px;
+border: 1px solid #E5E5E5;
+background: none;
+padding: 8px 0 4px 0;
+margin: 0 0 2px 0;
 }
 .rebound, .passing, .stamina, .shotprecision, .playmaking, .shotpower, .intercepting, .leadership {
 	display: inline;
@@ -836,7 +853,7 @@ padding: 0 0 0 54px;
 	float: left;
 }
 .sportsChoice figure {
-margin-top: 10%;
+margin-top: 15%;
 }
 .gallery {
 }
@@ -858,9 +875,7 @@ iframe {
 	height: 436px;
 }
 /* LAYOUTS end -------------------------------------------------------------------------------------------------------------*/
-#korfbalbg, #basketbalbg, #volleybalbg {
 
-}
 .korfbal {
 	/* 	top: 0px; */
 
@@ -1007,7 +1022,7 @@ opacity: 1;
 }
 
 #oops {
-display: none;
+
 background: 
 
  url(../img/boxbg.png) no-repeat 2px 6px;
@@ -1045,13 +1060,7 @@ margin: 5px;
 
 
 }
-.teamPosition {
-float: left;
-position: relative;
-bottom: 215px;
-left: 12px;
-width: 250px;
-}
+
 
 /*
 .stripe1 {

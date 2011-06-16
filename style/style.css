@@ -870,6 +870,9 @@ a.tooltip:hover::after {
 #layouts figure {
   float: left;
 }
+.korfbal, .basketbal, .volleybal {
+  display: none;
+}
 .korfbal {
   width: 275px;
   height: 250px;
@@ -1017,8 +1020,10 @@ a.tooltip:hover::after {
   transform: scale(0.88) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 #korfbal, #basketbal, #volleybal {
+  left: 70px;
+  position: absolute;
   cursor: pointer;
-  margin: 60px 10px 0 0;
+  margin: 170px 0px 0 0;
   -moz-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
   -webkit-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
   -o-transform: scale(0.8) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
@@ -1073,6 +1078,40 @@ a.tooltip:hover::after {
   -moz-border-radius: 3px;
   border-radius: 3px;
   -khtml-border-radius: 3px;
+}
+.login, .profile, .createdAccount {
+  display: none;
+  opacity: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 12px;
+  -webkit-border-bottom-left-radius: 12px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 12px;
+  -moz-border-radius-bottomleft: 12px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  position: absolute;
+  padding: 35px;
+  left: 39%;
+  margin-top: 150px;
+  width: 290px;
+  height: 270px;
+  background: /*  url(../img/boxbg_top.png) no-repeat 100% 0%, */
+ url(../img/boxbg.png) no-repeat 2px 6px;
+}
+#oops {
+  display: none;
+  background: url(../img/boxbg.png) no-repeat 2px 6px;
+  position: absolute;
+  padding: 30px;
+  left: 39%;
+  margin-top: 100px;
+  width: 350px;
+  height: 380px;
 }
 #menu {
   padding-top: 10px;
@@ -1234,7 +1273,6 @@ div#profile:active {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 div#profile a {
-  padding: 5px;
   color: #FFFFFF;
 }
 .okay {
@@ -1429,7 +1467,7 @@ div#profile a {
   font-size: 48px;
   position: absolute;
   z-index: 100;
-  top: 185px;
+  top: 190px;
   left: 155px;
 }
 .startgame a:hover {
@@ -1446,14 +1484,19 @@ div#profile a {
   font-family: 'LeagueGothicRegular';
   font-size: 38px;
   padding-left: 15px;
-  position: absolute;
-  bottom: 35px;
   width: 250px;
-  left: -15px;
+  left: -20px;
   text-shadow: 0px 0px 15px #333;
   color: #F7F7F7;
   text-transform: uppercase;
   text-align: right;
+}
+.teamPosition {
+  float: left;
+  position: relative;
+  bottom: 215px;
+  left: 12px;
+  width: 250px;
 }
 .overview {
   padding: 10px 0 0 15px;
@@ -1918,6 +1961,9 @@ select {
 .rssHeader {
   display: none;
 }
+.rssBody div, .rssBody p {
+  display: none;
+}
 #korfbal_signup fieldset {
   border: none;
   width: 320px;
@@ -2124,6 +2170,52 @@ select {
 
   display: block;
   width: 0;
+}
+.trainingPlayerName {
+  margin: 5px 0 5px 0;
+  text-transform: capitalize;
+}
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+.reveal-modal-bg {
+  position: fixed;
+  height: 200%;
+  width: 100%;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  display: none;
+  top: 0;
+  left: 0;
+}
+.reveal-modal {
+  visibility: hidden;
+  width: 520px;
+  background: url(../img/boxbgBig.png) no-repeat;
+  position: absolute;
+  margin-left: 22%;
+  top: 50px;
+  z-index: 101;
+  padding: 30px 40px 34px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  -box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.reveal-modal .close-reveal-modal {
+  font-size: 22px;
+  line-height: .5;
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  color: #aaa;
+  text-shadow: 0 -1px 1px rbga(0, 0, 0, 0.6);
+  font-weight: bold;
+  cursor: pointer;
 }
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footerWrap {

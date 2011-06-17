@@ -108,7 +108,7 @@
         	<p id="replay">Volledige replay</p>
         	<p id="stop_replay">Stop replay</p>
         	
-            <p id="terminating"><img src="<?php echo base_url()?>/img/loading.gif"/></p>
+            <p id="terminating"><img src="<?php echo base_url();?>img/loading.gif"/></p>
         
             <div id="links">
                 <input type="hidden" id="wedstrijdid" value="<?php echo $this->uri->segment('4');?>">

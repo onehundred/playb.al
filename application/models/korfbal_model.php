@@ -1266,5 +1266,48 @@
 		return true;
 	
 	}
+	function get_aantal_wedstrijden($teamid)
+	{
+		
+		$data = array();
+		
+		$this->db->where('FK_team_id', $teamid);
+		$query = $this->db->get('korf_teamstats');
+		
+		foreach($query->result() as $row){
+			$data['overzicht']['gewonnen'] = $row->gewonnen_matchen;
+			$data['overzicht']['verloren'] = $row->verloren_matchen;
+			$data['overzicht']['gelijke'] = $row->gelijke_matchen;
+		
+		}
+		
+		$this->db->where('team_id', $teamid);
+		$query2 = $this->db->get('korf_teams');
+		
+		foreach($query2->result() as $row2){
+			$data['seizoen']['gewonnen'] = $row2->gewonnen;
+			$data['seizoen']['verloren'] = $row2->verloren;
+			$data['seizoen']['gelijke'] = $row2->gelijk;
+		}
+		return $data;
+		
+	}
 	
+	function get_session_teamid()
+		{
+	
+		$userid = $this->session->userdata('user_id');
+	
+		$this->db->select('team_id');
+		$this->db->from('korf_teams');
+		$this->db->join('users', 'user_id = FK_user_id');
+		$this->db->where('user_id', $userid);
+		$query = $this->db->get();
+		$teamid = 0;
+		foreach($query->result() as $row){
+			$teamid = $row->team_id;
+			
+		}
+		return $teamid;
+	}	
 }

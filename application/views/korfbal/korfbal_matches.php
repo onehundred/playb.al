@@ -49,29 +49,52 @@
             <div class="chart_container">
                 <section>
                 <figure class="icon" id="gameGraph"></figure>
-                    <h2>vorig seizoen</h2>
+                    <h2>carriere</h2>
                     <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
                 </section>
             </div>
         </div>
+        <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>"/>
     </aside>
-    <script type="text/javascript">
-     var chart1 = new AwesomeChart('chartCanvas1');
-            chart1.data = [51.62,31.3, 10];
-            chart1.chartType = "pie";
-            chart1.colors = ['#333333', '#808080', '#CCCCCC'];
-            chart1.randomColors = false;
-            chart1.draw();
-            
-              var chart2 = new AwesomeChart('chartCanvas2');
-    /*             chart1.title = ""; */
-            chart2.data = [39.62,51.3, 25];
-            chart2.chartType = "pie";
-    /*             chart1.labels = ['verloren','gewonnen']; */
-            chart2.colors = ['333333', '808080', 'CCCCCC'];
-            chart2.randomColors = false;
-            chart2.draw();
-
+<script type="text/javascript">
+$(document).ready(function(){
+    var teamid = $('#teamid').val();
+    
+    $.ajax({
+    			type: "POST",
+    			url: "<?php echo base_url();?>index.php/json/get_aantal_wedstrijden",
+    			data: { teamid: teamid,
+            			},
+        		dataType: "json",
+        		success: function(data){
+    				
+    					var gewonnen = data['seizoen']['gewonnen'];
+    					var verloren = data['seizoen']['verloren'];
+    					var gelijk =  data['seizoen']['gelijke'];
+    					
+			     		var chart1 = new AwesomeChart('chartCanvas1');
+			            chart1.data = [gewonnen/100, verloren/100, gelijk/100];
+			            chart1.chartType = "pie";
+			            chart1.colors = ['#333333', '#808080', '#CCCCCC'];
+			            chart1.randomColors = false;
+			            chart1.draw();
+			            
+			            var gewonnen_al = data['overzicht']['gewonnen'];
+    					var verloren_al = data['overzicht']['verloren'];
+    					var gelijk_al =  data['overzicht']['gelijke'];
+			            
+			              var chart2 = new AwesomeChart('chartCanvas2');
+			    /*             chart1.title = ""; */
+			            chart2.data = [gewonnen_al/100, verloren_al/100, gelijk_al/100];
+			            chart2.chartType = "pie";
+			    /*      chart2.labels = ['verloren','gewonnen']; */
+			            chart2.colors = ['333333', '808080', 'CCCCCC'];
+			            chart2.randomColors = false;
+			            chart2.draw();
+			            
+			     }
+            });
+});
     </script> 
 </div>
 <!-- end game -->

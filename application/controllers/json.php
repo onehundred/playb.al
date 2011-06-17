@@ -310,6 +310,15 @@ class Json extends CI_Controller {
 		$data = $this->korfbal_model->verwijder_sidebar_berichten($berichtid);
 		echo json_encode($data);
 	}
+	
+	function get_aantal_wedstrijden()
+	{
+		$teamid = $_POST['teamid'];
+		$this->load->model('korfbal_model');
+		$data = $this->korfbal_model->get_aantal_wedstrijden($teamid);
+		echo json_encode($data);
+	
+	}
 
 
 }

@@ -5,14 +5,20 @@ $(document).ready(function(){
 		
 			$.ajax({
     			type: "POST",
-    			url: "/index.php/Json/korfbal_transfers",
+    			url: "<?php echo base_url();?>index.php/json/korfbal_transfers",
     			data:  { positie: positie, 
     					 },
     			dataType: "json",
         		success: function(data){
-        			//alert(data[1].spelernaam);
-        		
-        			for(var i in data){
+        			//alert(data[1].huidig_bod);
+        			var count=1;
+        			for(var j in data){
+        				count++;
+        			}
+        			//alert(count);
+        			
+        			
+        			for(var i=1;i<count;i++){
         				if(data[i].huidig_bod == null){
         					var huidig = '<p>Er is nog geen bod geplaatst op deze speler.</p>'
         							+ '<a href="../../korfbal_other_team/korfbal_player/'+data[i].teamid+'/'+data[i].spelerid+'">Plaats een bod</a>'; 
@@ -29,7 +35,7 @@ $(document).ready(function(){
 	        					   + huidig
 	        					   + '</div>'
 	    						   + '<br/></div>';
-        			$('#transfers').append(content);
+	    				$('#transfers').append(content);
         			}
         		}
         	});	

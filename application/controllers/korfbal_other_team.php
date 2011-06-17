@@ -146,7 +146,7 @@ class Korfbal_other_team extends CI_Controller {
 			$data['teamnaam_ori'] = $row2->naam;
 			$data['profilepic_ori'] = $row2->afbeelding;  
 		}
-		
+		$data['alien'] = 'alien';
 		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);		
 		

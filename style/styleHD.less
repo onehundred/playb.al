@@ -8,7 +8,7 @@
 @volleybalBorderColor: #295666;
 @grey: #f2f2f2;
 @selectionColor: rgba(232, 34, 55, 1);
-@headerHeight: 55px;
+@headerHeight: 85px;
 @footerHeight: 150px;
 .center1808 {
 	width: 1808px;
@@ -187,7 +187,8 @@ h2 {
 	color: #666;
 }
 .sportnavWrap {
-	height: 85px;
+	height: 70px;
+	margin: 25px 0 0 0;
 
 background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 95%, rgba(0,0,0,0.1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(95%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
@@ -197,6 +198,7 @@ background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(
 background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* W3C */
 }
 
+
 .sportnav {
 	margin-bottom: 5px;
 	width: 1808px;
@@ -205,28 +207,16 @@ background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,
 	.center1808;
 }
 .sportnav a {
-	font-size: 42px;
+	font-size: 52px;
 	line-height: 0.8;
 	color: rgba(0, 0, 0, 0.6);
-	padding: 10px 10px 7px 0;
+
 }
 .sportnav a:hover {
-	color: #222;
+	color: #222222;
  .transitionOn;
-background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.2))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* Opera11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* IE10+ */
-background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* W3C */
-/*
-	border-top-width: 7px;
-	border-top-style: solid;
-	border-top-color: #888;
-	border-bottom-width: 7px;
-	border-bottom-style: solid;
-	border-bottom-color: #888;
-*/
+
+
 }
 .sportnav a:active {
 	text-transform: uppercase;
@@ -239,11 +229,13 @@ background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* W3C 
 .sportnav p {
 	display: inline;
 	text-transform: uppercase;
-	font-size: 42px;
+	font-size: 52px;
 	font-family: 'LeagueGothicRegular';
 	line-height: 0.8;
-color: @korfbalColor;
-	cursor: pointer;/* -webkit-text-stroke: 1px @korfbalBorderColor; *//* text-shadow: 0px -1px 1px rgba(1, 1, 1, .8); */
+color: #B3B3B3;
+color: rgba(0,0,0,0.2);
+	cursor: pointer;
+		padding: 10px 10px 7px 0;
 }
 #teamname {
 margin: 20px 0 0 0;
@@ -306,6 +298,13 @@ height: 500px;
 	box-shadow: 0px 0px 5px #D1D1D1;
 
 }
+.playerHeader {
+height: 60px;
+border: 1px solid #E5E5E5;
+background: none;
+padding: 8px 0 4px 0;
+margin: 0 0 2px 0;
+}
 .playerDetail {
 }
 .sortTeamLeft {
@@ -327,9 +326,23 @@ height: 500px;
 .gameRight .name {
 	padding: 10px;
 }
+.gameRight .name {
+	padding: 5px 10px 5px 10px;
+	.transitionOff;
+	border: 1px solid rgba(0, 0, 0, 0);
+		background-color: #CCCCCC;
+	background-color: rgba(0, 0, 0, 0.05);
+border: 1px solid rgba(0, 0, 0, 0.15);
+.borderRadius;
+}
 .gameRight .name:hover {
-	background-color: #EB1239;
+	background-color: #CCCCCC;
+	background-color: rgba(0, 0, 0, 0.2);
+border: 1px solid rgba(0, 0, 0, 0.25);
+.borderRadius;
+.transitionOn;
 	cursor: pointer;
+	
 }
 .gameRight .firstname {
 	text-transform: capitalize;

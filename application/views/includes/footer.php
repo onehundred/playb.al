@@ -64,7 +64,7 @@ $('#twitter_status').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=07185e6f
 
 $('#twitter_update').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=fa9fa99002ab82cad3452ef36de1ba79&_render=rss', {    limit: 1  });
 
-$('#twitter_nieuws').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=ab0170ce4004bb6019052b1e74ad2c3b&_render=rss', {    limit: 1  });
+$('#twitter_nieuws, #twitter').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=ab0170ce4004bb6019052b1e74ad2c3b&_render=rss', {    limit: 1  });
 
 });
 </script>
@@ -74,6 +74,8 @@ $('#twitter_nieuws').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=ab0170ce
 
         </section> 
 <?php include_once ("analytics.php") ?>
+<!--
+/*
 <script type="text/javascript" charset="utf-8">
   var is_ssl = ("https:" == document.location.protocol);
   var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
@@ -90,4 +92,6 @@ $('#twitter_nieuws').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_id=ab0170ce
 
   var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
 </script>
+*/
+-->
 </body></html>

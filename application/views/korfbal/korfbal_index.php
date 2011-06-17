@@ -92,7 +92,7 @@
                         <figure class="icon" id="gameCup"></figure>
                         <h2> laatste award</h2>
                         <?php if(isset($stats['award'])){ ?>
-                        	<img src="<?php echo base_url();?>img/awards/cup_gold.png" />
+                        	<img ondragstart="return false" src="<?php echo base_url();?>img/awards/cup_gold.png" />
                         	<p><?php echo $stats['award'];?></p>
                         <?php }else{ ?>
                       	  <p>je hebt nog geen award behaald.</p>
@@ -105,7 +105,7 @@
                         <h2> laatste achievement</h2>
                             <?php if(isset($stats['achievement']['naam'])){ ?>
                         		<p><?php echo $stats['achievement']['naam'];?></p>
-                        		<img width="75px" height="75px" src="<?php echo base_url();?>img/achievements/<?php echo $stats['achievement']['afbeelding'];?>"/>
+                        		<img width="75px" height="75px" ondragstart="return false" src="<?php echo base_url();?>img/achievements/<?php echo $stats['achievement']['afbeelding'];?>"/>
                         		<p><?php echo $stats['achievement']['punten'];?> punten</p>
                         <?php }else{ ?>
                       	  <p>je hebt nog geen achievement behaald.</p>

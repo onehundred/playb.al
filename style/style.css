@@ -214,7 +214,7 @@ select{background:#F7F7F7;padding:10px;font-size:16px;}
 #gameStadium{background-image:url(../img/icons/stadium.png);}
 #gameView{background-image:url(../img/icons/view.png);}
 #gameDown{background-image:url(../img/icons/down.png);bottom:10px;}
-#gameUp{background-image:url(../img/icons/up.png);bottom:10px;}
+#gameUp{background-image:url(../img/icons/up.png);bottom:10px;left:-20px;margin:4px -15px 10px 12px;}
 .toast-container{width:100%;z-index:9999;}
 * html .toast-container{position:absolute;}
 .toast-item{height:auto;background:#333;opacity:0.9;color:#FFF;padding-top:20px;padding-bottom:20px;padding-left:6px;padding-right:6px;font-size:14px;display:block;position:relative;}

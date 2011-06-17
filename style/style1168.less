@@ -228,25 +228,12 @@ background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,
 	font-size: 42px;
 	line-height: 0.8;
 	color: rgba(0, 0, 0, 0.6);
-	padding: 10px 10px 7px 0;
+
 }
 .sportnav a:hover {
-	color: #222;
+	color: #222222;
  .transitionOn;
-background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.2))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* Opera11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* IE10+ */
-background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* W3C */
-/*
-	border-top-width: 7px;
-	border-top-style: solid;
-	border-top-color: #888;
-	border-bottom-width: 7px;
-	border-bottom-style: solid;
-	border-bottom-color: #888;
-*/
+
 }
 .sportnav a:active {
 	text-transform: uppercase;
@@ -262,8 +249,10 @@ background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* W3C 
 	font-size: 42px;
 	font-family: 'LeagueGothicRegular';
 	line-height: 0.8;
-color: @korfbalColor;
-	cursor: pointer;/* -webkit-text-stroke: 1px @korfbalBorderColor; *//* text-shadow: 0px -1px 1px rgba(1, 1, 1, .8); */
+color: #B3B3B3;
+color: rgba(0,0,0,0.2);
+	cursor: pointer;
+		padding: 10px 10px 7px 0;
 }
 #teamname {
 	font-size: 68px;
@@ -335,7 +324,13 @@ float: left;
 .sortTeamRight {
 
 width: 180px;
+float: left;
 
+}
+#sortPlayers {
+height: 540px;
+}
+#sortPlayers p {
 
 }
 .sortingFeatures p{
@@ -439,6 +434,7 @@ aside {
 }
 ul#filters {
 	display: block;
+	margin: 10px 0 20px 0;
 }
 ul#filters p {
 margin: 0;
@@ -725,7 +721,7 @@ width: 1156px;
 height: 285px;
 }
 .sliderHome div:nth-child(1) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/1168/1.png);
+background-image: url(../img/slider/1168/1.png);
 background-repeat: no-repeat;
 width: 1156px;
 height: 285px;
@@ -912,6 +908,9 @@ article.sortSkill p {
 display: inline;
 margin: 0;
 padding: 0;
+}
+article.sortSkill a {
+
 }
 .login, .profile, .createdAccount {
 display: none;

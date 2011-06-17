@@ -175,7 +175,7 @@ foreach($training->result() as $row){
             </section>
         </div>
         <?php } ?>
-        <div>
+        <div id="sortPlayers">
             <section class="sortingFeatures">
                 <figure class="icon" id="gamePlayers"></figure>
                 <h2>spelers</h2>
@@ -216,7 +216,7 @@ foreach($training->result() as $row){
                             <figure class="icon" id="gameUp"></figure>
                             prijs</a>
                     </article>
-                    <hr />
+                  <p></p>
                     <ul class="sortTeamLeft">
                         <article class="sortSkill">
                             <li class="sort asc option-set floated clearfix"> 

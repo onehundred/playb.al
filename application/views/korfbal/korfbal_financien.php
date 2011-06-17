@@ -95,7 +95,8 @@
                 <h2>Sponsors</h2>
                 </section>		
             </div>
-            <div id="grafiek"> 
+           <!--
+ <div id="grafiek"> 
             <section>
              <figure class="icon" id="gameBank"></figure>
                 <h2>Overzicht financien</h2>

@@ -256,7 +256,7 @@ $("#transfer").submit(function(){
             <label>Bedrag:</label>
             <input type="text" id="bod" name="bod"/>
             <input type="hidden" id="speleridbod" value="<?php echo $row->speler_id;?>"/>
-            <input type="hidden" id="teamidbod" value="<?php echo $teamid;?>"/>
+            <input type="hidden" id="teamidbod" value="<?php echo $session_teamid;?>"/>
             <input type="submit" name="bod"/>
         </form>
     </div>

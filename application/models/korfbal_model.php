@@ -1293,4 +1293,21 @@
 		
 	}
 	
+	function get_session_teamid()
+		{
+	
+		$userid = $this->session->userdata('user_id');
+	
+		$this->db->select('team_id');
+		$this->db->from('korf_teams');
+		$this->db->join('users', 'user_id = FK_user_id');
+		$this->db->where('user_id', $userid);
+		$query = $this->db->get();
+		$teamid = 0;
+		foreach($query->result() as $row){
+			$teamid = $row->team_id;
+			
+		}
+		return $teamid;
+	}	
 }

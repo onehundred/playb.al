@@ -51,6 +51,7 @@
     	$this->db->from('korf_teams');
     	$this->db->where('FK_division_id', $divid);
     	$this->db->order_by('divisiepunten', 'DESC');
+    	$this->db->order_by('doelpunten_tegen','asc');
     	$query2 = $this->db->get();
     	
     	

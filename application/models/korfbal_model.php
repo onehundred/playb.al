@@ -47,11 +47,22 @@
 		$this->db->where('FK_team_id', $teamid);
 		$query = $this->db->get('korf_teamstats');
 		foreach($query->result() as $row){
-			$verkocht = $row->laatste_verkocht;
-			$gekocht = $row->laatste_gekocht;
-			$stats['verkocht'] = $this->getSpelerNaam($verkocht);
-			$stats['gekocht'] = $this->getSpelerNaam($gekocht);
+			$stats['verkochtid'] = $row->laatste_verkocht;
+			$stats['gekochtid'] = $row->laatste_gekocht;
+			$stats['verkocht'] = $this->getSpelerNaam($stats['verkochtid']);
+			$stats['gekocht'] = $this->getSpelerNaam($stats['gekochtid']);
 		}
+		
+		
+		$this->db->select('FK_team_id');
+		$this->db->from('korf_spelers');
+		$this->db->where('speler_id', $stats['verkochtid']);
+		$query3 = $this->db->get();
+		
+		foreach($query3->result() as $row){
+			$stats['verkocht']['teamid'] = $row->FK_team_id;
+		}
+		
 		
 		$this->db->select('*');
 		$this->db->from('korf_team_achievements');

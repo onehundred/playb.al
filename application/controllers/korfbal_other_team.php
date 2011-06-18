@@ -183,12 +183,14 @@ class Korfbal_other_team extends CI_Controller {
 	
 	}
 	function korfbal_manager()
-	{$team_id = $this->uri->segment('3');
+	{
+		$team_id = $this->uri->segment('3');
 		$data['team_id'] = $team_id;
 		$this->load->model('korfbal_model');
 		
 		$data['manager'] = $this->korfbal_model->get_manager($team_id);
 		$data['achievements'] = $this->korfbal_model->get_achievements($team_id);
+		$data['awards'] = $this->korfbal_model->get_awards($team_id);
 		
 		$team = $this->korfbal_model->get_team($team_id);
 		foreach($team->result() as $row)

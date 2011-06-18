@@ -211,6 +211,7 @@ class Korfbal extends CI_Controller {
 		
 		$data['manager'] = $this->korfbal_model->get_manager($team_id);
 		$data['achievements'] = $this->korfbal_model->get_achievements($team_id);
+		$data['awards'] = $this->korfbal_model->get_awards($team_id);
 		
 		$team = $this->korfbal_model->get_team($team_id);
 		foreach($team->result() as $row)

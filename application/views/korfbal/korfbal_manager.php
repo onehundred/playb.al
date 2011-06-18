@@ -49,30 +49,50 @@
     </div> <!-- end gameRight -->
     <aside>
         <div class="gameLeft">
+        <script>
+        $.fn.cycle.defaults.timeout = 6000;
+        	$(function() {
+
+    
+    $('#s6').show().after('<div id="galleryAwardsSlider" class="galleryAwardsSlider">').cycle({
+        fx:     'fade',
+        speed:  500,
+
+        next:   '#s6', 
+        pager:  '#galleryAwardsSlider'
+    });
+});
+        </script>
+        
             <div>
                 <section>
                 <figure class="icon" id="gameCup"></figure>
                     <h2>bekers</h2>
-                    <!-- if bekers = 0 -->
-                    <p>je hebt nog geen bekers gewonnen</p>
-                    <!-- else -->
-                    <p>beker 1</p>
-                    <p>beker 2</p>
+                  <?php if($awards->result() == null){ ?>
+			           <p>je hebt nog geen bekers gewonnen</p>
+			      <?php }else{ ?>
+        			  <div id="s6" class="pics">
+                			<?php foreach($awards->result() as $row){ ?>
+                   						<div><img width="68px" height="50px" src="<?php echo base_url()?>/img/awards/cup_gold.png" ondragstart="return false" />
+                   						<?php echo $row->naam;?></div>
+                  <?php 
+                  }
+                 } ?>
                 </section>
             </div>
            
             <script>
 
-$.fn.cycle.defaults.timeout = 6000;
+
 $(function() {
 
     
-    $('#s5').show().after('<div id="galleryNav" class="galleryNav">').cycle({
+    $('#s5').show().after('<div id="galleryAchievementsSlider" class="galleryAchievementsSlider">').cycle({
         fx:     'fade',
         speed:  500,
 
         next:   '#s5', 
-        pager:  '#galleryNav'
+        pager:  '#galleryAchievementsSlider'
     });
 });
 </script>

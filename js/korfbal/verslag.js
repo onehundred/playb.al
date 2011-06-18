@@ -250,7 +250,8 @@ function actie1()
 						$().toastmessage('showNoticeToast', naam+' maakt een mooie inloper!');
 						//alert("Speler met nummer"+naam+" maakt een mooie inloper");
 						$('#links').unblock();
-						$('#replay').unblock();
+						$('#replay').show();
+						$('#stop_replay').show();
 						clearInterval(intervalID);
 						
 		}
@@ -294,7 +295,8 @@ function actie2()
 		var naam = spelers[2].getNaam();
 		$().toastmessage('showNoticeToast', naam+' maakt een mooie inloper!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 	}
@@ -329,7 +331,8 @@ function actie3(){
 		var naam = spelers[3].getNaam();
 		$().toastmessage('showNoticeToast', naam+' scoort door een wegtrekker onder de paal!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 	}
@@ -367,7 +370,8 @@ function actie4(){
 		var naam = spelers[3].getNaam();
 		$().toastmessage('showNoticeToast', naam+' doet een ver shot. Goal!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 	}
@@ -396,7 +400,8 @@ function actie5(){
 		var naam = spelers[2].getNaam();
 		$().toastmessage('showNoticeToast', naam+' doet een ver shot. Goal!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 
@@ -445,7 +450,8 @@ function actie6(){
 		var naam = spelers[2].getNaam();
 		$().toastmessage('showNoticeToast', naam+' maakt een prachtige inloper!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 
@@ -493,7 +499,8 @@ function actie9(){
 		var naam = tegenstanders[5].getNaam();
 		$().toastmessage('showNoticeToast', naam+' maakt een prachtige inloper!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 	}
@@ -530,7 +537,8 @@ function actie10(){
 		var naam = tegenstanders[7].getNaam();
 		$().toastmessage('showNoticeToast', naam+' scoort door een wegtrekker onder de paal!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 	}
@@ -569,7 +577,8 @@ function actie11(){
 		var naam = tegenstanders[4].getNaam();
 		$().toastmessage('showNoticeToast', naam+' doet een ver shot. Goal!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 	}
@@ -600,7 +609,8 @@ function actie12(){
 		var naam = tegenstanders[5].getNaam();
 		$().toastmessage('showNoticeToast', naam+' doet een ver shot. Goal!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 
@@ -648,7 +658,8 @@ function actie13(){
 		var naam = spelers[2].getNaam();
 		$().toastmessage('showNoticeToast', naam+' maakt een prachtige inloper!');
 		$('#links').unblock();
-		$('#replay').unblock();
+		$('#replay').show();
+		$('#stop_replay').show();
 		clearInterval(intervalID);
 		i = 1;
 
@@ -693,7 +704,7 @@ $(document).ready(function()
         				},
     			dataType: "json",
         		success: function(data){
-        			
+        			append_replay();
         			var verslag = data;
         			//alert(verslag['acties']);
         			var minuten = verslag['minuten'].split(';');
@@ -786,10 +797,8 @@ $(document).ready(function()
 				                message: '<h4>Even wachten tot de animatie is afgelopen</h4>', 
 				                css: { border: '1px solid #000' } 
 				            }); 
-				        $('#replay').block({ 
-				                message: '<h4>Even wachten tot de animatie is afgelopen</h4>', 
-				                css: { border: '1px solid #000' } 
-				            });
+				        $('#replay').hide();
+				        $('#stop_replay').hide();
 						var id = $(this).attr('id');
 						start(id,naam_thuisteam, naam_uitteam);
 					});
@@ -800,8 +809,9 @@ $(document).ready(function()
 					var show_things = null;
 					var j=0;
 					
-					$('#replay').click(function(){
-						$('#replay').hide();
+					$('#replay a').live('click', function(){
+						$('#replay a').hide();
+						$('#replay a').remove();
 						$('#links').hide();
 						infLoopStop = false;
 						infLoop();
@@ -817,8 +827,8 @@ $(document).ready(function()
 					//na 7 seconden terug laten zien
 					show_things = function(){
 						$('#terminating').hide();
-						$('#replay').show();
 						$('#links').show();
+						append_replay();
 					}
 					
 					//infinite loop
@@ -829,14 +839,13 @@ $(document).ready(function()
 								j=0;
 							}
 							if(infLoopStop == false){
-								$('#replay').hide();
 								start(acties[j],naam_thuisteam, naam_uitteam)
-								window.setTimeout(infLoop,7000);
+								window.setTimeout(infLoop,8000);
 								j++;
 							}
 							if(infLoopStop == true){
 								$('#terminating').show();
-								window.setTimeout(show_things,7000);
+								window.setTimeout(show_things,8000);
 								infLoopStop = null;
 							}
 
@@ -852,7 +861,9 @@ $(document).ready(function()
         		
         		});
         		
-     		
+     function append_replay(){
+     	$('#replay').append('<a href="#">Volledige replay</a>');
+     }	
      //functie die de namen van de ploegen gaat ophalen   		
 	function get_teamnaam(teamid){
 		var teamnaam = ''; 

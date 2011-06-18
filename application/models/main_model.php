@@ -105,8 +105,8 @@
 				$username = $user->gebruikersnaam;
 				$paswoord = $user->paswoord;
 				
-				$message = $voornaam.' '.$achternaam.', klik op onderstaande link om uw paswoord te resetten: <br/>:
-					<a href="playb.al/index.php/main/update_password/'.$username.'/'.$paswoord;
+				$message = $voornaam.' '.$achternaam.', Knip en plak onderstaande link in uw browser om uw paswoord te resetten: \n
+					http://playb.al/index.php/main/update_password/'.$username.'/'.$paswoord;
 				
 				mail($email, 'Playb.al: Paswoord vergeten', $message);
 				

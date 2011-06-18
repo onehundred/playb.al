@@ -46,6 +46,7 @@ class Korfbal_other_team extends CI_Controller {
 		$data['divisie_eerste'] = $this->korfbal_model->get_sidebar_divisie();
 		$data['divisie'] = $this->korfbal_model->get_divisie($team_id);
 		$data['stats'] = $this->korfbal_model->get_sidebar_stats($team_id);
+		$data['session_teamid'] = $this->korfbal_model->get_session_teamid();
 		
 		$data['alien'] = "alien";
 		
@@ -78,6 +79,7 @@ class Korfbal_other_team extends CI_Controller {
 		
 		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
+		$data['session_teamid'] = $this->korfbal_model->get_session_teamid();
 		
 		$data['alien'] = "alien";
 		
@@ -112,6 +114,7 @@ class Korfbal_other_team extends CI_Controller {
 		
 		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
+		$data['session_teamid'] = $this->korfbal_model->get_session_teamid();
 	
 		
 		$data['alien'] = "alien";
@@ -148,7 +151,8 @@ class Korfbal_other_team extends CI_Controller {
 		}
 		$data['alien'] = 'alien';
 		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
-		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);		
+		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);	
+		$data['session_teamid'] = $this->korfbal_model->get_session_teamid();	
 		
 		$data['main_content'] = 'korfbal/korfbal_divisie';
 		$this->load->view('korfbal/includes_other_team/template', $data);	
@@ -161,6 +165,7 @@ class Korfbal_other_team extends CI_Controller {
 		$this->load->model('korfbal_model');
 		
 		$data['stadion'] = $this->korfbal_model->get_stadion($team_id);
+		$data['session_teamid'] = $this->korfbal_model->get_session_teamid();
 		
 		$team = $this->korfbal_model->get_team($team_id);
 		foreach($team->result() as $row)
@@ -191,6 +196,7 @@ class Korfbal_other_team extends CI_Controller {
 		$data['manager'] = $this->korfbal_model->get_manager($team_id);
 		$data['achievements'] = $this->korfbal_model->get_achievements($team_id);
 		$data['awards'] = $this->korfbal_model->get_awards($team_id);
+		$data['session_teamid'] = $this->korfbal_model->get_session_teamid();
 		
 		$team = $this->korfbal_model->get_team($team_id);
 		foreach($team->result() as $row)
@@ -207,6 +213,7 @@ class Korfbal_other_team extends CI_Controller {
 		
 		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
+		$data['session_teamid'] = $this->korfbal_model->get_session_teamid();
 		$data['alien'] = 'alien';		
 		$data['main_content'] = 'korfbal/korfbal_manager';
 		$this->load->view('korfbal/includes_other_team/template', $data);
@@ -232,7 +239,7 @@ class Korfbal_other_team extends CI_Controller {
 			$data['teamnaam_ori'] = $row2->naam;
 			$data['profilepic_ori'] = $row2->afbeelding;  
 		}
-		
+		$data['session_teamid'] = $this->korfbal_model->get_session_teamid();
 		
 		$data['main_content'] = 'korfbal/korfbal_verslag';
 		$this->load->view('korfbal/includes_other_team/template', $data);

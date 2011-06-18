@@ -1,4 +1,7 @@
-<h1 id="teamname"><?php echo $teamnaam;?></h1>
+<h1 id="teamname">
+	<div id="backHome"><a href="<?php echo base_url();?>index.php/korfbal/korfbal_start/<?php echo $session_teamid;?>"><img src="<?php echo base_url();?>img/icons/home.png" /></a>
+	</div>
+<?php echo $teamnaam;?></h1>
 
 <section class="sportnavWrap">
 <nav class="sportnav">

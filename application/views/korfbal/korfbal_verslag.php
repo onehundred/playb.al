@@ -105,7 +105,7 @@
     </div>
     <aside>
         <div class="gameLeft">
-        	<p id="replay">Volledige replay</p>
+        	<p id="replay"></p>
         	<p id="stop_replay">Stop replay</p>
         	
             <p id="terminating"><img src="<?php echo base_url();?>img/loading.gif"/></p>

@@ -1,5 +1,7 @@
 <div class="game">
     <div class="gameRight">
+    <?php if(isset($matches[1]['thuis'])){ ?>
+    
         <?php if(!isset($alien)){ ?>
 
         <a class="question" href="../korfbal_teamorders/<?php echo $team_id;?>">opstelling</a>
@@ -22,7 +24,11 @@
 
                 }
 
-             } } ?>
+             } } 
+             }else{ ?>
+             <p>De wedstrijden voor dit seizoen zijn nog niet klaar, nog even geduld!</p>
+             
+            <?php } ?>
         </p>
     </div>
     <!-- end gameRight -->

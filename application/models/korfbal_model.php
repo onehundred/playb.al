@@ -1185,6 +1185,12 @@
 	
 	}
 	
+	function get_awards($team_id){
+		$this->db->where('FK_team_id', $team_id);
+		$query = $this->db->get('korf_trophies');
+		return $query;
+	}
+	
 	function get_sidebar_calendar($team_id){
 	
 		$data = array();

@@ -84,7 +84,7 @@ $('#twitter_nieuws, #twitter').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_i
 
   feedback_widget_options.display = "overlay";  
   feedback_widget_options.company = "playbal";
-  feedback_widget_options.placement = "left";
+  feedback_widget_options.placement = "right";
   feedback_widget_options.color = "#222";
   feedback_widget_options.style = "idea";
 

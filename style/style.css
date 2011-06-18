@@ -46,7 +46,7 @@ iframe{width:708px;height:430px;}
 .bottomButtons{float:right;display:inline;}
 .korfbal h1,.basketbal h1,.volleybal h1{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#f7f7f7;padding-left:15px;text-shadow:0px 0px 15px #333;font-size:48px;cursor:default;font-weight:normal;}
 #tagline{font-family:'LeagueGothicRegular';color:#FAFAFA;text-shadow:rgba(0, 0, 0, 0.5) -1px 0,rgba(0, 0, 0, 0.3) 0 -1px,rgba(255, 255, 255, 0.5) 0 1px,rgba(0, 0, 0, 0.3) 0px -1px;font-size:42px;text-transform:uppercase;cursor:default;text-shadow:0px 0px 15px #333;}
-#teamname{font-family:'SFCollegiateSolidRegular';text-align:left;color:#FFF;font-size:56px;text-shadow:0px 0px 15px #333;text-transform:uppercase;font-weight:normal;cursor:default;}
+#teamname{font-family:'SFCollegiateSolidRegular';text-align:left;color:#FFF;font-size:56px;text-transform:uppercase;font-weight:normal;cursor:default;text-shadow:0 1px 0 #cccccc,0 2px 0 #c9c9c9,0 3px 0 #bbbbbb,0 4px 0 #b9b9b9,0 5px 0 #aaaaaa,0 6px 1px rgba(0, 0, 0, 0.1),0 0 5px rgba(0, 0, 0, 0.1),0 1px 3px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2),0 5px 10px rgba(0, 0, 0, 0.25),0 10px 10px rgba(0, 0, 0, 0.2),0 20px 20px rgba(0, 0, 0, 0.15);}
 h2{font-family:'LeagueGothicRegular';text-transform:uppercase;}
 .register{background:-moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(95%, rgba(0, 0, 0, 0.05)), color-stop(100%, rgba(0, 0, 0, 0.1)));background:-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:-ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);background:linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 95%, rgba(0, 0, 0, 0.1) 100%);}
 .register article{height:270px;width:896px;margin:0 auto 0 auto;}
@@ -167,6 +167,7 @@ div#profile a{color:#FFFFFF;}
 .startgame a:hover{color:#FFF;}
 .startgame img{display:inline;bottom:-7px;left:-46px;position:absolute;}
 #continue a{color:#F7F7F7;font-family:'LeagueGothicRegular';font-size:38px;padding-left:15px;width:250px;left:-20px;text-shadow:0px 0px 15px #333;color:#F7F7F7;text-transform:uppercase;text-align:right;}
+#continue a:hover{cursor:pointer;}
 .teamPosition{float:left;position:relative;bottom:215px;left:12px;width:250px;}
 .overview{padding:10px 0 0 15px;font-family:'LeagueGothicRegular';letter-spacing:1px;text-transform:uppercase;font-size:28px;font-weight:normal;color:#F7F7F7;text-shadow:0px 0px 15px #333;position:relative;top:50px;}
 #overview2{padding-left:15px;font-family:'LeagueGothicRegular';text-transform:uppercase;font-size:32px;color:#F7F7F7;text-shadow:0px 0px 15px #333;}

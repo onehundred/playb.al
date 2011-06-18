@@ -34,7 +34,7 @@ $(function(){
 			}
 			
 			if(data.check == 'valid'){
-				$().toastmessage('showSuccessToast', "Je bod op deze speler is geregistrerd.");
+				$().toastmessage('showSuccessToast', "Je bod op deze speler is geregistreerd");
 			}
 
          }

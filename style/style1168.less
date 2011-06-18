@@ -501,28 +501,17 @@ border: 1px solid rgba(191, 191, 191, 0.9);
 }
 
 .gameLeft div.fillLeft {
-background-color: #FFFFFF;
-	background-color: rgba(255,255,255, 0.5);
-/*
-	-webkit-border-top-left-radius: 3px;
-	-webkit-border-top-right-radius: 3px;
-	-webkit-border-bottom-right-radius: 12px;
-	-webkit-border-bottom-left-radius: 12px;
-	-moz-border-radius-topleft: 3px;
-	-moz-border-radius-topright: 3px;
-	-moz-border-radius-bottomright: 12px;
-	-moz-border-radius-bottomleft: 12px;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 12px;
-	border-bottom-left-radius: 12px;
-*/
 .borderRadius;
-	border: 1px solid #E5E5E5;
-	margin: 0 0 20px 0;
-	width: 370px;
 
- .transitionOff;
+
+	width: 370px;
+margin: 0 0 20px 0;
+
+ .transitionOn2;
+}
+.gameLeft div.fillLeft:hover {
+
+ .transitionOn2;
 }
 .gameLeft div section {
 
@@ -548,7 +537,7 @@ background-color: #FFFFFF;
 	width: 1168px;
 }
 #gameLeftOverview div {
-margin: 0 0 35px 0;
+
 }
 #gameLeftOverview .column {
 float: left;
@@ -564,10 +553,7 @@ float: left;
 color: #666666;
 font-size: 12px;
 }
-.read, .unread {
-clear: both;
-margin: 0 15px 10px 15px;
-}
+
 p.verwijder {
 float: right;
 background-image: url(../img/icons/trash.png);
@@ -591,6 +577,10 @@ height: 25px;
 background-image: url(../img/icons/seen.png);
 background-repeat: no-repeat;
 }
+.read, .unread, .tweet, .entry {
+clear: both;
+margin: 0 15px 10px 15px;
+}
 .read {
 background-color: rgba(30, 166, 68, 0.2);
 border: 1px solid rgba(30, 166, 68, 0.25);
@@ -599,6 +589,16 @@ border: 1px solid rgba(30, 166, 68, 0.25);
 .unread {
 background-color: rgba(166, 30, 41, 0.2);
 border: 1px solid rgba(166, 30, 41, 0.25);
+.borderRadius;
+}
+.tweet {
+background-color: rgba(2, 169, 295, 0.2);
+border: 1px solid rgba(2, 169, 295, 0.25);
+.borderRadius;
+}
+.entry {
+background-color: rgba(191, 191, 191, 0.2);
+border: 1px solid rgba(191, 191, 191, 0.25);
 .borderRadius;
 }
 div#klassementEntry {
@@ -631,6 +631,13 @@ line-height: 1;
 
 
 }
+li.rssRow.odd h4, li.rssRow.even h4 {
+font-weight: normal;
+background: none;
+
+font-size: 15px;
+}
+
 #trainingSkill {
 float: left;
 

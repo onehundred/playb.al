@@ -12,40 +12,41 @@
                     </section>
                 </div>
              <?php } ?>   
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gameCalendar"></figure>
                         <h2> kalender</h2>
-                        <p>week <?php echo $calendar['week'];?>, seizoen <?php echo $calendar['seizoen'];?></p>
+                        
+                        <p id>week <?php echo $calendar['week'];?>, seizoen <?php echo $calendar['seizoen'];?></p>
                         <p>volgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
                     </section>
                 </div>
             </section>
             <!-- end column -->
             <section class="column">
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gameTweets"></figure>
                         <h2> nieuws</h2>
-                        <div id="twitter_nieuws"></div>
+                        <p class="tweet" id="twitter_nieuws"></p>
                         <!-- tweets van @playb_al zonder mentions --> 
                         
                     </section>
                 </div>
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gameTweets"></figure>
                         <h2> status</h2>
-                        <div id="twitter_status"></div>
+                        <p class="tweet" id="twitter_status"></p>
                         
                         <!-- tweets van @playb_al met #status --> 
                     </section>
                 </div>
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gameTweets"></figure>
                         <h2> updates</h2>
-                        <p id="twitter_update"></p>
+                        <p class="tweet" id="twitter_update"></p>
                         <!-- tweets van @playb_al met #update --> 
                         
                     </section>
@@ -55,7 +56,7 @@
                 
                 }?>
                 <?php if($divisie_id != 1){ ?>
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gameRanking"></figure>
                         <h2> klassement eerste divisie</h2>
@@ -70,7 +71,7 @@
                 </div>
                 <?php } ?>
                 <?php if(!isset($alien)){ ?>
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gameRanking"></figure>
                         <h2>klassement jouw divisie</h2>
@@ -87,7 +88,7 @@
             </section>
             <!-- end column -->
             <section class="column">
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gameCup"></figure>
                         <h2> laatste award</h2>
@@ -99,7 +100,7 @@
                         <?php } ?>
                     </section>
                 </div>
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gameMedaille"></figure>
                         <h2> laatste achievement</h2>
@@ -112,25 +113,25 @@
                         <?php } ?>
                     </section>
                 </div>
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gamePlayerBought"></figure>
                         <h2> laatste speler gekocht</h2>
                          <?php if(isset($stats['gekocht']['voornaam'])){ ?>
                         	<p><?php echo $stats['gekocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
                         <?php }else{ ?>
-                      	  <p>je hebt nog geen speler gekocht.</p>
+                      	  <p class="entry">je hebt nog geen speler gekocht.</p>
                         <?php } ?>
                     </section>
                 </div>
-                <div>
+                <div class="fillLeft">
                     <section>
                         <figure class="icon" id="gamePlayerSold"></figure>
                         <h2> laatste speler verkocht</h2>
                         <?php if(isset($stats['verkocht']['voornaam'])){ ?>
                         	<p><?php echo $stats['verkocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
                         <?php }else{ ?>
-                      	  <p>je hebt nog geen speler verkocht.</p>
+                      	  <p class="entry">je hebt nog geen speler verkocht.</p>
                         <?php } ?>
                     </section>
                 </div>

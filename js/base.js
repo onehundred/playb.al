@@ -334,7 +334,22 @@ $(document).ready(function(){
 
 		});
 	});
-	/////////////////////////////////////////////////////////////////
+	$(function() {
+    	$(".fillLeft").mouseenter(function () {
+    	$('.fillLeft').css({opacity: 0.5});
+			$(this).css({opacity: 1});
+			
+      		return false;
+		});
+	});
+		$(function() {
+    	$(".fillLeft").mouseleave(function () {
+    	$('.fillLeft').css({opacity: 1});
+			
+      		return false;
+		});
+	});
+/////////////////////////////////////////////////////////////////
 // LOGIN begin
 /////////////////////////////////////////////////////////////////
 $(function() {

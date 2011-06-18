@@ -208,6 +208,7 @@ h2 {
 }
 .sportnavWrap {
 	height: 65px;
+	margin: 0 0 25px 0;
 
 background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 95%, rgba(0,0,0,0.1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(95%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
@@ -273,11 +274,6 @@ width: 1168px;
 }
 */
 .game {
-/*
-background-color: rgba(255, 255, 255, 0.75);
-height: 500px;
-*/
-
 .center1168;
 }
 .gameRight {
@@ -449,17 +445,14 @@ line-height: 20px;
 	letter-spacing: 1px;
 	color: #7B7B7B;
 	padding: 8px 0 8px 10px;
-	background: #C3C3C3;
-background: -moz-linear-gradient(top, rgba(204,204,204,0.75) 0%, rgba(191,191,191,0.75) 47%, rgba(178,178,178,0.75) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,204,204,0.75)), color-stop(47%,rgba(191,191,191,0.75)), color-stop(100%,rgba(178,178,178,0.75))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,191,0.75) 47%,rgba(178,178,178,0.75) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,191,0.75) 47%,rgba(178,178,178,0.75) 100%); /* Opera11.10+ */
-background: -ms-linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,191,0.75) 47%,rgba(178,178,178,0.75) 100%); /* IE10+ */
+	width: 352px;
+	height: 40px;
 
-background: linear-gradient(top, rgba(204,204,204,0.75) 0%,rgba(191,191,191,0.75) 47%,rgba(178,178,178,0.75) 100%); /* W3C */
-border-bottom: 1px solid #b3b3b3;
-border-left: 1px solid #b3b3b3;
-border-right: 1px solid #b3b3b3;
+/* border-bottom: 1px dashed #b3b3b3; */
+background-image: url(../img/stitches.png);
+background-repeat: no-repeat;
+background-position: 10px 40px;
+
 text-shadow: 0px 0px 4px #F2F2F2;
 text-transform: lowercase;
 }
@@ -507,9 +500,10 @@ border: 1px solid rgba(191, 191, 191, 0.9);
 	border-bottom: 1px solid #CCCCCC;
 }
 
-.gameLeft div {
+.gameLeft div.fillLeft {
 background-color: #FFFFFF;
 	background-color: rgba(255,255,255, 0.5);
+/*
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-top-right-radius: 3px;
 	-webkit-border-bottom-right-radius: 12px;
@@ -522,7 +516,9 @@ background-color: #FFFFFF;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 12px;
 	border-bottom-left-radius: 12px;
-	border: 1px solid #CCCCCC;
+*/
+.borderRadius;
+	border: 1px solid #E5E5E5;
 	margin: 0 0 20px 0;
 	width: 370px;
 

@@ -88,20 +88,13 @@ $(function() {
                  			
 			                 
 			                    <?php foreach($achievements->result() as $row){ ?>
-                   						<div><img width="68px" height="50px" src="<?php echo base_url()?>/img/achievements/<?php echo $row->afbeelding;?>" ondragstart="return false" />
+                   						<div><img src="<?php echo base_url()?>/img/achievements/<?php echo $row->afbeelding;?>" ondragstart="return false" />
                    						<?php echo $row->naam;?></div>
                    						
 								<?php
 										}
 			 						} ?>
-          <!--  <img src="<?php echo base_url();?>img/slider1.png" width="68" height="32" ondragstart="return false" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach2.jpg" width="68" height="32" ondragstart="return false" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach3.jpg" width="68" height="32" ondragstart="return false" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach4.jpg" width="68" height="32" ondragstart="return false" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach5.jpg" width="68" height="32" ondragstart="return false" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach6.jpg" width="68" height="32" ondragstart="return false" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach7.jpg" width="68" height="32" ondragstart="return false" />
-            <img src="http://cloud.github.com/downloads/malsup/cycle/beach8.jpg" width="68" height="32" ondragstart="return false" />-->
+
         </div>
 
      

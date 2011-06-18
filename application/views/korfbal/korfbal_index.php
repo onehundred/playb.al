@@ -5,7 +5,7 @@
         <div class="gameLeft" id="gameLeftOverview">
             <section class="column">
             <?php if(!isset($alien)){ ?>
-                <div id="korfbal_berichten">
+                <div class="fillLeft" id="korfbal_berichten">
                     <section>
                         <figure class="icon" id="gameMessage"></figure>
                         <h2> berichten</h2>
@@ -92,7 +92,7 @@
                         <figure class="icon" id="gameCup"></figure>
                         <h2> laatste award</h2>
                         <?php if(isset($stats['award'])){ ?>
-                        	<img ondragstart="return false" src="<?php echo base_url();?>img/awards/cup_gold.png" />
+                        	<img id="cup" ondragstart="return false" src="<?php echo base_url();?>img/awards/cup_gold.png" />
                         	<p><?php echo $stats['award'];?></p>
                         <?php }else{ ?>
                       	  <p>je hebt nog geen award behaald.</p>
@@ -105,7 +105,7 @@
                         <h2> laatste achievement</h2>
                             <?php if(isset($stats['achievement']['naam'])){ ?>
                         		<p><?php echo $stats['achievement']['naam'];?></p>
-                        		<img width="75px" height="75px" ondragstart="return false" src="<?php echo base_url();?>img/achievements/<?php echo $stats['achievement']['afbeelding'];?>"/>
+                        		<img id="achievementBadge" ondragstart="return false" src="<?php echo base_url();?>img/achievements/<?php echo $stats['achievement']['afbeelding'];?>"/>
                         		<p><?php echo $stats['achievement']['punten'];?> punten</p>
                         <?php }else{ ?>
                       	  <p>je hebt nog geen achievement behaald.</p>

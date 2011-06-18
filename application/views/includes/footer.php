@@ -74,8 +74,6 @@ $('#twitter_nieuws, #twitter').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_i
 
         </section> 
 <?php include_once ("analytics.php") ?>
-<!--
-/*
 <script type="text/javascript" charset="utf-8">
   var is_ssl = ("https:" == document.location.protocol);
   var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
@@ -92,6 +90,4 @@ $('#twitter_nieuws, #twitter').rssfeed('http://pipes.yahoo.com/pipes/pipe.run?_i
 
   var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
 </script>
-*/
--->
 </body></html>

@@ -1002,7 +1002,7 @@ li.menu_right {
 /* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
 /* okay 
 *******************************************************************************/
-div#profile {
+div#profile, div#backHome {
 .borderRadius;
 	background: #f72334;
     background: -webkit-linear-gradient(top, #f72334 0%, #b30211 100%);
@@ -1032,7 +1032,18 @@ div#profile {
     text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8);
     width: auto;
     }
-div#profile:hover {
+div#backHome {
+width: 25px;
+height: 25px;
+margin: 15px 10px 0 0;
+float: left;
+}
+div#backHome img {
+width: 25px;
+height: 25px;
+margin: 0 0 0 1px;
+}
+div#profile:hover, div#backHome:hover {
 	background: #de1f2f;
     /* old browsers */
     background: -webkit-linear-gradient(top, #de1f2f 0%, #c41b2a 100%);
@@ -1051,7 +1062,7 @@ div#profile:hover {
     /* webkit */		
     cursor: pointer;
 }
-div#profile:active {
+div#profile:active, div#backHome:active {
 background: #c41b2a;
     /* old browsers */
     background: -webkit-linear-gradient(top, #c41b2a 0%, #ab1824 100%);

@@ -336,7 +336,7 @@ $(document).ready(function(){
 	});
 	$(function() {
     	$(".fillLeft").mouseenter(function () {
-    	$('.fillLeft').css({opacity: 0.5});
+    	$('.fillLeft').css({opacity: 0.7});
 			$(this).css({opacity: 1});
 			
       		return false;

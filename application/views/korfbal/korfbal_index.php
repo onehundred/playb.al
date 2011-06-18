@@ -120,7 +120,7 @@
                          <?php if(isset($stats['gekocht']['voornaam'])){ ?>
                         	<p><?php echo $stats['gekocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
                         <?php }else{ ?>
-                      	  <p class="entry">je hebt nog geen speler gekocht.</p>
+                      	  <p class="entry">nog geen speler gekocht.</p>
                         <?php } ?>
                     </section>
                 </div>
@@ -131,7 +131,7 @@
                         <?php if(isset($stats['verkocht']['voornaam'])){ ?>
                         	<p><?php echo $stats['verkocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
                         <?php }else{ ?>
-                      	  <p class="entry">je hebt nog geen speler verkocht.</p>
+                      	  <p class="entry">nog geen speler verkocht.</p>
                         <?php } ?>
                     </section>
                 </div>

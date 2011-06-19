@@ -507,7 +507,7 @@
 			$transfers[$i]['positie'] = $row->positie;
 			$transfers[$i]['minimum_bod'] = $row->minimum_bod;
 			$transfers[$i]['huidig_bod'] = $row->huidig_bod;
-			$transfers[$i]['deadline'] = $row->deadline;
+			$transfers[$i]['deadline'] = $row->deadline_format;
 			$transfers[$i]['spelerid'] = $row->speler_id;
 			$transfers[$i]['teamid'] = $row->team_id;
 		
@@ -825,6 +825,7 @@
 			
 			date_default_timezone_set('Europe/Brussels');
 			$deadline = date('Y-m-d h:i:s', strtotime("+3 days"));
+			$mdate =  date("F j Y, H:i"); 
 
 			$insert = array(
 				'minimum_bod' => $minimum,
@@ -832,6 +833,7 @@
 				'deadline' => $deadline,
 				'FK_hoogste_bieder' => $team_id, 
 				'positie' => $positie,
+				'deadline_format' => $mdate,
 
 			);
 

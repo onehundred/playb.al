@@ -2,25 +2,26 @@
 <div class="gameRight">
     <?php if(isset($matches[1]['thuis'])){ ?>
     <?php if(!isset($alien)){ ?>
-    <a class="question" href="../korfbal_teamorders/<?php echo $team_id;?>">opstelling</a>
+    <a class="question" id="opstellingButton" href="../korfbal_teamorders/<?php echo $team_id;?>">opstelling</a>
     <?php }?>
     <?php for($i=1;$i<15;$i++){ ?>
     <div class="wedstrijdEntry">
-        <p id="matchTeamName"><?php echo $matches[$i]['thuis'];?></p>
-        <p id="versus">VS</p>
-        <p id="matchTeamName"><?php echo $matches[$i]['uit'];?></p>
+        <p id="matchTeamNameHome"><?php echo $matches[$i]['thuis'];?></p>
+        <!-- <p id="versus">VS</p> -->
+        <p id="matchTeamNameOut"><?php echo $matches[$i]['uit'];?></p>
+        <p id="matchUitslag">
         <?php $uitslag = $matches[$i]['uitslag'];
             if(isset($uitslag)){
                 if(!isset($alien)){ 
-                    echo "".$uitslag."&nbsp;";
-                    echo anchor('korfbal/korfbal_review/'.$this->uri->segment('3').'/'.$matches[$i]['wedstrijdid'],'bekijk replay nu');
+                    echo '<p id="matchUitslagScore">'.$uitslag.'</p>';
+                    echo anchor('korfbal/korfbal_review/'.$this->uri->segment('3').'/'.$matches[$i]['wedstrijdid'],'bekijk replay','class="question"');
                     echo '<br />';
                 }else{
                     echo "".$uitslag."&nbsp;";
-                    echo anchor('korfbal_other_team/korfbal_review/'.$this->uri->segment('3').'/'.$matches[$i]['wedstrijdid'],'bekijk replay nu');
+                    echo anchor('korfbal_other_team/korfbal_review/'.$this->uri->segment('3').'/'.$matches[$i]['wedstrijdid'],'bekijk replay');
                     echo '<br />';
 
-                }
+                } echo '</p>';
 
              } echo        '</div>';} 
              }else{ ?>

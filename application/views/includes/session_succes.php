@@ -35,6 +35,7 @@ if(isset($alien)){
 	<?php }else{ ?>
 		<p><?php if(isset($teamnaam)){ echo($teamnaam);}?></p>
 	<?php } ?>	
+	
 	<?php echo anchor('main/logout','afmelden', 'id="logout"') ?>
 
 	

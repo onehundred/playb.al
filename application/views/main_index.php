@@ -6,10 +6,9 @@ $(document).ready(function() {
     
     $('.sliderHome').show().after('<div id="galleryNav" class="galleryNav">').cycle({
         fx:     'fade',
-        speed:  500,
- 
-       
+        speed:  500, 
         pager:  '#galleryNav',
+        next: '.sliderHome',
          pause:   1 
     });
 });

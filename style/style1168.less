@@ -279,21 +279,16 @@ color: rgba(0,0,0,0.75);
 .player, .playerDetail, .playerMale, .playerFemale {
 	width: 335px;
 	height: 240px;
-	background: #FAFAFA;
-	background-color: rgba(255, 255, 255, 0.5);
+
 	margin-right: 20px;
 	margin-bottom: 15px;
-	border: 1px solid #E5E5E5;
+
 
 }
 .player:hover, .playerDetail:hover, .playerMale:hover, .playerFemale:hover {
-	border: 1px solid #CCC;
-	background: #FAFAFA;
-	background-color: rgba(255, 255, 255, 0.75);
+
 	.transitionOn;
-	-webkit-box-shadow:  0px 0px 5px #D1D1D1;
-	-moz-box-shadow: 0px 0px 5px #D1D1D1;
-	box-shadow: 0px 0px 5px #D1D1D1;
+
 
 
 }
@@ -338,7 +333,7 @@ height: 475px;
  color: #222222;
 }
 .gameRight .name {
-	padding: 5px 10px 5px 10px;
+	padding: 5px 10px;
 	.transitionOff;
 	border: 1px solid rgba(0, 0, 0, 0);
 		background-color: #CCCCCC;
@@ -445,7 +440,7 @@ margin: 0;
 a#playerSort {
 line-height: 20px;
 }
-.gameLeft h2, .gameRight h2 {
+.gameLeft h2 {
 	font-size: 28px;
 	font-weight: normal;
 	letter-spacing: 1px;
@@ -566,7 +561,6 @@ width: 10px;
 display: inline;
 margin: 0 0 0 15px;
 color: #CCCCCC;
-margin-bottom: 100px;
 }
 div#chartsWonLegend p, div#chartsLostLegend p {
 padding: 0px 15px 0px 15px;
@@ -699,32 +693,67 @@ list-style-type: none;
 float: left;
 
 }
+
+
+/* gameRight end ------------------------------------------------------------------------------------------------------------*/
+/* MATCHES start -----------------------------------------------------------------------------------------------------------*/
+#matchTeamNameHome, #matchTeamNameOut, #versus {
+font-family: 'SFCollegiateSolidRegular';
+	text-align: left;
+	color: #FFF;
+	font-size: 36px;
+	text-transform: uppercase;
+	font-weight: normal;
+	cursor: default;
+		text-shadow: 0 1px 0 #ccc,  0 2px 0 #c9c9c9,  0 3px 0 #bbb,  0 4px 0 #b9b9b9,  0 5px 0 #aaa,  0 6px 1px rgba(0,0,0,.1),  0 0 5px rgba(0,0,0,.1),  0 1px 3px rgba(0,0,0,.3),  0 3px 5px rgba(0,0,0,.2),  0 5px 10px rgba(0,0,0,.25),  0 10px 10px rgba(0,0,0,.2),  0 20px 20px rgba(0,0,0,.15);
+
+}
+#matchTeamNameHome {
+float: left;
+display: inline;
+}
+#matchTeamNameOut {
+float: right;
+display: inline;
+
+
+}
+#matchUitslag {
+display: block;
+position: relative;
+left: -275px;
+top: 65px;
+
+
+}
+#matchUitslagScore{
+font-size: 36px;
+font-family: 'SFCollegiateSolidRegular';
+position: relative;
+left: 55px;
+
+}
+#versus {
+display: inline;
+float: left;
+position: relative;
+left: 100px;
+}
 #trainingButton {
 margin: 0 0 10px 0;
 }
-#divisionNumber {
-	font-size: 82px;
-	font-family: 'SFCollegiateSolidRegular';
-	text-transform: uppercase;
-	color: #000;
-}
-/* gameRight end ------------------------------------------------------------------------------------------------------------*/
-/* MATCHES start -----------------------------------------------------------------------------------------------------------*/
-#matchTeamName, #versus {
-	font-size: 32px;
-	font-family: 'SFCollegiateSolidRegular';
-	text-transform: uppercase;
-	color: #FFF;
- .textShadow;
-	display: inline;
-	line-height: 34px;
-	width: 100px;
-}
-#versus {
-	color: black;/*
-left: 10px;
+#opstellingButton {
+top: 12px;
 position: relative;
-*/
+}
+.wedstrijdEntry {
+margin: 40px 0 0 0;
+height: 70px;
+}
+.wedstrijdEntry a.question {
+
+position: relative;
+top: 30px;
 }
 /* MATCHES end ---------------------------------------------------------------------------------------------------------------*/
 /* DIVISION start ------------------------------------------------------------------------------------------------------------*/
@@ -736,6 +765,12 @@ position: relative;
 #team {
 	width: 150px;
 	padding: 5px 15px 5px 20px;
+}
+#divisionNumber {
+	font-size: 82px;
+	font-family: 'SFCollegiateSolidRegular';
+	text-transform: uppercase;
+	color: #000;
 }
 #played, #won, #lost, #draw, #goalsPos, #goalsNeg, #goalsSal, #points {
 	padding: 5px 15px 5px 0px;
@@ -1012,8 +1047,7 @@ background:
 	}
 	
 	#profilePhoto {
-	background-color: #FFFFFF;
-	background-color: rgba(255,255,255,0.75);
+
 	float: right;
 	padding: 5px;
 	margin: 5px 45px 0 0;
@@ -1519,7 +1553,7 @@ background-repeat: no-repeat;
 }
 #links_boven_kopen:hover, #midden_boven_kopen:hover, #rechts_boven_kopen:hover, #rechts_midden_kopen:hover, #rechts_onder_kopen:hover, #midden_onder_kopen:hover, #links_onder_kopen:hover, #links_midden_kopen:hover {
 .transitionOn;
-	opacity: 0.3;
+	opacity: 0.75;
 }
 #midden_boven {
 	float:right;
@@ -1636,11 +1670,12 @@ background-repeat: no-repeat;
 	.transitionOff;
 }
 .kopen {
-	text-decoration: underline;
 	cursor: pointer;
-	color:blue;
-	margin-left: 35px;
-	font-size: 9pt;
+position: relative;
+left: 150px;
+
+margin: 0 0 20px 0;
+	font-size: 14px;
 }
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footerWrap {

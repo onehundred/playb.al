@@ -525,7 +525,7 @@ margin-top: 10%;
 .player, .playerFemale, .playerMale {
 	width: 245px;
 	height: 70px;
-	background: #FAFAFA;
+
 	-moz-border-radius-topleft: 3px;
 	-moz-border-radius-topright: 3px;
 	-moz-border-radius-bottomright: 9px;
@@ -538,12 +538,12 @@ margin-top: 10%;
 	float: left;
 	margin-bottom: 15px;
 	padding: 7px;
-	border: 1px solid #E5E5E5;
+
 	opacity: 0.9;
 	z-index: 1;
 }
 .player:hover, .playerDetail:hover {
-	border: 1px solid #CCC;
+
 }
 .playerDetail {
 	
@@ -691,7 +691,7 @@ background-color: rgba(255,255,255,0.75);
 box-shadow: 0px 0px 10px #E5E5E5;
  .transitionOn2;
 }
-.gameLeft h2, .gameRight h2 {
+.gameLeft h2 {
 	font-size: 28px;
 	font-weight: normal;
 	letter-spacing: 1px;
@@ -791,7 +791,55 @@ border: 1px solid rgba(191, 191, 191, 0.5);
 .transitionOn;
 
 }
+/* MATCHES start ----------------------------------------------------------------------------------------- */
+#matchTeamNameHome, #matchTeamNameOut, #versus {
+font-family: 'SFCollegiateSolidRegular';
+	text-align: left;
+	color: #FFF;
+	font-size: 36px;
+	text-transform: uppercase;
+	font-weight: normal;
+	cursor: default;
+		text-shadow: 0 1px 0 #ccc,  0 2px 0 #c9c9c9,  0 3px 0 #bbb,  0 4px 0 #b9b9b9,  0 5px 0 #aaa,  0 6px 1px rgba(0,0,0,.1),  0 0 5px rgba(0,0,0,.1),  0 1px 3px rgba(0,0,0,.3),  0 3px 5px rgba(0,0,0,.2),  0 5px 10px rgba(0,0,0,.25),  0 10px 10px rgba(0,0,0,.2),  0 20px 20px rgba(0,0,0,.15);
 
+}
+#matchTeamNameHome {
+float: left;
+display: inline;
+}
+#matchTeamNameOut {
+float: right;
+display: inline;
+
+
+}
+#matchUitslag {
+display: block;
+position: relative;
+
+top: 55px;
+}
+#matchUitslag p{
+
+}
+#versus {
+display: inline;
+float: left;
+position: relative;
+left: 100px;
+}
+#trainingButton {
+margin: 0 0 10px 0;
+}
+#opstellingButton {
+top: 12px;
+position: relative;
+}
+.wedstrijdEntry {
+margin: 40px 0 0 0;
+height: 70px;
+}
+/* MATCHES end ----------------------------------------------------------------------------------------- */
 /* gameRight end -------------------------------------------------------------------------------------------------------------*/
 
 .sportnav {
@@ -838,7 +886,7 @@ color: @korfbalColor;
 	cursor: pointer;/* -webkit-text-stroke: 1px @korfbalBorderColor; *//* text-shadow: 0px -1px 1px rgba(1, 1, 1, .8); */
 }
 #cup {
-margin: 20px 0 0 15px;
+margin: 10px 0 0 15px;
 }
 #achievementBadge {
 margin: 0 0 0 15px;
@@ -1700,6 +1748,27 @@ bottom: 10px;
 left: -20px;
 margin: 2px -15px 0px 12px;
 }
+/* STADION begin -------------------------------------------------------------------------------------------------------------*/
+#sec_a, #sec_b, #sec_c, #sec_d, #sec_e, #sec_f, #sec_g, #sec_h {
+background: none;
+width: 340px;
+padding: 15px;
+}
+/* STADION end -------------------------------------------------------------------------------------------------------------*/
+/* MANAGER begin -------------------------------------------------------------------------------------------------------------*/
+#managerPic {
+margin: 25px 0 0 0;
+}
+#managerChangePic {
+margin: 25px 0 0 0;
+}
+#managerStatistics {
+margin: 25px 0 0 0;
+}
+#s5 img, #s6 img {
+margin: 0 0 0 15px;
+}
+/* MANAGER end -------------------------------------------------------------------------------------------------------------*/
 /* TOASTMESSAGES begin -------------------------------------------------------------------------------------------------------------*/
 .toast-container {
 	width: 100%;

@@ -35,15 +35,15 @@ h2{font-family:'LeagueGothicRegular';text-transform:uppercase;color:#666;}
 #teamname{font-size:68px;width:1168px;margin:0 auto 0 auto;}
 .game{width:1168px;margin:0 auto 0 auto;}
 .gameRight{font-size:15px;float:right;width:745px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;padding:20px 0 0 15px;}
-.player,.playerDetail,.playerMale,.playerFemale{width:335px;height:240px;background:#FAFAFA;background-color:rgba(255, 255, 255, 0.5);margin-right:20px;margin-bottom:15px;border:1px solid #E5E5E5;}
-.player:hover,.playerDetail:hover,.playerMale:hover,.playerFemale:hover{border:1px solid #CCC;background:#FAFAFA;background-color:rgba(255, 255, 255, 0.75);-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;-webkit-box-shadow:0px 0px 5px #D1D1D1;-moz-box-shadow:0px 0px 5px #D1D1D1;box-shadow:0px 0px 5px #D1D1D1;}
+.player,.playerDetail,.playerMale,.playerFemale{width:335px;height:240px;margin-right:20px;margin-bottom:15px;}
+.player:hover,.playerDetail:hover,.playerMale:hover,.playerFemale:hover{-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;}
 .playerDetail{width:745px;height:470px;}
 #playerDetailName{text-transform:capitalize;font-size:36px;letter-spacing:1px;font-family:'LeagueGothicRegular';}
 .sortTeamLeft{width:180px;float:left;}
 .sortTeamRight{width:180px;float:left;}
 #sortPlayers{height:475px;}
 .gameRight .number{font-size:64px;font-family:'SFCollegiateSolidRegular';display:inline;padding:7px 7px 7px 15px;float:left;line-height:45px;cursor:default;color:#222222;}
-.gameRight .name{padding:5px 10px 5px 10px;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;border:1px solid rgba(0, 0, 0, 0);background-color:#CCCCCC;background-color:rgba(0, 0, 0, 0.05);border:1px solid rgba(0, 0, 0, 0.15);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;}
+.gameRight .name{padding:5px 10px;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;border:1px solid rgba(0, 0, 0, 0);background-color:#CCCCCC;background-color:rgba(0, 0, 0, 0.05);border:1px solid rgba(0, 0, 0, 0.15);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;}
 .gameRight .name:hover{background-color:#CCCCCC;background-color:rgba(0, 0, 0, 0.2);border:1px solid rgba(0, 0, 0, 0.25);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;cursor:pointer;}
 .gameRight .firstname{padding-right:7px;}
 .gameRight .age{display:inline;line-height:28px;padding:0 0 0 10px;cursor:default;}
@@ -62,7 +62,7 @@ aside{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-
 ul#filters{display:block;margin:10px 0 0 0;}
 ul#filters p{margin:0;}
 a#playerSort{line-height:20px;}
-.gameLeft h2,.gameRight h2{font-size:28px;font-weight:normal;letter-spacing:1px;color:#7B7B7B;padding:8px 0 8px 10px;width:352px;height:40px;background-image:url(../img/stitches.png);background-repeat:no-repeat;background-position:10px 40px;text-shadow:0px 0px 4px #F2F2F2;text-transform:lowercase;}
+.gameLeft h2{font-size:28px;font-weight:normal;letter-spacing:1px;color:#7B7B7B;padding:8px 0 8px 10px;width:352px;height:40px;background-image:url(../img/stitches.png);background-repeat:no-repeat;background-position:10px 40px;text-shadow:0px 0px 4px #F2F2F2;text-transform:lowercase;}
 #breakline{background-image:url(../img/stitches.png);background-repeat:no-repeat;background-position:10px 0px;margin:0 10px 0 0;padding:10px;}
 .gameRight h2{border:1px solid #b3b3b3;}
 .gameLeft p{padding:10px 15px 10px 15px;color:#000;}
@@ -77,7 +77,7 @@ a#playerSort{line-height:20px;}
 .gameLeft div section{-webkit-border-top-left-radius:0px;-webkit-border-top-right-radius:0px;-webkit-border-bottom-right-radius:10px;-webkit-border-bottom-left-radius:10px;-moz-border-radius-topleft:0px;-moz-border-radius-topright:0px;-moz-border-radius-bottomright:10px;-moz-border-radius-bottomleft:10px;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}
 span#wonspan{background-color:#808080;height:10px;width:10px;display:inline;margin:0 0 0 15px;color:#808080;}
 span#lostspan{background-color:#333333;height:10px;width:10px;display:inline;margin:0 0 0 15px;color:#333333;}
-span#drawspan{background-color:#CCCCCC;height:10px;width:10px;display:inline;margin:0 0 0 15px;color:#CCCCCC;margin-bottom:100px;}
+span#drawspan{background-color:#CCCCCC;height:10px;width:10px;display:inline;margin:0 0 0 15px;color:#CCCCCC;}
 div#chartsWonLegend p,div#chartsLostLegend p{padding:0px 15px 0px 15px;display:inline;}
 div#chartsDrawLegend p{padding:0px 15px 10px 15px;display:inline;}
 #gameLeftOverview{width:1168px;}
@@ -101,12 +101,19 @@ div#klassementEntry:hover{background-color:rgba(191, 191, 191, 0.4);border:1px s
 .odd{background-color:#E5E5E5;background-color:rgba(229, 229, 229, 0.5);border-bottom:1px solid #CCCCCC;}
 li.rssRow.odd,li.rssRow.odd h4,li.rssRow.even h4{font-weight:normal;background:none;font-size:15px;border:none;list-style-type:none;}
 #trainingSkill{float:left;}
+#matchTeamNameHome,#matchTeamNameOut,#versus{font-family:'SFCollegiateSolidRegular';text-align:left;color:#FFF;font-size:36px;text-transform:uppercase;font-weight:normal;cursor:default;text-shadow:0 1px 0 #cccccc,0 2px 0 #c9c9c9,0 3px 0 #bbbbbb,0 4px 0 #b9b9b9,0 5px 0 #aaaaaa,0 6px 1px rgba(0, 0, 0, 0.1),0 0 5px rgba(0, 0, 0, 0.1),0 1px 3px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2),0 5px 10px rgba(0, 0, 0, 0.25),0 10px 10px rgba(0, 0, 0, 0.2),0 20px 20px rgba(0, 0, 0, 0.15);}
+#matchTeamNameHome{float:left;display:inline;}
+#matchTeamNameOut{float:right;display:inline;}
+#matchUitslag{display:block;position:relative;left:-275px;top:65px;}
+#matchUitslagScore{font-size:36px;font-family:'SFCollegiateSolidRegular';position:relative;left:55px;}
+#versus{display:inline;float:left;position:relative;left:100px;}
 #trainingButton{margin:0 0 10px 0;}
-#divisionNumber{font-size:82px;font-family:'SFCollegiateSolidRegular';text-transform:uppercase;color:#000;}
-#matchTeamName,#versus{font-size:32px;font-family:'SFCollegiateSolidRegular';text-transform:uppercase;color:#FFF;text-shadow:0px 0px 15px #333;display:inline;line-height:34px;width:100px;}
-#versus{color:black;}
+#opstellingButton{top:12px;position:relative;}
+.wedstrijdEntry{margin:40px 0 0 0;height:70px;}
+.wedstrijdEntry a.question{position:relative;top:30px;}
 .division div{float:left;display:inline;padding:0 15px 0 0;}
 #team{width:150px;padding:5px 15px 5px 20px;}
+#divisionNumber{font-size:82px;font-family:'SFCollegiateSolidRegular';text-transform:uppercase;color:#000;}
 #played,#won,#lost,#draw,#goalsPos,#goalsNeg,#goalsSal,#points{padding:5px 15px 5px 0px;width:50px;}
 .division_results div{float:left;display:inline;padding:0 15px 0 0;}
 .grey{background-color:black;}
@@ -144,7 +151,7 @@ article.sortSkill{clear:both;}
 article.sortSkill p{display:inline;margin:0;padding:0;}
 .login,.profile,.createdAccount{display:none;opacity:0;-webkit-border-top-left-radius:3px;-webkit-border-top-right-radius:3px;-webkit-border-bottom-right-radius:12px;-webkit-border-bottom-left-radius:12px;-moz-border-radius-topleft:3px;-moz-border-radius-topright:3px;-moz-border-radius-bottomright:12px;-moz-border-radius-bottomleft:12px;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:12px;border-bottom-left-radius:12px;position:absolute;padding:35px;left:39%;margin-top:150px;width:290px;height:270px;background: url(../img/boxbg.png) no-repeat 2px 6px;}
 .createdAccount{display:block;opacity:1;}
-#profilePhoto{background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.75);float:right;padding:5px;margin:5px 45px 0 0;}
+#profilePhoto{float:right;padding:5px;margin:5px 45px 0 0;}
 #profilePhoto img{width:50px;height:50px;}
 #logout{float:right;position:relative;top:100px;}
 a#closeLogin,a#closeProfile,a#closeOops{position:absolute;top:0px;left:0px;}
@@ -209,7 +216,7 @@ img#galleryRightHideSmall{left:1120px;position:relative;}
 #stadion{width:640px;height:1006px;float:left;margin:0 0 0 60px;}
 #links_boven{width:235px;height:277px;float:left;background-image:url(../img/stadion/a_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
 #links_boven_kopen{width:235px;height:277px;float:left;background-image:url(../img/stadion/a_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
-#links_boven_kopen:hover,#midden_boven_kopen:hover,#rechts_boven_kopen:hover,#rechts_midden_kopen:hover,#rechts_onder_kopen:hover,#midden_onder_kopen:hover,#links_onder_kopen:hover,#links_midden_kopen:hover{-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;opacity:0.3;}
+#links_boven_kopen:hover,#midden_boven_kopen:hover,#rechts_boven_kopen:hover,#rechts_midden_kopen:hover,#rechts_onder_kopen:hover,#midden_onder_kopen:hover,#links_onder_kopen:hover,#links_midden_kopen:hover{-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;opacity:0.75;}
 #midden_boven{float:right;background-image:url(../img/stadion/b_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;width:206px;height:274px;}
 #midden_boven_kopen{float:right;background-image:url(../img/stadion/b_sectie.png);background-repeat:no-repeat;opacity:0.2;width:206px;height:274px;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
 #rechts_boven{width:196px;height:274px;float:right;background-image:url(../img/stadion/c_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
@@ -223,7 +230,7 @@ img#galleryRightHideSmall{left:1120px;position:relative;}
 #midden_onder_kopen{width:206px;height:209px;float:right;background-image:url(../img/stadion/f_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
 #links_onder{width:235px;height:269px;float:left;background-image:url(../img/stadion/g_sectie_bought.png);background-repeat:no-repeat;opacity:0.75;}
 #links_onder_kopen{width:235px;height:269px;float:left;background-image:url(../img/stadion/g_sectie.png);background-repeat:no-repeat;opacity:0.2;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
-.kopen{text-decoration:underline;cursor:pointer;color:blue;margin-left:35px;font-size:9pt;}
+.kopen{cursor:pointer;position:relative;left:150px;margin:0 0 20px 0;font-size:14px;}
 #footerWrap{float:left;width:100%;background:url(../img/1168/footerfill_top.png) repeat-x 0% 0%,url(../img/1168/footerfill.png) repeat-x 0px 40px;}
 footer{width:1168px;margin:0 auto 0 auto;}
 footer h2{font-family:'LeagueGothicRegular';text-transform:uppercase;letter-spacing:1px;color:#DEDEDE;font-size:40px;text-shadow:0px 2px 3px #000;margin:0 0 25px 0;}

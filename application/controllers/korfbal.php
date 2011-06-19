@@ -26,12 +26,15 @@ class Korfbal extends CI_Controller {
 	}
 	function is_your_team(){
 		$teamid = $this->uri->segment('3');
-		
-		$this->load->model('korfbal_model');
-		$team_user_id = $this->korfbal_model->is_your_team();		
-		if($teamid !== $team_user_id){
-			redirect('korfbal_other_team/korfbal_overview/'.$teamid);
-		}
+		if($teamid == ''){
+			redirect('sportchoice/sport');
+		}else{
+			$this->load->model('korfbal_model');
+			$team_user_id = $this->korfbal_model->is_your_team();		
+			if($teamid !== $team_user_id){
+				redirect('korfbal_other_team/korfbal_overview/'.$teamid);
+			}
+		}	
 	}
 
 	//de mainfunctie van korfbal -> laadt de hoofdpage

@@ -72,10 +72,12 @@
                         <div>
                             <img src="<?php echo base_url()?>/img/awards/cup_gold.png" ondragstart="return false" />
                             <p><?php echo $row->naam;?></p> </div>
+                        
                         <?php 
-                  }
-                 } ?>
-                    </div>
+                  }?>
+                  </div>
+                 <?php } ?>
+                  
                 </section>
                 </div>
                 <script>
@@ -104,10 +106,12 @@ $(function() {
                             <div>
                                 <img src="<?php echo base_url()?>/img/achievements/<?php echo $row->afbeelding;?>" ondragstart="return false" />
                                <p> <?php echo $row->naam;?></p> </div>
+                               
                             <?php
-										}
-			 						} ?>
-                        </div>
+										}?>
+							</div>
+			 					<?php } ?>
+                     
                     </section>
                 </div>
             </div>

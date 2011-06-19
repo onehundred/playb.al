@@ -65,9 +65,9 @@
                     <h2>
                         <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
                         kalender</h2>
-                    <p>week <?php echo $calendar['week'];?>
+                    <p class="entry">week <?php echo $calendar['week'];?>
                     seizoen <?php echo $calendar['seizoen'];?></p>
-                    <p>volgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                    <p class="entry">volgende wedstrijd:<br /> <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
                 </section>
             </div>
             <div class="fillLeft">

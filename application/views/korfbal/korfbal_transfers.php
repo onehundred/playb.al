@@ -66,23 +66,43 @@ $(document).ready(function(){
             <option id="spelmaker" value="spelmaker">Spelmaker</option>
             <option id="rebounder" value="rebounder">Rebounder</option>
         </select>
-        <p class="question" id="submit_search">Zoek</p>
+        <a class="question" id="submit_search">zoeken</a>
     </div>
     <div id="transfers"> </div>
 </div>
 <aside>
     <div class="gameLeft">
-        <div class="fillLeft">
-        <h2>
-                    <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
-                    kalender</h2>
-            <section>
-                
-                <p>huidige week: week <?php echo $calendar['week'];?></p>
-                <p>huidige seizoen: seizoen <?php echo $calendar['seizoen'];?></p>
-                <p>eerstvolgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
-            </section>
-        </div>
+         <div class="fillLeft">
+                    <section>
+                        <figure class="icon" id="gameCalendar"></figure>
+                        <h2> kalender</h2>
+                        
+                        <p class="entry">week <?php echo $calendar['week'];?> - seizoen <?php echo $calendar['seizoen'];?></p>
+                        <p class="entry">volgende wedstrijd: <br /><?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                    </section>
+                </div>
+                <div class="fillLeft">
+                    <section>
+                        <figure class="icon" id="gamePlayerBought"></figure>
+                        <h2> laatste speler gekocht</h2>
+                         <?php if(isset($stats['gekocht']['voornaam'])){ ?>
+                        	<p><a href="<?php echo base_url();?>index.php/korfbal/korfbal_player/<?php echo $team_id;?>/<?php echo $stats['gekochtid'];?>"/><?php echo $stats['gekocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></a></p>
+                        <?php }else{ ?>
+                      	  <p class="entry">nog geen speler gekocht.</p>
+                        <?php } ?>
+                    </section>
+                </div>
+                <div class="fillLeft">
+                    <section>
+                        <figure class="icon" id="gamePlayerSold"></figure>
+                        <h2> laatste speler verkocht</h2>
+                        <?php if(isset($stats['verkocht']['voornaam'])){ ?>
+                        	<p><a href="<?php echo base_url();?>index.php/korfbal_other_team/korfbal_player/<?php echo $stats['verkocht']['teamid'];?>/<?php echo $stats['verkochtid'];?>"/><?php echo $stats['verkocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></a></p>
+                        <?php }else{ ?>
+                      	  <p class="entry">nog geen speler verkocht.</p>
+                        <?php } ?>
+                    </section>
+                </div>
     </div> <!-- end gameLeft -->
 </aside>
 </div> <!-- end game -->

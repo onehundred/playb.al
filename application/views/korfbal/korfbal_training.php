@@ -134,7 +134,6 @@ foreach($training->result() as $row){
 
             <!-- end leftProgress --> 
             <!-- vordering van training --> 
-            <!--             <p>vordering</p> --> 
             
         </div>
         <!-- end container -->
@@ -193,85 +192,85 @@ foreach($training->result() as $row){
                 <p id="breakline"></p>
                 <ul id="sort" class="sort option-set">
                     <article class="sortSkill">
-                        <li class="sort asc option-set floated clearfix"> <a href="#number" class="selected">
+                        <li class="sort asc option-set floated clearfix"> <a href="#number" class="selected sortNumber">
                             <figure class="icon" id="gameDown"></figure>
                             </a></li>
-                        <a href="#number" id="playerSort">
+                        <a href="#number" class="sortNumber">
                         <figure class="icon" id="gameUp"></figure>
                         rugnummer </a> </article>
                     <article class="sortSkill">
-                        <li class="sort asc option-set floated clearfix"> <a href="#age" class="selected">
+                        <li class="sort asc option-set floated clearfix"> <a href="#age" class="selected sortAge">
                             <figure class="icon" id="gameDown"></figure>
                             </a> </li>
-                        <a href="#age">
+                        <a href="#age" class="sortAge">
                         <figure class="icon" id="gameUp"></figure>
                         leeftijd</a> </article>
                     <article class="sortSkill">
-                        <li class="sort asc option-set floated clearfix"> <a href="#price" class="selected">
+                        <li class="sort asc option-set floated clearfix"> <a href="#price" class="selected sortPrice">
                             <figure class="icon" id="gameDown"></figure>
                             </a></li>
-                        <a href="#price">
+                        <a href="#price" class="sortPrice">
                         <figure class="icon" id="gameUp"></figure>
                         prijs</a> </article>
                     <p></p>
                     <ul class="sortTeamLeft">
                         <article class="sortSkill">
-                            <li class="sort asc option-set floated clearfix"> <a href="#passing" class="selected">
+                            <li class="sort asc option-set floated clearfix"> <a href="#passing" class="selected sortPassing">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
-                            <a href="#passing">
+                            <a href="#passing" class="sortPassing">
                             <figure class="icon" id="gameUp"></figure>
                             passing</a> </article>
                         <article class="sortSkill">
-                            <li class="sort asc option-set floated clearfix"> <a href="#shotpower" class="selected">
+                            <li class="sort asc option-set floated clearfix"> <a href="#shotpower" class="selected sortShotpower">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
-                            <a href="#shotpower">
+                            <a href="#shotpower" class="sortShotpower">
                             <figure class="icon" id="gameUp"></figure>
                             shotpower</a> </article>
                         <article class="sortSkill">
-                            <li class="sort asc option-set floated clearfix"> <a href="#intercepting" class="selected">
+                            <li class="sort asc option-set floated clearfix"> <a href="#intercepting" class="selected sortIntercepting">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
-                            <a href="#intercepting">
+                            <a href="#intercepting" class="sortIntercepting">
                             <figure class="icon" id="gameUp"></figure>
                             intercepting</a> </article>
                         <article class="sortSkill">
-                            <li class="sort asc option-set floated clearfix"> <a href="#leadership" class="selected">
+                            <li class="sort asc option-set floated clearfix"> <a href="#leadership" class="selected sortLeadership">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
-                            <a href="#leadership">
+                            <a href="#leadership" class="sortLeadership">
                             <figure class="icon" id="gameUp"></figure>
                             leadership</a> </article>
                     </ul>
                     <!-- end sortTeamLeft -->
                     <ul class="sortTeamRight">
                         <article class="sortSkill">
-                            <li class="sort asc option-set floated clearfix"> <a href="#rebound">
+                            <li class="sort asc option-set floated clearfix"> <a href="#rebound" class="sortRebound">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
-                            <a href="#rebound" class="selected">
+                            <a href="#rebound" class="selected sortRebound">
                             <figure class="icon" id="gameUp"></figure>
                             rebound</a> </article>
                         <article class="sortSkill">
-                            <li class="sort asc option-set floated clearfix"> <a href="#stamina" class="selected">
+                            <li class="sort asc option-set floated clearfix"> <a href="#stamina" class="selected sortStamina">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
-                            <a href="#stamina">
+                            <a href="#stamina" class="sortStamina">
                             <figure class="icon" id="gameUp"></figure>
                             stamina</a> </article>
                         <article class="sortSkill">
-                            <li class="sort asc option-set floated clearfix"> <a href="#shotprecision" class="selected">
+                            <li class="sort asc option-set floated clearfix"> <a href="#shotprecision" class="selected sortShotprecision">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
-                            <a href="#shotprecision">
+                            <a href="#shotprecision" class="sortShotprecision">
                             <figure class="icon" id="gameUp"></figure>
                             shotprecsion</a> </article>
                         <article class="sortSkill">
-                            <li class="sort asc option-set floated clearfix"> <a href="#playmaking" class="selected">
+                            <li class="sort asc option-set floated clearfix"> <a href="#playmaking" class="selected sortPlaymaking">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
-                            <a href="#playmaking">
+                            <a href="#playmaking" class="sortPlaymaking">
                             <figure class="icon" id="gameUp"></figure>
                             playmaking</a> </article>
                     </ul>

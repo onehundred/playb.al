@@ -731,12 +731,9 @@ alert (initHeight);
         	return false;
 			      		
 		});
-			$("#playerSort").click(function () {;
-			$(this).css({color:"#000000"});
-
-			      		
-	});
-
+		
+		
+		
 });
 
 /////////////////////////////////////////////////////////////////

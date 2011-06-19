@@ -118,7 +118,7 @@
                         <figure class="icon" id="gamePlayerBought"></figure>
                         <h2> laatste speler gekocht</h2>
                          <?php if(isset($stats['gekocht']['voornaam'])){ ?>
-                        	<p><?php echo $stats['gekocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
+                        	<p><a href="<?php echo base_url();?>index.php/korfbal/korfbal_player/<?php echo $team_id;?>/<?php echo $stats['gekochtid'];?>"/><?php echo $stats['gekocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></a></p>
                         <?php }else{ ?>
                       	  <p class="entry">nog geen speler gekocht.</p>
                         <?php } ?>
@@ -129,7 +129,7 @@
                         <figure class="icon" id="gamePlayerSold"></figure>
                         <h2> laatste speler verkocht</h2>
                         <?php if(isset($stats['verkocht']['voornaam'])){ ?>
-                        	<p><?php echo $stats['verkocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></p>
+                        	<p><a href="<?php echo base_url();?>index.php/korfbal_other_team/korfbal_player/<?php echo $stats['verkocht']['teamid'];?>/<?php echo $stats['verkochtid'];?>"/><?php echo $stats['verkocht']['voornaam'].' '.$stats['gekocht']['achternaam'];?></a></p>
                         <?php }else{ ?>
                       	  <p class="entry">nog geen speler verkocht.</p>
                         <?php } ?>

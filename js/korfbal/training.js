@@ -1,6 +1,8 @@
 $(function() {
 	init();
 	function init(){
+				get_energie();
+	
 				var teamid = $('#teamid').val();
 				$('#chartTeamSkills').empty();
 				//alert(teamid);
@@ -108,7 +110,28 @@ $(function() {
   				});
 		
 				}
-
+				
+				
+	function get_energie(){
+		$('#energie_span').text('');
+		var teamid = $('#teamid').val();
+		$.ajax({
+    			type: "POST",
+    			url: "http://playb.al/index.php/json/get_energie",
+    			data:  { teamid: teamid,
+            			
+            			
+        				},
+    			dataType: "json",
+        		success: function(data){
+        			var energie = data;
+					$('#energie_span').text(energie);
+				}
+				
+				
+			});		
+	
+	}
 
 	$('#training').click(function(){
 	
@@ -214,7 +237,8 @@ $(function() {
 		        			 animation: 'none',                   //fade, fadeAndPop, none
 	    					 animationspeed: 300,                       //how fast animtions are
 	    					 closeonbackgroundclick: true,              //if you click background will modal close?
-	    					 dismissmodalclass: 'close-reveal-modal'    //the class of a button or element that will close an open modal
+	    					 dismissmodalclass: 'close-reveal-modal',     //the class of a button or element that will close an open modal
+	    					 onClose: init(),
 	    					 });
 
 		        		}

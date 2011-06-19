@@ -52,7 +52,7 @@ $(document).ready(function()
         		
         		});
         		};
-        		//klikken op kies sponsor3 geeft een paar bepaalde sponsors weer
+        		//klikken op kies sponsor3 geeft een aantal bepaalde sponsors weer
         		$('.sponsor').live('click', function(){
         				var cat = $(this).attr('id');
         				
@@ -125,7 +125,7 @@ $(document).ready(function()
 				});
 			
 			//grafiek met overzicht van de financien van het huidige seizoen
-			$.ajax({
+			/*$.ajax({
     							type: "POST",
     							url: "http://playb.al/index.php/Json/korfbal_finances",
     							data:  { teamid : teamid
@@ -161,7 +161,7 @@ $(document).ready(function()
         
         }
         
-        });
+        });*/
 
 				
    });     		

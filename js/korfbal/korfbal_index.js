@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-
-	
 	get_berichten(0);
 	get_berichten(1);
 	function get_berichten(status){

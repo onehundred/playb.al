@@ -134,7 +134,7 @@ $(function() {
 	}
 
 	$('#training').click(function(){
-	
+	 $('html, body').animate({scrollTop:0}, 'slow', function(){
 	var teamid = $('#teamid').val();
 	$('#myModal p').remove();
 	$('#myModal div').remove();
@@ -250,6 +250,7 @@ $(function() {
               });
 	
 	
+	});
 	});
 	
 	

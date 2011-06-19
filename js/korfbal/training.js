@@ -134,14 +134,18 @@ $(function() {
 	}
 
 	$('#training').click(function(){
-	 $('html, body').animate({scrollTop:0}, 'slow', function(){
-	var teamid = $('#teamid').val();
-	$('#myModal p').remove();
-	$('#myModal div').remove();
-	//alert(teamid);
+			$('html, body').stop().animate({scrollTop:0}, 'slow');
+			
+			$('#myModal p').remove();
+			$('#myModal div').remove();
+			var teamid = $('#teamid').val();
+
 	
 	
-	$(".target option:selected").each(function () {
+		//alert(teamid);
+	
+	
+		$(".target option:selected").each(function () {
                 var option = $(this).val();
                 //alert(option);
                 
@@ -198,8 +202,12 @@ $(function() {
 	        		$().toastmessage('showErrorToast', "je hebt niet genoeg energie");
 	        		}
 	        		else{
-	        		
-		        		for(var i in spelers){
+	        				var count=1;
+        					for(var j in data){
+        						count++;
+        					}
+	        			
+		        		for(var i=1;i<count;i++){
 		        			
 		    				var progress = spelers[i].totaal / 10;
 		    				//alert(progress);
@@ -231,7 +239,7 @@ $(function() {
 	    					 
 	    					 
 	    					 }
-	    					 
+	    					}
 	    					 $('#myModal').reveal({
 		        			
 		        			 animation: 'none',                   //fade, fadeAndPop, none
@@ -239,18 +247,14 @@ $(function() {
 	    					 closeonbackgroundclick: true,              //if you click background will modal close?
 	    					 dismissmodalclass: 'close-reveal-modal',     //the class of a button or element that will close an open modal
 	    					 onClose: get_energie(),
-	    					 });
-
-		        		}
+	    					 });	
 	    			}
 	    			}
 	  				});
                 
 
               });
-	
-	
-	});
+		
 	});
 	
 	

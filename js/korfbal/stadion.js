@@ -23,7 +23,7 @@ $(function(){
         	//alert(stadion['g'].sectie);
         			if(stadion['g'].sectie === '1'){
 				    	$('#stadion').append('<div id="rechts_boven"></div>');
-				    	$('#sec_g').append('<div class="input">'+stadion['g'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="g" value="1"/><a id="plaatsen_g" class="kopen question">Koop plaatsen</a></p><div>	');	    	
+				    	$('#sec_g').append('<div class="input">'+stadion['g'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="g" value="1"/><a id="plaatsen_g" class="kopen question">koop plaatsen</a></p><div>	');	    	
         			}else{
         				$('#stadion').append('<div id="rechts_boven_kopen"></div>');
         				$('#sec_g').append('<p id="sectie_g" class="kopen question input">kopen</p>');
@@ -32,7 +32,7 @@ $(function(){
         			
         			if(stadion['b'].sectie === '1'){
 				    	$('#stadion').append('<div id="midden_boven"></div>');
-				    	$('#sec_b').append('<div class="input">'+stadion['b'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="b" value="1"/><a id="plaatsen_b" class="kopen">Koop plaatsen</a></p><div>	');	
+				    	$('#sec_b').append('<div class="input">'+stadion['b'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="b" value="1"/><a id="plaatsen_b" class="kopen question">koop plaatsen</a></p><div>	');	
 				    	   	
         			}else{
         				$('#stadion').append('<div id="midden_boven_kopen"></div>');
@@ -41,7 +41,7 @@ $(function(){
 					
 					if(stadion['f'].sectie === '1'){
 				    	$('#stadion').append('<div id="links_boven"></div>');	
-				    	$('#sec_f').append('<div class="input">'+stadion['f'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="f" value="1"/><a id="plaatsen_f" class="kopen">Koop plaatsen</a></p><div>	');
+				    	$('#sec_f').append('<div class="input">'+stadion['f'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="f" value="1"/><a id="plaatsen_f" class="kopen">koop plaatsen</a></p><div>	');
         			}else{
         				$('#stadion').append('<div id="links_boven_kopen"></div>');
         				$('#sec_f').append('<p id="sectie_f" class="kopen question input">kopen</p>');
@@ -49,7 +49,7 @@ $(function(){
 					
 					if(stadion['c'].sectie === '1'){
 				    	$('#stadion').append('<div id="rechts_midden"></div>');
-				    	$('#sec_c').append('<div class="input">'+stadion['c'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="c" value="1"/><a id="plaatsen_c" class="kopen">Koop plaatsen</a></p><div>	');	
+				    	$('#sec_c').append('<div class="input">'+stadion['c'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="c" value="1"/><a id="plaatsen_c" class="kopen">koop plaatsen</a></p><div>	');	
 	    	
         			}else{
         				$('#stadion').append('<div id="rechts_midden_kopen"></div>');
@@ -60,7 +60,7 @@ $(function(){
         			
         			if(stadion['a'].sectie === '1'){
 				    	$('#stadion').append('<div id="links_midden"></div>');	
-				    	$('#sec_a').append('<div class="input">'+stadion['a'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="a" value="1"/><a id="plaatsen_a" class="kopen question">Koop plaatsen</a></p><div>	');	    	
+				    	$('#sec_a').append('<div class="input">'+stadion['a'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="a" value="1"/><a id="plaatsen_a" class="kopen question">koop plaatsen</a></p><div>	');	    	
         			}else{
         				$('#stadion').append('<div id="links_midden_kopen"></div>');
         				$('#sec_a').append('<p id="sectie_a" class="kopen question input">kopen</p>');
@@ -68,7 +68,7 @@ $(function(){
         			
         			if(stadion['h'].sectie === '1'){
 				    	$('#stadion').append('<div id="rechts_onder"></div>');
-				  		$('#sec_h').append('<div class="input">'+stadion['h'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="h" value="1"/><a id="plaatsen_h" class="kopen">Koop plaatsen</a></p><div>	'); 	    	
+				  		$('#sec_h').append('<div class="input">'+stadion['h'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="h" value="1"/><a id="plaatsen_h" class="kopen">koop plaatsen</a></p><div>	'); 	    	
         			}else{
         				$('#stadion').append('<div id="rechts_onder_kopen"></div>');
         				$('#sec_h').append('<p id="sectie_h" class="kopen question input">kopen</p>');
@@ -76,7 +76,7 @@ $(function(){
 					
 					if(stadion['d'].sectie === '1'){
 				    	$('#stadion').append('<div id="midden_onder"></div>');	
-				    	$('#sec_d').append('<div class="input">'+stadion['d'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="d" value="1"/><a id="plaatsen_d" class="kopen">Koop plaatsen</a></p><div>	');	   	
+				    	$('#sec_d').append('<div class="input">'+stadion['d'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="d" value="1"/><a id="plaatsen_d" class="kopen">koop plaatsen</a></p><div>	');	   	
         			}else{
         				$('#stadion').append('<div id="midden_onder_kopen"></div>');
         				$('#sec_d').append('<p id="sectie_d" class="kopen question input">kopen</p>');
@@ -84,7 +84,7 @@ $(function(){
 					
 					if(stadion['e'].sectie === '1'){
 				    	$('#stadion').append('<div id="links_onder"></div>');
-				    	$('#sec_e').append('<div class="input">'+stadion['e'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="e" value="1"/><a id="plaatsen_e" class="kopen">Koop plaatsen</a></p><div>	');		    	
+				    	$('#sec_e').append('<div class="input">'+stadion['e'].plaatsen+'&nbsp;plaatsen.<p><input type="text" id="e" value="1"/><a id="plaatsen_e" class="kopen">koop plaatsen</a></p><div>	');		    	
         			}else{
         				$('#stadion').append('<div id="links_onder_kopen"></div>');
         				$('#sec_e').append('<p id="sectie_e" class="kopen question input">kopen</p>');

@@ -20,9 +20,9 @@ $(document).ready(function()
     			dataType: "json",
         		success: function(data){
         			if(data === "niks"){
-        				$('#sponsors').append('<p id="1" class="sponsor"><a href="#">Kies sponsor</a></p>');
-        				$('#sponsors').append('<p id="2" class="sponsor"><a href="#">Kies sponsor</a></p>');
-        				$('#sponsors').append('<p id="3" class="sponsor"><a href="#">Kies sponsor</a></p>');
+        				$('#sponsors').append('<p id="1" class="sponsor"><a class="question" href="#">kies sponsor</a></p><br />');
+        				$('#sponsors').append('<p id="2" class="sponsor"><a class="question" href="#">kies sponsor</a></p><br />');
+        				$('#sponsors').append('<p id="3" class="sponsor"><a class="question" href="#">kies sponsor</a></p><br />');
         			
         			}
         			var count=0;
@@ -31,20 +31,20 @@ $(document).ready(function()
         			}
         			if(count === 1){
         				for(var i in data){
-        					$('#sponsors').append('<p id="sponsor1" class="sponsorinfo"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></p>');
+        					$('#sponsors').append('<div id="sponsor1" class="sponsorinfo entry"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
         				}
-        				$('#sponsors').append('<p id="2" class="sponsor"><a href="#">Kies sponsor</a></p>');
-        				$('#sponsors').append('<p id="3" class="sponsor"><a href="#">Kies sponsor</a></p>');
+        				$('#sponsors').append('<p id="2" class="sponsor"><a class="question" href="#">kies sponsor</a></p><br />');
+        				$('#sponsors').append('<p id="3" class="sponsor"><a class="question"href="#">kies sponsor</a></p><br />');
         			}
         			if(count === 2){
         				for(var i in data){
-        					$('#sponsors').append('<div id="sponsor'+i+'" class="sponsorinfo"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
+        					$('#sponsors').append('<div id="sponsor'+i+'" class="sponsorinfo entry"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
         				}
-						$('#sponsors').append('<div id="3" class="sponsor"><a href="#">Kies sponsor</a></div>');        			
+						$('#sponsors').append('<div id="3" class="sponsor"><a class="question"href="#">kies sponsor</a></div>');        			
         			}
         			if(count === 3){
         				for(var i in data){
-        					$('#sponsors').append('<div id="sponsor'+i+'" class="sponsorinfo"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
+        					$('#sponsors').append('<div id="sponsor'+i+'" class="sponsorinfo entry"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
         				}
         			
         			}
@@ -77,7 +77,7 @@ $(document).ready(function()
         						success: function(data){
         							
         							for(var i in data){
-        								$('#sponsormodal').append('<h4>'+data[i].naam+'</h4><p> Aantal weken:'+data[i].aantal_weken+'</p><p> Bedrag: '+data[i].bedrag+'</p><a href="#" class="contract" id="'+data[i].id+'">Contracteren</a><br/>');
+        								$('#sponsormodal').append('<br /><h4>'+data[i].naam+'</h4><p> Aantal weken:'+data[i].aantal_weken+'</p><p> Bedrag: '+data[i].bedrag+'</p><br /><a href="#" class="contract question" id="'+data[i].id+'">contracteren</a><br/>');
         							
         							}
         							

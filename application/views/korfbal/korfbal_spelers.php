@@ -77,7 +77,7 @@ foreach($spelers->result() as $row)
                 <img src="<?php echo base_url();?>img/down.png" />
                 </a></li>
         </ul>
-        <li><a href="#number" class="" id="playerSort">
+        <li><a href="#number" class="sortOnNumber" id="playerSort">
             <img src="<?php echo base_url();?>img/up.png" />
             rugnummer</a></li>
         <br />

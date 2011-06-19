@@ -244,7 +244,7 @@ body {
 
 	text-rendering: optimizeLegibility;
 	background: url(../img/400.jpg) repeat 0% 0%;
- 	-webkit-tap-highlight-color: @selectionColor;
+ 	-webkit-tap-highlight-color: transparent;
  	-webkit-touch-callout: none;
  	overflow-y: scroll;
  			overflow-x: hidden;
@@ -330,6 +330,7 @@ text-transform: uppercase;
 	font-weight: normal;
 	cursor: default;
 		text-shadow: 0 1px 0 #ccc,  0 2px 0 #c9c9c9,  0 3px 0 #bbb,  0 4px 0 #b9b9b9,  0 5px 0 #aaa,  0 6px 1px rgba(0,0,0,.1),  0 0 5px rgba(0,0,0,.1),  0 1px 3px rgba(0,0,0,.3),  0 3px 5px rgba(0,0,0,.2),  0 5px 10px rgba(0,0,0,.25),  0 10px 10px rgba(0,0,0,.2),  0 20px 20px rgba(0,0,0,.15);
+		.center896;
 }
 h2 {
 	font-family: 'LeagueGothicRegular';
@@ -512,13 +513,16 @@ margin-top: 10%;
 }
 /* ANIMATIONS end *****************************************************************************************************************/
 /* gameRight start ----------------------------------------------------------------------------------------------------------*/
+.game {
+.center896;
+}
 .gameRight {
 	font-size: 15px;
 	float: right;
 	width: 568px;/* margin-top: 15px; */
 
 }
-.player, .playerDetail, .playerFemale, .playerMale {
+.player, .playerFemale, .playerMale {
 	width: 245px;
 	height: 70px;
 	background: #FAFAFA;
@@ -542,7 +546,14 @@ margin-top: 10%;
 	border: 1px solid #CCC;
 }
 .playerDetail {
-	height: 412px;
+	
+}
+.playerHeader {
+height: 60px;
+/* border: 1px solid #E5E5E5; */
+background: none;
+padding: 8px 0 4px 0;
+margin: 0 0 2px 0;
 }
 .gameRight .number {
 	font-size: 64px;
@@ -598,6 +609,7 @@ aside {
  .borderRadius;
 
 }
+
 .gameLeft ul, .gameLeft li {
 	list-style-type: none;
 	display: inline;
@@ -612,35 +624,35 @@ aside {
 }
 .gameLeft p {
 	padding: 0 0 10px 10px;
-	color: #FFF;
+	color: #000;
 }
+.sortview {
+	padding: 0 0 10px 10px;
+	color: #000;
+}
+.gameLeft div.fillLeft {
+.borderRadius;
 /*
-.gameLeft div {
-	margin: 0 0 30px 0;
-	padding: 15px 14px 13px 14px;
-	-webkit-box-shadow:  0px 0px 10px #bdbdbd;
-	-moz-box-shadow: 0px 0px 10px #bdbdbd;
-	box-shadow: 0px 0px 10px #bdbdbd;
-	.borderRadius;
-	.transitionOff;
-}
+background-color: #FFFFFF;
+background-color: rgba(255,255,255,0.5);
 */
-.gameLeft div:hover {
-/*
-	-webkit-box-shadow:  0px 0px 10px #a3a3a3;
-	-moz-box-shadow: 0px 0px 10px #a3a3a3;
-	box-shadow: 0px 0px 10px #a3a3a3;
-	.transitionOn2;
-*/
+/* border: 1px solid #E5E5E5; */
+.borderRadius;
+
+	width: 370px;
+margin: 0 0 20px 0;
+
+ .transitionOn2;
 }
-/*
-.gameLeft div section {
-	-webkit-box-shadow:  inset 0px 0px 10px #bdbdbd;
-	-moz-box-shadow: inset 0px 0px 10px #bdbdbd;
-	box-shadow: inset 0px 0px 10px #000;
-		background-color: rgba(0, 0, 0, 0.75);
+.gameLeft div.fillLeft:hover {
+background-color: #FFFFFF;
+background-color: rgba(255,255,255,0.75);
+ -webkit-box-shadow: 0px 0px 10px #E5E5E5;
+-moz-box-shadow: 0px 0px 10px #E5E5E5;
+box-shadow: 0px 0px 10px #E5E5E5;
+ .transitionOn2;
 }
-*/
+
 .gameLeft table {
 	color: #FFF;
 	width: 380px;
@@ -659,16 +671,139 @@ aside {
 .gameLeft table tr:nth-child(4) {
 	background-color: yellow;
 }
+.gameLeft div.fillLeft {
+.borderRadius;
+background-color: #FFFFFF;
+background-color: rgba(255,255,255,0.5);
+border: 1px solid #E5E5E5;
+.borderRadius;
+
+	width: 370px;
+margin: 0 0 20px 0;
+
+ .transitionOn2;
+}
+.gameLeft div.fillLeft:hover {
+background-color: #FFFFFF;
+background-color: rgba(255,255,255,0.75);
+ -webkit-box-shadow: 0px 0px 10px #E5E5E5;
+-moz-box-shadow: 0px 0px 10px #E5E5E5;
+box-shadow: 0px 0px 10px #E5E5E5;
+ .transitionOn2;
+}
+.gameLeft h2, .gameRight h2 {
+	font-size: 28px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	color: #7B7B7B;
+	padding: 8px 0 8px 10px;
+	width: 352px;
+	height: 40px;
+background-image: url(../img/stitches.png);
+background-repeat: no-repeat;
+background-position: 10px 40px;
+
+text-shadow: 0px 0px 4px #F2F2F2;
+text-transform: lowercase;
+}
+#gameLeftOverview {
+	width: 896px;
+}
+#gameLeftOverview div {
+
+}
+#gameLeftOverview .column {
+float: left;
+}
+.column:nth-child(1) {
+margin: 0 22px 0 0;
+}
+.column:nth-child(2) {
+margin: 0 22px 0 0;
+}
+p.bericht_datum {
+float: left;
+color: #666666;
+font-size: 12px;
+}
+
+p.verwijder {
+float: right;
+background-image: url(../img/icons/trash.png);
+background-repeat: no-repeat;
+width: 20px;
+height: 25px;
+padding: 0 15px 0 0;
+opacity: 0.8;
+}
+p.markeer:hover, p.verwijder:hover {
+cursor: pointer;
+opacity: 1;
+}
+p.markeer {
+opacity: 0.8;
+float: right;
+
+padding: 0px;
+width: 25px;
+height: 25px;
+background-image: url(../img/icons/seen.png);
+background-repeat: no-repeat;
+}
+.read, .unread, .tweet, .entry {
+clear: both;
+margin: 0 15px 10px 15px;
+}
+
+.read {
+background-color: rgba(30, 166, 68, 0.2);
+border: 1px solid rgba(30, 166, 68, 0.25);
+.borderRadius;
+}
+.unread {
+background-color: rgba(166, 30, 41, 0.2);
+border: 1px solid rgba(166, 30, 41, 0.25);
+.borderRadius;
+}
+.tweet {
+background-color: rgba(2, 169, 295, 0.2);
+border: 1px solid rgba(2, 169, 295, 0.25);
+.borderRadius;
+}
+.entry, .sortEntry {
+background-color: rgba(191, 191, 191, 0.2);
+border: 1px solid rgba(191, 191, 191, 0.25);
+.borderRadius;
+}
+div#klassementEntry {
+background-color: rgba(191, 191, 191, 0.2);
+border: 1px solid rgba(191, 191, 191, 0.25);
+.borderRadius;
+width: 340px;
+height: 25px;
+padding: 0 0 10px 0;
+margin: 10px 15px 10px 15px;
+.transitionOff;
+}
+div#klassementEntry:hover {
+background-color: rgba(191, 191, 191, 0.4);
+border: 1px solid rgba(191, 191, 191, 0.5);
+.transitionOn;
+
+}
+
 /* gameRight end -------------------------------------------------------------------------------------------------------------*/
 
 .sportnav {
 	margin-bottom: 15px;
+	.center896;
 }
 .sportnav a {
 	text-transform: uppercase;
 	font-family: 'LeagueGothicRegular';
 	line-height: 0.8;
-	color: #bfbfbf;
+		color: #616161;
+	color: rgba(0, 0, 0, 0.25);
  .transitionOff;
 	font-size: 32px;
 }
@@ -948,49 +1083,6 @@ left: 39%;
 }
 #menu img {
 	padding-right:5px;
-}
-.dropdown_3columns {
-	float:left;
-	position:absolute;
-	left:-999em; /* Hides the drop down */
-	text-align:left;
-	padding:10px 5px 10px 5px;
-	border-top:none;
-	background: #E5E5E5; /* old browsers */
-	background: -moz-linear-gradient(top, #E5E5E5 0%, #F7F7F7 60%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #E5E5E5), color-stop(60%, #F7F7F7)); /* webkit */
-}
-.dropdown_3columns {
-	width: 242px;
-}
-.dropdown_3columns img {
- .borderRadius;
-}
-#menu li:hover .dropdown_3columns {
-	left:-1px;
-	top:auto;
-}
-.col_1, .col_2, .col_3, .col_4, .col_5 {
-	display:inline;
-	float: left;
-	position: relative;
-	margin-left: 5px;
-	margin-right: 5px;
-}
-.col_1 {
-	width:290px;
-}
-.col_2 {
-	width:270px;
-}
-.col_3 {
-	width:410px;
-}
-.col_4 {
-	width:550px;
-}
-.col_5 {
-	width:690px;
 }
 #menu .menu_right {
 	float:right;
@@ -1594,15 +1686,19 @@ background-image: url(../img/icons/stadium.png);
 #gameView  {
 background-image: url(../img/icons/view.png);
 }
+#gameViewSmall  {
+background-image: url(../img/icons/view.png);
+margin: -5px 10px -10px 12px;
+}
 #gameDown  {
 background-image: url(../img/icons/down.png);
-bottom: 10px;
+bottom: 12px;
 }
 #gameUp  {
 background-image: url(../img/icons/up.png);
 bottom: 10px;
 left: -20px;
-margin: 4px -15px 10px 12px;
+margin: 2px -15px 0px 12px;
 }
 /* TOASTMESSAGES begin -------------------------------------------------------------------------------------------------------------*/
 .toast-container {
@@ -1934,8 +2030,10 @@ footer h2 {
 footer a {
 
 	color: #DEDEDE;
+	.transitionOn;
 
 }
+
 #footerLeft, #footerCenter, #footerRight {
 
 	width: 250px;

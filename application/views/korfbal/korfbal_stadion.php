@@ -30,7 +30,7 @@
     <!-- end gameRight -->
     <aside>
         <div class="gameLeft">
-            <div>
+            <div class="fillLeft">
                 <section>
                             <figure class="icon" id="gameStadium"></figure>
                     <?php foreach($stadion->result() as $row)

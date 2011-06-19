@@ -64,7 +64,7 @@
 });
         </script>
         
-            <div>
+            <div class="fillLeft">
                 <section>
                 <figure class="icon" id="gameCup"></figure>
                     <h2>bekers</h2>
@@ -96,7 +96,7 @@ $(function() {
     });
 });
 </script>
-            <div>
+            <div class="fillLeft">
                 <section>
                 <figure class="icon" id="gameMedaille"></figure>
                     <h2>achievements</h2>

@@ -88,7 +88,7 @@
         
     
         
-            <div id="sponsors">	
+            <div id="sponsors" class="fillLeft">	
             <section>
             <figure class="icon" id="gameSponsors"></figure>
 

@@ -39,15 +39,9 @@ $(function(){
 
          }
 
- 
-
         });
 
- 
-
         return false;           
-
- 
 
     });
 
@@ -96,29 +90,35 @@ $("#transfer").submit(function(){
        });  
    });  
   
-
-
-
-
-
-
 </script>
+
 <div class="game">
-<div class="gameRight">
-	    
-    <?php $teamid = $this->uri->segment('3');?>
-    <?php foreach($speler->result() as $row)
-{?>
-    <p><?php echo $row->voornaam;?>&nbsp;<?php echo $row->achternaam;?></p>
-    <p>leeftijd:<?php echo $row->leeftijd; ?></p>
-    <br/>
-    <p>geslacht: <?php echo $row->geslacht; ?></p>
-    <br/>
-    <p>Waarde: <?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?> &euro;</p>
-    <p>Loon: <?php echo ($row->rebound * 50) + ($row->stamina * 25) + ($row->passing * 50 ) + ($row->shotprecision * 25) + ($row->shotpower * 25) + ($row->intercepting * 70) + ($row->playmaking * 50);?> &euro;/ week </p>
-    <br/>
-   <div id="container">
-    <div id="rightProgress">
+    <div class="gameRight">
+        <?php $teamid = $this->uri->segment('3');?>
+        <?php foreach($speler->result() as $row)
+{?><div class="playerDetail">
+
+     <p class="number"><?php echo $row->rugnummer;?></p>
+        <span class="name">
+        <p class="firstname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->voornaam;?></a></p>
+        <p class="lastname"><a href="../korfbal_player/<?php echo $team_id;?>/<?php echo $row->speler_id;?>"><?php echo $row->achternaam;?></a> </p>
+        </span>
+        <p class="gender">
+            <img src="<?php echo base_url();?><?php $geslacht = $row->geslacht; if($geslacht== "female"){ ?>img/female.png<?php }else{?>img/male.png<?php } ?>" ondragstart="return false" />
+        </p>
+        <br />
+        <p class="age"><?php echo $row->leeftijd; ?> jaar oud</p>
+        
+<!--
+        <p id="playerDetailName"><?php echo $row->voornaam;?>&nbsp;<?php echo $row->achternaam;?></p>
+        <p>leeftijd:<?php echo $row->leeftijd; ?></p>
+        <p>geslacht: <?php echo $row->geslacht; ?></p>
+-->
+        <p>Waarde: <?php echo ($row->rebound * 6250) + ($row->stamina * 3125) + ($row->passing * 6250 ) + ($row->shotprecision * 400) + ($row->shotpower * 4000) + ($row->intercepting * 7500) + ($row->leadership * 1000) + ($row->playmaking * 6250);?> &euro;</p>
+        <p>Loon: <?php echo ($row->rebound * 50) + ($row->stamina * 25) + ($row->passing * 50 ) + ($row->shotprecision * 25) + ($row->shotpower * 25) + ($row->intercepting * 70) + ($row->playmaking * 50);?> &euro;/ week </p>
+        <br/>
+        <div id="container">
+            <div id="rightProgressDetail">
                 <section>
                     <p id="skillTitle">rebound: </p>
                     <p class="rebound"><?php echo $row->rebound; ?></p>
@@ -169,7 +169,7 @@ $("#transfer").submit(function(){
                 </section>
             </div>
             <!-- end rightProgress -->
-            <div id="leftProgress">
+            <div id="leftProgressDetail">
                 <section>
                     <p id="skillTitle">passing: </p>
                     <p class="passing"><?php echo $row->passing; ?></p>
@@ -219,136 +219,128 @@ $("#transfer").submit(function(){
                     <div class="leadership_tr<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
                 </section>
             </div>
-          </div>
-
-    
-    
-    
-    
-    <br/>
-    <?php $transfer = $row->transfer;
+        </div>
+        </div> <!-- end playerDetail -->
+        <br/>
+        <?php $transfer = $row->transfer;
 			if($transfer == 0)
 			{
 			if(!isset($alien)){?>
-    
-    <!--p tag en geen a href omwille van verspringen van pagina-->
-    <p class="question" id="spelertransfer">speler verkopen</p>
-    <div id="slide" style=" display:none;">
-        <form id="transfer" onsubmit="return false;">
-            <label>Vraagprijs:</label>
-            <input type="text" id="bedrag" name="bedrag"/>
-         	<select id="positie">
-         		<option value="aanvaller">Aanvaller</option>
-         		<option value="spelmaker">Spelmaker</option>
-         		<option value="rebounder">Rebounder</option>
-         	
-         	</select>
-            <input type="hidden" id="spelerid" value="<?php echo $row->speler_id;?>"/>
-            <input type="hidden" id="teamid" value="<?php echo $teamid;?>"/>
-            <input type="submit" name="transfer"/>
-        </form>
-    </div>
-    <p id="succes" style="display:none;">Speler is op de transferlijst geplaatst.</p>
-    <?php } }else
+        
+        <!--p tag en geen a href omwille van verspringen van pagina-->
+        <p class="question" id="spelertransfer">speler verkopen</p>
+        <div id="slide" style=" display:none;">
+            <form id="transfer" onsubmit="return false;">
+                <label>Vraagprijs:</label>
+                <input type="text" id="bedrag" name="bedrag"/>
+                <select id="positie">
+                    <option value="aanvaller">Aanvaller</option>
+                    <option value="spelmaker">Spelmaker</option>
+                    <option value="rebounder">Rebounder</option>
+                </select>
+                <input type="hidden" id="spelerid" value="<?php echo $row->speler_id;?>"/>
+                <input type="hidden" id="teamid" value="<?php echo $teamid;?>"/>
+                <input type="submit" name="transfer"/>
+            </form>
+        </div>
+        <p id="succes" style="display:none;">Speler is op de transferlijst geplaatst.</p>
+        <?php } }else
 			{?>
-    <div> Plaats een bod op deze speler :
-        <form id="bieden" onsubmit="return false;">
-            <label>Bedrag:</label>
-            <input type="text" id="bod" name="bod"/>
-            <input type="hidden" id="speleridbod" value="<?php echo $row->speler_id;?>"/>
-            <input type="hidden" id="teamidbod" value="<?php echo $session_teamid;?>"/>
-            <input type="submit" name="bod"/>
-        </form>
-    </div>
-    <?php }
+        <div> Plaats een bod op deze speler :
+            <form id="bieden" onsubmit="return false;">
+                <label>Bedrag:</label>
+                <input type="text" id="bod" name="bod"/>
+                <input type="hidden" id="speleridbod" value="<?php echo $row->speler_id;?>"/>
+                <input type="hidden" id="teamidbod" value="<?php echo $session_teamid;?>"/>
+                <input type="submit" name="bod" value="plaats bod"/>
+            </form>
+        </div>
+        <?php }
  } 
 
 
 ?>
-</div>
-<aside>
-<div class="gameLeft">
-	<div>
-        <section>
-            <h2>aantal matchen gespeeld</h2>
-            <?php if(isset($spelerstats['aantal_matchen'])){ ?>
-           	    <p><?php echo $spelerstats['aantal_matchen']?></p>
-	            <p>in zijn volledige korfbalcarrière</p>
-            <?php }else{ ?>
-            	<p>Deze speler speelde nog geen wedstrijden</p>
-            <?php } ?>
-        </section>
     </div>
-    <div>
-        <section>
-            <h2>aantal goals in carriere</h2>
-           <?php if(isset($spelerstats['goals_carriere'])){ ?>
-           	    <p><?php echo $spelerstats['goals_carriere']?></p>
-	            <p>in zijn volledige korfbalcarrière</p>
-            <?php }else{ ?>
-            	<p>Deze speler maakte nog geen goals</p>
-            <?php } ?>
-        </section>
-    </div>
-    <div>
-        <section>
-            <h2>goals dit seizoen</h2>
-   		    <?php if(isset($spelerstats['goals_seizoen'])){ ?>
-           	    <p><?php echo $spelerstats['goals_seizoen']?></p>
-	            <p>in het huidige seizoen</p>
-            <?php }else{ ?>
-            	<p>Deze speler maakte nog geen goals dit seizoen</p>
-            <?php } ?>
-
-        </section>
-    </div>
-    <div>
-        <section>
-            <h2>goals vorige wedstrijd</h2>
-            <?php if(isset($spelerstats['goals_wedstrijd'])){ ?>
-           	    <p><?php echo $spelerstats['goals_wedstrijd']?></p>
-	            <p>goals maakte deze speler vorige wedstrijd</p>
-            <?php }else{ ?>
-            	<p>Deze speler maakte vorige wedstrijd geen goals</p>
-            <?php } ?>
-
-        </section>
-    </div>
-    <div>
-        <section>
-            <h2>beste prestatie</h2>
-             <?php if(isset($spelerstats['beste_prestatie'])){ ?>
-           	    <p><?php echo $spelerstats['beste_prestatie']?>/100</p>
-	            <p>was deze speler zijn/haar beste prestatie tot nu toe</p>
-            <?php }else{ ?>
-            	<p>Deze speler speelde nog geen wedstrijd</p>
-            <?php } ?>
-
-        </section>
-    </div>
-    <div>
-        <section>
-            <h2>prestatie vorige wedstrijd</h2>
-             <?php if(isset($spelerstats['laatste_prestatie'])){ ?>
-           	    <p><?php echo $spelerstats['laatste_prestatie']?>/100</p>
-	            <p>was deze speler zijn/haar prestatie voor vorige wedstrijd</p>
-            <?php }else{ ?>
-            	<p>Deze speler speelde nog geen wedstrijd</p>
-            <?php } ?>
-        </section>
-    </div>
-    <div>
-        <section>
-            <h2>positie laatste wedstrijd</h2>
-             <?php if(isset($spelerstats['laatste_positie'])){ ?>
-           	    <p><?php echo $spelerstats['laatste_positie']?></p>
-	            <p>was deze speler zijn/haar laatste positie</p>
-            <?php }else{ ?>
-            	<p>Deze speler speelde nog geen wedstrijd</p>
-            <?php } ?>
-        </section>
-    </div>
-</div>
-</aside>
+    <aside>
+        <div class="gameLeft">
+            <div class="fillLeft">
+                <section>
+                    <h2>aantal matchen gespeeld</h2>
+                    <?php if(isset($spelerstats['aantal_matchen'])){ ?>
+                    <p><?php echo $spelerstats['aantal_matchen']?></p>
+                    <p>in zijn volledige korfbalcarrière</p>
+                    <?php }else{ ?>
+                    <p>Deze speler speelde nog geen wedstrijden</p>
+                    <?php } ?>
+                </section>
+            </div>
+            <div class="fillLeft">
+                <section>
+                    <h2>aantal goals in carriere</h2>
+                    <?php if(isset($spelerstats['goals_carriere'])){ ?>
+                    <p><?php echo $spelerstats['goals_carriere']?></p>
+                    <p>in zijn volledige korfbalcarrière</p>
+                    <?php }else{ ?>
+                    <p>Deze speler maakte nog geen goals</p>
+                    <?php } ?>
+                </section>
+            </div>
+            <div class="fillLeft">
+                <section>
+                    <h2>goals dit seizoen</h2>
+                    <?php if(isset($spelerstats['goals_seizoen'])){ ?>
+                    <p><?php echo $spelerstats['goals_seizoen']?></p>
+                    <p>in het huidige seizoen</p>
+                    <?php }else{ ?>
+                    <p>Deze speler maakte nog geen goals dit seizoen</p>
+                    <?php } ?>
+                </section>
+            </div>
+            <div class="fillLeft">
+                <section>
+                    <h2>goals vorige wedstrijd</h2>
+                    <?php if(isset($spelerstats['goals_wedstrijd'])){ ?>
+                    <p><?php echo $spelerstats['goals_wedstrijd']?></p>
+                    <p>goals maakte deze speler vorige wedstrijd</p>
+                    <?php }else{ ?>
+                    <p>Deze speler maakte vorige wedstrijd geen goals</p>
+                    <?php } ?>
+                </section>
+            </div>
+            <div class="fillLeft">
+                <section>
+                    <h2>beste prestatie</h2>
+                    <?php if(isset($spelerstats['beste_prestatie'])){ ?>
+                    <p><?php echo $spelerstats['beste_prestatie']?>/100</p>
+                    <p>was deze speler zijn/haar beste prestatie tot nu toe</p>
+                    <?php }else{ ?>
+                    <p>Deze speler speelde nog geen wedstrijd</p>
+                    <?php } ?>
+                </section>
+            </div>
+            <div class="fillLeft">
+                <section>
+                    <h2>prestatie vorige wedstrijd</h2>
+                    <?php if(isset($spelerstats['laatste_prestatie'])){ ?>
+                    <p><?php echo $spelerstats['laatste_prestatie']?>/100</p>
+                    <p>was deze speler zijn/haar prestatie voor vorige wedstrijd</p>
+                    <?php }else{ ?>
+                    <p>Deze speler speelde nog geen wedstrijd</p>
+                    <?php } ?>
+                </section>
+            </div>
+            <div class="fillLeft">
+                <section>
+                    <h2>positie laatste wedstrijd</h2>
+                    <?php if(isset($spelerstats['laatste_positie'])){ ?>
+                    <p><?php echo $spelerstats['laatste_positie']?></p>
+                    <p>was deze speler zijn/haar laatste positie</p>
+                    <?php }else{ ?>
+                    <p>Deze speler speelde nog geen wedstrijd</p>
+                    <?php } ?>
+                </section>
+            </div>
+        </div>
+    </aside>
 </div>
 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment(3);?>"/>

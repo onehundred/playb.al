@@ -22,16 +22,46 @@
 .transitionOn {
 	-webkit-transition-duration: 0.1s;
 	-webkit-transition-timing-function: ease-in-out;
+	-moz-transition-duration: 0.1s;
+	-moz-transition-timing-function: ease-in-out;
+		-ms-transition-duration: 0.1s;
+	-ms-transition-timing-function:ease-in-out;
+	-o-transition-duration: 0.1s;
+	-o-transition-timing-function: ease-in-out;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in-out;
 }
 .transitionOn2 {
-	-webkit-transition-duration: 2s;
+	-webkit-transition-duration: 0.2s;
 	-webkit-transition-timing-function: ease-in-out;
+	-moz-transition-duration: 0.2s;
+	-moz-transition-timing-function: ease-in-out;
+		-ms-transition-duration: 0.2s;
+	-ms-transition-timing-function:ease-in-out;
+	-o-transition-duration: 0.2s;
+	-o-transition-timing-function: ease-in-out;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
 }
 .transitionOff {
-	-webkit-transition-duration: 1s;
+	-webkit-transition-duration: 1.6s;
+	-webkit-transition-timing-function: ease-in-out;
+	-moz-transition-duration: 1.6s;
+	-moz-transition-timing-function: ease-in-out;
+	-ms-transition-duration: 1.6s;
+	-ms-transition-timing-function:ease-in-out;
+	-o-transition-duration: 1.6s;
+	-o-transition-timing-function: ease-in-out;
+	transition-duration: 1.6s;
+	transition-timing-function: ease-in-out;
 }
 .transitionOff2 {
-	-webkit-transition-duration: 4s;
+	-webkit-transition-duration: 2s;
+	-moz-transition-duration: 2s;
+	-o-transition-duration: 2s;
+	-ms-transition-duration: 2s;
+	transition-duration: 2s;
+	
 }
 .lessOpacity {
 	opacity: 0.8;
@@ -48,22 +78,22 @@
 	text-shadow: 0px 0px 7px #474747;
 }
 .imageDown {
-	-moz-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-webkit-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-o-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-ms-transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	transform: scale(0.5) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 .imageUp {
-	-moz-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-webkit-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-o-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	-ms-transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
-	transform: scale(0.53) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-moz-transform: scale(1.03) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(1.03) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(1.03) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(1.03) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(1.03) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 .center320 {
 width: 320px;
-margin: 0 auto 0 auto;
+margin: 0;
 }
 /* LESS GLOBALS end */
 
@@ -79,6 +109,13 @@ cols    1     2      3
 px      68    160    252    */
 
 
+#wrap {
+	min-height: 100%;
+
+}
+#main {
+	padding-bottom: 75px; /* same as footer */
+}
 
 
 body {
@@ -88,6 +125,7 @@ body {
 	}
 #header {
 .center320;
+
 }
 #logo {
 	padding: 8px 7px 0 0;
@@ -128,6 +166,7 @@ text-transform: uppercase;
 }
 #teamname {
 display: none;
+width: 320px;
 }
 h2 {
 	font-family: 'LeagueGothicRegular';
@@ -252,7 +291,7 @@ display: none;
 }
 .sports, .sportsChoice {
 	height: 600px;
-
+width: 320px;
 
 	z-index: 1;
 
@@ -271,10 +310,16 @@ margin-top: 10%;
 
 
 /* gameRight start ----------------------------------------------------------------------------------------------------------*/
+
+.game {
+.center320;
+margin: 0;
+}
 .gameRight {
+
 	font-size: 15px;
 	float: right;
-	width: 568px;/* margin-top: 15px; */
+	width: 320px;/* margin-top: 15px; */
 
 }
 .player, .playerDetail, .playerFemale, .playerMale {
@@ -346,12 +391,14 @@ margin-top: 10%;
 	display: inline;
 }
 aside {
-	float: left;
+clear: both;
+
+
 }
 .gameLeft {
 
 	width: 297px;
-	/* 	padding: 0 15px 15px 15px; */
+
 	font-size: 15px;
 	color: #222;
  .borderRadius;
@@ -361,17 +408,24 @@ aside {
 	list-style-type: none;
 	display: inline;
 }
-.gameLeft h2 {
-	font-size: 32px;
+.gameLeft h2, .gameRight h2 {
+	font-size: 28px;
 	font-weight: normal;
 	letter-spacing: 1px;
-	color: #FAFAFA;
-	padding: 0 0 0 10px;
-	text-transform: lowercase;
+	color: #7B7B7B;
+	padding: 8px 0 8px 10px;
+	width: 252px;
+	height: 40px;
+background-image: url(../img/stitches.png);
+background-repeat: no-repeat;
+background-position: 10px 40px;
+
+text-shadow: 0px 0px 4px #F2F2F2;
+text-transform: lowercase;
 }
 .gameLeft p {
 	padding: 0 0 10px 10px;
-	color: #FFF;
+	color: #000;
 }
 /*
 .gameLeft div {
@@ -400,9 +454,49 @@ aside {
 		background-color: rgba(0, 0, 0, 0.75);
 }
 */
+#gameLeftOverview {
+	width: 320px;
+}
+#gameLeftOverview div {
+
+}
+#gameLeftOverview .column {
+clear: both;
+}
+.column:nth-child(1) {
+margin: 0 22px 0 0;
+}
+.column:nth-child(2) {
+margin: 0 22px 0 0;
+}
+.gameLeft div.fillLeft {
+.borderRadius;
+/*
+background-color: #FFFFFF;
+background-color: rgba(255,255,255,0.5);
+*/
+/* border: 1px solid #E5E5E5; */
+.borderRadius;
+
+	width: 300px;
+margin: 0 0 20px 0;
+
+ .transitionOn2;
+}
+div.chart_container.fillLeft {
+display: none;
+}
+.gameLeft div.fillLeft:hover {
+background-color: #FFFFFF;
+background-color: rgba(255,255,255,0.75);
+ -webkit-box-shadow: 0px 0px 10px #E5E5E5;
+-moz-box-shadow: 0px 0px 10px #E5E5E5;
+box-shadow: 0px 0px 10px #E5E5E5;
+ .transitionOn2;
+}
 .gameLeft table {
 	color: #FFF;
-	width: 380px;
+	width: 300px;
 	padding: 15px 14px 13px 14px;
 	border: none;
 }
@@ -418,10 +512,31 @@ aside {
 .gameLeft table tr:nth-child(4) {
 	background-color: yellow;
 }
+#sortPlayers {
+display: none;
+}
+#container {
+display: none;
+}
+div#klassementEntry {
+background-color: rgba(191, 191, 191, 0.2);
+border: 1px solid rgba(191, 191, 191, 0.25);
+.borderRadius;
+width: 240px;
+height: 25px;
+padding: 0 0 10px 0;
+margin: 10px 15px 10px 15px;
+.transitionOff;
+}
 /* gameRight end -------------------------------------------------------------------------------------------------------------*/
+.sportnavWrap {
 
+}
 .sportnav {
 	margin-bottom: 15px;
+	padding-left: 0px;
+width: 300px;
+
 }
 .sportnav a {
 	text-transform: uppercase;
@@ -434,14 +549,7 @@ aside {
 .sportnav a:hover {
 	color: #888;
  .transitionOn;
-/*
-	border-top-width: 7px;
-	border-top-style: solid;
-	border-top-color: #888;
-	border-bottom-width: 7px;
-	border-bottom-style: solid;
-	border-bottom-color: #888;
-*/
+
 }
 .sportnav a:active {
 	text-transform: uppercase;
@@ -531,11 +639,12 @@ display: none;
 /* LAYOUTS start ----------------------------------------------------------------------------------------------------------------*/
 
 .korfbal {
+width: 250px;
+	height: 250px;
+	margin-left: 20px;
 
-	height: 50px;
-margin-left: 16%;
 margin-top: 50px;
-margin-bottom: 200px;
+margin-bottom: 50px;
  .imageDown;
  .transitionOff;
   	-webkit-box-shadow: 0px 0px 0px #BFBFBF;
@@ -555,16 +664,18 @@ box-shadow: 0px 0px 0px #BFBFBF;
 }
 .basketbal {
 
-	height: 25px;
+width: 250px;
+	height: 250px;
+	margin-left: 20px;
 
  .imageDown;
  .transitionOff;
   	-webkit-box-shadow: 0px 0px 0px #BFBFBF;
 -moz-box-shadow: 0px 0px 0px #BFBFBF;
 box-shadow: 0px 0px 0px #BFBFBF;
-margin-left: 16%;
+
 margin-top: 25px;
-margin-bottom: 200px;
+margin-bottom: 50px;
 }
 .basketbal:hover {
 
@@ -576,14 +687,16 @@ box-shadow: 0px 0px 0px #BFBFBF;
 }
 .volleybal {
 
-	height: 50px;
+width: 250px;
+	height: 250px;
+	margin-left: 20px;
 
  .imageDown;
  .transitionOff;
   	-webkit-box-shadow: 0px 0px 0px #BFBFBF;
 -moz-box-shadow: 0px 0px 0px #BFBFBF;
 box-shadow: 0px 0px 0px #BFBFBF;
-	margin-left: 16%;
+
 	margin-top: 50px;
 margin-bottom: 220px;
 }
@@ -677,49 +790,6 @@ box-shadow: 0px 0px 0px #BFBFBF;
 }
 #menu img {
 	padding-right:5px;
-}
-.dropdown_3columns {
-	float:left;
-	position:absolute;
-	left:-999em; /* Hides the drop down */
-	text-align:left;
-	padding:10px 5px 10px 5px;
-	border-top:none;
-	background: #E5E5E5; /* old browsers */
-	background: -moz-linear-gradient(top, #E5E5E5 0%, #F7F7F7 60%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #E5E5E5), color-stop(60%, #F7F7F7)); /* webkit */
-}
-.dropdown_3columns {
-	width: 242px;
-}
-.dropdown_3columns img {
- .borderRadius;
-}
-#menu li:hover .dropdown_3columns {
-	left:-1px;
-	top:auto;
-}
-.col_1, .col_2, .col_3, .col_4, .col_5 {
-	display:inline;
-	float: left;
-	position: relative;
-	margin-left: 5px;
-	margin-right: 5px;
-}
-.col_1 {
-	width:290px;
-}
-.col_2 {
-	width:270px;
-}
-.col_3 {
-	width:410px;
-}
-.col_4 {
-	width:550px;
-}
-.col_5 {
-	width:690px;
 }
 #menu .menu_right {
 	float:right;
@@ -1482,6 +1552,7 @@ font-size: 12px;
 
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footerWrap {
+
 	float: left;
 	width: 100%;
 	background: 
@@ -1489,6 +1560,7 @@ font-size: 12px;
 }
 
 #footer {
+
 	float: left;
 	width: 100%;
 	position: relative;

@@ -60,7 +60,7 @@
     </div>
     <aside>
         <div class="gameLeft">
-            <div>
+            <div class="fillLeft">
                 <section>
                     <h2>
                         <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
@@ -70,7 +70,7 @@
                     <p>volgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
                 </section>
             </div>
-            <div>
+            <div class="fillLeft">
                 <section>
                             <figure class="icon" id="gamePrevious"></figure>
                     <h2>vorige matchen</h2>
@@ -104,7 +104,7 @@
                     <?php } ?>
                 </section>
             </div>
-            <div>
+            <div class="fillLeft">
                 <section>
                             <figure class="icon" id="gameNext"></figure>
                     <h2>volgende matchen</h2>

@@ -72,7 +72,7 @@ $(document).ready(function(){
 </div>
 <aside>
     <div class="gameLeft">
-        <div>
+        <div class="fillLeft">
         <h2>
                     <img src="<?php echo base_url();?>img/icons/calendar.png" id="icon" ondragstart="return false" />
                     kalender</h2>

@@ -1,5 +1,5 @@
 <script src="<?php echo base_url();?>/js/korfbal/korfbal_index.js"> </script>
-
+<div class="gameWrap">
 <div class="game">
     <aside>
         <div class="gameLeft" id="gameLeftOverview">
@@ -17,8 +17,8 @@
                         <figure class="icon" id="gameCalendar"></figure>
                         <h2> kalender</h2>
                         
-                        <p id>week <?php echo $calendar['week'];?>, seizoen <?php echo $calendar['seizoen'];?></p>
-                        <p>volgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                        <p class="entry">week <?php echo $calendar['week'];?> - seizoen <?php echo $calendar['seizoen'];?></p>
+                        <p class="entry">volgende wedstrijd: <br /><?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
                     </section>
                 </div>
             </section>
@@ -96,7 +96,7 @@
                         	<img id="cup" ondragstart="return false" src="<?php echo base_url();?>img/awards/cup_gold.png" />
                         	<p><?php echo $stats['award'];?></p>
                         <?php }else{ ?>
-                      	  <p>je hebt nog geen award behaald.</p>
+                      	  <p class="entry">je hebt nog geen award behaald.</p>
                         <?php } ?>
                     </section>
                 </div>
@@ -140,6 +140,6 @@
         </div>
         <!-- end gameLeft --> 
     </aside>
-</div>
+</div> <!-- end game -->
+</div> <!-- end gameWrap -->
 <input type="hidden" id="team_id" value="<?php echo $this->uri->segment('3');?>"/>
-<!-- end game -->

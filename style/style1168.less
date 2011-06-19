@@ -210,12 +210,7 @@ h2 {
 	height: 65px;
 	margin: 0 0 25px 0;
 
-background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 95%, rgba(0,0,0,0.1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(95%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* Opera11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* IE10+ */
-background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* W3C */
+
 }
 
 .sportnav {
@@ -228,7 +223,7 @@ background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,
 .sportnav a {
 	font-size: 42px;
 	line-height: 0.8;
-	color: rgba(0, 0, 0, 0.6);
+
 
 }
 .sportnav a:hover {
@@ -250,10 +245,11 @@ background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,
 	font-size: 42px;
 	font-family: 'LeagueGothicRegular';
 	line-height: 0.8;
-color: #B3B3B3;
-color: rgba(0,0,0,0.2);
+color: #3C3C3C;
+color: rgba(0,0,0,0.75);
 	cursor: pointer;
 		padding: 10px 10px 7px 0;
+		
 }
 #teamname {
 	font-size: 68px;
@@ -261,18 +257,10 @@ color: rgba(0,0,0,0.2);
 }
 /* FONTS end 		-------------------------------------------------------------------------------------------------------*/
 /* gameRight start ----------------------------------------------------------------------------------------------------------*/
-/*
-.game {
-background: #ffffff; 
-background: -moz-linear-gradient(left, #ffffff 0%, #f6f6f6 47%, #FFFFFF 100%);
 
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#FFFFFF)); 
-float: left;
-width: 1168px;
-}
-*/
 .game {
 .center1168;
+
 }
 .gameRight {
 	font-size: 15px;
@@ -295,7 +283,7 @@ width: 1168px;
 	background-color: rgba(255, 255, 255, 0.5);
 	margin-right: 20px;
 	margin-bottom: 15px;
-
+	border: 1px solid #E5E5E5;
 
 }
 .player:hover, .playerDetail:hover, .playerMale:hover, .playerFemale:hover {
@@ -303,12 +291,21 @@ width: 1168px;
 	background: #FAFAFA;
 	background-color: rgba(255, 255, 255, 0.75);
 	.transitionOn;
-	-webkit-box-shadow:  0px 0px 10px #bdbdbd;
-	-moz-box-shadow: 0px 0px 10px #bdbdbd;
+	-webkit-box-shadow:  0px 0px 5px #D1D1D1;
+	-moz-box-shadow: 0px 0px 5px #D1D1D1;
 	box-shadow: 0px 0px 5px #D1D1D1;
+
 
 }
 .playerDetail {
+width: 745px;
+height: 470px;
+}
+#playerDetailName {
+text-transform: capitalize;
+font-size: 36px;
+letter-spacing: 1px;
+	font-family: 'LeagueGothicRegular'; 
 }
 .sortTeamLeft {
 
@@ -322,7 +319,7 @@ float: left;
 
 }
 #sortPlayers {
-height: 540px;
+height: 475px;
 }
 #sortPlayers p {
 
@@ -384,6 +381,17 @@ border: 1px solid rgba(0, 0, 0, 0.25);
 	float: right;
 
 }
+.gameRight #rightProgressDetail {
+	width: 350px;
+	margin: 0 15px 0 15px;
+	float: right;
+
+}
+.gameRight #leftProgressDetail {
+	width: 350px;
+		margin: 0 15px 0 15px;
+
+}
 .gameRight #leftProgress {
 	width: 160px;
 
@@ -395,7 +403,7 @@ border: 1px solid rgba(0, 0, 0, 0.25);
 }
 .playerHeader {
 height: 60px;
-border: 1px solid #E5E5E5;
+/* border: 1px solid #E5E5E5; */
 background: none;
 padding: 8px 0 4px 0;
 margin: 0 0 2px 0;
@@ -428,7 +436,7 @@ aside {
 }
 ul#filters {
 	display: block;
-	margin: 10px 0 20px 0;
+	margin: 10px 0 0 0;
 }
 ul#filters p {
 margin: 0;
@@ -445,14 +453,19 @@ line-height: 20px;
 	padding: 8px 0 8px 10px;
 	width: 352px;
 	height: 40px;
-
-/* border-bottom: 1px dashed #b3b3b3; */
 background-image: url(../img/stitches.png);
 background-repeat: no-repeat;
 background-position: 10px 40px;
 
 text-shadow: 0px 0px 4px #F2F2F2;
 text-transform: lowercase;
+}
+#breakline {
+background-image: url(../img/stitches.png);
+background-repeat: no-repeat;
+background-position: 10px 0px;
+margin: 0 10px 0 0;
+padding: 10px;
 }
 .gameRight h2 {
 border: 1px solid #b3b3b3;
@@ -461,7 +474,10 @@ border: 1px solid #b3b3b3;
 	padding: 10px 15px 10px 15px;
 	color: #000;
 }
-
+#sortView {
+	padding: 0 0 10px 10px;
+	color: #FFF;
+}
 
 
 .gameLeft table {
@@ -487,22 +503,13 @@ border: 1px solid rgba(191, 191, 191, 0.25);
 background-color: rgba(191, 191, 191, 0.8);
 border: 1px solid rgba(191, 191, 191, 0.9);
 }
-.even {
-	background-color: #FFFFFF;
-	background-color: rgba(255,255,255,0.5);
-	border-bottom: 1px solid #CCCCCC;
-}
-.odd {
-	background-color: #E5E5E5;
-	background-color: rgba(229,229,229,0.5);
-	border-bottom: 1px solid #CCCCCC;
-}
 
 .gameLeft div.fillLeft {
 .borderRadius;
 background-color: #FFFFFF;
 background-color: rgba(255,255,255,0.5);
-border: 1px solid #CCC;
+border: 1px solid #E5E5E5;
+.borderRadius;
 
 	width: 370px;
 margin: 0 0 20px 0;
@@ -510,7 +517,11 @@ margin: 0 0 20px 0;
  .transitionOn2;
 }
 .gameLeft div.fillLeft:hover {
-
+background-color: #FFFFFF;
+background-color: rgba(255,255,255,0.75);
+ -webkit-box-shadow: 0px 0px 10px #E5E5E5;
+-moz-box-shadow: 0px 0px 10px #E5E5E5;
+box-shadow: 0px 0px 10px #E5E5E5;
  .transitionOn2;
 }
 .gameLeft div section {
@@ -581,6 +592,7 @@ background-repeat: no-repeat;
 clear: both;
 margin: 0 15px 10px 15px;
 }
+
 .read {
 background-color: rgba(30, 166, 68, 0.2);
 border: 1px solid rgba(30, 166, 68, 0.25);
@@ -596,7 +608,7 @@ background-color: rgba(2, 169, 295, 0.2);
 border: 1px solid rgba(2, 169, 295, 0.25);
 .borderRadius;
 }
-.entry {
+.entry, .sortEntry {
 background-color: rgba(191, 191, 191, 0.2);
 border: 1px solid rgba(191, 191, 191, 0.25);
 .borderRadius;
@@ -631,11 +643,24 @@ line-height: 1;
 
 
 }
-li.rssRow.odd h4, li.rssRow.even h4 {
+.even {
+	background-color: #FFFFFF;
+	background-color: rgba(255,255,255,0.5);
+	border-bottom: 1px solid #CCCCCC;
+}
+.odd {
+	background-color: #E5E5E5;
+	background-color: rgba(229,229,229,0.5);
+	border-bottom: 1px solid #CCCCCC;
+}
+
+li.rssRow.odd, li.rssRow.odd h4, li.rssRow.even h4 {
 font-weight: normal;
 background: none;
-
 font-size: 15px;
+border: none;
+
+list-style-type: none;
 }
 
 #trainingSkill {
@@ -643,8 +668,7 @@ float: left;
 
 }
 #trainingButton {
-clear: both;
-margin: 35px 0 15px 0;
+margin: 0 0 10px 0;
 }
 #divisionNumber {
 	font-size: 82px;
@@ -911,6 +935,7 @@ box-shadow: 0px 0px 10px #BFBFBF;
 }
 article.sortSkill {
 clear: both;
+
 }
 article.sortSkill p {
 display: inline;
@@ -1229,6 +1254,11 @@ a.question, p.question {
 
 		color: #FFFFFF;
 }
+a#training.question {
+float: right;
+margin: -30px 0 30px 0;
+width: 100px;
+}
 
 /* BUTTONS end -------------------------------------------------------------------------------------------------------------*/
 /* ICONS begin -------------------------------------------------------------------------------------------------------------*/
@@ -1434,7 +1464,7 @@ background-repeat: no-repeat;
 }
 #stadion {
 	width: 640px;
-	height: 806px;
+	height: 1006px;
 	float: left;
 	margin: 0 0 0 60px;
 }

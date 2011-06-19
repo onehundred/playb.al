@@ -1,13 +1,11 @@
 <div class="game">
-    <div class="gameRight">
+<div class="gameRight">
     <?php if(isset($matches[1]['thuis'])){ ?>
-    
-        <?php if(!isset($alien)){ ?>
-
-        <a class="question" href="../korfbal_teamorders/<?php echo $team_id;?>">opstelling</a>
-        <?php }?>
-        <?php for($i=1;$i<15;$i++){ ?>
-        <p>
+    <?php if(!isset($alien)){ ?>
+    <a class="question" href="../korfbal_teamorders/<?php echo $team_id;?>">opstelling</a>
+    <?php }?>
+    <?php for($i=1;$i<15;$i++){ ?>
+    <div class="wedstrijdEntry">
         <p id="matchTeamName"><?php echo $matches[$i]['thuis'];?></p>
         <p id="versus">VS</p>
         <p id="matchTeamName"><?php echo $matches[$i]['uit'];?></p>
@@ -24,37 +22,34 @@
 
                 }
 
-             } } 
+             } echo        '</div>';} 
              }else{ ?>
-             <p>De wedstrijden voor dit seizoen zijn nog niet klaar, nog even geduld!</p>
-             
-            <?php } ?>
+        <p>De wedstrijden voor dit seizoen zijn nog niet klaar, nog even geduld!</p>
+        <?php } ?>
         </p>
     </div>
     <!-- end gameRight -->
     <aside>
         <div class="gameLeft">
-            <div>
+            <div class="fillLeft">
                 <section>
-                            <figure class="icon" id="gameCalendar"></figure>
-                    <h2>
-                        
-                        kalender</h2>
-                    <p>week <?php echo $calendar['week'];?>
-                    seizoen <?php echo $calendar['seizoen'];?></p>
-                    <p>volgende wedstrijd: <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                    <figure class="icon" id="gameCalendar"></figure>
+                    <h2> kalender</h2>
+                    <p class="entry">week <?php echo $calendar['week'];?> seizoen <?php echo $calendar['seizoen'];?></p>
+                    <p class="entry">volgende wedstrijd:<br /> <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
                 </section>
             </div>
-            <div class="chart_container">
+            <div class="chart_container fillLeft">
                 <section>
-                            <figure class="icon" id="gameGraph"></figure>
+                    <figure class="icon" id="gameGraph"></figure>
                     <h2>huidig seizoen</h2>
+                    <div class="entry"><p>legende</p><div id="chartsWonLegend"><p>gewonnen</p></div><div id="chartsLostLegend"><p>verloren</p></div><div id="chartsDrawLegend"><p>gelijk</p></div></div>
                     <canvas id="chartCanvas1" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
                 </section>
             </div>
-            <div class="chart_container">
+            <div class="chart_container fillLeft">
                 <section>
-                <figure class="icon" id="gameGraph"></figure>
+                    <figure class="icon" id="gameGraph"></figure>
                     <h2>carriere</h2>
                     <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
                 </section>
@@ -62,7 +57,7 @@
         </div>
         <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>"/>
     </aside>
-<script type="text/javascript">
+    <script type="text/javascript">
 $(document).ready(function(){
     var teamid = $('#teamid').val();
     

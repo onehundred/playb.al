@@ -336,7 +336,7 @@ $(document).ready(function(){
 	});
 	$(function() {
     	$(".fillLeft").mouseenter(function () {
-    	$('.fillLeft').css({opacity: 0.7});
+    	$('.fillLeft').css({opacity: 0.5});
 			$(this).css({opacity: 1});
 			
       		return false;
@@ -731,8 +731,14 @@ alert (initHeight);
         	return false;
 			      		
 		});
+			$("#playerSort").click(function () {;
+			$(this).css({color:"#000000"});
+
+			      		
+	});
 
 });
+
 /////////////////////////////////////////////////////////////////
 // TEAM ANIMATIONS end
 

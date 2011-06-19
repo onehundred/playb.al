@@ -131,19 +131,18 @@ foreach($training->result() as $row){
                     <div class="leadership_tr<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
                 </section>
             </div>
+
             <!-- end leftProgress --> 
             <!-- vordering van training --> 
             <!--             <p>vordering</p> --> 
             
         </div>
         <!-- end container -->
-        <?php }
-
-
- ?>
+        <?php } ?>
     </div>
     <!-- end gameRight --> 
 </div>
+
 <aside>
     <div class="gameLeft">
         <?php foreach($energie->result() as $row)
@@ -152,14 +151,14 @@ foreach($training->result() as $row){
 
 } ?>
         <?php if(!isset($alien)){ ?>
-        <div>
+        <div class="fillLeft">
             <section>
                 <figure class="icon" id="gameTraining"></figure>
                 <h2>training</h2>
                 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>"/>
                 <input type="hidden" id="energie" value="<?php echo $energie;?>"/>
-                <p>trainen kost 30 energiepunten</p>
-                <p> je hebt momenteel <?php echo $energie; ?> energiepunten.</p>
+                <p class="entry">trainen kost 30 energiepunten</p>
+                <p class="entry"> je hebt momenteel <?php echo $energie; ?> energiepunten.</p>
                 <p>
                     <select class="target" id="trainingSkill">
                         <option value="stamina" selected="selected">Stamina</option>
@@ -175,80 +174,75 @@ foreach($training->result() as $row){
             </section>
         </div>
         <?php } ?>
-        <div id="sortPlayers">
+        <div id="sortPlayers" class="fillLeft">
             <section class="sortingFeatures">
                 <figure class="icon" id="gamePlayers"></figure>
                 <h2>spelers</h2>
-                <figure class="icon" id="gameView"></figure>
-                <p><a id="watchSkills" href="#">skills bekijken</a><a id="hideSkills" style="display: none;" href="#">skills verbergen</a></p>
-                <figure class="icon" id="gameView"></figure>
-                <p><a id="watchProgress" href="#">vordering bekijken</a><a id="hideProgress" style="display: none;" href="#">vordering verbergen</a></p>
+                <figure class="icon" id="gameViewSmall"></figure>
+                <p id="sortView"><a id="watchSkills" href="#">skills bekijken</a><a id="hideSkills" style="display: none;" href="#">skills verbergen</a></p>
+                <figure class="icon" id="gameViewSmall"></figure>
+                <p id="sortView"><a id="watchProgress" href="#">vordering bekijken</a><a id="hideProgress" style="display: none;" href="#">vordering verbergen</a></p>
                 <ul id="filters">
-                    <figure class="icon" id="gameView"></figure>
-                    <p><a href="#" data-filter=".playerFemale">vrouwen</a></p>
-                    <figure class="icon" id="gameView"></figure>
-                    <p><a href="#" data-filter=".playerMale">mannen</a></p>
-                    <figure class="icon" id="gameView"></figure>
-                    <p> <a href="#" data-filter="*">mannen & vrouwen</a></p>
+                    <figure class="icon" id="gameViewSmall"></figure>
+                    <p id="sortView"><a href="#" data-filter=".playerFemale">vrouwen</a></p>
+                    <figure class="icon" id="gameViewSmall"></figure>
+                    <p id="sortView"><a href="#" data-filter=".playerMale">mannen</a></p>
+                    <figure class="icon" id="gameViewSmall"></figure>
+                    <p id="sortView"> <a href="#" data-filter="*">mannen & vrouwen</a></p>
                 </ul>
+                <p id="breakline"></p>
                 <ul id="sort" class="sort option-set">
                     <article class="sortSkill">
                         <li class="sort asc option-set floated clearfix"> <a href="#number" class="selected">
                             <figure class="icon" id="gameDown"></figure>
                             </a></li>
-                         <a href="#number" id="playerSort">
-                            <figure class="icon" id="gameUp"></figure>
-                            rugnummer </a>
-                    </article>
+                        <a href="#number" id="playerSort">
+                        <figure class="icon" id="gameUp"></figure>
+                        rugnummer </a> </article>
                     <article class="sortSkill">
                         <li class="sort asc option-set floated clearfix"> <a href="#age" class="selected">
                             <figure class="icon" id="gameDown"></figure>
                             </a> </li>
                         <a href="#age">
-                            <figure class="icon" id="gameUp"></figure>
-                            leeftijd</a>
-                    </article>
+                        <figure class="icon" id="gameUp"></figure>
+                        leeftijd</a> </article>
                     <article class="sortSkill">
                         <li class="sort asc option-set floated clearfix"> <a href="#price" class="selected">
                             <figure class="icon" id="gameDown"></figure>
                             </a></li>
                         <a href="#price">
-                            <figure class="icon" id="gameUp"></figure>
-                            prijs</a>
-                    </article>
-                  <p></p>
+                        <figure class="icon" id="gameUp"></figure>
+                        prijs</a> </article>
+                    <p></p>
                     <ul class="sortTeamLeft">
                         <article class="sortSkill">
-                            <li class="sort asc option-set floated clearfix"> 
-                            <a href="#passing" class="selected"> <figure class="icon" id="gameDown"></figure> </a> </li>
-                             <a href="#passing">
-                                <figure class="icon" id="gameUp"></figure>
-                                passing</a>
-                        </article>
+                            <li class="sort asc option-set floated clearfix"> <a href="#passing" class="selected">
+                                <figure class="icon" id="gameDown"></figure>
+                                </a> </li>
+                            <a href="#passing">
+                            <figure class="icon" id="gameUp"></figure>
+                            passing</a> </article>
                         <article class="sortSkill">
                             <li class="sort asc option-set floated clearfix"> <a href="#shotpower" class="selected">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
                             <a href="#shotpower">
-                                <figure class="icon" id="gameUp"></figure>
-                                shotpower</a>
-                        </article>
+                            <figure class="icon" id="gameUp"></figure>
+                            shotpower</a> </article>
                         <article class="sortSkill">
                             <li class="sort asc option-set floated clearfix"> <a href="#intercepting" class="selected">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
                             <a href="#intercepting">
-                                <figure class="icon" id="gameUp"></figure>
-                                intercepting</a>
-                        </article>
+                            <figure class="icon" id="gameUp"></figure>
+                            intercepting</a> </article>
                         <article class="sortSkill">
                             <li class="sort asc option-set floated clearfix"> <a href="#leadership" class="selected">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
                             <a href="#leadership">
-                                <figure class="icon" id="gameUp"></figure>
-                                leadership</a>
-                        </article>
+                            <figure class="icon" id="gameUp"></figure>
+                            leadership</a> </article>
                     </ul>
                     <!-- end sortTeamLeft -->
                     <ul class="sortTeamRight">
@@ -257,48 +251,46 @@ foreach($training->result() as $row){
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
                             <a href="#rebound" class="selected">
-                                <figure class="icon" id="gameUp"></figure>
-                                rebound</a>
-                        </article>
+                            <figure class="icon" id="gameUp"></figure>
+                            rebound</a> </article>
                         <article class="sortSkill">
                             <li class="sort asc option-set floated clearfix"> <a href="#stamina" class="selected">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
                             <a href="#stamina">
-                                <figure class="icon" id="gameUp"></figure>
-                                stamina</a>
-                        </article>
+                            <figure class="icon" id="gameUp"></figure>
+                            stamina</a> </article>
                         <article class="sortSkill">
                             <li class="sort asc option-set floated clearfix"> <a href="#shotprecision" class="selected">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
                             <a href="#shotprecision">
-                                <figure class="icon" id="gameUp"></figure>
-                                shotprecsion</a>
-                        </article>
+                            <figure class="icon" id="gameUp"></figure>
+                            shotprecsion</a> </article>
                         <article class="sortSkill">
                             <li class="sort asc option-set floated clearfix"> <a href="#playmaking" class="selected">
                                 <figure class="icon" id="gameDown"></figure>
                                 </a> </li>
                             <a href="#playmaking">
-                                <figure class="icon" id="gameUp"></figure>
-                                playmaking</a>
-                        </article>
-                    </ul> <!-- end sortTeamRight -->
+                            <figure class="icon" id="gameUp"></figure>
+                            playmaking</a> </article>
+                    </ul>
+                    <!-- end sortTeamRight -->
                 </ul>
                 
                 <!-- end ul id sort --> 
             </section>
         </div>
-        <div class="chart_container">
+        <div class="chart_container fillLeft">
             <section>
                 <figure class="icon" id="gameGraph"></figure>
                 <h2>team skills</h2>
                 <p>
-                <canvas id="chartTeamSkills" width="360" height="350">jammer, je browser ondersteunt geen canvas.</canvas>
+                    <canvas id="chartTeamSkills" width="360" height="350">jammer, je browser ondersteunt geen canvas.</canvas>
                 </p>
             </section>
         </div>
+        
         <!--
 /*
 <?php if(!isset($alien)){ ?>

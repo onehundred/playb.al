@@ -75,6 +75,11 @@ a#playerSort{line-height:20px;}
 .gameLeft div.fillLeft{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.5);border:1px solid #E5E5E5;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;width:370px;margin:0 0 20px 0;-webkit-transition-duration:0.2s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.2s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.2s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.2s;-ms-transition-timing-function:ease-in-out;transition-duration:0.2s;transition-timing-function:ease-in-out;}
 .gameLeft div.fillLeft:hover{background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.75);-webkit-box-shadow:0px 0px 10px #E5E5E5;-moz-box-shadow:0px 0px 10px #E5E5E5;box-shadow:0px 0px 10px #E5E5E5;-webkit-transition-duration:0.2s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.2s;-moz-transition-timing-function:ease-in-out;-o-transition-duration:0.2s;-o-transition-timing-function:ease-in-out;-ms-transition-duration:0.2s;-ms-transition-timing-function:ease-in-out;transition-duration:0.2s;transition-timing-function:ease-in-out;}
 .gameLeft div section{-webkit-border-top-left-radius:0px;-webkit-border-top-right-radius:0px;-webkit-border-bottom-right-radius:10px;-webkit-border-bottom-left-radius:10px;-moz-border-radius-topleft:0px;-moz-border-radius-topright:0px;-moz-border-radius-bottomright:10px;-moz-border-radius-bottomleft:10px;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}
+span#wonspan{background-color:#808080;height:10px;width:10px;display:inline;margin:0 0 0 15px;color:#808080;}
+span#lostspan{background-color:#333333;height:10px;width:10px;display:inline;margin:0 0 0 15px;color:#333333;}
+span#drawspan{background-color:#CCCCCC;height:10px;width:10px;display:inline;margin:0 0 0 15px;color:#CCCCCC;margin-bottom:100px;}
+div#chartsWonLegend p,div#chartsLostLegend p{padding:0px 15px 0px 15px;display:inline;}
+div#chartsDrawLegend p{padding:0px 15px 10px 15px;display:inline;}
 #gameLeftOverview{width:1168px;}
 #gameLeftOverview .column{float:left;}
 .column:nth-child(1){margin:0 22px 0 0;}

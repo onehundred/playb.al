@@ -36,14 +36,29 @@
                     <figure class="icon" id="gameCalendar"></figure>
                     <h2> kalender</h2>
                     <p class="entry">week <?php echo $calendar['week'];?> seizoen <?php echo $calendar['seizoen'];?></p>
-                    <p class="entry">volgende wedstrijd:<br /> <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
+                    <p class="entry">volgende wedstrijd:<br />
+                        <?php echo $calendar['thuisteam']['teamnaam'];?> - <?php echo $calendar['uitteam']['teamnaam'];?></p>
                 </section>
             </div>
             <div class="chart_container fillLeft">
                 <section>
                     <figure class="icon" id="gameGraph"></figure>
                     <h2>huidig seizoen</h2>
-                    <div class="entry"><p>legende</p><div id="chartsWonLegend"><p>gewonnen</p></div><div id="chartsLostLegend"><p>verloren</p></div><div id="chartsDrawLegend"><p>gelijk</p></div></div>
+                    <div class="entry">
+                        <p>legende</p>
+                        <div id="chartsWonLegend">
+                            <span id="wonspan">leg</span>
+                            <p>gewonnen</p>
+                        </div>
+                        <div id="chartsLostLegend">
+                            <span id="lostspan">leg</span>
+                            <p>verloren</p>
+                        </div>
+                        <div id="chartsDrawLegend">
+                            <span id="drawspan">leg</span>
+                            <p>gelijk</p>
+                        </div>
+                    </div>
                     <canvas id="chartCanvas1" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
                 </section>
             </div>
@@ -51,6 +66,21 @@
                 <section>
                     <figure class="icon" id="gameGraph"></figure>
                     <h2>carriere</h2>
+                    <div class="entry">
+                        <p>legende</p>
+                        <div id="chartsWonLegend">
+                            <span id="wonspan">leg</span>
+                            <p>gewonnen</p>
+                        </div>
+                        <div id="chartsLostLegend">
+                            <span id="lostspan">leg</span>
+                            <p>verloren</p>
+                        </div>
+                        <div id="chartsDrawLegend">
+                            <span id="drawspan">leg</span>
+                            <p>gelijk</p>
+                        </div>
+                    </div>
                     <canvas id="chartCanvas2" width="150" height="150">Your web-browser does not support the HTML 5 canvas element.</canvas>
                 </section>
             </div>
@@ -76,7 +106,7 @@ $(document).ready(function(){
 			     		var chart1 = new AwesomeChart('chartCanvas1');
 			            chart1.data = [gewonnen/100, verloren/100, gelijk/100];
 			            chart1.chartType = "pie";
-			            chart1.colors = ['#333333', '#808080', '#CCCCCC'];
+			            chart1.colors = ['#808080', '#333333', '#CCCCCC'];
 			            chart1.randomColors = false;
 			            chart1.draw();
 			            
@@ -89,7 +119,7 @@ $(document).ready(function(){
 			            chart2.data = [gewonnen_al/100, verloren_al/100, gelijk_al/100];
 			            chart2.chartType = "pie";
 			    /*      chart2.labels = ['verloren','gewonnen']; */
-			            chart2.colors = ['333333', '808080', 'CCCCCC'];
+			            chart2.colors = ['#808080', '#333333', 'CCCCCC'];
 			            chart2.randomColors = false;
 			            chart2.draw();
 			            

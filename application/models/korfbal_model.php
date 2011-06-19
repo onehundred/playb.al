@@ -505,7 +505,7 @@
 	
 	function get_energie($team_id)
 	{
-		$this->db->select('*');
+		$this->db->select('energie');
 		$this->db->where('team_id', $team_id);
 		$query = $this->db->get('korf_teams');
 		return $query;

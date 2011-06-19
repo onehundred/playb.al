@@ -319,6 +319,17 @@ class Json extends CI_Controller {
 		echo json_encode($data);
 	
 	}
+	
+	function get_energie()
+	{
+		$teamid = $_POST['teamid'];
+		$this->load->model('korfbal_model');
+		$result = $this->korfbal_model->get_energie($teamid);
+		
+		foreach($result->result() as $row){
+			echo json_encode($row->energie);
+		}
+	}
 
 
 }

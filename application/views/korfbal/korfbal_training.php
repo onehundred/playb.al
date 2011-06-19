@@ -159,7 +159,7 @@ foreach($training->result() as $row){
                 <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>"/>
                 <input type="hidden" id="energie" value="<?php echo $energie;?>"/>
                 <p>trainen kost 30 energiepunten</p>
-                <p> je hebt momenteel <?php echo $energie; ?> energiepunten.</p>
+                <p> je hebt momenteel <span id="energie_span"></span> energiepunten.</p>
                 <p>
                     <select class="target" id="trainingSkill">
                         <option value="stamina" selected="selected">Stamina</option>

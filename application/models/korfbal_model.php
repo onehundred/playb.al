@@ -25,6 +25,31 @@
 
 	
 	}
+	function is_your_player($teamid, $spelerid)
+	{
+		$check = array();
+		$this->db->where('speler_id', $spelerid);
+		$this->db->where('FK_team_id', $teamid);
+		$query = $this->db->get('korf_spelers');
+		
+		if($query->num_rows() == 0){
+			$this->db->select('FK_team_id');
+			$this->db->from('korf_spelers');
+			$this->db->where('speler_id', $spelerid);
+			$query2 = $this->db->get();
+			
+			foreach($query2->result() as $row){
+				$for_teamid = $row->FK_team_id;
+				$check['check'] = false;
+				$check['for_teamid'] = $for_teamid;
+			}
+		}else{
+			$check['check'] = true;
+		}
+		
+		return $check;
+	
+	}
 	function get_profile_pic($team_id){
 	
 		$this->db->select('afbeelding');
@@ -46,23 +71,24 @@
 	
 		$this->db->where('FK_team_id', $teamid);
 		$query = $this->db->get('korf_teamstats');
-		foreach($query->result() as $row){
-			$stats['verkochtid'] = $row->laatste_verkocht;
-			$stats['gekochtid'] = $row->laatste_gekocht;
-			$stats['verkocht'] = $this->getSpelerNaam($stats['verkochtid']);
-			$stats['gekocht'] = $this->getSpelerNaam($stats['gekochtid']);
-		}
-		
-		
-		$this->db->select('FK_team_id');
-		$this->db->from('korf_spelers');
-		$this->db->where('speler_id', $stats['verkochtid']);
-		$query3 = $this->db->get();
-		
-		foreach($query3->result() as $row){
-			$stats['verkocht']['teamid'] = $row->FK_team_id;
-		}
-		
+		if($query->num_rows() != 0){
+			foreach($query->result() as $row){
+				$stats['verkochtid'] = $row->laatste_verkocht;
+				$stats['gekochtid'] = $row->laatste_gekocht;
+				$stats['verkocht'] = $this->getSpelerNaam($stats['verkochtid']);
+				$stats['gekocht'] = $this->getSpelerNaam($stats['gekochtid']);
+			}
+			
+			
+			$this->db->select('FK_team_id');
+			$this->db->from('korf_spelers');
+			$this->db->where('speler_id', $stats['verkochtid']);
+			$query3 = $this->db->get();
+			
+			foreach($query3->result() as $row){
+				$stats['verkocht']['teamid'] = $row->FK_team_id;
+			}
+			}
 		
 		$this->db->select('*');
 		$this->db->from('korf_team_achievements');

@@ -26,12 +26,20 @@ class Korfbal extends CI_Controller {
 	}
 	function is_your_team(){
 		$teamid = $this->uri->segment('3');
-		
+		if($teamid == ''){
+			redirect('sportchoice/sport');
+		}else{
+			$this->load->model('korfbal_model');
+			$team_user_id = $this->korfbal_model->is_your_team();		
+			if($teamid !== $team_user_id){
+				redirect('korfbal_other_team/korfbal_overview/'.$teamid);
+			}
+		}	
+	}
+	function is_your_player($teamid, $spelerid){
 		$this->load->model('korfbal_model');
-		$team_user_id = $this->korfbal_model->is_your_team();		
-		if($teamid !== $team_user_id){
-			redirect('korfbal_other_team/korfbal_overview/'.$teamid);
-		}
+		$check = $this->korfbal_model->is_your_player($teamid, $spelerid);
+		return $check;
 	}
 
 	//de mainfunctie van korfbal -> laadt de hoofdpage
@@ -112,23 +120,30 @@ class Korfbal extends CI_Controller {
 		$speler_id = $this->uri->segment('4');
 		$data['speler_id'] = $speler_id;
 		
-		$this->load->model('korfbal_model');
-		$data['speler'] = $this->korfbal_model->get_speler($speler_id);
-		$data['spelerstats'] = $this->korfbal_model->get_spelerstats($speler_id);
-		
-		
-		$data['session_teamid'] = $this->korfbal_model->get_session_teamid();
-		
-		$team = $this->korfbal_model->get_team($team_id);
-		foreach($team->result() as $row)
-		{
-		$data['teamnaam'] = $row->naam; 
+		 $check = $this->is_your_player($team_id, $speler_id);
+		 
+		 if($check['check'] == false){
+		 	redirect('korfbal_other_team/korfbal_player/'.$check['for_teamid'].'/'.$speler_id);	
+		 }else{
+			
+			$this->load->model('korfbal_model');
+			$data['speler'] = $this->korfbal_model->get_speler($speler_id);
+			$data['spelerstats'] = $this->korfbal_model->get_spelerstats($speler_id);
+			
+			
+			$data['session_teamid'] = $this->korfbal_model->get_session_teamid();
+			
+			$team = $this->korfbal_model->get_team($team_id);
+			foreach($team->result() as $row)
+			{
+			$data['teamnaam'] = $row->naam; 
+			}
+			$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
+			$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
+			
+			$data['main_content'] = 'korfbal/korfbal_speler';
+			$this->load->view('korfbal/includes/template', $data);
 		}
-		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
-		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
-		
-		$data['main_content'] = 'korfbal/korfbal_speler';
-		$this->load->view('korfbal/includes/template', $data);
 	}
 	
 	

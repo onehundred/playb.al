@@ -6,6 +6,7 @@ class Korfbal_other_team extends CI_Controller {
 	{
 		parent::__construct();
 		$this->is_logged_in();
+		$this->is_your_team();
 			
 	}
 	
@@ -18,6 +19,15 @@ class Korfbal_other_team extends CI_Controller {
 
 		 redirect('main/index');
 			
+		}
+	}
+	function is_your_team(){
+		$teamid = $this->uri->segment('3');
+		if($teamid == ''){
+			redirect('sportchoice/sport');
+		}
+		if($teamid > 4088){
+			redirect('sportchoice/sport');
 		}
 	}
 	function korfbal_overview()

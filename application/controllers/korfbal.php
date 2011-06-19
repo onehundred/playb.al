@@ -26,7 +26,10 @@ class Korfbal extends CI_Controller {
 	}
 	function is_your_team(){
 		$teamid = $this->uri->segment('3');
-		if($teamid == ''){
+		if(!is_numeric($teamid)){
+			redirect('sportchoice/sport');
+		}
+		elseif($teamid == ''){
 			redirect('sportchoice/sport');
 		}else{
 			$this->load->model('korfbal_model');

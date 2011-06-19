@@ -828,6 +828,7 @@ $(document).ready(function()
 					show_things = function(){
 						$('#terminating').hide();
 						$('#links').show();
+						$('#tussenstand p').remove();
 						append_replay();
 					}
 					
@@ -839,7 +840,8 @@ $(document).ready(function()
 								j=0;
 							}
 							if(infLoopStop == false){
-								start(acties[j],naam_thuisteam, naam_uitteam)
+								start(acties[j],naam_thuisteam, naam_uitteam);
+								$('#tussenstand').append('<p class="tussenstand">'+tussenstand[j]+'</p>');
 								window.setTimeout(infLoop,8000);
 								j++;
 							}

@@ -29,6 +29,9 @@ class Korfbal_other_team extends CI_Controller {
 		if($teamid > 4088){
 			redirect('sportchoice/sport');
 		}
+		if(!is_numeric($teamid)){
+			redirect('sportchoice/sport');
+		}
 	}
 	function korfbal_overview()
 	{

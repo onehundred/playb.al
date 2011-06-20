@@ -1,3 +1,10 @@
+<style>
+.match_week{
+	font-weight: bold;
+	float: left;
+	margin-right: 30px;
+}
+</style>
 <div class="game">
 <div class="gameRight">
     <?php if(isset($matches[1]['thuis'])){ ?>
@@ -6,7 +13,7 @@
     <?php }?>
     <?php for($i=1;$i<15;$i++){ ?>
     <div class="wedstrijdEntry">
-        <p>week <?php echo $i;?></p>
+        <p class="match_week">week <?php echo $i;?></p>
         <p id="matchTeamNameHome"><?php echo $matches[$i]['thuis'];?></p>
         <!-- <p id="versus">VS</p> -->
         <p id="matchTeamNameOut"><?php echo $matches[$i]['uit'];?></p>

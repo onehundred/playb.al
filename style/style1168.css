@@ -104,7 +104,7 @@ li.rssRow.odd,li.rssRow.odd h4,li.rssRow.even h4{font-weight:normal;background:n
 #matchTeamNameHome{float:left;display:inline;}
 #matchTeamNameOut{float:right;display:inline;}
 #matchUitslag{display:block;position:relative;left:-275px;top:65px;}
-#matchUitslagScore{font-size:36px;font-family:'SFCollegiateSolidRegular';position:relative;left:55px;}
+#matchUitslagScore{font-size:36px;font-family:'SFCollegiateSolidRegular';position:absolute;margin-left:355px;}
 #versus{display:inline;float:left;position:relative;left:100px;}
 #trainingButton{margin:0 0 10px 0;}
 #opstellingButton{top:12px;position:relative;}

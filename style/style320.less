@@ -203,34 +203,45 @@ height: 285px;
 
 }
 .sliderHome div {
-width: 40px;
-height: 220px;
+width: 176px;
+height: 255px;
+
 }
 .sliderHome div:nth-child(1) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/1.png);
+background-image: url(../img/slider/320/1.png);
+/* background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/1.png); */
 background-repeat: no-repeat;
-width: 40px;
-height: 220px;
+width: 300px;
+height: 260px;
+
 }
 .sliderHome div:nth-child(2) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/2.png);
+background-image: url(../img/slider/320/2.png);
+/* background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/2.png); */
 background-repeat: no-repeat;
-width: 40px;
-height: 220px;
+width: 300px;
+height: 260px;
 }
 .sliderHome div:nth-child(3) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/3.png);
+background-image: url(../img/slider/320/3.png);
+/* background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/3.png); */
 background-repeat: no-repeat;
-width: 40px;
-height: 220px;
+width: 300px;
+height: 260px;
 }
 .sliderHome div:nth-child(4) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/4.png);
+background-image: url(../img/slider/320/4.png);
+/* background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/4.png); */
 background-repeat: no-repeat;
+width: 300px;
+height: 260px;
 }
 .sliderHome div:nth-child(5) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/5.png);
+background-image: url(../img/slider/320/5.png);
+/* background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/320/5.png); */
 background-repeat: no-repeat;
+width: 300px;
+height: 260px;
 }
 .sliderHome img {
 float: left;
@@ -471,13 +482,13 @@ text-transform: lowercase;
 clear: both;
 }
 .column:nth-child(1) {
-margin: 0 0 0 9px;
+margin: 0 0 0 0px;
 }
 .column:nth-child(2) {
-margin: 0 0 0 9px;
+margin: 0 0 0 0px;
 }
 .column:nth-child(3) {
-margin: 0 0 0 9px;
+margin: 0 0 0 0px;
 }
 .gameLeft div.fillLeft {
 .borderRadius;
@@ -505,22 +516,29 @@ box-shadow: 0px 0px 10px #E5E5E5;
  .transitionOn2;
 }
 .gameLeft table {
-	color: #FFF;
+	color: #444;
 	width: 300px;
-	padding: 15px 14px 13px 14px;
+	padding: 5px 7px 13px 7px;
 	border: none;
+	font-size: 12px;
 }
 .gameLeft table tr:nth-child(1) {
-	background-color: green;
+background: none;
 }
 .gameLeft table tr:nth-child(2) {
-	background-color: red;
+
 }
 .gameLeft table tr:nth-child(3) {
-	background-color: blue;
+background: none;
 }
 .gameLeft table tr:nth-child(4) {
-	background-color: yellow;
+
+}
+#managerGegevens {
+display: none;
+}
+#managerStatistics {
+display: none;
 }
 #sortPlayers {
 display: none;
@@ -619,12 +637,11 @@ a.tooltip:hover::after {
 }
 .makeAccount {
 display: none;
-	width: 320px;
+	width: 274px;
 	height: 320px;
-.imageDown2;
-	margin: 10px auto 0 auto;
-	background-image: url(../img/boxbgRegister.png);
-	background-repeat: no-repeat;
+
+	margin: 10px 0 0 35px;
+background: none;
 
 
 }
@@ -757,8 +774,13 @@ left: 3px;
 	height: 270px;
 	z-index: 999;
 
-background: url(../img/boxbg.png) no-repeat 2px 6px;
+background: none;
 }
+	a#closeLogin, a#closeProfile, a#closeOops {
+	position: absolute;
+	top: 0px;
+	left: 26px;
+	}
 #create {
 	position: absolute;
 	bottom: 0px;
@@ -1486,10 +1508,35 @@ display: none;
 #username_error, #paswoord_error {
 font-size: 12px;
 }
-
+/* DIVISION start ------------------------------------------------------------------------------------------------------------*/
+.division div {
+	float: left;
+	display: none;
+	padding: 0 15px 0 0;
+}
+#team {
+	width: 150px;
+	padding: 5px 15px 5px 20px;
+}
+#divisionNumber {
+display: none;
+}
+#played, #won, #lost, #draw, #goalsPos, #goalsNeg, #goalsSal, #points {
+	padding: 5px 15px 5px 0px;
+	width: 50px;
+}
+.division_results div {
+	float: left;
+	display: none;
+	padding: 0 15px 0 0;
+}
+.grey {
+	background-color: black;
+}
+/* DIVISION end -----------------------------------------------------------------------------------------------------------*/
 a#training.question {
 float: right;
-margin: -45px 0 30px 0;
+margin: -48px 15px 30px 0;
 width: 80px;
 }
 /*	--------------------------------------------------

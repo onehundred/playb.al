@@ -60,6 +60,7 @@ p.sliderCopy{padding:12px;background-color:#FFFFFF;background-color:rgba(255, 25
 .rebound,.passing,.stamina,.shotprecision,.playmaking,.shotpower,.intercepting,.leadership{display:inline;}
 .gameRight #skillTitle{display:inline;}
 aside{float:left;}
+.fillLeft{width:460px;}
 .gameLeft{width:297px;font-size:15px;color:#222;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;}
 .gameLeft ul,.gameLeft li{list-style-type:none;display:inline;}
 .gameLeft h2{font-size:32px;font-weight:normal;letter-spacing:1px;color:#FAFAFA;padding:0 0 0 10px;text-transform:lowercase;}
@@ -68,8 +69,8 @@ aside{float:left;}
 .gameLeft table{color:#FFF;width:380px;padding:15px 14px 13px 14px;border:none;}
 .gameLeft table tr:nth-child(1){background-color:green;}
 .gameLeft table tr:nth-child(2){background-color:red;}
-.gameLeft table tr:nth-child(3){background-color:blue;}
-.gameLeft table tr:nth-child(4){background-color:yellow;}
+.gameLeft table tr:nth-child(3){background-color:gray;}
+.gameLeft table tr:nth-child(4){background-color:white;}
 .sportnav{margin-bottom:15px;width:712px;margin:0 auto 0 auto;}
 .sportnav a{text-transform:uppercase;font-family:'LeagueGothicRegular';line-height:0.8;color:#bfbfbf;-webkit-transition-duration:1s;font-size:32px;}
 .sportnav a:hover{color:#888;-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;}

@@ -38,7 +38,7 @@ body{width:100%;text-rendering:optimizeLegibility;background:url(../img/400.jpg)
 ::-moz-selection{background:#e82237;}
 img::selection{background:transparent;}
 img::-moz-selection{background:transparent;}
-header{height:55px;background:url(../img/top.png);background-repeat:repeat-x;}
+header{height:65px;background:url(../img/top.png);background-repeat:repeat-x;}
 #header{width:896px;margin:0 auto 0 auto;}
 #logo{padding:8px 7px 0 0;width:113px;height:33px;float:left;}
 #logo:hover{-moz-transform:scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-webkit-transform:scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-o-transform:scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);-ms-transform:scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);transform:scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);cursor:pointer;}
@@ -62,7 +62,7 @@ h2{font-family:'LeagueGothicRegular';text-transform:uppercase;}
 .sliderHome section{position:relative;left:635px;width:220px;height:220px;}
 h1.sliderTag{margin:0;font-family:'LeagueGothicRegular';font-weight:normal;letter-spacing:2px;font-size:62px;text-transform:uppercase;color:#666666;color:rgba(0, 0, 0, 0.35);}
 p.sliderCopy{padding:12px;background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.5);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;width:188px;font-size:12px;line-height:16px;margin:4px 0 0 0;-webkit-box-shadow:0px 0px 5px #BFBFBF;-moz-box-shadow:0px 0px 5px #BFBFBF;box-shadow:0px 0px 5px #BFBFBF;}
-.galleryNav{position:absolute;top:295px;margin:10px 0 0 25px;}
+.galleryNav{position:absolute;top:280px;margin:10px 0 0 25px;}
 .pagingGallery a,#galleryNav a{padding:10px 15px 5px 15px;margin:0 5px 0 0;background-image:url("../img/bullet_inactive.png");background-repeat:no-repeat;opacity:0.9;z-index:1;color:transparent;}
 .pagingGallery a.active,#galleryNav .activeSlide{font-weight:bold;background-image:url("../img/bullet_active.png");}
 .pagingGallery a.active{background-image:url("../img/bullet_active.png");}
@@ -180,6 +180,7 @@ a.tooltip:hover::after{width:90px;height:44px;display:block;margin:-80px 0 0 10p
 #bottom{clear:both;}
 #login{float:right;color:#444;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;}
 .login,.profile,.createdAccount{display:none;opacity:0;-webkit-border-top-left-radius:3px;-webkit-border-top-right-radius:3px;-webkit-border-bottom-right-radius:12px;-webkit-border-bottom-left-radius:12px;-moz-border-radius-topleft:3px;-moz-border-radius-topright:3px;-moz-border-radius-bottomright:12px;-moz-border-radius-bottomleft:12px;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:12px;border-bottom-left-radius:12px;position:absolute;padding:35px;left:39%;margin-top:150px;width:290px;height:270px;background:url(../img/boxbg.png) no-repeat 2px 6px;}
+a#closeLogin,a#closeProfile,a#closeOops{position:absolute;top:0px;left:0px;}
 #korfbal_signup{background:url(../img/boxbg.png) no-repeat 2px 6px;position:absolute;padding:35px;left:39%;margin-top:150px;width:290px;height:270px;}
 .createdAccount p,.createdAccount a{width:300px;}
 #oops{display:none;background:url(../img/boxbg.png) no-repeat 2px 6px;position:absolute;padding:30px;left:39%;margin-top:100px;width:350px;height:380px;}

@@ -8,7 +8,7 @@
 @volleybalBorderColor: #295666;
 @grey: #f2f2f2;
 @selectionColor: rgba(232, 34, 55, 1);
-@headerHeight: 75px;
+@headerHeight: 50px;
 @footerHeight: 150px;
 .borders {
 	border: 1px solid
@@ -83,6 +83,13 @@
 	-o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	-ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 	transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+}
+.imageDown2 {
+	-moz-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0.75) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 .imageUp {
 	-moz-transform: scale(1.03) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
@@ -455,7 +462,7 @@ text-transform: lowercase;
 }
 */
 #gameLeftOverview {
-	width: 320px;
+	width: 300px;
 }
 #gameLeftOverview div {
 
@@ -464,10 +471,13 @@ text-transform: lowercase;
 clear: both;
 }
 .column:nth-child(1) {
-margin: 0 22px 0 0;
+margin: 0 0 0 9px;
 }
 .column:nth-child(2) {
-margin: 0 22px 0 0;
+margin: 0 0 0 9px;
+}
+.column:nth-child(3) {
+margin: 0 0 0 9px;
 }
 .gameLeft div.fillLeft {
 .borderRadius;
@@ -622,10 +632,10 @@ a.tooltip:hover::after {
 }
 .makeAccount {
 display: none;
-	width: 350px;
-	height: 360px;
-
-	margin: 100px auto 0 auto;
+	width: 320px;
+	height: 320px;
+.imageDown2;
+	margin: 10px auto 0 auto;
 	background-image: url(../img/boxbgRegister.png);
 	background-repeat: no-repeat;
 
@@ -737,34 +747,31 @@ box-shadow: 0px 0px 0px #BFBFBF;
 	margin: 50px 0 0 0;
 	position: relative;
 }
-/*
-.stripe1 {
- background-color: @korfbalColor;
-	height: 100%;
- border: 1px solid @korfbalBorderColor;
- .borderRadius;
-	width: 5%;
- .transitionOff;
-	margin-left: 0px;
+.login, .profile, .createdAccount {
+display: none;
+opacity: 0;
+-webkit-border-top-left-radius: 3px;
+-webkit-border-top-right-radius: 3px;
+-webkit-border-bottom-right-radius: 12px;
+-webkit-border-bottom-left-radius: 12px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-topright: 3px;
+-moz-border-radius-bottomright: 12px;
+-moz-border-radius-bottomleft: 12px;
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 12px;
+border-bottom-left-radius: 12px;
+	position: absolute;
+	padding: 35px 0 0 35px;
+left: 3px;
+	margin-top: 75px;
+	width: 280px;
+	height: 270px;
+	z-index: 999;
+
+background: url(../img/boxbg.png) no-repeat 2px 6px;
 }
-.stripe2 {
- background-color: @basketbalColor;
-	height: 100%;
- .borderRadius;
- border: 1px solid @basketbalBorderColor;
-	margin-left: 26px;
-	width: 5%;
-}
-.stripe3 {
- background-color: @volleybalColor;
- .borderRadius;
- border: 1px solid @volleybalBorderColor;
-	margin-left: 26px;
-	width: 5%;
-	height: 100%;
-	margin-right: 26px;
-}
-*/
 #create {
 	position: absolute;
 	bottom: 0px;
@@ -1093,19 +1100,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 	box-shadow: inset 0px 0px 3px #bdbdbd;
 outline-color: #df1f2e;
 }
-input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover {
-	display:block;
-	margin: 0 0 1em 0;
-	width: 235px;
-	padding: 5px;
-	border: solid 1px #999;
- .borderRadius;
-	background: #FFFFFF;
-		background: rgba(255,255,255,0.8);
-	-webkit-box-shadow: inset 0px 0px 3px #bdbdbd;
-	-moz-box-shadow: inset 0px 0px 3px #bdbdbd;
-	box-shadow: inset 0px 0px 3px #bdbdbd;
-}
+
 input[type="submit"] {
 	background: #02A9CD; /* old browsers */
 	background: -moz-linear-gradient(top, #02A9CD 0%, #0195B2 100%); /* firefox */

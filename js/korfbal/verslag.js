@@ -729,7 +729,7 @@ $(document).ready(function()
         			for(var i =0;i<minuten.length-1;i++)
         			{
         			
-        			$('#links').append('<p id="'+acties[i]+'" class="actie entry" style="cursor:pointer;">In minuut '+minuten[i]+' scoort: '+spelers[i]+' de '+tussenstand[i]+'</p>');
+        			$('#links').append('<p id="'+acties[i]+'" class="actie entry" style="cursor:pointer;">'+minuten[i]+'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+tussenstand[i]+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+spelers[i]+'</p>');
         			}
         			
         			//teamnamen appenden
@@ -793,6 +793,7 @@ $(document).ready(function()
      				
      					//clicken om een actie te bekijken
 					$(".actie").live('click', function(){
+						$('html, body').stop().animate({scrollTop:0}, 'slow');
 						$('#links').block({ 
 				                message: '<h4>Even wachten tot de animatie is afgelopen</h4>', 
 				                css: { border: '1px solid #000' } 
@@ -842,7 +843,7 @@ $(document).ready(function()
 							}
 							if(infLoopStop == false){
 								start(acties[j],naam_thuisteam, naam_uitteam);
-								$('#tussenstand').append('<p class="tussenstand">'+tussenstand[j]+'</p>');
+								$('#tussenstand').append('<p class="entry">'+minuten[j]+'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+tussenstand[j]+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+spelers[j]+'</p>');
 								window.setTimeout(infLoop,8000);
 								j++;
 							}

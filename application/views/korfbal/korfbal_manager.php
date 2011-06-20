@@ -1,3 +1,25 @@
+<style>
+#managerStatistics{
+	padding: 10px;
+	width: 400px;
+}
+#managerStatistics p{
+	padding: 10px;
+}
+.manager_number{
+	float: right;
+	font-weight: bold;
+
+}
+#managerGegevens{
+	padding: 10px;
+	width: 400px;
+}
+#managerGegevens p{
+	padding: 10px;
+}
+
+</style>
 <div class="game">
     <div class="gameRight">
         <?php if(isset($error)){
@@ -13,8 +35,9 @@
  foreach($manager->result() as $row)
 		{ ?>
         <?php if($edit != 'edit'){ ?>
-        <p>Manager: <?php echo $row->gebruikersnaam;?> </p>
-        <p>Team: <?php echo $row->naam;?></p>
+        <div id="managerGegevens">
+        <p class="entry">Manager: <?php echo $row->gebruikersnaam;?> </p>
+        <p class="entry">Team: <?php echo $row->naam;?></p>
         <!-- <p>Manager sinds: <?php echo $row->datum_creatie;?></p> -->
         <p id="managerPic">
             <?php if($row->afbeelding == null){ ?>
@@ -23,14 +46,18 @@
             <img src="<?php echo base_url();?>img/userpics/thumbs/<?php echo $row->afbeelding;?>"/>
             <?php } ?>
         </p>
+        
         <?php if(!isset($alien)){ ?>
         <p id="managerChangePic"><a class="question" href="<?php echo $this->uri->segment('3');?>/edit">foto uploaden</a></p>
         <?php } ?>
-        <div id="managerStatistics">
-            <p>Totaal gespeelde matchen in carrière: <?php echo $row->gespeeld_matchen;?></p>
-            <p>Totaal gewonnen matchen in carrière: <?php echo $row->gewonnen_matchen;?></p>
-            <p>Totaal verloren matchen in carrière: <?php echo $row->verloren_matchen;?></p>
-            <p>Totaal matchen gelijk gespeeld in carrière: <?php echo $row->gelijke_matchen;?></p>
+        </div>
+        <div id="managerStatistics" >
+           
+            <p class="entry">gewonnen matchen in carrière:<span class="manager_number"> <?php echo $row->gewonnen_matchen;?></span></p>
+            <p class="entry">verloren matchen in carrière:<span class="manager_number"> <?php echo $row->verloren_matchen;?></span></p>
+            <p class="entry">matchen gelijk gespeeld in carrière:<span class="manager_number"> <?php echo $row->gelijke_matchen;?></span></p>
+            <hr/>
+             <p class="entry">gespeelde matchen in carrière:<span class="manager_number"><?php echo $row->gespeeld_matchen;?></span></p>
         </div>
         <?php }else{ ?>
         <?php echo form_open_multipart('korfbal/korfbal_manager_update/'.$this->uri->segment('3'));?>

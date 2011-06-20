@@ -77,11 +77,10 @@
 				$stats['gekochtid'] = $row->laatste_gekocht;
 		
 			}
-			if($stats['gekochtid'] != null){
+			$stats['gekocht'] = $this->getSpelerNaam($stats['gekochtid']);
+			if($stats['verkochtid'] != null){
 			
 			$stats['verkocht'] = $this->getSpelerNaam($stats['verkochtid']);
-			$stats['gekocht'] = $this->getSpelerNaam($stats['gekochtid']);
-			
 			$this->db->select('FK_team_id');
 			$this->db->from('korf_spelers');
 			$this->db->where('speler_id', $stats['verkochtid']);

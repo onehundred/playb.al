@@ -8,7 +8,7 @@
 @volleybalBorderColor: #295666;
 @grey: #f2f2f2;
 @selectionColor: rgba(232, 34, 55, 1);
-@headerHeight: 55px;
+@headerHeight: 50px;
 @footerHeight: 150px;
 .borders {
 	border: 1px solid
@@ -326,10 +326,14 @@ margin-top: 10%;
 }
 /* ANIMATIONS end *****************************************************************************************************************/
 /* gameRight start ----------------------------------------------------------------------------------------------------------*/
+.game {
+.center480;
+margin: 0;
+}
 .gameRight {
 	font-size: 15px;
 	float: right;
-	width: 568px;/* margin-top: 15px; */
+	width: 460px;/* margin-top: 15px; */
 
 }
 .player, .playerDetail, .playerFemale, .playerMale {
@@ -403,9 +407,16 @@ margin-top: 10%;
 aside {
 	float: left;
 }
+#gameLeftOverview {
+	width: 460px;
+}
+.gameLeft div.fillLeft {
+width: 370px;
+margin: 0 0 20px 55px;
+}
 .gameLeft {
 
-	width: 297px;
+	width: 420px;
 	/* 	padding: 0 15px 15px 15px; */
 	font-size: 15px;
 	color: #222;
@@ -417,12 +428,19 @@ aside {
 	display: inline;
 }
 .gameLeft h2 {
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: normal;
 	letter-spacing: 1px;
-	color: #FAFAFA;
-	padding: 0 0 0 10px;
-	text-transform: lowercase;
+	color: #7B7B7B;
+	padding: 8px 0 8px 10px;
+	width: 352px;
+	height: 40px;
+background-image: url(../img/stitches.png);
+background-repeat: no-repeat;
+background-position: 10px 40px;
+
+text-shadow: 0px 0px 4px #F2F2F2;
+text-transform: lowercase;
 }
 .gameLeft p {
 	padding: 0 0 10px 10px;
@@ -438,28 +456,47 @@ margin: 0 22px 0 0;
 margin: 0 22px 0 0;
 }
 .gameLeft table {
-	color: #FFF;
 	width: 380px;
 	padding: 15px 14px 13px 14px;
 	border: none;
 }
 .gameLeft table tr:nth-child(1) {
-	background-color: green;
+background: none;
 }
 .gameLeft table tr:nth-child(2) {
-	background-color: red;
+
 }
 .gameLeft table tr:nth-child(3) {
-	background-color: blue;
+background: none;
 }
 .gameLeft table tr:nth-child(4) {
-	background-color: yellow;
+
+}
+#managerGegevens {
+display: none;
+}
+#managerStatistics {
+display: none;
+}
+#sortPlayers {
+display: none;
+}
+#container{
+display: none;
+}
+div.chart_container.fillLeft {
+display: none;
+}
+a#training.question {
+float: right;
+margin: -48px 15px 30px 0;
+width: 80px;
 }
 /* gameRight end -------------------------------------------------------------------------------------------------------------*/
 
 .sportnav {
 	margin-bottom: 15px;
-	.center480;
+.center480;
 }
 .sportnav a {
 	text-transform: uppercase;
@@ -472,14 +509,7 @@ margin: 0 22px 0 0;
 .sportnav a:hover {
 	color: #888;
  .transitionOn;
-/*
-	border-top-width: 7px;
-	border-top-style: solid;
-	border-top-color: #888;
-	border-bottom-width: 7px;
-	border-bottom-style: solid;
-	border-bottom-color: #888;
-*/
+
 }
 .sportnav a:active {
 	text-transform: uppercase;
@@ -495,9 +525,6 @@ margin: 0 22px 0 0;
 	text-transform: uppercase;
 	font-size: 32px;
 	font-family: 'LeagueGothicRegular';
-	line-height: 0.8;
-color: @korfbalColor;
-	cursor: pointer;/* -webkit-text-stroke: 1px @korfbalBorderColor; *//* text-shadow: 0px -1px 1px rgba(1, 1, 1, .8); */
 }
 /* TOOLTIPS start ---------------------------------------------------------------------------------------------------------*/
 a.tooltip:after {
@@ -705,6 +732,40 @@ box-shadow: 0px 0px 0px #BFBFBF;
 	float:right;
 	color: #444;
  .borderRadius;
+}
+a#closeLogin, a#closeProfile, a#closeOops {
+	position: absolute;
+	top: 0px;
+	left: 26px;
+	}
+.login, .profile, .createdAccount {
+display: none;
+opacity: 0;
+-webkit-border-top-left-radius: 3px;
+-webkit-border-top-right-radius: 3px;
+-webkit-border-bottom-right-radius: 12px;
+-webkit-border-bottom-left-radius: 12px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-topright: 3px;
+-moz-border-radius-bottomright: 12px;
+-moz-border-radius-bottomleft: 12px;
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 12px;
+border-bottom-left-radius: 12px;
+	position: absolute;
+	padding: 35px 0 0 35px;
+left: 3px;
+	margin-top: 75px;
+	margin-left: 75px;
+	width: 280px;
+	height: 270px;
+	z-index: 999;
+
+background: none;
+}
+.profile {
+margin: 185px 0 80px 100px;
 }
 #menu {
 	padding-top: 10px;
@@ -1430,50 +1491,47 @@ display: none;
 font-size: 12px;
 }
 
-#twitter {
-	position:relative;
-	padding:15px;
-	margin:1em 0 3em;
-	border:5px solid rgba(0,0,0,0.5);
-	color:#333;
-	background:#000;
-	background: rgba(0,0,0,0.5);
-	/* css3 */
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	border-radius:3px;
-}
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+		
+	.reveal-modal-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		background: #000;
+		background: rgba(0,0,0,.8);
+		z-index: 100;
+		display: none;
+		top: 0;
+		left: 0; 
+		}
+	
+	.reveal-modal {
+		visibility: hidden;
+		width: 425px;
+		background: rgba(255,255,255,0.95);
+		position: absolute;
+		margin-left: 5px;
+		top: 10px;
+		z-index: 101;
+		padding: 30px 20px 34px 20px;
+.borderRadius;
 
+		}
 
-/* THE TRIANGLE
-------------------------------------------------------------------------------------------------------------------------------- */
-
-#twitter:before {
-	content:"";
-	position:absolute;
-	bottom:-20px; /* value = - border-top-width - border-bottom-width */
-	left:40px; /* controls horizontal position */
-    border-width:20px 20px 0;
-	border-style:solid;
-    border-color: #000000 transparent;
-    /* reduce the damage in FF3.0 */
-    display:block; 
-    width:0;
-}
-
-/* creates the smaller  triangle */
-#twitter:after {
-	content:"";
-	position:absolute;
-	bottom:-13px; /* value = - border-top-width - border-bottom-width */
-	left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
-	border-width:13px 13px 0;
-	border-style:solid;
-	border-color:rgba(0,0,0,0.5) transparent;
-    /* reduce the damage in FF3.0 */
-    display:block; 
-    width:0;
-}
+	
+	.reveal-modal .close-reveal-modal {
+		font-size: 22px;
+		line-height: .5;
+		position: absolute;
+		top: 8px;
+		left: 4px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		} 
 
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footerWrap {
@@ -1481,6 +1539,7 @@ font-size: 12px;
 	width: 100%;
 	background: 
  url(../img/1168/footerfill_top.png) repeat-x 0% 0%,  url(../img/1168/footerfill.png) repeat-x 0px 40px;
+ margin-top: 100px;
 }
 
 #footer {
@@ -1552,6 +1611,32 @@ display: none;
 display: none;
 }
 /* FOOTER end -------------------------------------------------------------------------------------------------------------*/
+/* DIVISION start ------------------------------------------------------------------------------------------------------------*/
+.division div {
+	float: left;
+	display: none;
+	padding: 0 15px 0 0;
+}
+#team {
+	width: 150px;
+	padding: 5px 15px 5px 20px;
+}
+#divisionNumber {
+display: none;
+}
+#played, #won, #lost, #draw, #goalsPos, #goalsNeg, #goalsSal, #points {
+	padding: 5px 15px 5px 0px;
+	width: 50px;
+}
+.division_results div {
+	float: left;
+	display: none;
+	padding: 0 15px 0 0;
+}
+.grey {
+	background-color: black;
+}
+/* DIVISION end -----------------------------------------------------------------------------------------------------------*/
 
 /* CUSTOM MENU begin ///////////////////////////////////////////////////////////////// */
 #overzichtMenu {

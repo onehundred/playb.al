@@ -1,3 +1,9 @@
+<style>
+#thuisteam{
+	width: 200px;
+}
+</style>
+
 <script src="<?php echo base_url();?>js/jquery.blockUI.js"></script>
 <script src="<?php echo base_url();?>js/korfbal/verslag.js"></script>
 <style>

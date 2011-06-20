@@ -773,7 +773,7 @@ $(document).ready(function()
  					$('#uitteam #playmaking1_verslag #prestatie').append(aantal_ballen(prest_uitteam[1]));
  					
  					$('#uitteam #attack1_verslag #speler').append(get_spelernaam(opst_uitteam[2],verslag['uitteamid']));
- 					$('#uitteam #attack1 #prestatie').append(aantal_ballen(prest_uitteam[2]));
+ 					$('#uitteam #attack1_verslag #prestatie').append(aantal_ballen(prest_uitteam[2]));
  					
  					$('#uitteam #attack2_verslag #speler').append(get_spelernaam(opst_uitteam[3],verslag['uitteamid']));
  					$('#uitteam #attack2_verslag #prestatie').append(aantal_ballen(prest_uitteam[3]));
@@ -964,7 +964,11 @@ $(document).ready(function()
 			
 		if(prestatie>=70 && prestatie<80){
 				return  '<img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/>';
+			}	
+		if(prestatie>=80 && prestatie<90){
+				return  '<img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/><img style="width:25px; height:25px;" src="http://playb.al/img/korfbal.png"/>';
 			}		
+		
 			
 		//nog verder aan te vullen			
 			

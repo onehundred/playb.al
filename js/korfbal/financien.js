@@ -31,20 +31,20 @@ $(document).ready(function()
         			}
         			if(count === 1){
         				for(var i in data){
-        					$('#sponsors').append('<div id="sponsor1" class="sponsorinfo entry"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
+        					$('#sponsors').append('<div id="sponsor1" class="sponsorinfo entry"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+' €</p><p>Weken: '+data[i].weken+'</p><br/></div>');
         				}
         				$('#sponsors').append('<p id="2" class="sponsor"><a class="question" href="#">kies sponsor</a></p><br />');
         				$('#sponsors').append('<p id="3" class="sponsor"><a class="question"href="#">kies sponsor</a></p><br />');
         			}
         			if(count === 2){
         				for(var i in data){
-        					$('#sponsors').append('<div id="sponsor'+i+'" class="sponsorinfo entry"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
+        					$('#sponsors').append('<div id="sponsor'+i+'" class="sponsorinfo entry"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+' €</p><p>Weken: '+data[i].weken+'</p><br/></div>');
         				}
 						$('#sponsors').append('<div id="3" class="sponsor"><a class="question"href="#">kies sponsor</a></div>');        			
         			}
         			if(count === 3){
         				for(var i in data){
-        					$('#sponsors').append('<div id="sponsor'+i+'" class="sponsorinfo entry"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+'</p><p>Weken: '+data[i].weken+'</p><br/></div>');
+        					$('#sponsors').append('<div id="sponsor'+i+'" class="sponsorinfo entry"><h4>'+data[i].naam+'</h4><p>Bedrag: '+data[i].bedrag+' €</p><p>Weken: '+data[i].weken+'</p><br/></div>');
         				}
         			
         			}
@@ -77,7 +77,7 @@ $(document).ready(function()
         						success: function(data){
         							
         							for(var i in data){
-        								$('#sponsormodal').append('<br /><h4>'+data[i].naam+'</h4><p> Aantal weken:'+data[i].aantal_weken+'</p><p> Bedrag: '+data[i].bedrag+'</p><br /><a href="#" class="contract question" id="'+data[i].id+'">contracteren</a><br/>');
+        								$('#sponsormodal').append('<br /><h4>'+data[i].naam+'</h4><p> Aantal weken:'+data[i].aantal_weken+'</p><p> Bedrag: '+data[i].bedrag+' €</p><br /><a href="#" class="contract question" id="'+data[i].id+'">contracteren</a><br/>');
         							
         							}
         							

@@ -827,7 +827,7 @@
 			
 			date_default_timezone_set('Europe/Brussels');
 			$deadline = date('Y-m-d h:i:s', strtotime("+3 days"));
-			$mdate =  date("F j Y, H:i"); 
+			$mdate =  date('F j Y, H:i', strtotime("+3 days")); 
 
 			$insert = array(
 				'minimum_bod' => $minimum,

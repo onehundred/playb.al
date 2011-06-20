@@ -63,9 +63,9 @@ ul#filters p{margin:0;}
 a#playerSort{line-height:20px;}
 .gameLeft h2{font-size:28px;font-weight:normal;letter-spacing:1px;color:#7B7B7B;padding:8px 0 8px 10px;width:352px;height:40px;background-image:url(../img/stitches.png);background-repeat:no-repeat;background-position:10px 40px;text-shadow:0px 0px 4px #F2F2F2;text-transform:lowercase;}
 #breakline{background-image:url(../img/stitches.png);background-repeat:no-repeat;background-position:10px 0px;margin:0 10px 0 0;padding:10px;}
-.gameRight h2{border:1px solid #b3b3b3;}
+.gameRight h2{color:#FFFFFF;font-weight:normal;font-size:46px;text-shadow:0px 0px 15px #333;margin:20px 15px 20px 0;font-family:'LeagueGothicRegular';}
 .gameLeft p{padding:10px 15px 10px 15px;color:#000;}
-#sortView{padding:0 0 10px 10px;color:#FFF;}
+#sortView{padding:0 0 10px 10px;}
 .gameLeft table{color:#444;width:370px;padding:15px 14px 13px 14px;border:none;text-align:center;}
 .gameLeft table tr:nth-child(1){background-color:rgba(191, 191, 191, 0.2);border:1px solid rgba(191, 191, 191, 0.25);}
 .gameLeft table tr:nth-child(2){background-color:rgba(191, 191, 191, 0.8);border:1px solid rgba(191, 191, 191, 0.9);}
@@ -104,7 +104,7 @@ li.rssRow.odd,li.rssRow.odd h4,li.rssRow.even h4{font-weight:normal;background:n
 #matchTeamNameHome{float:left;display:inline;}
 #matchTeamNameOut{float:right;display:inline;}
 #matchUitslag{display:block;position:relative;left:-275px;top:65px;}
-#matchUitslagScore{font-size:36px;font-family:'SFCollegiateSolidRegular';position:absolute; margin-left:365px;}
+#matchUitslagScore{font-size:36px;font-family:'SFCollegiateSolidRegular';position:relative;left:55px;}
 #versus{display:inline;float:left;position:relative;left:100px;}
 #trainingButton{margin:0 0 10px 0;}
 #opstellingButton{top:12px;position:relative;}
@@ -185,37 +185,6 @@ input#sliderButton.registreren[type="submit"]:active{background:#018096;backgrou
 a.question,p.question,a.light{padding:10px;color:#FFFFFF;}
 a#training.question{float:right;margin:-30px 0 30px 0;width:100px;}
 #icon{padding:0 10px 0 0;}
-.container{width:790px;padding:0;margin:0 auto;}
-.folio_block{position:absolute;left:0%;top:15px;}
-.main_view{float:left;position:relative;}
-.galleryWrapper{height:500px;width:1138px;overflow:hidden;position:relative;}
-.imgs{position:absolute;top:0;left:15px;}
-.imgs img{float:left;}
-.pagingGallery{margin:20px auto 0 auto;width:178px;height:47px;z-index:100;text-align:center;line-height:40px;display:none;}
-.galleryNav{position:absolute;top:355px;margin:10px 0 0 15px;}
-.pagingGallery a,#galleryNav a{padding:10px 15px 5px 15px;margin:0 5px 0 0;background-image:url("../img/bullet_inactive.png");background-repeat:no-repeat;opacity:0.9;z-index:1;color:transparent;}
-.pagingGallery a.active,#galleryNav .activeSlide{font-weight:bold;background-image:url("../img/bullet_active.png");}
-.pagingGallery a.active{background-image:url("../img/bullet_active.png");}
-.pagingGallery a:hover,#galleryNav a:hover{opacity:0.8;}
-#content{height:567px;width:896px;overflow:hidden;position:relative;border:1px solid black;}
-.imgs{float:left;display:inline;-webkit-transition-property:-webkit-transform;-webkit-transition-duration:0.5s;-webkit-transition-timing-function:ease-out;padding:0px;margin:0px;width:2700px;-webkit-transform:translate3d(0px, 0px, 0px);}
-.imgs img{padding:0px;margin:0px;width:1138px;height:500px;-webkit-transform:translate3d(0px, 0px, 0px);}
-.containerSmall{width:90px;padding:0;margin:0 auto;}
-.folio_blockSmall{position:absolute;left:0%;top:15px;}
-.main_viewSmall{float:left;position:relative;}
-.galleryWrapperSmall{height:50px;width:138px;overflow:hidden;position:relative;}
-img#galleryLeftHideSmall{left:-20px;position:relative;}
-img#galleryRightHideSmall{left:1120px;position:relative;}
-.imgsSmall{position:absolute;top:0;left:15px;}
-.imgsSmall img{float:left;}
-.pagingGallerySmall{margin:20px auto 0 auto;width:178px;height:47px;z-index:100;text-align:center;line-height:40px;display:none;}
-.pagingGallerySmall a{padding:10px 15px 5px 15px;margin:0 5px 0 0;background-image:url("../img/bullet_inactive.png");opacity:0.9;z-index:1;}
-.pagingGallerySmall a.active{font-weight:bold;background-image:url("../img/bullet_active.png");}
-.pagingGallerySmall a.active{background-image:url("../img/bullet_active.png");}
-.pagingGallerySmall a:hover{opacity:0.8;}
-#contentSmall{height:56px;width:89px;overflow:hidden;position:relative;border:1px solid black;}
-.imgsSmall{float:left;display:inline;-webkit-transition-property:-webkit-transform;-webkit-transition-duration:0.5s;-webkit-transition-timing-function:ease-out;padding:0px;margin:0px;width:2700px;-webkit-transform:translate3d(0px, 0px, 0px);}
-.imgsSmall img{padding:0px;margin:0px;width:138px;height:50px;-webkit-transform:translate3d(0px, 0px, 0px);}
 #midden_midden{width:50px;height:359px;float:right;}
 #plaatsen{width:400px;}
 #stadion{width:640px;height:1006px;float:left;margin:0 0 0 60px;}

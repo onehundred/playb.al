@@ -65,7 +65,7 @@ aside{clear:both;}
 .gameLeft{width:300px;margin:0 0 0 9px;font-size:15px;color:#222;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;}
 .gameLeft ul,.gameLeft li{list-style-type:none;display:inline;}
 .gameLeft h2,.gameRight h2{font-size:28px;font-weight:normal;letter-spacing:1px;color:#7B7B7B;padding:8px 0 8px 10px;width:252px;height:40px;background-image:url(../img/stitches.png);background-repeat:no-repeat;background-position:10px 40px;text-shadow:0px 0px 4px #F2F2F2;text-transform:lowercase;}
-.gameLeft p{padding:0 0 10px 10px;color:#000;}
+.gameLeft p{color:#000;}
 .gameLeft div:hover{}
 #gameLeftOverview{width:300px;}
 #gameLeftOverview .column{clear:both;}
@@ -208,7 +208,7 @@ select{background:#F7F7F7;padding:10px;font-size:16px;}
 #played,#won,#lost,#draw,#goalsPos,#goalsNeg,#goalsSal,#points{padding:5px 15px 5px 0px;width:50px;}
 .division_results div{float:left;display:none;padding:0 15px 0 0;}
 .grey{background-color:black;}
-a#training.question{float:right;margin:-48px 15px 30px 0;width:80px;}
+a#training.question{float:right;margin:-27px 15px 30px 0;width:80px;}
 .reveal-modal-bg{position:fixed;height:100%;width:100%;background:#000;background:rgba(0, 0, 0, 0.8);z-index:100;display:none;top:0;left:0;}
 .reveal-modal{visibility:hidden;width:265px;background:rgba(255, 255, 255, 0.95);position:absolute;margin-left:5px;top:10px;z-index:101;padding:30px 20px 34px 20px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;}
 .reveal-modal .close-reveal-modal{font-size:22px;line-height:.5;position:absolute;top:8px;left:4px;color:#aaa;text-shadow:0 -1px 1px rbga(0, 0, 0, 0.6);font-weight:bold;cursor:pointer;}

@@ -139,6 +139,7 @@ text-transform: uppercase;
 #teamname {
 	font-size: 56px;
 .center768;
+margin-bottom: 10px;
 }
 h2 {
 	font-family: 'LeagueGothicRegular';
@@ -152,7 +153,7 @@ background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,r
 background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* Opera11.10+ */
 background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* IE10+ */
 background: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 95%,rgba(0,0,0,0.1) 100%); /* W3C */
-
+margin: 20px 0 0 0;
 }
 .register article {
 	height: 290px;
@@ -169,34 +170,38 @@ height: 285px;
 
 }
 .sliderHome div {
-width: 636px;
-height: 220px;
+width: 425px;
+height: 155px;
 }
 .sliderHome div:nth-child(1) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/768/1.png);
+background-image: url(../img/slider/768/1.png);
 background-repeat: no-repeat;
-width: 636px;
-height: 220px;
+width: 425px;
+height: 155px;
 }
 .sliderHome div:nth-child(2) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/768/2.png);
+background-image: url(../img/slider/768/2.png);
 background-repeat: no-repeat;
-width: 636px;
-height: 220px;
+width: 425px;
+height: 155px;
 }
 .sliderHome div:nth-child(3) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/768/3.png);
+background-image: url(../img/slider/768/3.png);
 background-repeat: no-repeat;
-width: 636px;
-height: 220px;
+width: 425px;
+height: 155px;
 }
 .sliderHome div:nth-child(4) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/768/4.png);
+background-image: url(../img/slider/768/4.png);
 background-repeat: no-repeat;
+width: 425px;
+height: 155px;
 }
 .sliderHome div:nth-child(5) {
-background-image: url(https://s3-eu-west-1.amazonaws.com/images.playb.al/slider/768/5.png);
+background-image: url(../img/slider/768/5.png);
 background-repeat: no-repeat;
+width: 425px;
+height: 155px;
 }
 .sliderHome img {
 float: left;
@@ -211,7 +216,7 @@ height: 220px;
 
 }
 h1.sliderTag {
-margin: 35px 0 0 0;
+margin: 5px 0 0 0;
 	font-family: 'LeagueGothicRegular';
 
 font-weight: normal;
@@ -229,14 +234,14 @@ background-color: rgba(255,255,255,0.5);
 width: 204px;
 font-size: 12px;
 
-margin: 12px 0 0 0;
+margin: 22px 0 0 0;
  -webkit-box-shadow: 0px 0px 5px #BFBFBF;
 -moz-box-shadow: 0px 0px 5px #BFBFBF;
 box-shadow: 0px 0px 5px #BFBFBF;
 }
 .galleryNav {
 position: absolute;
-top: 295px;
+top: 315px;
 margin: 10px 0 0 25px;
 
 }
@@ -285,12 +290,16 @@ margin-top: 10%;
 .gameRight {
 	font-size: 15px;
 	float: right;
-	width: 568px;/* margin-top: 15px; */
+	width: 368px;/* margin-top: 15px; */
 
 }
+#container {
+width: 385px;
+float: right;
+}
 .player, .playerDetail, .playerFemale, .playerMale {
-	width: 245px;
-	height: 70px;
+	width: 350px;
+	height: 240px;
 	background: #FAFAFA;
 	-moz-border-radius-topleft: 3px;
 	-moz-border-radius-topright: 3px;
@@ -307,12 +316,32 @@ margin-top: 10%;
 	border: 1px solid #E5E5E5;
 	opacity: 0.9;
 	z-index: 1;
+
+}
+.playerFemale section:nth-child(2), .playerFemale section:nth-child(4), .playerFemale section:nth-child(6), .playerFemale section:nth-child(8), .playerMale section:nth-child(2), .playerMale section:nth-child(4), .playerMale section:nth-child(6), .playerMale section:nth-child(8) {
+	display: none;
+}
+.playerFemale section:nth-child(1), .playerFemale section:nth-child(3), .playerFemale section:nth-child(5), .playerFemale section:nth-child(7), .playerMale section:nth-child(1), .playerMale section:nth-child(3), .playerMale section:nth-child(5), .playerMale section:nth-child(7) {
 }
 .player:hover, .playerDetail:hover {
 	border: 1px solid #CCC;
 }
 .playerDetail {
 	height: 412px;
+}
+
+article.sortSkill {
+clear: both;
+
+}
+#sortView {
+	padding: 0 0 10px 10px;
+	
+}
+article.sortSkill p {
+display: inline;
+margin: 0;
+padding: 0;
 }
 .gameRight .number {
 	font-size: 64px;
@@ -344,11 +373,11 @@ margin-top: 10%;
 	display: inline;
 }
 .gameRight #rightProgress {
-	width: 115px;
+	width: 165px;
 	float: right;
 }
 .gameRight #leftProgress {
-	width: 115px;
+	width: 165px;
 }
 .rebound, .passing, .stamina, .shotprecision, .playmaking, .shotpower, .intercepting, .leadership {
 	display: inline;
@@ -358,6 +387,12 @@ margin-top: 10%;
 }
 aside {
 	float: left;
+}
+#managerGegevens {
+width: 360px;
+}
+#managerStatistics {
+width: 360px;
 }
 .fillLeft {
 width: 460px;
@@ -372,6 +407,7 @@ width: 460px;
 	font-size: 15px;
 	color: #222;
  .borderRadius;
+ float: left;
 
 }
 .gameLeft ul, .gameLeft li {
@@ -379,67 +415,43 @@ width: 460px;
 	display: inline;
 }
 .gameLeft h2 {
-	font-size: 32px;
-	font-weight: normal;
-	letter-spacing: 1px;
-	color: #FAFAFA;
-	padding: 0 0 0 10px;
-	text-transform: lowercase;
+
 }
 .gameLeft p {
-	padding: 0 0 10px 10px;
-	color: #FFF;
+
 }
-/*
-.gameLeft div {
-	margin: 0 0 30px 0;
-	padding: 15px 14px 13px 14px;
-	-webkit-box-shadow:  0px 0px 10px #bdbdbd;
-	-moz-box-shadow: 0px 0px 10px #bdbdbd;
-	box-shadow: 0px 0px 10px #bdbdbd;
-	.borderRadius;
-	.transitionOff;
-}
-*/
 .gameLeft div:hover {
-/*
-	-webkit-box-shadow:  0px 0px 10px #a3a3a3;
-	-moz-box-shadow: 0px 0px 10px #a3a3a3;
-	box-shadow: 0px 0px 10px #a3a3a3;
-	.transitionOn2;
-*/
+
 }
-/*
-.gameLeft div section {
-	-webkit-box-shadow:  inset 0px 0px 10px #bdbdbd;
-	-moz-box-shadow: inset 0px 0px 10px #bdbdbd;
-	box-shadow: inset 0px 0px 10px #000;
-		background-color: rgba(0, 0, 0, 0.75);
-}
-*/
 .gameLeft table {
-	color: #FFF;
-	width: 380px;
+
+	width: 297px;
 	padding: 15px 14px 13px 14px;
 	border: none;
 }
 .gameLeft table tr:nth-child(1) {
-	background-color: green;
+background: none;
 }
 .gameLeft table tr:nth-child(2) {
-	background-color: red;
+
 }
 .gameLeft table tr:nth-child(3) {
-	background-color: gray;
+background: none;
 }
 .gameLeft table tr:nth-child(4) {
-	background-color: white;
+
+}
+div.chart_container.fillLeft {
+display: none;
 }
 /* gameRight end -------------------------------------------------------------------------------------------------------------*/
-
+.sportnavWrap {
+	height: 55px;
+}
 .sportnav {
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 	.center768;
+	height: 50px;
 }
 .sportnav a {
 	text-transform: uppercase;
@@ -447,19 +459,11 @@ width: 460px;
 	line-height: 0.8;
 	color: #bfbfbf;
  .transitionOff;
-	font-size: 36px;
+	font-size: 48px;
 }
 .sportnav a:hover {
-	color: #888;
  .transitionOn;
-/*
-	border-top-width: 7px;
-	border-top-style: solid;
-	border-top-color: #888;
-	border-bottom-width: 7px;
-	border-bottom-style: solid;
-	border-bottom-color: #888;
-*/
+
 }
 .sportnav a:active {
 	text-transform: uppercase;
@@ -471,12 +475,8 @@ width: 460px;
 }
 .sportnav p {
 	display: inline;
-	padding-right: 5px;
-	text-transform: uppercase;
-	font-size: 36px;
-	font-family: 'LeagueGothicRegular';
-	line-height: 0.8;
-	cursor: pointer;/* -webkit-text-stroke: 1px @korfbalBorderColor; *//* text-shadow: 0px -1px 1px rgba(1, 1, 1, .8); */
+	padding-right: 15px;
+	font-size: 48px;
 }
 /* TOOLTIPS start ---------------------------------------------------------------------------------------------------------*/
 a.tooltip:after {
@@ -1135,7 +1135,7 @@ input#sliderButton.registreren[type="submit"], input#sliderButton2.registreren[t
 	display: block;
 	color: #FFFFFF;
 	position: absolute;
-	bottom: -10px;
+	bottom: -40px;
 }
 input#sliderButton.registreren[type="submit"]:hover {
 	background: #0195B2; /* old browsers */
@@ -1158,7 +1158,7 @@ select {
 }
 /* BIG GALLERY start ---------------------------------------------------------------------------------------------------------*/
 .container {
-	width: 450px;
+	width: 350px;
 	padding: 0;
 	margin: 0 auto;
 }
@@ -1488,6 +1488,50 @@ font-size: 12px;
     width:0;
 }
 
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+		
+	.reveal-modal-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		background: #000;
+		background: rgba(0,0,0,.8);
+		z-index: 100;
+		display: none;
+		top: 0;
+		left: 0; 
+		}
+	
+	.reveal-modal {
+		visibility: hidden;
+		width: 520px;
+		background: url(../img/boxbgBig.png) no-repeat;
+		position: absolute;
+		margin-left: 8%;
+		top: 50px;
+		z-index: 101;
+		padding: 30px 40px 34px;
+.borderRadius;
+
+		}
+
+	
+	.reveal-modal .close-reveal-modal {
+		font-size: 22px;
+		line-height: .5;
+		position: absolute;
+		top: 8px;
+		left: 4px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		} 
+
+
+
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footerWrap {
 	float: left;
@@ -1578,7 +1622,7 @@ display: none;
 display: none;
 }
 #divisieMenu {
-
+display: none;
 }
 #stadionMenu {
 display: none;

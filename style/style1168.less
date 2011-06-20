@@ -450,7 +450,12 @@ margin: 0 10px 0 0;
 padding: 10px;
 }
 .gameRight h2 {
-border: 1px solid #b3b3b3;
+color: #FFFFFF;
+font-weight: normal;
+font-size: 46px;
+.textShadow;
+margin: 20px 15px 20px 0;
+	font-family: 'LeagueGothicRegular';
 }
 .gameLeft p {
 	padding: 10px 15px 10px 15px;
@@ -458,7 +463,7 @@ border: 1px solid #b3b3b3;
 }
 #sortView {
 	padding: 0 0 10px 10px;
-	color: #FFF;
+	
 }
 
 
@@ -1331,190 +1336,7 @@ width: 100px;
 #icon {
 	padding: 0 10px 0 0;
 }
-/* BIG GALLERY start ---------------------------------------------------------------------------------------------------------*/
-.container {
-	width: 790px;
-	padding: 0;
-	margin: 0 auto;
-}
-.folio_block {
-	position: absolute;
-	left: 0%;
-	top: 15px;
-}
-/*--Main Container--*/
-.main_view {
-	float: left;
-	position: relative;
-}
-/*--galleryWrapper/Masking Styles--*/
-.galleryWrapper {
-	height:500px;
-	width: 1138px;
-	overflow: hidden; /*--Hides anything outside of the set width/height--*/
-	position: relative;
-}
-.imgs {
-	position: absolute;
-	top: 0;
-	left: 15px;
-}
-.imgs img {
-	float: left;
-}
-/*--pagingGallery Styles--*/
-.pagingGallery {
-	margin: 20px auto 0 auto;
-	width: 178px;
-	height:47px;
-	z-index: 100; /*--Assures the pagingGallery stays on the top layer--*/
-	text-align: center;
-	line-height: 40px;
-	display: none; /*--Hidden by default, will be later shown with jQuery--*/
-}
-.galleryNav {
-position: absolute;
-top: 355px;
-margin: 10px 0 0 15px;
 
-}
-.pagingGallery a, #galleryNav a {
-	padding: 10px 15px 5px 15px;
-	margin: 0 5px 0 0;
-	background-image: url("../img/bullet_inactive.png");
-	background-repeat: no-repeat;
-	opacity: 0.9;
-	z-index: 1;
-	color: transparent;
-}
-.pagingGallery a.active, #galleryNav .activeSlide {
-	font-weight: bold;
-	background-image: url("../img/bullet_active.png");
-}
-.pagingGallery a.active {
-	background-image: url("../img/bullet_active.png");
-}
-.pagingGallery a:hover, #galleryNav a:hover {
-	opacity: 0.8;
-}
-#content {
-	height:567px;
-	width:896px;
-	overflow:hidden;
-	position:relative;
-	border : 1px solid black;
-}
-.imgs {
-	float:left;
-	display:inline;
-	-webkit-transition-property: -webkit-transform;
-	-webkit-transition-duration: 0.5s;
-	-webkit-transition-timing-function: ease-out;
-	padding:0px;
-	margin:0px;
-	width:2700px;
-	-webkit-transform: translate3d(0px, 0px, 0px);
-}
-.imgs img {
-	padding:0px;
-	margin:0px;
-	width:1138px;
-	height:500px;
-	-webkit-transform: translate3d(0px, 0px, 0px);
-}
-/* BIG GALLERY end ---------------------------------------------------------------------------------------------------------*/
-/* SMALL GALLERY start -------------------------------------------------------------------------------------------------------------*/
-.containerSmall {
-	width: 90px;
-	padding: 0;
-	margin: 0 auto;
-}
-.folio_blockSmall {
-	position: absolute;
-	left: 0%;
-	top: 15px;
-}
-/*--Main Container--*/
-.main_viewSmall {
-	float: left;
-	position: relative;
-}
-/*--galleryWrapper/Masking Styles--*/
-.galleryWrapperSmall {
-	height:50px;
-	width: 138px;
-	overflow: hidden; /*--Hides anything outside of the set width/height--*/
-	position: relative;
-}
-img#galleryLeftHideSmall {
-	left: -20px;
-	position: relative;
-}
-img#galleryRightHideSmall {
-	left: 1120px;
-	position: relative;
-}
-.imgsSmall {
-	position: absolute;
-	top: 0;
-	left: 15px;
-}
-.imgsSmall img {
-	float: left;
-}
-/*--pagingGallery Styles--*/
-.pagingGallerySmall {
-	margin: 20px auto 0 auto;
-	width: 178px;
-	height:47px;
-	z-index: 100; /*--Assures the pagingGallery stays on the top layer--*/
-	text-align: center;
-	line-height: 40px;
-	display: none; /*--Hidden by default, will be later shown with jQuery--*/
-}
-.pagingGallerySmall a {
-	padding: 10px 15px 5px 15px;
-	margin: 0 5px 0 0;
-	background-image: url("../img/bullet_inactive.png");
-	opacity: 0.9;
-	z-index: 1;
-}
-.pagingGallerySmall a.active {
-	font-weight: bold;
-	background-image: url("../img/bullet_active.png");
-}
-.pagingGallerySmall a.active {
-	background-image: url("../img/bullet_active.png");
-}
-.pagingGallerySmall a:hover {
-	opacity: 0.8;
-}
-#contentSmall {
-	height:56px;
-	width:89px;
-	overflow:hidden;
-	position:relative;
-	border : 1px solid black;
-}
-.imgsSmall {
-	float:left;
-	display:inline;
-	-webkit-transition-property: -webkit-transform;
-	-webkit-transition-duration: 0.5s;
-	-webkit-transition-timing-function: ease-out;
-	padding:0px;
-	margin:0px;
-	width:2700px;
-	-webkit-transform: translate3d(0px, 0px, 0px);
-}
-.imgsSmall img {
-	padding:0px;
-	margin:0px;
-	width:138px;
-	height:50px;
-	-webkit-transform: translate3d(0px, 0px, 0px);
-}
-/* Small GALLERY end -------------------------------------------------------------------------------------------------------------*/
 /* STADION begin -------------------------------------------------------------------------------------------------------------*/
 #midden_midden {
 	width: 50px;

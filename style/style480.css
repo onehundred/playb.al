@@ -69,7 +69,6 @@ aside{float:left;}
 .gameLeft{width:420px;font-size:15px;color:#222;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;}
 .gameLeft ul,.gameLeft li{list-style-type:none;display:inline;}
 .gameLeft h2{font-size:28px;font-weight:normal;letter-spacing:1px;color:#7B7B7B;padding:8px 0 8px 10px;width:352px;height:40px;background-image:url(../img/stitches.png);background-repeat:no-repeat;background-position:10px 40px;text-shadow:0px 0px 4px #F2F2F2;text-transform:lowercase;}
-.gameLeft p{padding:0 0 10px 10px;color:#000;}
 #gameLeftOverview .column{clear:both;}
 .column:nth-child(1){margin:0 22px 0 0;}
 .column:nth-child(2){margin:0 22px 0 0;}
@@ -81,7 +80,7 @@ aside{float:left;}
 #sortPlayers{display:none;}
 #container{display:none;}
 div.chart_container.fillLeft{display:none;}
-a#training.question{float:right;margin:-48px 15px 30px 0;width:80px;}
+a#training.question{float:right;margin:-30px 15px 30px 0;width:80px;}
 .sportnav{margin-bottom:15px;width:396px;margin:0 auto 0 auto;}
 .sportnav a{text-transform:uppercase;font-family:'LeagueGothicRegular';line-height:0.8;color:#bfbfbf;-webkit-transition-duration:1s;font-size:32px;}
 .sportnav a:hover{color:#888;-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;}

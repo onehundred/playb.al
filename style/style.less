@@ -528,6 +528,14 @@ margin-top: 10%;
 	padding: 20px 0 0 15px;
 
 }
+.gameRight h2 {
+color: #FFFFFF;
+font-weight: normal;
+font-size: 42px;
+.textShadow;
+margin: 20px 15px 20px 0;
+	font-family: 'LeagueGothicRegular';
+}
 .player, .playerFemale, .playerMale {
 	width: 245px;
 	height: 70px;
@@ -853,6 +861,9 @@ left: 100px;
 #trainingButton {
 margin: 0 0 10px 0;
 }
+#trainingSkill {
+float: left;
+}
 #opstellingButton {
 top: 12px;
 position: relative;
@@ -862,6 +873,35 @@ margin: 40px 0 0 0;
 height: 40px;
 }
 /* OPSTELLING begin ----------------------------------------------------------------------------------------- */
+/* DIVISION start ------------------------------------------------------------------------------------------------------------*/
+.division div {
+	float: left;
+	display: inline;
+	padding: 0 15px 0 0;
+}
+#team {
+	width: 150px;
+	padding: 5px 15px 5px 20px;
+}
+#divisionNumber {
+	font-size: 82px;
+	font-family: 'SFCollegiateSolidRegular';
+	text-transform: uppercase;
+	color: #000;
+}
+#played, #won, #lost, #draw, #goalsPos, #goalsNeg, #goalsSal, #points {
+	padding: 5px 0 5px 0px;
+	width: 45px;
+}
+.division_results div {
+	float: left;
+	display: inline;
+	padding: 0 10px 0 0;
+}
+.grey {
+	background-color: black;
+}
+/* DIVISION end -----------------------------------------------------------------------------------------------------------*/
 
 .droppable {
 	height: 60px;
@@ -918,12 +958,52 @@ margin: -10px 0 20px 0;
 	margin-right: 1em;
 	
 }
-#captain {
-margin: -70px 0 10px 325px;
-}
-#setpieces {
-margin: -71px 0 10px 415px;
-}
+#captain{margin:-70px 0 10px 175px;}
+	#rebound1{
+		position: absolute;
+		margin-left: 80px;
+		margin-top: 130px;
+	}
+	#playmaking1{
+		position: absolute;
+		margin-left: 170px;
+		margin-top: 130px;
+	}
+	#attack1{
+		position: absolute;
+		margin-left: 320px;
+		margin-top: 0px;
+	}
+	#attack2{
+	position: absolute;
+		margin-left: 320px;
+		margin-top: 260px;
+	}
+	#rebound2{
+	position: absolute;
+		margin-left: -80px;
+		margin-top: 130px;
+	}
+	#playmaking2{
+	position: absolute;
+		margin-left: -170px;
+		margin-top: 130px;
+	}
+	#attack3{
+	position: absolute;
+		margin-left: -280px;
+		margin-top: 0px;
+	}
+	#attack4{
+	position: absolute;
+		margin-left: -280px;
+		margin-top: 260px;
+	}
+	#general{
+		position: absolute;
+		margin-top: 210px;
+	}
+#setpieces{margin:275px 0 10px 105px;}
 
 
 /* TOOLTIPS start ---------------------------------------------------------------------------------------------------------*/
@@ -1554,6 +1634,11 @@ a.question, p.question, a.light, p.light, p#stop_replay {
 
 		color: #FFFFFF;
 }
+a#training.question {
+float: right;
+margin: -30px 0 30px 0;
+width: 100px;
+}
 .lower {
 position: relative;
 top: 30px;
@@ -1806,91 +1891,7 @@ select {
 	padding: 10px;
 	font-size: 16px;
 }
-/* BIG GALLERY start ---------------------------------------------------------------------------------------------------------*/
-.container {
-	width: 866px;
-	padding: 0;
-	margin: 0 auto;
-}
-.folio_block {
-	position: absolute;
-	left: 0%;
-	top: 15px;
-}
-/*--Main Container--*/
-.main_view {
-	float: left;
-	position: relative;
-}
-/*--galleryWrapper/Masking Styles--*/
-.galleryWrapper {
-	height:500px;
-	width: 866px;
-	overflow: hidden; /*--Hides anything outside of the set width/height--*/
-	position: relative;
-}
-.imgs {
-	position: absolute;
-	top: 0;
-	left: 15px;
-}
-.imgs img {
-	float: left;
-}
-/*--pagingGallery Styles--*/
-.pagingGallery {
-	margin: 20px auto 0 auto;
-	width: 178px;
-	height:47px;
-	z-index: 100; /*--Assures the pagingGallery stays on the top layer--*/
-	text-align: center;
-	line-height: 40px;
-	display: none; /*--Hidden by default, will be later shown with jQuery--*/
-}
-.pagingGallery a {
-	padding: 10px 15px 5px 15px;
-	margin: 0 5px 0 0;
-	background-image: url("../img/bullet_inactive.png");
-	opacity: 0.9;
-	z-index: 1;
-}
-.pagingGallery a.active {
-	font-weight: bold;
-	background-image: url("../img/bullet_active.png");
-}
-.pagingGallery a.active {
-	background-image: url("../img/bullet_active.png");
-}
-.pagingGallery a:hover {
-	opacity: 0.8;
-}
-#content {
-	height:567px;
-	width:896px;
-	overflow:hidden;
-	position:relative;
-	border : 1px solid black;
-}
-.imgs {
-	float:left;
-	display:inline;
-	-webkit-transition-property: -webkit-transform;
-	-webkit-transition-duration: 0.5s;
-	-webkit-transition-timing-function: ease-out;
-	padding:0px;
-	margin:0px;
-	width:2700px;
-	-webkit-transform: translate3d(0px, 0px, 0px);
-}
-.imgs img {
-	padding:0px;
-	margin:0px;
-	width:1006px;
-	height:600px;
-	-webkit-transform: translate3d(0px, 0px, 0px);
-}
 
-/* BIG GALLERY end ---------------------------------------------------------------------------------------------------------*/
 /* icons -------------------------------------------------------- */
 .icon {
 opacity: 0.8;

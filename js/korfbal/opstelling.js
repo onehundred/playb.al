@@ -110,7 +110,7 @@ $(function() {
 							//kapitein
 							if(spelers[8].voornaam === 'null')
 		        			{
-		        				$('#general').append('<div class="droppable" id="captain">drop</div>');
+		        				$('#general').append('<div class="droppable" id="captain">kapitein</div>');
 		        			
 		        			}else
 		        			{
@@ -119,7 +119,7 @@ $(function() {
 		        			//vrijworpen
 		        			if(spelers[9].voornaam === 'null')
 		        			{
-		        				$('#korfbalField').append('<div class="droppable" id="setpieces">drop</div>');
+		        				$('#korfbalField').append('<div class="droppable" id="setpieces">vrijworpnemer</div>');
 		        			
 		        			}else
 		        			{

@@ -404,8 +404,8 @@ clear: both;
 }
 .gameLeft {
 
-	width: 297px;
-
+	width: 300px;
+margin: 0 0 0 9px;
 	font-size: 15px;
 	color: #222;
  .borderRadius;
@@ -532,7 +532,7 @@ div#klassementEntry {
 background-color: rgba(191, 191, 191, 0.2);
 border: 1px solid rgba(191, 191, 191, 0.25);
 .borderRadius;
-width: 240px;
+width: 270px;
 height: 25px;
 padding: 0 0 10px 0;
 margin: 10px 15px 10px 15px;
@@ -543,8 +543,8 @@ margin: 10px 15px 10px 15px;
 
 }
 .sportnav {
-	margin-bottom: 15px;
-	padding-left: 0px;
+	margin-bottom: 10px;
+	padding-left: 4px;
 width: 300px;
 
 }
@@ -556,28 +556,15 @@ width: 300px;
  .transitionOff;
 	font-size: 28px;
 }
-.sportnav a:hover {
-	color: #888;
- .transitionOn;
 
-}
-.sportnav a:active {
-	text-transform: uppercase;
-	font-family: 'LeagueGothicRegular';
-	line-height: 0.8;
-	color: #E5E5E5;
-}
 .sportnav a:visited {
 }
 .sportnav p {
 	display: inline;
 	padding-right: 5px;
-	text-transform: uppercase;
+
 	font-size: 28px;
-	font-family: 'LeagueGothicRegular';
-	line-height: 0.8;
-color: @korfbalColor;
-	cursor: pointer;/* -webkit-text-stroke: 1px @korfbalBorderColor; *//* text-shadow: 0px -1px 1px rgba(1, 1, 1, .8); */
+
 }
 /* TOOLTIPS start ---------------------------------------------------------------------------------------------------------*/
 a.tooltip:after {
@@ -1500,50 +1487,52 @@ display: none;
 font-size: 12px;
 }
 
-#twitter {
-	position:relative;
-	padding:15px;
-	margin:1em 0 3em;
-	border:5px solid rgba(0,0,0,0.5);
-	color:#333;
-	background:#000;
-	background: rgba(0,0,0,0.5);
-	/* css3 */
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	border-radius:3px;
+a#training.question {
+float: right;
+margin: -45px 0 30px 0;
+width: 80px;
 }
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+		
+	.reveal-modal-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		background: #000;
+		background: rgba(0,0,0,.8);
+		z-index: 100;
+		display: none;
+		top: 0;
+		left: 0; 
+		}
+	
+	.reveal-modal {
+		visibility: hidden;
+		width: 265px;
+		background: rgba(255,255,255,0.95);
+		position: absolute;
+		margin-left: 5px;
+		top: 10px;
+		z-index: 101;
+		padding: 30px 20px 34px 20px;
+.borderRadius;
 
+		}
 
-/* THE TRIANGLE
-------------------------------------------------------------------------------------------------------------------------------- */
-
-#twitter:before {
-	content:"";
-	position:absolute;
-	bottom:-20px; /* value = - border-top-width - border-bottom-width */
-	left:40px; /* controls horizontal position */
-    border-width:20px 20px 0;
-	border-style:solid;
-    border-color: #000000 transparent;
-    /* reduce the damage in FF3.0 */
-    display:block; 
-    width:0;
-}
-
-/* creates the smaller  triangle */
-#twitter:after {
-	content:"";
-	position:absolute;
-	bottom:-13px; /* value = - border-top-width - border-bottom-width */
-	left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
-	border-width:13px 13px 0;
-	border-style:solid;
-	border-color:rgba(0,0,0,0.5) transparent;
-    /* reduce the damage in FF3.0 */
-    display:block; 
-    width:0;
-}
+	
+	.reveal-modal .close-reveal-modal {
+		font-size: 22px;
+		line-height: .5;
+		position: absolute;
+		top: 8px;
+		left: 4px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		} 
 
 /* FOOTER start -----------------------------------------------------------------------------------------------------------*/
 #footerWrap {

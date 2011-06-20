@@ -729,7 +729,7 @@ $(document).ready(function()
         			for(var i =0;i<minuten.length-1;i++)
         			{
         			
-        			$('#links').append('<p id="'+acties[i]+'" class="actie" style="text-decoration:underline; cursor:pointer;">In minuut '+minuten[i]+' scoort: '+spelers[i]+' de '+tussenstand[i]+'</p>');
+        			$('#links').append('<p id="'+acties[i]+'" class="actie entry" style="cursor:pointer;">In minuut '+minuten[i]+' scoort: '+spelers[i]+' de '+tussenstand[i]+'</p>');
         			}
         			
         			//teamnamen appenden
@@ -862,7 +862,7 @@ $(document).ready(function()
         		});
         		
      function append_replay(){
-     	$('#replay').append('<a href="#">Volledige replay</a>');
+     	$('#replay').append('<a class="question" href="#">volledige replay</a>');
      }	
      //functie die de namen van de ploegen gaat ophalen   		
 	function get_teamnaam(teamid){

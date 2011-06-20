@@ -22,10 +22,10 @@
 			            			$('#errors').append('<p>Team naam mag maximaal 16 letters bevatten</p>');
 			            		}
 			            		if(teamnaam == '' || teamnaam == 'Naam van je team!'){
-			            			$('#errors').append('<p>Vul aub een teamnaam in</p>');
+			            			$('#errors').append('<p>geef je team een naam</p>');
 			            		}
 			            		if(stadionnaam == '' || stadionnaam == 'Naam van je stadion!'){
-			            			$('#errors').append('<p>Vul aub een stadionnaam in</p>');
+			            			$('#errors').append('<p>geef je stadion een naam</p>');
 			            		}
 			            		if(data == false){
 			            			$('#errors').append('<p>Deze teamnaam bestaat al</p>');
@@ -63,28 +63,28 @@
 <div id="korfbal_signup">
 <form id="SignupForm" method="post" action="#">
 <fieldset>
-<legend>Team name</legend>
+<legend>team naam</legend>
 
 <?php
 		$teamdata = array(
 			              'name'        => 'teamnaam',
 			              'id'          => 'teamnaam_sign',
-			              'value'       => 'Naam van je team!',
+			              'value'       => '',
 			          	);
 		echo form_input($teamdata);
 		
 		
 ?></fieldset>
 <fieldset>
-<legend>Arena name</legend>
+<legend>stadion naam</legend>
 <?php		
 		$stadiondata = array(
 			              'name'        => 'stadionnaam',
 			              'id'          => 'stadionnaam_sign',
-			              'value'       => 'Naam van je stadion!',
+			              'value'       => '',
 			          	);
 		echo form_input($stadiondata);
-		echo form_submit('submit', 'Create team');
+		echo form_submit('submit', 'team maken');
 		?>
 		<p id="errors"></p>
 </fieldset>

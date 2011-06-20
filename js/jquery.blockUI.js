@@ -80,48 +80,22 @@ $.blockUI.defaults = {
 	// styles for the message when blocking; if you wish to disable
 	// these and use an external stylesheet then do this in your code:
 	// $.blockUI.defaults.css = {};
-	css: {
-		padding:	0,
-		margin:		0,
-		width:		'30%',
-		top:		'40%',
-		left:		'35%',
-		textAlign:	'center',
-		color:		'#000',
-		border:		'3px solid #aaa',
-		backgroundColor:'#fff',
-		cursor:		'wait'
+	css
 	},
 	
 	// minimal style set used when themes are used
 	themedCSS: {
-		width:	'30%',
-		top:	'40%',
-		left:	'35%'
+	
 	},
 
 	// styles for the overlay
 	overlayCSS:  {
-		backgroundColor: '#000',
-		opacity:	  	 0.6,
-		cursor:		  	 'wait'
+		
 	},
 
 	// styles applied when using $.growlUI
 	growlCSS: {
-		width:  	'350px',
-		top:		'10px',
-		left:   	'',
-		right:  	'10px',
-		border: 	'none',
-		padding:	'5px',
-		opacity:	0.6,
-		cursor: 	'default',
-		color:		'#fff',
-		backgroundColor: '#000',
-		'-webkit-border-radius': '10px',
-		'-moz-border-radius':	 '10px',
-		'border-radius': 		 '10px'
+		
 	},
 	
 	// IE issues: 'about:blank' fails on HTTPS and javascript:false is s-l-o-w

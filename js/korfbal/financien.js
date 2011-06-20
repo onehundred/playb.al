@@ -113,7 +113,7 @@ $(document).ready(function()
         						success: function(data){
         							
         							$('#sponsormodal').empty();
-        							$('#sponsormodal').append('<h2>Sponsor is gecontracteerd</h2>');
+        							$('#sponsormodal').append('<h2 id="sponsorContract">sponsor is gecontracteerd</h2>');
         							get_sponsors();
         							        							
         							

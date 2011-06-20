@@ -14,11 +14,11 @@
             if(isset($uitslag)){
                 if(!isset($alien)){ 
                     echo '<p id="matchUitslagScore">'.$uitslag.'</p>';
-                    echo anchor('korfbal/korfbal_review/'.$this->uri->segment('3').'/'.$matches[$i]['wedstrijdid'],'bekijk replay','class="question"');
+                    echo anchor('korfbal/korfbal_review/'.$this->uri->segment('3').'/'.$matches[$i]['wedstrijdid'],'bekijk replay','class="light lower"');
                     echo '<br />';
                 }else{
                     echo "".$uitslag."&nbsp;";
-                    echo anchor('korfbal_other_team/korfbal_review/'.$this->uri->segment('3').'/'.$matches[$i]['wedstrijdid'],'bekijk replay');
+                    echo anchor('korfbal_other_team/korfbal_review/'.$this->uri->segment('3').'/'.$matches[$i]['wedstrijdid'],'bekijk replay','class="light lower"');
                     echo '<br />';
 
                 } echo '</p>';

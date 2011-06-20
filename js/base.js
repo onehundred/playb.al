@@ -256,40 +256,45 @@ $(document).ready(function(){
 // HOMEPAGE ANIMATIONS begin
 /////////////////////////////////////////////////////////////////
     $(function() {
-    	$("#startKorfbal").click(function () {
+    	$("#startKorfbal, #startBasketbal, #startVolleybal").click(function () {
+/*
 			$('.korfbalAnimation').show();
-			$('.korfbalAnimation').css('transform', 'translate(0px, -155px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
-			$('.korfbal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce');
-			$('.volleybal, .basketbal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
-			$('.makeAccount').delay(1350).fadeIn(500);
-			//setTimeout('window.location = "index.php/main/signup/"',1000);  
+			$('.korfbalAnimation').css('transform', 'translate(110px, -110px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
+*/
+			 
+			
+			$('.korfbal, .basketbal, .volleybal, .gameRight, .gameLeft, .register').animate({opacity: 0}, 1, 'linear').hide();		
+	   	$('.makeAccount').show().animate({opacity: 1}, 1500, 'linear');	
+
       		return false;
 		});
 	});
+/*
     $(function() {
     	$("#startBasketbal").click(function () {
 			$('.basketbalAnimation').show();
-			$('.basketbalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
+			$('.basketbalAnimation').css('transform', 'translate(110px, -110px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
 			$('.basketbal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce');
 			$('.korfbal, .volleybal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
 	   		$('.makeAccount').delay(1350).fadeIn(500);
       			
-			//setTimeout('window.location = "index.php/main/signup/"',1000);  
+
       		return false;
 		});
 	});
     $(function() {
     	$("#startVolleybal").click(function () {
 			$('.volleybalAnimation').show();
-			$('.volleybalAnimation').css('transform', 'translate(0px, -135px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
+			$('.volleybalAnimation').css('transform', 'translate(110px, -110px) rotate(90deg) scale(0.6,0.6) skew(0deg)');
 			$('.volleybal').delay(200).animate({opacity: 0}, 1000, 'easeInBounce');
 			$('.korfbal, .basketbal, #login').delay(10).animate({opacity: 0}, 1, 'easeInBounce');
 	   		$('.makeAccount').delay(1350).fadeIn(500);
       		
-			//setTimeout('window.location = "index.php/main/signup/"',1000);  
+
       		return false;
 		});
 	});
+*/
 	$(function() {
     	$("#makeAccountClose").click(function () {
 			$('.makeAccount').hide();
@@ -658,40 +663,8 @@ $(function() {
     var playerProgress = $('.playerFemale section:odd, .playerMale section:odd');
     var	initHeight = $('.playerFemale, .playerMale').height();
     
-	$("#watchSkills").click(function () {
-		$(this).hide();
-		$('#hideSkills').show();  
-		$(playerSkill).delay(400).fadeIn();
-		
-		switch (initHeight)
-		{
-			case 55:
-			$('.playerFemale, .playerMale').css({'height' : '+=185px'});
-			$container.isotope('reLayout');
-			
-			return false;
-		break;
-			case 60:
-		    alert('switch 60')
-		break;
-			case 65:
-			alert('switch 65')
-		break;
-			default:
-			alert("I'm looking forward to this weekend!");
-		}
-		
-	});
+
 	
-	$("#hideSkills").click(function () {
-			$(this).hide();
-			$('#watchSkills').show();  
-			$(playerSkill).fadeOut(10);
-			$('.playerFemale, .playerMale').css({'height' : '-=185px'});
-			$container.isotope('reLayout');
-        	return false;
-			      		
-	});
 		
 		$("#watchProgress").click(function () {
 		$(this).hide();
@@ -702,8 +675,8 @@ $(function() {
 		
 switch (initHeight)
 {
-case 55:
-		$('.playerFemale, .playerMale').css({'height' : '+=165px'});
+case 240:
+		$('.playerFemale, .playerMale').css({'height' : '+=145px'});
 		$container.isotope('reLayout');
 		return false;
 
@@ -726,14 +699,99 @@ alert (initHeight);
 			$(this).hide();
 			$('#watchProgress').show();  
 			$(playerProgress).fadeOut(10);
-			$('.playerFemale, .playerMale').css({'height' : '-=165px'});
+			$('.playerFemale, .playerMale').css({'height' : '-=145px'});
 			$container.isotope('reLayout');
         	return false;
 			      		
 		});
 		
 		
+		var sorteerVisible = $("#container p");
+		var spelersNamen = $(".firstname, .lastname");
 		
+			$(".sortNumber").click(function () {;
+			$(".number").css({"color":"#222222"});
+
+			      		
+	});
+			$(".sortAge").click(function () {
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".age").css({"font-weight":"bold"});
+			$(".age").css({"color":"#000000"});			
+
+			      		
+	});
+			$(".sortPrice").click(function () {
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".price").css({"font-weight":"bold"});
+			$(".price").css({"color":"#000000"});			
+
+			      		
+	});
+			$(".sortPassing").click(function () {
+
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".passing").css({"font-weight":"bold"});
+			$(".passing").css({"color":"#000000"});			
+
+			      		
+	});
+			$(".sortShotpower").click(function () {
+
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".shotpower").css({"font-weight":"bold"});
+			$(".shotpower").css({"color":"#000000"});
+
+			      		
+	});
+			$(".sortIntercepting").click(function () {
+
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".intercepting").css({"font-weight":"bold"});
+			$(".intercepting").css({"color":"#000000"});
+
+			      		
+	});
+			$(".sortLeadership").click(function () {
+
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".leadership").css({"font-weight":"bold"});
+			$(".leadership").css({"color":"#000000"});
+
+			      		
+	});
+			$(".sortRebound").click(function () {
+
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".rebound").css({"font-weight":"bold"});
+			$(".rebound").css({"color":"#000000"});
+
+			      		
+	});
+			$(".sortStamina").click(function () {
+
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".stamina").css({"font-weight":"bold"});
+			$(".stamina").css({"color":"#000000"});
+
+			      		
+	});
+			$(".sortShotprecision").click(function () {
+
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".shotprecision").css({"font-weight":"bold"});
+			$(".shotprecision").css({"color":"#000000"});
+
+			      		
+	});
+			$(".sortPlaymaking").click(function () {
+
+			$(sorteerVisible).css({"font-weight":"400"});
+			$(".playmaking").css({"font-weight":"bold"});
+			$(".playmaking").css({"color":"#000000"});
+
+			      		
+	});
 });
 
 /////////////////////////////////////////////////////////////////
@@ -956,7 +1014,7 @@ function removeNode(n){
 
             // 2
             var name = $(this).find("legend").html();
-            $("#steps").append("<li id='stepDesc" + i + "'>Step " + (i + 1) + "<span>" + name + "</span></li>");
+            $("#steps").append("<li id='stepDesc" + i + "'>stap " + (i + 1) + "<span>" + name + "</span></li>");
 
             if (i == 0) {
                 createNextButton(i);
@@ -975,7 +1033,7 @@ function removeNode(n){
 
         function createPrevButton(i) {
             var stepName = "step" + i;
-            $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Prev' class='prev'>< Back</a>");
+            $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Prev' class='prev'>vorige</a>");
 
             $("#" + stepName + "Prev").bind("click", function(e) {
                 $("#" + stepName).hide();
@@ -987,7 +1045,7 @@ function removeNode(n){
 
         function createNextButton(i) {
             var stepName = "step" + i;
-            $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Next' class='next'>Next ></a>");
+            $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Next' class='next'>volgende</a>");
 
             $("#" + stepName + "Next").bind("click", function(e) {
                 $("#" + stepName).hide();

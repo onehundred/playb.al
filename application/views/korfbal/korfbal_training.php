@@ -34,49 +34,49 @@ foreach($training->result() as $row){
                 <section>
                     <p id="skillTitle">rebound: </p>
                     <p class="rebound"><?php echo $row->rebound; ?></p>
-                    <p class="rebound">/20</p>
+                    <p class="grade">/20</p>
                     <div class="rebound<?php echo $row->speler_id;?>" id="reboundProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">rebound: </p>
                     <p class="rebound"><?php echo $row->rebound_tr; ?></p>
-                    <p class="rebound">/1000</p>
+                    <p class="grade">/1000</p>
                     <div class="rebound_tr<?php echo $row->speler_id;?>" id="reboundProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">stamina: </p>
                     <p class="stamina"><?php echo $row->stamina; ?></p>
-                    <p class="rebound">/20</p>
+                    <p class="grade">/20</p>
                     <div class="stamina<?php echo $row->speler_id;?>" id="staminaProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">stamina: </p>
                     <p class="stamina"><?php echo $row->stamina_tr; ?></p>
-                    <p class="rebound">/1000</p>
+                    <p class="grade">/1000</p>
                     <div class="stamina_tr<?php echo $row->speler_id;?>" id="staminaProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">shotprecision: </p>
                     <p class="shotprecision"><?php echo $row->shotprecision; ?></p>
-                    <p class="rebound">/20</p>
+                    <p class="grade">/20</p>
                     <div class="shotprecision<?php echo $row->speler_id;?>" id="shotprecisionProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">shotprecision: </p>
                     <p class="shotprecision"><?php echo $row->shotprecision_tr; ?></p>
-                    <p class="rebound">/1000</p>
+                    <p class="grade">/1000</p>
                     <div class="shotprecision_tr<?php echo $row->speler_id;?>" id="shotprecisionProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">playmaking: </p>
                     <p class="playmaking"><?php echo $row->playmaking; ?></p>
-                    <p class="rebound">/20</p>
+                    <p class="grade">/20</p>
                     <div class="playmaking<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">playmaking: </p>
                     <p class="playmaking"><?php echo $row->playmaking_tr; ?></p>
-                    <p class="rebound">/1000</p>
+                    <p class="grade">/1000</p>
                     <div class="playmaking_tr<?php echo $row->speler_id;?>" id="playmakingProgress"></div>
                 </section>
             </div>
@@ -85,49 +85,49 @@ foreach($training->result() as $row){
                 <section>
                     <p id="skillTitle">passing: </p>
                     <p class="passing"><?php echo $row->passing; ?></p>
-                    <p class="rebound">/20</p>
+                    <p class="grade">/20</p>
                     <div class="passing<?php echo $row->speler_id;?>" id="passingProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">passing: </p>
                     <p class="passing"><?php echo $row->passing_tr; ?></p>
-                    <p class="rebound">/1000</p>
+                    <p class="grade">/1000</p>
                     <div class="passing_tr<?php echo $row->speler_id;?>" id="passingProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">shotpower: </p>
                     <p class="shotpower"><?php echo $row->shotpower; ?></p>
-                    <p class="rebound">/20</p>
+                    <p class="grade">/20</p>
                     <div class="shotpower<?php echo $row->speler_id;?>" id="shotpowerProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">shotpower: </p>
                     <p class="shotpower"><?php echo $row->shotpower_tr; ?></p>
-                    <p class="rebound">/1000</p>
+                    <p class="grade">/1000</p>
                     <div class="shotpower_tr<?php echo $row->speler_id;?>" id="shotpowerProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">intercepting: </p>
                     <p class="intercepting"><?php echo $row->intercepting; ?></p>
-                    <p class="rebound">/20</p>
+                    <p class="grade">/20</p>
                     <div class="intercepting<?php echo $row->speler_id;?>" id="interceptingProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">intercepting: </p>
                     <p class="intercepting"><?php echo $row->intercepting_tr; ?></p>
-                    <p class="rebound">/1000</p>
+                    <p class="grade">/1000</p>
                     <div class="intercepting_tr<?php echo $row->speler_id;?>" id="interceptingProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">leadership: </p>
                     <p class="leadership"><?php echo $row->leadership; ?></p>
-                    <p class="rebound">/20</p>
+                    <p class="grade">/20</p>
                     <div class="leadership<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
                 </section>
                 <section>
                     <p id="skillTitle">leadership: </p>
                     <p class="leadership"><?php echo $row->leadership_tr; ?></p>
-                    <p class="rebound">/1000</p>
+                    <p class="grade">/1000</p>
                     <div class="leadership_tr<?php echo $row->speler_id;?>" id="leadershipProgress"></div>
                 </section>
             </div>
@@ -176,9 +176,7 @@ foreach($training->result() as $row){
         <div id="sortPlayers" class="fillLeft">
             <section class="sortingFeatures">
                 <figure class="icon" id="gamePlayers"></figure>
-                <h2>spelers</h2>
-                <figure class="icon" id="gameViewSmall"></figure>
-                <p id="sortView"><a id="watchSkills" href="#">skills bekijken</a><a id="hideSkills" style="display: none;" href="#">skills verbergen</a></p>
+                <h2>spelers</h2>  
                 <figure class="icon" id="gameViewSmall"></figure>
                 <p id="sortView"><a id="watchProgress" href="#">vordering bekijken</a><a id="hideProgress" style="display: none;" href="#">vordering verbergen</a></p>
                 <ul id="filters">

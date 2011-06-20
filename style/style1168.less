@@ -237,15 +237,8 @@ h2 {
 .sportnav a:visited {
 }
 .sportnav p {
-	display: inline;
-	text-transform: uppercase;
 	font-size: 42px;
-	font-family: 'LeagueGothicRegular';
-	line-height: 0.8;
-color: #3C3C3C;
-color: rgba(0,0,0,0.75);
-	cursor: pointer;
-		padding: 10px 10px 7px 0;
+		padding: 10px 15px 7px 0;
 		
 }
 #teamname {
@@ -261,15 +254,7 @@ color: rgba(0,0,0,0.75);
 }
 .gameRight {
 	font-size: 15px;
-	float: right;
-	width: 745px;/* margin-top: 15px; */
-/*
-	background-color: #FFF; 
-
-	-webkit-box-shadow:  0px 0px 10px #bdbdbd;
-	-moz-box-shadow: 0px 0px 10px #bdbdbd;
-	box-shadow: 0px 0px 10px #bdbdbd;
-*/
+	width: 745px;
 	.borderRadius;
 	padding: 20px 0 0 15px;
 }
@@ -407,9 +392,7 @@ background: none;
 padding: 8px 0 4px 0;
 margin: 0 0 2px 0;
 }
-.rebound, .passing, .stamina, .shotprecision, .playmaking, .shotpower, .intercepting, .leadership {
-	display: inline;
-}
+
 .gameRight #skillTitle {
 	display: inline;
 }
@@ -576,9 +559,6 @@ display: inline;
 }
 #gameLeftOverview {
 	width: 1168px;
-}
-#gameLeftOverview div {
-
 }
 #gameLeftOverview .column {
 float: left;
@@ -752,7 +732,8 @@ position: relative;
 }
 .wedstrijdEntry {
 margin: 40px 0 0 0;
-height: 80px;
+height: 100px;
+border-bottom: 1px solid #CCCCCC;
 
 }
 .wedstrijdEntry a.question {
@@ -798,7 +779,7 @@ a#submit_search.question {
 margin: 0 0 0 15px;
 }
 #transfer {
-margin: 20px 0 5px 0;
+margin: 30px 0 25px 0;
 }
 /* TRANSFERS end -----------------------------------------------------------------------------------------------------------*/
 
@@ -1075,7 +1056,8 @@ background:
 	#logout {
 	float: right;
 	position: relative;
-	top: 100px;
+	top: 155px;
+	left: 55px;
 	}
 	.login:hover {
 
@@ -1162,22 +1144,7 @@ margin: 5px;
 	margin-right: 50px;
 }
 */
-#korfbalField {
-background-image: url(../img/field.png);
-background-repeat: no-repeat;
-width: 802px;
-height: 401px;
 
-}
-.droppable {
-	height: 75px;
-	width: 75px;
-	border: 4px solid #FFFFFF;
-	-webkit-border-radius: 150px;
--moz-border-radius: 150px;
-border-radius: 150px;
-
-}
 /* BUTTONS start -------------------------------------------------------------------------------------------------------------*/
 
 /* okay 
@@ -1275,7 +1242,6 @@ input#sliderButton.registreren[type="submit"]:active {
 	text-shadow: 0px -1px 1px rgba(0, 0, 0, .8);
 	display: inline;
 	width: 160px;
-	margin-left: 10px;
 	margin-bottom: 10px;
 }
 .light:hover {
@@ -1331,7 +1297,7 @@ input#sliderButton.registreren[type="submit"]:active {
 	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 	box-shadow: inset 0px 0px 0px 1px rgba(242, 242, 242, 0.4);
 }
-a.question, p.question {
+a.question, p.question, a.light {
 	padding: 10px;
 
 		color: #FFFFFF;
@@ -1700,6 +1666,7 @@ margin: 0 0 20px 0;
 	width: 100%;
 	background: 
  url(../img/1168/footerfill_top.png) repeat-x 0% 0%,  url(../img/1168/footerfill.png) repeat-x 0px 40px;
+ margin: 50px 0 0 0;
 }
 footer {
 .center1168;
@@ -1708,15 +1675,18 @@ footer h2 {
 	font-family: 'LeagueGothicRegular';
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #DEDEDE;
+	color: #d9d9d9;
 	font-size: 40px;
 	text-shadow: 0px 2px 3px #000;
 	margin: 0 0 25px 0;
 }
 footer a {
 
-	color: #DEDEDE;
+	color: #d9d9d9;
 
+}
+footer a:hover {
+color: #FFFFFF;
 }
 #footerLeft, #footerCenter, #footerRight {
 

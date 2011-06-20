@@ -80,7 +80,7 @@ $.blockUI.defaults = {
 	// styles for the message when blocking; if you wish to disable
 	// these and use an external stylesheet then do this in your code:
 	// $.blockUI.defaults.css = {};
-	css
+	css:{
 	},
 	
 	// minimal style set used when themes are used

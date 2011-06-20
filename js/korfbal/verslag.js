@@ -741,54 +741,54 @@ $(document).ready(function()
         			$('#naam_uitteam').append(naam_uitteam);
         			
  					//thuisteam
- 					$('#thuisteam #rebound1 #speler').append(get_spelernaam(opst_thuisteam[0],verslag['thuisteamid']));
- 					$('#thuisteam #rebound1 #prestatie').append(aantal_ballen(prest_thuisteam[0])); 
+ 					$('#thuisteam #rebound1_verslag #speler').append(get_spelernaam(opst_thuisteam[0],verslag['thuisteamid']));
+ 					$('#thuisteam #rebound1_verslag #prestatie').append(aantal_ballen(prest_thuisteam[0])); 
  					
- 					$('#thuisteam #playmaking1 #speler').append(get_spelernaam(opst_thuisteam[1],verslag['thuisteamid']));
- 					$('#thuisteam #playmaking1 #prestatie').append(aantal_ballen(prest_thuisteam[1]));
+ 					$('#thuisteam #playmaking1_verslag #speler').append(get_spelernaam(opst_thuisteam[1],verslag['thuisteamid']));
+ 					$('#thuisteam #playmaking1_verslag #prestatie').append(aantal_ballen(prest_thuisteam[1]));
  					
- 					$('#thuisteam #attack1 #speler').append(get_spelernaam(opst_thuisteam[2],verslag['thuisteamid']));
- 					$('#thuisteam #attack1 #prestatie').append(aantal_ballen(prest_thuisteam[2]));
+ 					$('#thuisteam #attack1_verslag #speler').append(get_spelernaam(opst_thuisteam[2],verslag['thuisteamid']));
+ 					$('#thuisteam #attack1_verslag #prestatie').append(aantal_ballen(prest_thuisteam[2]));
  					
- 					$('#thuisteam #attack2 #speler').append(get_spelernaam(opst_thuisteam[3],verslag['thuisteamid']));
- 					$('#thuisteam #attack2 #prestatie').append(aantal_ballen(prest_thuisteam[3]));
+ 					$('#thuisteam #attack2_verslag #speler').append(get_spelernaam(opst_thuisteam[3],verslag['thuisteamid']));
+ 					$('#thuisteam #attack2_verslag #prestatie').append(aantal_ballen(prest_thuisteam[3]));
  					
- 					$('#thuisteam #rebound2 #speler').append(get_spelernaam(opst_thuisteam[4],verslag['thuisteamid']));
- 					$('#thuisteam #rebound2 #prestatie').append(aantal_ballen(prest_thuisteam[4]));
+ 					$('#thuisteam #rebound2_verslag #speler').append(get_spelernaam(opst_thuisteam[4],verslag['thuisteamid']));
+ 					$('#thuisteam #rebound2_verslag #prestatie').append(aantal_ballen(prest_thuisteam[4]));
  					
- 					$('#thuisteam #playmaking2 #speler').append(get_spelernaam(opst_thuisteam[5],verslag['thuisteamid']));
- 					$('#thuisteam #playmaking2 #prestatie').append(aantal_ballen(prest_thuisteam[5]));
+ 					$('#thuisteam #playmaking2_verslag #speler').append(get_spelernaam(opst_thuisteam[5],verslag['thuisteamid']));
+ 					$('#thuisteam #playmaking2_verslag #prestatie').append(aantal_ballen(prest_thuisteam[5]));
  					
- 					$('#thuisteam #attack3 #speler').append(get_spelernaam(opst_thuisteam[6],verslag['thuisteamid']));
- 					$('#thuisteam #attack3 #prestatie').append(aantal_ballen(prest_thuisteam[6]));
+ 					$('#thuisteam #attack3_verslag #speler').append(get_spelernaam(opst_thuisteam[6],verslag['thuisteamid']));
+ 					$('#thuisteam #attack3_verslag #prestatie').append(aantal_ballen(prest_thuisteam[6]));
  					
- 					$('#thuisteam #attack4 #speler').append(get_spelernaam(opst_thuisteam[7],verslag['thuisteamid']));
- 					$('#thuisteam #attack4 #prestatie').append(aantal_ballen(prest_thuisteam[7]));
+ 					$('#thuisteam #attack4_verslag #speler').append(get_spelernaam(opst_thuisteam[7],verslag['thuisteamid']));
+ 					$('#thuisteam #attack4_verslag #prestatie').append(aantal_ballen(prest_thuisteam[7]));
  					
  					//uitteam
- 					$('#uitteam #rebound1 #speler').append(get_spelernaam(opst_uitteam[0],verslag['uitteamid']));
- 					$('#uitteam #rebound1 #prestatie').append(aantal_ballen(prest_uitteam[0])); 
+ 					$('#uitteam #rebound1_verslag #speler').append(get_spelernaam(opst_uitteam[0],verslag['uitteamid']));
+ 					$('#uitteam #rebound1_verslag #prestatie').append(aantal_ballen(prest_uitteam[0])); 
  				
- 					$('#uitteam #playmaking1 #speler').append(get_spelernaam(opst_uitteam[1],verslag['uitteamid']));
- 					$('#uitteam #playmaking1 #prestatie').append(aantal_ballen(prest_uitteam[1]));
+ 					$('#uitteam #playmaking1_verslag #speler').append(get_spelernaam(opst_uitteam[1],verslag['uitteamid']));
+ 					$('#uitteam #playmaking1_verslag #prestatie').append(aantal_ballen(prest_uitteam[1]));
  					
- 					$('#uitteam #attack1 #speler').append(get_spelernaam(opst_uitteam[2],verslag['uitteamid']));
+ 					$('#uitteam #attack1_verslag #speler').append(get_spelernaam(opst_uitteam[2],verslag['uitteamid']));
  					$('#uitteam #attack1 #prestatie').append(aantal_ballen(prest_uitteam[2]));
  					
- 					$('#uitteam #attack2 #speler').append(get_spelernaam(opst_uitteam[3],verslag['uitteamid']));
- 					$('#uitteam #attack2 #prestatie').append(aantal_ballen(prest_uitteam[3]));
+ 					$('#uitteam #attack2_verslag #speler').append(get_spelernaam(opst_uitteam[3],verslag['uitteamid']));
+ 					$('#uitteam #attack2_verslag #prestatie').append(aantal_ballen(prest_uitteam[3]));
  					
- 					$('#uitteam #rebound2 #speler').append(get_spelernaam(opst_uitteam[4],verslag['uitteamid']));
- 					$('#uitteam #rebound2 #prestatie').append(aantal_ballen(prest_uitteam[4]));
+ 					$('#uitteam #rebound2_verslag #speler').append(get_spelernaam(opst_uitteam[4],verslag['uitteamid']));
+ 					$('#uitteam #rebound2_verslag #prestatie').append(aantal_ballen(prest_uitteam[4]));
  					
- 					$('#uitteam #playmaking2 #speler').append(get_spelernaam(opst_uitteam[5],verslag['uitteamid']));
- 					$('#uitteam #playmaking2 #prestatie').append(aantal_ballen(prest_uitteam[5]));
+ 					$('#uitteam #playmaking2_verslag #speler').append(get_spelernaam(opst_uitteam[5],verslag['uitteamid']));
+ 					$('#uitteam #playmaking2_verslag #prestatie').append(aantal_ballen(prest_uitteam[5]));
  					
- 					$('#uitteam #attack3 #speler').append(get_spelernaam(opst_uitteam[6],verslag['uitteamid']));
- 					$('#uitteam #attack3 #prestatie').append(aantal_ballen(prest_uitteam[6]));
+ 					$('#uitteam #attack3_verslag #speler').append(get_spelernaam(opst_uitteam[6],verslag['uitteamid']));
+ 					$('#uitteam #attack3_verslag #prestatie').append(aantal_ballen(prest_uitteam[6]));
  					
- 					$('#uitteam #attack4 #speler').append(get_spelernaam(opst_uitteam[7],verslag['uitteamid']));
- 					$('#uitteam #attack4 #prestatie').append(aantal_ballen(prest_uitteam[7]));
+ 					$('#uitteam #attack4_verslag #speler').append(get_spelernaam(opst_uitteam[7],verslag['uitteamid']));
+ 					$('#uitteam #attack4_verslag #prestatie').append(aantal_ballen(prest_uitteam[7]));
      				
      				
      					//clicken om een actie te bekijken
@@ -813,6 +813,7 @@ $(document).ready(function()
 						$('#replay a').hide();
 						$('#replay a').remove();
 						$('#links').hide();
+					
 						infLoopStop = false;
 						infLoop();
 					});			

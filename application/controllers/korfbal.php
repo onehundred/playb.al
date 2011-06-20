@@ -285,7 +285,7 @@ class Korfbal extends CI_Controller {
 				$conf['image_library'] = 'gd2';
 				$conf['source_image']	= './img/userpics/'.$upfile['upload_data']['file_name'].'';
 				$conf['create_thumb'] = FALSE;
-				$conf['maintain_ratio'] = TRUE;
+				$conf['maintain_ratio'] = FALSE;
 				$conf['width']	 = 100;
 				$conf['height']	= 100;
 				$conf['new_image'] ='./img/userpics/thumbs';

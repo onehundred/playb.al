@@ -199,7 +199,7 @@ $(function() {
 									$().toastmessage('showErrorToast', "Deze speler is al opgesteld");
 								}
 				    			if(data.check === 'invalid opgesteld'){
-									$().toastmessage('showErrorToast', "De speler moet opgesteld! ");
+									$().toastmessage('showErrorToast', "De speler moet al op het veld staan! ");
 								}
 				    			getData();
 						

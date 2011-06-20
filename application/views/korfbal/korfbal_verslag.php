@@ -1,5 +1,5 @@
-<script src="<?php echo base_url();?>js/toastmessage/jquery.toastmessage.js"></script>
 <script src="<?php echo base_url();?>js/jquery.blockUI.js"></script>
+<script src="<?php echo base_url();?>js/korfbal/verslag.js"></script>
 <style>
 	#canvas{
 		background-image:url(<?php echo base_url();?>img/field.png);
@@ -17,42 +17,42 @@
         <div id="prestaties">
             <div style="float:right; margin-right:200px;" id="uitteam">
                 <h3 id="naam_uitteam"></h3><img src="<?php echo base_url();?>img/player_theirs.png"/>
-                <div id="rebound1">
+                <div id="rebound1_verslag">
                     <h4>Rebound</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="playmaking1">
+                <div id="playmaking1_verslag">
                     <h4>Spelmaken</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="attack1">
+                <div id="attack1_verslag">
                     <h4>Aanval</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="attack2">
+                <div id="attack2_verslag">
                     <h4>Aanval</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="rebound2">
+                <div id="rebound2_verslag">
                     <h4>Rebound</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="playmaking2">
+                <div id="playmaking2_verslag">
                     <h4>Spelmaken</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="attack3">
+                <div id="attack3_verslag">
                     <h4>Aanval</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="attack4">
+                <div id="attack4_verslag">
                     <h4>Aanval</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
@@ -60,42 +60,42 @@
             </div>
             <div id="thuisteam">
                 <h3 id="naam_thuisteam"></h3><img src="<?php echo base_url();?>img/player_ours.png"/>
-                <div id="rebound1">
+                <div id="rebound1_verslag">
                     <h4>Rebound</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="playmaking1">
+                <div id="playmaking1_verslag">
                     <h4>Spelmaken</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="attack1">
+                <div id="attack1_verslag">
                     <h4>Aanval</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="attack2">
+                <div id="attack2_verslag">
                     <h4>Aanval</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="rebound2">
+                <div id="rebound2_verslag">
                     <h4>Rebound</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="playmaking2">
+                <div id="playmaking2_verslag">
                     <h4>Spelmaken</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="attack3">
+                <div id="attack3_verslag">
                     <h4>Aanval</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
                 </div>
-                <div id="attack4">
+                <div id="attack4_verslag">
                     <h4>Aanval</h4>
                     <p id="speler"></p>
                     <p id="prestatie"></p>
@@ -117,4 +117,3 @@
         </div>
     </aside>
 </div>
-<script src="<?php echo base_url();?>js/korfbal/verslag.js"></script>

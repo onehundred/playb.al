@@ -365,6 +365,7 @@ class Korfbal extends CI_Controller {
 		}
 		$data['profilepic'] = $this->korfbal_model->get_profile_pic($team_id);
 		$data['calendar'] = $this->korfbal_model->get_sidebar_calendar($team_id);
+		$data['stats'] = $this->korfbal_model->get_sidebar_stats($team_id);
 		
 		$data['main_content'] = 'korfbal/korfbal_transfers';
 		$this->load->view('korfbal/includes/template', $data);

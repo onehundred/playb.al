@@ -43,7 +43,6 @@
                     <figure class="icon" id="gameGraph"></figure>
                     <h2>huidig seizoen</h2>
                     <div class="entry">
-                        <p>legende</p>
                         <div id="chartsWonLegend">
                             <span id="wonspan">leg</span>
                             <p>gewonnen</p>
@@ -65,7 +64,6 @@
                     <figure class="icon" id="gameGraph"></figure>
                     <h2>carriere</h2>
                     <div class="entry">
-                        <p>legende</p>
                         <div id="chartsWonLegend">
                             <span id="wonspan">leg</span>
                             <p>gewonnen</p>

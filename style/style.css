@@ -132,13 +132,13 @@ li.rssRow.odd,li.rssRow.odd h4,li.rssRow.even h4{font-weight:normal;background:n
 #trainingButton{margin:0 0 10px 0;}
 #opstellingButton{top:12px;position:relative;}
 .wedstrijdEntry{margin:40px 0 0 0;height:70px;}
-.droppable{height:60px;width:60px;background-color:#FFFFFF;background-color:rgba(0, 0, 0, 0.4);-webkit-box-shadow:inset 0px 0px 10px #333333;-moz-box-shadow:inset 0px 0px 10px #333333;box-shadow:inset 0px 0px 10px #333333;-webkit-border-radius:120px;-moz-border-radius:120px;border-radius:120px;margin:0 15px 10px 15px;color:#000000;text-align:center;line-height:57px;}
+.droppable, .droppable_prullenbak{height:60px;width:60px;background-color:#FFFFFF;background-color:rgba(0, 0, 0, 0.4);-webkit-box-shadow:inset 0px 0px 10px #333333;-moz-box-shadow:inset 0px 0px 10px #333333;box-shadow:inset 0px 0px 10px #333333;-webkit-border-radius:120px;-moz-border-radius:120px;border-radius:120px;margin:0 15px 10px 15px;color:#000000;text-align:center;line-height:57px;}
 #korfbalField{margin:25px 0 0 0;float:right;background-image:url(../img/field.png);background-repeat:no-repeat;width:802px;height:401px;}
 div#players.ui-droppable{margin:25px 0 0 0;}
 #vak1 h2,#vak2 h2,#general h2,h2#sponsorContract,h1#yes{color:#FFFFFF;font-weight:normal;font-size:46px;text-shadow:0px 0px 15px #333;margin:20px 15px 20px 15px;font-family:'LeagueGothicRegular';}
 h1#yes{font-size:62px;margin:-10px 0 20px 0;}
 #vak2{float:right;}
-#players{float:left;margin-right:1em;}
+#players{float:left;margin-right:1em; width: 350px; position: relative}
 //#captain{margin:-70px 0 10px 175px;}
 	#rebound1{
 		position: absolute;

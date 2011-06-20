@@ -1,8 +1,3 @@
-<style>
-	#prullenbak{
-		
-	}
-</style>
 <script src="<?php echo base_url();?>js/korfbal/opstelling.js"></script>
 <script src="<?php echo base_url();?>js/jqueryui.touch.js"></script>
 
@@ -10,10 +5,10 @@
 
 
 	<div id="korfbalField">
+		
 		<div id="vak2"><h2>Vak2</h2></div>
 		<div id="vak1"><h2>Vak1</h2></div>
 		<div id="general"><h2>General</h2></div>
-		<div id="prullenbak"></div>
     </div> <!-- end korfbalField -->
    	<div id="players"> 
         <!-- <h1>Korfbal</h1> -->
@@ -43,7 +38,7 @@
              
         </div>
     </div>
-    	
+
     <input type="hidden" id="teamid" value="<?php echo $this->uri->segment('3');?>" />
 </div>
 <!-- end game -->

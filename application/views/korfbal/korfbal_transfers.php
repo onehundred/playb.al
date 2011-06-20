@@ -1,3 +1,23 @@
+<style>
+	.transfer{
+		width:400px;
+		padding: 15px 15px 25px 15px;
+	}
+	#transer,.name{
+		width: 150px;
+	
+	}
+	#deadline{
+		font-weight: bold;
+	}
+	#transfer_positie{
+		font-weight: bold;
+	}
+	.transfer_geld{
+		font-weight: bold;
+	}
+</style>
+
 <script>	
 $(document).ready(function(){
 
@@ -20,18 +40,26 @@ $(document).ready(function(){
         			
         			for(var i=1;i<count;i++){
         				if(data[i].huidig_bod == null){
-        					var huidig = '<p>Er is nog geen bod geplaatst op deze speler.</p>'
+        					var huidig = '<p>Er is nog geen bod geplaatst op deze speler.</p><p class="transfer_geld"> Minimum bod: '+data[i].minimum_bod+' €</p>'
         							+ '<a class="light lower" href="../../korfbal_other_team/korfbal_player/'+data[i].teamid+'/'+data[i].spelerid+'">bekijk in detail</a>'; 
         				}else{
-        					var huidig = '<p>Huidig bod: '+data[i].huidig_bod+'$ door: '+data[i].hoogste_bieder +'</p>'
+        					var huidig = '<p class="transfer_geld">Huidig bod: '+data[i].huidig_bod+' € door: '+data[i].hoogste_bieder +'</p>'
         								+ '<a class="light lower" href="../../korfbal_other_team/korfbal_player/'+data[i].teamid+'/'+data[i].spelerid+'">bekijk in detail</a>'; ;
         				}
+        				if(data[i].geslacht == 'male'){
+        					var geslacht = '<img src="<?php echo base_url();?>img/male.png"/>';
+        				}else{
+        					var geslacht = '<img src="<?php echo base_url();?>img/female.png"/>';
+        				}
+        				
+        				
         			
-	        			   var content = '<div id="transfer" class="transfer">' 
+	        			   var content = '<div id="transfer" class="transfer entry">' 
 	        					   + '<div id="deadline">'+data[i].deadline+'</div>'
 	        					   + '<div id="gegevens">'
-	        					   + '<p>'+data[i].spelernaam+'</p>'
-	        					   + '<p>'+data[i].leeftijd+' '+data[i].geslacht+'    '+data[i].positie +'</p>'
+	        					   + '<p class="name">'+data[i].spelernaam+'</p>'
+	        					   + '<p>'+data[i].leeftijd+' jaar oud '+geslacht+'</p>'
+	        					   + '<p id="transfer_positie">'+data[i].positie+'</p>'
 	        					   + huidig
 	        					   + '</div>'
 	    						   + '<br/></div>';

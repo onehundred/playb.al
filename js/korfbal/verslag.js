@@ -843,6 +843,7 @@ $(document).ready(function()
 							}
 							if(infLoopStop == false){
 								start(acties[j],naam_thuisteam, naam_uitteam);
+								$('#tussenstand p').remove();
 								$('#tussenstand').append('<p class="entry">'+minuten[j]+'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+tussenstand[j]+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+spelers[j]+'</p>');
 								window.setTimeout(infLoop,8000);
 								j++;

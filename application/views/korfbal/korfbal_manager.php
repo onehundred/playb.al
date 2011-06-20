@@ -83,6 +83,7 @@
     $('#s6').show().cycle({
         fx:     'fade',
         speed:  500,
+        next: '#s6',
         pause: 1,
     });
 });

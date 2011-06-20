@@ -1,23 +1,3 @@
-<style>
-	.transfer{
-		width:400px;
-		padding: 15px 15px 25px 15px;
-	}
-	#transer,.name{
-		width: 150px;
-	
-	}
-	#deadline{
-		font-weight: bold;
-	}
-	#transfer_positie{
-		font-weight: bold;
-	}
-	.transfer_geld{
-		font-weight: bold;
-	}
-</style>
-
 <script>	
 $(document).ready(function(){
 

@@ -279,6 +279,9 @@ margin-top: 10%;
 }
 
 /* gameRight start ----------------------------------------------------------------------------------------------------------*/
+.game {
+.center768;
+}
 .gameRight {
 	font-size: 15px;
 	float: right;
@@ -358,6 +361,9 @@ aside {
 }
 .fillLeft {
 width: 460px;
+}
+#gameLeftOverview {
+	width: 768px;
 }
 .gameLeft {
 
@@ -441,7 +447,7 @@ width: 460px;
 	line-height: 0.8;
 	color: #bfbfbf;
  .transitionOff;
-	font-size: 32px;
+	font-size: 36px;
 }
 .sportnav a:hover {
 	color: #888;
@@ -467,10 +473,9 @@ width: 460px;
 	display: inline;
 	padding-right: 5px;
 	text-transform: uppercase;
-	font-size: 32px;
+	font-size: 36px;
 	font-family: 'LeagueGothicRegular';
 	line-height: 0.8;
-color: @korfbalColor;
 	cursor: pointer;/* -webkit-text-stroke: 1px @korfbalBorderColor; *//* text-shadow: 0px -1px 1px rgba(1, 1, 1, .8); */
 }
 /* TOOLTIPS start ---------------------------------------------------------------------------------------------------------*/
@@ -532,9 +537,12 @@ display: none;
 	margin: 100px auto 0 auto;
 	background-image: url(../img/boxbgRegister.png);
 	background-repeat: no-repeat;
-
+padding: 0 0 0 50px;
 
 }
+a#makeAccountClose img {
+margin: -7px 0 7px 7px;
+	}
 /* TOOLTIPS end -----------------------------------------------------------------------------------------------------------*/
 
 
@@ -682,6 +690,35 @@ box-shadow: 0px 0px 10px #BFBFBF;
 	color: #444;
  .borderRadius;
 }
+.login, .profile, .createdAccount {
+display: none;
+opacity: 0;
+-webkit-border-top-left-radius: 3px;
+-webkit-border-top-right-radius: 3px;
+-webkit-border-bottom-right-radius: 12px;
+-webkit-border-bottom-left-radius: 12px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-topright: 3px;
+-moz-border-radius-bottomright: 12px;
+-moz-border-radius-bottomleft: 12px;
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 12px;
+border-bottom-left-radius: 12px;
+	position: absolute;
+	padding: 35px;
+left: 29%;
+	margin-top: 150px;
+	width: 290px;
+	height: 270px;
+
+background: 
+/*  url(../img/boxbg_top.png) no-repeat 100% 0%, */
+
+ url(../img/boxbg.png) no-repeat 2px 6px;
+
+
+	}
 #menu {
 	padding-top: 10px;
 	list-style:none;
@@ -1121,7 +1158,7 @@ select {
 }
 /* BIG GALLERY start ---------------------------------------------------------------------------------------------------------*/
 .container {
-	width: 866px;
+	width: 450px;
 	padding: 0;
 	margin: 0 auto;
 }

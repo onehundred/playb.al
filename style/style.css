@@ -79,7 +79,13 @@ p.sliderCopy{padding:12px;background-color:#FFFFFF;background-color:rgba(255, 25
 .game{width:896px;margin:0 auto 0 auto;}
 .gameRight{font-size:15px;float:right;width:568px;padding:20px 0 0 15px;}
 .gameRight h2{color:#FFFFFF;font-weight:normal;font-size:42px;text-shadow:0px 0px 15px #333;margin:20px 15px 20px 0;font-family:'LeagueGothicRegular';}
-.player,.playerFemale,.playerMale{width:245px;height:70px;-moz-border-radius-topleft:3px;-moz-border-radius-topright:3px;-moz-border-radius-bottomright:9px;-moz-border-radius-bottomleft:9px;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:9px;border-bottom-left-radius:9px;margin-right:20px;float:left;margin-bottom:15px;padding:7px;opacity:0.9;z-index:1;}
+.player,.playerFemale,.playerMale{width:260px;height:240px;background:#FAFAFA;background-color:rgba(255, 255, 255, 0.5);border:1px solid #E5E5E5;-moz-border-radius-topleft:3px;-moz-border-radius-topright:3px;-moz-border-radius-bottomright:9px;-moz-border-radius-bottomleft:9px;border-top-left-radius:3px;border-top-right-radius:3px;border-bottom-right-radius:9px;border-bottom-left-radius:9px;margin-right:7px;float:left;margin-bottom:15px;padding:7px;font-size:13px;opacity:0.9;z-index:1;}
+.player:hover,.playerMale:hover,.playerFemale:hover,.playerDetail:hover{background:#FAFAFA;background-color:rgba(255, 255, 255, 0.75);-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;-webkit-box-shadow:0px 0px 10px #bdbdbd;-moz-box-shadow:0px 0px 10px #bdbdbd;box-shadow:0px 0px 5px #D1D1D1;}
+.playerFemale section:nth-child(2),.playerFemale section:nth-child(4),.playerFemale section:nth-child(6),.playerFemale section:nth-child(8),.playerMale section:nth-child(2),.playerMale section:nth-child(4),.playerMale section:nth-child(6),.playerMale section:nth-child(8){display:none;}
+#sortPlayers{height:550px;}
+#sortView{padding:0 0 10px 10px;}
+article.sortSkill{clear:both;}
+article.sortSkill p{display:inline;margin:0;padding:0;}
 .playerHeader{height:60px;background:none;padding:8px 0 4px 0;margin:0 0 2px 0;}
 .gameRight .number{font-size:64px;font-family:'SFCollegiateSolidRegular';display:inline;padding:7px;float:left;line-height:45px;}
 .gameRight .firstname{text-transform:capitalize;display:inline;padding-right:7px;}
@@ -87,8 +93,8 @@ p.sliderCopy{padding:12px;background-color:#FFFFFF;background-color:rgba(255, 25
 .gameRight .gender{display:inline;line-height:30px;padding-left:5px;}
 .gameRight .age{display:inline;line-height:28px;}
 .gameRight .price{display:inline;}
-.gameRight #rightProgress{width:115px;float:right;}
-.gameRight #leftProgress{width:115px;}
+.gameRight #rightProgress{width:135px;float:right;}
+.gameRight #leftProgress{width:120px;}
 .rebound,.passing,.stamina,.shotprecision,.playmaking,.shotpower,.intercepting,.leadership,.grade{display:inline;}
 .gameRight #skillTitle{display:inline;}
 aside{float:left;}
@@ -109,9 +115,10 @@ aside{float:left;}
 .gameLeft h2{font-size:28px;font-weight:normal;letter-spacing:1px;color:#7B7B7B;padding:8px 0 8px 10px;width:277px;height:40px;background-image:url(../img/stitches.png);background-repeat:no-repeat;background-position:10px 40px;text-shadow:0px 0px 4px #F2F2F2;text-transform:lowercase;}
 #gameLeftOverview{width:896px;}
 #gameLeftOverview .column{float:left;}
-.column:nth-child(1){margin:0 22px 0 0;}
-.column:nth-child(2){margin:0 22px 0 0;}
+.column:nth-child(1){margin:0 100px 0 100px;}
+.column:nth-child(2){margin:0 0px 0 0;}
 p.bericht_datum{float:left;color:#666666;font-size:12px;}
+div.chart_container.fillLeft{display:none;}
 p.verwijder{float:right;background-image:url(../img/icons/trash.png);background-repeat:no-repeat;width:20px;height:25px;padding:0 15px 0 0;opacity:0.8;}
 p.markeer:hover,p.verwijder:hover{cursor:pointer;opacity:1;}
 p.markeer{opacity:0.8;float:right;padding:0px;width:25px;height:25px;background-image:url(../img/icons/seen.png);background-repeat:no-repeat;}
@@ -120,15 +127,16 @@ p.markeer{opacity:0.8;float:right;padding:0px;width:25px;height:25px;background-
 .unread{background-color:rgba(166, 30, 41, 0.2);border:1px solid rgba(166, 30, 41, 0.25);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;}
 .tweet{background-color:rgba(2, 169, 295, 0.2);border:1px solid rgba(2, 169, 295, 0.25);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;}
 .entry,.sortEntry{background-color:rgba(191, 191, 191, 0.2);border:1px solid rgba(191, 191, 191, 0.25);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;}
-div#klassementEntry{background-color:rgba(191, 191, 191, 0.2);border:1px solid rgba(191, 191, 191, 0.25);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;width:340px;height:25px;padding:0 0 10px 0;margin:10px 15px 10px 15px;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
+div#klassementEntry{background-color:rgba(191, 191, 191, 0.2);border:1px solid rgba(191, 191, 191, 0.25);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-khtml-border-radius:3px;width:265px;height:25px;padding:0 0 10px 0;margin:10px 15px 10px 15px;-webkit-transition-duration:1.6s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:1.6s;-moz-transition-timing-function:ease-in-out;-ms-transition-duration:1.6s;-ms-transition-timing-function:ease-in-out;-o-transition-duration:1.6s;-o-transition-timing-function:ease-in-out;transition-duration:1.6s;transition-timing-function:ease-in-out;}
 div#klassementEntry:hover{background-color:rgba(191, 191, 191, 0.4);border:1px solid rgba(191, 191, 191, 0.5);-webkit-transition-duration:0.1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-duration:0.1s;-moz-transition-timing-function:ease-in-out;-ms-transition-duration:0.1s;-ms-transition-timing-function:ease-in-out;-o-transition-duration:0.1s;-o-transition-timing-function:ease-in-out;transition-duration:0.1s;transition-timing-function:ease-in-out;}
 .even{background-color:#FFFFFF;background-color:rgba(255, 255, 255, 0.5);border-bottom:1px solid #CCCCCC;}
 .odd{background-color:#E5E5E5;background-color:rgba(229, 229, 229, 0.5);border-bottom:1px solid #CCCCCC;}
 li.rssRow.odd,li.rssRow.odd h4,li.rssRow.even h4{font-weight:normal;background:none;font-size:15px;border:none;list-style-type:none;}
-#matchTeamNameHome,#matchTeamNameOut,#versus{font-family:'SFCollegiateSolidRegular';text-align:left;color:#FFF;font-size:36px;text-transform:uppercase;font-weight:normal;cursor:default;text-shadow:0 1px 0 #cccccc,0 2px 0 #c9c9c9,0 3px 0 #bbbbbb,0 4px 0 #b9b9b9,0 5px 0 #aaaaaa,0 6px 1px rgba(0, 0, 0, 0.1),0 0 5px rgba(0, 0, 0, 0.1),0 1px 3px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2),0 5px 10px rgba(0, 0, 0, 0.25),0 10px 10px rgba(0, 0, 0, 0.2),0 20px 20px rgba(0, 0, 0, 0.15);}
+#matchTeamNameHome,#matchTeamNameOut,#versus{font-family:'SFCollegiateSolidRegular';text-align:left;color:#FFF;font-size:28px;text-transform:uppercase;font-weight:normal;cursor:default;text-shadow:0 1px 0 #cccccc,0 2px 0 #c9c9c9,0 3px 0 #bbbbbb,0 4px 0 #b9b9b9,0 5px 0 #aaaaaa,0 6px 1px rgba(0, 0, 0, 0.1),0 0 5px rgba(0, 0, 0, 0.1),0 1px 3px rgba(0, 0, 0, 0.3),0 3px 5px rgba(0, 0, 0, 0.2),0 5px 10px rgba(0, 0, 0, 0.25),0 10px 10px rgba(0, 0, 0, 0.2),0 20px 20px rgba(0, 0, 0, 0.15);}
 #matchTeamNameHome{float:left;display:inline;}
 #matchTeamNameOut{float:right;display:inline;}
 #matchUitslag{display:block;position:relative;top:55px;}
+#matchUitslagScore{font-size:28px;font-family:'SFCollegiateSolidRegular';position:relative;left:5px;}
 #versus{display:inline;float:left;position:relative;left:100px;}
 #trainingButton{margin:0 0 10px 0;}
 #trainingSkill{float:left;}

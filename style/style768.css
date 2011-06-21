@@ -76,6 +76,7 @@ aside{float:left;}
 .gameLeft table tr:nth-child(1){background:none;}
 .gameLeft table tr:nth-child(3){background:none;}
 div.chart_container.fillLeft{display:none;}
+div#klassementEntry{background-color:rgba(191, 191, 191, 0.2);border:1px solid rgba(191, 191, 191, 0.25);border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;width:265px;height:25px;padding:0 0 10px 0;margin:10px 15px 10px 15px;-webkit-transition-duration:1s;}
 .sportnavWrap{height:55px;}
 .sportnav{margin-bottom:25px;width:712px;margin:0 auto 0 auto;height:50px;}
 .sportnav a{text-transform:uppercase;font-family:'LeagueGothicRegular';line-height:0.8;color:#bfbfbf;-webkit-transition-duration:1s;font-size:48px;}
